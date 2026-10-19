@@ -54,7 +54,7 @@ export function DevSecOpsHeroOverview() {
         <div className="flex flex-wrap items-center gap-4">
           <Link
             href="/contact#contact-form"
-            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+            className="inline-flex items-center gap-3 pl-6 pr-4 py-3.5 bg-white text-black font-semibold text-sm md:text-base tracking-wide rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
           >
             Book a Security Assessment
             <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
@@ -63,7 +63,7 @@ export function DevSecOpsHeroOverview() {
           </Link>
           <Link
             href="/contact#contact-form"
-            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-transparent border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-white/5 transition-all duration-300"
+            className="inline-flex items-center gap-3 pl-6 pr-4 py-3.5 bg-transparent border border-white/20 text-white font-semibold text-sm md:text-base tracking-wide rounded-full hover:bg-white/5 transition-all duration-300"
           >
             Talk to Our DevSecOps Team
             <div className="w-7 h-7 rounded-full bg-red-600 flex items-center justify-center">
@@ -75,10 +75,10 @@ export function DevSecOpsHeroOverview() {
 
       {/* 2. OVERVIEW */}
       <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-4xl mx-auto px-12 xl:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 text-center">
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-red-500 mb-4 block">OVERVIEW</span>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-4 block">OVERVIEW</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Security Built Into Every Release
             </h2>
             <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
@@ -90,10 +90,10 @@ export function DevSecOpsHeroOverview() {
 
       {/* 3. OUR DEVSECOPS PHILOSOPHY */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-red-500 mb-3 block">PHILOSOPHY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">PHILOSOPHY</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Secure by Design. Automated by Default.
             </h2>
           </Reveal>
@@ -106,8 +106,8 @@ export function DevSecOpsHeroOverview() {
                   <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-4 border border-red-500/20 group-hover:bg-red-500/20 transition-colors">
                     <Icon className="w-5 h-5 text-red-500" />
                   </div>
-                  <h4 className="text-base font-bold text-white mb-2">{p.title}</h4>
-                  <p className="text-sm text-zinc-400 leading-relaxed">{p.desc}</p>
+                  <h4 className="text-base md:text-lg font-bold text-white mb-2">{p.title}</h4>
+                  <p className="text-sm md:text-[15px] text-zinc-300 leading-relaxed font-medium">{p.desc}</p>
                 </div>
               );
             })}
@@ -117,10 +117,10 @@ export function DevSecOpsHeroOverview() {
 
       {/* 4. SECURE SOFTWARE DELIVERY LIFECYCLE */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-red-500 mb-3 block">SECURE SDLC</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">SECURE SDLC</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Secure Software Delivery Lifecycle
             </h2>
           </Reveal>
@@ -133,8 +133,8 @@ export function DevSecOpsHeroOverview() {
               {sdlcTimeline.map((step, idx) => (
                 <div key={idx} className="flex flex-col items-center min-w-[130px]">
                   <div className="w-4 h-4 rounded-full bg-black border-2 border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)] mb-4"></div>
-                  <span className="text-[10px] font-bold text-red-500 tracking-wider mb-2">PHASE 0{idx + 1}</span>
-                  <span className="text-xs md:text-sm font-semibold text-zinc-300 text-center">{step}</span>
+                  <span className="text-xs font-bold text-red-500 tracking-wider mb-2">PHASE 0{idx + 1}</span>
+                  <span className="text-sm md:text-base font-semibold text-zinc-200 text-center">{step}</span>
                 </div>
               ))}
             </div>

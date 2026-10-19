@@ -7,76 +7,69 @@ import {
   ArrowUpRight,
   Plus,
   Minus,
-  Cloud,
-  Server,
+  Shield,
   ShieldCheck,
-  Layers,
-  Network,
-  Settings,
-  Rocket,
-  GitBranch,
-  CheckCircle2,
-  Cpu,
-  Database,
+  ShieldAlert,
   Lock,
-  Boxes,
+  Key,
+  Fingerprint,
+  UserCheck,
+  Server,
+  Cloud,
+  Database,
   Code,
-  Github,
-  Workflow,
-  Sliders,
-  Flame,
-  Play,
   FileText,
-  Check,
-  ExternalLink,
-  X,
-  Download,
-  Terminal,
+  CheckCircle2,
   ArrowRight,
   Activity,
   Sparkles,
-  Shield,
   Zap,
   BarChart3,
-  Key,
   Search,
   FileCode,
   CheckCircle,
   AlertTriangle,
   RefreshCw,
   Container,
-  GitPullRequest,
   Eye,
-  Bell,
-  Box,
-  BrainCircuit,
-  Bot,
-  MessageSquare,
+  Network,
+  Cpu,
+  Workflow,
+  Sliders,
   Briefcase,
   Users,
   HardDrive,
-  Share2,
   FileSearch,
-  Sparkle,
-  Compass
+  X,
+  Download,
+  Terminal,
+  GitBranch,
+  FileCheck,
+  Layers,
+  Globe,
+  Check,
+  BookOpen,
+  Bot,
+  BrainCircuit,
+  MessageSquare,
+  Boxes
 } from "lucide-react";
 import Link from "next/link";
 
 export default function AIFrameworkPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [demoModalOpen, setDemoModalOpen] = useState<boolean>(false);
-  const [demoSubmitted, setDemoSubmitted] = useState<boolean>(false);
-  const [activeLifecycleStage, setActiveLifecycleStage] = useState<number>(0);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [modalSubmitted, setModalSubmitted] = useState<boolean>(false);
+  const [activeArchLayer, setActiveArchLayer] = useState<string>("Enterprise AI Gateway");
   const [activeTechCategory, setActiveTechCategory] = useState<string>("AI Frameworks");
-  const [activeAgentIndex, setActiveAgentIndex] = useState<number>(0);
-  const [activeArchLayer, setActiveArchLayer] = useState<string>("Orchestration Engine");
+  const [activePipelineStep, setActivePipelineStep] = useState<number>(0);
 
   // Form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
-    aiGoal: "RAG & Enterprise Search",
+    aiGoal: "Hybrid RAG & Enterprise Search",
     message: ""
   });
 
@@ -84,361 +77,331 @@ export default function AIFrameworkPage() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  // Auto-advance lifecycle demo
+  // Auto advance pipeline animation step
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveLifecycleStage((prev) => (prev + 1) % 9);
-    }, 3200);
+      setActivePipelineStep((prev) => (prev + 1) % 9);
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
-  // 1. Business Challenges Data
+  // 1. Business Challenges Data (8 Cards)
   const businessChallenges = [
     {
       title: "Slow AI Development",
-      desc: "Lengthy prototyping delays and reinventing pipeline wrappers for every new LLM project.",
+      desc: "Lengthy prototyping delays and reinventing pipeline wrappers for every new LLM project without standardized architectures.",
       icon: AlertTriangle,
       tag: "Time Sink"
     },
     {
-      title: "Disconnected Knowledge Sources",
-      desc: "Siloed enterprise documents, databases, and unstructured data unable to feed AI applications.",
+      title: "Disconnected Data Silos",
+      desc: "Siloed enterprise documents, databases, and unstructured data unable to reliably feed AI applications with freshness.",
       icon: Database,
       tag: "Data Silos"
     },
     {
-      title: "Poor Prompt Management",
-      desc: "Hardcoded system prompts causing unpredictable model responses and unmaintained versions.",
-      icon: FileCode,
-      tag: "Prompt Drift"
-    },
-    {
-      title: "Hallucination Risks",
-      desc: "Factual inaccuracies and ungrounded model outputs eroding user trust in production.",
+      title: "Hallucination & Accuracy Risks",
+      desc: "Factual inaccuracies and ungrounded model outputs eroding user trust and threatening compliance in production systems.",
       icon: RefreshCw,
       tag: "Inaccuracy"
     },
     {
-      title: "Complex Model Integration",
-      desc: "Vendor lock-in and friction when switching between OpenAI, Anthropic, Gemini, and open-source LLMs.",
+      title: "Prompt Chaos & Version Drift",
+      desc: "Hardcoded system prompts causing unpredictable model responses, zero version control, and regression blind spots.",
+      icon: FileCode,
+      tag: "Prompt Drift"
+    },
+    {
+      title: "LLM Vendor Lock-In",
+      desc: "Friction when migrating between OpenAI, Anthropic, Gemini, and open-source models without an abstraction router.",
       icon: Network,
-      tag: "Vendor Lock-In"
+      tag: "Vendor Sprawl"
     },
     {
-      title: "Security & Privacy Concerns",
-      desc: "Risk of PII leakage to external APIs, prompt injection attacks, and unencrypted vector indices.",
-      icon: Shield,
-      tag: "Vulnerability"
+      title: "Data Privacy & PII Leakage",
+      desc: "Risk of clear-text sensitive customer data leaking into external LLM training pools and unencrypted vector indices.",
+      icon: ShieldAlert,
+      tag: "Privacy Risk"
     },
     {
-      title: "Lack of Governance",
-      desc: "Missing audit trails, token cost tracking, rate limits, and model drift telemetry.",
-      icon: Sliders,
-      tag: "Compliance Risk"
-    },
-    {
-      title: "High Infrastructure Costs",
-      desc: "Excessive LLM token bills caused by un-cached repetitive queries and un-optimized model routing.",
+      title: "Excessive Token & Compute Costs",
+      desc: "Soaring monthly API bills caused by uncached repetitive queries, unoptimized context windows, and large models for simple tasks.",
       icon: BarChart3,
-      tag: "High Spend"
+      tag: "Cost Overrun"
+    },
+    {
+      title: "Missing Auditability & Compliance",
+      desc: "Zero visibility into prompt lineage, model latency, token consumption, and regulatory alignment with EU AI Act & SOC 2.",
+      icon: Sliders,
+      tag: "Governance Gap"
     }
   ];
 
-  // 2. Core AI Components Grid
-  const coreAIComponents = [
-    { title: "Prompt Management", desc: "Version-controlled prompt registry & dynamic template injection.", icon: FileCode, connects: "Prompt Engine" },
-    { title: "AI Gateway", desc: "Reverse proxy with semantic caching, rate limiting, and model failover.", icon: Network, connects: "API Gateway" },
-    { title: "Vector Database", desc: "High-performance similarity search across high-dimensional embeddings.", icon: Database, connects: "Knowledge Base" },
-    { title: "AI Agents", desc: "Autonomous reasoning loops capable of goal decomposition & execution.", icon: Bot, connects: "Agent Engine" },
-    { title: "RAG Engine", desc: "Hybrid dense-sparse retrieval combining vector similarity with BM25 keyword search.", icon: FileSearch, connects: "RAG Core" },
-    { title: "Conversation Memory", desc: "Multi-turn state persistence with sliding-window summary buffers.", icon: MessageSquare, connects: "Memory" },
-    { title: "Tool Calling", desc: "Secure function calling interfaces enabling LLMs to execute APIs & SQL queries.", icon: Code, connects: "Executors" },
-    { title: "Workflow Automation", desc: "Stateful multi-agent graph execution using LangGraph and CrewAI patterns.", icon: Workflow, connects: "Workflows" },
-    { title: "Model Routing", desc: "Dynamic LLM cost/latency routing targeting optimal model providers.", icon: Cpu, connects: "LLM Router" },
-    { title: "AI Analytics", desc: "Real-time token usage telemetry, cost tracking, and response latency profiling.", icon: BarChart3, connects: "Telemetry" }
-  ];
-
-  // 3. AI Architecture Layers
+  // 2. Framework Architecture Layers (6 Layers)
   const architectureLayers = [
     {
-      id: "apps",
+      id: "apps_ui",
       name: "Applications & Interfaces",
       icon: Briefcase,
-      color: "from-blue-500 to-cyan-500",
-      desc: "User-facing Web Apps, Mobile UI, Enterprise Search Portals, and REST/GraphQL APIs.",
-      components: ["Web App", "Mobile UI", "Slack / Teams Bot", "Customer Support Portal"]
+      desc: "User-facing conversational web applications, mobile interfaces, Slack/Teams bots, and REST/GraphQL AI endpoints.",
+      components: ["Enterprise Chatbot UI", "Slack & Teams Bots", "Customer Support Portals", "REST & GraphQL APIs"]
     },
     {
-      id: "gateway",
-      name: "AI API Gateway",
+      id: "ai_gateway",
+      name: "Enterprise AI Gateway",
       icon: Network,
-      color: "from-rose-500 to-red-600",
-      desc: "Enterprise reverse proxy handling PII scrubbing, rate limiting, semantic caching, and JWT auth.",
-      components: ["PII Scrubbing", "Semantic Cache", "Token Throttling", "Provider Failover"]
+      desc: "Centralized reverse proxy handling automated PII scrubbing, rate limiting, semantic caching, and provider failover.",
+      components: ["Automated PII Masking", "Semantic Redis Cache", "Sliding-Window Throttling", "Dynamic Provider Failover"]
     },
     {
-      id: "orchestration",
-      name: "Orchestration Engine",
+      id: "agent_orchestration",
+      name: "Agent Orchestration",
       icon: BrainCircuit,
-      color: "from-purple-500 to-indigo-600",
-      desc: "Prompt registry, stateful conversation memory, tool execution, and multi-agent coordination.",
-      components: ["Prompt Engine", "Agent State Machine", "Tool Calling Executor", "Memory Buffer"]
+      desc: "Stateful agent reasoning loops, multi-agent graph swarms, tool calling execution, and persistent memory buffers.",
+      components: ["LangGraph State Machines", "Sandboxed Tool Calling", "Sliding Conversation Memory", "Autonomous Goal Decomposition"]
     },
     {
-      id: "models",
-      name: "LLM Router & Models",
+      id: "llm_router",
+      name: "Multi-Model LLM Router",
       icon: Cpu,
-      color: "from-amber-500 to-orange-600",
-      desc: "Abstracted multi-model layer supporting OpenAI, Anthropic, Gemini, Llama, and private models.",
-      components: ["OpenAI GPT-4", "Claude 3.5 Sonnet", "Google Gemini", "Private Llama 3"]
+      desc: "Dynamic routing layer intelligently directing queries across OpenAI, Claude, Gemini, and self-hosted open-weights LLMs.",
+      components: ["OpenAI GPT-4o & o1", "Anthropic Claude 3.5", "Google Gemini 1.5", "Self-Hosted Llama 3.1"]
     },
     {
-      id: "knowledge",
-      name: "Vector Search & Knowledge",
+      id: "vector_knowledge",
+      name: "Vector Knowledge & RAG",
       icon: Database,
-      color: "from-emerald-500 to-teal-600",
-      desc: "Vector databases, document chunking pipelines, and enterprise data connectors.",
-      components: ["Qdrant / Pinecone", "Hybrid BM25 + Dense", "Document Chunking", "Enterprise Connectors"]
+      desc: "High-dimensional embedding storage, dense-sparse hybrid search indices, and automated document ingestion pipelines.",
+      components: ["Qdrant & Pinecone Stores", "Hybrid BM25 + Dense Search", "Cross-Encoder Re-Ranking", "Semantic Document Chunking"]
+    },
+    {
+      id: "mlops_telemetry",
+      name: "MLOps & Governance",
+      icon: ShieldCheck,
+      desc: "Continuous model evaluation, token cost telemetry, hallucination guardrails, and EU AI Act audit logging.",
+      components: ["RAGAS Evaluation Suites", "NeMo Safety Guardrails", "Token & Cost Telemetry", "SOC 2 & Audit Logs"]
     }
   ];
 
-  // 4. AI Development Lifecycle Stages
-  const aiLifecycleStages = [
-    { step: 1, name: "Business Problem", short: "Define Scope", icon: Briefcase, desc: "Identify target enterprise AI use case, success KPIs, and data privacy constraints.", snippet: "# Step 1: Use Case Discovery\nTarget: Tier-1 Support Automation\nGoal: >85% Resolution | PII Masking: Strict" },
-    { step: 2, name: "Data Collection", short: "Ingest Data", icon: HardDrive, desc: "Aggregate internal documents, FAQs, Confluence pages, and database tables.", snippet: "ingest_docs(source=['confluence', 'sharepoint', 'pdf_vault'], format='pdf/md/json')" },
-    { step: 3, name: "Prompt Engineering", short: "System Prompts", icon: FileCode, desc: "Craft and test version-controlled system prompts with dynamic parameter templates.", snippet: "prompt_registry.get('support_agent_v2.4', variables={'user_tier': 'Enterprise'})" },
-    { step: 4, name: "Knowledge Indexing", short: "Vector Embed", icon: Database, desc: "Chunk documents semantically and generate embeddings into high-speed vector stores.", snippet: "vector_db.upsert(chunks=chunk_text(docs), embedding_model='text-embedding-3-large')" },
-    { step: 5, name: "Model Integration", short: "LLM Routing", icon: Cpu, desc: "Configure dynamic model routing between OpenAI, Claude, Gemini, and private open-source LLMs.", snippet: "llm_router.route(query, priority='low_cost', fallback='gpt-4o')" },
-    { step: 6, name: "Application Dev", short: "Agent Logic", icon: Bot, desc: "Build agentic reasoning loops and tool-calling interfaces using LangGraph / LlamaIndex.", snippet: "agent = Agent(role='Support Specialist', tools=[sql_query, crm_update, email_sender])" },
-    { step: 7, name: "Testing & Eval", short: "RAGAS Metrics", icon: CheckCircle2, desc: "Run RAGAS evaluation suites measuring Faithfulness, Answer Relevance, and Context Recall.", snippet: "eval_results = ragas.evaluate(test_dataset, metrics=['faithfulness', 'answer_relevance'])" },
-    { step: 8, name: "Deployment", short: "CI/CD MLOps", icon: Rocket, desc: "Deploy containerized AI microservices to Kubernetes with auto-scaling & semantic cache.", snippet: "kubectl apply -f k8s/ai-gateway.yaml -> Status: Pods Running [4/4]" },
-    { step: 9, name: "Continuous Learning", short: "Drift Telemetry", icon: Activity, desc: "Monitor token spending, latency, user feedback scores, and fine-tuning datasets.", snippet: "telemetry.log_metrics(prompt_tokens=420, completion_tokens=180, latency=420ms)" }
+  // 3. Core AI Components (10 Cards - 5 col grid)
+  const coreAIComponents = [
+    { title: "Prompt Registry", desc: "Version-controlled prompt templates with dynamic parameter injection.", icon: FileCode, connects: "Prompt Engine" },
+    { title: "AI Reverse Gateway", desc: "Reverse proxy with semantic caching, rate limiting, and model failover.", icon: Network, connects: "API Gateway" },
+    { title: "Vector Knowledge DB", desc: "High-speed similarity search across high-dimensional vector embeddings.", icon: Database, connects: "Knowledge Base" },
+    { title: "Autonomous Agents", desc: "Goal decomposition loops executing multi-step reasoning autonomously.", icon: Bot, connects: "Agent Engine" },
+    { title: "Hybrid RAG Pipeline", desc: "Dense vector retrieval coupled with BM25 sparse keyword matching.", icon: FileSearch, connects: "RAG Core" },
+    { title: "Conversation Memory", desc: "Multi-turn state persistence with sliding-window summary buffers.", icon: MessageSquare, connects: "Memory State" },
+    { title: "Tool & API Execution", desc: "Sandboxed function calling enabling LLMs to run SQL, REST, and tools.", icon: Code, connects: "Executors" },
+    { title: "Multi-Agent Workflows", desc: "Cyclic state graph orchestration using LangGraph and CrewAI patterns.", icon: Workflow, connects: "LangGraph" },
+    { title: "Dynamic LLM Router", desc: "Cost and latency routing targeting the optimal foundation model provider.", icon: Cpu, connects: "LLM Router" },
+    { title: "AI Telemetry & MLOps", desc: "Real-time token analytics, hallucination tracking, and latency metrics.", icon: BarChart3, connects: "Observability" }
   ];
 
-  // 5. RAG & Knowledge Search Cards
-  const ragCapabilities = [
-    { title: "Document Indexing", desc: "Automated document ingestion pipelines for PDFs, Word, Markdown, and HTML.", icon: FileText },
-    { title: "PDF Search", desc: "OCR and visual layout parsing for complex PDF tables, diagrams, and scanned files.", icon: Search },
-    { title: "Semantic Search", desc: "Dense vector similarity matching understanding user intent beyond exact keywords.", icon: BrainCircuit },
-    { title: "Vector Embeddings", desc: "High-dimensional embedding generation with OpenAI, Cohere, and HuggingFace models.", icon: Database },
-    { title: "Knowledge Graph", desc: "Graph RAG combining relational entity linkages with vector similarity search.", icon: Network },
-    { title: "Context Injection", desc: "Dynamic prompt augmentation injecting ranked knowledge chunks into context windows.", icon: Code },
-    { title: "Citation Support", desc: "Traceable responses providing page-level citations and source document links.", icon: ExternalLink },
-    { title: "Multi-Source Retrieval", desc: "Unified query engine searching SharePoint, Confluence, Jira, and SQL databases.", icon: Layers }
+  // 4. Enterprise RAG & Knowledge Grounding Flow & Cards (Section 6)
+  const ragFlow = [
+    { step: "Enterprise Docs", icon: FileText, sub: "PDFs, SharePoint, SQL" },
+    { step: "Semantic Chunking", icon: FileCode, sub: "Layout-Aware Parsing" },
+    { step: "Vector Knowledge DB", icon: Database, sub: "Qdrant / Pinecone" },
+    { step: "Retriever & Re-Ranker", icon: Search, sub: "Cross-Encoder Score" },
+    { step: "Grounded LLM Response", icon: CheckCircle2, sub: "Verifiable Citations" }
   ];
 
-  // 6. AI Agent Gallery Cards
-  const aiAgentsGallery = [
-    {
-      title: "Customer Support Agent",
-      role: "Tier-1 Support Automation",
-      desc: "Resolves tickets autonomously by searching resolved tickets, KB articles, and drafting accurate responses.",
-      tools: ["Zendesk API", "Vector RAG", "Email Sender"],
-      icon: MessageSquare,
-      badge: "Customer Success"
-    },
-    {
-      title: "HR Assistant Agent",
-      role: "Employee Self-Service",
-      desc: "Answers policy questions, handbook queries, and guides new hires through onboarding tasks.",
-      tools: ["Employee Handbook", "Workday API", "Leave Balance"],
-      icon: Users,
-      badge: "Human Resources"
-    },
-    {
-      title: "Sales Assistant Agent",
-      role: "Lead Qualification & CRM",
-      desc: "Qualifies inbound leads, researches prospect companies, and updates CRM pipeline records.",
-      tools: ["Salesforce API", "Web Search", "Email Draft"],
-      icon: Briefcase,
-      badge: "Sales Ops"
-    },
-    {
-      title: "IT Operations Agent",
-      role: "Log Triage & Incident Response",
-      desc: "Parses system logs, correlates error stack traces, and triggers initial remediation playbooks.",
-      tools: ["Datadog API", "Kubectl", "PagerDuty"],
-      icon: Activity,
-      badge: "DevOps & SRE"
-    },
-    {
-      title: "Finance Assistant Agent",
-      role: "Invoice & Expense Auditing",
-      desc: "Extracts line items from PDF invoices, checks compliance rules, and flags budget anomalies.",
-      tools: ["OCR Engine", "ERP Connector", "Anomaly Model"],
-      icon: BarChart3,
-      badge: "Finance"
-    },
-    {
-      title: "Document Processing Agent",
-      role: "Contract Intelligence",
-      desc: "Parses legal contracts, extracts key clauses, indemnities, and alerts teams to renewal dates.",
-      tools: ["PDF Parser", "Entity Extractor", "Clause Index"],
-      icon: FileSearch,
-      badge: "Legal"
-    },
-    {
-      title: "Workflow Agent",
-      role: "Multi-Step API Orchestration",
-      desc: "Executes complex multi-system workflows based on natural language instructions.",
-      tools: ["Zapier / Webhooks", "REST Executor", "State Machine"],
-      icon: Workflow,
-      badge: "Automation"
-    },
-    {
-      title: "Multi-Agent Swarm",
-      role: "Specialized Agent Team",
-      desc: "Collaborative agent swarms where researcher, writer, and reviewer agents complete complex tasks.",
-      tools: ["LangGraph State", "CrewAI", "Shared Memory"],
-      icon: Bot,
-      badge: "Multi-Agent"
-    }
+  const ragCards = [
+    { title: "Dense-Sparse Hybrid Search", desc: "Combines dense semantic vector embeddings with BM25 sparse keyword search for top-tier retrieval precision." },
+    { title: "GraphRAG Entity Linkage", desc: "Builds dynamic knowledge graph entity linkages on top of vector similarity to capture cross-document relationships." },
+    { title: "Cross-Encoder Re-Ranking", desc: "Applies Cohere and BGE re-rankers on retrieved knowledge chunks, filtering noise and boosting context relevance by 40%." },
+    { title: "Verifiable Page-Level Citations", desc: "Every generated claim is grounded with direct clickable links to source documents, paragraph numbers, and original PDFs." },
+    { title: "Layout-Aware Parsing", desc: "Advanced document processing preserving tables, markdown headers, and multi-column layouts across complex PDF reports." },
+    { title: "Multi-Source Ingestion", desc: "Automated connectors syncing content in real-time from SharePoint, Confluence, Google Drive, Jira, and enterprise databases." },
+    { title: "Sliding-Window Token Budgets", desc: "Dynamically manages context window limits with semantic summarization, fitting critical knowledge into LLM prompts." },
+    { title: "RAGAS Automated Evaluation", desc: "Automated testing measuring Faithfulness, Answer Relevance, and Context Recall to continuously prevent hallucinations." }
   ];
 
-  // 7. Model Integration Provider Cards
-  const modelProviders = [
-    { name: "OpenAI", models: "GPT-4.1, GPT-4o, GPT-3.5 Turbo", desc: "Leading frontier models for complex reasoning, vision, and function calling.", icon: Sparkles },
-    { name: "Anthropic", models: "Claude 3.5 Sonnet, Claude 3 Opus", desc: "High-precision LLMs known for long context windows and coding capabilities.", icon: Cpu },
-    { name: "Google", models: "Gemini 1.5 Pro, Gemini Flash", desc: "Multimodal models with massive 2M token context windows on Vertex AI.", icon: Cloud },
-    { name: "Meta", models: "Llama 3.1 405B, Llama 3 70B", desc: "Open-weights state-of-the-art LLMs for private, self-hosted enterprise deployments.", icon: Boxes },
-    { name: "Microsoft", models: "Azure OpenAI Service, Phi-3", desc: "Enterprise SLA cloud OpenAI models backed by Azure security & compliance.", icon: Shield },
-    { name: "Mistral AI", models: "Mistral Large, Mixtral 8x22B", desc: "High-efficiency European open-weights and proprietary models.", icon: Zap },
-    { name: "DeepSeek", models: "DeepSeek-V2, DeepSeek-Coder", desc: "Ultra-fast code generation and mathematical reasoning LLMs.", icon: Code },
-    { name: "Custom Models", models: "Private LLMs (vLLM / TGI)", desc: "Fine-tuned domain-specific models hosted inside your own Kubernetes cluster.", icon: Server }
+  // 5. Autonomous AI Agents & Workflows (Section 7 - 8 Cards)
+  const agentCards = [
+    { title: "Goal Decomposition", desc: "Recursively breaks down ambiguous enterprise business objectives into deterministic, executable sub-tasks.", icon: Workflow },
+    { title: "Multi-Agent Swarms", desc: "Collaborative agent swarms where researcher, writer, validator, and executor agents collaborate toward unified outcomes.", icon: Bot },
+    { title: "Sandboxed Tool Calling", desc: "Secure function calling allowing models to query relational databases, invoke REST APIs, and run scripts in isolated sandboxes.", icon: Code },
+    { title: "Self-Correction & Reflection", desc: "Autonomous critique loops reviewing generated draft outputs against business rules before responding to users.", icon: RefreshCw },
+    { title: "Stateful Conversation Memory", desc: "Persistent vector-backed long-term episodic memory alongside short-term dialogue context across sessions.", icon: MessageSquare },
+    { title: "Human-in-the-Loop Gates", desc: "Configurable approval checkpoints requiring human authorization before executing financial or high-risk actions.", icon: UserCheck },
+    { title: "LangGraph State Machines", desc: "Deterministic cyclic graph orchestration with state checkpointing, error recovery, and conditional branching.", icon: Layers },
+    { title: "Agent Observability & Tracing", desc: "Step-by-step reasoning trace logging using OpenTelemetry and Langfuse to inspect token usage and tool call arguments.", icon: Activity }
   ];
 
-  // 8. MLOps & Deployment Cards
-  const mlOpsCapabilities = [
-    { title: "Model Registry", desc: "Centralized catalog for versioned prompts, embeddings, and fine-tuned weights.", icon: Database },
-    { title: "Versioning", desc: "Immutable version tags for prompt templates and RAG retrieval pipelines.", icon: GitBranch },
-    { title: "CI/CD for AI", desc: "Automated regression testing and evaluation pipelines triggered on PRs.", icon: Workflow },
-    { title: "Monitoring", desc: "Real-time latency, token spending, semantic drift, and hallucination tracking.", icon: Activity },
-    { title: "Auto Scaling", desc: "Kubernetes pod autoscaling for vLLM and AI gateway microservices.", icon: Container },
-    { title: "Canary Deployment", desc: "Safe progressive traffic splitting between model versions (e.g. GPT-4 vs Claude).", icon: RefreshCw }
+  // 6. Multi-Model Orchestration & LLM Routing (Section 8 - 8 Cards)
+  const modelRoutingCards = [
+    { title: "OpenAI Frontier Models", desc: "Native integration with GPT-4o, GPT-4.1, and o1 reasoning models for complex logic, vision, and function execution.", icon: Sparkles },
+    { title: "Anthropic Claude 3.5", desc: "Claude 3.5 Sonnet and Opus integrations excelling in long-context analysis (200k tokens) and high-accuracy code generation.", icon: Cpu },
+    { title: "Google Gemini on Vertex AI", desc: "Gemini 1.5 Pro multimodal processing featuring massive 2M token context windows for full-codebase and video analysis.", icon: Cloud },
+    { title: "Meta Llama 3 Open Weights", desc: "Deployment of Llama 3.1 70B and 405B models within your private VPC Kubernetes clusters for 100% data sovereignty.", icon: Boxes },
+    { title: "Cost & Latency Routing", desc: "Intelligent query classification routing simple queries to ultra-fast lightweight models and difficult queries to frontier LLMs.", icon: Sliders },
+    { title: "Automated Provider Failover", desc: "Zero-downtime health checking instantly redirecting incoming requests to secondary providers if a primary API degrades.", icon: Network },
+    { title: "Semantic Redis Caching", desc: "Caches semantically equivalent prompt responses in Redis, fulfilling recurring questions in < 50ms at zero token cost.", icon: Database },
+    { title: "Private Domain Fine-Tuning", desc: "Support for domain-specific fine-tuned models using LoRA and QLoRA deployed on vLLM and TensorRT-LLM runtimes.", icon: Server }
   ];
 
-  // 9. Security & Responsible AI Cards
-  const securityCapabilities = [
-    { title: "Prompt Security", desc: "Multi-layer prompt injection detection and input sanitization.", icon: ShieldCheck },
-    { title: "Data Privacy", desc: "Automated PII scrubbing stripping sensitive data before API calls leave VPC.", icon: Lock },
-    { title: "Access Control", desc: "Role-based access control (RBAC) governing vector index spaces.", icon: Key },
-    { title: "Responsible AI", desc: "Bias evaluation, toxicity filters, and alignment guardrails.", icon: Sparkle },
-    { title: "Guardrails", desc: "NeMo Guardrails & Llama Guard output validation layers.", icon: Sliders },
-    { title: "Content Moderation", desc: "Safety filters blocking inappropriate or non-compliant queries.", icon: Eye },
-    { title: "Audit Logs", desc: "Full audit trail of every LLM query, prompt template, and response payload.", icon: FileText },
-    { title: "Compliance", desc: "Built-in guardrails aligning with EU AI Act, SOC 2, HIPAA, and ISO 27001.", icon: CheckCircle2 }
+  // 7. Enterprise AI Gateway & Security (Section 9 - 8 Cards)
+  const gatewaySecCards = [
+    { title: "Automated PII Redaction", desc: "High-speed regex and NER masking stripping customer credit cards, emails, and personal identifiers before payloads leave VPC.", icon: Lock },
+    { title: "Prompt Injection Defense", desc: "Multi-layer heuristic and embedding classifiers detecting adversarial jailbreak attempts, system prompt leaks, and delimiter attacks.", icon: ShieldAlert },
+    { title: "Token Rate Limiting", desc: "Granular tenant-based quotas, concurrency throttles, and sliding-window rate limiters preventing runaway API expenditure.", icon: BarChart3 },
+    { title: "Output Safety Guardrails", desc: "NeMo Guardrails and Llama Guard filtering toxic content, unauthorized financial advice, and brand-inconsistent responses.", icon: ShieldCheck },
+    { title: "Role-Based Access Control", desc: "Enterprise RBAC governing which departments, users, and microservices have authorization to query specific model endpoints.", icon: Key },
+    { title: "Enterprise Identity & Auth", desc: "Standardized OAuth 2.0 and JWT token authentication integrating seamlessly with Microsoft Entra ID and Okta.", icon: Fingerprint },
+    { title: "Audit Logging & Archiving", desc: "Immutable audit logs capturing user IDs, prompt versions, retrieved document IDs, token counts, and full response payloads.", icon: FileCheck },
+    { title: "Private VNet & Transit Gateways", desc: "Private Link connectivity to Azure OpenAI and AWS Bedrock ensuring prompt payloads never traverse the public internet.", icon: Globe }
   ];
 
-  // 10. Technology Stack Categorized Cards
+  // 8. Data Pipelines & Vector Storage (Section 10 - 8 Cards)
+  const vectorStorageCards = [
+    { title: "Qdrant Vector Engine", desc: "Rust-native vector database delivering sub-millisecond similarity search with rich payload metadata filtering.", icon: Database },
+    { title: "Pinecone Serverless", desc: "Fully managed serverless vector index with automatic scaling, high availability, and zero operational management overhead.", icon: Server },
+    { title: "Milvus Distributed Cluster", desc: "Cloud-native distributed vector database architected for massive multi-billion vector search workloads.", icon: HardDrive },
+    { title: "PostgreSQL pgvector", desc: "Unifying relational transactional tables with high-dimensional vector embeddings inside enterprise Postgres databases.", icon: Database },
+    { title: "Azure AI Search", desc: "Enterprise cognitive search platform integrating semantic re-ranking, BM25 keyword matching, and vector indices.", icon: Cloud },
+    { title: "Document OCR & Extraction", desc: "Vision-based multi-modal document extraction processing tables, scanned invoices, diagrams, and complex financial PDFs.", icon: FileText },
+    { title: "Asynchronous CDC Sync", desc: "Change Data Capture (CDC) streaming pipelines re-indexing vector embeddings immediately upon document modifications.", icon: RefreshCw },
+    { title: "Encrypted Vector Indices", desc: "AES-256 encryption at rest and customer-managed KMS key rotation protecting sensitive vector knowledge stores.", icon: Lock }
+  ];
+
+  // 9. AI Governance & Responsible AI (Section 11 - 8 Cards)
+  const governanceCards = [
+    { title: "EU AI Act Alignment", desc: "Built-in risk classification, technical documentation generation, and transparency guardrails adhering to EU AI regulations.", icon: FileCheck },
+    { title: "SOC 2 Type II Readiness", desc: "Continuous security control telemetry, least-privilege key management, and complete data lifecycle audit readiness.", icon: ShieldCheck },
+    { title: "HIPAA Compliant Workloads", desc: "BAA-backed cloud deployments with encrypted transit, zero external data retention, and strict ePHI masking controls.", icon: BookOpen },
+    { title: "Bias & Fairness Auditing", desc: "Continuous monitoring for algorithmic bias, toxic speech, and demographic skew in enterprise model responses.", icon: CheckCircle2 },
+    { title: "Deterministic Fact Checking", desc: "Automated verification layer validating model assertions against retrieved ground truth documents to stop hallucinations.", icon: Search },
+    { title: "Model Drift Telemetry", desc: "Real-time alerts triggered when user prompt distributions or model response distributions deviate from operational baselines.", icon: Activity },
+    { title: "IP & Copyright Protection", desc: "Filters blocking verbatim ingestion of copyrighted proprietary source code and intellectual property.", icon: Shield },
+    { title: "Policy as Code (OPA)", desc: "Open Policy Agent guardrails enforcing enterprise AI usage policies declaratively at the gateway boundary.", icon: Sliders }
+  ];
+
+  // 10. AI Development & MLOps Pipeline (Section 12 - 9 Steps with Code Snippets)
+  const aiPipelineSteps = [
+    { step: 1, name: "Problem Discovery", short: "Discovery", icon: Briefcase, desc: "Identify target enterprise AI use case, business KPIs, user personas, and data privacy boundaries.", snippet: "# Step 1: Enterprise AI Use Case Definition\nUseCase: Tier-1 Customer Support Automation\nTarget_KPI: >88% First-Contact Resolution\nPII_Policy: Strict Redaction (PCI-DSS & GDPR)" },
+    { step: 2, name: "Data Ingestion", short: "Ingest", icon: HardDrive, desc: "Connect enterprise data silos across SharePoint, Confluence, Notion, and SQL databases via secure connectors.", snippet: "data_connector = EnterpriseIngestionPipeline(\n    sources=['sharepoint_hr', 'confluence_kb', 'zendesk_tickets'],\n    sync_mode='incremental_cdc'\n)\ndocs = data_connector.extract_and_clean()" },
+    { step: 3, name: "Prompt Engineering", short: "Prompts", icon: FileCode, desc: "Develop and test version-controlled system prompts with dynamic parameter templates and few-shot examples.", snippet: "prompt = prompt_registry.get(\n    name='customer_support_system',\n    version='v2.4',\n    parameters={'domain': 'Fintech', 'tone': 'Professional'}\n)" },
+    { step: 4, name: "Vector Indexing", short: "Embeddings", icon: Database, desc: "Chunk documents semantically and generate dense vector embeddings stored in high-performance indices.", snippet: "chunks = semantic_chunker.split(docs, chunk_size=512, overlap=64)\nvector_store.upsert(\n    vectors=embedding_model.encode(chunks),\n    metadata=chunks.metadata\n)" },
+    { step: 5, name: "LLM Routing", short: "Router", icon: Cpu, desc: "Configure dynamic model routing between OpenAI, Claude, Gemini, and private open-weights LLMs.", snippet: "router = DynamicLLMRouter(\n    priority='cost_and_latency',\n    fast_model='claude-3-5-haiku',\n    reasoning_model='gpt-4o',\n    fallback='gemini-1.5-pro'\n)\nclient = router.resolve(user_query)" },
+    { step: 6, name: "Agent Execution", short: "Agent Logic", icon: Bot, desc: "Build stateful multi-agent reasoning graphs and sandboxed tool-calling workflows using LangGraph.", snippet: "agent_graph = StateGraph(SupportAgentState)\nagent_graph.add_node('retrieve_kb', rag_retriever)\nagent_graph.add_node('verify_crm', crm_tool)\nagent_graph.add_node('draft_reply', llm_drafter)\nworkflow = agent_graph.compile()" },
+    { step: 7, name: "Testing & Eval", short: "Eval Suite", icon: CheckCircle2, desc: "Execute automated RAGAS regression tests verifying Faithfulness, Context Recall, and Answer Relevance.", snippet: "eval_suite = RagasEvaluator(test_dataset)\nresults = eval_suite.evaluate(metrics=['faithfulness', 'context_recall'])\nassert results['faithfulness'] >= 0.95, 'Hallucination threshold breached!'" },
+    { step: 8, name: "CI/CD Deployment", short: "CI/CD Deploy", icon: Zap, desc: "Containerize microservices and deploy to Kubernetes clusters with semantic caching and horizontal pod autoscaling.", snippet: "kubectl apply -f k8s/ai-gateway-deployment.yaml\nkubectl apply -f k8s/semantic-cache-redis.yaml\n# Status: 8/8 Pods Running | Health Check: PASSED" },
+    { step: 9, name: "MLOps Telemetry", short: "Telemetry", icon: Activity, desc: "Continuously monitor token usage, latency, semantic drift, user feedback scores, and fine-tuning datasets.", snippet: "telemetry.log_event(\n    prompt_tokens=340, completion_tokens=120,\n    cache_hit=True, latency_ms=42,\n    model='gpt-4o', guardrail_status='CLEAN'\n)" }
+  ];
+
+  // 11. Technology Stack Data (Section 13)
   const techStackData = {
     "AI Frameworks": [
-      { name: "LangChain", desc: "Chaining LLMs, memory, and vector stores for application development.", icon: Workflow },
-      { name: "LlamaIndex", desc: "Data framework for connecting private data sources to LLMs.", icon: FileSearch },
-      { name: "Semantic Kernel", desc: "Microsoft SDK integrating conventional programming with AI prompts.", icon: Code },
-      { name: "Haystack", desc: "End-to-end framework for building custom NLP and RAG search pipelines.", icon: Search }
+      { name: "LangChain", desc: "Composable SDK for chaining LLMs, vector retrievers, and prompt templates.", icon: Workflow },
+      { name: "LlamaIndex", desc: "Data framework specialized in connecting private enterprise datasets to LLMs.", icon: FileSearch },
+      { name: "LangGraph", desc: "Cyclic multi-agent state graph orchestration for complex workflows.", icon: Layers },
+      { name: "Semantic Kernel", desc: "Enterprise SDK integrating traditional programming languages with AI models.", icon: Code }
     ],
-    "Models": [
-      { name: "OpenAI GPT-4", desc: "Frontier reasoning & function calling model.", icon: Sparkles },
-      { name: "Anthropic Claude", desc: "Long context window and complex coding LLM.", icon: Cpu },
-      { name: "Google Gemini", desc: "Multimodal 2M token context window model.", icon: Cloud },
-      { name: "Meta Llama 3", desc: "Open-source 405B state-of-the-art model.", icon: Boxes },
-      { name: "Mistral AI", desc: "High-performance open weights models.", icon: Zap }
+    "Foundation Models": [
+      { name: "OpenAI GPT-4o", desc: "Frontier reasoning model with native multimodal vision and function calling.", icon: Sparkles },
+      { name: "Anthropic Claude 3.5", desc: "Benchmark-leading coding and analytical model with 200k context window.", icon: Cpu },
+      { name: "Google Gemini 1.5", desc: "Multimodal 2M token context window model hosted on Google Cloud Vertex AI.", icon: Cloud },
+      { name: "Meta Llama 3.1", desc: "State-of-the-art open-weights model for private self-hosted Kubernetes setups.", icon: Boxes },
+      { name: "Mistral AI Large", desc: "High-efficiency European models delivering exceptional reasoning speed.", icon: Zap }
     ],
     "Vector Databases": [
-      { name: "Qdrant", desc: "High-performance vector search engine with payload filtering.", icon: Database },
-      { name: "Pinecone", desc: "Fully managed cloud vector database for enterprise scale.", icon: Server },
-      { name: "Weaviate", desc: "Open-source vector search engine with hybrid search.", icon: Layers },
-      { name: "Milvus", desc: "Cloud-native vector database built for massive embedding scale.", icon: HardDrive },
-      { name: "Azure AI Search", desc: "Enterprise hybrid search engine with integrated vector indexing.", icon: Cloud }
+      { name: "Qdrant", desc: "High-performance Rust vector database with payload filtering and vector indexing.", icon: Database },
+      { name: "Pinecone", desc: "Fully managed serverless vector database engineered for enterprise scale.", icon: Server },
+      { name: "Weaviate", desc: "Cloud-native open-source vector search engine with integrated hybrid search.", icon: Layers },
+      { name: "Milvus", desc: "Distributed vector database built for massive multi-billion embedding datasets.", icon: HardDrive },
+      { name: "Azure AI Search", desc: "Microsoft enterprise search combining vector indexing and semantic re-ranking.", icon: Cloud }
     ],
-    "Backend": [
-      { name: "Python", desc: "Core language for AI models, PyTorch, and Data Science.", icon: Code },
-      { name: "FastAPI", desc: "High-performance asynchronous Python API framework.", icon: Zap },
-      { name: "Node.js", desc: "Asynchronous JavaScript runtime for AI frontend web apps.", icon: Terminal }
+    "MLOps & Eval": [
+      { name: "Ragas", desc: "Framework for reference-free evaluation of Retrieval-Augmented Generation.", icon: CheckCircle2 },
+      { name: "Langfuse", desc: "Open-source LLM engineering platform for tracing, evals, and prompt management.", icon: Activity },
+      { name: "NeMo Guardrails", desc: "NVIDIA safety toolkit adding programmable operational guardrails to LLMs.", icon: ShieldCheck },
+      { name: "Weights & Biases", desc: "ML developer platform for experiment tracking and model registry management.", icon: BarChart3 }
     ],
-    "Databases": [
-      { name: "PostgreSQL", desc: "Relational database with pgvector vector similarity extension.", icon: Database },
-      { name: "MongoDB", desc: "Document database with Vector Search capability.", icon: HardDrive },
-      { name: "Redis", desc: "In-memory database used for semantic caching & session state.", icon: RefreshCw }
+    "Cloud & Compute": [
+      { name: "Azure AI Foundry", desc: "Unified enterprise hub for deploying, fine-tuning, and monitoring models.", icon: Cloud },
+      { name: "Azure OpenAI", desc: "Secure enterprise OpenAI instance backed by Azure enterprise compliance.", icon: Shield },
+      { name: "AWS Bedrock", desc: "Fully managed access to foundation models with enterprise VPC security.", icon: Server },
+      { name: "Google Vertex AI", desc: "Google Cloud ML platform for Gemini deployment and custom model tuning.", icon: Cpu }
     ],
-    "Cloud": [
-      { name: "Azure AI Foundry", desc: "Unified enterprise platform for building & managing AI apps.", icon: Cloud },
-      { name: "Azure OpenAI", desc: "Secure enterprise OpenAI instance on Azure.", icon: Shield },
-      { name: "AWS Bedrock", desc: "Fully managed foundation models from leading AI startups.", icon: Server },
-      { name: "Google Vertex AI", desc: "Google Cloud ML platform for Gemini model deployment.", icon: Cpu }
+    "Embeddings & Rerank": [
+      { name: "Cohere Embed & Rerank", desc: "Top-tier cross-encoder re-ranking and multilingual embedding models.", icon: Search },
+      { name: "OpenAI Embeddings", desc: "High-dimensional text-embedding-3-large embeddings for semantic search.", icon: Database },
+      { name: "Voyage AI", desc: "Specialized domain embeddings optimized for financial and code retrieval.", icon: Zap },
+      { name: "BGE Reranker", desc: "State-of-the-art open-weights re-ranking model for local cluster deployment.", icon: RefreshCw }
     ]
   };
 
-  // 11. Business Outcomes (KPI Cards)
+  // 12. Business Outcomes KPI Cards (Section 14 - 6 Cards)
   const businessOutcomes = [
-    { value: "10×", title: "Faster AI Development", desc: "Accelerate production rollout from months to weeks using reusable frameworks.", highlight: "from-rose-500 to-red-600" },
-    { value: "Enterprise", title: "Knowledge Search", desc: "Unlock siloed company data with hallucination-free RAG vector retrieval.", highlight: "from-blue-500 to-indigo-600" },
-    { value: "Secure", title: "AI Deployment", desc: "Zero clear-text PII leakage, prompt injection defense, and VPC isolation.", highlight: "from-emerald-500 to-teal-600" },
-    { value: "Reusable", title: "AI Components", desc: "Standardized prompt registries, AI gateways, and vector connectors.", highlight: "from-purple-500 to-rose-500" },
-    { value: "Scalable", title: "Agent Platform", desc: "Autonomous multi-agent swarms executing API tools safely at scale.", highlight: "from-amber-500 to-orange-600" },
-    { value: "Continuous", title: "AI Innovation", desc: "Seamless multi-model switching between OpenAI, Claude, Gemini, & Llama.", highlight: "from-cyan-500 to-blue-600" }
+    { value: "10×", title: "Faster AI Rollout", desc: "Accelerate production deployment from months to weeks using pre-built enterprise frameworks.", highlight: "from-rose-500 to-red-600" },
+    { value: "60%", title: "Lower Token Costs", desc: "Slash monthly LLM bills through semantic caching, prompt compression, and intelligent model routing.", highlight: "from-blue-500 to-indigo-600" },
+    { value: "99.2%", title: "Retrieval Accuracy", desc: "Virtually eliminate hallucinations with multi-stage hybrid RAG and cross-encoder re-ranking.", highlight: "from-emerald-500 to-teal-600" },
+    { value: "Zero", title: "PII Leakage", desc: "Automated client-side and gateway masking protecting sensitive customer data before API egress.", highlight: "from-purple-500 to-rose-500" },
+    { value: "10×", title: "Agent Automation", desc: "Deploy autonomous multi-agent swarms resolving complex enterprise workflows without human delay.", highlight: "from-amber-500 to-orange-600" },
+    { value: "< 350ms", title: "Cache Latency", desc: "Ultra-fast Redis semantic cache serving recurring enterprise queries with near-zero latency.", highlight: "from-cyan-500 to-blue-600" }
   ];
 
-  // 12. Use Cases Cards
+  // 13. Use Cases (Section 15 - 8 Cards)
   const useCases = [
-    { title: "AI Customer Support", desc: "Tier-1 support automation capable of accurate ticket resolution and email drafts.", icon: MessageSquare },
-    { title: "Enterprise Search", desc: "Unified natural language search indexing Confluence, SharePoint, and databases.", icon: Search },
-    { title: "Document Intelligence", desc: "Automated extraction and summary of scanned PDFs, invoices, and forms.", icon: FileText },
-    { title: "Contract Analysis", desc: "Legal contract parsing, clause extraction, and automated risk scoring.", icon: FileSearch },
-    { title: "HR Assistant", desc: "Employee self-service chatbot answering policy and benefits queries.", icon: Users },
-    { title: "AI Recruitment", desc: "Candidate resume parsing, scoring against job descriptions, and interview prep.", icon: Briefcase },
-    { title: "Healthcare AI", desc: "Medical records search and clinical documentation assistant with HIPAA compliance.", icon: ShieldCheck },
-    { title: "Financial Analysis", desc: "Automated SEC filing analysis, earnings call summaries, and financial anomaly detection.", icon: BarChart3 }
+    { title: "Autonomous Customer Support", desc: "Tier-1 support automation resolving tickets, drafting accurate responses, and integrating with Zendesk and ServiceNow.", icon: MessageSquare },
+    { title: "Enterprise Knowledge Search", desc: "Unified semantic search indexing Confluence, SharePoint, Jira, and documentation with verifiable page citations.", icon: Search },
+    { title: "Intelligent Document Processing", desc: "Automated extraction and structured insight generation from complex multi-page PDFs, invoices, and financial reports.", icon: FileText },
+    { title: "Contract Analysis & Legal RAG", desc: "Auditing legal agreements for compliance clauses, indemnity risks, expiration dates, and non-standard terms.", icon: FileSearch },
+    { title: "HR Employee Assistant", desc: "Employee self-service virtual agent answering questions on company policies, healthcare benefits, and onboarding.", icon: Users },
+    { title: "Financial Analysis & SEC Filings", desc: "Automated SEC 10-K filing analysis, earnings call summarization, and balance sheet anomaly detection.", icon: BarChart3 },
+    { title: "DevOps Incident Triage Agent", desc: "Analyzing Kubernetes error logs, matching previous post-mortems, and suggesting automated remediation playbooks.", icon: Activity },
+    { title: "Code Intelligence & PR Review", desc: "Automated pull request review agent detecting security flaws, anti-patterns, and drafting documentation.", icon: Code }
   ];
 
-  // 13. Related Accelerators Cards
+  // 14. Related Accelerators (Section 16 - 5 Cards)
   const relatedAccelerators = [
-    { title: "Landing Zone Portal", desc: "Explore enterprise cloud landing zone blueprints and IaC repository directory.", href: "/ecosystem/accelerators-frameworks/landing-zone", tag: "Landing Zone" },
-    { title: "Cloud Accelerator", desc: "Reusable IaC modules for rapid multi-cloud foundation and network deployment.", href: "/ecosystem/accelerators-frameworks/cloud-accelerator", tag: "Cloud IaC" },
+    { title: "Security Framework", desc: "Zero-trust compliance guardrails, automated vulnerability scanning, and identity governance.", href: "/ecosystem/accelerators-frameworks/security-framework", tag: "Cybersecurity" },
+    { title: "Cloud Accelerator", desc: "Reusable IaC modules for rapid multi-cloud foundation and network infrastructure deployment.", href: "/ecosystem/accelerators-frameworks/cloud-accelerator", tag: "Cloud IaC" },
     { title: "DevOps Accelerator", desc: "Enterprise CI/CD pipeline templates, GitOps automation, and Kubernetes manifests.", href: "/ecosystem/accelerators-frameworks/devops-accelerator", tag: "DevOps CI/CD" },
-    { title: "Security Framework", desc: "Zero-trust compliance guardrails, automated vulnerability scanning, and IAM.", href: "/ecosystem/accelerators-frameworks/security-framework", tag: "Cybersecurity" },
-    { title: "Data Framework", desc: "Modern data platform blueprints, warehouse lakehouses, and analytics pipelines.", href: "/ecosystem/accelerators-frameworks/data-framework", tag: "Data Platform" }
+    { title: "Data Framework", desc: "Modern data platform blueprints, warehouse lakehouses, and analytics pipelines.", href: "/ecosystem/accelerators-frameworks/data-framework", tag: "Data Platform" },
+    { title: "Landing Zone Portal", desc: "Explore enterprise cloud landing zone blueprints and IaC repository directory.", href: "/ecosystem/accelerators-frameworks/landing-zone", tag: "Landing Zone" }
   ];
 
-  // 14. FAQ List
+  // 15. FAQ List (Section 17 - 8 Items)
   const faqs = [
     {
-      q: "What is the Devopstrio AI Framework?",
-      a: "The Devopstrio AI Framework is an enterprise engineering foundation providing reusable architectures, APIs, prompt management, vector search, AI agent orchestration, and MLOps deployment pipelines. It enables organizations to build custom AI-powered applications rapidly rather than assembling fragile raw API wrappers."
+      q: "What is the Devopstrio Enterprise AI Framework?",
+      a: "The Devopstrio Enterprise AI Framework is a battle-tested engineering blueprint providing reusable architectures, APIs, prompt registries, hybrid vector search, autonomous AI agent orchestration, and MLOps deployment pipelines. It enables organizations to build secure, scalable, and hallucination-free AI applications rapidly rather than assembling fragile raw API wrappers."
     },
     {
-      q: "Which LLMs are supported?",
-      a: "Our framework abstracts the model layer, supporting OpenAI (GPT-4.1, GPT-4o), Anthropic (Claude 3.5 Sonnet), Google (Gemini 1.5 Pro), Meta (Llama 3.1), Microsoft Azure OpenAI, Mistral AI, DeepSeek, and custom private fine-tuned models hosted on vLLM."
+      q: "Which foundation models and LLM providers are supported?",
+      a: "Our framework abstracts the model layer, natively supporting OpenAI (GPT-4o, GPT-4.1, o1), Anthropic (Claude 3.5 Sonnet & Opus), Google (Gemini 1.5 Pro on Vertex AI), Meta (Llama 3.1 70B & 405B), Microsoft Azure OpenAI Service, Mistral AI, and custom private fine-tuned models hosted on vLLM."
     },
     {
-      q: "Does it support Retrieval-Augmented Generation (RAG)?",
-      a: "Yes. We provide production-grade RAG pipelines featuring document chunking, multi-source ingestion (SharePoint, Confluence, PDFs), dense-sparse hybrid search (Vector + BM25), and RAGAS evaluation suites to guarantee hallucination-free responses."
+      q: "How does the framework prevent hallucinations in production?",
+      a: "We implement multi-stage hybrid RAG: dense vector embeddings combined with BM25 sparse keyword retrieval, followed by cross-encoder re-ranking. All outputs require page-level citations linked directly to enterprise source documents, and continuous automated RAGAS evaluations verify Faithfulness before responses reach users."
     },
     {
-      q: "Can we build autonomous AI agents?",
-      a: "Yes. The framework includes agent orchestration templates using LangGraph and CrewAI patterns, enabling single or multi-agent swarms to reason, break down goals, and execute secure API tool calls."
+      q: "Can we build autonomous multi-agent systems?",
+      a: "Yes. The framework includes multi-agent orchestration templates using LangGraph and CrewAI patterns. This allows specialized agents (such as researchers, analysts, and reviewers) to coordinate, decompose goals, and invoke sandboxed enterprise tools safely."
     },
     {
-      q: "Which vector databases are supported?",
-      a: "We support Qdrant, Pinecone, Weaviate, Milvus, Azure AI Search, and PostgreSQL with pgvector."
+      q: "Which vector databases and data sources are compatible?",
+      a: "The framework integrates out of the box with Qdrant, Pinecone, Weaviate, Milvus, Azure AI Search, and PostgreSQL with pgvector. It connects to enterprise data repositories including SharePoint, Confluence, Google Drive, Jira, and relational SQL databases."
     },
     {
-      q: "Does it work with Azure OpenAI Service?",
-      a: "Yes. Our AI Gateway and model routing layer integrate natively with Azure OpenAI Service, Azure AI Foundry, AWS Bedrock, and Google Vertex AI."
+      q: "Can we deploy private, self-hosted open-weights models for data sovereignty?",
+      a: "Yes. For strict data residency requirements, you can deploy open-weights models (such as Llama 3 or Mistral) inside your own private Kubernetes cluster or VPC using containerized inference engines like vLLM and TensorRT-LLM, ensuring 100% of data stays within your enterprise perimeter."
     },
     {
-      q: "Can we deploy private, self-hosted models?",
-      a: "Yes. You can deploy open-weights models (such as Llama 3 or Mistral) inside your own private Kubernetes cluster using containerized engines like vLLM or TGI for 100% data sovereignty."
+      q: "How does the framework manage token costs and latency?",
+      a: "Our Enterprise AI Gateway features high-speed Redis semantic caching that answers semantically equivalent queries in < 50ms at zero API cost. The dynamic model router directs simpler queries to fast, cost-efficient models while reserving frontier reasoning models for complex tasks, slashing token bills by up to 60%."
     },
     {
-      q: "Is enterprise security and governance included?",
-      a: "Yes. The framework features PII scrubbing, prompt injection defense, role-based access control, NeMo output guardrails, and comprehensive request/response audit logging for SOC 2 and EU AI Act compliance."
+      q: "How does the framework address AI governance, security, and the EU AI Act?",
+      a: "The framework enforces client-side and gateway-level PII scrubbing, prompt injection classification, output guardrails via NeMo, role-based access control (RBAC), and comprehensive request/response audit trails aligning with SOC 2, HIPAA, and EU AI Act compliance standards."
     }
   ];
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setDemoSubmitted(true);
+    setModalSubmitted(true);
   };
 
   return (
@@ -458,31 +421,31 @@ export default function AIFrameworkPage() {
           <>
             Devopstrio <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-rose-400 to-red-600">
-              AI Framework
+              Enterprise AI Framework
             </span>
           </>
         }
-        subtitle="Accelerate enterprise AI application development using reusable frameworks for LLMs, AI agents, Retrieval-Augmented Generation (RAG), vector search, model orchestration, and MLOps."
+        subtitle="Accelerate enterprise AI application development using battle-tested blueprints for autonomous agent swarms, hybrid RAG knowledge grounding, multi-model LLM routing, and enterprise-grade MLOps governance."
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "ACCELERATORS & FRAMEWORKS", href: "/ecosystem/accelerators-frameworks" },
-          { label: "AI FRAMEWORK" }
+          { label: "ENTERPRISE AI FRAMEWORK" }
         ]}
       >
         <div className="flex flex-col items-center gap-6">
           {/* Hero Highlights Badges */}
           <div className="flex flex-wrap justify-center gap-2.5">
             {[
-              "Enterprise AI",
-              "AI Agents",
-              "RAG",
-              "Vector Database",
-              "LLM Integration",
-              "MLOps"
+              "Autonomous Agents",
+              "Hybrid RAG",
+              "Multi-Model Gateway",
+              "Vector Knowledge Stores",
+              "AI Governance",
+              "MLOps Telemetry"
             ].map((item, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1.5 rounded-lg text-xs font-mono font-bold tracking-wide bg-zinc-900/90 border border-zinc-800 text-zinc-300 shadow-sm"
+                className="px-3.5 py-1.5 rounded-lg text-xs md:text-sm font-mono font-bold tracking-wide bg-zinc-900/90 border border-zinc-800 text-zinc-300 shadow-sm"
               >
                 {item}
               </span>
@@ -496,7 +459,7 @@ export default function AIFrameworkPage() {
                 const el = document.getElementById("architecture");
                 if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer"
+              className="inline-flex items-center gap-3 pl-6 pr-3 py-3.5 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer hover:scale-105"
             >
               Explore AI Framework
               <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
@@ -504,66 +467,66 @@ export default function AIFrameworkPage() {
               </div>
             </button>
             <button
-              onClick={() => setDemoModalOpen(true)}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-950 border border-zinc-800 hover:border-rose-500/50 rounded-full text-xs md:text-sm font-semibold text-white transition-all duration-300 hover:bg-zinc-900 cursor-pointer"
+              onClick={() => setModalOpen(true)}
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-zinc-950 border border-zinc-800 hover:border-rose-500/50 rounded-full text-xs md:text-sm font-semibold text-white transition-all duration-300 hover:bg-zinc-900 cursor-pointer"
             >
-              <Download className="w-4 h-4 text-rose-500" />
-              Book an AI Workshop
+              <Sparkles className="w-4 h-4 text-rose-500" />
+              Schedule an AI Strategy Session
             </button>
           </div>
         </div>
       </Hero>
 
-      {/* 2. AI FRAMEWORK OVERVIEW */}
+      {/* 2. FOUNDATIONAL OVERVIEW SECTION */}
       <section className="w-full py-20 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
               FOUNDATIONAL OVERVIEW
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">
-              Build AI Applications Faster
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              Production-Grade AI Application Engineering
             </h2>
-            <p className="text-zinc-300 text-base md:text-xl leading-relaxed font-medium">
-              The Devopstrio AI Framework provides reusable architectures, APIs, prompt management, vector search, AI agent orchestration, and deployment pipelines to help organizations rapidly build secure and scalable AI-powered applications.
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mx-auto">
+              The Devopstrio Enterprise AI Framework delivers reusable architectures, prompt management registries, hybrid vector search, autonomous AI agent swarms, and MLOps deployment pipelines to help organizations build secure, scalable, and hallucination-free AI applications.
             </p>
           </Reveal>
 
           {/* Overview Highlights 4 Pillars */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
             {[
-              { title: "LLM Gateway & Routing", icon: Network, desc: "Multi-model abstraction layer for OpenAI, Claude, Gemini, and Llama." },
-              { title: "Vector RAG Pipeline", icon: Database, desc: "Dense-sparse hybrid search index for accurate document grounding." },
-              { title: "Multi-Agent Systems", icon: Bot, desc: "Autonomous agent swarms executing API tools and stateful workflows." },
-              { title: "MLOps & Security", icon: ShieldCheck, desc: "NeMo output guardrails, PII masking, token analytics, and SOC 2 logs." }
+              { title: "Autonomous Agent Systems", icon: Bot, desc: "Multi-agent graph coordination, goal decomposition, and secure tool execution with LangGraph." },
+              { title: "Enterprise RAG Grounding", icon: Database, desc: "Hybrid dense-sparse vector search, layout-aware parsing, and verifiable citations." },
+              { title: "Multi-Model LLM Gateway", icon: Network, desc: "Intelligent routing, semantic Redis caching, and automated provider failover across models." },
+              { title: "MLOps & AI Governance", icon: ShieldCheck, desc: "NeMo safety guardrails, automated PII scrubbing, token telemetry, and EU AI Act compliance." }
             ].map((pillar, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 hover:-translate-y-1"
+                className="p-6 md:p-8 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 hover:-translate-y-1 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4">
-                  <pillar.icon className="w-5 h-5 text-rose-500" />
+                <div className="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                  <pillar.icon className="w-6 h-6 text-rose-500" />
                 </div>
-                <h3 className="text-base font-bold text-white mb-2">{pillar.title}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-medium">{pillar.desc}</p>
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">{pillar.title}</h3>
+                <p className="text-sm text-zinc-300 leading-relaxed font-normal">{pillar.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. BUSINESS CHALLENGES */}
+      {/* 3. BUSINESS CHALLENGES SECTION (8 CARDS) */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              PAIN POINTS
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              ENTERPRISE ADOPTION RISKS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              AI Challenges We Solve
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              Challenges We Address
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Eliminate prompt drift, hallucination risks, vendor lock-in, and security vulnerabilities.
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Eliminate model hallucination risks, vendor lock-in, ungrounded prompts, and AI security blind spots.
             </p>
           </Reveal>
 
@@ -573,21 +536,21 @@ export default function AIFrameworkPage() {
               return (
                 <div
                   key={idx}
-                  className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col justify-between group"
+                  className="p-6 md:p-7 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     <div className="flex justify-between items-start mb-4">
-                      <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Icon className="w-4 h-4 text-rose-500" />
+                      <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <Icon className="w-5 h-5 text-rose-500" />
                       </div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
+                      <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
                         {card.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-300 leading-relaxed font-normal">
                       {card.desc}
                     </p>
                   </div>
@@ -598,23 +561,23 @@ export default function AIFrameworkPage() {
         </div>
       </section>
 
-      {/* 4. FRAMEWORK ARCHITECTURE */}
+      {/* 4. AI FRAMEWORK ARCHITECTURE (6-LAYER INTERACTIVE STACK) */}
       <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ENTERPRISE BLUEPRINT
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              Framework Architecture
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              AI Framework Architecture
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Interactive 5-layer enterprise AI system stack from applications to knowledge stores.
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Interactive 6-layer enterprise AI system stack from client interfaces to vector knowledge and MLOps telemetry.
             </p>
           </Reveal>
 
           {/* Layer Selector Tabs */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-3 mb-8">
             {architectureLayers.map((layer) => {
               const isSelected = activeArchLayer === layer.name;
               const Icon = layer.icon;
@@ -629,33 +592,33 @@ export default function AIFrameworkPage() {
                   }`}
                 >
                   <Icon className="w-5 h-5 text-rose-500 mb-2" />
-                  <span className="text-xs font-bold block truncate">{layer.name}</span>
+                  <span className="text-xs md:text-sm font-bold block truncate">{layer.name}</span>
                 </button>
               );
             })}
           </div>
 
           {/* Active Layer Detail Card */}
-          <div className="p-8 rounded-3xl bg-zinc-950 border border-zinc-800 shadow-2xl">
+          <div className="p-8 md:p-10 rounded-3xl bg-zinc-950 border border-zinc-800 shadow-2xl">
             {architectureLayers.map((layer) => {
               if (layer.name !== activeArchLayer) return null;
               const Icon = layer.icon;
               return (
                 <div key={layer.id} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   <div className="lg:col-span-5 space-y-4">
-                    <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-rose-500" />
+                    <div className="w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center">
+                      <Icon className="w-7 h-7 text-rose-500" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">{layer.name}</h3>
-                    <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-medium">
+                    <h3 className="text-xl md:text-2xl font-bold text-white">{layer.name}</h3>
+                    <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-normal">
                       {layer.desc}
                     </p>
                   </div>
-                  <div className="lg:col-span-7 grid grid-cols-2 gap-3">
+                  <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     {layer.components.map((comp, idx) => (
                       <div key={idx} className="p-4 bg-black rounded-xl border border-zinc-850 flex items-center gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-rose-500 shrink-0" />
-                        <span className="text-xs font-bold text-zinc-200">{comp}</span>
+                        <CheckCircle2 className="w-5 h-5 text-rose-500 shrink-0" />
+                        <span className="text-sm font-bold text-zinc-200">{comp}</span>
                       </div>
                     ))}
                   </div>
@@ -666,18 +629,18 @@ export default function AIFrameworkPage() {
         </div>
       </section>
 
-      {/* 5. CORE AI COMPONENTS */}
+      {/* 5. CORE AI COMPONENTS (10 CARDS - 5 COL GRID) */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              REUSABLE BUILDING BLOCKS
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              10 CORE COMPONENTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
               Core AI Components
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              10 modular AI components built for enterprise scale and rapid integration.
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Modular, production-ready AI building blocks engineered for enterprise scale, speed, and governance.
             </p>
           </Reveal>
 
@@ -687,20 +650,20 @@ export default function AIFrameworkPage() {
               return (
                 <div
                   key={idx}
-                  className="p-5 bg-zinc-950/80 border border-zinc-800/80 rounded-2xl hover:border-rose-500/50 transition-all duration-300 flex flex-col justify-between space-y-4 group"
+                  className="p-5 md:p-6 bg-zinc-950/80 border border-zinc-800/80 rounded-2xl hover:border-rose-500/50 transition-all duration-300 flex flex-col justify-between space-y-4 group"
                 >
                   <div className="space-y-3">
                     <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Icon className="w-5 h-5 text-rose-500" />
                     </div>
-                    <h3 className="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                       {cap.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-xs md:text-sm text-zinc-300 leading-relaxed font-normal">
                       {cap.desc}
                     </p>
                   </div>
-                  <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-rose-400 border border-zinc-800 font-bold self-start uppercase">
+                  <span className="text-[10px] md:text-xs font-mono px-2 py-0.5 rounded bg-zinc-900 text-rose-400 border border-zinc-800 font-bold self-start uppercase">
                     {cap.connects}
                   </span>
                 </div>
@@ -710,352 +673,342 @@ export default function AIFrameworkPage() {
         </div>
       </section>
 
-      {/* 6. AI DEVELOPMENT LIFECYCLE */}
+      {/* 6. ENTERPRISE RAG & KNOWLEDGE GROUNDING (FLOW + 8 CARDS) */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              END-TO-END TIMELINE
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              GROUNDED INTELLIGENCE
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              AI Development Lifecycle
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              Enterprise RAG & Knowledge Grounding
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Interactive 9-step progression from business discovery to continuous telemetry.
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Eliminate hallucinations with deterministic, multi-source vector retrieval, re-ranking, and verifiable citations.
             </p>
           </Reveal>
 
-          {/* Lifecycle Stage Buttons */}
+          {/* RAG Workflow Flowchart */}
+          <div className="p-6 rounded-2xl bg-zinc-950 border border-zinc-850 mb-12 flex flex-col md:flex-row items-center justify-between gap-4">
+            {ragFlow.map((step, i) => (
+              <React.Fragment key={i}>
+                <div className="flex flex-col items-center text-center p-4 rounded-xl bg-black border border-zinc-900 w-full md:w-52">
+                  <step.icon className="w-6 h-6 text-rose-500 mb-2" />
+                  <span className="text-xs md:text-sm font-bold text-white">{step.step}</span>
+                  <span className="text-[10px] md:text-xs text-zinc-400 font-mono mt-0.5">{step.sub}</span>
+                </div>
+                {i < 4 && <ArrowRight className="w-5 h-5 text-rose-500 hidden md:block shrink-0" />}
+              </React.Fragment>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {ragCards.map((rag, idx) => (
+              <div
+                key={idx}
+                className="p-6 md:p-7 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
+              >
+                <div className="w-9 h-9 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Database className="w-4 h-4 text-rose-500" />
+                </div>
+                <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                  {rag.title}
+                </h3>
+                <p className="text-sm text-zinc-300 leading-relaxed font-normal">
+                  {rag.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. AUTONOMOUS AI AGENTS & WORKFLOWS */}
+      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              AGENTIC REASONING
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              Autonomous AI Agents & Workflows
+            </h2>
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Orchestrate multi-step reasoning, dynamic tool invocation, and collaborative agent swarms.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {agentCards.map((card, idx) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 md:p-7 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed font-normal">
+                    {card.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. MULTI-MODEL ORCHESTRATION & ROUTING */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              MODEL AGNOSTIC
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              Multi-Model Orchestration & LLM Routing
+            </h2>
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Intelligently distribute queries across frontier LLMs, cost-efficient models, and self-hosted open weights.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {modelRoutingCards.map((card, idx) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 md:p-7 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed font-normal">
+                    {card.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. ENTERPRISE AI GATEWAY & SECURITY */}
+      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              API SECURITY & DEFENSE
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              Enterprise AI Gateway & Security
+            </h2>
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Centralized API reverse proxy securing prompts, sanitizing PII, and enforcing enterprise governance.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {gatewaySecCards.map((card, idx) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 md:p-7 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed font-normal">
+                    {card.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. DATA PIPELINES & VECTOR STORAGE */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              VECTOR INFRASTRUCTURE
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              Data Pipelines & Vector Storage
+            </h2>
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              High-throughput embedding ingestion and ultra-low-latency similarity search across billions of vectors.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {vectorStorageCards.map((card, idx) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 md:p-7 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed font-normal">
+                    {card.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. AI GOVERNANCE & RESPONSIBLE AI */}
+      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              ETHICS & REGULATION
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              AI Governance & Responsible AI
+            </h2>
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Align enterprise AI systems with global regulations, ethical guardrails, and compliance audits.
+            </p>
+          </Reveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {governanceCards.map((card, idx) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 md:p-7 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-zinc-300 leading-relaxed font-normal">
+                    {card.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 12. AI DEVELOPMENT & MLOPS PIPELINE (INTERACTIVE TERMINAL INSPECTOR) */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
+        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+          <Reveal className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              MLOPS AUTOMATION
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              AI Development & MLOps Pipeline
+            </h2>
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Interactive 9-stage engineering flow from business discovery to continuous production telemetry.
+            </p>
+          </Reveal>
+
+          {/* Pipeline Stage Selector Buttons */}
           <div className="grid grid-cols-3 md:grid-cols-9 gap-2 mb-8">
-            {aiLifecycleStages.map((stg, idx) => {
-              const isCurrent = activeLifecycleStage === idx;
+            {aiPipelineSteps.map((stg, idx) => {
+              const isCurrent = activePipelineStep === idx;
               return (
                 <button
                   key={stg.step}
-                  onClick={() => setActiveLifecycleStage(idx)}
+                  onClick={() => setActivePipelineStep(idx)}
                   className={`p-3 rounded-xl border text-center transition-all duration-300 cursor-pointer ${
                     isCurrent
                       ? "bg-rose-600/20 border-rose-500 text-white shadow-lg shadow-rose-500/20"
                       : "bg-zinc-950 border-zinc-850 text-zinc-400 hover:border-zinc-700"
                   }`}
                 >
-                  <span className="text-[9px] font-mono text-rose-400 font-bold block mb-0.5">
+                  <span className="text-[10px] md:text-xs font-mono text-rose-400 font-bold block mb-0.5">
                     Step {stg.step}
                   </span>
-                  <span className="text-xs font-bold block truncate">{stg.name}</span>
+                  <span className="text-xs font-bold block truncate">{stg.short}</span>
                 </button>
               );
             })}
           </div>
 
-          {/* Terminal Inspector */}
-          <div className="p-8 rounded-3xl bg-zinc-950 border border-zinc-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
+          {/* Inspector Panel */}
+          <div className="p-8 md:p-10 rounded-3xl bg-zinc-950 border border-zinc-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
             <div className="lg:col-span-5 space-y-4">
               <span className="px-3 py-1 rounded bg-rose-500/10 text-rose-400 border border-rose-500/30 text-xs font-mono font-bold">
-                Step {aiLifecycleStages[activeLifecycleStage].step} of 9: {aiLifecycleStages[activeLifecycleStage].short}
+                Step {aiPipelineSteps[activePipelineStep].step} of 9: {aiPipelineSteps[activePipelineStep].short}
               </span>
-              <h3 className="text-xl font-bold text-white">
-                {aiLifecycleStages[activeLifecycleStage].name}
+              <h3 className="text-xl md:text-2xl font-bold text-white">
+                {aiPipelineSteps[activePipelineStep].name}
               </h3>
-              <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
-                {aiLifecycleStages[activeLifecycleStage].desc}
+              <p className="text-sm md:text-base text-zinc-300 font-normal leading-relaxed">
+                {aiPipelineSteps[activePipelineStep].desc}
               </p>
               <div className="pt-2 flex items-center gap-3">
                 <button
-                  onClick={() => setActiveLifecycleStage((prev) => (prev > 0 ? prev - 1 : 8))}
-                  className="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-xs font-bold text-zinc-300 cursor-pointer"
+                  onClick={() => setActivePipelineStep((prev) => (prev > 0 ? prev - 1 : 8))}
+                  className="px-4 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-xs md:text-sm font-bold text-zinc-300 cursor-pointer"
                 >
                   Previous
                 </button>
                 <button
-                  onClick={() => setActiveLifecycleStage((prev) => (prev + 1) % 9)}
-                  className="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-xs font-bold text-white cursor-pointer"
+                  onClick={() => setActivePipelineStep((prev) => (prev + 1) % 9)}
+                  className="px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-xs md:text-sm font-bold text-white cursor-pointer"
                 >
                   Next Step
                 </button>
               </div>
             </div>
 
-            <div className="lg:col-span-7 bg-black rounded-2xl p-5 border border-zinc-900 font-mono text-xs text-emerald-400 overflow-x-auto shadow-inner">
-              <div className="flex justify-between text-zinc-500 text-[10px] mb-3 pb-2 border-b border-zinc-900">
-                <span>lifecycle-step-{aiLifecycleStages[activeLifecycleStage].step}.py</span>
+            <div className="lg:col-span-7 bg-black rounded-2xl p-5 border border-zinc-900 font-mono text-xs md:text-sm text-emerald-400 overflow-x-auto shadow-inner">
+              <div className="flex justify-between text-zinc-500 text-[10px] md:text-xs mb-3 pb-2 border-b border-zinc-900">
+                <span>mlops-step-{aiPipelineSteps[activePipelineStep].step}.py</span>
                 <span>EXECUTION LOG</span>
               </div>
               <pre className="whitespace-pre-wrap leading-relaxed text-zinc-300">
-                {aiLifecycleStages[activeLifecycleStage].snippet}
+                {aiPipelineSteps[activePipelineStep].snippet}
               </pre>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. RAG & KNOWLEDGE SEARCH */}
+      {/* 13. TECHNOLOGY STACK */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              ENTERPRISE KNOWLEDGE GROUNDING
-            </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              RAG & Knowledge Search
-            </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Prevent hallucinations with enterprise-grade Retrieval-Augmented Generation.
-            </p>
-          </Reveal>
-
-          {/* RAG Workflow Diagram */}
-          <div className="p-6 rounded-2xl bg-zinc-950 border border-zinc-850 mb-12 flex flex-col md:flex-row items-center justify-between gap-4">
-            {[
-              { label: "Documents", icon: FileText, sub: "PDFs / DB / Docs" },
-              { label: "Embedding Model", icon: BrainCircuit, sub: "Dense Vector" },
-              { label: "Vector Database", icon: Database, sub: "Qdrant / Pinecone" },
-              { label: "Retriever & LLM", icon: Search, sub: "Context Injection" },
-              { label: "Accurate Answer", icon: CheckCircle2, sub: "Cited Output" }
-            ].map((step, i) => (
-              <React.Fragment key={i}>
-                <div className="flex flex-col items-center text-center p-4 rounded-xl bg-black border border-zinc-900 w-full md:w-48">
-                  <step.icon className="w-5 h-5 text-rose-500 mb-2" />
-                  <span className="text-xs font-bold text-white">{step.label}</span>
-                  <span className="text-[10px] text-zinc-400 font-mono">{step.sub}</span>
-                </div>
-                {i < 4 && <ArrowRight className="w-4 h-4 text-rose-500 hidden md:block" />}
-              </React.Fragment>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ragCapabilities.map((rag, idx) => {
-              const Icon = rag.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon className="w-5 h-5 text-rose-500" />
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
-                    {rag.title}
-                  </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
-                    {rag.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. AI AGENTS & AUTOMATION (Interactive Agent Gallery) */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              AUTONOMOUS WORKFORCE
-            </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              AI Agents & Automation
-            </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Specialized AI agent gallery equipped with tool calling and workflow execution.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {aiAgentsGallery.map((agent, idx) => {
-              const Icon = agent.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-6 bg-zinc-950/80 border border-zinc-800 rounded-2xl hover:border-rose-500/50 transition-all duration-300 flex flex-col justify-between space-y-4 group shadow-xl"
-                >
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Icon className="w-5 h-5 text-rose-500" />
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-rose-400 border border-zinc-800 font-bold">
-                        {agent.badge}
-                      </span>
-                    </div>
-                    <div>
-                      <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
-                        {agent.title}
-                      </h3>
-                      <span className="text-[10px] font-mono text-zinc-400 font-semibold block mb-2">
-                        {agent.role}
-                      </span>
-                      <p className="text-xs text-zinc-400 leading-relaxed font-medium">
-                        {agent.desc}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="pt-3 border-t border-zinc-900">
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase block mb-1.5 font-bold">Supported Tools:</span>
-                    <div className="flex flex-wrap gap-1">
-                      {agent.tools.map((t, i) => (
-                        <span key={i} className="text-[9px] font-mono bg-black text-zinc-300 px-2 py-0.5 rounded border border-zinc-850">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. MODEL INTEGRATION */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              MULTI-MODEL ECOSYSTEM
-            </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              Model Integration
-            </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Seamlessly swap between proprietary frontier models and private open-weights LLMs.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {modelProviders.map((prov, idx) => {
-              const Icon = prov.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon className="w-5 h-5 text-rose-500" />
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-1 group-hover:text-rose-400 transition-colors">
-                    {prov.name}
-                  </h3>
-                  <span className="text-[10px] font-mono text-rose-400 font-bold block mb-2">
-                    {prov.models}
-                  </span>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
-                    {prov.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 10. MLOPS & DEPLOYMENT */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              PRODUCTION OPERATIONS
-            </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              MLOps & Deployment
-            </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Continuous deployment, model registries, telemetry monitoring, and auto-scaling.
-            </p>
-          </Reveal>
-
-          {/* MLOps Workflow Flowchart */}
-          <div className="p-6 rounded-2xl bg-zinc-950 border border-zinc-850 mb-12 flex flex-col md:flex-row items-center justify-between gap-3 overflow-x-auto">
-            {[
-              "Training", "Evaluation", "Model Registry", "Deployment", "Monitoring", "Feedback", "Continuous Improvement"
-            ].map((step, i) => (
-              <React.Fragment key={i}>
-                <div className="p-3 bg-black rounded-xl border border-zinc-900 text-center min-w-[120px]">
-                  <span className="text-xs font-bold text-white">{step}</span>
-                </div>
-                {i < 6 && <ArrowRight className="w-4 h-4 text-rose-500 shrink-0 hidden md:block" />}
-              </React.Fragment>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mlOpsCapabilities.map((cap, idx) => {
-              const Icon = cap.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon className="w-5 h-5 text-rose-500" />
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
-                    {cap.title}
-                  </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
-                    {cap.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 11. SECURITY & RESPONSIBLE AI */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              ENTERPRISE GOVERNANCE
-            </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              Security & Responsible AI
-            </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Strict security guardrails, data privacy controls, and EU AI Act / SOC 2 compliance.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {securityCapabilities.map((sec, idx) => {
-              const Icon = sec.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon className="w-5 h-5 text-rose-500" />
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
-                    {sec.title}
-                  </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
-                    {sec.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 12. TECHNOLOGY STACK */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               TECHNOLOGY ECOSYSTEM
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
               Technology Stack
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Integrations across leading AI frameworks, vector stores, cloud platforms, and models.
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Integrations across leading AI frameworks, vector databases, foundation models, and cloud runtimes.
             </p>
           </Reveal>
 
@@ -1065,7 +1018,7 @@ export default function AIFrameworkPage() {
               <button
                 key={cat}
                 onClick={() => setActiveTechCategory(cat)}
-                className={`px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+                className={`px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
                   activeTechCategory === cat
                     ? "bg-rose-600 text-white shadow-lg shadow-rose-600/30"
                     : "bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-850"
@@ -1083,16 +1036,16 @@ export default function AIFrameworkPage() {
               return (
                 <div
                   key={idx}
-                  className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 flex items-start gap-4 group"
+                  className="p-6 md:p-7 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 flex items-start gap-4 group"
                 >
                   <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                     <Icon className="w-5 h-5 text-rose-500" />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-base md:text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
                       {tech.name}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium mt-1">
+                    <p className="text-sm text-zinc-300 leading-relaxed font-normal mt-1">
                       {tech.desc}
                     </p>
                   </div>
@@ -1103,18 +1056,18 @@ export default function AIFrameworkPage() {
         </div>
       </section>
 
-      {/* 13. BUSINESS OUTCOMES (Large KPI Cards) */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
+      {/* 14. BUSINESS OUTCOMES (LARGE KPI CARDS) */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              MEASURABLE OUTCOMES
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              MEASURABLE IMPACT
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
               Business Outcomes
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Accelerate enterprise AI adoption while guaranteeing data privacy and operational control.
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Deliver production-grade AI applications with verified business ROI, lower compute costs, and strict compliance.
             </p>
           </Reveal>
 
@@ -1122,16 +1075,16 @@ export default function AIFrameworkPage() {
             {businessOutcomes.map((outcome, idx) => (
               <div
                 key={idx}
-                className="p-8 bg-zinc-950/80 border border-zinc-800 rounded-3xl hover:border-rose-500/40 transition-all duration-300 flex flex-col justify-between space-y-4 group shadow-xl"
+                className="p-8 md:p-9 bg-zinc-950/80 border border-zinc-800 rounded-3xl hover:border-rose-500/40 transition-all duration-300 flex flex-col justify-between space-y-4 group shadow-xl"
               >
                 <div>
                   <span className={`text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${outcome.highlight} tracking-tight block mb-3`}>
                     {outcome.value}
                   </span>
-                  <h3 className="text-lg font-bold text-white mb-2">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2">
                     {outcome.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-300 leading-relaxed font-normal">
                     {outcome.desc}
                   </p>
                 </div>
@@ -1141,18 +1094,18 @@ export default function AIFrameworkPage() {
         </div>
       </section>
 
-      {/* 14. USE CASES */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
+      {/* 15. USE CASES */}
+      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              ENTERPRISE APPLICATIONS
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+              PRODUCTION BLUEPRINTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              Use Cases
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+              Enterprise Use Cases
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Proven deployment architectures across enterprise business functions.
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
+              Proven deployment architectures powering customer support, financial intelligence, and knowledge discovery.
             </p>
           </Reveal>
 
@@ -1162,16 +1115,16 @@ export default function AIFrameworkPage() {
               return (
                 <div
                   key={idx}
-                  className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 flex flex-col justify-between group"
+                  className="p-6 md:p-7 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/40 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div className="space-y-3">
                     <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Icon className="w-5 h-5 text-rose-500" />
                     </div>
-                    <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-base md:text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
                       {useCase.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-300 leading-relaxed font-normal">
                       {useCase.desc}
                     </p>
                   </div>
@@ -1182,17 +1135,17 @@ export default function AIFrameworkPage() {
         </div>
       </section>
 
-      {/* 15. RELATED ACCELERATORS */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
+      {/* 16. RELATED ACCELERATORS */}
+      <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ECOSYSTEM SYNERGY
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
               Related Accelerators
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
               Explore complementary frameworks in the Devopstrio engineering ecosystem.
             </p>
           </Reveal>
@@ -1202,19 +1155,19 @@ export default function AIFrameworkPage() {
               <Link
                 key={idx}
                 href={acc.href}
-                className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
+                className="p-6 md:p-7 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
               >
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    <span className="text-xs font-mono font-bold uppercase px-2.5 py-1 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
                       {acc.tag}
                     </span>
                     <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-rose-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                   </div>
-                  <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-rose-400 transition-colors">
                     {acc.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-300 leading-relaxed font-normal">
                     {acc.desc}
                   </p>
                 </div>
@@ -1224,18 +1177,18 @@ export default function AIFrameworkPage() {
         </div>
       </section>
 
-      {/* 16. FAQ SECTION */}
-      <section id="faq" className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
+      {/* 17. FAQ SECTION */}
+      <section id="faq" className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-3xl mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
               Everything you need to know
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Have questions about the Devopstrio AI Framework? Check out answers to common inquiries below.
+            <p className="text-base md:text-lg text-zinc-300 font-medium">
+              Have questions about the Devopstrio Enterprise AI Framework? Explore answers to common architectural inquiries below.
             </p>
           </Reveal>
 
@@ -1249,15 +1202,15 @@ export default function AIFrameworkPage() {
                     onClick={() => toggleFaq(idx)}
                     className="flex justify-between items-center w-full text-left focus:outline-none group cursor-pointer"
                   >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-rose-400 transition-colors">
+                    <span className="text-base md:text-lg font-semibold text-zinc-200 group-hover:text-rose-400 transition-colors">
                       {faq.q}
                     </span>
                     <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 shrink-0">
-                      {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                      {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                     </div>
                   </button>
                   {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-medium max-w-4xl animate-fadeIn">
+                    <div className="mt-4 text-sm md:text-base text-zinc-300 leading-relaxed font-normal max-w-4xl animate-fadeIn">
                       <p>{faq.a}</p>
                     </div>
                   )}
@@ -1268,8 +1221,8 @@ export default function AIFrameworkPage() {
         </div>
       </section>
 
-      {/* 17. CTA SECTION */}
-      <section className="w-full py-32 bg-[#030303] text-center relative overflow-hidden">
+      {/* 18. CTA SECTION */}
+      <section className="w-full py-32 bg-black text-center relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.02] pointer-events-none"
           style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }}
@@ -1278,65 +1231,65 @@ export default function AIFrameworkPage() {
 
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 space-y-8">
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-2">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-2">
               BUILD INTELLIGENT APPLICATIONS FASTER
             </span>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight text-white">
               Accelerate Enterprise AI Innovation
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-medium max-w-xl mx-auto leading-relaxed">
-              Build secure, scalable, and intelligent AI applications faster with the Devopstrio AI Framework.
+            <p className="text-zinc-300 text-base md:text-lg font-medium max-w-xl mx-auto leading-relaxed">
+              Adopt the Devopstrio AI Framework to build secure, scalable, and intelligent AI applications faster with enterprise-grade governance.
             </p>
           </Reveal>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <button
-              onClick={() => setDemoModalOpen(true)}
-              className="inline-flex items-center gap-3 pl-6 pr-4 py-3.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full transition-all duration-300 shadow-lg shadow-rose-600/30 cursor-pointer hover:scale-105"
+              onClick={() => setModalOpen(true)}
+              className="inline-flex items-center gap-3 pl-6 pr-4 py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full transition-all duration-300 shadow-lg shadow-rose-600/30 cursor-pointer hover:scale-105"
             >
               Schedule an AI Strategy Session
               <ArrowUpRight className="w-4 h-4" />
             </button>
             <button
-              onClick={() => setDemoModalOpen(true)}
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full transition-all duration-300 cursor-pointer"
+              onClick={() => setModalOpen(true)}
+              className="inline-flex items-center gap-2 px-6 py-4 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full transition-all duration-300 cursor-pointer"
             >
               <Download className="w-4 h-4 text-rose-500" />
-              Explore AI Solutions
+              Download AI Architecture Blueprint
             </button>
           </div>
         </div>
       </section>
 
-      {/* DEMO / WORKSHOP MODAL */}
-      {demoModalOpen && (
+      {/* STRATEGY SESSION & ASSESSMENT MODAL */}
+      {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 max-w-lg w-full relative shadow-2xl space-y-6">
             <button
               onClick={() => {
-                setDemoModalOpen(false);
-                setDemoSubmitted(false);
+                setModalOpen(false);
+                setModalSubmitted(false);
               }}
               className="absolute top-6 right-6 text-zinc-400 hover:text-white cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {demoSubmitted ? (
+            {modalSubmitted ? (
               <div className="text-center space-y-4 py-6">
                 <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
                   <CheckCircle className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Strategy Session Requested!</h3>
-                <p className="text-xs text-zinc-300 leading-relaxed font-medium">
-                  Thank you for your interest in the Devopstrio AI Framework. Our lead AI architects will reach out within 24 hours to schedule your enterprise strategy workshop.
+                <p className="text-sm text-zinc-300 leading-relaxed font-normal">
+                  Thank you for your interest in the Devopstrio Enterprise AI Framework. Our principal AI architects will contact you within 24 hours to schedule your enterprise strategy workshop.
                 </p>
                 <button
                   onClick={() => {
-                    setDemoModalOpen(false);
-                    setDemoSubmitted(false);
+                    setModalOpen(false);
+                    setModalSubmitted(false);
                   }}
-                  className="px-6 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-xs font-bold text-white rounded-full transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-xs md:text-sm font-bold text-white rounded-full transition-colors cursor-pointer"
                 >
                   Close Window
                 </button>
@@ -1344,13 +1297,13 @@ export default function AIFrameworkPage() {
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
-                  <span className="text-[10px] font-mono text-rose-500 font-bold uppercase block mb-1">
+                  <span className="text-xs font-mono text-rose-500 font-bold uppercase block mb-1">
                     DEVOPSTRIO AI WORKSHOP
                   </span>
                   <h3 className="text-xl font-bold text-white">Schedule an AI Strategy Session</h3>
                 </div>
 
-                <div className="space-y-3 text-xs">
+                <div className="space-y-3 text-xs md:text-sm">
                   <div>
                     <label className="block text-zinc-400 font-semibold mb-1">Full Name</label>
                     <input
@@ -1380,18 +1333,18 @@ export default function AIFrameworkPage() {
                       onChange={(e) => setFormData({ ...formData, aiGoal: e.target.value })}
                       className="w-full px-4 py-2.5 bg-black border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-rose-500"
                     >
-                      <option value="RAG & Enterprise Search">RAG & Enterprise Knowledge Search</option>
-                      <option value="AI Agents & Automation">Autonomous AI Agents & Workflows</option>
-                      <option value="Multi-Model API Gateway">Multi-Model LLM Gateway & Routing</option>
-                      <option value="Private Model Hosting">Private LLM Hosting (vLLM / Llama 3)</option>
-                      <option value="DevSecOps & AI Governance">DevSecOps & Responsible AI Guardrails</option>
+                      <option value="Hybrid RAG & Enterprise Search">Hybrid RAG & Enterprise Knowledge Search</option>
+                      <option value="Autonomous AI Agents & Swarms">Autonomous AI Agents & Swarms</option>
+                      <option value="Multi-Model LLM Gateway & Routing">Multi-Model LLM Gateway & Dynamic Routing</option>
+                      <option value="Private Model Hosting (vLLM / Llama)">Private Model Hosting (vLLM / Llama 3)</option>
+                      <option value="MLOps & AI Governance Guardrails">MLOps & AI Governance (EU AI Act & SOC 2)</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-zinc-400 font-semibold mb-1">Project Overview</label>
+                    <label className="block text-zinc-400 font-semibold mb-1">Project & Technical Scope</label>
                     <textarea
                       rows={3}
-                      placeholder="Describe your AI use case or technical goals..."
+                      placeholder="Describe your current enterprise AI use cases or technical requirements..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-2.5 bg-black border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-rose-500"

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight, Check, Plus, Minus, Code2, CloudCog, ShieldCheck, Cpu, GitPullRequest, Layers, Users, HeartHandshake } from "lucide-react";
+import { ArrowUpRight, Plus, Minus, Code2, CloudCog, ShieldCheck, Cpu, GitPullRequest, Layers, Users, HeartHandshake } from "lucide-react";
 import Link from "next/link";
 
 export function SoftwareFooter() {
@@ -38,10 +38,10 @@ export function SoftwareFooter() {
     <>
       {/* 13. WHY DEVOPSTRIO ENGINEERING */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">ADVANTAGE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Why Devopstrio Engineering</h2>
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">ADVANTAGE</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">Why Devopstrio Engineering</h2>
           </Reveal>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -50,9 +50,9 @@ export function SoftwareFooter() {
               return (
                 <div key={idx} className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-2xl hover:border-rose-500/50 hover:bg-zinc-900 transition-all duration-300 group flex flex-col items-center text-center">
                   <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-4 group-hover:bg-rose-500/10 group-hover:border-rose-500/30 transition-all">
-                    <Icon className="w-6 h-6 text-zinc-400 group-hover:text-rose-500 transition-colors" />
+                    <Icon className="w-6 h-6 text-zinc-300 group-hover:text-rose-500 transition-colors" />
                   </div>
-                  <h4 className="text-sm font-bold text-zinc-200 group-hover:text-white transition-colors">{item.title}</h4>
+                  <h4 className="text-base md:text-lg font-bold text-zinc-200 group-hover:text-white transition-colors">{item.title}</h4>
                 </div>
               );
             })}
@@ -62,15 +62,15 @@ export function SoftwareFooter() {
 
       {/* 14. FAQ */}
       <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60 z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="max-w-3xl mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
+              <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500">
                 FAQ
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-650 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4">
+              Questions we get <span className="text-white font-extrabold bg-gradient-to-r from-red-650 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
             </h2>
           </Reveal>
 
@@ -83,14 +83,14 @@ export function SoftwareFooter() {
                     onClick={() => toggleFaq(idx)}
                     className="flex justify-between items-center w-full text-left focus:outline-none group"
                   >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
+                    <span className="text-base md:text-lg font-semibold text-zinc-200 group-hover:text-white transition-colors">
                       {faq.q}
                     </span>
-                    <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                    <div className="text-zinc-400 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
+                      {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                     </div>
                   </button>
-                  <div className={`mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl flex flex-col gap-4 ${isOpen ? "block animate-fadeIn" : "hidden"}`}>
+                  <div className={`mt-4 text-sm md:text-base text-zinc-300 leading-relaxed font-medium max-w-3xl flex flex-col gap-4 ${isOpen ? "block animate-fadeIn" : "hidden"}`}>
                     <p>{faq.a}</p>
                   </div>
                 </div>
@@ -103,15 +103,15 @@ export function SoftwareFooter() {
       {/* 15. CTA SECTION */}
       <section className="w-full py-32 bg-black text-center relative overflow-hidden z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.035),transparent_60%)] pointer-events-none" />
-        <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
+        <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Build Better Software with Devopstrio</h2>
-          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
+          <p className="text-zinc-300 text-base md:text-lg font-medium mb-10 max-w-xl mx-auto leading-relaxed">
             Partner with Devopstrio to design, develop, and scale secure, cloud-native software that accelerates innovation and delivers measurable business value.
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4">
             <Link
               href="/contact#contact-form"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
+              className="inline-flex items-center gap-3 pl-6 pr-4 py-3.5 bg-white text-black font-semibold text-sm md:text-base tracking-wide rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
             >
               Start Your Project
               <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
@@ -120,7 +120,7 @@ export function SoftwareFooter() {
             </Link>
             <Link
               href="/contact#contact-form"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-transparent border border-white/20 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-white/5 transition-all duration-300"
+              className="inline-flex items-center gap-3 pl-6 pr-4 py-3.5 bg-transparent border border-white/20 text-white font-semibold text-sm md:text-base tracking-wide rounded-full hover:bg-white/5 transition-all duration-300"
             >
               Speak with an Engineering Expert
               <div className="w-7 h-7 rounded-full bg-rose-500 flex items-center justify-center">

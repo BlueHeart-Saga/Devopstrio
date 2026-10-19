@@ -28,7 +28,7 @@ export default function QualityEngineeringPage() {
           { name: "Quality Engineering", url: "https://devopstrio.co.uk/ecosystem/engineering-excellence/quality-engineering" }
         ]}
       />
-      <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-amber-500 selection:text-white">
+      <main className="relative min-h-screen bg-black text-white font-sans selection:bg-amber-500 selection:text-white">
         <div className="fixed inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
         
         <QualityHeroOverview />

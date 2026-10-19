@@ -1,1118 +1,923 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Reveal } from "@/components/ui/Reveal";
-import { SectionNavbar } from "@/components/ui/SectionNavbar";
-import { PartnerCertifications } from "@/sections/ecosystem/partnerships/PartnerCertifications";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 import {
-  ArrowUpRight,
-  CheckCircle2,
-  Plus,
-  Minus,
+  ArrowRight,
+  Check,
+  Clock,
   Cloud,
+  Code2,
   Cpu,
   Database,
-  Shield,
-  Briefcase,
-  Sparkles,
-  Layout,
-  Lock,
-  Workflow,
-  LineChart,
-  ChevronRight,
-  Terminal,
-  Activity,
-  Zap,
-  Check,
-  Search,
-  Globe,
-  Settings,
-  Eye,
-  GitMerge,
-  Building,
-  Server,
+  Gauge,
   Layers,
-  Award,
-  Clock,
-  HeartHandshake
+  Lock,
+  Plus,
+  Repeat2,
+  Rocket,
+  Server,
+  ShieldCheck,
+  Sparkles,
+  TrendingDown,
+  Workflow,
+  Zap,
 } from "lucide-react";
 
-const gcpSections = [
-  { id: "overview", label: "Overview" },
-  { id: "capabilities", label: "Capabilities" },
-  { id: "solutions", label: "Solutions" },
-  { id: "architecture", label: "Reference Architecture" },
-  { id: "certifications", label: "Certifications" },
-  { id: "use-cases", label: "Use Cases" },
-  { id: "technologies", label: "Technology Stack" },
-  { id: "why-gcp", label: "Why Devopstrio" },
-  { id: "outcomes", label: "Outcomes" },
-  { id: "faq", label: "FAQ" }
-];
+/* =========================================================================
+   ASSETS
+   ========================================================================= */
+const IMG = "/webp/assets/azure-cloud";
+const AI_IMG = "/ai/gcp-partnership";
 
-export default function GoogleCloudStrategicAllianceHub() {
-  const [activeTab, setActiveTab] = useState("cloud");
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+/* =========================================================================
+   SHARED CONSTANTS & STYLES
+   ========================================================================= */
+const ROSE = "#F43F5E";
+const wrap = "mx-auto w-full max-w-[1280px] px-6 sm:px-8";
+const h2 = "text-[32px] leading-[40px] sm:text-[42px] sm:leading-[48px] font-bold tracking-[-1.2px] text-white";
+const lead = "text-[16px] sm:text-[17px] leading-[28px] text-zinc-400";
 
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
+/* =========================================================================
+   REVEAL ON SCROLL HELPER
+   ========================================================================= */
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [on, setOn] = useState(false);
 
-  // Smooth scroll and scroll animations
   useEffect(() => {
-    let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
-    let raf = 0;
-    let cleanupTriggers = () => { };
-    let alive = true;
-
-    const startMotion = async () => {
-      const [{ default: Lenis }, { default: gsap }, { ScrollTrigger }] = await Promise.all([
-        import("lenis"),
-        import("gsap"),
-        import("gsap/ScrollTrigger")
-      ]);
-
-      if (!alive) return;
-
-      lenis = new Lenis({ lerp: 0.08, wheelMultiplier: 0.85 });
-      const loop = (time: number) => {
-        lenis?.raf(time);
-        raf = requestAnimationFrame(loop);
-      };
-      raf = requestAnimationFrame(loop);
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Fade-in animation on scroll
-      gsap.utils.toArray<HTMLElement>(".fade-scroll-item").forEach((card, index) => {
-        gsap.fromTo(
-          card,
-          { opacity: 0.2, y: 15 },
-          {
-            opacity: 1,
-            y: 0,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 85%",
-              end: "top 55%",
-              scrub: true
-            },
-            delay: index * 0.02
-          }
-        );
-      });
-
-      cleanupTriggers = () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-
-    startMotion();
-
-    return () => {
-      alive = false;
-      cancelAnimationFrame(raf);
-      lenis?.destroy();
-      cleanupTriggers();
-    };
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setOn(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.12 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
-  const heroPoints = [
-    { text: "Cloud-Native Application Platforms", desc: "Scale faster with GKE, Cloud Run & serverless backends" },
-    { text: "Data, Analytics & AI", desc: "Unlock deep values using BigQuery, Dataflow & Vertex AI" },
-    { text: "Kubernetes & Platform Engineering", desc: "ArgoCD pipelines, infrastructure automation & SRE" },
-    { text: "Secure, Scalable Infrastructure", desc: "Zero-trust IAM boundaries, landing zones & SCC logs" }
-  ];
-
-  const overviewCards = [
-    {
-      title: "Cloud Infrastructure & Migration",
-      desc: "Architecting secure GCP environments, network topologies, landing zones, and moving workloads safely from legacy centers.",
-      icon: <Server className="w-6 h-6 text-blue-500" />
-    },
-    {
-      title: "Data & Analytics on GCP",
-      desc: "Structuring modern data lakes, real-time message streaming, Looker business intelligence, and high-performance BigQuery tables.",
-      icon: <Database className="w-6 h-6 text-red-500" />
-    },
-    {
-      title: "AI / ML & Intelligent Automation",
-      desc: "Implementing custom machine learning models, semantic search pipelines, and agentic assistant workflows on Vertex AI.",
-      icon: <Sparkles className="w-6 h-6 text-yellow-500" />
-    },
-    {
-      title: "Kubernetes, DevOps & SRE",
-      desc: "Establishing internal developer platforms, container engines, GitOps automation, and 24x7 managed reliability operations.",
-      icon: <Cpu className="w-6 h-6 text-green-500" />
-    }
-  ];
-
-  const capabilities = [
-    {
-      title: "Google Cloud Infrastructure Engineering",
-      desc: "VPC design, compute, storage, networking, landing zones, hybrid connectivity.",
-      icon: <Server className="w-6 h-6 text-blue-500" />
-    },
-    {
-      title: "Cloud Migration & Modernization",
-      desc: "Move workloads to GCP, modernize legacy apps, optimize architecture and operations.",
-      icon: <Cloud className="w-6 h-6 text-red-500" />
-    },
-    {
-      title: "Kubernetes & Platform Engineering",
-      desc: "GKE platforms, CI/CD pipelines, IaC, platform automation, scalable container environments.",
-      icon: <Cpu className="w-6 h-6 text-yellow-500" />
-    },
-    {
-      title: "Data Engineering & Analytics",
-      desc: "BigQuery, Dataflow, Pub/Sub, data lakes, reporting, real-time analytics pipelines.",
-      icon: <Database className="w-6 h-6 text-green-500" />
-    },
-    {
-      title: "AI / ML & Intelligent Automation",
-      desc: "Vertex AI, ML pipelines, intelligent search, predictive models, AI-enabled business workflows.",
-      icon: <Sparkles className="w-6 h-6 text-blue-500" />
-    },
-    {
-      title: "Security, IAM & Governance",
-      desc: "Identity, policy controls, logging, monitoring, threat visibility, compliance-aligned architecture.",
-      icon: <Lock className="w-6 h-6 text-red-500" />
-    },
-    {
-      title: "DevOps, SRE & Cloud Operations",
-      desc: "Automation, observability, release engineering, reliability engineering, 24×7 managed operations.",
-      icon: <Activity className="w-6 h-6 text-yellow-500" />
-    },
-    {
-      title: "Cost Optimization & Cloud Governance",
-      desc: "Cloud spend control, resource optimization, performance monitoring, governance frameworks.",
-      icon: <LineChart className="w-6 h-6 text-green-500" />
-    }
-  ];
-
-  const solutions = [
-    { title: "GCP Landing Zones & Cloud Foundations", desc: "Establishing enterprise organization setup, IAM hierarchy, security barriers, and guardrails." },
-    { title: "Cloud-Native Application Platforms", desc: "Designing scalable serverless APIs and frontends using Cloud Run, Cloud CDN, and Cloud SQL." },
-    { title: "GKE-Based Container Platforms", desc: "Setting up production-grade Kubernetes engines with multi-zone clustering, auto-scaling, and Anthos." },
-    { title: "Real-Time Data & Analytics Pipelines", desc: "Ingesting telemetry clickstreams using Pub/Sub, executing real-time streaming queries with Dataflow." },
-    { title: "AI / ML Platforms on Vertex AI", desc: "Building unified machine learning spaces to train, tune, validate, and host proprietary enterprise models." },
-    { title: "Hybrid Cloud & API Integration Platforms", desc: "Connecting enterprise databases and external endpoints through Apigee API gateways." },
-    { title: "DevSecOps & Release Automation on GCP", desc: "Constructing safe CI/CD delivery pipelines using Cloud Build, Artifact Registry, and GitOps workflows." },
-    { title: "Monitoring, Reliability & Cloud Operations", desc: "Custom Cloud Monitoring dashboards, proactive alerting metrics, SRE automation, and support." }
-  ];
-
-  const refArchitectureLayers = [
-    { name: "Experience Layer", services: "Web & Mobile Applications / Portals (Cloud CDN, Load Balancing)" },
-    { name: "Application & API Layer", services: "API Gateways, Microservices Integration (Apigee, Cloud Run)" },
-    { name: "Kubernetes / Compute Layer", services: "Container Orchestration & Scaling (GKE, Compute Engine)" },
-    { name: "Data & AI Layer", services: "Data Warehousing, Ingestion, Model Hosting (BigQuery, Pub/Sub, Vertex AI)" },
-    { name: "Security & Observability Layer", services: "Access Controls, System Monitoring (IAM, Cloud Operations Suite, SCC)" },
-    { name: "GCP Infrastructure Layer", services: "Enterprise Cloud Landing Zones, VPC Networking, Cloud Storage" }
-  ];
-
-  const whyUs = [
-    {
-      title: "Cloud-Native Engineering Expertise",
-      desc: "Build modern platforms on GCP with performance, scalability, and resilience in mind.",
-      icon: <Cloud className="w-6 h-6 text-blue-500" />
-    },
-    {
-      title: "Data & AI Acceleration",
-      desc: "Unlock business value with BigQuery, Vertex AI, analytics pipelines, and intelligent automation.",
-      icon: <Sparkles className="w-6 h-6 text-red-500" />
-    },
-    {
-      title: "Kubernetes & Platform Engineering Strength",
-      desc: "Standardize and scale cloud-native operations through GKE and DevOps automation.",
-      icon: <Cpu className="w-6 h-6 text-yellow-500" />
-    },
-    {
-      title: "Security & Governance by Design",
-      desc: "Embed identity, observability, compliance, and cloud governance from the start.",
-      icon: <Shield className="w-6 h-6 text-green-500" />
-    },
-    {
-      title: "End-to-End Delivery",
-      desc: "Strategy, migration, architecture, engineering, operations, and optimization under one partner.",
-      icon: <Briefcase className="w-6 h-6 text-blue-500" />
-    },
-    {
-      title: "Business-Focused Outcomes",
-      desc: "Faster delivery, better reliability, smarter analytics, and more efficient cloud operations.",
-      icon: <HeartHandshake className="w-6 h-6 text-red-500" />
-    }
-  ];
-
-  const outcomes = [
-    { value: "40%", label: "Faster Deployment Cycles", desc: "Automated GitOps pipelines release updates with less manual checks." },
-    { value: "30%", label: "Lower Ops Overhead", desc: "GKE Autopilot and serverless operations minimize direct machine management." },
-    { value: "24x7", label: "Managed Cloud Monitoring", desc: "Proactive alert sensors identify system anomalies before outages hit clients." },
-    { value: "99.9%", label: "Availability Targets Met", desc: "Redundant regional deployments protect enterprise scale databases." }
-  ];
-
-  const techStack = {
-    infrastructure: [
-      { name: "Compute Engine", desc: "Secure virtual servers" },
-      { name: "Cloud Storage", desc: "Enterprise object storage" },
-      { name: "Cloud SQL", desc: "Managed relational database engine" },
-      { name: "VPC / Networking", desc: "Private subnets and firewalls" },
-      { name: "Load Balancing", desc: "Global HTTP(S) request routing" },
-      { name: "Cloud Run", desc: "Serverless container execution" }
-    ],
-    containers: [
-      { name: "Google Kubernetes Engine", desc: "Production container engine" },
-      { name: "Artifact Registry", desc: "Private build image storage" },
-      { name: "Cloud Build", desc: "Continuous execution scripting" },
-      { name: "Anthos", desc: "Hybrid cluster management" },
-      { name: "Terraform", desc: "Infrastructure as Code" }
-    ],
-    data: [
-      { name: "BigQuery", desc: "Serverless data warehouse tables" },
-      { name: "Pub/Sub", desc: "Real-time message messaging queues" },
-      { name: "Dataflow", desc: "Stream analytics data processing" },
-      { name: "Dataproc", desc: "Managed Apache Spark/Hadoop clusters" },
-      { name: "Looker", desc: "Business intelligence visual charts" },
-      { name: "Cloud Composer", desc: "Managed workflow orchestration" }
-    ],
-    ai: [
-      { name: "Vertex AI", desc: "Flagship machine learning space" },
-      { name: "Dialogflow", desc: "Conversational customer helpers" },
-      { name: "Document AI", desc: "Structured data extraction" },
-      { name: "Vision AI", desc: "Image analysis and categorization" },
-      { name: "Natural Language AI", desc: "Text sentiment parsing algorithms" }
-    ],
-    security: [
-      { name: "IAM", desc: "Secure permissions directory" },
-      { name: "Cloud Logging", desc: "System activity logs aggregator" },
-      { name: "Cloud Monitoring", desc: "Dashboard telemetry and alerting" },
-      { name: "Security Command Center", desc: "Cloud threat risk detection" },
-      { name: "Chronicle", desc: "Security operations center dashboard" },
-      { name: "Secret Manager", desc: "API key and credential storage" }
-    ]
-  };
-
-  const faqs = [
-    {
-      q: "What Google Cloud services does Devopstrio support?",
-      a: "We support the entire Google Cloud ecosystem, specializing in infrastructure engineering, GKE container orchestration, BigQuery data platforms, Vertex AI machine learning pipelines, cloud-native app development on Cloud Run, IAM security controls, and Cloud Operations Suite monitoring."
-    },
-    {
-      q: "Do you provide GCP migration and modernization services?",
-      a: "Yes. We help enterprises migrate their legacy databases, virtual machines, and monolithic applications to Google Cloud using proven migration frameworks. Post-migration, we refactor workloads into cloud-native architectures to optimize performance and reduce licensing costs."
-    },
-    {
-      q: "Can you build data platforms with BigQuery and Dataflow?",
-      a: "Absolutely. We construct modern, secure data lakes and event-driven data ingestion streams using Pub/Sub, Dataflow, and BigQuery. We also set up Looker visualization dashboards to deliver real-time data insights directly to business leaders."
-    },
-    {
-      q: "Do you implement AI / ML solutions on Vertex AI?",
-      a: "Yes. We build end-to-end MLOps pipelines on Vertex AI to train, deploy, and monitor custom machine learning models. We also leverage Google's pre-trained Gemini models, Dialogflow, Document AI, and Vision AI to integrate conversational chat assistants and document intelligence into your systems."
-    },
-    {
-      q: "Can you build and manage Kubernetes platforms on GKE?",
-      a: "Yes. We design and construct highly available Google Kubernetes Engine (GKE) platforms with automated node scaling, multi-region cluster failovers, container vulnerability scanners, and unified developer self-service provisioning using ArgoCD GitOps pipelines."
-    },
-    {
-      q: "Do you offer managed cloud operations for GCP?",
-      a: "Yes. We provide 24/7 managed reliability operations, continuous logging and threat visibility monitoring, backup cycles automation, and cost allocations optimization to ensure your GCP platform remains high-performing and budget-friendly."
-    }
-  ];
-
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
+        on
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-6 motion-reduce:opacity-100 motion-reduce:translate-y-0"
+      } ${className}`}
+      data-in={on}
+    >
+      {children}
+    </div>
+  );
+}
 
-      {/* 1. HERO SECTION */}
-      <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
+function Head({
+  title,
+  body,
+  center,
+  subtitle,
+}: {
+  title: ReactNode;
+  body?: string;
+  center?: boolean;
+  subtitle?: string;
+}) {
+  return (
+    <div className={center ? "mx-auto max-w-[760px] text-center" : "max-w-[760px]"}>
+      {subtitle && (
+        <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+          {subtitle}
+        </span>
+      )}
+      <h2 className={h2}>{title}</h2>
+      {body && <p className={`${lead} mt-4`}>{body}</p>}
+    </div>
+  );
+}
 
-        {/* Concentric Wave Elements in Google Cloud Colors */}
-        <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
-          <div className="relative w-full h-full flex items-center justify-end">
-            <div className="absolute w-[200%] h-[160%] right-[-50%] rounded-[120px] md:rounded-[260px] border border-blue-500/10 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-red-500/15 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-yellow-500/15 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-green-500/20 rotate-[-28deg] pointer-events-none" />
+function Button({
+  href,
+  children,
+  ghost,
+}: {
+  href: string;
+  children: ReactNode;
+  ghost?: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 ${
+        ghost
+          ? "border border-zinc-800 bg-zinc-950/70 text-zinc-200 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white"
+          : "bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 text-white hover:from-red-500 hover:to-rose-400 hover:shadow-[0_0_28px_rgba(225,29,72,0.4)]"
+      }`}
+    >
+      {children}
+    </Link>
+  );
+}
 
-            <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-blue-500/20 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-red-500/25 rotate-[-28deg] pointer-events-none" />
+/* =========================================================================
+   1. HERO SECTION (Oracle-Style Connected Cards + Orbiting Curve Wave Lines)
+   ========================================================================= */
+const heroHighlights = [
+  {
+    text: "BigQuery & Data Modernization",
+    desc: "Real-time streaming analytics, enterprise data mesh & serverless SQL",
+  },
+  {
+    text: "Enterprise Kubernetes (GKE)",
+    desc: "Autopilot clusters, multi-cluster Anthos mesh & microservices agility",
+  },
+  {
+    text: "Vertex AI & Gemini Models",
+    desc: "Enterprise GenAI copilots, custom embeddings & Agentic AI workflows",
+  },
+  {
+    text: "BeyondCorp Zero-Trust Security",
+    desc: "Cloud Armor DDoS protection, VPC Service Controls & Security Command Center",
+  },
+];
 
-            <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-blue-600/15 via-red-600/10 to-yellow-500/15 rounded-full blur-[50px] opacity-40 animate-pulse" />
-          </div>
+function Hero() {
+  return (
+    <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
+      {/* Concentric Orbital Wave Elements in Crimson/Blue Theme */}
+      <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
+        <div className="relative w-full h-full flex items-center justify-end">
+          <div className="absolute w-[200%] h-[160%] right-[-50%] rounded-[120px] md:rounded-[260px] border border-red-950/15 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-blue-500/10 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-rose-500/10 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-red-600/15 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-blue-500/20 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-rose-500/25 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute right-[5%] w-[200px] h-[100px] bg-gradient-to-r from-blue-600/20 via-rose-600/15 to-emerald-500/10 rounded-full blur-[55px] opacity-50 animate-pulse" />
         </div>
+      </div>
 
-        {/* Soft Ambient Light Theme Effect Gradients on Pitch-Black */}
-        <div className="absolute inset-0 z-0 opacity-70 pointer-events-none select-none">
-          <div className="absolute top-[20%] right-[10%] w-[450px] h-[450px] bg-blue-500/10 rounded-full blur-[110px]" />
-          <div className="absolute bottom-[10%] right-[30%] w-[350px] h-[350px] bg-green-500/5 rounded-full blur-[100px]" />
-          <div className="absolute top-[35%] right-[0%] w-[250px] h-[250px] bg-red-500/10 rounded-full blur-[90px]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0b0f2a_1px,transparent_1px),linear-gradient(to_bottom,#0b0f2a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30" />
-        </div>
+      {/* Ambient Radial Gradients & Precision Blueprint Grid */}
+      <div className="absolute inset-0 z-0 opacity-70 pointer-events-none select-none">
+        <div className="absolute top-[20%] right-[10%] w-[480px] h-[480px] bg-blue-950/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[10%] right-[30%] w-[380px] h-[380px] bg-rose-950/15 rounded-full blur-[100px]" />
+        <div className="absolute top-[35%] right-[0%] w-[260px] h-[260px] bg-emerald-950/15 rounded-full blur-[90px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f0c0c_1px,transparent_1px),linear-gradient(to_bottom,#1f0c0c_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35" />
+      </div>
 
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-            {/* Hero Left Content */}
-            <div className="lg:col-span-7 flex flex-col items-start text-left">
-              <Reveal className="mb-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
-                  <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
-                    Strategic Cloud Partnership
-                  </span>
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.1}>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
-                  Google Cloud <span className="text-[#E11D48] whitespace-nowrap">Ecosystem</span>
-                </h1>
-              </Reveal>
-
-              <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  Build intelligent, cloud-native platforms with Google Cloud—combining modern infrastructure, data engineering, AI/ML, Kubernetes, and secure operations to accelerate digital transformation.
-                </p>
-              </Reveal>
-
-              {/* Hero Bullet Points Grid */}
-              <Reveal delay={0.3} className="w-full mb-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {heroPoints.map((pt, idx) => (
-                    <div key={idx} className="flex gap-3 animate-fadeIn">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 mt-0.5">
-                        <Check className="w-3 h-3" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold text-white uppercase tracking-wider">{pt.text}</h4>
-                        <p className="text-[10px] text-zinc-450 font-semibold">{pt.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </Reveal>
-
-              {/* CTAs */}
-              <Reveal delay={0.4} className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact#contact-form"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
-                >
-                  Talk to a Google Cloud Expert
-                </Link>
-                <a
-                  href="#capabilities"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  Explore Google Cloud Capabilities
-                </a>
-              </Reveal>
-            </div>
-
-            {/* Hero Right Visual (Logo Integration) */}
-            <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
-              <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
-
-                {/* Connecting glowing line and animation */}
-                <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/25 via-red-500/30 to-blue-500/25 z-0 pointer-events-none">
-                  <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full blur-[2px] shadow-[0_0_12px_#E11D48] animate-ping" style={{ animationDuration: '3s' }} />
-                </div>
-
-                <div className="flex items-center justify-between w-full relative z-10 px-4">
-
-                  {/* Devopstrio Logo Card */}
-                  <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-rose-600 to-red-655 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img src="/webp/assets/logo/logo.webp"
-                      alt="Devopstrio Logo"
-                      className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                      loading="lazy" />
-                  </div>
-
-                  {/* Plus Connector Indicator */}
-                  <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-lg relative z-20">
-                    <Sparkles className="w-4 h-4 text-yellow-450 animate-pulse" />
-                  </div>
-
-                  {/* Google Cloud Logo Card */}
-                  <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-blue-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600 to-red-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img src="/assets/Tech_logos/Google_Cloud.svg"
-                      alt="Google Cloud Logo"
-                      className="w-full h-auto max-h-[85%] object-contain select-none"
-                      loading="lazy" />
-                  </div>
-
-                </div>
-
-                <div className="absolute w-[80%] h-[80%] rounded-full border border-zinc-900/40 pointer-events-none z-0" />
-                <div className="absolute w-[95%] h-[95%] rounded-full border border-zinc-900/20 pointer-events-none z-0" />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* STICKY SECTION NAVBAR */}
-      <SectionNavbar sections={gcpSections} />
-
-      {/* 2. PARTNERSHIP OVERVIEW */}
-      <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-            <div className="lg:col-span-5">
-              <Reveal className="text-left">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                  ALLIANCE VALUE
+      <div className="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column Content */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            <Reveal className="mb-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/60 mb-6 backdrop-blur-sm">
+                <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
+                <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-300">
+                  Google Cloud Premier Partner
                 </span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-                  Building Modern Cloud Platforms <span className="text-rose-500">with Google Cloud</span>
-                </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  Devopstrio combines Google Cloud's leading data, AI, and container engines with our DevOps and systems engineering expertise to help organizations modernize infrastructure, build secure cloud-native products, create real-time analytics platforms, operationalize AI/ML, and improve overall delivery speed and resilience.
-                </p>
-                <div className="h-[1px] bg-zinc-900 w-full mb-8" />
-                <p className="text-zinc-405 text-xs md:text-sm leading-relaxed font-semibold">
-                  By standardizing deployment pipelines and embedding automated cost structures, we enable teams to scale business operations with confidence.
-                </p>
-              </Reveal>
-            </div>
+              </div>
+            </Reveal>
 
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 select-none">
-                {overviewCards.map((card, idx) => (
+            <Reveal delay={0.1}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+                Google Cloud{" "}
+                <span className="text-[#E11D48] whitespace-nowrap">Ecosystem</span>
+              </h1>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8 max-w-[620px]">
+                Architect, modernize, and scale enterprise workloads on Google Cloud Platform. From
+                enterprise resource topologies and GKE container platforms to BigQuery real-time analytics,
+                Vertex AI generative models, and 24×7 multi-cloud operations.
+              </p>
+            </Reveal>
+
+            {/* Bullet Highlights Grid with Red Check Icons */}
+            <Reveal delay={0.3} className="w-full mb-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                {heroHighlights.map((pt, idx) => (
                   <div
                     key={idx}
-                    className="p-6 bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 text-left group"
+                    className="flex gap-3 p-3 rounded-xl bg-zinc-950/40 border border-zinc-900/80 hover:border-zinc-800 transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300">
-                      {card.icon}
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 mt-0.5">
+                      <Check className="w-3 h-3 stroke-[2.5]" />
                     </div>
-                    <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2 font-sans">{card.title}</h4>
-                    <p className="text-[11px] md:text-xs text-zinc-400 font-bold leading-relaxed font-sans">{card.desc}</p>
+                    <div>
+                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                        {pt.text}
+                      </h4>
+                      <p className="text-[11px] text-zinc-400 font-medium leading-relaxed mt-0.5">
+                        {pt.desc}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
-          </div>
-        </div>
-      </section>
-
-      {/* 3. CAPABILITY AREAS */}
-      <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              OUR CORE STRENGTHS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Our Google Cloud <span className="text-rose-500">Capabilities</span>
-            </h2>
-            <p className="text-zinc-350 text-xs md:text-sm font-semibold">
-              Advanced cloud capabilities mapped directly to GCP design principles, ensuring scalability and performance.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {capabilities.map((c, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 min-h-[220px]"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4 border-b border-zinc-900/60 pb-3">
-                    <span className="text-[10px] font-mono text-zinc-550 font-bold">0{idx + 1}</span>
-                    <div className="group-hover:scale-110 transition-transform duration-300">
-                      {c.icon}
-                    </div>
-                  </div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">{c.title}</h4>
-                  <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">
-                    {c.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. SOLUTIONS WE DELIVER */}
-      <section id="solutions" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              ENTERPRISE DEPLOYMENTS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Google Cloud Solutions <span className="text-rose-500">for Modern Enterprises</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {solutions.map((sol, idx) => (
-              <div
-                key={idx}
-                className="p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-4 text-rose-500">
-                    <CheckCircle2 className="w-4 h-4 text-rose-500" />
-                  </div>
-                  <h4 className="text-xs font-bold text-white mb-2 uppercase tracking-wide">{sol.title}</h4>
-                  <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">{sol.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. GOOGLE CLOUD REFERENCE ARCHITECTURE */}
-      <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              BLUEPRINT DESIGN
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              A Reference Architecture <span className="text-rose-500">for Google Cloud Delivery</span>
-            </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-semibold">
-              Our standardized cloud delivery layers ensure consistency, high performance, security, and smooth data integrations.
-            </p>
-          </Reveal>
-
-          {/* Vertical Stack Layout */}
-          <div className="max-w-3xl mx-auto flex flex-col gap-4 relative">
-
-            {/* Connection Line */}
-            <div className="absolute left-[30px] md:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-blue-500/20 via-red-500/30 to-green-500/20 z-0 hidden md:block" />
-
-            {refArchitectureLayers.map((layer, idx) => (
-              <div
-                key={idx}
-                className="relative z-10 flex flex-col md:flex-row items-center md:justify-between p-5 bg-zinc-950/70 border border-zinc-900 hover:border-zinc-800 rounded-2xl transition-all duration-300 gap-4"
-              >
-                <div className="flex items-center gap-4 w-full md:w-1/3">
-                  <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-850 flex items-center justify-center font-mono text-xs font-bold text-rose-500 shadow-md">
-                    0{idx + 1}
-                  </div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider">{layer.name}</h4>
-                </div>
-                <div className="w-full md:w-2/3 text-left md:text-right">
-                  <p className="text-[11px] font-mono text-zinc-400 font-semibold">{layer.services}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. BUSINESS USE CASES */}
-
-
-
-      {/* CERTIFICATIONS */}
-      <PartnerCertifications
-        title="Google Cloud Certifications"
-        certifications={[
-          { image: "/webp/assets/ecosystem/GCP-award/image-130.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-131.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-132.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-133.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-134.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-135.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-136.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-137.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-146.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-147.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-148.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-149.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-150.webp" },
-          { image: "/webp/assets/ecosystem/GCP-award/image-151.webp" }
-        ]}
-      />
-
-
-      <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-          <Reveal className="mb-12 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              REAL-WORLD APPLICATION
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Where We Apply <span className="text-rose-500">Google Cloud Ecosystem</span>
-            </h2>
-          </Reveal>
-
-          {/* Navigation Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 select-none">
-            {[
-              { id: "cloud", label: "Cloud & Infrastructure" },
-              { id: "data", label: "Data & Analytics" },
-              { id: "ai", label: "AI / ML" },
-              { id: "devops", label: "DevOps & Platform" }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${activeTab === tab.id
-                  ? "bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-600/10"
-                  : "bg-zinc-950 text-zinc-400 border-zinc-900 hover:text-white"
-                  }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+            {/* Action Buttons */}
+            <Reveal delay={0.4} className="flex flex-wrap gap-4">
+              <Button href="/contact#contact-form">
+                Talk to a GCP Solutions Expert
+              </Button>
+              <Button href="#services" ghost>
+                Explore GCP Capabilities
+              </Button>
+            </Reveal>
           </div>
 
-          {/* Active Panel Content */}
-          <div className="max-w-4xl mx-auto bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 transition-all duration-500">
-            {activeTab === "cloud" && (
-              <div className="animate-fadeIn space-y-6">
-                <h3 className="text-base font-bold text-white uppercase tracking-wider border-b border-zinc-900 pb-3">Cloud & Infrastructure Modernization</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Application Modernization</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Refactoring monolithic legacy structures into serverless Cloud Run and GKE services.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">GCP Migration Programs</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Secure datacenter transformations using landing zones and structured migration tools.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Container Platform Adoption</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Standardizing infrastructure deployments through Kubernetes engines.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Disaster Recovery & Resilient Hosting</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Setting up cross-region active-active clusters and automated db backup failovers.</p>
-                    </div>
+          {/* Right Column: Devopstrio + Google Cloud Connected Cards */}
+          <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
+            <div className="relative w-full max-w-[440px] aspect-square flex items-center justify-center">
+              {/* Outer concentric integration rings */}
+              <div className="absolute w-[95%] h-[95%] rounded-full border border-zinc-900/40 pointer-events-none z-0" />
+              <div className="absolute w-[80%] h-[80%] rounded-full border border-zinc-900/60 pointer-events-none z-0" />
+              <div className="absolute w-[60%] h-[60%] rounded-full border border-zinc-800/30 pointer-events-none z-0" />
+
+              {/* Connecting glowing line and animated energy node */}
+              <div className="absolute inset-x-8 sm:inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/30 via-blue-500/50 to-emerald-500/30 z-0 pointer-events-none">
+                <div
+                  className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full blur-[2px] shadow-[0_0_14px_#4285F4] animate-ping"
+                  style={{ animationDuration: "2.8s" }}
+                />
+              </div>
+
+              {/* Floating Top Badge */}
+              <div className="absolute -top-2 right-6 z-20 hidden sm:flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/90 px-3 py-1 shadow-lg backdrop-blur-md">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[10px] font-semibold text-zinc-300">AI-First Architecture</span>
+              </div>
+
+              {/* Floating Bottom Badge */}
+              <div className="absolute -bottom-2 left-6 z-20 hidden sm:flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/90 px-3 py-1 shadow-lg backdrop-blur-md">
+                <Sparkles className="w-3 h-3 text-amber-400" />
+                <span className="text-[10px] font-semibold text-zinc-300">GCP Certified Architects</span>
+              </div>
+
+              {/* Cards Container */}
+              <div className="flex items-center justify-between w-full relative z-10 px-3 sm:px-6">
+                {/* Devopstrio Logo Card */}
+                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-rose-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.04] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
+                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-rose-600 to-red-600 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
+                  <img
+                    src="/webp/assets/logo/logo.webp"
+                    alt="Devopstrio"
+                    className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Central Connector Node */}
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-xl relative z-20 group hover:border-blue-500/40 transition-colors">
+                  <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
+                </div>
+
+                {/* Google Cloud Logo Card */}
+                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-blue-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.05] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
+                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
+                  <div className="flex flex-col items-center justify-center gap-2 w-full h-full">
+                    <img
+                      src="/assets/Tech_logos/Google_Cloud.svg"
+                      alt="Google Cloud"
+                      className="w-12 h-12 sm:w-14 sm:h-14 object-contain select-none filter drop-shadow-[0_2px_10px_rgba(66,133,244,0.4)]"
+                      loading="lazy"
+                    />
+                    <span className="text-[10px] font-bold tracking-wider text-zinc-300 uppercase">
+                      Google Cloud
+                    </span>
                   </div>
                 </div>
-              </div>
-            )}
-
-            {activeTab === "data" && (
-              <div className="animate-fadeIn space-y-6">
-                <h3 className="text-base font-bold text-white uppercase tracking-wider border-b border-zinc-900 pb-3">Data & Real-Time Analytics</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Enterprise Reporting</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Looker dashboards modeling complex tables to drive executive business decisions.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Customer Analytics</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Mapping consumer behavior and telemetry data inside unified BigQuery datasets.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Real-Time Operational Dashboards</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Streaming active telemetry events to track performance issues immediately.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Event-Driven Data Pipelines</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Using Pub/Sub queue parameters and Dataflow engines to ingest logs.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === "ai" && (
-              <div className="animate-fadeIn space-y-6">
-                <h3 className="text-base font-bold text-white uppercase tracking-wider border-b border-zinc-900 pb-3">AI / ML Platforms & Innovations</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Demand Forecasting</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Vertex AI models predicting market volume shifts based on seasonal datasets.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Document Intelligence</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Extracting invoice structures and metadata tags using Google Document AI.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Conversational AI</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Deploying Dialogflow chatbots connected to private databases.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Predictive Maintenance</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Anticipating sensor anomalies to lower factory hardware replacement overheads.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3 sm:col-span-2">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Intelligent Recommendations</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Serving real-time recommendations to storefront visitors using Retail Search APIs.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === "devops" && (
-              <div className="animate-fadeIn space-y-6">
-                <h3 className="text-base font-bold text-white uppercase tracking-wider border-b border-zinc-900 pb-3">DevOps & Platform Engineering</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Developer Platforms on GKE</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Building custom internal systems to provision sandbox environments instantly.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">CI/CD Automation</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Secure build workflows deploying container images straight to Artifact Registry.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Release Engineering</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Implementing canary testing models and zero downtime rolling upgrades.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 flex-shrink-0 mt-0.5"><Check className="w-3 h-3" /></div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">Environment Standardization</h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold mt-1">Unified Terraform blueprints managing organization variables safely.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. GOOGLE CLOUD TECHNOLOGIES WE WORK WITH */}
-      <section id="technologies" className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              TECHNICAL INTEGRATIONS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Google Cloud Technologies <span className="text-rose-500">Across the Stack</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-
-            {/* Infrastructure */}
-            <div className="p-6 bg-zinc-950/45 border border-zinc-900 rounded-3xl">
-              <span className="text-[9px] font-mono text-blue-500 uppercase tracking-widest block mb-4 font-bold">Cloud Infrastructure</span>
-              <div className="space-y-4">
-                {techStack.infrastructure.map((tech) => (
-                  <div key={tech.name}>
-                    <h5 className="text-[11px] font-bold text-white uppercase tracking-wide">{tech.name}</h5>
-                    <p className="text-[10px] text-zinc-500 leading-snug">{tech.desc}</p>
-                  </div>
-                ))}
               </div>
             </div>
-
-            {/* Containers */}
-            <div className="p-6 bg-zinc-950/45 border border-zinc-900 rounded-3xl">
-              <span className="text-[9px] font-mono text-red-500 uppercase tracking-widest block mb-4 font-bold">Containers & Platform</span>
-              <div className="space-y-4">
-                {techStack.containers.map((tech) => (
-                  <div key={tech.name}>
-                    <h5 className="text-[11px] font-bold text-white uppercase tracking-wide">{tech.name}</h5>
-                    <p className="text-[10px] text-zinc-500 leading-snug">{tech.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Data */}
-            <div className="p-6 bg-zinc-950/45 border border-zinc-900 rounded-3xl">
-              <span className="text-[9px] font-mono text-yellow-500 uppercase tracking-widest block mb-4 font-bold">Data & Analytics</span>
-              <div className="space-y-4">
-                {techStack.data.map((tech) => (
-                  <div key={tech.name}>
-                    <h5 className="text-[11px] font-bold text-white uppercase tracking-wide">{tech.name}</h5>
-                    <p className="text-[10px] text-zinc-500 leading-snug">{tech.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* AI */}
-            <div className="p-6 bg-zinc-950/45 border border-zinc-900 rounded-3xl">
-              <span className="text-[9px] font-mono text-green-500 uppercase tracking-widest block mb-4 font-bold">AI / ML</span>
-              <div className="space-y-4">
-                {techStack.ai.map((tech) => (
-                  <div key={tech.name}>
-                    <h5 className="text-[11px] font-bold text-white uppercase tracking-wide">{tech.name}</h5>
-                    <p className="text-[10px] text-zinc-500 leading-snug">{tech.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Security */}
-            <div className="p-6 bg-zinc-950/45 border border-zinc-900 rounded-3xl">
-              <span className="text-[9px] font-mono text-blue-500 uppercase tracking-widest block mb-4 font-bold">Security & Operations</span>
-              <div className="space-y-4">
-                {techStack.security.map((tech) => (
-                  <div key={tech.name}>
-                    <h5 className="text-[11px] font-bold text-white uppercase tracking-wide">{tech.name}</h5>
-                    <p className="text-[10px] text-zinc-500 leading-snug">{tech.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* 8. WHY GOOGLE CLOUD + DEVOPSTRIO */}
-      <section id="why-gcp" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              PARTNERSHIP STRENGTH
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Why Organizations Build on Google Cloud <span className="text-rose-500">with Devopstrio</span>
-            </h2>
-          </Reveal>
+/* =========================================================================
+   2. WHY DEVOPSTRIO + GCP (3D Infrastructure Hub)
+   ========================================================================= */
+const reasons = [
+  {
+    Icon: ShieldCheck,
+    t: "AI & Data-First Engineering",
+    d: "Native integration with BigQuery, Vertex AI, and Looker, engineered to extract actionable intelligence from petabyte-scale data lakes.",
+  },
+  {
+    Icon: Workflow,
+    t: "Production Kubernetes (GKE) Mastery",
+    d: "Automated GKE Autopilot provisioning, Istio service mesh routing, and Cloud Build GitOps pipelines for hyper-scalable microservices.",
+  },
+  {
+    Icon: Repeat2,
+    t: "24×7 SRE & Committed Use FinOps",
+    d: "Continuous platform reliability, Cloud Monitoring telemetry, incident response, and active Committed Use Discount (CUD) optimization.",
+  },
+];
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyUs.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-850 flex items-center justify-center mb-4 text-rose-500">
-                  {item.icon}
-                </div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2">{item.title}</h4>
-                <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">{item.desc}</p>
+function Why() {
+  return (
+    <section className="py-24 lg:py-32 bg-[#030303] border-b border-zinc-900/60 relative">
+      <div className={`${wrap} grid items-center gap-14 lg:grid-cols-12 lg:gap-16`}>
+        {/* Left Visual: 3D Enterprise Architecture Hub */}
+        <Reveal className="lg:col-span-6 relative justify-self-center w-full">
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-0 scale-105 rounded-3xl blur-2xl opacity-35"
+            style={{
+              background:
+                "radial-gradient(closest-side, rgba(66,133,244,0.35), rgba(244,63,94,0.2), transparent 100%)",
+            }}
+          />
+          <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3 shadow-2xl backdrop-blur-md group">
+            {/* Console Header Bar */}
+            <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-800/80 mb-2">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. OUTCOMES / IMPACT */}
-      <section id="outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              MEASURABLE OUTCOMES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Outcomes Enabled <span className="text-rose-500">Through Google Cloud</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 select-none">
-            {outcomes.map((stat, idx) => (
-              <div
-                key={idx}
-                className="p-8 bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 text-left group"
-              >
-                <div className="text-3xl md:text-4xl lg:text-5xl font-black text-rose-500 tracking-tighter mb-2 font-mono group-hover:scale-105 transition-transform duration-300 origin-left">
-                  {stat.value}
-                </div>
-                <div className="text-[10px] md:text-xs font-mono text-zinc-400 uppercase tracking-widest leading-snug font-bold mb-3">
-                  {stat.label}
-                </div>
-                <p className="text-[11px] text-zinc-500 font-bold leading-relaxed">{stat.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 10. RELATED ECOSYSTEM PAGES */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              EXPLORE OTHER NETWORKS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Related <span className="text-rose-500">Ecosystem Pages</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: "Microsoft Ecosystem", desc: "Strategic Azure setups, Fabric integrations, and digital enterprise hubs.", href: "/ecosystem/partnerships/microsoft" },
-              { name: "AWS Ecosystem", desc: "Amazon Web Services configurations, CI/CD code bases, and DevOps tools.", href: "/ecosystem/partnerships/aws" },
-              { name: "Oracle Ecosystem", desc: "Enterprise resource planning database modernizations and secure OCI architectures.", href: "/ecosystem/partnerships/oracle" },
-              { name: "Technology Stack / Cloud-Native", desc: "Our core software delivery engineering stack, languages, and protocols.", href: "/ecosystem/technology-stack" }
-            ].map((partner) => (
-              <Link
-                key={partner.name}
-                href={partner.href}
-                className="group flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 min-h-[160px]"
-              >
-                <div>
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center justify-between">
-                    {partner.name}
-                    <ChevronRight className="w-4 h-4 text-zinc-655 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
-                  </h4>
-                  <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed">
-                    {partner.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 11. FAQ */}
-      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="max-w-3xl mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-                FAQ
+              <span className="text-[11px] font-mono text-zinc-400">gcp-bigquery-gke.tf</span>
+              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                GKE AUTOPILOT LIVE
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
-            </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-              Everything you need to know about our Google Cloud consulting, data analytics, and Kubernetes capabilities. Can&apos;t find what you&apos;re looking for? Reach out to our team — we respond to every question personally.
-            </p>
-          </Reveal>
 
-          {/* Accordion FAQ */}
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
+            <div className="relative overflow-hidden rounded-xl">
+              <Image
+                src={`${AI_IMG}/gcp-infrastructure-hub.png`}
+                alt="Devopstrio Google Cloud Enterprise Architecture Hub"
+                width={720}
+                height={540}
+                className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              />
+            </div>
+
+            {/* Bottom Architecture Pill */}
+            <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs font-semibold text-white tracking-wide">
+                  Enterprise Google Cloud Hub
+                </span>
+              </div>
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded border border-blue-500/25">
+                GCP Premier Certified
+              </span>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Right Content */}
+        <div className="lg:col-span-6">
+          <Reveal>
+            <Head
+              subtitle="THE DEVOPSTRIO ADVANTAGE"
+              title="Technology has power. Collaboration gives it direction."
+              body="Google Cloud leads the industry in data analytics, container orchestration, and foundational AI models. Devopstrio structures the architecture, automates the governance, and ensures your workloads run reliably at lowest total operational cost."
+            />
+          </Reveal>
+          <div className="mt-8 space-y-4">
+            {reasons.map(({ Icon, t, d }, i) => (
+              <Reveal key={t} delay={i * 90}>
+                <div className="flex gap-4 p-5 rounded-2xl border border-zinc-800/80 bg-zinc-950/40 hover:border-blue-500/30 hover:bg-zinc-900/30 transition-all duration-300 group">
+                  <div className="flex-shrink-0 grid h-11 w-11 place-items-center rounded-xl bg-zinc-900 border border-zinc-800 transition-colors duration-300 group-hover:border-blue-500/40 group-hover:bg-blue-500/10">
+                    <Icon size={20} color={ROSE} />
+                  </div>
+                  <div>
+                    <h3 className="text-[16px] font-bold text-white group-hover:text-blue-400 transition-colors">
+                      {t}
+                    </h3>
+                    <p className="mt-1.5 text-[13px] leading-[23px] text-zinc-400">{d}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   3. SERVICES ("Everything you need to run on Google Cloud")
+   ========================================================================= */
+const services = [
+  {
+    badge: "FOUNDATIONS",
+    Icon: Cloud,
+    t: "Resource Topologies & VPCs",
+    d: "Multi-tenant Google Cloud Resource Manager hierarchies, Shared VPC networks, Cloud Interconnect, and centralized Cloud IAM.",
+  },
+  {
+    badge: "MIGRATION",
+    Icon: Repeat2,
+    t: "Migration & Database Refactoring",
+    d: "Structured migrations of VMware, bare metal, Oracle, and MySQL workloads to Cloud SQL, AlloyDB, and Cloud Spanner.",
+  },
+  {
+    badge: "CONTAINERS",
+    Icon: Code2,
+    t: "GKE, Cloud Run & Anthos",
+    d: "Enterprise Google Kubernetes Engine (GKE Autopilot), Cloud Run serverless microservices, and hybrid mesh with Google Anthos.",
+  },
+  {
+    badge: "DATA & AI",
+    Icon: Database,
+    t: "BigQuery & Vertex AI Platform",
+    d: "Petabyte-scale BigQuery data warehouses, Dataflow stream processing, Dataproc Spark clusters, and Gemini AI copilots on Vertex AI.",
+  },
+  {
+    badge: "CYBER DEFENSE",
+    Icon: ShieldCheck,
+    t: "BeyondCorp Zero-Trust & Cloud Armor",
+    d: "DDoS mitigation with Cloud Armor, VPC Service Controls, Security Command Center Premium, and ISO/SOC compliance.",
+  },
+  {
+    badge: "FINOPS",
+    Icon: Gauge,
+    t: "FinOps & Cost Governance",
+    d: "Active Committed Use Discounts (CUDs), sustained use savings, custom VM right-sizing, and automated idle resource termination.",
+  },
+];
+
+function Services() {
+  return (
+    <section id="services" className="py-24 lg:py-32 bg-black border-b border-zinc-900/60">
+      <div className={wrap}>
+        <Reveal>
+          <Head
+            subtitle="CORE CAPABILITIES"
+            title="Everything you need to run on Google Cloud."
+            body="Six core engineering disciplines covering your complete lifecycle—from initial landing zone blueprint to production 24×7 operations."
+          />
+        </Reveal>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map(({ badge, Icon, t, d }, i) => (
+            <Reveal key={t} delay={(i % 3) * 90}>
+              <article className="group relative h-full rounded-2xl border border-zinc-800/80 bg-[#0D0E12] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(244,63,94,0.45)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.6)] overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="flex items-center justify-between">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-zinc-900 border border-zinc-800 transition-colors duration-300 group-hover:bg-[rgba(244,63,94,0.14)] group-hover:border-rose-500/30">
+                    <Icon size={22} color={ROSE} />
+                  </span>
+                  <span className="text-[10px] font-mono font-semibold tracking-wider uppercase text-zinc-500 group-hover:text-blue-400 transition-colors">
+                    {badge}
+                  </span>
+                </div>
+                <h3 className="mt-6 text-[19px] font-bold text-white group-hover:text-blue-400 transition-colors">
+                  {t}
+                </h3>
+                <p className="mt-2.5 text-[14px] leading-[24px] text-zinc-400">{d}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   4. EXTRA SECTION: ENTERPRISE ARCHITECTURE & COLLABORATION STACK
+   ========================================================================= */
+const transformationMetrics = [
+  {
+    icon: TrendingDown,
+    value: "50%",
+    label: "Faster Query Performance",
+    desc: "Through BigQuery partitioning, clustering & BI Engine acceleration",
+  },
+  {
+    icon: ShieldCheck,
+    value: "99.99%",
+    label: "High-Availability SLA",
+    desc: "Multi-region resilient GKE clusters and Cloud Spanner globally",
+  },
+  {
+    icon: Rocket,
+    value: "3.5× Faster",
+    label: "Release Cadence",
+    desc: "Automated CI/CD with Cloud Build, Artifact Registry & GitOps",
+  },
+  {
+    icon: Clock,
+    value: "24×7",
+    label: "Managed SRE Support",
+    desc: "Follow-the-sun monitoring, telemetry & incident triage",
+  },
+];
+
+const architecturePillars = [
+  {
+    icon: Layers,
+    title: "Google Cloud Enterprise Landing Zones",
+    desc: "Hierarchical resource structures, automated folder vending, organizational guardrails, and centralized audit logging.",
+    tag: "Terraform & Config Connector",
+  },
+  {
+    icon: Server,
+    title: "GKE Autopilot & Cloud Run",
+    desc: "Hands-off Kubernetes cluster management, automatic security patching, fine-grained node scaling, and zero-idle cost microservices.",
+    tag: "GKE & Cloud Run",
+  },
+  {
+    icon: Cpu,
+    title: "Vertex AI & Gemini Foundation Models",
+    desc: "Enterprise data grounding, private VPC Service Controls, model tuning, and production MLOps pipelines with Kubeflow.",
+    tag: "Gemini & Vertex AI",
+  },
+  {
+    icon: Lock,
+    title: "BeyondCorp Zero-Trust & Cloud Armor",
+    desc: "Context-aware access policies, web application firewall rules, automated DDoS mitigation, and Security Command Center monitoring.",
+    tag: "SOC 2 & ISO 27001",
+  },
+];
+
+function TransformationStack() {
+  return (
+    <section className="py-24 lg:py-32 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
+      {/* Subtle Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-[-10%] top-1/3 h-[500px] w-[500px] rounded-full blur-[120px] opacity-25"
+        style={{ background: "radial-gradient(circle, #4285F4, transparent 70%)" }}
+      />
+
+      <div className={wrap}>
+        {/* Section Header */}
+        <Reveal>
+          <Head
+            subtitle="ENTERPRISE MODERNIZATION STACK"
+            title="Accelerate Digital Value with Production-Ready Google Cloud Blueprints"
+            body="Devopstrio couples Google Cloud Certified Professional Architects with turnkey automation accelerators to de-risk migrations and deliver measurable enterprise business impact."
+          />
+        </Reveal>
+
+        {/* Metrics Row */}
+        <Reveal delay={100} className="mt-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {transformationMetrics.map((m, idx) => {
+              const Icon = m.icon;
               return (
-                <div key={idx} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group"
-                  >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {faq.q}
+                <div
+                  key={idx}
+                  className="rounded-2xl border border-zinc-800/80 bg-[#0D0E12] p-6 text-left relative overflow-hidden group hover:border-blue-500/40 transition-colors"
+                >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-60" />
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-blue-400 transition-colors">
+                      {m.value}
                     </span>
-                    <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
-                  </button>
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl animate-fadeIn flex flex-col gap-4">
-                      <p>{faq.a}</p>
-                    </div>
-                  )}
+                    <Icon size={18} className="text-blue-500/70" />
+                  </div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-zinc-300">
+                    {m.label}
+                  </div>
+                  <p className="mt-1.5 text-[11px] text-zinc-400 leading-normal">{m.desc}</p>
                 </div>
               );
             })}
           </div>
+        </Reveal>
 
-          {/* Below FAQ callout */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
-              </p>
-              <a
-                href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Contact Our Engineers <ArrowUpRight size={12} />
-              </a>
+        {/* Showcase Grid: 3D Collaboration Graphic + Architecture Pillars */}
+        <div className="mt-16 grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          {/* Left Column: 3D Collaboration Graphic */}
+          <Reveal delay={150} className="lg:col-span-6 relative">
+            <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3 shadow-2xl backdrop-blur-md group">
+              <div className="relative overflow-hidden rounded-xl">
+                <Image
+                  src={`${AI_IMG}/gcp-collaboration-growth.png`}
+                  alt="Enterprise Google Cloud Collaboration and Workload Modernization"
+                  width={720}
+                  height={540}
+                  className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+              </div>
+              <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-amber-400" />
+                  <span className="text-xs font-semibold text-white">
+                    End-to-End GCP Engineering Pods
+                  </span>
+                </div>
+                <span className="text-[11px] font-mono text-zinc-400">GCP Premier Ready</span>
+              </div>
             </div>
           </Reveal>
+
+          {/* Right Column: 4 Architecture Pillars */}
+          <div className="lg:col-span-6 space-y-4">
+            {architecturePillars.map((p, i) => {
+              const Icon = p.icon;
+              return (
+                <Reveal key={p.title} delay={i * 80}>
+                  <div className="rounded-xl border border-zinc-800/80 bg-[#0D0E12] p-5 transition-all duration-300 hover:border-blue-500/40 hover:bg-zinc-900/50 flex gap-4 items-start group">
+                    <div className="flex-shrink-0 grid h-10 w-10 place-items-center rounded-lg bg-zinc-900 border border-zinc-800 text-blue-500 group-hover:border-blue-500/30 group-hover:bg-blue-500/10 transition-colors">
+                      <Icon size={19} />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-[16px] font-bold text-white group-hover:text-blue-400 transition-colors">
+                          {p.title}
+                        </h4>
+                        <span className="text-[10px] font-mono text-zinc-500 bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">
+                          {p.tag}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-[13px] leading-[22px] text-zinc-400">{p.desc}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* 12. FINAL CTA */}
-      <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
-        {/* Ambient background blur */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
+/* =========================================================================
+   5. HOW WE WORK (Step-by-step roadmap)
+   ========================================================================= */
+const steps = [
+  {
+    step: "PHASE 01",
+    t: "Discover & Assess",
+    d: "We evaluate your data sources, application dependencies, licensing, and business goals to map your Google Cloud blueprint.",
+  },
+  {
+    step: "PHASE 02",
+    t: "Architect & Blueprint",
+    d: "We design the target GCP Landing Zone, Shared VPC networking, Cloud IAM boundaries, and an phased modernization roadmap.",
+  },
+  {
+    step: "PHASE 03",
+    t: "Migrate & Modernize",
+    d: "We containerize on GKE, migrate datasets to BigQuery, and deploy automated release gates with zero-downtime cutovers.",
+  },
+  {
+    step: "PHASE 04",
+    t: "Operate & Optimize",
+    d: "Our 24×7 SRE team handles continuous monitoring, automated patching, security threat defense, and Committed Use FinOps savings.",
+  },
+];
 
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col items-center">
+function Process() {
+  return (
+    <section className="py-24 lg:py-32 bg-black border-b border-zinc-900/60">
+      <div className={wrap}>
+        <Reveal>
+          <Head
+            subtitle="DELIVERY METHODOLOGY"
+            title="A clear path from first call to steady-state operations."
+            body="Our 4-phase structured engagement model ensures complete visibility, minimal risk, and accelerated time-to-value."
+          />
+        </Reveal>
+        <Reveal className="mt-16">
+          <ol className="relative grid gap-8 md:grid-cols-4 md:gap-6">
+            <span
+              aria-hidden
+              className="absolute left-0 right-0 top-[20px] hidden h-[2px] origin-left bg-gradient-to-r from-blue-600 via-rose-500 to-transparent md:block"
+            />
+            {steps.map((s, i) => (
+              <li key={s.t} className="relative">
+                <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full border border-blue-500/60 bg-black text-[14px] font-bold text-blue-400 shadow-[0_0_15px_rgba(66,133,244,0.3)]">
+                  {i + 1}
+                </span>
+                <span className="mt-4 block text-[10px] font-mono font-semibold tracking-wider text-blue-400">
+                  {s.step}
+                </span>
+                <h3 className="mt-2 text-[18px] font-bold text-white">{s.t}</h3>
+                <p className="mt-2 text-[14px] leading-[24px] text-zinc-400">{s.d}</p>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
-          <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              GET STARTED TODAY
-            </span>
-          </Reveal>
+/* =========================================================================
+   6. INDUSTRIES
+   ========================================================================= */
+const industries = [
+  {
+    n: "healthcare",
+    tag: "Healthcare API & FHIR",
+    t: "Healthcare & Life Sciences",
+    d: "HIPAA-compliant, highly resilient environments for clinical datasets, Google Cloud Healthcare API, and genomics modeling.",
+  },
+  {
+    n: "manufacturing",
+    tag: "Visual Inspection AI",
+    t: "Industrial & Manufacturing",
+    d: "Visual Inspection AI on assembly lines, supply chain analytics in BigQuery, and industrial IoT edge integration.",
+  },
+  {
+    n: "retail",
+    tag: "Vertex Search for Retail",
+    t: "Retail & E-Commerce",
+    d: "Personalized search and product recommendations, high-throughput checkout processing, and real-time inventory telemetry.",
+  },
+  {
+    n: "education",
+    tag: "Google Workspace & BigQuery",
+    t: "Education & Public Sector",
+    d: "Institutional collaboration platforms, secure student identity management, and cost-governed research data platforms.",
+  },
+];
 
-          <Reveal delay={0.1}>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
-              Ready to Build, Modernize or Scale <span className="text-rose-500">on Google Cloud?</span>
-            </h2>
-          </Reveal>
+function Industries() {
+  return (
+    <section className="py-24 lg:py-32 bg-[#030303] border-b border-zinc-900/60">
+      <div className={wrap}>
+        <Reveal>
+          <Head
+            subtitle="INDUSTRY SPECIALIZATIONS"
+            title="Tailored for your industry's compliance & performance demands."
+            body="Every vertical operates under unique constraints. We shape the architecture, data residency, and security controls around yours."
+          />
+        </Reveal>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {industries.map((c, i) => (
+            <Reveal key={c.n} delay={i * 90}>
+              <article className="group h-full overflow-hidden rounded-2xl border border-zinc-800/80 bg-[#0D0E12] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(66,133,244,0.45)] hover:shadow-xl">
+                <div className="overflow-hidden relative">
+                  <Image
+                    src={`${IMG}/${c.n}.webp`}
+                    alt={c.t}
+                    width={512}
+                    height={279}
+                    className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 right-3 rounded-full bg-black/80 px-2.5 py-1 text-[10px] font-mono text-zinc-300 border border-white/10 backdrop-blur-sm">
+                    {c.tag}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-[18px] font-bold text-white group-hover:text-blue-400 transition-colors">
+                    {c.t}
+                  </h3>
+                  <p className="mt-2 text-[13px] leading-[22px] text-zinc-400">{c.d}</p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-          <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed max-w-xl mb-10 font-bold">
-              Partner with Devopstrio to design secure, cloud-native, and data-driven solutions on Google Cloud—from infrastructure and Kubernetes to analytics, AI, and managed operations.
+/* =========================================================================
+   7. FAQ
+   ========================================================================= */
+const faqs = [
+  {
+    q: "What Google Cloud services does Devopstrio architect and support?",
+    a: "We support the complete GCP ecosystem, including Google Kubernetes Engine (GKE), BigQuery, Vertex AI, Cloud Run, Cloud SQL, AlloyDB, Cloud Spanner, Cloud Armor, Security Command Center, and Anthos multi-cloud platforms.",
+  },
+  {
+    q: "How does Devopstrio manage zero-downtime database migrations to GCP?",
+    a: "We leverage Database Migration Service (DMS) with continuous Change Data Capture (CDC) replication for PostgreSQL, MySQL, and SQL Server, validating data parity before executing swift cutovers.",
+  },
+  {
+    q: "Can you help optimize our monthly Google Cloud spend?",
+    a: "Yes. Our certified FinOps practitioners analyze Cloud Billing data to secure 1-year and 3-year Committed Use Discounts (CUDs), right-size compute instances, and terminate idle persistent disks—achieving 30% to 50% average cost savings.",
+  },
+  {
+    q: "How do you ensure security and regulatory compliance on GCP?",
+    a: "We deploy infrastructure as code with embedded Google Cloud Organization Policies, enforce BeyondCorp context-aware zero-trust, configure VPC Service Controls, and audit against SOC 2, ISO 27001, and HIPAA.",
+  },
+  {
+    q: "How does Devopstrio build enterprise generative AI solutions with Vertex AI?",
+    a: "We build enterprise Retrieval-Augmented Generation (RAG) pipelines, grounding Gemini models in your private BigQuery or enterprise vector stores via private endpoints with zero data exposure to external training sets.",
+  },
+  {
+    q: "Do you provide 24×7 managed operations after our workloads go live?",
+    a: "Yes. Our global follow-the-sun delivery hubs provide 24×7 proactive infrastructure monitoring, automated incident triage, synthetic health probes, backup validation, and monthly architecture governance reviews.",
+  },
+];
+
+function Faq() {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <section className="py-24 lg:py-32 bg-black border-b border-zinc-900/60">
+      <div className={`${wrap} max-w-[880px]`}>
+        <Reveal>
+          <Head
+            center
+            subtitle="FREQUENTLY ASKED QUESTIONS"
+            title="Everything You Need to Know About Devopstrio + Google Cloud"
+          />
+        </Reveal>
+        <div className="mt-14 grid gap-3.5">
+          {faqs.map((f, i) => {
+            const on = open === i;
+            return (
+              <Reveal key={f.q} delay={i * 50}>
+                <div
+                  className={`rounded-2xl border bg-[#0D0E12] transition-colors duration-300 ${
+                    on ? "border-[rgba(66,133,244,0.45)]" : "border-zinc-800/80 hover:border-zinc-700"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    aria-expanded={on}
+                    onClick={() => setOpen(on ? null : i)}
+                    className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
+                  >
+                    <span className="text-[16px] font-bold text-white">{f.q}</span>
+                    <Plus
+                      size={20}
+                      color={ROSE}
+                      className="shrink-0 transition-transform duration-300"
+                      style={{ transform: on ? "rotate(45deg)" : "none" }}
+                    />
+                  </button>
+                  <div
+                    className="grid transition-[grid-template-rows] duration-500 ease-out motion-reduce:transition-none"
+                    style={{ gridTemplateRows: on ? "1fr" : "0fr" }}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="px-6 pb-6 text-[14px] leading-[25px] text-zinc-400">{f.a}</p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        {/* Below FAQ callout */}
+        <Reveal delay={0.2} className="mt-8">
+          <div className="border border-zinc-800/80 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-sm md:text-base font-semibold text-zinc-200">
+              Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
             </p>
-          </Reveal>
-
-          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact#contact-form"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+              className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900/60 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap"
             >
-              Start Your GCP Journey
-              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-              </div>
+              Contact Our Engineers <ArrowRight size={14} />
             </Link>
-            <Link
-              href="/contact#contact-form"
-              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Talk to a Google Cloud Expert
-            </Link>
-          </Reveal>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
-        </div>
-      </section>
-
+/* =========================================================================
+   PAGE ROOT
+   ========================================================================= */
+export default function GoogleCloudPartnershipPage() {
+  return (
+    <main className="overflow-x-clip bg-black font-sans text-white">
+      <Hero />
+      <Why />
+      <Services />
+      <TransformationStack />
+      <Process />
+      <Industries />
+      <Faq />
+      <RepresentativeCTA
+        title="Ready To Modernize Your Enterprise On"
+        highlightText="Google Cloud?"
+        description="Connect directly with our Google Cloud Certified Professional Solution Architects. We will evaluate your data and application estate, design scalable GKE & BigQuery architectures, and formulate an accelerated deployment roadmap."
+        primaryBtnText="TALK TO A GCP ARCHITECT"
+        primaryBtnHref="/contact#contact-form"
+        secondaryBtnText="EXPLORE ALL SERVICES"
+        secondaryBtnHref="/services"
+        theme="rose"
+      />
     </main>
   );
 }

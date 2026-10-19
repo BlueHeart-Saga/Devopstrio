@@ -13,10 +13,7 @@ import {
   Flame,
   Globe,
   Cpu,
-  Database,
-  Lock,
-  Search,
-  BellRing
+  Database
 } from "lucide-react";
 
 export function SRECapabilitiesArchitecture() {
@@ -32,7 +29,7 @@ export function SRECapabilitiesArchitecture() {
   ];
 
   const topologyTiers = [
-    { layer: "Global Users & Edge CDN", item: "Cloudflare Anycast / Azure Front Door", icon: Globe, color: "border-rose-500/40 bg-rose-950/20 text-rose-300" },
+    { layer: "Global Users & Edge CDN", item: "Cloudflare Anycast / Azure Front Door", icon: Globe, color: "border-emerald-500/40 bg-emerald-950/20 text-emerald-300" },
     { layer: "API & Traffic Management", item: "Envoy Proxy / Istio Service Mesh / Gateway API", icon: Cpu, color: "border-zinc-800 bg-zinc-900/60 text-zinc-300" },
     { layer: "Application Clusters", item: "Kubernetes Auto-scaling Pods (HPA / VPA)", icon: Bot, color: "border-zinc-800 bg-zinc-900/60 text-zinc-300" },
     { layer: "Database & Cache Layer", item: "Active-Active Multi-Region Postgres / Redis Cluster", icon: Database, color: "border-zinc-800 bg-zinc-900/60 text-zinc-300" },
@@ -52,10 +49,10 @@ export function SRECapabilitiesArchitecture() {
     <>
       {/* 5. CORE SRE CAPABILITIES */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">CAPABILITIES</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-3 block">CAPABILITIES</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Core SRE Capabilities
             </h2>
           </Reveal>
@@ -64,12 +61,12 @@ export function SRECapabilitiesArchitecture() {
             {capabilities.map((cap, idx) => {
               const Icon = cap.icon;
               return (
-                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 group">
-                  <div className="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center mb-4 border border-rose-500/20 group-hover:bg-rose-500/20 transition-colors">
-                    <Icon className="w-5 h-5 text-rose-500" />
+                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-emerald-500/30 transition-all duration-300 group">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-colors">
+                    <Icon className="w-5 h-5 text-emerald-400" />
                   </div>
-                  <h4 className="text-base font-bold text-white mb-2">{cap.title}</h4>
-                  <p className="text-sm text-zinc-400 font-medium">{cap.desc}</p>
+                  <h4 className="text-base md:text-lg font-bold text-white mb-2">{cap.title}</h4>
+                  <p className="text-sm md:text-[15px] text-zinc-300 leading-relaxed font-medium">{cap.desc}</p>
                 </div>
               );
             })}
@@ -79,10 +76,10 @@ export function SRECapabilitiesArchitecture() {
 
       {/* 6. ENTERPRISE PRODUCTION ARCHITECTURE */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">TOPOLOGY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-3 block">TOPOLOGY</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Resilient Production Topology
             </h2>
           </Reveal>
@@ -93,15 +90,15 @@ export function SRECapabilitiesArchitecture() {
               return (
                 <div key={idx} className={`p-5 rounded-2xl border flex items-center justify-between transition-all duration-300 ${tier.color}`}>
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-rose-500" />
+                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
+                      <Icon className="w-6 h-6 text-emerald-400" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 block">{tier.layer}</span>
-                      <h4 className="text-sm font-bold text-white">{tier.item}</h4>
+                      <span className="text-xs font-mono uppercase tracking-widest text-zinc-400 block">{tier.layer}</span>
+                      <h4 className="text-base font-bold text-white">{tier.item}</h4>
                     </div>
                   </div>
-                  <span className="text-xs font-mono text-rose-500 font-bold">TIER 0{idx + 1}</span>
+                  <span className="text-xs md:text-sm font-mono text-emerald-400 font-bold">TIER 0{idx + 1}</span>
                 </div>
               );
             })}
@@ -111,20 +108,20 @@ export function SRECapabilitiesArchitecture() {
 
       {/* 7. OBSERVABILITY PLATFORM */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">TELEMETRY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-3 block">TELEMETRY</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Observability Platform Architecture
             </h2>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {observabilityCards.map((obs, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/60 border border-zinc-900 rounded-2xl hover:border-rose-500/40 transition-colors">
-                <span className="text-[10px] font-mono font-bold text-rose-500 uppercase tracking-widest block mb-2">TELEMETRY 0{idx + 1}</span>
-                <h3 className="text-lg font-bold text-white mb-3">{obs.title}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed">{obs.desc}</p>
+              <div key={idx} className="p-8 bg-zinc-950/60 border border-zinc-900 rounded-2xl hover:border-emerald-500/40 transition-colors">
+                <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest block mb-2">TELEMETRY 0{idx + 1}</span>
+                <h3 className="text-lg md:text-xl font-bold text-white mb-3">{obs.title}</h3>
+                <p className="text-sm text-zinc-300 leading-relaxed font-medium">{obs.desc}</p>
               </div>
             ))}
           </div>

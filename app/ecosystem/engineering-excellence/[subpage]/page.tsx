@@ -10,8 +10,18 @@ import { CTA } from "@/components/ecosystem/CTA";
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo-utils";
 
+const DEDICATED_SUBPAGES = [
+  "devsecops",
+  "software-engineering",
+  "platform-engineering",
+  "site-reliability-engineering",
+  "quality-engineering",
+  "engineering-culture"
+];
+
 export async function generateMetadata({ params }: SubpageProps): Promise<Metadata> {
   const { subpage } = await params;
+  if (DEDICATED_SUBPAGES.includes(subpage)) return {};
   const domain = "engineering-excellence";
   const data = getEcosystemSubpage(domain, subpage);
   if (!data) return {};
@@ -29,6 +39,9 @@ interface SubpageProps {
 
 export default async function EcosystemSubpage({ params }: SubpageProps) {
   const { subpage } = await params;
+  if (DEDICATED_SUBPAGES.includes(subpage)) {
+    notFound();
+  }
   const domain = "engineering-excellence";
   const data = getEcosystemSubpage(domain, subpage);
 

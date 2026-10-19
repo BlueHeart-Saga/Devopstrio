@@ -1,913 +1,924 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Reveal } from "@/components/ui/Reveal";
-import { SectionNavbar } from "@/components/ui/SectionNavbar";
-import { PartnerCertifications } from "@/sections/ecosystem/partnerships/PartnerCertifications";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 import {
-  ArrowUpRight,
-  CheckCircle2,
-  Plus,
-  Minus,
-  Shield,
-  Briefcase,
-  Sparkles,
-  Workflow,
-  ChevronRight,
-  Zap,
+  ArrowRight,
   Check,
+  Clock,
+  Cloud,
+  Code2,
   Cpu,
   Database,
-  Users,
+  Gauge,
   Layers,
-  FileText,
-  Layout,
-  MessageSquare
+  Lock,
+  Plus,
+  Repeat2,
+  Rocket,
+  Server,
+  ShieldCheck,
+  Sparkles,
+  TrendingDown,
+  Workflow,
+  Zap,
 } from "lucide-react";
-import Link from "next/link";
 
-const servicenowSections = [
-  { id: "overview", label: "Overview" },
-  { id: "capabilities", label: "Capabilities" },
-  { id: "solutions", label: "Solutions" },
-  { id: "architecture", label: "Architecture" },
-  { id: "certifications", label: "Certifications" },
-  { id: "use-cases", label: "Use Cases" },
-  { id: "products", label: "Platform Expertise" },
-  { id: "why-us", label: "Why Us" },
-  { id: "outcomes", label: "Outcomes" },
-  { id: "faq", label: "FAQ" }
-];
+/* =========================================================================
+   ASSETS
+   ========================================================================= */
+const IMG = "/webp/assets/azure-cloud";
+const AI_IMG = "/ai/servicenow-partnership";
 
-export default function ServiceNowPartnershipPage() {
-  const [activeTab, setActiveTab] = useState("it");
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+/* =========================================================================
+   SHARED CONSTANTS & STYLES
+   ========================================================================= */
+const ROSE = "#F43F5E";
+const EMERALD = "#10B981";
+const wrap = "mx-auto w-full max-w-[1280px] px-6 sm:px-8";
+const h2 = "text-[32px] leading-[40px] sm:text-[42px] sm:leading-[48px] font-bold tracking-[-1.2px] text-white";
+const lead = "text-[16px] sm:text-[17px] leading-[28px] text-zinc-400";
 
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
+/* =========================================================================
+   REVEAL ON SCROLL HELPER
+   ========================================================================= */
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [on, setOn] = useState(false);
 
-  // Scroll animations setup
   useEffect(() => {
-    let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
-    let raf = 0;
-    let cleanupTriggers = () => { };
-    let alive = true;
-
-    const startMotion = async () => {
-      const [{ default: Lenis }, { default: gsap }, { ScrollTrigger }] = await Promise.all([
-        import("lenis"),
-        import("gsap"),
-        import("gsap/ScrollTrigger")
-      ]);
-
-      if (!alive) return;
-
-      lenis = new Lenis({ lerp: 0.08, wheelMultiplier: 0.85 });
-      const loop = (time: number) => {
-        lenis?.raf(time);
-        raf = requestAnimationFrame(loop);
-      };
-      raf = requestAnimationFrame(loop);
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.utils.toArray<HTMLElement>(".fade-scroll-item").forEach((card, index) => {
-        gsap.fromTo(
-          card,
-          { opacity: 0.2, y: 15 },
-          {
-            opacity: 1,
-            y: 0,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 85%",
-              end: "top 55%",
-              scrub: true
-            },
-            delay: index * 0.02
-          }
-        );
-      });
-
-      cleanupTriggers = () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-
-    startMotion();
-
-    return () => {
-      alive = false;
-      cancelAnimationFrame(raf);
-      lenis?.destroy();
-      cleanupTriggers();
-    };
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setOn(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.12 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
-  const heroHighlights = [
-    { text: "Enterprise Workflow Automation", desc: "Orchestrate cross-departmental operations and requests automatically." },
-    { text: "IT Service Management", desc: "Deploy ITIL-aligned ITSM hubs for rapid incident resolution loops." },
-    { text: "Digital Operations", desc: "Gain complete infrastructure visibility and automated service mapping." },
-    { text: "AI-Powered Service Delivery", desc: "Unlock intelligent routing and resolution suggestions with Now Assist." }
-  ];
-
-  const capabilitiesList = [
-    {
-      title: "IT Service Management",
-      desc: "Incident, Problem, Change, Asset and Request Management.",
-      icon: <Briefcase className="w-5 h-5 text-[#10b981]" />
-    },
-    {
-      title: "IT Operations Management",
-      desc: "Discovery, Event Management, Infrastructure Visibility and Service Mapping.",
-      icon: <Cpu className="w-5 h-5 text-[#10b981]" />
-    },
-    {
-      title: "IT Asset Management",
-      desc: "Hardware, software and lifecycle governance.",
-      icon: <Database className="w-5 h-5 text-[#10b981]" />
-    },
-    {
-      title: "Employee Workflows",
-      desc: "HR service delivery, onboarding, self-service portals and approvals.",
-      icon: <Users className="w-5 h-5 text-[#10b981]" />
-    },
-    {
-      title: "Customer Service Management",
-      desc: "Case management, omnichannel support and digital customer experiences.",
-      icon: <MessageSquare className="w-5 h-5 text-[#10b981]" />
-    },
-    {
-      title: "Governance, Risk & Compliance",
-      desc: "Risk management, policy automation and compliance tracking.",
-      icon: <Shield className="w-5 h-5 text-[#10b981]" />
-    },
-    {
-      title: "App Engine Development",
-      desc: "Build low-code enterprise applications on ServiceNow.",
-      icon: <Layout className="w-5 h-5 text-[#10b981]" />
-    },
-    {
-      title: "Managed ServiceNow Operations",
-      desc: "Platform monitoring, upgrades, administration and continuous improvement.",
-      icon: <Zap className="w-5 h-5 text-[#10b981]" />
-    }
-  ];
-
-  const solutionsList = [
-    { title: "IT Service Management", desc: "Streamlined ticket resolution loops and modern self-service structures." },
-    { title: "Enterprise Service Desk", desc: "Unified service channels crossing operations, facilities, and administration." },
-    { title: "HR Service Delivery", desc: "Automated onboarding, benefits questions, and HR document management." },
-    { title: "Customer Service Management", desc: "Omnichannel customer cases routed directly to resolving teams." },
-    { title: "IT Operations", desc: "Real-time discovery maps, event correlation, and predictive service health." },
-    { title: "Workflow Automation", desc: "Visual multi-departmental flow routing and task escalation rules." },
-    { title: "Asset Management", desc: "Hardware lifecycle tracking and SaaS software license compliance dashboards." },
-    { title: "Governance & Compliance", desc: "Automated policy reviews, risk registers, and integrated audit controls." }
-  ];
-
-  const workflowSteps = [
-    { label: "Requestors", desc: "Employees, Customers, Partners", sub: "Generate requests via portal, chat, or API endpoints." },
-    { label: "Access Layer", desc: "Self-Service Portal", sub: "Unified user interface for catalogs, knowledge, and chat support." },
-    { label: "Catalog Layer", desc: "Service Catalog", sub: "Predefined request options, order guides, and forms parameters." },
-    { label: "Orchestration", desc: "Workflow Engine", sub: "Executes conditional routing, SLAs, notifications, and script rules." },
-    { label: "Execution Layer", desc: "Approvals, Automation & Integrations", sub: "Triggers manager approvals, automated bot steps, and API runs." },
-    { label: "Service Domains", desc: "ITSM, HR, Finance & Security", sub: "Specific platform modules fulfilling tasks with secure operational logs." },
-    { label: "Insight Layer", desc: "Analytics & Reporting", sub: "Looker-style dashboards showing queue delays, SLA achievements, and trends." }
-  ];
-
-  const whyUsList = [
-    {
-      title: "Workflow-First Approach",
-      desc: "Automate repetitive work across departments."
-    },
-    {
-      title: "Enterprise Integration",
-      desc: "Connect ServiceNow with ERP, CRM and cloud platforms."
-    },
-    {
-      title: "Low-Code Expertise",
-      desc: "Build custom business applications quickly."
-    },
-    {
-      title: "Faster Service Delivery",
-      desc: "Reduce resolution times and improve productivity."
-    },
-    {
-      title: "Governance & Compliance",
-      desc: "Secure enterprise workflow management."
-    },
-    {
-      title: "Continuous Platform Optimization",
-      desc: "Ongoing improvements after implementation."
-    }
-  ];
-
-  const outcomesList = [
-    { value: "45%", label: "Faster Incident Resolution", desc: "Auto-routing tickets and automating incident resolution runbooks." },
-    { value: "90%", label: "Improved Employee Experience", desc: "Self-service centers solving questions without raising support tickets." },
-    { value: "50%", label: "Automated Enterprise Workflows", desc: "Removing manual handoffs between IT, HR, and finance pipelines." },
-    { value: "35%", label: "Reduced Manual Operations", desc: "Executing automated password resets, system setups, and audits." },
-    { value: "99.9%", label: "Higher Service Availability", desc: "Resolving event alerts before they impact business system tools." },
-    { value: "100%", label: "Better Compliance Visibility", desc: "Continuous monitoring of security policies and risk compliance targets." }
-  ];
-
-  const platformExpertise = [
-    {
-      category: "ITSM",
-      items: ["Incident Management", "Problem Management", "Change Management", "Knowledge Management", "CMDB Configurations"]
-    },
-    {
-      category: "ITOM",
-      items: ["Discovery Services", "Event Management", "Cloud Insights", "Service Mapping"]
-    },
-    {
-      category: "HRSD",
-      items: ["Employee Center", "HR Case Management", "Lifecycle Events"]
-    },
-    {
-      category: "CSM",
-      items: ["Customer Portal", "Case Management", "Field Service"]
-    },
-    {
-      category: "GRC",
-      items: ["Risk Assessment", "Audit Management", "Policy & Compliance"]
-    },
-    {
-      category: "Creator Workflows",
-      items: ["App Engine", "Integration Hub", "Automation Engine", "Flow Designer"]
-    }
-  ];
-
-  const relatedPages = [
-    { name: "Microsoft Ecosystem", desc: "Strategic Azure setups, Fabric integrations, and digital enterprise hubs.", href: "/ecosystem/partnerships/microsoft" },
-    { name: "AWS Ecosystem", desc: "Amazon Web Services configurations, CI/CD code bases, and DevOps tools.", href: "/ecosystem/partnerships/aws" },
-    { name: "Google Cloud Ecosystem", desc: "Next-gen GCP data warehousing and predictive AI models.", href: "/ecosystem/partnerships/google-cloud" },
-    { name: "Oracle Ecosystem", desc: "Enterprise resource planning database modernizations and secure OCI architectures.", href: "/ecosystem/partnerships/oracle" },
-    { name: "SAP Ecosystem", desc: "Enterprise resource planning, ERP migrations, and SCM modernizations.", href: "/ecosystem/partnerships/sap" },
-    { name: "Cloud Services", desc: "Our core software delivery engineering stack, languages, and protocols.", href: "/ecosystem/technology-stack" },
-    { name: "Managed Services", desc: "24/7 managed support operations, database tuning, and backup pipelines.", href: "/services/managed-services" },
-    { name: "IT Consulting", desc: "Strategic technology blueprints, security risk audits, and architecture design.", href: "/services/it-consulting" }
-  ];
-
-  const faqs = [
-    {
-      q: "What ServiceNow services does Devopstrio provide?",
-      a: "We provide end-to-end services including strategic platform assessment, custom portal design, module implementations (ITSM, ITOM, HRSD, CSM, GRC), system integrations via Integration Hub, and managed support operations."
-    },
-    {
-      q: "Can you implement ITSM?",
-      a: "Yes. We implement and customize IT Service Management (ITSM), standardizing incident workflows, problem investigations, change approvals, request catalogs, and configuration database (CMDB) parameters."
-    },
-    {
-      q: "Do you support HR workflows?",
-      a: "Yes. We configure HR Service Delivery (HRSD), establishing unified Employee Center portals, automated onboarding/offboarding workflows, HR case tracking, and integration with HR systems like Workday."
-    },
-    {
-      q: "Can ServiceNow integrate with SAP or Microsoft?",
-      a: "Yes. We configure ServiceNow Integration Hub and REST integrations to safely pass records (e.g. ERP invoices, vendor details, AD profiles) between ServiceNow, SAP, and Microsoft platforms."
-    },
-    {
-      q: "Do you provide managed ServiceNow support?",
-      a: "Yes. We deliver post-implementation managed support covering regular upgrades, patch testing using ATF (Automated Test Framework), catalog adjustments, and performance tuning."
-    },
-    {
-      q: "Can you build custom applications?",
-      a: "Yes. Utilizing ServiceNow App Engine and Creator Workflows, we build low-code custom applications to automate specific, cross-departmental business workflows that standard SaaS applications don't cover."
-    }
-  ];
-
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
+        on
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-6 motion-reduce:opacity-100 motion-reduce:translate-y-0"
+      } ${className}`}
+      data-in={on}
+    >
+      {children}
+    </div>
+  );
+}
 
-      {/* 1. HERO SECTION WITH CALM EMERALD/GREEN SERVICENOW WAVE DESIGN */}
-      <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
+function Head({
+  title,
+  body,
+  center,
+  subtitle,
+}: {
+  title: ReactNode;
+  body?: string;
+  center?: boolean;
+  subtitle?: string;
+}) {
+  return (
+    <div className={center ? "mx-auto max-w-[760px] text-center" : "max-w-[760px]"}>
+      {subtitle && (
+        <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+          {subtitle}
+        </span>
+      )}
+      <h2 className={h2}>{title}</h2>
+      {body && <p className={`${lead} mt-4`}>{body}</p>}
+    </div>
+  );
+}
 
-        {/* Concentric Wave Elements in ServiceNow Emerald/Green Theme */}
-        <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
-          <div className="relative w-full h-full flex items-center justify-end">
-            <div className="absolute w-[200%] h-[160%] right-[-50%] rounded-[120px] md:rounded-[260px] border border-green-950/20 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-emerald-500/10 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-green-500/15 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-emerald-600/15 rotate-[-28deg] pointer-events-none" />
+function Button({
+  href,
+  children,
+  ghost,
+}: {
+  href: string;
+  children: ReactNode;
+  ghost?: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 ${
+        ghost
+          ? "border border-zinc-800 bg-zinc-950/70 text-zinc-200 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white"
+          : "bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 text-white hover:from-red-500 hover:to-rose-400 hover:shadow-[0_0_28px_rgba(225,29,72,0.4)]"
+      }`}
+    >
+      {children}
+    </Link>
+  );
+}
 
-            <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-green-500/20 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-emerald-500/25 rotate-[-28deg] pointer-events-none" />
+/* =========================================================================
+   1. HERO SECTION (Oracle-Style Connected Cards + Orbiting Curve Wave Lines)
+   ========================================================================= */
+const heroHighlights = [
+  {
+    text: "Autonomous ITSM & ITOM",
+    desc: "End-to-end incident automation, real-time CMDB discovery & service mapping",
+  },
+  {
+    text: "Strategic Portfolio (SPM)",
+    desc: "Investment roadmap alignment, enterprise OKRs & agile project delivery",
+  },
+  {
+    text: "Now Assist & GenAI Workflows",
+    desc: "AI virtual agents, automated incident summarization & code generation",
+  },
+  {
+    text: "Cross-Platform Integration Mesh",
+    desc: "Real-time bidirectional connectors for SAP, Azure, AWS, Jira & Workday",
+  },
+];
 
-            <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-emerald-600/15 via-green-600/10 to-teal-500/5 rounded-full blur-[50px] opacity-40 animate-pulse" />
-          </div>
+function Hero() {
+  return (
+    <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
+      {/* Concentric Orbital Wave Elements in Crimson/Emerald Theme */}
+      <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
+        <div className="relative w-full h-full flex items-center justify-end">
+          <div className="absolute w-[200%] h-[160%] right-[-50%] rounded-[120px] md:rounded-[260px] border border-red-950/15 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-emerald-500/10 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-rose-500/10 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-red-600/15 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-emerald-500/20 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-rose-500/25 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute right-[5%] w-[200px] h-[100px] bg-gradient-to-r from-emerald-600/20 via-rose-600/15 to-green-500/10 rounded-full blur-[55px] opacity-50 animate-pulse" />
         </div>
+      </div>
 
-        {/* Soft Ambient Light Theme Effect Gradients on Pitch-Black */}
-        <div className="absolute inset-0 z-0 opacity-70 pointer-events-none select-none">
-          <div className="absolute top-[20%] right-[10%] w-[450px] h-[450px] bg-green-950/10 rounded-full blur-[110px]" />
-          <div className="absolute bottom-[10%] right-[30%] w-[350px] h-[350px] bg-emerald-500/5 rounded-full blur-[100px]" />
-          <div className="absolute top-[35%] right-[0%] w-[250px] h-[250px] bg-teal-500/5 rounded-full blur-[90px]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0b2416_1px,transparent_1px),linear-gradient(to_bottom,#0b2416_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30" />
-        </div>
+      {/* Ambient Radial Gradients & Precision Blueprint Grid */}
+      <div className="absolute inset-0 z-0 opacity-70 pointer-events-none select-none">
+        <div className="absolute top-[20%] right-[10%] w-[480px] h-[480px] bg-emerald-950/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[10%] right-[30%] w-[380px] h-[380px] bg-rose-950/15 rounded-full blur-[100px]" />
+        <div className="absolute top-[35%] right-[0%] w-[260px] h-[260px] bg-green-950/15 rounded-full blur-[90px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f0c0c_1px,transparent_1px),linear-gradient(to_bottom,#1f0c0c_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35" />
+      </div>
 
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-            {/* Hero Left Content */}
-            <div className="lg:col-span-7 flex flex-col items-start text-left">
-              <Reveal className="mb-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/40 mb-6">
-                  <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-400">
-                    Enterprise Workflow Partnership
-                  </span>
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.1}>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
-                  ServiceNow <span className="text-[#10b981] whitespace-nowrap">Ecosystem</span>
-                </h1>
-              </Reveal>
-
-              <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  Transform IT operations, automate enterprise workflows, and deliver seamless digital experiences through the ServiceNow platform and Devopstrio's implementation expertise.
-                </p>
-              </Reveal>
-
-              {/* Hero Bullet Points Grid */}
-              <Reveal delay={0.3} className="w-full mb-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {heroHighlights.map((pt, idx) => (
-                    <div key={idx} className="flex gap-3 animate-fadeIn">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-500 mt-0.5">
-                        <Check className="w-3 h-3" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold text-white uppercase tracking-wider">{pt.text}</h4>
-                        <p className="text-[10px] text-zinc-450 font-semibold">{pt.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </Reveal>
-
-              {/* CTAs */}
-              <Reveal delay={0.4} className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact#contact-form"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(16,185,129,0.35)] hover:-translate-y-0.5"
-                >
-                  Talk to a ServiceNow Expert
-                </Link>
-                <a
-                  href="#overview"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  Explore Workflow Solutions
-                </a>
-              </Reveal>
-            </div>
-
-            {/* Hero Right Visual (Logo Integration) */}
-            <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
-              <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
-
-                {/* Connecting glowing line and animation */}
-                <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-emerald-500/25 via-green-500/30 to-emerald-500/25 z-0 pointer-events-none">
-                  {/* Energy Pulse */}
-                  <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full blur-[2px] shadow-[0_0_12px_#10b981] animate-ping" style={{ animationDuration: '3s' }} />
-                </div>
-
-                <div className="flex items-center justify-between w-full relative z-10 px-4">
-
-                  {/* Devopstrio Logo Card */}
-                  <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-emerald-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-emerald-600 to-green-555 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img src="/webp/assets/logo/logo.webp"
-                      alt="Devopstrio Logo"
-                      className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                      loading="lazy" />
-                  </div>
-
-                  {/* Plus Connector Indicator */}
-                  <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-lg relative z-20">
-                    <Sparkles className="w-4 h-4 text-yellow-450 animate-pulse" />
-                  </div>
-
-                  {/* ServiceNow Logo Card */}
-                  <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-emerald-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-emerald-600 to-green-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
-                    <img src="/assets/Tech_logos/Service_now.svg"
-                      alt="ServiceNow Logo"
-                      className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-110"
-                      loading="lazy" />
-                  </div>
-
-                </div>
-
-                {/* Outer concentric rings highlighting integration */}
-                <div className="absolute w-[80%] h-[80%] rounded-full border border-zinc-900/40 pointer-events-none z-0" />
-                <div className="absolute w-[95%] h-[95%] rounded-full border border-zinc-900/20 pointer-events-none z-0" />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* STICKY SECTION NAVBAR */}
-      <SectionNavbar sections={servicenowSections} />
-
-      {/* 2. PARTNERSHIP OVERVIEW */}
-      <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-            <div className="lg:col-span-5">
-              <Reveal className="text-left">
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                  ALLIANCE OVERVIEW
+      <div className="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column Content */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            <Reveal className="mb-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/60 mb-6 backdrop-blur-sm">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-300">
+                  ServiceNow Elite Partner Ecosystem
                 </span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-                  Modernizing Enterprise Workflows <span className="text-rose-500">with ServiceNow</span>
-                </h2>
-                <div className="space-y-4 text-zinc-300 text-sm md:text-base font-semibold leading-relaxed">
-                  <p>
-                    Organizations today require more than IT support—they need connected, intelligent workflows that improve productivity, reduce manual effort, and deliver exceptional employee and customer experiences.
-                  </p>
-                  <p>
-                    Devopstrio helps organizations implement, customize, integrate, and optimize ServiceNow solutions to automate IT operations, enterprise services, governance, and digital workflows across the business.
-                  </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
+                ServiceNow{" "}
+                <span className="text-[#E11D48] whitespace-nowrap">Integration</span>
+              </h1>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8 max-w-[620px]">
+                Unify enterprise IT operations, digitize cross-department workflows, and accelerate business
+                agility with the Now Platform. Devopstrio combines certified ServiceNow practitioners with
+                automated integration accelerators to modernize ITSM, ITOM, and enterprise governance.
+              </p>
+            </Reveal>
+
+            {/* Bullet Highlights Grid with Red Check Icons */}
+            <Reveal delay={0.3} className="w-full mb-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                {heroHighlights.map((pt, idx) => (
+                  <div
+                    key={idx}
+                    className="flex gap-3 p-3 rounded-xl bg-zinc-950/40 border border-zinc-900/80 hover:border-zinc-800 transition-colors"
+                  >
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 mt-0.5">
+                      <Check className="w-3 h-3 stroke-[2.5]" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                        {pt.text}
+                      </h4>
+                      <p className="text-[11px] text-zinc-400 font-medium leading-relaxed mt-0.5">
+                        {pt.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            {/* Action Buttons */}
+            <Reveal delay={0.4} className="flex flex-wrap gap-4">
+              <Button href="/contact#contact-form">
+                Talk to a ServiceNow Expert
+              </Button>
+              <Button href="#services" ghost>
+                Explore Platform Capabilities
+              </Button>
+            </Reveal>
+          </div>
+
+          {/* Right Column: Devopstrio + ServiceNow Connected Cards */}
+          <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
+            <div className="relative w-full max-w-[440px] aspect-square flex items-center justify-center">
+              {/* Outer concentric integration rings */}
+              <div className="absolute w-[95%] h-[95%] rounded-full border border-zinc-900/40 pointer-events-none z-0" />
+              <div className="absolute w-[80%] h-[80%] rounded-full border border-zinc-900/60 pointer-events-none z-0" />
+              <div className="absolute w-[60%] h-[60%] rounded-full border border-zinc-800/30 pointer-events-none z-0" />
+
+              {/* Connecting glowing line and animated energy node */}
+              <div className="absolute inset-x-8 sm:inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/30 via-emerald-500/50 to-green-500/30 z-0 pointer-events-none">
+                <div
+                  className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full blur-[2px] shadow-[0_0_14px_#10B981] animate-ping"
+                  style={{ animationDuration: "2.8s" }}
+                />
+              </div>
+
+              {/* Floating Top Badge */}
+              <div className="absolute -top-2 right-6 z-20 hidden sm:flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/90 px-3 py-1 shadow-lg backdrop-blur-md">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[10px] font-semibold text-zinc-300">CMDB Automated Health</span>
+              </div>
+
+              {/* Floating Bottom Badge */}
+              <div className="absolute -bottom-2 left-6 z-20 hidden sm:flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/90 px-3 py-1 shadow-lg backdrop-blur-md">
+                <Sparkles className="w-3 h-3 text-amber-400" />
+                <span className="text-[10px] font-semibold text-zinc-300">ServiceNow Certified</span>
+              </div>
+
+              {/* Cards Container */}
+              <div className="flex items-center justify-between w-full relative z-10 px-3 sm:px-6">
+                {/* Devopstrio Logo Card */}
+                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-rose-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.04] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
+                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-rose-600 to-red-600 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
+                  <img
+                    src="/webp/assets/logo/logo.webp"
+                    alt="Devopstrio"
+                    className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
+                    loading="lazy"
+                  />
                 </div>
-              </Reveal>
+
+                {/* Central Connector Node */}
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-xl relative z-20 group hover:border-emerald-500/40 transition-colors">
+                  <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
+                </div>
+
+                {/* ServiceNow Logo Card */}
+                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-emerald-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.05] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
+                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-emerald-600 to-green-500 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
+                  <div className="flex flex-col items-center justify-center gap-2.5 w-full h-full px-2">
+                    <img
+                      src="/assets/Home-page/partners/servicenow.svg"
+                      alt="ServiceNow"
+                      className="w-24 sm:w-28 h-auto object-contain select-none filter drop-shadow-[0_2px_10px_rgba(98,216,78,0.4)]"
+                      loading="lazy"
+                    />
+                    <span className="text-[10px] font-bold tracking-wider text-emerald-400 uppercase">
+                      Elite Partner
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-            {/* Workflow Visual Mockup Card */}
-            <div className="lg:col-span-7">
-              <div className="p-8 bg-zinc-950/60 border border-zinc-900 rounded-3xl select-none relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.03),transparent_70%)] pointer-events-none" />
-                <div className="flex items-center justify-between border-b border-zinc-900 pb-4 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3.5 h-3.5 rounded-full bg-red-500/60" />
-                    <div className="w-3.5 h-3.5 rounded-full bg-yellow-500/60" />
-                    <div className="w-3.5 h-3.5 rounded-full bg-green-500/60" />
-                  </div>
-                  <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest font-bold">
-                    Now Assist Workflow Engine
-                  </div>
-                </div>
+/* =========================================================================
+   2. WHY DEVOPSTRIO + SERVICENOW (3D Automation Hub)
+   ========================================================================= */
+const reasons = [
+  {
+    Icon: ShieldCheck,
+    t: "Unified Cross-Cloud CMDB Governance",
+    d: "Automated agentless discovery mapping dependencies across AWS, Azure, on-premises datacenters, and microservices into a single system of record.",
+  },
+  {
+    Icon: Workflow,
+    t: "Autonomous Incident Remediation",
+    d: "AI-driven event management that suppresses noise, correlates root causes, and executes automated remediation playbooks to reduce MTTR by up to 60%.",
+  },
+  {
+    Icon: Repeat2,
+    t: "Turnkey Enterprise Integration Fabric",
+    d: "Production REST, Kafka, and webhook pipelines linking ServiceNow with SAP, Salesforce, Jira, and enterprise CI/CD toolchains seamlessly.",
+  },
+];
 
-                <div className="space-y-4 font-mono text-[10px] md:text-xs">
-                  <div className="p-4 bg-zinc-900/50 border border-zinc-850 rounded-xl flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                      <span className="text-white font-bold">Trigger:</span>
-                      <span className="text-zinc-450">New Employee Hired (Workday Event)</span>
-                    </div>
-                    <span className="text-zinc-500 text-[10px] font-bold">08:00 AM</span>
-                  </div>
-
-                  <div className="pl-6 border-l border-zinc-800 space-y-4">
-                    <div className="p-4 bg-zinc-900/50 border border-zinc-850 rounded-xl flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                        <span className="text-white font-bold">ITSD Step:</span>
-                        <span className="text-zinc-450">Provision AD Profile & Mailbox</span>
-                      </div>
-                      <span className="text-emerald-500 text-[10px] font-bold">COMPLETED</span>
-                    </div>
-
-                    <div className="p-4 bg-zinc-900/50 border border-zinc-850 rounded-xl flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                        <span className="text-white font-bold">Asset Step:</span>
-                        <span className="text-zinc-450">Allocate Macbook & Ship to Location</span>
-                      </div>
-                      <span className="text-emerald-500 text-[10px] font-bold">SHIPPED</span>
-                    </div>
-
-                    <div className="p-4 bg-zinc-900/30 border border-zinc-900/60 rounded-xl flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 rounded-full border-2 border-yellow-500/50 border-t-transparent animate-spin" />
-                        <span className="text-white font-bold">HRSD Step:</span>
-                        <span className="text-zinc-550">Assign Safety & Policy Modules</span>
-                      </div>
-                      <span className="text-yellow-500 text-[10px] font-bold">PENDING APPROVAL</span>
-                    </div>
-                  </div>
-                </div>
+function Why() {
+  return (
+    <section className="py-24 lg:py-32 bg-[#030303] border-b border-zinc-900/60 relative">
+      <div className={`${wrap} grid items-center gap-14 lg:grid-cols-12 lg:gap-16`}>
+        {/* Left Visual: 3D Enterprise Architecture Hub */}
+        <Reveal className="lg:col-span-6 relative justify-self-center w-full">
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-0 scale-105 rounded-3xl blur-2xl opacity-35"
+            style={{
+              background:
+                "radial-gradient(closest-side, rgba(16,185,129,0.35), rgba(244,63,94,0.2), transparent 100%)",
+            }}
+          />
+          <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3 shadow-2xl backdrop-blur-md group">
+            {/* Console Header Bar */}
+            <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-800/80 mb-2">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
               </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 3. CAPABILITIES */}
-      <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              OUR SERVICE CAPABILITIES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Our ServiceNow <span className="text-rose-500">Capabilities</span>
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Comprehensive expertise to architect, configure, and manage business-critical ServiceNow workflows.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {capabilitiesList.map((cap, idx) => (
-              <div
-                key={idx}
-                className="p-8 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-10 h-10 rounded-xl bg-rose-500/5 flex items-center justify-center mb-6 text-rose-500">
-                    {cap.icon}
-                  </div>
-                  <h3 className="text-sm md:text-base font-bold text-white mb-2 leading-snug">{cap.title}</h3>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">{cap.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. SOLUTIONS WE DELIVER */}
-      <section id="solutions" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-left">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              PLATFORM WORKLOADS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Enterprise Solutions Powered by <span className="text-rose-500">ServiceNow</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {solutionsList.map((sol, idx) => (
-              <div
-                key={idx}
-                className="p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300"
-              >
-                <div className="w-8 h-8 rounded-lg bg-rose-500/5 flex items-center justify-center mb-4 text-rose-500">
-                  <CheckCircle2 className="w-4 h-4" />
-                </div>
-                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wider mb-2">{sol.title}</h4>
-                <p className="text-[10px] md:text-xs text-zinc-400 font-bold leading-relaxed">{sol.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. WORKFLOW ARCHITECTURE */}
-      <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              WORKFLOW PIPELINE DESIGN
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Enterprise Workflow <span className="text-rose-500">Architecture</span>
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Visual layer representation of how requests flow from triggers to automation scripts, ERP databases, and analytics logs.
-            </p>
-          </Reveal>
-
-          {/* Vertical Workflow Steps Layout */}
-          <div className="max-w-3xl mx-auto flex flex-col gap-4 relative z-10">
-            {/* Connection Line */}
-            <div className="absolute left-[30px] md:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-emerald-500/20 via-rose-500/30 to-green-500/20 z-0 hidden md:block" />
-
-            {workflowSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="relative z-10 flex flex-col md:flex-row items-center md:justify-between p-5 bg-zinc-950/70 border border-zinc-900 hover:border-zinc-800 rounded-2xl transition-all duration-300 gap-4"
-              >
-                <div className="flex items-center gap-4 w-full md:w-1/2">
-                  <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-850 flex items-center justify-center font-mono text-xs font-bold text-rose-500 shadow-md">
-                    0{idx + 1}
-                  </div>
-                  <div>
-                    <span className="text-[9px] font-mono text-rose-500 uppercase tracking-wider block font-bold">{step.label}</span>
-                    <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wider">{step.desc}</h4>
-                  </div>
-                </div>
-                <div className="w-full md:w-1/2 text-left md:text-right">
-                  <p className="text-[10px] md:text-xs text-zinc-400 font-bold leading-normal">{step.sub}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. BUSINESS USE CASES */}
-
-
-
-      {/* CERTIFICATIONS */}
-      <PartnerCertifications
-        title="ServiceNow Certifications"
-        certifications={[
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-164.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-165.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-166.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-167.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-168.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-169.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-170.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-171.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-172.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-173.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-174.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-175.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-176.webp" },
-          { image: "/webp/assets/ecosystem/Servicenow_Aards/image-177.webp" }
-        ]}
-      />
-
-
-      <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-left">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              REAL-WORLD DOMAINS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Transforming Enterprise <span className="text-rose-500">Operations</span>
-            </h2>
-          </Reveal>
-
-          {/* 8 Business Use Case Grid cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { domain: "IT", caseName: "Automated Incident Resolution", desc: "Correlating monitoring alerts and triggering auto-restarts of application pods on cloud clusters." },
-              { domain: "HR", caseName: "Employee Onboarding", desc: "Setting up payroll profiles, contract signature logs, and workplace equipment allocations on day one." },
-              { domain: "Facilities", caseName: "Workspace Requests", desc: "Routing desk allocations, swipe card access forms, and meeting room repairs to correct teams." },
-              { domain: "Finance", caseName: "Approval Workflows", desc: "Enforcing purchase thresholds, matching invoices, and updating general ledgers via ERP integration." },
-              { domain: "Security", caseName: "Incident Response", desc: "Isolating infected server endpoints automatically when firewalls detect telemetry threats." },
-              { domain: "Customer Service", caseName: "Digital Support Portal", desc: "Providing multi-channel client portals with automated ticket escalations and support SLAs." },
-              { domain: "Procurement", caseName: "Vendor Requests", desc: "Streamlining partner screening, NDAs signing loops, and contract catalog renewals with audit logs." },
-              { domain: "Enterprise Operations", caseName: "Cross-department Automation", desc: "Linking workflows crossing IT, Legal, Security, and Facility teams under single request panels." }
-            ].map((useCase, idx) => (
-              <div
-                key={idx}
-                className="p-8 bg-zinc-950/40 border border-zinc-900 rounded-3xl flex flex-col justify-between hover:border-rose-500/20 transition-all duration-300"
-              >
-                <div>
-                  <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">{useCase.domain}</span>
-                  <h3 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-4 border-b border-zinc-900 pb-3">{useCase.caseName}</h3>
-                  <p className="text-xs text-zinc-400 font-bold leading-relaxed">{useCase.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. SERVICENOW PRODUCTS / PLATFORM MODULES */}
-      <section id="products" className="w-full py-24 bg-black border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              PLATFORM PORTFOLIO
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              ServiceNow Platform <span className="text-rose-500">Expertise</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 select-none">
-            {platformExpertise.map((techGroup, idx) => (
-              <div
-                key={idx}
-                className="p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-350"
-              >
-                <h4 className="text-xs font-bold text-rose-500 uppercase tracking-widest mb-4 border-b border-zinc-900/80 pb-2">
-                  {techGroup.category}
-                </h4>
-                <div className="flex flex-col gap-2">
-                  {techGroup.items.map((item) => (
-                    <div
-                      key={item}
-                      className="px-3 py-2 bg-zinc-950 border border-zinc-900 rounded-lg text-[10px] font-mono text-zinc-350 font-bold hover:text-white transition-colors"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. WHY SERVICENOW + DEVOPSTRIO */}
-      <section id="why-us" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              PARTNERSHIP ADVANTAGES
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Why Organizations Choose Devopstrio for <span className="text-rose-500">ServiceNow</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyUsList.map((card, idx) => (
-              <div
-                key={idx}
-                className="p-8 bg-zinc-950/45 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <h4 className="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-4 leading-snug">{card.title}</h4>
-                  <p className="text-xs md:text-sm text-zinc-400 font-bold leading-relaxed">{card.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. BUSINESS OUTCOMES */}
-      <section id="outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              MEASURED VALUE
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Business Value <span className="text-rose-500">Delivered</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 select-none">
-            {outcomesList.map((stat, idx) => (
-              <div
-                key={idx}
-                className="p-8 bg-zinc-950/50 border border-zinc-900 hover:border-rose-500/20 rounded-3xl transition-all duration-300 text-left group"
-              >
-                <div className="text-3xl md:text-4xl lg:text-5xl font-black text-rose-500 tracking-tighter mb-2 font-mono group-hover:scale-105 transition-transform duration-300 origin-left">
-                  {stat.value}
-                </div>
-                <div className="text-[10px] md:text-xs font-mono text-zinc-400 uppercase tracking-widest leading-snug font-bold mb-3">
-                  {stat.label}
-                </div>
-                <p className="text-[11px] text-zinc-500 font-bold leading-relaxed">{stat.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 10. RELATED ECOSYSTEM PAGES */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-          <Reveal className="mb-16 text-center max-w-2xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              EXPLORE OTHER NETWORKS
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Related Ecosystem <span className="text-rose-500">Connections</span>
-            </h2>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {relatedPages.map((partner) => (
-              <Link
-                key={partner.name}
-                href={partner.href}
-                className="group flex flex-col justify-between p-6 bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-2xl transition-all duration-300 min-h-[160px]"
-              >
-                <div>
-                  <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wider mb-2 flex items-center justify-between">
-                    {partner.name}
-                    <ChevronRight className="w-4 h-4 text-zinc-650 group-hover:translate-x-1 group-hover:text-rose-500 transition-all" />
-                  </h4>
-                  <p className="text-[10px] md:text-xs text-zinc-400 font-bold leading-relaxed">
-                    {partner.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 11. FAQ ACCORDION */}
-      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="max-w-3xl mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-                FAQ
+              <span className="text-[11px] font-mono text-zinc-400">servicenow-itom-cmdb.flow</span>
+              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                ACTIVE WORKFLOWS
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
-            </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-              Everything you need to know about our ServiceNow workflow automation, modules implementation, and integrations. Can&apos;t find what you&apos;re looking for? Reach out to our team — we respond to every question personally.
-            </p>
-          </Reveal>
 
-          {/* Accordion FAQ */}
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
+            <div className="relative overflow-hidden rounded-xl">
+              <Image
+                src={`${AI_IMG}/servicenow-hub.png`}
+                alt="Devopstrio ServiceNow Digital Workflow Automation Hub"
+                width={720}
+                height={540}
+                className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              />
+            </div>
+
+            {/* Bottom Architecture Pill */}
+            <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs font-semibold text-white tracking-wide">
+                  Enterprise ServiceNow Automation Hub
+                </span>
+              </div>
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/25">
+                Elite Certified
+              </span>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Right Content */}
+        <div className="lg:col-span-6">
+          <Reveal>
+            <Head
+              subtitle="THE DEVOPSTRIO ADVANTAGE"
+              title="Technology has power. Collaboration gives it direction."
+              body="ServiceNow is the intelligent operating system for modern digital enterprise workflows. Devopstrio structures the configuration, automates the service pipelines, and ensures your IT operations run with maximum efficiency and continuous audit compliance."
+            />
+          </Reveal>
+          <div className="mt-8 space-y-4">
+            {reasons.map(({ Icon, t, d }, i) => (
+              <Reveal key={t} delay={i * 90}>
+                <div className="flex gap-4 p-5 rounded-2xl border border-zinc-800/80 bg-zinc-950/40 hover:border-emerald-500/30 hover:bg-zinc-900/30 transition-all duration-300 group">
+                  <div className="flex-shrink-0 grid h-11 w-11 place-items-center rounded-xl bg-zinc-900 border border-zinc-800 transition-colors duration-300 group-hover:border-emerald-500/40 group-hover:bg-emerald-500/10">
+                    <Icon size={20} color={ROSE} />
+                  </div>
+                  <div>
+                    <h3 className="text-[16px] font-bold text-white group-hover:text-emerald-400 transition-colors">
+                      {t}
+                    </h3>
+                    <p className="mt-1.5 text-[13px] leading-[23px] text-zinc-400">{d}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   3. SERVICES ("Everything you need to run on ServiceNow")
+   ========================================================================= */
+const services = [
+  {
+    badge: "SERVICE DESK",
+    Icon: Cloud,
+    t: "ITSM Pro & Service Portals",
+    d: "Intelligent incident routing, change advisory automation, self-service portals, and predictive SLA tracking.",
+  },
+  {
+    badge: "OPERATIONS",
+    Icon: Repeat2,
+    t: "ITOM & Cloud Discovery",
+    d: "Autonomous service mapping, cloud discovery across AWS/Azure, event correlation, and automated alert noise reduction.",
+  },
+  {
+    badge: "PORTFOLIO",
+    Icon: Code2,
+    t: "Strategic Portfolio (SPM)",
+    d: "Enterprise demand intake, project financial tracking, agile release trains, and alignment with corporate strategy.",
+  },
+  {
+    badge: "GENAI & COPILOT",
+    Icon: Database,
+    t: "Now Assist & Virtual Agents",
+    d: "Generative AI conversational virtual agents, automated case summarization, and intelligent knowledge article drafting.",
+  },
+  {
+    badge: "GOVERNANCE",
+    Icon: ShieldCheck,
+    t: "SecOps & GRC / Risk Management",
+    d: "Vulnerability response orchestration, security incident handling, continuous regulatory auditing, and vendor risk assessments.",
+  },
+  {
+    badge: "CUSTOM APPS",
+    Icon: Gauge,
+    t: "App Engine & Workflow Fabric",
+    d: "Custom enterprise low-code applications, Flow Designer automation, and bi-directional integration spokes for SAP and Workday.",
+  },
+];
+
+function Services() {
+  return (
+    <section id="services" className="py-24 lg:py-32 bg-black border-b border-zinc-900/60">
+      <div className={wrap}>
+        <Reveal>
+          <Head
+            subtitle="CORE CAPABILITIES"
+            title="Everything you need to orchestrate on ServiceNow."
+            body="Six core engineering disciplines covering your complete lifecycle—from initial platform blueprint to continuous enterprise optimization."
+          />
+        </Reveal>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map(({ badge, Icon, t, d }, i) => (
+            <Reveal key={t} delay={(i % 3) * 90}>
+              <article className="group relative h-full rounded-2xl border border-zinc-800/80 bg-[#0D0E12] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(244,63,94,0.45)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.6)] overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="flex items-center justify-between">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-zinc-900 border border-zinc-800 transition-colors duration-300 group-hover:bg-[rgba(244,63,94,0.14)] group-hover:border-rose-500/30">
+                    <Icon size={22} color={ROSE} />
+                  </span>
+                  <span className="text-[10px] font-mono font-semibold tracking-wider uppercase text-zinc-500 group-hover:text-emerald-400 transition-colors">
+                    {badge}
+                  </span>
+                </div>
+                <h3 className="mt-6 text-[19px] font-bold text-white group-hover:text-emerald-400 transition-colors">
+                  {t}
+                </h3>
+                <p className="mt-2.5 text-[14px] leading-[24px] text-zinc-400">{d}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================================================================
+   4. EXTRA SECTION: ENTERPRISE ARCHITECTURE & COLLABORATION STACK
+   ========================================================================= */
+const transformationMetrics = [
+  {
+    icon: TrendingDown,
+    value: "60%",
+    label: "Reduction in MTTR",
+    desc: "Through AI event correlation & autonomous remediation playbooks",
+  },
+  {
+    icon: ShieldCheck,
+    value: "95%",
+    label: "CMDB Health & Accuracy",
+    desc: "Continuous automated discovery across multi-cloud infrastructure",
+  },
+  {
+    icon: Rocket,
+    value: "4× Faster",
+    label: "Employee Service Delivery",
+    desc: "Self-service virtual agents & Now Assist automated workflows",
+  },
+  {
+    icon: Clock,
+    value: "100%",
+    label: "Audit & Compliance Health",
+    desc: "Automated regulatory reporting and continuous posture tracking",
+  },
+];
+
+const architecturePillars = [
+  {
+    icon: Layers,
+    title: "Autonomous ITOM & Service Mapping",
+    desc: "Dynamic application service topologies, pattern-based discovery, and ML alert noise reduction down to core root causes.",
+    tag: "ITOM & CSDM 4.0",
+  },
+  {
+    icon: Server,
+    title: "Enterprise Multi-Cloud CMDB",
+    desc: "Unified single pane of glass synchronizing assets, relationships, and dependencies across AWS, Azure, and private datacenters.",
+    tag: "Automated Discovery",
+  },
+  {
+    icon: Cpu,
+    title: "Now Assist & GenAI Virtual Agents",
+    desc: "Domain-trained generative AI virtual agents capable of deflecting 40%+ of level-1 tickets with human-like accuracy.",
+    tag: "Generative AI Copilots",
+  },
+  {
+    icon: Lock,
+    title: "SecOps & Integrated Risk (GRC)",
+    desc: "Automated vulnerability prioritization, security incident response orchestration, and ISO 27001/SOC 2 compliance tracking.",
+    tag: "SOC 2 & ISO 27001",
+  },
+];
+
+function TransformationStack() {
+  return (
+    <section className="py-24 lg:py-32 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
+      {/* Subtle Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-[-10%] top-1/3 h-[500px] w-[500px] rounded-full blur-[120px] opacity-25"
+        style={{ background: "radial-gradient(circle, #10B981, transparent 70%)" }}
+      />
+
+      <div className={wrap}>
+        {/* Section Header */}
+        <Reveal>
+          <Head
+            subtitle="ENTERPRISE MODERNIZATION STACK"
+            title="Accelerate Digital Workflow Transformation with ServiceNow Blueprints"
+            body="Devopstrio couples ServiceNow Certified Master Architects with turnkey workflow accelerators to de-risk platform rollouts and deliver measurable enterprise business impact."
+          />
+        </Reveal>
+
+        {/* Metrics Row */}
+        <Reveal delay={100} className="mt-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {transformationMetrics.map((m, idx) => {
+              const Icon = m.icon;
               return (
-                <div key={idx} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group"
-                  >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {faq.q}
+                <div
+                  key={idx}
+                  className="rounded-2xl border border-zinc-800/80 bg-[#0D0E12] p-6 text-left relative overflow-hidden group hover:border-emerald-500/40 transition-colors"
+                >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 to-green-500 opacity-60" />
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-emerald-400 transition-colors">
+                      {m.value}
                     </span>
-                    <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
-                  </button>
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl animate-fadeIn flex flex-col gap-4">
-                      <p>{faq.a}</p>
-                    </div>
-                  )}
+                    <Icon size={18} className="text-emerald-500/70" />
+                  </div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-zinc-300">
+                    {m.label}
+                  </div>
+                  <p className="mt-1.5 text-[11px] text-zinc-400 leading-normal">{m.desc}</p>
                 </div>
               );
             })}
           </div>
+        </Reveal>
 
-          {/* Below FAQ callout */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
-              </p>
-              <a
-                href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Contact Our Engineers <ArrowUpRight size={12} />
-              </a>
+        {/* Showcase Grid: 3D Collaboration Graphic + Architecture Pillars */}
+        <div className="mt-16 grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          {/* Left Column: 3D Collaboration Graphic */}
+          <Reveal delay={150} className="lg:col-span-6 relative">
+            <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3 shadow-2xl backdrop-blur-md group">
+              <div className="relative overflow-hidden rounded-xl">
+                <Image
+                  src={`${AI_IMG}/servicenow-collaboration-growth.png`}
+                  alt="Enterprise ServiceNow Digital Workflow Collaboration and Operations"
+                  width={720}
+                  height={540}
+                  className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+              </div>
+              <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4 text-amber-400" />
+                  <span className="text-xs font-semibold text-white">
+                    End-to-End Workflow Delivery Pods
+                  </span>
+                </div>
+                <span className="text-[11px] font-mono text-zinc-400">Elite Certified Pods</span>
+              </div>
             </div>
           </Reveal>
+
+          {/* Right Column: 4 Architecture Pillars */}
+          <div className="lg:col-span-6 space-y-4">
+            {architecturePillars.map((p, i) => {
+              const Icon = p.icon;
+              return (
+                <Reveal key={p.title} delay={i * 80}>
+                  <div className="rounded-xl border border-zinc-800/80 bg-[#0D0E12] p-5 transition-all duration-300 hover:border-emerald-500/40 hover:bg-zinc-900/50 flex gap-4 items-start group">
+                    <div className="flex-shrink-0 grid h-10 w-10 place-items-center rounded-lg bg-zinc-900 border border-zinc-800 text-emerald-400 group-hover:border-emerald-500/30 group-hover:bg-emerald-500/10 transition-colors">
+                      <Icon size={19} />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-[16px] font-bold text-white group-hover:text-emerald-400 transition-colors">
+                          {p.title}
+                        </h4>
+                        <span className="text-[10px] font-mono text-zinc-500 bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">
+                          {p.tag}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-[13px] leading-[22px] text-zinc-400">{p.desc}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* 12. FINAL CTA */}
-      <section className="relative w-full py-32 bg-[#030303] overflow-hidden text-center">
-        {/* Ambient background blur */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.02] rounded-full blur-[140px] pointer-events-none" />
+/* =========================================================================
+   5. HOW WE WORK (Step-by-step roadmap)
+   ========================================================================= */
+const steps = [
+  {
+    step: "PHASE 01",
+    t: "Discover & CSDM Assessment",
+    d: "We evaluate your current ticketing landscape, configuration items, and integrations against Common Service Data Model (CSDM 4.0).",
+  },
+  {
+    step: "PHASE 02",
+    t: "Architect & Blueprint",
+    d: "We design target workflow flows, service mapping rules, CMDB class hierarchies, and custom integration spokes.",
+  },
+  {
+    step: "PHASE 03",
+    t: "Configure & Automate",
+    d: "We configure ITSM/ITOM modules, train virtual agent models, and run automated regression testing suites with zero data loss.",
+  },
+  {
+    step: "PHASE 04",
+    t: "Operate & Scale",
+    d: "Our 24×7 platform operations team manages instance health, release upgrades, store application patches, and KPI telemetry.",
+  },
+];
 
-        <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 flex flex-col items-center">
+function Process() {
+  return (
+    <section className="py-24 lg:py-32 bg-black border-b border-zinc-900/60">
+      <div className={wrap}>
+        <Reveal>
+          <Head
+            subtitle="DELIVERY METHODOLOGY"
+            title="A clear path from first call to steady-state operations."
+            body="Our 4-phase structured engagement model ensures complete visibility, minimal risk, and accelerated time-to-value."
+          />
+        </Reveal>
+        <Reveal className="mt-16">
+          <ol className="relative grid gap-8 md:grid-cols-4 md:gap-6">
+            <span
+              aria-hidden
+              className="absolute left-0 right-0 top-[20px] hidden h-[2px] origin-left bg-gradient-to-r from-emerald-600 via-rose-500 to-transparent md:block"
+            />
+            {steps.map((s, i) => (
+              <li key={s.t} className="relative">
+                <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full border border-emerald-500/60 bg-black text-[14px] font-bold text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                  {i + 1}
+                </span>
+                <span className="mt-4 block text-[10px] font-mono font-semibold tracking-wider text-emerald-400">
+                  {s.step}
+                </span>
+                <h3 className="mt-2 text-[18px] font-bold text-white">{s.t}</h3>
+                <p className="mt-2 text-[14px] leading-[24px] text-zinc-400">{s.d}</p>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
-          <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              WORKFLOW TRANSFORMATION
-            </span>
-          </Reveal>
+/* =========================================================================
+   6. INDUSTRIES
+   ========================================================================= */
+const industries = [
+  {
+    n: "healthcare",
+    tag: "HIPAA & Clinical Operations",
+    t: "Healthcare & Life Sciences",
+    d: "Medical device asset management, clinical incident routing, and HIPAA compliance workflow audit automation.",
+  },
+  {
+    n: "manufacturing",
+    tag: "OT Management & SCADA",
+    t: "Industrial & Manufacturing",
+    d: "Operational Technology (OT) asset discovery, plant maintenance dispatching, and supply chain ticket resolution.",
+  },
+  {
+    n: "retail",
+    tag: "Store Operations & POS",
+    t: "Retail & E-Commerce",
+    d: "Store asset provisioning, high-volume POS hardware triage, and employee onboarding across distributed store networks.",
+  },
+  {
+    n: "education",
+    tag: "Campus ITSM & Self-Service",
+    t: "Financial & Corporate Services",
+    d: "Sox compliance auditing, vendor risk management (VRM), and cross-department employee service center automation.",
+  },
+];
 
-          <Reveal delay={0.1}>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
-              Ready to Modernize Enterprise Workflows?
-            </h2>
-          </Reveal>
+function Industries() {
+  return (
+    <section className="py-24 lg:py-32 bg-[#030303] border-b border-zinc-900/60">
+      <div className={wrap}>
+        <Reveal>
+          <Head
+            subtitle="INDUSTRY SPECIALIZATIONS"
+            title="Tailored for your industry's compliance & performance demands."
+            body="Every vertical operates under unique constraints. We shape the architecture, data residency, and security controls around yours."
+          />
+        </Reveal>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {industries.map((c, i) => (
+            <Reveal key={c.n} delay={i * 90}>
+              <article className="group h-full overflow-hidden rounded-2xl border border-zinc-800/80 bg-[#0D0E12] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(16,185,129,0.45)] hover:shadow-xl">
+                <div className="overflow-hidden relative">
+                  <Image
+                    src={`${IMG}/${c.n}.webp`}
+                    alt={c.t}
+                    width={512}
+                    height={279}
+                    className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 right-3 rounded-full bg-black/80 px-2.5 py-1 text-[10px] font-mono text-zinc-300 border border-white/10 backdrop-blur-sm">
+                    {c.tag}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-[18px] font-bold text-white group-hover:text-emerald-400 transition-colors">
+                    {c.t}
+                  </h3>
+                  <p className="mt-2 text-[13px] leading-[22px] text-zinc-400">{c.d}</p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-          <Reveal delay={0.2}>
-            <p className="text-zinc-400 text-xs md:text-sm lg:text-base leading-relaxed max-w-xl mb-10 font-bold">
-              Partner with Devopstrio to automate IT services, employee experiences, governance processes, and digital operations with the ServiceNow platform.
+/* =========================================================================
+   7. FAQ
+   ========================================================================= */
+const faqs = [
+  {
+    q: "What ServiceNow product suites does Devopstrio implement and manage?",
+    a: "We support the entire Now Platform suite, including IT Service Management (ITSM Pro), IT Operations Management (ITOM), Strategic Portfolio Management (SPM), Security Operations (SecOps), Governance, Risk & Compliance (GRC/IRM), and App Engine low-code development.",
+  },
+  {
+    q: "How does Devopstrio ensure high CMDB data accuracy and health?",
+    a: "We adhere to the Common Service Data Model (CSDM 4.0), deploying automated multi-cloud Discovery and Service Graph Connectors with continuous reconciliation rules to achieve 95%+ CMDB health scores.",
+  },
+  {
+    q: "Can you help migrate our legacy ticketing system (Jira, Zendesk, Remedy) to ServiceNow?",
+    a: "Yes. We design structured data extraction, schema mapping, historical ticket archiving, and phased cutover roadmaps to migrate enterprise service desks to ServiceNow with zero downtime.",
+  },
+  {
+    q: "How does Now Assist and generative AI work within ServiceNow workflows?",
+    a: "Now Assist leverages secure enterprise LLMs to summarize incident histories, draft resolution notes, generate code for Flow Designer, and power conversational virtual agents that deflect up to 40% of routine service requests.",
+  },
+  {
+    q: "Can ServiceNow integrate with our existing ERP, CRM, and cloud platforms?",
+    a: "Yes. Using IntegrationHub, pre-built ServiceNow spokes, and custom REST/GraphQL endpoints, we connect ServiceNow bi-directionally with SAP, Salesforce, AWS, Azure, Microsoft Teams, and CI/CD pipelines.",
+  },
+  {
+    q: "Do you provide ongoing managed administration and platform upgrades?",
+    a: "Yes. Our ServiceNow managed services team provides continuous incident triage, catalog item creation, flow optimizations, and seamless semi-annual version upgrade testing (Automated Test Framework).",
+  },
+];
+
+function Faq() {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <section className="py-24 lg:py-32 bg-black border-b border-zinc-900/60">
+      <div className={`${wrap} max-w-[880px]`}>
+        <Reveal>
+          <Head
+            center
+            subtitle="FREQUENTLY ASKED QUESTIONS"
+            title="Everything You Need to Know About Devopstrio + ServiceNow"
+          />
+        </Reveal>
+        <div className="mt-14 grid gap-3.5">
+          {faqs.map((f, i) => {
+            const on = open === i;
+            return (
+              <Reveal key={f.q} delay={i * 50}>
+                <div
+                  className={`rounded-2xl border bg-[#0D0E12] transition-colors duration-300 ${
+                    on ? "border-[rgba(16,185,129,0.45)]" : "border-zinc-800/80 hover:border-zinc-700"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    aria-expanded={on}
+                    onClick={() => setOpen(on ? null : i)}
+                    className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
+                  >
+                    <span className="text-[16px] font-bold text-white">{f.q}</span>
+                    <Plus
+                      size={20}
+                      color={ROSE}
+                      className="shrink-0 transition-transform duration-300"
+                      style={{ transform: on ? "rotate(45deg)" : "none" }}
+                    />
+                  </button>
+                  <div
+                    className="grid transition-[grid-template-rows] duration-500 ease-out motion-reduce:transition-none"
+                    style={{ gridTemplateRows: on ? "1fr" : "0fr" }}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="px-6 pb-6 text-[14px] leading-[25px] text-zinc-400">{f.a}</p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        {/* Below FAQ callout */}
+        <Reveal delay={0.2} className="mt-8">
+          <div className="border border-zinc-800/80 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-sm md:text-base font-semibold text-zinc-200">
+              Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
             </p>
-          </Reveal>
-
-          <Reveal delay={0.3} className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact#contact-form"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
+              className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900/60 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap"
             >
-              Talk to a ServiceNow Expert
-              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-              </div>
+              Contact Our Engineers <ArrowRight size={14} />
             </Link>
-            <Link
-              href="/contact#contact-form"
-              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Start Your Transformation
-            </Link>
-          </Reveal>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
-        </div>
-      </section>
-
+/* =========================================================================
+   PAGE ROOT
+   ========================================================================= */
+export default function ServiceNowPartnershipPage() {
+  return (
+    <main className="overflow-x-clip bg-black font-sans text-white">
+      <Hero />
+      <Why />
+      <Services />
+      <TransformationStack />
+      <Process />
+      <Industries />
+      <Faq />
+      <RepresentativeCTA
+        title="Ready To Modernize Your Enterprise With"
+        highlightText="ServiceNow Workflows?"
+        description="Connect directly with our ServiceNow Certified Master Architects. We will evaluate your workflow landscape, benchmark your CMDB health against CSDM 4.0, and formulate an accelerated digital transformation roadmap."
+        primaryBtnText="TALK TO A SERVICENOW ARCHITECT"
+        primaryBtnHref="/contact#contact-form"
+        secondaryBtnText="EXPLORE ALL SERVICES"
+        secondaryBtnHref="/services"
+        theme="rose"
+      />
     </main>
   );
 }

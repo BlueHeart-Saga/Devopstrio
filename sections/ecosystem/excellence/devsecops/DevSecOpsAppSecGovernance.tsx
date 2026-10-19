@@ -61,10 +61,10 @@ export function DevSecOpsAppSecGovernance() {
     <>
       {/* 8. APPLICATION SECURITY */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-red-500 mb-3 block">APPSEC</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">APPSEC</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Application Security & Shielding
             </h2>
           </Reveal>
@@ -74,10 +74,10 @@ export function DevSecOpsAppSecGovernance() {
               const Icon = item.icon;
               return (
                 <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-red-500/30 transition-all flex flex-col items-center text-center group">
-                  <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-3 group-hover:bg-red-500/20 transition-colors">
-                    <Icon className="w-5 h-5 text-red-500" />
+                  <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20 transition-colors">
+                    <Icon className="w-6 h-6 text-red-500" />
                   </div>
-                  <h4 className="text-sm font-bold text-white group-hover:text-red-400 transition-colors">{item.title}</h4>
+                  <h4 className="text-base md:text-lg font-bold text-white group-hover:text-red-400 transition-colors">{item.title}</h4>
                 </div>
               );
             })}
@@ -87,10 +87,10 @@ export function DevSecOpsAppSecGovernance() {
 
       {/* 9. COMPLIANCE & GOVERNANCE */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-red-500 mb-3 block">GOVERNANCE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">GOVERNANCE</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Compliance & Audit Readiness
             </h2>
           </Reveal>
@@ -101,7 +101,7 @@ export function DevSecOpsAppSecGovernance() {
               return (
                 <div key={idx} className="p-5 bg-zinc-950/60 border border-zinc-900 rounded-xl flex items-center gap-3 hover:border-red-500/40 transition-colors">
                   <Icon className="w-5 h-5 text-red-500 shrink-0" />
-                  <span className="text-xs font-semibold text-zinc-300">{item.title}</span>
+                  <span className="text-sm md:text-[15px] font-semibold text-zinc-200">{item.title}</span>
                 </div>
               );
             })}
@@ -111,10 +111,10 @@ export function DevSecOpsAppSecGovernance() {
 
       {/* 10. SECURITY AUTOMATION */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-red-500 mb-3 block">INTELLIGENT BOT</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">INTELLIGENT BOT</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Security Automation at Scale
             </h2>
           </Reveal>
@@ -124,8 +124,10 @@ export function DevSecOpsAppSecGovernance() {
               const Icon = item.icon;
               return (
                 <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-red-500/30 transition-all flex flex-col items-center text-center">
-                  <Icon className="w-6 h-6 text-red-500 mb-3" />
-                  <h4 className="text-sm font-bold text-white">{item.title}</h4>
+                  <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-red-500" />
+                  </div>
+                  <h4 className="text-base md:text-lg font-bold text-white">{item.title}</h4>
                 </div>
               );
             })}

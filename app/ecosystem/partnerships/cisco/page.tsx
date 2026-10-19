@@ -296,7 +296,7 @@ export default function CiscoPartnershipPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-sky-500 selection:text-white">
+    <main className="min-h-screen bg-black text-white pt-16 font-sans selection:bg-sky-500 selection:text-white">
 
       {/* 1. HERO SECTION */}
       <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">

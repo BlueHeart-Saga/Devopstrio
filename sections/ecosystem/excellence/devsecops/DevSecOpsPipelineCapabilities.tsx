@@ -53,10 +53,10 @@ export function DevSecOpsPipelineCapabilities() {
     <>
       {/* 5. CORE DEVSECOPS CAPABILITIES */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-red-500 mb-3 block">CAPABILITIES</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">CAPABILITIES</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Core DevSecOps Capabilities
             </h2>
           </Reveal>
@@ -69,8 +69,8 @@ export function DevSecOpsPipelineCapabilities() {
                   <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-4 border border-red-500/20 group-hover:bg-red-500/20 transition-colors">
                     <Icon className="w-5 h-5 text-red-500" />
                   </div>
-                  <h4 className="text-base font-bold text-white mb-2">{cap.title}</h4>
-                  <p className="text-sm text-zinc-400 font-medium">{cap.desc}</p>
+                  <h4 className="text-base md:text-lg font-bold text-white mb-2">{cap.title}</h4>
+                  <p className="text-sm md:text-[15px] text-zinc-300 leading-relaxed font-medium">{cap.desc}</p>
                 </div>
               );
             })}
@@ -80,13 +80,13 @@ export function DevSecOpsPipelineCapabilities() {
 
       {/* 6. CI/CD SECURITY PIPELINE */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-red-500 mb-3 block">PIPELINE FLOW</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">PIPELINE FLOW</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Security Embedded Into Every Deployment
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto leading-relaxed">
               Automated security checkpoints spanning from developer IDEs through CI/CD pipelines into cloud runtime.
             </p>
           </Reveal>
@@ -94,17 +94,17 @@ export function DevSecOpsPipelineCapabilities() {
           <div className="bg-zinc-950/60 border border-zinc-900 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/5 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 relative z-10">
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-5 relative z-10">
               {pipelineWorkflow.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <React.Fragment key={idx}>
-                    <div className="flex flex-col items-center min-w-[100px] group">
+                    <div className="flex flex-col items-center min-w-[110px] group">
                       <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3 group-hover:border-red-500 group-hover:bg-red-500/10 transition-all shadow-md">
                         <Icon className="w-5 h-5 text-red-500 group-hover:scale-110 transition-transform" />
                       </div>
-                      <span className="text-xs font-semibold text-zinc-200 text-center group-hover:text-white transition-colors">{item.step}</span>
-                      <span className="text-[9px] font-mono text-zinc-500 mt-1">{item.desc}</span>
+                      <span className="text-sm font-semibold text-zinc-100 text-center group-hover:text-white transition-colors">{item.step}</span>
+                      <span className="text-xs font-mono text-zinc-400 mt-1 text-center">{item.desc}</span>
                     </div>
                     {idx < pipelineWorkflow.length - 1 && (
                       <ArrowRight className="w-4 h-4 text-zinc-700 shrink-0 hidden lg:block" />
@@ -119,10 +119,10 @@ export function DevSecOpsPipelineCapabilities() {
 
       {/* 7. CLOUD & CONTAINER SECURITY */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-red-500 mb-3 block">CLOUD PROTECTION</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">CLOUD PROTECTION</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Cloud & Container Security
             </h2>
           </Reveal>
@@ -131,7 +131,7 @@ export function DevSecOpsPipelineCapabilities() {
             {cloudContainerCards.map((card, idx) => (
               <div key={idx} className="p-5 bg-zinc-950/60 border border-zinc-900 rounded-xl flex items-center gap-3 hover:border-red-500/40 transition-colors">
                 <Cloud className="w-5 h-5 text-red-500 shrink-0" />
-                <span className="text-xs font-semibold text-zinc-300">{card}</span>
+                <span className="text-sm md:text-[15px] font-semibold text-zinc-200">{card}</span>
               </div>
             ))}
           </div>

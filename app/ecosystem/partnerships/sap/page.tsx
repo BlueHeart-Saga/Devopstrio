@@ -70,6 +70,7 @@ export default function SAPStrategicAllianceHub() {
       if (!alive) return;
 
       lenis = new Lenis({ lerp: 0.08, wheelMultiplier: 0.85 });
+      (window as any).__lenis = lenis;
       const loop = (time: number) => {
         lenis?.raf(time);
         raf = requestAnimationFrame(loop);
@@ -104,6 +105,9 @@ export default function SAPStrategicAllianceHub() {
     return () => {
       alive = false;
       cancelAnimationFrame(raf);
+      if ((window as any).__lenis === lenis) {
+        (window as any).__lenis = null;
+      }
       lenis?.destroy();
       cleanupTriggers();
     };
@@ -411,7 +415,7 @@ export default function SAPStrategicAllianceHub() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <main className="min-h-screen bg-black text-white pt-16 font-sans selection:bg-rose-500 selection:text-white">
 
       {/* 1. HERO SECTION WITH CALM BLUE/CYAN SAP WAVE DESIGN */}
       <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
@@ -552,7 +556,7 @@ export default function SAPStrategicAllianceHub() {
 
 
       {/* 2. SAP ECOSYSTEM OVERVIEW */}
-      <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+      <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -586,7 +590,7 @@ export default function SAPStrategicAllianceHub() {
       </section>
 
       {/* 3. ENTERPRISE BUSINESS DOMAINS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+      <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -664,7 +668,7 @@ export default function SAPStrategicAllianceHub() {
       </section>
 
       {/* 5. SAP BUSINESS TECHNOLOGY PLATFORM (BTP) */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+      <section id="btp-platform" className="w-full py-24 bg-black border-b border-zinc-900/60 relative scroll-mt-28">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03),transparent_60%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
@@ -694,7 +698,7 @@ export default function SAPStrategicAllianceHub() {
       </section>
 
       {/* 6. BUSINESS AI PLATFORM */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section id="business-ai" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -754,7 +758,7 @@ export default function SAPStrategicAllianceHub() {
       </section>
 
       {/* 8. BUSINESS PROCESS TRANSFORMATION */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section id="process-transformation" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -783,7 +787,7 @@ export default function SAPStrategicAllianceHub() {
       </section>
 
       {/* 9. SAP SOLUTION PORTFOLIO */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60">
+      <section id="solutions" className="w-full py-24 bg-black border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -813,7 +817,7 @@ export default function SAPStrategicAllianceHub() {
       </section>
 
       {/* 10. INDUSTRY TRANSFORMATION */}
-      <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section id="industry-transformation" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-12 text-center max-w-2xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -1185,7 +1189,7 @@ export default function SAPStrategicAllianceHub() {
       </section>
 
       {/* FAQ Accordion Section */}
-      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60">
+      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-3xl mb-16">
             <div className="flex items-center gap-2 mb-4">

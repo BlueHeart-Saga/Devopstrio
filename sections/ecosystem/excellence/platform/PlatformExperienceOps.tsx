@@ -85,13 +85,13 @@ export function PlatformExperienceOps() {
     <>
       {/* 7. DEVELOPER EXPERIENCE (DevEx) */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-400 mb-3 block">DEVEX</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">DEVEX</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Building Better Experiences for Engineers
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base max-w-xl mx-auto">
+            <p className="text-zinc-300 text-base md:text-lg max-w-xl mx-auto font-medium leading-relaxed">
               Reduce friction, context-switching, and onboarding time with developer-centric tooling.
             </p>
           </Reveal>
@@ -100,11 +100,11 @@ export function PlatformExperienceOps() {
             {devExItems.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="p-6 bg-zinc-950/50 border border-zinc-900 rounded-2xl hover:border-blue-500/40 transition-all text-center flex flex-col items-center group">
-                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
-                    <Icon className="w-6 h-6 text-blue-400" />
+                <div key={idx} className="p-6 bg-zinc-950/50 border border-zinc-900 rounded-2xl hover:border-sky-500/40 transition-all text-center flex flex-col items-center group">
+                  <div className="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4 group-hover:bg-sky-500/20 transition-colors">
+                    <Icon className="w-6 h-6 text-sky-400" />
                   </div>
-                  <h4 className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors">{item.title}</h4>
+                  <h4 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors">{item.title}</h4>
                 </div>
               );
             })}
@@ -114,10 +114,10 @@ export function PlatformExperienceOps() {
 
       {/* 8. PLATFORM AUTOMATION */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-400 mb-3 block">AUTOMATION</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">AUTOMATION</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Automation at Every Layer
             </h2>
           </Reveal>
@@ -126,9 +126,9 @@ export function PlatformExperienceOps() {
             {automationItems.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="p-5 bg-zinc-950/40 border border-zinc-900 rounded-xl flex items-center gap-3 hover:border-blue-500/30 transition-colors">
-                  <Icon className="w-5 h-5 text-blue-400 shrink-0" />
-                  <span className="text-xs font-semibold text-zinc-300">{item.title}</span>
+                <div key={idx} className="p-5 bg-zinc-950/40 border border-zinc-900 rounded-xl flex items-center gap-3 hover:border-sky-500/30 transition-colors">
+                  <Icon className="w-5 h-5 text-sky-400 shrink-0" />
+                  <span className="text-sm md:text-[15px] font-semibold text-zinc-200">{item.title}</span>
                 </div>
               );
             })}
@@ -138,24 +138,24 @@ export function PlatformExperienceOps() {
 
       {/* 9. INFRASTRUCTURE AS CODE (IaC) */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <Reveal>
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-400 mb-3 block">DECLARATIVE INFRASTRUCTURE</span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+                <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">DECLARATIVE INFRASTRUCTURE</span>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
                   Everything Defined as Code
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+                <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
                   Version-controlled, reproducible, and audit-ready infrastructure provisioning using industry-standard IaC tooling and GitOps workflows.
                 </p>
               </Reveal>
             </div>
             <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4">
               {iacCards.map((iac, idx) => (
-                <div key={idx} className="p-4 bg-zinc-900/30 border border-zinc-800 rounded-xl flex flex-col items-center justify-center text-center hover:border-blue-500/40 transition-colors h-28">
-                  <FileJson className="w-6 h-6 text-blue-400 mb-2" />
-                  <span className="text-xs font-bold text-zinc-200">{iac}</span>
+                <div key={idx} className="p-4 bg-zinc-900/30 border border-zinc-800 rounded-xl flex flex-col items-center justify-center text-center hover:border-sky-500/40 transition-colors h-28">
+                  <FileJson className="w-6 h-6 text-sky-400 mb-2" />
+                  <span className="text-sm font-bold text-zinc-200">{iac}</span>
                 </div>
               ))}
             </div>
@@ -165,10 +165,10 @@ export function PlatformExperienceOps() {
 
       {/* 10. OBSERVABILITY & RELIABILITY */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-400 mb-3 block">TELEMETRY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">TELEMETRY</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Real-Time Platform Insights
             </h2>
           </Reveal>
@@ -177,9 +177,11 @@ export function PlatformExperienceOps() {
             {observabilityCards.map((obs, idx) => {
               const Icon = obs.icon;
               return (
-                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-blue-500/30 transition-all flex flex-col items-center text-center">
-                  <Icon className="w-6 h-6 text-blue-400 mb-3" />
-                  <h4 className="text-sm font-bold text-white">{obs.title}</h4>
+                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-sky-500/30 transition-all flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-sky-400" />
+                  </div>
+                  <h4 className="text-base font-bold text-white">{obs.title}</h4>
                 </div>
               );
             })}
@@ -189,10 +191,10 @@ export function PlatformExperienceOps() {
 
       {/* 11. PLATFORM SECURITY */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-400 mb-3 block">SECURITY & GOVERNANCE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">SECURITY & GOVERNANCE</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Secure Platforms by Design
             </h2>
           </Reveal>
@@ -201,9 +203,9 @@ export function PlatformExperienceOps() {
             {securityCards.map((sec, idx) => {
               const Icon = sec.icon;
               return (
-                <div key={idx} className="p-5 bg-zinc-950/60 border border-zinc-900 rounded-xl flex items-center gap-3 hover:border-blue-500/40 transition-colors">
-                  <Icon className="w-5 h-5 text-blue-400 shrink-0" />
-                  <span className="text-xs font-semibold text-zinc-300">{sec.title}</span>
+                <div key={idx} className="p-5 bg-zinc-950/60 border border-zinc-900 rounded-xl flex items-center gap-3 hover:border-sky-500/40 transition-colors">
+                  <Icon className="w-5 h-5 text-sky-400 shrink-0" />
+                  <span className="text-sm md:text-[15px] font-semibold text-zinc-200">{sec.title}</span>
                 </div>
               );
             })}

@@ -66,28 +66,28 @@ export function SREIncidentPerformance() {
     <>
       {/* 8. INCIDENT MANAGEMENT */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">RESPONSE & TRIAGE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-3 block">RESPONSE & TRIAGE</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Rapid Incident Detection & Resolution
             </h2>
           </Reveal>
 
           {/* Incident Lifecycle Flow */}
           <div className="bg-zinc-950/60 border border-zinc-900 rounded-3xl p-8 md:p-10 mb-12 shadow-2xl">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-rose-500 mb-8 block text-center">
+            <span className="text-xs md:text-sm font-mono font-bold uppercase tracking-widest text-emerald-400 mb-8 block text-center">
               Closed-Loop Incident Response Lifecycle
             </span>
-            <div className="flex flex-wrap justify-center items-center gap-4">
+            <div className="flex flex-wrap justify-center items-center gap-5">
               {incidentSteps.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="flex flex-col items-center min-w-[90px] group">
-                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-2 group-hover:border-rose-500 group-hover:bg-rose-500/10 transition-all">
-                      <Icon className="w-5 h-5 text-rose-500 group-hover:scale-110 transition-transform" />
+                  <div key={idx} className="flex flex-col items-center min-w-[100px] group">
+                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-2 group-hover:border-emerald-500 group-hover:bg-emerald-500/10 transition-all">
+                      <Icon className="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform" />
                     </div>
-                    <span className="text-xs font-semibold text-zinc-300">{item.step}</span>
+                    <span className="text-sm font-semibold text-zinc-200">{item.step}</span>
                   </div>
                 );
               })}
@@ -98,10 +98,12 @@ export function SREIncidentPerformance() {
             {incidentCards.map((card, idx) => {
               const Icon = card.icon;
               return (
-                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-rose-500/30 transition-all">
-                  <Icon className="w-5 h-5 text-rose-500 mb-3" />
-                  <h4 className="text-base font-bold text-white mb-2">{card.title}</h4>
-                  <p className="text-xs text-zinc-400 leading-relaxed">{card.desc}</p>
+                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-emerald-500/30 transition-all">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 border border-emerald-500/20">
+                    <Icon className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <h4 className="text-base md:text-lg font-bold text-white mb-2">{card.title}</h4>
+                  <p className="text-sm text-zinc-300 leading-relaxed font-medium">{card.desc}</p>
                 </div>
               );
             })}
@@ -111,10 +113,10 @@ export function SREIncidentPerformance() {
 
       {/* 9. PERFORMANCE ENGINEERING */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">OPTIMIZATION</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-3 block">OPTIMIZATION</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Performance Engineering
             </h2>
           </Reveal>
@@ -123,9 +125,9 @@ export function SREIncidentPerformance() {
             {performanceCards.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="p-5 bg-zinc-950/60 border border-zinc-900 rounded-xl flex items-center gap-3 hover:border-rose-500/40 transition-colors">
-                  <Icon className="w-5 h-5 text-rose-500 shrink-0" />
-                  <span className="text-xs font-semibold text-zinc-300">{item.title}</span>
+                <div key={idx} className="p-5 bg-zinc-950/60 border border-zinc-900 rounded-xl flex items-center gap-3.5 hover:border-emerald-500/40 transition-colors">
+                  <Icon className="w-5 h-5 text-emerald-400 shrink-0" />
+                  <span className="text-sm md:text-[15px] font-semibold text-zinc-200">{item.title}</span>
                 </div>
               );
             })}
@@ -135,10 +137,10 @@ export function SREIncidentPerformance() {
 
       {/* 10. AUTOMATION & SELF-HEALING */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">AIOPS</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-3 block">AIOPS</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Intelligent Operations at Scale
             </h2>
           </Reveal>
@@ -147,9 +149,11 @@ export function SREIncidentPerformance() {
             {selfHealingCards.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-rose-500/30 transition-all flex flex-col items-center text-center">
-                  <Icon className="w-6 h-6 text-rose-500 mb-3" />
-                  <h4 className="text-sm font-bold text-white">{item.title}</h4>
+                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-emerald-500/30 transition-all flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <h4 className="text-base font-bold text-white">{item.title}</h4>
                 </div>
               );
             })}

@@ -4,15 +4,9 @@ import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import {
   Bot,
-  Terminal,
-  Layers,
-  ShieldCheck,
   Cpu,
   Gauge,
   LineChart,
-  Repeat,
-  CheckCircle2,
-  FileCode,
   Flame,
   Search,
   Sliders,
@@ -47,20 +41,20 @@ export function QualityPerformanceAI() {
     <>
       {/* 7. TEST AUTOMATION FRAMEWORK */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FRAMEWORKS</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-amber-400 mb-3 block">FRAMEWORKS</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Modern Test Automation Stack
             </h2>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {frameworkCards.map((fw, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/60 border border-zinc-900 rounded-2xl hover:border-rose-500/40 transition-colors">
-                <span className="text-[10px] font-mono font-bold text-rose-500 uppercase tracking-widest block mb-2">FRAMEWORK 0{idx + 1}</span>
-                <h3 className="text-lg font-bold text-white mb-3">{fw.name}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed">{fw.desc}</p>
+              <div key={idx} className="p-8 bg-zinc-950/60 border border-zinc-900 rounded-2xl hover:border-amber-500/40 transition-colors">
+                <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest block mb-2">FRAMEWORK 0{idx + 1}</span>
+                <h3 className="text-lg md:text-xl font-bold text-white mb-3">{fw.name}</h3>
+                <p className="text-sm text-zinc-300 leading-relaxed font-medium">{fw.desc}</p>
               </div>
             ))}
           </div>
@@ -69,10 +63,10 @@ export function QualityPerformanceAI() {
 
       {/* 8. PERFORMANCE & RELIABILITY TESTING */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">PERFORMANCE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-amber-400 mb-3 block">PERFORMANCE</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Performance & Reliability Testing
             </h2>
           </Reveal>
@@ -81,9 +75,9 @@ export function QualityPerformanceAI() {
             {perfCards.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="p-5 bg-zinc-950/60 border border-zinc-900 rounded-xl flex items-center gap-3 hover:border-rose-500/40 transition-colors">
-                  <Icon className="w-5 h-5 text-rose-500 shrink-0" />
-                  <span className="text-xs font-semibold text-zinc-300">{item.title}</span>
+                <div key={idx} className="p-5 bg-zinc-950/60 border border-zinc-900 rounded-xl flex items-center gap-3.5 hover:border-amber-500/40 transition-colors">
+                  <Icon className="w-5 h-5 text-amber-400 shrink-0" />
+                  <span className="text-sm md:text-[15px] font-semibold text-zinc-200">{item.title}</span>
                 </div>
               );
             })}
@@ -93,10 +87,10 @@ export function QualityPerformanceAI() {
 
       {/* 9. AI-POWERED QUALITY ENGINEERING */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative z-10">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">INNOVATION</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
+            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-amber-400 mb-3 block">INNOVATION</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               AI-Powered Quality Engineering
             </h2>
           </Reveal>
@@ -105,10 +99,12 @@ export function QualityPerformanceAI() {
             {aiCapabilities.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-rose-500/30 transition-all flex flex-col items-center text-center">
-                  <Icon className="w-6 h-6 text-rose-500 mb-3" />
-                  <h4 className="text-sm font-bold text-white mb-2">{item.title}</h4>
-                  <p className="text-xs text-zinc-400 leading-relaxed">{item.desc}</p>
+                <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-amber-500/30 transition-all flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-amber-400" />
+                  </div>
+                  <h4 className="text-base md:text-lg font-bold text-white mb-2">{item.title}</h4>
+                  <p className="text-sm text-zinc-300 leading-relaxed font-medium">{item.desc}</p>
                 </div>
               );
             })}

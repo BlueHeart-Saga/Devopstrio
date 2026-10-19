@@ -62,6 +62,7 @@ export default function OracleStrategicAllianceHub() {
       if (!alive) return;
 
       lenis = new Lenis({ lerp: 0.08, wheelMultiplier: 0.85 });
+      (window as any).__lenis = lenis;
       const loop = (time: number) => {
         lenis?.raf(time);
         raf = requestAnimationFrame(loop);
@@ -96,6 +97,9 @@ export default function OracleStrategicAllianceHub() {
     return () => {
       alive = false;
       cancelAnimationFrame(raf);
+      if ((window as any).__lenis === lenis) {
+        (window as any).__lenis = null;
+      }
       lenis?.destroy();
       cleanupTriggers();
     };
@@ -348,7 +352,7 @@ export default function OracleStrategicAllianceHub() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white pt-16 font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <main className="min-h-screen bg-black text-white pt-16 font-sans selection:bg-rose-500 selection:text-white">
 
       {/* 1. HERO SECTION WITH CALM CRIMSON/RED WAVE DESIGN */}
       <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
@@ -488,7 +492,7 @@ export default function OracleStrategicAllianceHub() {
       <SectionNavbar sections={oracleSections} />
 
       {/* 2. PARTNERSHIP OVERVIEW */}
-      <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+      <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
@@ -537,7 +541,7 @@ export default function OracleStrategicAllianceHub() {
       </section>
 
       {/* 3. ORACLE CAPABILITY AREAS */}
-      <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+      <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -578,7 +582,7 @@ export default function OracleStrategicAllianceHub() {
       </section>
 
       {/* 4. SOLUTIONS WE DELIVER WITH ORACLE */}
-      <section id="solutions" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section id="solutions" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -607,7 +611,7 @@ export default function OracleStrategicAllianceHub() {
       </section>
 
       {/* 5. ORACLE REFERENCE ARCHITECTURE */}
-      <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+      <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/60 relative scroll-mt-28">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.02),transparent_70%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
@@ -649,84 +653,85 @@ export default function OracleStrategicAllianceHub() {
 
 
       {/* CERTIFICATIONS */}
-      <PartnerCertifications
-        title="Oracle Certifications & Awards"
-        certifications={[
-          {
-            name: "Health & Life Sciences Award",
-            category: "Partner Awards",
-            year: "2025",
-            subtitle: "Industry Solutions Partner",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008908.webp"
-          },
-          {
-            name: "Communications Award",
-            category: "Partner Awards",
-            year: "2025",
-            subtitle: "Industry Solutions Partner",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008909.webp"
-          },
-          {
-            name: "Customer Success Award",
-            category: "Partner Awards",
-            year: "2024",
-            subtitle: "Best-in-Class Applications",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/image-154.webp"
-          },
-          {
-            name: "GenAI Innovation Award",
-            category: "Excellence Awards",
-            year: "2025",
-            subtitle: "Oracle Excellence Accreditations",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/image-155.webp"
-          },
-          {
-            name: "Cloud & Tech Innovation (EMEA)",
-            category: "Cloud/Tech Partner",
-            year: "2024",
-            subtitle: "Europe, Middle East & Africa",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/image-156.webp"
-          },
-          {
-            name: "Business Impact Award (EMEA)",
-            category: "Cloud/Tech Partner",
-            year: "2024",
-            subtitle: "Europe, Middle East & Africa",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/image-157.webp"
-          },
-          {
-            name: "Cloud & Tech Innovation (Europe West)",
-            category: "Cloud/Tech Partner",
-            year: "2024",
-            subtitle: "Europe West Region",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/image-158.webp"
-          },
-          {
-            name: "Business Impact Award (Europe West)",
-            category: "Cloud/Tech Partner",
-            year: "2024",
-            subtitle: "Europe West Region",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/image-159.webp"
-          },
-          {
-            name: "Oracle Excellence Award Winner",
-            category: "Excellence Awards",
-            year: "2018",
-            subtitle: "Global Partner Recognition",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/image-162.webp"
-          },
-          {
-            name: "Partner of the Year (Ireland)",
-            category: "Country Awards",
-            year: "2018",
-            subtitle: "Oracle Vertice Regional Award",
-            image: "/webp/assets/ecosystem/ORACLE_Awards/image-163.webp"
-          }
-        ]}
-      />
+      <div id="certifications" className="scroll-mt-28">
+        <PartnerCertifications
+          title="Oracle Certifications & Awards"
+          certifications={[
+            {
+              name: "Health & Life Sciences Award",
+              category: "Partner Awards",
+              year: "2025",
+              subtitle: "Industry Solutions Partner",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008908.webp"
+            },
+            {
+              name: "Communications Award",
+              category: "Partner Awards",
+              year: "2025",
+              subtitle: "Industry Solutions Partner",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/Group-1000008909.webp"
+            },
+            {
+              name: "Customer Success Award",
+              category: "Partner Awards",
+              year: "2024",
+              subtitle: "Best-in-Class Applications",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/image-154.webp"
+            },
+            {
+              name: "GenAI Innovation Award",
+              category: "Excellence Awards",
+              year: "2025",
+              subtitle: "Oracle Excellence Accreditations",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/image-155.webp"
+            },
+            {
+              name: "Cloud & Tech Innovation (EMEA)",
+              category: "Cloud/Tech Partner",
+              year: "2024",
+              subtitle: "Europe, Middle East & Africa",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/image-156.webp"
+            },
+            {
+              name: "Business Impact Award (EMEA)",
+              category: "Cloud/Tech Partner",
+              year: "2024",
+              subtitle: "Europe, Middle East & Africa",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/image-157.webp"
+            },
+            {
+              name: "Cloud & Tech Innovation (Europe West)",
+              category: "Cloud/Tech Partner",
+              year: "2024",
+              subtitle: "Europe West Region",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/image-158.webp"
+            },
+            {
+              name: "Business Impact Award (Europe West)",
+              category: "Cloud/Tech Partner",
+              year: "2024",
+              subtitle: "Europe West Region",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/image-159.webp"
+            },
+            {
+              name: "Oracle Excellence Award Winner",
+              category: "Excellence Awards",
+              year: "2018",
+              subtitle: "Global Partner Recognition",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/image-162.webp"
+            },
+            {
+              name: "Partner of the Year (Ireland)",
+              category: "Country Awards",
+              year: "2018",
+              subtitle: "Oracle Vertice Regional Award",
+              image: "/webp/assets/ecosystem/ORACLE_Awards/image-163.webp"
+            }
+          ]}
+        />
+      </div>
 
-
-      <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section id="use-cases" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-left">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -761,7 +766,7 @@ export default function OracleStrategicAllianceHub() {
       </section>
 
       {/* 7. ORACLE TECHNOLOGIES WE WORK WITH */}
-      <section id="technologies" className="w-full py-24 bg-black border-b border-zinc-900/60">
+      <section id="technologies" className="w-full py-24 bg-black border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -798,7 +803,7 @@ export default function OracleStrategicAllianceHub() {
       </section>
 
       {/* 8. WHY ORACLE + DEVOPSTRIO */}
-      <section id="why-oracle" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
+      <section id="why-oracle" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center max-w-2xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -826,7 +831,7 @@ export default function OracleStrategicAllianceHub() {
       </section>
 
       {/* 9. OUTCOMES / IMPACT */}
-      <section id="outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+      <section id="outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60 relative scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
@@ -914,7 +919,7 @@ export default function OracleStrategicAllianceHub() {
         </div>
       </section>
       {/* 11. FAQ ACCORDION */}
-      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60">
+      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60 scroll-mt-28">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-3xl mb-16">
             <div className="flex items-center gap-2 mb-4">
