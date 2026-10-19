@@ -42,6 +42,17 @@ function renderBaseTemplate({ title, badgeText, tableRows, messageTitle, message
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
+  <!--[if mso]>
+  <style type="text/css">
+    body, table, td, a, span, font { font-family: Arial, sans-serif !important; }
+  </style>
+  <![endif]-->
+  <style type="text/css">
+    span.MsoHyperlink, span.MsoHyperlinkFollowed {
+      mso-style-priority: 99 !important;
+      color: inherit !important;
+    }
+  </style>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f4f4f5; padding: 32px 16px;">
@@ -390,6 +401,30 @@ export function generateThankYouEmailHtml({ name, formType, referenceDetails }: 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You for Contacting Devopstrio</title>
+  <!--[if mso]>
+  <style type="text/css">
+    body, table, td, a, span, font { font-family: Arial, sans-serif !important; }
+    .btn-text, .btn-white { color: #ffffff !important; text-decoration: none !important; }
+  </style>
+  <![endif]-->
+  <style type="text/css">
+    /* Outlook & Client Link Reset */
+    a, a:visited, a:hover, a:active {
+      text-decoration: none;
+    }
+    .btn-white, .btn-white:link, .btn-white:visited {
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    /* Microsoft Outlook Specific Blue Link Override */
+    span.MsoHyperlink, span.MsoHyperlinkFollowed {
+      mso-style-priority: 99 !important;
+      color: inherit !important;
+    }
+    #outlook a {
+      padding: 0;
+    }
+  </style>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f4f4f5; padding: 32px 16px;">
@@ -443,14 +478,18 @@ export function generateThankYouEmailHtml({ name, formType, referenceDetails }: 
               <div style="padding-top: 14px; margin-bottom: 24px; text-align: center;">
                 <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
                   <tr>
-                    <td align="center" style="padding: 6px;">
-                      <a href="${SITE_URL}/services" target="_blank" style="display: inline-block; padding: 13px 26px; background-color: #e11d48; background: #e11d48; color: #ffffff !important; text-decoration: none; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.8px;">
-                        <span style="color: #ffffff !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700;">Explore Our Services &rarr;</span>
+                    <td align="center" style="padding: 6px; color: #ffffff;">
+                      <a href="${SITE_URL}/services" target="_blank" class="btn-white" style="display: inline-block; padding: 13px 26px; background-color: #e11d48; color: #ffffff !important; text-decoration: none !important; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.8px; mso-line-height-rule: exactly;">
+                        <font color="#ffffff" style="color: #ffffff !important; text-decoration: none !important;">
+                          <span class="btn-text" style="color: #ffffff !important; text-decoration: none !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700;">Explore Our Services &rarr;</span>
+                        </font>
                       </a>
                     </td>
-                    <td align="center" style="padding: 6px;">
-                      <a href="${SITE_URL}/about" target="_blank" style="display: inline-block; padding: 13px 26px; background-color: #09090b; background: #09090b; color: #ffffff !important; text-decoration: none; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border-radius: 10px; border: 1px solid #27272a; text-transform: uppercase; letter-spacing: 0.8px;">
-                        <span style="color: #ffffff !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700;">Learn About Devopstrio</span>
+                    <td align="center" style="padding: 6px; color: #ffffff;">
+                      <a href="${SITE_URL}/about" target="_blank" class="btn-white" style="display: inline-block; padding: 13px 26px; background-color: #09090b; color: #ffffff !important; text-decoration: none !important; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border-radius: 10px; border: 1px solid #27272a; text-transform: uppercase; letter-spacing: 0.8px; mso-line-height-rule: exactly;">
+                        <font color="#ffffff" style="color: #ffffff !important; text-decoration: none !important;">
+                          <span class="btn-text" style="color: #ffffff !important; text-decoration: none !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700;">Learn About Devopstrio</span>
+                        </font>
                       </a>
                     </td>
                   </tr>
