@@ -97,14 +97,91 @@ const FALLBACK_REPOS: RepoItem[] = [
   },
   {
     id: "fintech-cloud-compliance-toolkit",
-    name: "fintech-cloud-compliance-toolkit",
+    name: "Fintech Cloud Compliance Toolkit",
     description: "Regulatory compliance guardrails (PCI-DSS, SOC2, HIPAA) for AWS and Azure multi-region architectures.",
-    html_url: "https://github.com/Devopstrio/fintech-cloud-compliance-toolkit",
+    html_url: "https://github.com/Devopstrio/financial-services-lz",
     language: "Terraform",
     stargazers_count: 67,
     topics: ["industry", "compliance", "security"],
     category: "industry",
     updated_at: "2026-08-19"
+  },
+  {
+    id: "healthcare-lz",
+    name: "Healthcare Landing Zone",
+    description: "HIPAA & HITRUST compliant cloud foundation with encrypted patient data stores and audit trails.",
+    html_url: "https://github.com/Devopstrio/healthcare-lz",
+    language: "HCL",
+    stargazers_count: 54,
+    topics: ["industry", "healthcare", "hipaa"],
+    category: "industry",
+    updated_at: "2026-08-18"
+  },
+  {
+    id: "financial-services-lz",
+    name: "Financial Services Landing Zone",
+    description: "High-security banking and fintech foundation featuring PCI-DSS v4.0 controls and automated HSM key management.",
+    html_url: "https://github.com/Devopstrio/financial-services-lz",
+    language: "Terraform",
+    stargazers_count: 81,
+    topics: ["industry", "fintech", "banking"],
+    category: "industry",
+    updated_at: "2026-08-20"
+  },
+  {
+    id: "automotive-lz",
+    name: "Automotive Landing Zone",
+    description: "Connected vehicle and telematics IoT streaming platform baseline with low-latency edge ingestion.",
+    html_url: "https://github.com/Devopstrio/automotive-lz",
+    language: "TypeScript",
+    stargazers_count: 46,
+    topics: ["industry", "automotive", "iot"],
+    category: "industry",
+    updated_at: "2026-08-17"
+  },
+  {
+    id: "retail-lz",
+    name: "Retail & E-Commerce Landing Zone",
+    description: "Omnichannel retail platform with autoscaling event queues, product catalog caching, and checkout security.",
+    html_url: "https://github.com/Devopstrio/retail-lz",
+    language: "HCL",
+    stargazers_count: 62,
+    topics: ["industry", "retail", "ecommerce"],
+    category: "industry",
+    updated_at: "2026-08-16"
+  },
+  {
+    id: "telecom-lz",
+    name: "Telecom & 5G Edge Landing Zone",
+    description: "Carrier-grade multi-access edge computing (MEC) architecture with NFV network slice automation.",
+    html_url: "https://github.com/Devopstrio/telecom-lz",
+    language: "HCL",
+    stargazers_count: 39,
+    topics: ["industry", "telecom", "5g"],
+    category: "industry",
+    updated_at: "2026-08-15"
+  },
+  {
+    id: "energy-lz",
+    name: "Energy & Utilities Landing Zone",
+    description: "Smart grid telemetry, SCADA gateway isolation, and ESG carbon analytics platform blueprint.",
+    html_url: "https://github.com/Devopstrio/energy-lz",
+    language: "HCL",
+    stargazers_count: 48,
+    topics: ["industry", "energy", "iot"],
+    category: "industry",
+    updated_at: "2026-08-14"
+  },
+  {
+    id: "manufacturing-lz",
+    name: "Manufacturing Industry Landing Zone",
+    description: "Industry 4.0 smart factory architecture with OPC-UA sensor telemetry and predictive maintenance pipelines.",
+    html_url: "https://github.com/Devopstrio/manufacturing-lz",
+    language: "TypeScript",
+    stargazers_count: 51,
+    topics: ["industry", "manufacturing", "iiot"],
+    category: "industry",
+    updated_at: "2026-08-13"
   },
   {
     id: "kubernetes-gitops-flux-cd",
@@ -173,34 +250,120 @@ export function GitHubAcceleratorsPortal() {
     async function loadRepos() {
       setLoading(true);
       try {
-        const res = await fetch("https://api.github.com/orgs/Devopstrio/repos?per_page=100&sort=pushed&type=public");
+        // Try internal cached API route first (which has 375 verified repos & token access)
+        const res = await fetch("/api/github-repos");
+        let rawList: any[] = [];
         if (res.ok) {
           const data = await res.json();
-          if (Array.isArray(data) && data.length > 0) {
-            const mapped: RepoItem[] = data.map((r: any) => {
-              const name = (r.name || "").toLowerCase();
+          if (data.success && Array.isArray(data.repos) && data.repos.length > 0) {
+            rawList = data.repos;
+          }
+        }
+
+        // Fallback to direct public GitHub API if internal route fails
+        if (rawList.length === 0) {
+          const directRes = await fetch("https://api.github.com/orgs/Devopstrio/repos?per_page=100&sort=pushed&type=public");
+          if (directRes.ok) {
+            const data = await directRes.json();
+            if (Array.isArray(data) && data.length > 0) {
+              rawList = data;
+            }
+          }
+        }
+
+        if (rawList.length > 0) {
+          const mapped: RepoItem[] = rawList
+            .filter((r: any) => r.name !== ".github")
+            .map((r: any) => {
+              const nameLower = (r.name || "").toLowerCase();
               const topics = r.topics || [];
               let cat = "devops";
-              if (name.includes("landing") || topics.includes("landing-zone")) cat = "landing-zone";
-              else if (name.includes("ai") || name.includes("rag") || name.includes("genai") || topics.includes("ai")) cat = "ai";
-              else if (name.includes("sec") || name.includes("trust") || topics.includes("security")) cat = "security";
-              else if (name.includes("vdi") || name.includes("avd") || topics.includes("vdi")) cat = "vdi";
-              else if (name.includes("fintech") || name.includes("industry") || topics.includes("industry")) cat = "industry";
+              // Check industry first (before generic 'lz' / 'landing' check catches them)
+              if (
+                nameLower.includes("fintech") ||
+                nameLower.includes("automotive") ||
+                nameLower.includes("healthcare") ||
+                nameLower.includes("financial") ||
+                nameLower.includes("insurance") ||
+                nameLower.includes("manufacturing") ||
+                nameLower.includes("retail") ||
+                nameLower.includes("energy") ||
+                nameLower.includes("telecom") ||
+                nameLower.includes("media-entertainment") ||
+                nameLower.includes("banking") ||
+                nameLower.includes("pharma") ||
+                nameLower.includes("industry") ||
+                topics.includes("industry")
+              ) {
+                cat = "industry";
+              } else if (nameLower.includes("vdi") || nameLower.includes("avd") || topics.includes("vdi")) {
+                cat = "vdi";
+              } else if (nameLower.includes("landing") || nameLower.endsWith("-lz") || topics.includes("landing-zone")) {
+                cat = "landing-zone";
+              } else if (
+                nameLower.includes("ai") ||
+                nameLower.includes("rag") ||
+                nameLower.includes("genai") ||
+                nameLower.includes("llm") ||
+                nameLower.includes("prompt") ||
+                nameLower.includes("gpt") ||
+                topics.includes("ai")
+              ) {
+                cat = "ai";
+              } else if (
+                nameLower.includes("sec") ||
+                nameLower.includes("trust") ||
+                nameLower.includes("auth") ||
+                nameLower.includes("audit") ||
+                nameLower.includes("siem") ||
+                nameLower.includes("compliance") ||
+                topics.includes("security")
+              ) {
+                cat = "security";
+              }
+
+              // Clean formatted name
+              let displayName = r.name
+                .split(/[-_]/)
+                .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+                .join(" ");
+
+              // Industry specific naming polish (e.g. Lz -> Landing Zone)
+              if (displayName.endsWith(" Lz")) {
+                displayName = displayName.replace(/ Lz$/, " Landing Zone");
+              }
+
+              // Meaningful description fallback based on category and name
+              let autoDesc = r.desc || r.description;
+              if (!autoDesc || autoDesc === "Devopstrio Landing Zone Accelerator") {
+                if (cat === "industry") {
+                  autoDesc = `Industry-tailored enterprise compliance & cloud architecture blueprint designed specifically for ${displayName.replace(" Landing Zone", "")} workloads.`;
+                } else if (cat === "landing-zone") {
+                  autoDesc = "CAF-aligned multi-cloud enterprise landing zone blueprint with policy guardrails & hub-spoke topology.";
+                } else if (cat === "ai") {
+                  autoDesc = "Production-grade enterprise AI, GenAI gateway, and RAG search architecture blueprint.";
+                } else if (cat === "security") {
+                  autoDesc = "Zero-Trust compliance guardrails, automated security scanning, and IAM baseline controls.";
+                } else if (cat === "vdi") {
+                  autoDesc = "Automated Azure Virtual Desktop (AVD) & remote enterprise workforce infrastructure blueprint.";
+                } else {
+                  autoDesc = "Enterprise-grade CI/CD pipeline, GitOps automation, and cloud infrastructure accelerator.";
+                }
+              }
 
               return {
-                id: r.id,
-                name: r.name,
-                description: r.description || "Enterprise acceleration blueprint by Devopstrio.",
-                html_url: r.html_url,
-                language: r.language || "HCL / Code",
-                stargazers_count: r.stargazers_count || 0,
+                id: r.id || r.name,
+                name: displayName,
+                description: autoDesc,
+                html_url: r.url || r.html_url || `https://github.com/Devopstrio/${r.name}`,
+                language: r.lang || r.language || (nameLower.includes("terraform") ? "HCL" : "TypeScript"),
+                stargazers_count: r.stars || r.stargazers_count || 0,
                 topics: topics.length > 0 ? topics.slice(0, 3) : [cat],
                 category: cat,
                 updated_at: r.pushed_at ? new Date(r.pushed_at).toISOString().split("T")[0] : "2026-08-20"
               };
             });
-            setRepos(mapped);
-          }
+          setRepos(mapped);
         }
       } catch (err) {
         console.warn("GitHub API rate limit or network error — fallback catalog active.");
@@ -271,7 +434,9 @@ export function GitHubAcceleratorsPortal() {
           <h2 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
             Live Open-Source <span className="text-rose-500">Accelerators</span>
           </h2>
-         
+          <p className="text-zinc-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            Battle-tested infrastructure as code, enterprise landing zones, and AI deployment blueprints directly from our official open-source repositories.
+          </p>
         </Reveal>
 
         {/* Category Filter Tabs */}
@@ -320,8 +485,8 @@ export function GitHubAcceleratorsPortal() {
                     {repo.name}
                   </h3>
 
-                  {/* Description (Shown on hover) */}
-                  <p className="text-zinc-300 text-sm md:text-base font-normal leading-relaxed mb-4 line-clamp-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Description (Clearly visible by default, with group-hover text color polish) */}
+                  <p className="text-zinc-400 group-hover:text-zinc-200 text-sm md:text-base font-normal leading-relaxed mb-4 line-clamp-3 transition-colors duration-200">
                     {repo.description}
                   </p>
                 </div>

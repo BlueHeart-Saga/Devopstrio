@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, Cloud, Shield, Settings, Server } from "lucide-react";
-import Link from "next/link";
+import { Cloud, Shield, Settings, Server } from "lucide-react";
 
 const stories = [
   {
@@ -11,6 +10,7 @@ const stories = [
     logo: "/assets/Home-page/partners/Microsoft.svg",
     title: "Azure VMware Solution helps Microsoft scale enterprise workloads",
     description: "Microsoft utilized Devopstrio's expertise to migrate complex enterprise applications, achieving unprecedented scale and security while reducing operational overhead by 40%.",
+    link: "/ecosystem/partnerships/microsoft",
     products: [
       { name: "Azure VMware Solution", icon: <Cloud className="w-4 h-4" /> },
       { name: "Enterprise Cloud", icon: <Server className="w-4 h-4" /> }
@@ -22,6 +22,7 @@ const stories = [
     logo: "/assets/Home-page/partners/Airbnb.svg",
     title: "Airbnb transforms global infrastructure for high availability",
     description: "By implementing a robust multi-region architecture, Airbnb ensures seamless experiences for millions of users daily with 99.99% uptime during peak seasons.",
+    link: "/marketing/case-studies",
     products: [
       { name: "Platform Engineering", icon: <Settings className="w-4 h-4" /> },
       { name: "Global Edge", icon: <Cloud className="w-4 h-4" /> }
@@ -33,6 +34,7 @@ const stories = [
     logo: "/assets/Home-page/partners/Virgin.svg",
     title: "Virgin accelerates digital delivery by 3× across global markets",
     description: "Virgin partnered with Devopstrio to modernize their CI/CD pipelines, accelerating feature delivery and creating a unified digital experience.",
+    link: "/marketing/case-studies",
     products: [
       { name: "DevOps Automation", icon: <Settings className="w-4 h-4" /> },
       { name: "Cloud Migration", icon: <Cloud className="w-4 h-4" /> }
@@ -44,6 +46,7 @@ const stories = [
     logo: "/assets/Home-page/partners/NHS.svg",
     title: "NHS secures patient data while modernizing core services",
     description: "The NHS enhanced its security posture and modernized legacy systems, enabling faster access to critical health data without compromising compliance.",
+    link: "/industries/healthcare-life-sciences",
     products: [
       { name: "Cybersecurity", icon: <Shield className="w-4 h-4" /> },
       { name: "Managed Ops", icon: <Server className="w-4 h-4" /> }
@@ -55,6 +58,7 @@ const stories = [
     logo: "/assets/Home-page/partners/ASDA.svg",
     title: "ASDA optimizes retail logistics with predictive cloud analytics",
     description: "ASDA leverages advanced cloud infrastructure to run real-time logistics analytics, reducing supply chain delays by 25% and improving customer satisfaction.",
+    link: "/industries/retail-ecommerce",
     products: [
       { name: "Cloud Analytics", icon: <Cloud className="w-4 h-4" /> },
       { name: "Data Platform", icon: <Server className="w-4 h-4" /> }
@@ -66,6 +70,7 @@ const stories = [
     logo: "/assets/Home-page/partners/Costco.svg",
     title: "Costco enhances global distribution with smart cloud solutions",
     description: "By implementing a robust, auto-scaling cloud architecture, Costco reduced operational bottlenecks and optimized their supply chain for maximum efficiency during peak seasons.",
+    link: "/industries/retail-ecommerce",
     products: [
       { name: "Cloud Architecture", icon: <Cloud className="w-4 h-4" /> },
       { name: "Global Edge", icon: <Server className="w-4 h-4" /> }
@@ -77,6 +82,7 @@ const stories = [
     logo: "/assets/Home-page/partners/godaddy.svg",
     title: "GoDaddy empowers millions with seamless domain management",
     description: "Devopstrio helped GoDaddy modernize their hosting infrastructure, delivering 99.99% uptime and lightning-fast domain provisioning for customers globally.",
+    link: "/marketing/case-studies",
     products: [
       { name: "Platform Engineering", icon: <Settings className="w-4 h-4" /> },
       { name: "Managed Ops", icon: <Shield className="w-4 h-4" /> }
@@ -88,6 +94,7 @@ const stories = [
     logo: "/assets/Home-page/partners/lenovo.svg",
     title: "Lenovo scales AI-driven hardware analytics seamlessly",
     description: "Leveraging custom cloud solutions, Lenovo can now process massive datasets from connected devices in real-time, unlocking powerful insights for hardware optimization.",
+    link: "/industries/manufacturing",
     products: [
       { name: "Data Platform", icon: <Server className="w-4 h-4" /> },
       { name: "Cloud Analytics", icon: <Cloud className="w-4 h-4" /> }
@@ -99,6 +106,7 @@ const stories = [
     logo: "/webp/assets/Home-page/partners/servicenow.webp",
     title: "ServiceNow accelerates enterprise workflow automation",
     description: "With a modernized infrastructure foundation, ServiceNow accelerated their deployment cycles by 3×, enabling faster rollout of critical enterprise workflow features.",
+    link: "/ecosystem/partnerships/servicenow",
     products: [
       { name: "DevOps Automation", icon: <Settings className="w-4 h-4" /> },
       { name: "Platform Engineering", icon: <Server className="w-4 h-4" /> }
@@ -169,13 +177,6 @@ export const FeaturedSuccess = () => {
                     </div>
                   </motion.div>
                 </AnimatePresence>
-              </div>
-
-              <div>
-                <button className="group inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-500 text-white px-7 py-3.5 rounded-xl text-base font-bold transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.3)] font-sans">
-                  Read Full Story
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
               </div>
             </div>
 
