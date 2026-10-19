@@ -157,7 +157,7 @@ function renderBaseTemplate({ title, badgeText, tableRows, messageTitle, message
               </p>
 
               <!-- Bottom Gradient Bar (Full Width across container) -->
-              <div style="height: 14px; width: 100%; margin: 0; padding: 0; background: linear-gradient(90deg, #581c87 0%, #9d174d 40%, #e11d48 70%, #f97316 100%);"></div>
+              <div style="height: 14px; width: 100%; margin: 0; padding: 0; background-color: #e11d48; background: linear-gradient(90deg, #581c87 0%, #9d174d 40%, #e11d48 70%, #f97316 100%);"></div>
             </td>
           </tr>
 
@@ -444,13 +444,13 @@ export function generateThankYouEmailHtml({ name, formType, referenceDetails }: 
                 <table align="center" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
                   <tr>
                     <td align="center" style="padding: 6px;">
-                      <a href="${SITE_URL}/services" target="_blank" style="display: inline-block; padding: 13px 26px; background: linear-gradient(135deg, #e11d48 0%, #be123c 60%, #9f1239 100%); color: #ffffff; text-decoration: none; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.8px; box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35);">
-                        Explore Our Services &rarr;
+                      <a href="${SITE_URL}/services" target="_blank" style="display: inline-block; padding: 13px 26px; background-color: #e11d48; background: #e11d48; color: #ffffff !important; text-decoration: none; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.8px;">
+                        <span style="color: #ffffff !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700;">Explore Our Services &rarr;</span>
                       </a>
                     </td>
                     <td align="center" style="padding: 6px;">
-                      <a href="${SITE_URL}/about" target="_blank" style="display: inline-block; padding: 13px 26px; background-color: #09090b; color: #ffffff; text-decoration: none; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; border-radius: 10px; border: 1px solid #27272a; text-transform: uppercase; letter-spacing: 0.8px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);">
-                        Learn About Devopstrio
+                      <a href="${SITE_URL}/about" target="_blank" style="display: inline-block; padding: 13px 26px; background-color: #09090b; background: #09090b; color: #ffffff !important; text-decoration: none; font-size: 13px; font-weight: 700; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; border-radius: 10px; border: 1px solid #27272a; text-transform: uppercase; letter-spacing: 0.8px;">
+                        <span style="color: #ffffff !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700;">Learn About Devopstrio</span>
                       </a>
                     </td>
                   </tr>
@@ -519,7 +519,7 @@ export function generateThankYouEmailHtml({ name, formType, referenceDetails }: 
               </p>
 
               <!-- Bottom Gradient Bar (Full Width across container) -->
-              <div style="height: 12px; width: 100%; margin: 0; padding: 0; background: linear-gradient(90deg, #581c87 0%, #9d174d 40%, #e11d48 70%, #f97316 100%);"></div>
+              <div style="height: 12px; width: 100%; margin: 0; padding: 0; background-color: #e11d48; background: linear-gradient(90deg, #581c87 0%, #9d174d 40%, #e11d48 70%, #f97316 100%);"></div>
             </td>
           </tr>
 
