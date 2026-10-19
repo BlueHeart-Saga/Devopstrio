@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Send, CheckCircle2, Mail, ChevronDown } from "lucide-react";
+import { Send, CheckCircle2, Mail, ChevronDown, AlertCircle, Check } from "lucide-react";
 import { insightsApi } from "@/lib/insightsApi";
 import CategoryPopup from "@/components/CategoryPopup";
 
@@ -52,6 +52,9 @@ export function WriteMessageForm() {
   const [submitted, setSubmitted] = useState(false);
   const [showCategoryPopup, setShowCategoryPopup] = useState(false);
 
+  const isConsentGiven = formData.newsletter && formData.marketingConsent;
+  const hasPartialConsent = (formData.newsletter && !formData.marketingConsent) || (!formData.newsletter && formData.marketingConsent);
+
   // Auto-scroll to #contact-form or #write-message if hash is present in URL
   useEffect(() => {
     const handleHashScroll = () => {
@@ -94,6 +97,7 @@ export function WriteMessageForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isConsentGiven) return;
     setIsSubmitting(true);
 
     try {
@@ -337,30 +341,52 @@ export function WriteMessageForm() {
                 </div>
 
                 {/* Checkboxes */}
-                <div className="space-y-4 pt-2">
-                  <label className="flex items-start gap-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={formData.newsletter}
-                      onChange={(e) => setFormData({ ...formData, newsletter: e.target.checked })}
-                      className="mt-0.5 w-4 h-4 rounded border-white/40 bg-transparent text-rose-600 focus:ring-rose-500 focus:ring-offset-0 cursor-pointer"
-                    />
-                    <span className="text-xs md:text-sm text-zinc-300 group-hover:text-white transition-colors font-semibold">
-                      I would like to receive newsletters and announcements via email.
-                    </span>
-                  </label>
+                <div className="space-y-3 pt-2">
+                  <div
+                    className={`p-3 rounded-lg border transition-all duration-300 ${
+                      formData.newsletter
+                        ? "bg-rose-500/10 border-rose-500/40"
+                        : hasPartialConsent
+                        ? "bg-amber-500/10 border-amber-500/50 ring-1 ring-amber-500/30"
+                        : "bg-white/[0.02] border-white/10 hover:border-white/20"
+                    }`}
+                  >
+                    <label className="flex items-start gap-3 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        checked={formData.newsletter}
+                        onChange={(e) => setFormData({ ...formData, newsletter: e.target.checked })}
+                        className="mt-0.5 w-4 h-4 rounded border-white/40 bg-zinc-900 text-rose-600 focus:ring-rose-500 focus:ring-offset-0 cursor-pointer accent-rose-600"
+                      />
+                      <span className="text-xs md:text-sm text-zinc-300 group-hover:text-white transition-colors font-medium">
+                        I would like to receive newsletters and announcements via email.{" "}
+                        <span className="text-rose-500 font-bold">*</span>
+                      </span>
+                    </label>
+                  </div>
 
-                  <label className="flex items-start gap-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={formData.marketingConsent}
-                      onChange={(e) => setFormData({ ...formData, marketingConsent: e.target.checked })}
-                      className="mt-0.5 w-4 h-4 rounded border-white/40 bg-transparent text-rose-600 focus:ring-rose-500 focus:ring-offset-0 cursor-pointer"
-                    />
-                    <span className="text-xs md:text-sm text-zinc-300 group-hover:text-white transition-colors font-semibold">
-                      I would like to be contacted by Devopstrio local marketing for opportunities via email.
-                    </span>
-                  </label>
+                  <div
+                    className={`p-3 rounded-lg border transition-all duration-300 ${
+                      formData.marketingConsent
+                        ? "bg-rose-500/10 border-rose-500/40"
+                        : hasPartialConsent
+                        ? "bg-amber-500/10 border-amber-500/50 ring-1 ring-amber-500/30"
+                        : "bg-white/[0.02] border-white/10 hover:border-white/20"
+                    }`}
+                  >
+                    <label className="flex items-start gap-3 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        checked={formData.marketingConsent}
+                        onChange={(e) => setFormData({ ...formData, marketingConsent: e.target.checked })}
+                        className="mt-0.5 w-4 h-4 rounded border-white/40 bg-zinc-900 text-rose-600 focus:ring-rose-500 focus:ring-offset-0 cursor-pointer accent-rose-600"
+                      />
+                      <span className="text-xs md:text-sm text-zinc-300 group-hover:text-white transition-colors font-medium">
+                        I would like to be contacted by Devopstrio local marketing for opportunities via email.{" "}
+                        <span className="text-rose-500 font-bold">*</span>
+                      </span>
+                    </label>
+                  </div>
                 </div>
 
                 {/* Privacy Consent Notice */}
@@ -368,22 +394,50 @@ export function WriteMessageForm() {
                   The Controller of personal data is Devopstrio Group. The data entered in the form will be processed to maintain contact and analyze interest in our materials. You can withdraw any consent given at any time.
                 </p>
 
-                {/* Submit Button */}
-                <div className="pt-4">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="inline-flex items-center justify-between gap-4 px-9 py-4 bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs md:text-sm tracking-wider uppercase transition-all duration-300 disabled:opacity-50 cursor-pointer rounded-lg shadow-lg"
-                  >
-                    {isSubmitting ? (
-                      <span>Sending...</span>
-                    ) : (
-                      <>
-                        <span>Submit</span>
-                        <Mail size={16} className="text-zinc-400" />
-                      </>
-                    )}
-                  </button>
+                {/* Consent Status Indication & Submit Button */}
+                <div className="pt-2 space-y-3">
+                  {/* Indication Message */}
+                  {hasPartialConsent && (
+                    <div className="inline-flex items-center gap-2 text-xs md:text-sm text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3.5 py-2 rounded-lg">
+                      <AlertCircle size={15} className="shrink-0 text-amber-400 animate-pulse" />
+                      <span>Please tick both checkboxes above to enable the submit button.</span>
+                    </div>
+                  )}
+
+                  {!isConsentGiven && !hasPartialConsent && (
+                    <div className="inline-flex items-center gap-2 text-xs text-zinc-400 bg-zinc-900/60 border border-zinc-800 px-3 py-1.5 rounded-md">
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-500"></span>
+                      <span>Tick both checkboxes above to enable submit</span>
+                    </div>
+                  )}
+
+                  {isConsentGiven && (
+                    <div className="inline-flex items-center gap-2 text-xs md:text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 rounded-md">
+                      <Check size={14} className="shrink-0 text-emerald-400" />
+                      <span>Consents confirmed &bull; Ready to submit</span>
+                    </div>
+                  )}
+
+                  <div>
+                    <button
+                      type="submit"
+                      disabled={!isConsentGiven || isSubmitting}
+                      className={`inline-flex items-center justify-between gap-4 px-9 py-4 font-bold text-xs md:text-sm tracking-wider uppercase transition-all duration-300 rounded-lg shadow-lg ${
+                        isConsentGiven && !isSubmitting
+                          ? "bg-rose-600 hover:bg-rose-500 text-white cursor-pointer shadow-rose-950/30 active:scale-[0.99]"
+                          : "bg-zinc-800/60 border border-zinc-700/50 text-zinc-500 cursor-not-allowed opacity-60"
+                      }`}
+                    >
+                      {isSubmitting ? (
+                        <span>Sending...</span>
+                      ) : (
+                        <>
+                          <span>Submit</span>
+                          <Mail size={16} className={isConsentGiven ? "text-white" : "text-zinc-500"} />
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
 
               </form>
