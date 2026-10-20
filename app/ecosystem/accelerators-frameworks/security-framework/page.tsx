@@ -52,6 +52,8 @@ import {
   BookOpen
 } from "lucide-react";
 import Link from "next/link";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 export default function SecurityFrameworkPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -1182,88 +1184,16 @@ export default function SecurityFrameworkPage() {
       </section>
 
       {/* 17. FAQ SECTION */}
-      <section id="faq" className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <Reveal className="max-w-3xl mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
-              FREQUENTLY ASKED QUESTIONS
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              Everything you need to know
-            </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Have questions about the Devopstrio Security Framework? Check out answers to common inquiries below.
-            </p>
-          </Reveal>
-
-          {/* Accordion List */}
-          <div className="flex flex-col border-t border-zinc-900">
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={idx} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group cursor-pointer"
-                  >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-rose-400 transition-colors">
-                      {faq.q}
-                    </span>
-                    <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 shrink-0">
-                      {isOpen ? <Minus size={18} /> : <Plus size={18} />}
-                    </div>
-                  </button>
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-medium max-w-4xl animate-fadeIn">
-                      <p>{faq.a}</p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <FAQ faqs={faqs} />
 
       {/* 18. CTA SECTION */}
-      <section className="w-full py-32 bg-black text-center relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.02] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }}
-        />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.08),transparent_60%)] pointer-events-none" />
-
-        <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 space-y-8">
-          <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-2">
-              BUILD RESILIENT DIGITAL PLATFORMS
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">
-              Secure Your Enterprise from Day One
-            </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-medium max-w-xl mx-auto leading-relaxed">
-              Adopt the Devopstrio Security Framework to build resilient, compliant, and secure digital platforms with enterprise-grade governance and automation.
-            </p>
-          </Reveal>
-
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <button
-              onClick={() => setModalOpen(true)}
-              className="inline-flex items-center gap-3 pl-6 pr-4 py-3.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full transition-all duration-300 shadow-lg shadow-rose-600/30 cursor-pointer hover:scale-105"
-            >
-              Book a Security Consultation
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setModalOpen(true)}
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 text-white font-semibold text-xs md:text-sm tracking-wider rounded-full transition-all duration-300 cursor-pointer"
-            >
-              <Download className="w-4 h-4 text-rose-500" />
-              Download Security Architecture
-            </button>
-          </div>
-        </div>
-      </section>
+      <CTA
+        ctaTitle="Secure Your Enterprise"
+        ctaHighlight="From Day One"
+        ctaDesc="Adopt the Devopstrio Security Framework to build resilient, compliant, and secure digital platforms with enterprise-grade governance and automation."
+        ctaBtnText="SCHEDULE CONSULTATION"
+        backLink="/ecosystem/accelerators-frameworks"
+      />
 
       {/* ASSESSMENT / CONSULTATION MODAL */}
       {modalOpen && (

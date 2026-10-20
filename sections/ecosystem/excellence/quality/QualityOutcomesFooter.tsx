@@ -1,5 +1,7 @@
 "use client";
 
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight, Plus, Minus, Bot, Zap, Gauge, ShieldCheck, Cpu, Repeat, CheckCircle2, Layers } from "lucide-react";
@@ -132,75 +134,14 @@ export function QualityOutcomesFooter() {
       </section>
 
       {/* 13. FAQ */}
-      <section id="faq" className="w-full py-20 md:py-28 bg-[#030303] text-white relative border-b border-zinc-900/60 z-10">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
-          <Reveal className="max-w-3xl mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-amber-400">
-                FAQ
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4">
-              Questions about <span className="text-white font-extrabold bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 bg-clip-text text-transparent">Quality Engineering</span>.
-            </h2>
-          </Reveal>
-
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {faqs.map((faq, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={idx} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group"
-                  >
-                    <span className="text-base md:text-lg font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {faq.q}
-                    </span>
-                    <div className="text-zinc-400 group-hover:text-amber-400 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={18} /> : <Plus size={18} />}
-                    </div>
-                  </button>
-                  <div className={`mt-4 text-sm md:text-base text-zinc-300 leading-relaxed font-medium max-w-3xl flex flex-col gap-4 ${isOpen ? "block animate-fadeIn" : "hidden"}`}>
-                    <p>{faq.a}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 14. CTA */}
-      <section className="w-full py-32 bg-black text-center relative overflow-hidden z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.035),transparent_60%)] pointer-events-none" />
-        <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Guarantee Software Quality with Devopstrio</h2>
-          <p className="text-zinc-300 text-base md:text-lg font-medium mb-10 max-w-xl mx-auto leading-relaxed">
-            Partner with Devopstrio to build modern test automation, shift quality left, and release bug-free software at enterprise speed.
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-4">
-            <Link
-              href="/contact#contact-form"
-              className="inline-flex items-center gap-3 pl-6 pr-4 py-3.5 bg-white text-black font-semibold text-sm md:text-base tracking-wide rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(245,158,11,0.2)]"
-            >
-              Schedule a Quality Assessment
-              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-              </div>
-            </Link>
-            <Link
-              href="/contact#contact-form"
-              className="inline-flex items-center gap-3 pl-6 pr-4 py-3.5 bg-transparent border border-white/20 text-white font-semibold text-sm md:text-base tracking-wide rounded-full hover:bg-white/5 transition-all duration-300"
-            >
-              Talk to a QE Architect
-              <div className="w-7 h-7 rounded-full bg-amber-500 flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FAQ faqs={faqs} />
+      <CTA
+        ctaTitle="Guarantee Flawless Releases with"
+        ctaHighlight="Quality Engineering"
+        ctaDesc="Accelerate releases with automated end-to-end testing, shift-left QA, synthetic load generation, and zero-defect deployments."
+        ctaBtnText="START QA ASSESSMENT"
+        backLink="/ecosystem/engineering-excellence"
+      />
     </>
   );
 }

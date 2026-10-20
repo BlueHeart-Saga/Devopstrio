@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { FAQ } from "@/components/ecosystem/FAQ";
 import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 import {
   ArrowRight,
@@ -827,74 +828,6 @@ const faqs = [
   },
 ];
 
-function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
-  return (
-    <section className="py-24 lg:py-32 bg-black border-b border-zinc-900/60">
-      <div className={`${wrap} max-w-[880px]`}>
-        <Reveal>
-          <Head
-            center
-            subtitle="FREQUENTLY ASKED QUESTIONS"
-            title="Everything You Need to Know About Devopstrio + ServiceNow"
-          />
-        </Reveal>
-        <div className="mt-14 grid gap-3.5">
-          {faqs.map((f, i) => {
-            const on = open === i;
-            return (
-              <Reveal key={f.q} delay={i * 50}>
-                <div
-                  className={`rounded-2xl border bg-[#0D0E12] transition-colors duration-300 ${
-                    on ? "border-[rgba(16,185,129,0.45)]" : "border-zinc-800/80 hover:border-zinc-700"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    aria-expanded={on}
-                    onClick={() => setOpen(on ? null : i)}
-                    className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
-                  >
-                    <span className="text-[16px] font-bold text-white">{f.q}</span>
-                    <Plus
-                      size={20}
-                      color={ROSE}
-                      className="shrink-0 transition-transform duration-300"
-                      style={{ transform: on ? "rotate(45deg)" : "none" }}
-                    />
-                  </button>
-                  <div
-                    className="grid transition-[grid-template-rows] duration-500 ease-out motion-reduce:transition-none"
-                    style={{ gridTemplateRows: on ? "1fr" : "0fr" }}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="px-6 pb-6 text-[14px] leading-[25px] text-zinc-400">{f.a}</p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
-
-        {/* Below FAQ callout */}
-        <Reveal delay={0.2} className="mt-8">
-          <div className="border border-zinc-800/80 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm md:text-base font-semibold text-zinc-200">
-              Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
-            </p>
-            <Link
-              href="/contact#contact-form"
-              className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900/60 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap"
-            >
-              Contact Our Engineers <ArrowRight size={14} />
-            </Link>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
 
 /* =========================================================================
    PAGE ROOT
@@ -908,7 +841,7 @@ export default function ServiceNowPartnershipPage() {
       <TransformationStack />
       <Process />
       <Industries />
-      <Faq />
+      <FAQ faqs={faqs} />
       <RepresentativeCTA
         title="Ready To Modernize Your Enterprise With"
         highlightText="ServiceNow Workflows?"

@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
 import {
@@ -689,148 +691,58 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 14. FAQ SECTION */}
-      <section id="faq" className="py-20 md:py-28 bg-[#030303] text-white border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-12">
-
-          <Reveal className="max-w-3xl mb-14">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-zinc-400">
-                KNOWLEDGE BASE
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15]">
-              Questions we get <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
-            </h2>
-          </Reveal>
-
-          {/* Accordion FAQ */}
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {[
-              {
-                q: "Who can join the Devopstrio Talent Network?",
-                a: "Engineers of all levels—software developers, cloud architects, DevOps specialists, AI researchers, cybersecurity practitioners, and technology students—are welcome to apply and join.",
-                proof: "✓ 25,000+ Active Members Worldwide",
-                tags: ["All Experience Levels", "Free Membership", "Global Network"]
-              },
-              {
-                q: "Is membership in the Talent Network completely free?",
-                a: "Yes, 100% free for candidates and community members. We never charge developers placement fees, recruitment commissions, or subscription dues.",
-                proof: "✓ $0 Cost for Engineers & Students",
-                tags: ["Free Access", "Zero Fees", "Open Community"]
-              },
-              {
-                q: "Do I need prior enterprise experience to join?",
-                a: "No prior enterprise experience is required. We maintain specialized tracks for university students and early-career developers, complete with hands-on labs, 1-on-1 mentorship, and certification bootcamps.",
-                proof: "✓ Student & Junior Pathways Included",
-                tags: ["Student Track", "Mentorship", "Internships"]
-              },
-              {
-                q: "Are remote opportunities available worldwide?",
-                a: "Yes! Over 80% of enterprise project placements matched through our network offer full remote flexibility or hybrid options across North America, Europe, the UK, and APAC.",
-                proof: "✓ 80%+ Remote Opportunities",
-                tags: ["Remote Work", "Contract Roles", "Full-Time Roles"]
-              },
-              {
-                q: "How do I connect with senior engineering mentors?",
-                a: "Once registered, you gain access to our private community Slack and Discord platforms, where you can reserve 1-on-1 office hours with Principal Cloud Architects and Engineering Managers.",
-                proof: "✓ 100+ Senior Mentors Available",
-                tags: ["1-on-1 Mentorship", "Slack Community", "Code Reviews"]
-              },
-              {
-                q: "How can enterprise companies hire engineers through the network?",
-                a: "Enterprise clients can click 'Contact Community Team' or submit an agile team request. We match pre-vetted engineers or deploy dedicated pods in under 14 days.",
-                proof: "✓ Under 14-Day Average Time-to-Deploy",
-                tags: ["Enterprise Hiring", "Agile Pods", "Vetted Talent"]
-              }
-            ].map((item, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={item.q} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group cursor-pointer"
-                  >
-                    <span className="text-base md:text-lg font-bold text-zinc-200 group-hover:text-white transition-colors">
-                      {item.q}
-                    </span>
-                    <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={18} /> : <Plus size={18} />}
-                    </div>
-                  </button>
-
-                  {isOpen && (
-                    <div className="mt-4 text-sm md:text-base text-zinc-400 leading-relaxed font-normal max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
-                      <p>{item.a}</p>
-
-                      {item.proof && (
-                        <span className="text-xs text-emerald-400 font-semibold tracking-wide font-mono">
-                          {item.proof}
-                        </span>
-                      )}
-
-                      {item.tags && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {item.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-3 py-1 rounded-md bg-zinc-900 text-zinc-400 border border-zinc-800 text-xs font-mono font-medium tracking-wide"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Below FAQ Callout Box */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-800/80 bg-zinc-950/60 p-7 md:p-8 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-6">
-              <p className="text-zinc-300 text-sm md:text-base font-normal">
-                Looking to recruit an agile engineering team for your cloud transformation? Contact our Community Recruitment Team.
-              </p>
-              <button
-                onClick={() => setContactModalOpen(true)}
-                className="gap-2.5 inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
-              >
-                Contact Community Team <ArrowUpRight size={16} className="text-rose-500" />
-              </button>
-            </div>
-          </Reveal>
-
-        </div>
-      </section>
+      <FAQ
+        badge="KNOWLEDGE BASE"
+        title="Questions we get"
+        highlight="asked every day."
+        faqs={[
+          {
+            q: "Who can join the Devopstrio Talent Network?",
+            a: "Engineers of all levels—software developers, cloud architects, DevOps specialists, AI researchers, cybersecurity practitioners, and technology students—are welcome to apply and join.",
+            proof: "✓ 25,000+ Active Members Worldwide",
+            tags: ["All Experience Levels", "Free Membership", "Global Network"]
+          },
+          {
+            q: "Is membership in the Talent Network completely free?",
+            a: "Yes, 100% free for candidates and community members. We never charge developers placement fees, recruitment commissions, or subscription dues.",
+            proof: "✓ $0 Cost for Engineers & Students",
+            tags: ["Free Access", "Zero Fees", "Open Community"]
+          },
+          {
+            q: "Do I need prior enterprise experience to join?",
+            a: "No prior enterprise experience is required. We maintain specialized tracks for university students and early-career developers, complete with hands-on labs, 1-on-1 mentorship, and certification bootcamps.",
+            proof: "✓ Student & Junior Pathways Included",
+            tags: ["Student Track", "Mentorship", "Internships"]
+          },
+          {
+            q: "Are remote opportunities available worldwide?",
+            a: "Yes! Over 80% of enterprise project placements matched through our network offer full remote flexibility or hybrid options across North America, Europe, the UK, and APAC.",
+            proof: "✓ 80%+ Remote Opportunities",
+            tags: ["Remote Work", "Contract Roles", "Full-Time Roles"]
+          },
+          {
+            q: "How do I connect with senior engineering mentors?",
+            a: "Once registered, you gain access to our private community Slack and Discord platforms, where you can reserve 1-on-1 office hours with Principal Cloud Architects and Engineering Managers.",
+            proof: "✓ 100+ Senior Mentors Available",
+            tags: ["1-on-1 Mentorship", "Slack Community", "Code Reviews"]
+          },
+          {
+            q: "How can enterprise companies hire engineers through the network?",
+            a: "Enterprise clients can click 'Contact Community Team' or submit an agile team request. We match pre-vetted engineers or deploy dedicated pods in under 14 days.",
+            proof: "✓ Under 14-Day Average Time-to-Deploy",
+            tags: ["Enterprise Hiring", "Agile Pods", "Vetted Talent"]
+          }
+        ]}
+      />
 
       {/* 15. CTA SECTION */}
-      <section className="py-24 md:py-32 relative overflow-hidden bg-[#030303]">
-        <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.15]">
-            Your Next Engineering Opportunity Starts Here
-          </h2>
-          <p className="text-base md:text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed font-normal">
-            Become part of a global engineering ecosystem where continuous learning, peer collaboration, and innovation create lasting career milestones.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <button
-              onClick={() => setJoinModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs md:text-sm font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Users className="w-4 h-4 mr-2" /> Join the Talent Network
-            </button>
-            <button
-              onClick={() => setContactModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Building className="w-4 h-4 text-rose-500 mr-2" /> Request Enterprise Talent
-            </button>
-          </div>
-        </div>
-      </section>
+      <CTA
+        ctaTitle="Your Next Engineering Opportunity"
+        ctaHighlight="Starts Here"
+        ctaDesc="Become part of a global engineering ecosystem where continuous learning, peer collaboration, and innovation create lasting career milestones."
+        ctaBtnText="JOIN TALENT NETWORK"
+        backLink="/ecosystem/community-talent-network"
+      />
 
       {/* MODAL 1: JOIN THE NETWORK */}
       {joinModalOpen && (
