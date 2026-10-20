@@ -205,7 +205,7 @@ export function FeedbackWidget() {
       <AnimatePresence>
         {!isOpen && showTooltip && (
           <div className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-[101] flex flex-col gap-2 max-w-[280px] items-end select-none">
-            {/* Dismiss Button */}
+            {/* Dismiss Button - High Contrast Full White */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -214,11 +214,11 @@ export function FeedbackWidget() {
                   sessionStorage.setItem("feedback_tooltip_dismissed", "true");
                 } catch (err) {}
               }}
-              title="Dismiss suggestions"
-              aria-label="Dismiss suggestions"
-              className="self-end w-7 h-7 rounded-full bg-zinc-900/95 hover:bg-rose-600 border border-zinc-600/90 hover:border-rose-500 text-white flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-xl shadow-black/60 cursor-pointer mb-1"
+              title="Close suggestions"
+              aria-label="Close suggestions"
+              className="self-end w-8 h-8 rounded-full bg-white hover:bg-rose-600 text-zinc-950 hover:text-white flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-[0_4px_25px_rgba(0,0,0,0.6)] border-2 border-white hover:border-rose-600 cursor-pointer mb-1.5"
             >
-              <X size={14} strokeWidth={2.5} className="text-white" />
+              <X size={16} strokeWidth={2.5} />
             </button>
             
             {/* Clickable Question Bubbles */}
