@@ -1,21 +1,54 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
-import { Cloud, Database, Shield, Layout, Terminal, Zap, ArrowUpRight } from "lucide-react";
+import {
+  Cloud,
+  Database,
+  Shield,
+  Layout,
+  Terminal,
+  Zap,
+  ArrowUpRight,
+  GitBranch,
+  Workflow,
+  ShieldCheck,
+  Boxes,
+  Activity,
+  Server,
+  BarChart3,
+  Layers,
+  Network,
+  KeyRound,
+  SearchCheck,
+  Lock,
+  FileCheck,
+  ShieldAlert,
+  HardDrive,
+  RefreshCw,
+  Cpu,
+  Send,
+  CheckCircle2,
+  Clock,
+  Gauge,
+  ChevronLeft,
+  ChevronRight,
+  LucideIcon
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface SubCardItem {
   name: string;
+  tag?: string;
   desc?: string;
+  icon?: LucideIcon;
 }
 
 interface CategoryDetail {
   id: string;
   label: string;
   icon: React.ReactNode;
-  desc: string;
   href: string;
   examples: SubCardItem[];
 }
@@ -49,7 +82,6 @@ export function PlatformCategories() {
       id: "saas",
       label: "SaaS Platforms",
       icon: <Layout size={16} />,
-      desc: "Multi-tenant software products built for scalability, subscription management, user onboarding, and enterprise business automation.",
       href: "/ecosystem/platforms-solutions/saas-platforms",
       examples: [
         { name: "Humanex" },
@@ -66,28 +98,43 @@ export function PlatformCategories() {
       id: "devops",
       label: "DevOps Platform",
       icon: <Terminal size={16} />,
-      desc: "Unified CI/CD pipeline automation, GitOps deployment engines, and automated Kubernetes container management.",
       href: "/ecosystem/platforms-solutions/devops-platform",
       examples: [
         {
           name: "GitOps Deployment Engine",
-          desc: "Declarative Kubernetes cluster synchronization with automated zero-downtime rollbacks and drift correction."
+          tag: "Sync Engine",
+          desc: "Declarative Kubernetes cluster synchronization with automated zero-downtime rollbacks and drift correction.",
+          icon: GitBranch
         },
         {
           name: "CI/CD Pipeline Accelerator",
-          desc: "Pre-configured GitHub Actions and GitLab CI runners for rapid, compliant build and release pipelines."
+          tag: "Build & Test",
+          desc: "Pre-configured GitHub Actions and GitLab CI runners for rapid, compliant build and release pipelines.",
+          icon: Workflow
         },
         {
           name: "Release Governance Portal",
-          desc: "Automated change approvals, security gating policies, and continuous compliance audit tracking."
+          tag: "Gating & Audit",
+          desc: "Automated change approvals, security gating policies, and continuous compliance audit tracking.",
+          icon: ShieldCheck
         },
         {
           name: "Kubernetes Pod Orchestrator",
-          desc: "Self-healing cluster autoscaling, Karpenter pod scheduling, and resilient multi-region traffic failover."
+          tag: "Autoscaling",
+          desc: "Self-healing cluster autoscaling, Karpenter pod scheduling, and resilient multi-region traffic failover.",
+          icon: Boxes
         },
         {
           name: "Developer Self-Service Hub",
-          desc: "Internal developer platform enabling one-click ephemeral preview environment provisioning."
+          tag: "IDP Portal",
+          desc: "Internal developer platform enabling one-click ephemeral preview environment provisioning.",
+          icon: Terminal
+        },
+        {
+          name: "Telemetry & Log Observability",
+          tag: "Observability",
+          desc: "Deep container tracing, eBPF network metrics, and centralized cluster log telemetry aggregation.",
+          icon: Activity
         }
       ]
     },
@@ -95,28 +142,43 @@ export function PlatformCategories() {
       id: "cloud",
       label: "Cloud Management Platform",
       icon: <Cloud size={16} />,
-      desc: "Centralized multi-cloud infrastructure governance, automated resource lifecycle provisioning, and intelligent cost tuning.",
       href: "/ecosystem/platforms-solutions/cloud-management-platform",
       examples: [
         {
           name: "Cloud Operations Center",
-          desc: "Unified multi-cloud dashboard tracking real-time health, uptime SLAs, and distributed infrastructure workloads."
+          tag: "Fleet Health",
+          desc: "Unified multi-cloud dashboard tracking real-time health, uptime SLAs, and distributed infrastructure workloads.",
+          icon: Server
         },
         {
           name: "FinOps & Cost Optimizer",
-          desc: "Automated cloud spend anomaly detection, idle resource reclamation, and reserved capacity tuning."
+          tag: "FinOps",
+          desc: "Automated cloud spend anomaly detection, idle resource reclamation, and reserved capacity tuning.",
+          icon: BarChart3
         },
         {
           name: "Multi-Cloud IaC Provisioner",
-          desc: "Standardized Terraform and OpenTofu blueprints for automated multi-account landing zone builds."
+          tag: "IaC Modules",
+          desc: "Standardized Terraform and OpenTofu blueprints for automated multi-account landing zone builds.",
+          icon: Layers
         },
         {
-          name: "Infrastructure Portal",
-          desc: "Centralized inventory catalog managing compute, storage, and networking across AWS, Azure, and OCI."
+          name: "Infrastructure Asset Catalog",
+          tag: "Inventory",
+          desc: "Centralized inventory catalog managing compute, storage, and networking across AWS, Azure, and OCI.",
+          icon: Database
         },
         {
           name: "Telemetry & Monitoring Hub",
-          desc: "Integrated Prometheus and Grafana metrics aggregating distributed telemetry into actionable alerts."
+          tag: "Metrics",
+          desc: "Integrated Prometheus and Grafana metrics aggregating distributed telemetry into actionable alerts.",
+          icon: Activity
+        },
+        {
+          name: "Zero-Trust Cloud Mesh",
+          tag: "Network Mesh",
+          desc: "Automated hub-and-spoke VNet peering, transit gateways, and egress firewall routing control.",
+          icon: Network
         }
       ]
     },
@@ -124,28 +186,43 @@ export function PlatformCategories() {
       id: "security",
       label: "Security Platform",
       icon: <Shield size={16} />,
-      desc: "Enterprise zero-trust architecture, automated vulnerability scanning, identity governance, and continuous compliance.",
       href: "/ecosystem/platforms-solutions/security-platform",
       examples: [
         {
           name: "Zero-Trust Identity Portal",
-          desc: "Centralized IAM policy enforcement, single sign-on integration, and adaptive contextual authentication."
+          tag: "IAM & SSO",
+          desc: "Centralized IAM policy enforcement, single sign-on integration, and adaptive contextual authentication.",
+          icon: KeyRound
         },
         {
           name: "Cloud Security Posture (CSPM)",
-          desc: "Continuous multi-cloud configuration auditing against CIS benchmarks, SOC 2, and ISO 27001."
+          tag: "CSPM Audit",
+          desc: "Continuous multi-cloud configuration auditing against CIS benchmarks, SOC 2, and ISO 27001.",
+          icon: ShieldCheck
         },
         {
           name: "Vulnerability & CVE Scanner",
-          desc: "Automated container image and dependency security scanning integrated directly into CI/CD build stages."
+          tag: "Image Scanning",
+          desc: "Automated container image and dependency security scanning integrated directly into CI/CD build stages.",
+          icon: SearchCheck
         },
         {
           name: "Secrets & PKI Vault",
-          desc: "Automated SSL/TLS certificate rotation, dynamic secrets management, and encryption key lifecycle control."
+          tag: "Secrets Vault",
+          desc: "Automated SSL/TLS certificate rotation, dynamic secrets management, and encryption key lifecycle control.",
+          icon: Lock
         },
         {
-          name: "Compliance & Audit Dashboard",
-          desc: "Real-time compliance scorecard tracking regulatory controls, audit trails, and policy deviations."
+          name: "Compliance & Audit Sentinel",
+          tag: "Compliance",
+          desc: "Real-time compliance scorecard tracking regulatory controls, audit trails, and policy deviations.",
+          icon: FileCheck
+        },
+        {
+          name: "Threat Intelligence & SIEM",
+          tag: "Threat Defense",
+          desc: "Continuous runtime behavioral analysis, automated anomaly detection, and rapid incident response.",
+          icon: ShieldAlert
         }
       ]
     },
@@ -153,28 +230,43 @@ export function PlatformCategories() {
       id: "data",
       label: "Data Platform",
       icon: <Database size={16} />,
-      desc: "Enterprise data ecosystems for petabyte-scale lakehouses, real-time event streaming, governance, and business intelligence.",
       href: "/ecosystem/platforms-solutions/data-platform",
       examples: [
         {
           name: "Data Lakehouse Storage",
-          desc: "High-throughput object storage layer with ACID transactions and schema evolution enforcement."
+          tag: "Lakehouse",
+          desc: "High-throughput object storage layer with ACID transactions and schema evolution enforcement.",
+          icon: HardDrive
         },
         {
           name: "Real-Time Streaming Engine",
-          desc: "Event-driven Kafka streaming pipelines processing millions of events per second with sub-second latency."
+          tag: "Kafka Stream",
+          desc: "Event-driven Kafka streaming pipelines processing millions of events per second with sub-second latency.",
+          icon: Zap
         },
         {
           name: "Data Governance & Catalog",
-          desc: "Automated metadata indexing, column-level data lineage, and automated PII data masking."
+          tag: "Metadata Lineage",
+          desc: "Automated metadata indexing, column-level data lineage, and automated PII data masking.",
+          icon: Layers
         },
         {
           name: "Business Intelligence Studio",
-          desc: "Interactive executive dashboards and embedded analytics models visualizing key performance metrics."
+          tag: "BI Dashboards",
+          desc: "Interactive executive dashboards and embedded analytics models visualizing key performance metrics.",
+          icon: BarChart3
         },
         {
           name: "Vector Store & Semantic Search",
-          desc: "Optimized vector indexing enabling high-accuracy similarity search for enterprise RAG and AI."
+          tag: "RAG Vectors",
+          desc: "Optimized vector indexing enabling high-accuracy similarity search for enterprise RAG and AI.",
+          icon: Database
+        },
+        {
+          name: "Automated CDC Ingestion",
+          tag: "CDC Ingestion",
+          desc: "Continuous change data capture pipelines synchronizing operational databases with lakehouse tables.",
+          icon: RefreshCw
         }
       ]
     },
@@ -182,34 +274,95 @@ export function PlatformCategories() {
       id: "automation",
       label: "Automation Platform",
       icon: <Zap size={16} />,
-      desc: "Intelligent workflow orchestration, robotic process automation, automated runbooks, and incident response pipelines.",
       href: "/ecosystem/platforms-solutions/automation-platform",
       examples: [
         {
           name: "Incident Remediation Engine",
-          desc: "Automated runbooks resolving common infrastructure alerts and service restarts without human delay."
+          tag: "Auto-Remediate",
+          desc: "Automated runbooks resolving common infrastructure alerts and service restarts without human delay.",
+          icon: Cpu
         },
         {
           name: "Enterprise Workflow Orchestrator",
-          desc: "Low-code visual workflow automation connecting disparate SaaS APIs and enterprise backends."
+          tag: "Low-Code Flows",
+          desc: "Low-code visual workflow automation connecting disparate SaaS APIs and enterprise backends.",
+          icon: Workflow
         },
         {
           name: "ITSM Ticket Dispatcher",
-          desc: "AI-driven ticket classification, priority assignment, and bi-directional ServiceNow integration."
+          tag: "ServiceNow AI",
+          desc: "AI-driven ticket classification, priority assignment, and bi-directional ServiceNow integration.",
+          icon: Send
         },
         {
           name: "Policy & Compliance Sentinel",
-          desc: "Automated drift correction enforcing security baselines and configuration rules automatically."
+          tag: "Drift Repair",
+          desc: "Automated drift correction enforcing security baselines and configuration rules automatically.",
+          icon: CheckCircle2
         },
         {
           name: "Scheduled Task Automation Hub",
-          desc: "Distributed cron scheduler executing batch processing, database maintenance, and backup validations."
+          tag: "Task Engine",
+          desc: "Distributed cron scheduler executing batch processing, database maintenance, and backup validations.",
+          icon: Clock
+        },
+        {
+          name: "Automated Capacity Controller",
+          tag: "Workload Tuning",
+          desc: "Predictive workload autoscaling dynamically managing compute resources based on real-time demand.",
+          icon: Gauge
         }
       ]
     }
   ];
 
   const currentCat = categories.find(c => c.id === activeCategory) || categories[0];
+
+  const [isPaused, setIsPaused] = useState(false);
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
+  const activeTabRef = useRef<HTMLButtonElement>(null);
+
+  const handlePrevTab = () => {
+    setActiveCategory((prev) => {
+      const currentIndex = categories.findIndex((c) => c.id === prev);
+      const prevIndex = (currentIndex - 1 + categories.length) % categories.length;
+      return categories[prevIndex].id;
+    });
+  };
+
+  const handleNextTab = () => {
+    setActiveCategory((prev) => {
+      const currentIndex = categories.findIndex((c) => c.id === prev);
+      const nextIndex = (currentIndex + 1) % categories.length;
+      return categories[nextIndex].id;
+    });
+  };
+
+  // Auto-switch tabs every 8 seconds smoothly
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveCategory((prev) => {
+        const currentIndex = categories.findIndex((c) => c.id === prev);
+        const nextIndex = (currentIndex + 1) % categories.length;
+        return categories[nextIndex].id;
+      });
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, categories]);
+
+  // Center active tab in scroll container whenever active tab changes
+  useEffect(() => {
+    if (activeTabRef.current) {
+      activeTabRef.current.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [activeCategory]);
 
   return (
     <section id="categories" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
@@ -227,29 +380,71 @@ export function PlatformCategories() {
           </div>
         </Reveal>
 
-        {/* Tab Pills Selector */}
-        <div className="flex items-center justify-start lg:justify-center gap-2 mb-12 pb-4 overflow-x-auto scrollbar-hide scroll-smooth -mx-6 px-6 md:mx-0 md:px-0 border-b border-zinc-900/60">
-          {categories.map((cat) => (
+        {/* Tab Pills Selector with Navigation Controls */}
+        <div
+          className="relative max-w-5xl mx-auto mb-12"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className="flex items-center justify-between gap-2">
+            {/* Left Prev Navigation Button */}
             <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 md:px-6 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold whitespace-nowrap transition-all duration-300 border flex items-center gap-2 ${activeCategory === cat.id
-                ? "bg-rose-600 border-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.35)]"
-                : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800"
-                }`}
+              type="button"
+              onClick={handlePrevTab}
+              aria-label="Previous platform category"
+              className="flex shrink-0 w-9 h-9 items-center justify-center rounded-full bg-zinc-950/80 border border-zinc-800/80 text-zinc-400 hover:text-white hover:border-rose-500/50 hover:bg-zinc-900 transition-all shadow-md cursor-pointer group"
             >
-              {cat.icon}
-              {cat.label}
+              <ChevronLeft size={18} className="transition-transform group-hover:-translate-x-0.5" />
             </button>
-          ))}
+
+            {/* Scrollable Tab Pills Container */}
+            <div
+              ref={tabsContainerRef}
+              className="flex items-center gap-2 overflow-x-auto scrollbar-hide scroll-smooth py-2 px-1 w-full justify-start md:justify-center border-b border-zinc-900/60"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {categories.map((cat) => {
+                const isActive = activeCategory === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    ref={isActive ? activeTabRef : null}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-300 border flex items-center gap-2 shrink-0 cursor-pointer ${
+                      isActive
+                        ? "bg-rose-600 border-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.35)] scale-[1.02]"
+                        : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800"
+                    }`}
+                  >
+                    {cat.icon}
+                    <span>{cat.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right Next Navigation Button */}
+            <button
+              type="button"
+              onClick={handleNextTab}
+              aria-label="Next platform category"
+              className="flex shrink-0 w-9 h-9 items-center justify-center rounded-full bg-zinc-950/80 border border-zinc-800/80 text-zinc-400 hover:text-white hover:border-rose-500/50 hover:bg-zinc-900 transition-all shadow-md cursor-pointer group"
+            >
+              <ChevronRight size={18} className="transition-transform group-hover:translate-x-0.5" />
+            </button>
+          </div>
         </div>
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           
-          {/* Left Tall Card (Col 1) - Featured Big Card with Explore Link */}
+          {/* Left Tall Card (Col 1) - Featured Big Card WITHOUT description */}
           <Reveal className="lg:col-span-1 h-full">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 flex flex-col justify-between h-full min-h-[400px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 flex flex-col justify-between h-full min-h-[380px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
               {/* Internal decorative glowing meshes */}
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-violet-650/5 rounded-full blur-3xl pointer-events-none" />
@@ -265,26 +460,22 @@ export function PlatformCategories() {
                 loading="lazy" />
               ))}
 
-              {/* Card top details */}
+              {/* Card top details - Clean, No Description */}
               <div className="relative z-10">
                 <div className="flex items-center gap-3 text-white mb-4">
-                  <div className="w-9 h-9 rounded-xl bg-rose-600/10 flex items-center justify-center text-rose-500">
+                  <div className="w-10 h-10 rounded-xl bg-rose-600/10 border border-rose-500/20 flex items-center justify-center text-rose-500">
                     {currentCat.icon}
                   </div>
-                  <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
+                  <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white">
                     {currentCat.label}
                   </h3>
                 </div>
 
-                <div className="w-10 h-[2px] bg-rose-500 mb-4" />
-
-                <p className="text-zinc-300 text-sm md:text-base font-normal leading-relaxed">
-                  {currentCat.desc}
-                </p>
+                <div className="w-10 h-[2px] bg-rose-500 my-4" />
               </div>
 
               {/* Card bottom Explore Button */}
-              <div className="relative z-10 mt-8 pt-4 border-t border-white/10 flex flex-col gap-4">
+              <div className="relative z-10 mt-auto pt-6 border-t border-white/10 flex flex-col gap-4">
                 <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
                   <span className="uppercase tracking-wider">Architecture</span>
                   <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
@@ -304,78 +495,102 @@ export function PlatformCategories() {
             </div>
           </Reveal>
 
-          {/* Right Assets Grid (Col 2-4) */}
+          {/* Right Assets Grid (Col 2-4: 3 Columns x 2 Rows) */}
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="wait">
-              {currentCat.examples.map((item, idx) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.25, delay: idx * 0.03 }}
-                  className="h-full"
-                >
-                  {activeCategory === "saas" ? (
-                    /* SaaS Platform Tab: 8 Untouched External Launch Cards */
-                    (() => {
-                      const targetLink = platformLinks[item.name] || `/contact?platform=${encodeURIComponent(item.name)}`;
-                      const isExternal = targetLink.startsWith("http");
+              {currentCat.examples.map((item, idx) => {
+                const IconComponent = item.icon;
 
-                      return (
-                        <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[160px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
-                          <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                return (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.25, delay: idx * 0.03 }}
+                    className="h-full"
+                  >
+                    {activeCategory === "saas" ? (
+                      /* SaaS Platform Tab: 8 Untouched External Launch Cards */
+                      (() => {
+                        const targetLink = platformLinks[item.name] || `/contact?platform=${encodeURIComponent(item.name)}`;
+                        const isExternal = targetLink.startsWith("http");
 
-                          <div>
+                        return (
+                          <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[160px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                            <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                            <div>
+                              <a
+                                href={targetLink}
+                                {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                className="inline-block hover:text-rose-400 transition-colors"
+                              >
+                                <h4 className="text-lg md:text-xl font-semibold text-white group-hover/card:text-rose-400 transition-colors mb-2">
+                                  {item.name}
+                                </h4>
+                              </a>
+                            </div>
+
                             <a
                               href={targetLink}
                               {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                              className="inline-block hover:text-rose-400 transition-colors"
+                              className="inline-flex items-center gap-2.5 group/link mt-auto w-fit cursor-pointer"
                             >
-                              <h4 className="text-lg md:text-xl font-semibold text-white group-hover/card:text-rose-400 transition-colors mb-2">
-                                {item.name}
-                              </h4>
+                              <span className="w-7 h-7 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
+                                <ArrowUpRight
+                                  size={12}
+                                  className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                                />
+                              </span>
+                              <span className="text-xs md:text-sm font-semibold tracking-wider uppercase text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
+                                Launch System
+                              </span>
                             </a>
                           </div>
+                        );
+                      })()
+                    ) : (
+                      /* Other Platform Tabs: Premium Enterprise Sub-Cards (6 Cards, 3x2 Grid) */
+                      <div className="group/card flex flex-col justify-between bg-gradient-to-b from-zinc-900/40 via-zinc-950/70 to-black/90 border border-white/10 hover:border-rose-500/50 hover:bg-zinc-900/40 rounded-2xl p-6 transition-all duration-300 min-h-[175px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] hover:-translate-y-1">
+                        {/* Top Accent Glow on Hover */}
+                        <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-rose-500/0 group-hover/card:via-rose-500/70 to-transparent transition-all duration-500" />
+                        <div className="absolute -top-10 -right-10 w-28 h-28 bg-rose-500/10 rounded-full blur-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                          <a
-                            href={targetLink}
-                            {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                            className="inline-flex items-center gap-2.5 group/link mt-auto w-fit cursor-pointer"
-                          >
-                            <span className="w-7 h-7 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
-                              <ArrowUpRight
-                                size={12}
-                                className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-                              />
-                            </span>
-                            <span className="text-xs md:text-sm font-semibold tracking-wider uppercase text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
-                              Launch System
-                            </span>
-                          </a>
+                        <div className="relative z-10 flex flex-col h-full justify-between">
+                          <div>
+                            {/* Card Top: Icon & Feature Tag */}
+                            <div className="flex items-center justify-between mb-4">
+                              {IconComponent && (
+                                <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center group-hover/card:scale-110 group-hover/card:bg-rose-500 group-hover/card:text-white transition-all duration-300">
+                                  <IconComponent className="w-5 h-5" />
+                                </div>
+                              )}
+                              {item.tag && (
+                                <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-semibold px-2 py-0.5 rounded bg-zinc-900/90 border border-zinc-800/80 group-hover/card:border-rose-500/30 transition-colors">
+                                  {item.tag}
+                                </span>
+                              )}
+                            </div>
+
+                            {/* Card Title */}
+                            <h4 className="text-base sm:text-lg font-bold text-white group-hover/card:text-rose-400 transition-colors mb-2 leading-snug">
+                              {item.name}
+                            </h4>
+
+                            {/* 2-Line Specific Description */}
+                            {item.desc && (
+                              <p className="text-xs sm:text-sm text-zinc-400 group-hover/card:text-zinc-300 leading-relaxed font-normal transition-colors line-clamp-3">
+                                {item.desc}
+                              </p>
+                            )}
+                          </div>
                         </div>
-                      );
-                    })()
-                  ) : (
-                    /* Other Platform Tabs: Clean 2-Line Informational Cards (No Launch Button) */
-                    <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[160px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
-                      <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                      <div>
-                        <h4 className="text-lg md:text-xl font-bold text-white group-hover/card:text-rose-400 transition-colors mb-3">
-                          {item.name}
-                        </h4>
-
-                        {item.desc && (
-                          <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
-                            {item.desc}
-                          </p>
-                        )}
                       </div>
-                    </div>
-                  )}
-                </motion.div>
-              ))}
+                    )}
+                  </motion.div>
+                );
+              })}
             </AnimatePresence>
           </div>
 
