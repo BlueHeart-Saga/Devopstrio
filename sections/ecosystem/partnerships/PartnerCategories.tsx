@@ -68,18 +68,18 @@ export function PartnerCategories() {
           action: "Deploy OCI"
         },
         {
-          name: "IBM Cloud",
-          logo: "/assets/Tech_logos/IBM_Cloud.svg",
-          desc: "Hybrid cloud integration, Red Hat OpenShift, and enterprise security.",
-          href: "/ecosystem/partnerships",
-          action: "IBM Hybrid"
+          name: "SAP",
+          logo: "/assets/Tech_logos/sap.svg",
+          desc: "Enterprise ERP modernization, SAP S/4HANA cloud migration, and BTP integration.",
+          href: "/ecosystem/partnerships/sap",
+          action: "SAP on Cloud"
         },
         {
-          name: "DigitalOcean",
-          logo: "/assets/Tech_logos/Akamai.svg",
-          desc: "Simplified cloud compute droplets and managed Kubernetes clusters.",
-          href: "/ecosystem/partnerships",
-          action: "Deploy Droplets"
+          name: "ServiceNow",
+          logo: "/assets/Tech_logos/Service_now.svg",
+          desc: "IT operations automation, enterprise service management, and workflow integration.",
+          href: "/ecosystem/partnerships/servicenow",
+          action: "ServiceNow ITSM"
         }
       ]
     },
@@ -140,18 +140,18 @@ export function PartnerCategories() {
       subtitle: "Standardized platform managers driving company workflow automation.",
       partners: [
         {
-          name: "SAP",
-          logo: "/assets/Tech_logos/sap.svg",
-          desc: "Enterprise resources manager and financial ledger orchestration.",
-          href: "/ecosystem/partnerships/sap",
-          action: "SAP on Cloud"
+          name: "IBM Cloud",
+          logo: "/assets/Tech_logos/IBM_Cloud.svg",
+          desc: "Hybrid cloud integration, Red Hat OpenShift, and enterprise security.",
+          href: "/ecosystem/partnerships",
+          action: "IBM Hybrid"
         },
         {
-          name: "ServiceNow",
-          logo: "/assets/Tech_logos/Service_now.svg",
-          desc: "IT operations automation, HR ticketing, and customer desk runs.",
-          href: "/ecosystem/partnerships/servicenow",
-          action: "ServiceNow ITSM"
+          name: "VMware",
+          logo: "/assets/Tech_logos/vmware.svg",
+          desc: "Enterprise virtualization, private cloud infrastructure, and workload mobility.",
+          href: "/ecosystem/partnerships",
+          action: "Cloud Virtualization"
         },
         {
           name: "Salesforce",
