@@ -453,12 +453,12 @@ export default function TalentNetworkPage() {
               </div>
 
               <div className="pt-2">
-                <button
-                  onClick={() => setJoinModalOpen(true)}
+                <Link
+                  href="https://devopstrio-global-qa-e2gehkbdfmbfgddy.southindia-01.azurewebsites.net/careers/jobs"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] cursor-pointer"
                 >
                   Browse Open Positions <ArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
             </div>
 
