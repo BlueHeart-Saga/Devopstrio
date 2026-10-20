@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import { heroPrimaryBtn, heroPrimaryIconWrap, heroSecondaryBtn, HeroTrustBar, StatStrip } from "../_shared/premium";
 import {
   Github,
   GitPullRequest,
@@ -181,60 +182,55 @@ export default function OpenSourcePage() {
           { label: "OPEN SOURCE CONTRIBUTIONS" }
         ]}
       >
-        <div className="flex flex-wrap gap-4 items-center justify-start">
-          <a
-            href="https://github.com/Devopstrio"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer"
-          >
-            Explore Projects
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-              <Github className="w-3.5 h-3.5 text-white" />
-            </div>
-          </a>
-          <button
-            onClick={() => setContributorModalOpen(true)}
-            className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 text-white transition-all cursor-pointer"
-          >
-            Contribute on GitHub
-          </button>
+        <div className="flex flex-col items-start gap-7">
+          <div className="flex flex-wrap items-center gap-3.5">
+            <a
+              href="https://github.com/Devopstrio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={heroPrimaryBtn}
+            >
+              Explore Projects
+              <span className={heroPrimaryIconWrap}>
+                <Github className="w-4 h-4 text-white" />
+              </span>
+            </a>
+            <button
+              onClick={() => setContributorModalOpen(true)}
+              className={heroSecondaryBtn}
+            >
+              Contribute on GitHub
+            </button>
+          </div>
+          <HeroTrustBar items={[
+            { icon: "shield", text: "Apache 2.0 / MIT Licensing" },
+            { icon: "zap", text: "Upstream CNCF Contributions" },
+            { icon: "users", text: "Published Contributing Guidelines" },
+            { icon: "check", text: "Open Issue Onboarding" }
+          ]} />
         </div>
       </Hero>
 
       {/* HERO STATS STRIP */}
-      <section className="w-full py-12 bg-[#030303] border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {[
-              { val: "250+", label: "GitHub Repositories" },
-              { val: "500+", label: "Community Contributors" },
-              { val: "100K+", label: "Framework Downloads" },
-              { val: "35+", label: "Engineering Frameworks" },
-              { val: "50+", label: "Countries Represented" }
-            ].map((stat, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 text-center hover:border-rose-500/40 transition-colors">
-                <span className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-1 block">
-                  {stat.val}
-                </span>
-                <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatStrip
+        stats={[
+          { val: "250+", label: "GitHub Repositories" },
+          { val: "500+", label: "Community Contributors" },
+          { val: "100K+", label: "Framework Downloads" },
+          { val: "35+", label: "Engineering Frameworks" },
+          { val: "50+", label: "Countries Represented" }
+        ]}
+      />
 
       {/* 2. OUR OPEN SOURCE MISSION (Split Layout) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             {/* Left Large Engineering Image */}
@@ -294,14 +290,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 3. CONTRIBUTION IMPACT (Large KPI Section) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -319,12 +315,12 @@ export default function OpenSourcePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { val: "100+", label: "Terraform Modules", desc: "Azure & AWS CAF" },
-              { val: "40+", label: "Helm Charts", desc: "K8s Production" },
-              { val: "80+", label: "CI/CD Templates", desc: "GitHub Actions" },
-              { val: "25+", label: "AI Frameworks", desc: "GenAI & RAG" },
-              { val: "15+", label: "Cloud Accelerators", desc: "Landing Zones" },
-              { val: "500+", label: "Contributors", desc: "Across 20 Countries" }
+          { val: "100+", label: "Terraform Modules", desc: "Azure & AWS CAF" },
+          { val: "40+", label: "Helm Charts", desc: "K8s Production" },
+          { val: "80+", label: "CI/CD Templates", desc: "GitHub Actions" },
+          { val: "25+", label: "AI Frameworks", desc: "GenAI & RAG" },
+          { val: "15+", label: "Cloud Accelerators", desc: "Landing Zones" },
+          { val: "500+", label: "Contributors", desc: "Across 20 Countries" }
             ].map((kpi, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all text-center space-y-2 group h-full">
@@ -342,14 +338,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 4. FEATURED OPEN SOURCE PROJECTS */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -434,14 +430,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 5. ENGINEERING FRAMEWORKS (Grid) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -473,14 +469,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 6. GITHUB REPOSITORY SHOWCASE ⭐ (GitHub-Style Cards) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -614,14 +610,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 7. TECHNOLOGY CATEGORIES (Colorful Category Cards) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -662,14 +658,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 8. COMMUNITY CONTRIBUTIONS WORKFLOW (Timeline) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -717,14 +713,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 9. PROJECT LIFECYCLE (Large Diagram / Steps) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -756,14 +752,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 10. DEVELOPER CONTRIBUTION GUIDE (Step-by-Step Cards) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -798,14 +794,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 11. ENGINEERING STANDARDS (Cards Grid) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -837,14 +833,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 12. LATEST RELEASES (Timeline) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center space-y-3">
@@ -879,8 +875,8 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 13. PARTNER COMMUNITIES (Logo Wall) */}
-      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-10">
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
           <div className="text-center space-y-2">
             <span className="text-xs font-bold tracking-[0.3em] uppercase text-zinc-400 block">
@@ -904,14 +900,14 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 14. SUCCESS STORIES */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">

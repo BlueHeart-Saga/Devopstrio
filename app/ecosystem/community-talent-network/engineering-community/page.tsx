@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import { heroPrimaryBtn, heroPrimaryIconWrap, heroSecondaryBtn, HeroTrustBar, StatStrip } from "../_shared/premium";
 import {
   Users,
   Code,
@@ -186,60 +187,55 @@ export default function EngineeringCommunityPage() {
           { label: "ENGINEERING COMMUNITY" }
         ]}
       >
-        <div className="flex flex-wrap gap-4 items-center justify-start">
-          <button
-            onClick={() => setJoinModalOpen(true)}
-            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer"
-          >
-            Join Community
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-            </div>
-          </button>
-          <button
-            onClick={() => {
-              const el = document.getElementById("open-source-projects");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 text-white transition-all cursor-pointer"
-          >
-            <Github className="w-4 h-4 text-rose-500 mr-2" /> Explore Projects
-          </button>
+        <div className="flex flex-col items-start gap-7">
+          <div className="flex flex-wrap items-center gap-3.5">
+            <button
+              onClick={() => setJoinModalOpen(true)}
+              className={heroPrimaryBtn}
+            >
+              Join Community
+              <span className={heroPrimaryIconWrap}>
+                <ArrowUpRight className="w-4 h-4 text-white" />
+              </span>
+            </button>
+            <button
+              onClick={() => {
+                const el = document.getElementById("open-source-projects");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={heroSecondaryBtn}
+            >
+              <Github className="w-4 h-4 text-rose-500" /> Explore Projects
+            </button>
+          </div>
+          <HeroTrustBar items={[
+            { icon: "sparkles", text: "5 Specialized Guilds" },
+            { icon: "users", text: "Architecture Workshops" },
+            { icon: "zap", text: "AI Innovation Sessions" },
+            { icon: "award", text: "DevOps Hackathons" }
+          ]} />
         </div>
       </Hero>
 
       {/* HERO STATS STRIP */}
-      <section className="w-full py-12 bg-[#030303] border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { val: "10K+", label: "Community Members" },
-              { val: "250+", label: "Open Source Projects" },
-              { val: "75+", label: "Technical Events" },
-              { val: "30+", label: "University Partners" }
-            ].map((stat, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 text-center hover:border-rose-500/40 transition-colors">
-                <span className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-1 block">
-                  {stat.val}
-                </span>
-                <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatStrip
+        stats={[
+          { val: "10K+", label: "Community Members" },
+          { val: "250+", label: "Open Source Projects" },
+          { val: "75+", label: "Technical Events" },
+          { val: "30+", label: "University Partners" }
+        ]}
+      />
 
       {/* 2. COMMUNITY STORY SECTION (Microsoft-Style Split Layout using assets/common images) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             {/* Left Large Image */}
@@ -296,14 +292,14 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 3. COMMUNITY HIGHLIGHTS (Large KPI Grid) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -321,12 +317,12 @@ export default function EngineeringCommunityPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { val: "10K+", label: "Community Members", desc: "Active globally" },
-              { val: "250+", label: "GitHub Repositories", desc: "Open source" },
-              { val: "80+", label: "Technical Meetups", desc: "Hosted yearly" },
-              { val: "40+", label: "Hands-on Workshops", desc: "Live sessions" },
-              { val: "15+", label: "Countries Represented", desc: "Global reach" },
-              { val: "100+", label: "Technical Articles", desc: "Published ADRs" }
+          { val: "10K+", label: "Community Members", desc: "Active globally" },
+          { val: "250+", label: "GitHub Repositories", desc: "Open source" },
+          { val: "80+", label: "Technical Meetups", desc: "Hosted yearly" },
+          { val: "40+", label: "Hands-on Workshops", desc: "Live sessions" },
+          { val: "15+", label: "Countries Represented", desc: "Global reach" },
+          { val: "100+", label: "Technical Articles", desc: "Published ADRs" }
             ].map((kpi, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all duration-300 text-center space-y-2 group h-full">
@@ -344,14 +340,14 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 4. COMMUNITY PILLARS (6 Premium Cards) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -398,14 +394,14 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 5. REAL ENGINEERING ACTIVITIES ⭐ (Alternating Sections using assets/common images) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-20">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-20">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -529,14 +525,14 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 6. OPEN SOURCE PROJECTS (GitHub-Style Cards Grid) */}
-      <section id="open-source-projects" className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section id="open-source-projects" className="scroll-mt-24 py-24 bg-[#030303] border-b border-zinc-900/80">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -638,14 +634,14 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 7. TECHNICAL MEETUPS & EVENTS (Timeline Layout) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center space-y-3">
@@ -692,14 +688,14 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 8. KNOWLEDGE HUB (Cards Grid) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -745,14 +741,14 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 9. LEARNING PATHS / CAREER ROADMAP */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -800,14 +796,14 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 10. COMMUNITY GALLERY ⭐ (Visual Grid using assets/common images) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -853,14 +849,14 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 11. COMMUNITY SUCCESS STORIES */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
         style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -917,8 +913,8 @@ export default function EngineeringCommunityPage() {
       </section>
 
       {/* 12. PARTNER COMMUNITIES (Logo Wall) */}
-      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-10">
+      <section className="py-20 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
           <div className="text-center">
             <span className="text-xs font-bold tracking-[0.3em] uppercase text-zinc-400 block">

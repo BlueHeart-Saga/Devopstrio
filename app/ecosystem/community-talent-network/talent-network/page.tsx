@@ -6,6 +6,7 @@ import { FAQ } from "@/components/ecosystem/FAQ";
 import { CTA } from "@/components/ecosystem/CTA";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
+import { heroPrimaryBtn, heroPrimaryIconWrap, heroSecondaryBtn, HeroTrustBar, StatStrip } from "../_shared/premium";
 import {
   Users,
   Briefcase,
@@ -76,79 +77,49 @@ export default function TalentNetworkPage() {
           { label: "TALENT NETWORK" }
         ]}
       >
-        <div className="flex flex-col items-center gap-6">
-          {/* Hero Highlights Badges */}
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {[
-              "Global Engineering Network",
-              "25,000+ Vetted Practitioners",
-              "Zero Placement Fees",
-              "1-on-1 Architecture Mentorship",
-              "Enterprise Cloud Placements",
-              "Remote & Hybrid Opportunities"
-            ].map((item, idx) => (
-              <span
-                key={idx}
-                className="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold tracking-wide bg-zinc-900/90 border border-zinc-800 text-zinc-300 shadow-sm"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 pt-2">
+        <div className="flex flex-col items-start gap-7">
+          <div className="flex flex-wrap items-center gap-3.5">
             <button
               onClick={() => setJoinModalOpen(true)}
-              className="inline-flex items-center gap-3 pl-7 pr-3 py-3.5 bg-white text-black font-bold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer"
+              className={heroPrimaryBtn}
             >
               Join the Network
-              <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
+              <span className={heroPrimaryIconWrap}>
                 <ArrowUpRight className="w-4 h-4 text-white" />
-              </div>
+              </span>
             </button>
             <button
               onClick={() => {
                 const el = document.getElementById("global-marketplace");
                 if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 text-white transition-all cursor-pointer hover:bg-zinc-900"
+              className={heroSecondaryBtn}
             >
               Explore Opportunities
             </button>
           </div>
+          <HeroTrustBar items={[
+            { icon: "users", text: "25,000+ Vetted Practitioners" },
+            { icon: "shield", text: "Zero Placement Fees" },
+            { icon: "sparkles", text: "1-on-1 Architecture Mentorship" },
+            { icon: "globe", text: "Remote & Hybrid Opportunities" }
+          ]} />
         </div>
       </Hero>
 
       {/* HERO STATS STRIP */}
-      <section className="w-full py-16 bg-[#030303] border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6">
-            {[
-              { val: "25K+", label: "Engineering Professionals", sub: "Worldwide Network" },
-              { val: "500+", label: "Enterprise Roles", sub: "Annual Placements" },
-              { val: "50+", label: "Technology Partners", sub: "AWS, Azure, GCP & More" },
-              { val: "20+", label: "Countries Represented", sub: "Global Reach" },
-              { val: "100+", label: "Principal Mentors", sub: "1-on-1 Guidance" }
-            ].map((stat, idx) => (
-              <div key={idx} className="p-6 md:p-7 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 text-center hover:border-rose-500/40 transition-all duration-300 group">
-                <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-2 block group-hover:text-rose-500 transition-colors">
-                  {stat.val}
-                </span>
-                <span className="text-xs md:text-sm font-bold uppercase tracking-wider text-zinc-300 block mb-1">
-                  {stat.label}
-                </span>
-                <span className="text-xs font-mono text-rose-400/90 font-medium block">
-                  {stat.sub}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatStrip
+        stats={[
+          { val: "25K+", label: "Engineering Professionals", sub: "Worldwide Network" },
+          { val: "500+", label: "Enterprise Roles", sub: "Annual Placements" },
+          { val: "50+", label: "Technology Partners", sub: "AWS, Azure, GCP & More" },
+          { val: "20+", label: "Countries Represented", sub: "Global Reach" },
+          { val: "100+", label: "Principal Mentors", sub: "1-on-1 Guidance" }
+        ]}
+      />
 
       {/* 2. TALENT NETWORK OVERVIEW */}
-      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -221,7 +192,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 3. COMMUNITY IMPACT (Large KPI Cards) */}
-      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -243,12 +214,12 @@ export default function TalentNetworkPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-5">
             {[
-              { val: "25K+", label: "Community Members", desc: "Global Talent Network" },
-              { val: "2,000+", label: "Job Opportunities", desc: "Enterprise Listings" },
-              { val: "1,000+", label: "Successful Placements", desc: "Roles Filled" },
-              { val: "300+", label: "Senior Mentors", desc: "Principal Architects" },
-              { val: "150+", label: "Enterprise Clients", desc: "Global Scaleups" },
-              { val: "40+", label: "Tech Events", desc: "Annual Summits" }
+          { val: "25K+", label: "Community Members", desc: "Global Talent Network" },
+          { val: "2,000+", label: "Job Opportunities", desc: "Enterprise Listings" },
+          { val: "1,000+", label: "Successful Placements", desc: "Roles Filled" },
+          { val: "300+", label: "Senior Mentors", desc: "Principal Architects" },
+          { val: "150+", label: "Enterprise Clients", desc: "Global Scaleups" },
+          { val: "40+", label: "Tech Events", desc: "Annual Summits" }
             ].map((kpi, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[22px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all text-center space-y-2.5 group h-full flex flex-col justify-between">
@@ -268,7 +239,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 4. WHO CAN JOIN (8 Large Feature Cards) */}
-      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -349,7 +320,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 5. TALENT CATEGORIES (Grid) */}
-      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -398,7 +369,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 6. ENGINEERING CAREER JOURNEY (Roadmap) */}
-      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -457,7 +428,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 7. GLOBAL TALENT MARKETPLACE (Image + Text) */}
-      <section id="global-marketplace" className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section id="global-marketplace" className="scroll-mt-24 py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -518,7 +489,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 8. SKILLS & CERTIFICATIONS (Technology Badges) */}
-      <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -564,7 +535,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 9. LEARNING & MENTORSHIP (Cards) */}
-      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -610,7 +581,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 10. SUCCESS STORIES */}
-      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -659,7 +630,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 11. PARTNER COMPANIES (Logo Wall) */}
-      <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -695,7 +666,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 12. COMMUNITY BENEFITS (Feature Grid) */}
-      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
@@ -737,7 +708,7 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 13. EVENTS & NETWORKING */}
-      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
             {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
