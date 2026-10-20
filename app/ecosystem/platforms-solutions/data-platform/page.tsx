@@ -102,27 +102,14 @@ const DataPlatformOverview = () => {
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-6 md:p-8">
-                    <h3 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors">
+                  <div className="p-6 md:p-8 pb-8">
+                    <h3 className="text-base md:text-lg font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
-                </div>
-
-                {/* Arrow Link Button at Bottom */}
-                <div className="px-6 md:px-8 pb-8 pt-2">
-                  <Link
-                    href="/contact#contact-form"
-                    className="inline-flex items-center gap-3 text-xs font-bold tracking-wider uppercase text-zinc-300 hover:text-white transition-colors duration-300 group/link"
-                  >
-                    <div className="w-6 h-6 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover/link:text-rose-500 group-hover/link:bg-rose-500/10 transition-colors">
-                      <ChevronRight className="w-3.5 h-3.5" />
-                    </div>
-                    <span>{item.linkText}</span>
-                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -133,111 +120,6 @@ const DataPlatformOverview = () => {
   );
 };
 
-// ==========================================
-// 3. DATA CHALLENGES (DataChallenges)
-// ==========================================
-const DataChallenges = () => {
-  const challenges = [
-    { title: "Siloed Repositories", desc: "Departments operating on isolated data clusters without centralized access catalogs.", icon: Layers },
-    { title: "Data Inconsistencies", desc: "Null columns, duplicated rows, and broken relational schemas causing calculation errors.", icon: AlertTriangle },
-    { title: "Manual Compilations", desc: "Teams consuming hours compiling spreadsheets manually instead of automatic sync.", icon: FileText },
-    { title: "Brittle Integrations", desc: "Managing custom scripts that break upon third-party software updates.", icon: Workflow },
-    { title: "Query Latency", desc: "Warehouse queries taking minutes or hours to compile dashboard reports.", icon: Gauge },
-    { title: "Compliance Risks", desc: "Exposures of private customer data violating GDPR or SOC-2 storage mandates.", icon: Lock }
-  ];
-
-  return (
-    <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.015),transparent_70%)] blur-3xl pointer-events-none" />
-      <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
-
-        {/* Section Header */}
-        <Reveal>
-          <div className="max-w-3xl mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">DATA BOTTLENECKS</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
-              Comprehensive analytics solutions built for scale
-            </h2>
-          </div>
-        </Reveal>
-
-        {/* Layout Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-
-          {/* Left Tall Card */}
-          <div className="lg:col-span-4 h-full min-h-[420px]">
-            <Reveal className="h-full">
-              <div className="relative overflow-hidden rounded-3xl h-full flex flex-col justify-end p-8 bg-zinc-900 border border-zinc-800 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] group">
-                <div className="absolute inset-0 z-0">
-                  <img src="/webp/assets/data_challenges_cover.webp"
-                    alt="Data challenges team cover"
-                    className="w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
-                </div>
-
-                <div className="relative z-10 flex flex-col h-full justify-between items-start">
-                  <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 bg-rose-500/10 px-3.5 py-1 rounded-full mb-8">
-                    DATA STRATEGY
-                  </span>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">
-                      Centralize and clean fragmented data streams
-                    </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-bold mb-6 max-w-sm">
-                      Save engineering overhead by replacing custom ingestion scripts and manual spreadsheets with an automated, fully governed source of truth.
-                    </p>
-                    <Link
-                      href="/contact#contact-form"
-                      className="px-5 py-3 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-black hover:bg-zinc-200 transition-all duration-300 shadow-md shadow-white/5"
-                    >
-                      Find out how
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Right 3x2 Card Grid */}
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 h-full">
-              {challenges.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <Reveal key={idx} delay={idx * 0.05} className="h-full">
-                    <div className="relative group rounded-3xl p-6 bg-zinc-950/45 border border-zinc-900 hover:border-zinc-800 hover:bg-zinc-900/10 transition-all duration-300 flex flex-col justify-between h-full shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
-                      <div>
-                        {/* Icon at top */}
-                        <div className="w-10 h-10 rounded-2xl bg-rose-600/10 text-rose-500 flex items-center justify-center mb-5">
-                          <Icon size={18} />
-                        </div>
-                        <h4 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
-                          {item.title}
-                        </h4>
-                        <p className="text-sm text-zinc-400 leading-relaxed font-normal">
-                          {item.desc}
-                        </p>
-                      </div>
-
-                      {/* Link at bottom */}
-                      <div className="mt-5">
-                        <Link href="/contact#contact-form" className="text-xs font-bold text-rose-500 hover:text-rose-400 inline-flex items-center gap-1.5 transition-all">
-                          Learn more <ChevronRight className="w-3 h-3 animate-pulse" />
-                        </Link>
-                      </div>
-                    </div>
-                  </Reveal>
-                );
-              })}
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-};
 
 // ==========================================
 // 4. PLATFORM CAPABILITIES (DataCapabilities)
@@ -1305,9 +1187,6 @@ export default function DataPlatformPage() {
 
       {/* 2. Platform Overview */}
       <DataPlatformOverview />
-
-      {/* 3. Data Challenges */}
-      <DataChallenges />
 
       {/* 4. Platform Capabilities */}
       <DataCapabilities />
