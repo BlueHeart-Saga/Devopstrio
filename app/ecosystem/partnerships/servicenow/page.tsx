@@ -376,7 +376,7 @@ function Why() {
           <Reveal>
             <Head
               subtitle="THE DEVOPSTRIO ADVANTAGE"
-              title="Technology has power. Collaboration gives it direction."
+              title="The Devopstrio Advantage"
               body="ServiceNow is the intelligent operating system for modern digital enterprise workflows. Devopstrio structures the configuration, automates the service pipelines, and ensures your IT operations run with maximum efficiency and continuous audit compliance."
             />
           </Reveal>
@@ -452,7 +452,7 @@ function Services() {
         <Reveal>
           <Head
             subtitle="CORE CAPABILITIES"
-            title="Everything you need to orchestrate on ServiceNow."
+            title="ServiceNow Workflow Capabilities"
             body="Six core engineering disciplines covering your complete lifecycle—from initial platform blueprint to continuous enterprise optimization."
           />
         </Reveal>
@@ -554,7 +554,7 @@ function TransformationStack() {
         <Reveal>
           <Head
             subtitle="ENTERPRISE MODERNIZATION STACK"
-            title="Accelerate Digital Workflow Transformation with ServiceNow Blueprints"
+            title="Enterprise Modernization Stack"
             body="Devopstrio couples ServiceNow Certified Master Architects with turnkey workflow accelerators to de-risk platform rollouts and deliver measurable enterprise business impact."
           />
         </Reveal>
@@ -677,7 +677,7 @@ function Process() {
         <Reveal>
           <Head
             subtitle="DELIVERY METHODOLOGY"
-            title="A clear path from first call to steady-state operations."
+            title="Proven Delivery Methodology"
             body="Our 4-phase structured engagement model ensures complete visibility, minimal risk, and accelerated time-to-value."
           />
         </Reveal>
@@ -712,27 +712,27 @@ function Process() {
 const industries = [
   {
     n: "healthcare",
-    tag: "HIPAA & Clinical Operations",
+    tag: "Clinical Workflows & EHR",
     t: "Healthcare & Life Sciences",
-    d: "Medical device asset management, clinical incident routing, and HIPAA compliance workflow audit automation.",
+    d: "Clinical device maintenance tracking, nurse call dispatch automation, patient request routing, and HIPAA compliance audits.",
   },
   {
     n: "manufacturing",
-    tag: "OT Management & SCADA",
+    tag: "OT Management & Shopfloor",
     t: "Industrial & Manufacturing",
-    d: "Operational Technology (OT) asset discovery, plant maintenance dispatching, and supply chain ticket resolution.",
+    d: "Operational Technology (OT) asset discovery, plant maintenance dispatching, safety incident management, and supplier triage.",
   },
   {
     n: "retail",
-    tag: "Store Operations & POS",
-    t: "Retail & E-Commerce",
-    d: "Store asset provisioning, high-volume POS hardware triage, and employee onboarding across distributed store networks.",
+    tag: "Store Ops & POS Dispatch",
+    t: "Retail & Consumer Services",
+    d: "Store asset lifecycle automation, high-velocity POS hardware incident routing, and centralized multi-store employee onboarding.",
   },
   {
     n: "education",
-    tag: "Campus ITSM & Self-Service",
-    t: "Financial & Corporate Services",
-    d: "Sox compliance auditing, vendor risk management (VRM), and cross-department employee service center automation.",
+    tag: "FSO & SOX Compliance",
+    t: "Financial Services Operations",
+    d: "Automated account opening, dispute resolution workflows, SOX compliance audit tracking, and centralized Vendor Risk Management.",
   },
 ];
 
@@ -743,7 +743,7 @@ function Industries() {
         <Reveal>
           <Head
             subtitle="INDUSTRY SPECIALIZATIONS"
-            title="Tailored for your industry's compliance & performance demands."
+            title="Industry Specializations"
             body="Every vertical operates under unique constraints. We shape the architecture, data residency, and security controls around yours."
           />
         </Reveal>

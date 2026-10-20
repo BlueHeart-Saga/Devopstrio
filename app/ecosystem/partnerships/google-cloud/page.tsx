@@ -375,7 +375,7 @@ function Why() {
           <Reveal>
             <Head
               subtitle="THE DEVOPSTRIO ADVANTAGE"
-              title="Technology has power. Collaboration gives it direction."
+              title="The Devopstrio Advantage"
               body="Google Cloud leads the industry in data analytics, container orchestration, and foundational AI models. Devopstrio structures the architecture, automates the governance, and ensures your workloads run reliably at lowest total operational cost."
             />
           </Reveal>
@@ -451,7 +451,7 @@ function Services() {
         <Reveal>
           <Head
             subtitle="CORE CAPABILITIES"
-            title="Everything you need to run on Google Cloud."
+            title="Google Cloud Platform Capabilities"
             body="Six core engineering disciplines covering your complete lifecycle—from initial landing zone blueprint to production 24×7 operations."
           />
         </Reveal>
@@ -553,7 +553,7 @@ function TransformationStack() {
         <Reveal>
           <Head
             subtitle="ENTERPRISE MODERNIZATION STACK"
-            title="Accelerate Digital Value with Production-Ready Google Cloud Blueprints"
+            title="Enterprise Modernization Stack"
             body="Devopstrio couples Google Cloud Certified Professional Architects with turnkey automation accelerators to de-risk migrations and deliver measurable enterprise business impact."
           />
         </Reveal>
@@ -676,7 +676,7 @@ function Process() {
         <Reveal>
           <Head
             subtitle="DELIVERY METHODOLOGY"
-            title="A clear path from first call to steady-state operations."
+            title="Proven Delivery Methodology"
             body="Our 4-phase structured engagement model ensures complete visibility, minimal risk, and accelerated time-to-value."
           />
         </Reveal>
@@ -711,27 +711,27 @@ function Process() {
 const industries = [
   {
     n: "healthcare",
-    tag: "Healthcare API & FHIR",
+    tag: "Vertex AI & Cloud Healthcare",
     t: "Healthcare & Life Sciences",
-    d: "HIPAA-compliant, highly resilient environments for clinical datasets, Google Cloud Healthcare API, and genomics modeling.",
+    d: "FHIR-native clinical data stores, Vertex AI Medical Search models, and Google Cloud Healthcare API compliance fabrics.",
   },
   {
     n: "manufacturing",
-    tag: "Visual Inspection AI",
+    tag: "Supply Chain Twin",
     t: "Industrial & Manufacturing",
-    d: "Visual Inspection AI on assembly lines, supply chain analytics in BigQuery, and industrial IoT edge integration.",
+    d: "Visual Inspection AI for assembly defect detection, real-time Google Supply Chain Twin, and smart factory telemetry in BigQuery.",
   },
   {
     n: "retail",
-    tag: "Vertex Search for Retail",
-    t: "Retail & E-Commerce",
-    d: "Personalized search and product recommendations, high-throughput checkout processing, and real-time inventory telemetry.",
+    tag: "BigQuery & Vertex Search",
+    t: "Retail & Consumer Brands",
+    d: "Real-time omni-channel stock indexing in BigQuery, Google Search-quality product recommendations, and elastic GKE checkouts.",
   },
   {
     n: "education",
-    tag: "Google Workspace & BigQuery",
-    t: "Education & Public Sector",
-    d: "Institutional collaboration platforms, secure student identity management, and cost-governed research data platforms.",
+    tag: "Cloud Spanner & AML AI",
+    t: "Financial Services & FinTech",
+    d: "Globally distributed ACID transactions on Cloud Spanner, real-time Anti Money Laundering (AML) AI, and PCI-DSS GKE security.",
   },
 ];
 
@@ -742,7 +742,7 @@ function Industries() {
         <Reveal>
           <Head
             subtitle="INDUSTRY SPECIALIZATIONS"
-            title="Tailored for your industry's compliance & performance demands."
+            title="Industry Specializations"
             body="Every vertical operates under unique constraints. We shape the architecture, data residency, and security controls around yours."
           />
         </Reveal>

@@ -374,7 +374,7 @@ function Why() {
           <Reveal>
             <Head
               subtitle="THE DEVOPSTRIO ADVANTAGE"
-              title="Technology has power. Collaboration gives it direction."
+              title="The Devopstrio Advantage"
               body="Amazon Web Services provides an unmatched breadth of 200+ fully-featured services. Devopstrio designs the architecture, implements automated guardrails, and ensures your workloads run reliably at lowest total operational cost."
             />
           </Reveal>
@@ -450,7 +450,7 @@ function Services() {
         <Reveal>
           <Head
             subtitle="CORE CAPABILITIES"
-            title="Everything you need to run on AWS."
+            title="Enterprise AWS Capabilities"
             body="Six core engineering disciplines covering your complete lifecycle—from initial landing zone blueprint to production 24×7 operations."
           />
         </Reveal>
@@ -552,7 +552,7 @@ function TransformationStack() {
         <Reveal>
           <Head
             subtitle="ENTERPRISE MODERNIZATION STACK"
-            title="Accelerate Digital Value with Production-Ready AWS Blueprints"
+            title="Enterprise Modernization Stack"
             body="Devopstrio couples AWS Certified Solution Architects with turnkey automation accelerators to de-risk migrations and deliver measurable enterprise business impact."
           />
         </Reveal>
@@ -675,7 +675,7 @@ function Process() {
         <Reveal>
           <Head
             subtitle="DELIVERY METHODOLOGY"
-            title="A clear path from first call to steady-state operations."
+            title="Proven Delivery Methodology"
             body="Our 4-phase structured engagement model ensures complete visibility, minimal risk, and accelerated time-to-value."
           />
         </Reveal>
@@ -710,27 +710,27 @@ function Process() {
 const industries = [
   {
     n: "healthcare",
-    tag: "HIPAA & HITRUST",
+    tag: "HealthLake & HIPAA",
     t: "Healthcare & Life Sciences",
-    d: "HIPAA-compliant, highly resilient environments for electronic health records, clinical imaging, and genomics data.",
+    d: "AWS HealthLake clinical data repositories, HIPAA-compliant genomics pipelines, and zero-trust patient imaging storage.",
   },
   {
     n: "manufacturing",
-    tag: "AWS IoT & Greengrass",
+    tag: "AWS IoT SiteWise",
     t: "Industrial & Manufacturing",
-    d: "AWS IoT Greengrass, predictive maintenance telemetry pipelines, and automated factory floor telemetry.",
+    d: "Industrial IoT edge telemetry with SiteWise, predictive machine learning at the edge, and automated supply chain telemetry.",
   },
   {
     n: "retail",
-    tag: "Elastic EKS & CloudFront",
+    tag: "EKS & Personalize",
     t: "Retail & E-Commerce",
-    d: "Elastic auto-scaling Amazon EKS clusters engineered to handle Black Friday transaction volumes with sub-second latency.",
+    d: "Ultra-scalable Amazon EKS clusters, Amazon Personalize ML recommendations, and sub-second DynamoDB global inventory queries.",
   },
   {
     n: "education",
-    tag: "AppStream & Cloud Directory",
-    t: "Education & Public Sector",
-    d: "Scalable virtual laboratories, institutional collaboration systems, and cost-governed research computing clusters.",
+    tag: "Financial Competency",
+    t: "Financial & Capital Markets",
+    d: "Multi-region active-active Aurora clusters, automated SOC 2 audit telemetry, and low-latency algorithmic trading gateways.",
   },
 ];
 
@@ -741,7 +741,7 @@ function Industries() {
         <Reveal>
           <Head
             subtitle="INDUSTRY SPECIALIZATIONS"
-            title="Tailored for your industry's compliance & performance demands."
+            title="Industry Specializations"
             body="Every vertical operates under unique constraints. We shape the architecture, data residency, and security controls around yours."
           />
         </Reveal>

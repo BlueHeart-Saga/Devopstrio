@@ -424,13 +424,13 @@ export default function OracleStrategicAllianceHub() {
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
                   href="/contact#contact-form"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 text-white hover:from-red-500 hover:to-rose-400 hover:shadow-[0_0_28px_rgba(225,29,72,0.4)]"
                 >
                   Talk to an Oracle Solutions Expert
                 </Link>
                 <a
                   href="#overview"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 border border-zinc-800 bg-zinc-950/70 text-zinc-200 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white"
                 >
                   Explore Oracle Capabilities
                 </a>
@@ -450,7 +450,7 @@ export default function OracleStrategicAllianceHub() {
                 <div className="flex items-center justify-between w-full relative z-10 px-4">
 
                   {/* Devopstrio Logo Card */}
-                  <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                  <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-rose-600 to-red-655 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
                     <img src="/webp/assets/logo/logo.webp"
@@ -465,7 +465,7 @@ export default function OracleStrategicAllianceHub() {
                   </div>
 
                   {/* Oracle Cloud Logo Card */}
-                  <div className="relative group/logo w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] rounded-3xl bg-[#09090b]/80 border border-zinc-800 hover:border-red-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                  <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/80 border border-zinc-800 hover:border-red-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-red-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-red-600 to-rose-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
                     <img src="/assets/Tech_logos/Oracle_Cloud.svg"

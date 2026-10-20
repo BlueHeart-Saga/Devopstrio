@@ -375,7 +375,7 @@ function Why() {
           <Reveal>
             <Head
               subtitle="THE DEVOPSTRIO ADVANTAGE"
-              title="Technology has power. Collaboration gives it direction."
+              title="The Devopstrio Advantage"
               body="Microsoft Azure provides a vast ecosystem of 200+ cloud services. Devopstrio structures the architecture, automates the governance, and ensures your workloads run reliably at lowest total cost of ownership."
             />
           </Reveal>
@@ -451,7 +451,7 @@ function Services() {
         <Reveal>
           <Head
             subtitle="CORE CAPABILITIES"
-            title="Everything you need to run on Azure."
+            title="Enterprise Azure Capabilities"
             body="Six core engineering disciplines covering your complete lifecycle—from initial landing zone blueprint to production 24×7 operations."
           />
         </Reveal>
@@ -553,7 +553,7 @@ function TransformationStack() {
         <Reveal>
           <Head
             subtitle="ENTERPRISE MODERNIZATION STACK"
-            title="Accelerate Digital Value with Production-Ready Azure Blueprints"
+            title="Enterprise Modernization Stack"
             body="Devopstrio couples Microsoft Certified Solution Architects with turnkey automation accelerators to de-risk migrations and deliver measurable enterprise business impact."
           />
         </Reveal>
@@ -676,7 +676,7 @@ function Process() {
         <Reveal>
           <Head
             subtitle="DELIVERY METHODOLOGY"
-            title="A clear path from first call to steady-state operations."
+            title="Proven Delivery Methodology"
             body="Our 4-phase structured engagement model ensures complete visibility, minimal risk, and accelerated time-to-value."
           />
         </Reveal>
@@ -711,27 +711,27 @@ function Process() {
 const industries = [
   {
     n: "healthcare",
-    tag: "HIPAA & HITRUST",
+    tag: "Azure Health & FHIR",
     t: "Healthcare & Life Sciences",
-    d: "HIPAA-compliant, highly secure environments for electronic health records, telemetry, and clinical data systems.",
+    d: "HIPAA-compliant Azure landing zones, HITRUST governance, secure FHIR health data APIs, and Azure Health Bot conversational copilots.",
   },
   {
     n: "manufacturing",
-    tag: "IoT Edge & SCADA",
+    tag: "Azure IoT & Digital Twins",
     t: "Industrial & Manufacturing",
-    d: "Azure IoT Edge, predictive maintenance pipelines, and resilient supply chain integrations.",
+    d: "Azure IoT Operations, factory-floor SCADA telemetry, automated predictive maintenance, and Azure Digital Twins spatial modeling.",
   },
   {
     n: "retail",
-    tag: "Elastic AKS & CDN",
+    tag: "AKS & Dynamics 365",
     t: "Retail & E-Commerce",
-    d: "Elastic auto-scaling AKS clusters engineered to sustain holiday traffic peaks with sub-second page loads.",
+    d: "High-concurrency AKS microservices, Azure AI Search personalized recommendations, and unified Dynamics 365 supply chain pipelines.",
   },
   {
     n: "education",
-    tag: "Virtual Labs & Azure AD",
-    t: "Education & Public Sector",
-    d: "Scalable virtual labs, institutional collaboration platforms, and cost-controlled student environments.",
+    tag: "Entra ID & Synapse",
+    t: "Financial & Corporate Services",
+    d: "PCI-DSS banking enclaves, Azure Confidential Computing, real-time transaction analytics in Synapse, and Entra ID PIM governance.",
   },
 ];
 
@@ -742,7 +742,7 @@ function Industries() {
         <Reveal>
           <Head
             subtitle="INDUSTRY SPECIALIZATIONS"
-            title="Tailored for your industry's compliance & performance demands."
+            title="Industry Specializations"
             body="Every vertical operates under unique constraints. We shape the architecture, data residency, and security controls around yours."
           />
         </Reveal>
@@ -806,76 +806,6 @@ const faqs = [
     a: "Connect with our cloud architecture team. We conduct an initial discovery session to understand your current landscape, followed by an architectural recommendation and phased migration or modernization roadmap.",
   },
 ];
-
-function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
-  return (
-    <section className="py-24 lg:py-32 bg-black border-b border-zinc-900/60">
-      <div className={`${wrap} max-w-[880px]`}>
-        <Reveal>
-          <Head
-            center
-            subtitle="FREQUENTLY ASKED QUESTIONS"
-            title="Everything You Need to Know About Devopstrio + Azure"
-          />
-        </Reveal>
-        <div className="mt-14 grid gap-3.5">
-          {faqs.map((f, i) => {
-            const on = open === i;
-            return (
-              <Reveal key={f.q} delay={i * 50}>
-                <div
-                  className={`rounded-2xl border bg-[#0D0E12] transition-colors duration-300 ${
-                    on ? "border-[rgba(244,63,94,0.45)]" : "border-zinc-800/80 hover:border-zinc-700"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    aria-expanded={on}
-                    onClick={() => setOpen(on ? null : i)}
-                    className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
-                  >
-                    <span className="text-[16px] font-bold text-white">{f.q}</span>
-                    <Plus
-                      size={20}
-                      color={ROSE}
-                      className="shrink-0 transition-transform duration-300"
-                      style={{ transform: on ? "rotate(45deg)" : "none" }}
-                    />
-                  </button>
-                  <div
-                    className="grid transition-[grid-template-rows] duration-500 ease-out motion-reduce:transition-none"
-                    style={{ gridTemplateRows: on ? "1fr" : "0fr" }}
-                  >
-                    <div className="overflow-hidden">
-                      <p className="px-6 pb-6 text-[14px] leading-[25px] text-zinc-400">{f.a}</p>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
-
-        {/* Below FAQ callout */}
-        <Reveal delay={0.2} className="mt-8">
-          <div className="border border-zinc-800/80 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm md:text-base font-semibold text-zinc-200">
-              Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
-            </p>
-            <Link
-              href="/contact#contact-form"
-              className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900/60 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap"
-            >
-              Contact Our Engineers <ArrowRight size={14} />
-            </Link>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 /* =========================================================================
    PAGE ROOT
    ========================================================================= */
@@ -888,7 +818,7 @@ export default function AzurePartnershipPage() {
       <TransformationStack />
       <Process />
       <Industries />
-      <Faq />
+      <FAQ faqs={faqs} />
       <RepresentativeCTA
         title="Ready To Modernize Your Enterprise On"
         highlightText="Microsoft Azure?"
