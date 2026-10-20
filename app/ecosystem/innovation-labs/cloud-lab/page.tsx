@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -77,6 +79,25 @@ interface RelatedLab {
   desc: string;
   href: string;
 }
+
+const cloudLabFaqs = [
+  {
+    q: "What types of cloud experiments does the Cloud Innovation Lab conduct?",
+    a: "We engineer multi-cloud architectures, serverless microservices, distributed Kubernetes topologies, and automated landing zone blueprints across AWS, Azure, and Google Cloud."
+  },
+  {
+    q: "How does the lab support enterprise cloud migration?",
+    a: "We build zero-downtime database migration tooling, automated workload re-platforming scripts, and Infrastructure as Code modules that accelerate enterprise migrations while minimizing business disruption."
+  },
+  {
+    q: "Are the architectures tested for compliance and cost optimization?",
+    a: "Yes. Every architecture prototype is embedded with automated FinOps cost monitors and CIS Benchmark / ISO 27001 compliance guardrails by design."
+  },
+  {
+    q: "Can our engineering team co-develop with the Cloud Lab?",
+    a: "Absolutely. We run dedicated 2-to-4 week collaborative sprint spikes where your engineers pair directly with our cloud architects."
+  }
+];
 
 export default function CloudInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Platform Modernization");
@@ -986,44 +1007,16 @@ export default function CloudInnovationLabPage() {
             </div>
           </div>
 
-          {/* Final CTA Block */}
-          <div className="relative rounded-[32px] border border-white/[0.04] bg-zinc-950/50 p-8 md:p-16 text-center overflow-hidden max-w-4xl mx-auto">
-            {/* Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/[0.02] rounded-full blur-[100px] pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                Platform Modernization
-              </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
-                Ready to modernize your cloud foundation?
-              </h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8">
-                Work with the Devopstrio Cloud Innovation Lab to design secure landing zones, modernize workloads, automate infrastructure, and build resilient cloud platforms that scale with your business.
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact#contact-form"
-                  className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-                >
-                  Book a Cloud Strategy Session
-                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                    <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                  </div>
-                </Link>
-                <Link
-                  href="/contact#contact-form"
-                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  Talk to Our Cloud Team
-                </Link>
-              </div>
-            </div>
           </div>
-
-        </div>
       </section>
+      <FAQ faqs={cloudLabFaqs} />
+      <CTA
+        ctaTitle="Ready to Modernize Your Enterprise"
+        ctaHighlight="Cloud Foundation?"
+        ctaDesc="Work with the Devopstrio Cloud Innovation Lab to design secure landing zones, modernize workloads, automate infrastructure, and build resilient platforms."
+        ctaBtnText="BOOK CLOUD STRATEGY SESSION"
+        backLink="/ecosystem/innovation-labs"
+      />
 
     </main>
   );

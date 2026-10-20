@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -78,6 +80,25 @@ interface RelatedLab {
   desc: string;
   href: string;
 }
+
+const devopsLabFaqs = [
+  {
+    q: "What research initiatives does the DevOps Innovation Lab drive?",
+    a: "We pioneer Internal Developer Platforms (IDPs), GitOps continuous delivery engines, ephemeral testing environments, and AI-assisted deployment verification."
+  },
+  {
+    q: "How does the lab help reduce lead time for code changes?",
+    a: "We architect automated CI/CD golden paths, container build optimizations, and automated canary rollouts with ArgoCD and Flagger that bring deployment times down from hours to minutes."
+  },
+  {
+    q: "Do you integrate AI agents into DevOps pipelines?",
+    a: "Yes. We prototype autonomous PR review copilots, automated log triage agents, and synthetic testing generators that detect regressions before code reaches staging."
+  },
+  {
+    q: "Can our engineers participate in a DevOps prototype pilot?",
+    a: "Yes. We run accelerated 2-week pilots where our DevOps architects build and validate a customized platform engineering proof-of-concept tailored to your tech stack."
+  }
+];
 
 export default function DevOpsInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Delivery Acceleration");
@@ -988,44 +1009,16 @@ export default function DevOpsInnovationLabPage() {
             </div>
           </div>
 
-          {/* Final CTA Block */}
-          <div className="relative rounded-[32px] border border-white/[0.04] bg-zinc-950/50 p-8 md:p-16 text-center overflow-hidden max-w-4xl mx-auto">
-            {/* Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/[0.02] rounded-full blur-[100px] pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                Platform Modernization
-              </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
-                Ready to modernize how your teams build, ship, and operate software?
-              </h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8">
-                Partner with the Devopstrio DevOps Innovation Lab to design faster pipelines, automate infrastructure, strengthen release governance, and build reliable delivery platforms at scale.
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact#contact-form"
-                  className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-                >
-                  Book a DevOps Discovery Session
-                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                    <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                  </div>
-                </Link>
-                <Link
-                  href="/contact#contact-form"
-                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  Talk to Our DevOps Team
-                </Link>
-              </div>
-            </div>
           </div>
-
-        </div>
       </section>
+      <FAQ faqs={devopsLabFaqs} />
+      <CTA
+        ctaTitle="Accelerate Software Delivery With"
+        ctaHighlight="Modern DevOps Golden Paths"
+        ctaDesc="Work with our DevOps architects to build high-velocity developer platforms, automated GitOps pipelines, and resilient deployment environments."
+        ctaBtnText="BOOK DEVOPS DISCOVERY SESSION"
+        backLink="/ecosystem/innovation-labs"
+      />
 
     </main>
   );

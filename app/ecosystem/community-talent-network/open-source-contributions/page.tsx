@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -37,6 +39,52 @@ import {
   Server,
   Award
 } from "lucide-react";
+
+
+const faqs = [
+              {
+                q: "How do I start contributing to Devopstrio open-source projects?",
+                a: "Navigate to github.com/Devopstrio, pick any repository, check issues tagged 'good first issue', fork the repository, and submit your pull request following our CONTRIBUTING.md guidelines.",
+                proof: "✓ 500+ Active Contributors · 250+ Repositories",
+                tags: ["GitHub PRs", "Good First Issue", "Open Community"]
+              },
+              {
+                q: "Are all Devopstrio open-source projects free to use commercially?",
+                a: "Yes. All our repositories are released under permissive open-source licenses (primarily Apache 2.0 and MIT), allowing free commercial and private use.",
+                proof: "✓ 100% Free Apache 2.0 / MIT Licensing",
+                tags: ["Commercial Use", "Apache 2.0", "MIT License"]
+              },
+              {
+                q: "Can enterprise companies contribute code or sponsor features?",
+                a: "Yes! We partner with enterprise teams to co-develop modules, review custom RFCs, and integrate custom cloud policies into our public frameworks.",
+                proof: "✓ Trusted by Enterprise Technology Teams",
+                tags: ["Enterprise Co-development", "RFC Reviews", "Sponsorship"]
+              },
+              {
+                q: "Are university students welcome to contribute?",
+                a: "Absolutely! We provide dedicated mentorship and code reviews for student pull requests to help them build real-world engineering credentials.",
+                proof: "✓ Student Contributor Mentorship Program",
+                tags: ["Student Friendly", "Code Reviews", "Portfolio Building"]
+              },
+              {
+                q: "How are code reviews and security vulnerabilities handled?",
+                a: "Every pull request passes static security analysis (Checkov/Trivy) and automated unit testing before two senior maintainers approve and merge it.",
+                proof: "✓ Automated CI/CD & Security Scans",
+                tags: ["Checkov", "Trivy", "Peer Review"]
+              },
+              {
+                q: "How are release versions managed?",
+                a: "We adhere strictly to Semantic Versioning (MAJOR.MINOR.PATCH). Breaking changes are only released in major version increments with full migration documentation.",
+                proof: "✓ Strict Semantic Versioning Standards",
+                tags: ["SemVer", "Migration Guides", "Release Logs"]
+              },
+              {
+                q: "Where can I find complete documentation for Terraform modules?",
+                a: "All modules feature automated terraform-docs documentation in their README.md files, complete with input variables, outputs, and usage examples.",
+                proof: "✓ Auto-generated terraform-docs",
+                tags: ["Documentation", "Usage Examples", "README Specs"]
+              }
+            ];
 
 export default function OpenSourcePage() {
   // Modal states
@@ -792,276 +840,14 @@ export default function OpenSourcePage() {
         </div>
       </section>
 
-      {/* 15. FAQ SECTION (Matching Accordion Standard) */}
-      <section id="faq" className="py-20 md:py-28 bg-[#030303] text-white border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-
-          <Reveal className="max-w-3xl mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-                KNOWLEDGE BASE
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Questions we get <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
-            </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-semibold">
-              Everything you need to know about contributing to Devopstrio open-source projects.
-            </p>
-          </Reveal>
-
-          {/* Accordion FAQ */}
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {[
-              {
-                q: "How do I start contributing to Devopstrio open-source projects?",
-                a: "Navigate to github.com/Devopstrio, pick any repository, check issues tagged 'good first issue', fork the repository, and submit your pull request following our CONTRIBUTING.md guidelines.",
-                proof: "✓ 500+ Active Contributors · 250+ Repositories",
-                tags: ["GitHub PRs", "Good First Issue", "Open Community"]
-              },
-              {
-                q: "Are all Devopstrio open-source projects free to use commercially?",
-                a: "Yes. All our repositories are released under permissive open-source licenses (primarily Apache 2.0 and MIT), allowing free commercial and private use.",
-                proof: "✓ 100% Free Apache 2.0 / MIT Licensing",
-                tags: ["Commercial Use", "Apache 2.0", "MIT License"]
-              },
-              {
-                q: "Can enterprise companies contribute code or sponsor features?",
-                a: "Yes! We partner with enterprise teams to co-develop modules, review custom RFCs, and integrate custom cloud policies into our public frameworks.",
-                proof: "✓ Trusted by Enterprise Technology Teams",
-                tags: ["Enterprise Co-development", "RFC Reviews", "Sponsorship"]
-              },
-              {
-                q: "Are university students welcome to contribute?",
-                a: "Absolutely! We provide dedicated mentorship and code reviews for student pull requests to help them build real-world engineering credentials.",
-                proof: "✓ Student Contributor Mentorship Program",
-                tags: ["Student Friendly", "Code Reviews", "Portfolio Building"]
-              },
-              {
-                q: "How are code reviews and security vulnerabilities handled?",
-                a: "Every pull request passes static security analysis (Checkov/Trivy) and automated unit testing before two senior maintainers approve and merge it.",
-                proof: "✓ Automated CI/CD & Security Scans",
-                tags: ["Checkov", "Trivy", "Peer Review"]
-              },
-              {
-                q: "How are release versions managed?",
-                a: "We adhere strictly to Semantic Versioning (MAJOR.MINOR.PATCH). Breaking changes are only released in major version increments with full migration documentation.",
-                proof: "✓ Strict Semantic Versioning Standards",
-                tags: ["SemVer", "Migration Guides", "Release Logs"]
-              },
-              {
-                q: "Where can I find complete documentation for Terraform modules?",
-                a: "All modules feature automated terraform-docs documentation in their README.md files, complete with input variables, outputs, and usage examples.",
-                proof: "✓ Auto-generated terraform-docs",
-                tags: ["Documentation", "Usage Examples", "README Specs"]
-              }
-            ].map((item, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={item.q} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group cursor-pointer"
-                  >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {item.q}
-                    </span>
-                    <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
-                  </button>
-
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-medium max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
-                      <p>{item.a}</p>
-
-                      {item.proof && (
-                        <span className="text-[10px] text-emerald-400 font-semibold tracking-wide font-mono">
-                          {item.proof}
-                        </span>
-                      )}
-
-                      {item.tags && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {item.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 text-[10px] font-mono font-medium tracking-wide"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Below FAQ Callout Box */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-semibold">
-                Have specific questions about repo maintainership or bug bounties? Reach out to our open-source maintainers.
-              </p>
-              <button
-                onClick={() => setContributorModalOpen(true)}
-                className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
-              >
-                Contact Maintainers <ArrowUpRight size={14} className="text-rose-500" />
-              </button>
-            </div>
-          </Reveal>
-
-        </div>
-      </section>
-
-      {/* 16. CTA SECTION */}
-      <section className="py-28 relative overflow-hidden bg-[#030303]">
-        <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Build the Future with Open Source
-          </h2>
-          <p className="text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed font-semibold">
-            Join developers worldwide in building secure, scalable, and innovative engineering solutions.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <a
-              href="https://github.com/Devopstrio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Github className="w-4 h-4 mr-2" /> Explore GitHub
-            </a>
-            <button
-              onClick={() => setContributorModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-            >
-              <GitPullRequest className="w-4 h-4 text-rose-500 mr-2" /> Become a Contributor
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTRIBUTOR MODAL */}
-      {contributorModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-6 space-y-6 relative shadow-2xl">
-            <button
-              onClick={() => {
-                setContributorModalOpen(false);
-                setContributorSubmitted(false);
-              }}
-              className="absolute top-5 right-5 p-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {contributorSubmitted ? (
-              <div className="py-8 text-center space-y-4">
-                <div className="w-14 h-14 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Contributor Registration Received!</h3>
-                <p className="text-xs text-zinc-300 max-w-sm mx-auto font-medium">
-                  Welcome aboard! We&apos;ve sent an invite to your GitHub account and shared our Maintainer Slack channel link.
-                </p>
-                <button
-                  onClick={() => {
-                    setContributorModalOpen(false);
-                    setContributorSubmitted(false);
-                  }}
-                  className="px-6 py-2.5 rounded-xl bg-[#E11D48] text-white text-xs font-bold cursor-pointer"
-                >
-                  Close Window
-                </button>
-              </div>
-            ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setContributorSubmitted(true);
-                }}
-                className="space-y-4"
-              >
-                <div>
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                    <Github className="w-5 h-5 text-rose-500" />
-                    Become an Open Source Contributor
-                  </h3>
-                  <p className="text-xs text-zinc-400 mt-1 font-medium">
-                    Register your GitHub handle to receive PR reviews and maintainer channel invites.
-                  </p>
-                </div>
-
-                <div className="space-y-3 text-xs">
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Alex Rivera"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">GitHub Username *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. alexrivera-dev"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Email Address *</label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="alex@example.com"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Area of Contribution</label>
-                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none">
-                      <option>Terraform & Infrastructure Modules (HCL)</option>
-                      <option>Kubernetes Operators & Helm Charts (Go / YAML)</option>
-                      <option>AI & LLM Orchestration Frameworks (Python)</option>
-                      <option>DevSecOps & OPA Policy Rules (Rego)</option>
-                      <option>Documentation & Architecture Guides</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="pt-2 flex justify-end gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setContributorModalOpen(false)}
-                    className="px-4 py-2 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-semibold cursor-pointer"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="px-5 py-2 rounded-xl bg-[#E11D48] hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer"
-                  >
-                    <GitPullRequest className="w-3.5 h-3.5" /> Submit Contributor Profile
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
-
+      <FAQ faqs={faqs} />
+      <CTA
+        ctaTitle="Contribute to Modern Open-Source"
+        ctaHighlight="Cloud & AI Tooling"
+        ctaDesc="Collaborate on production Terraform modules, Kubernetes operators, and AI frameworks used by engineering teams worldwide."
+        ctaBtnText="EXPLORE GITHUB REPOSITORIES"
+        backLink="/ecosystem/community-talent-network"
+      />
     </main>
   );
 }

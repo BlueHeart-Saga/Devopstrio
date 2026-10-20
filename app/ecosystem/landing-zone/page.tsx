@@ -1,4 +1,5 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -252,6 +253,45 @@ function parseRawRepo(item: any): RepoItem {
 
 const verifiedInitialRepos: RepoItem[] = (rawFallbackRepos as any[]).map(parseRawRepo);
 
+
+const landingZoneFaqs = [
+  {
+    q: "What is a Cloud Landing Zone?",
+    a: "A Landing Zone is an environment for provisioning workloads, pre-configured with security, network, identity, and compliance guardrails. It establishes account hierarchies, subscription vending machines, transit networks, and central audit logging before applications are deployed.",
+    proof: "CAF & AWS Control Tower Aligned · 100% IaC Automation",
+    tags: ["Multi-Cloud Framework", "Subscription Vending", "Zero Trust Guardrails"]
+  },
+  {
+    q: "Which cloud providers do you support?",
+    a: "We provide pre-built landing zone blueprints for Microsoft Azure (Cloud Adoption Framework), Amazon Web Services (AWS Control Tower), Google Cloud Platform (Foundations Fabric), and Oracle Cloud Infrastructure (OCI CIS Foundations).",
+    proof: "4 Major Hyper-scale Cloud Providers Supported",
+    tags: ["Azure CAF", "AWS Control Tower", "GCP Foundations", "OCI CIS"]
+  },
+  {
+    q: "Do you use Terraform or OpenTofu?",
+    a: "Yes, 100% of our landing zone blueprints are written using modular, enterprise-grade Terraform and OpenTofu modules. All modules are version-controlled, fully parameterized, and include automated CI/CD pipeline manifests.",
+    proof: "180+ Public Terraform Repositories Active",
+    tags: ["HCL / Terraform", "OpenTofu", "Bicep / ARM"]
+  },
+  {
+    q: "Can I customize the landing zone modules for our enterprise?",
+    a: "Absolutely. Every module accepts parameterized inputs for CIDR blocks, region targets, compliance policies, tag standards, and custom role mappings. You can integrate them into your existing repository structures or deploy them standalone.",
+    proof: "Fully Parameterized · Zero Lock-In",
+    tags: ["Custom CIDR Blocks", "Tagging Governance", "RBAC Policies"]
+  },
+  {
+    q: "Do you support GitHub Actions and Azure DevOps?",
+    a: "Yes, pre-configured GitHub Actions workflows and Azure DevOps YAML pipelines are included with every landing zone repository for automated speculative terraform plan execution, policy checks (Checkov / TFLint), and approved terraform apply steps.",
+    proof: "Continuous Compliance & Automated PR Checks",
+    tags: ["GitHub Actions", "Azure DevOps", "GitLab CI"]
+  },
+  {
+    q: "Is documentation and post-deployment support included?",
+    a: "Yes, comprehensive deployment guides, architecture diagrams, step-by-step setup guides, and operational playbooks are provided with all repositories. Our cloud engineering team is also available for guided implementation workshops.",
+    proof: "Architecture Blueprints & 24/7 Expert Support",
+    tags: ["Full Documentation", "Architecture Diagrams", "Guided Setup"]
+  }
+];
 
 export default function EnterpriseLandingZonePage() {
   const [activeFilter, setActiveFilter] = useState<string>("All");
@@ -1324,119 +1364,7 @@ Direct Contacts:
         </div>
       </section>
 
-      {/* 15. FAQ SECTION */}
-      <section className="py-20 md:py-24 bg-[#030303] text-white border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12">
-
-          <Reveal className="max-w-3xl mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white font-sans leading-tight">
-              Questions we get <span className="text-rose-500 font-semibold">asked every day</span>.
-            </h2>
-          </Reveal>
-
-          {/* Accordion FAQ */}
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {[
-              {
-                q: "What is a Cloud Landing Zone?",
-                a: "A Landing Zone is an environment for provisioning workloads, pre-configured with security, network, identity, and compliance guardrails. It establishes account hierarchies, subscription vending machines, transit networks, and central audit logging before applications are deployed.",
-                proof: "✓ CAF & AWS Control Tower Aligned · 100% IaC Automation",
-                tags: ["Multi-Cloud Framework", "Subscription Vending", "Zero Trust Guardrails"]
-              },
-              {
-                q: "Which cloud providers do you support?",
-                a: "We provide pre-built landing zone blueprints for Microsoft Azure (Cloud Adoption Framework), Amazon Web Services (AWS Control Tower), Google Cloud Platform (Foundations Fabric), and Oracle Cloud Infrastructure (OCI CIS Foundations).",
-                proof: "✓ 4 Major Hyper-scale Cloud Providers Supported",
-                tags: ["Azure CAF", "AWS Control Tower", "GCP Foundations", "OCI CIS"]
-              },
-              {
-                q: "Do you use Terraform or OpenTofu?",
-                a: "Yes, 100% of our landing zone blueprints are written using modular, enterprise-grade Terraform and OpenTofu modules. All modules are version-controlled, fully parameterized, and include automated CI/CD pipeline manifests.",
-                proof: "✓ 180+ Public Terraform Repositories Active",
-                tags: ["HCL / Terraform", "OpenTofu", "Bicep / ARM"]
-              },
-              {
-                q: "Can I customize the landing zone modules for our enterprise?",
-                a: "Absolutely. Every module accepts parameterized inputs for CIDR blocks, region targets, compliance policies, tag standards, and custom role mappings. You can integrate them into your existing repository structures or deploy them standalone.",
-                proof: "✓ Fully Parameterized · Zero Lock-In",
-                tags: ["Custom CIDR Blocks", "Tagging Governance", "RBAC Policies"]
-              },
-              {
-                q: "Do you support GitHub Actions and Azure DevOps?",
-                a: "Yes, pre-configured GitHub Actions workflows and Azure DevOps YAML pipelines are included with every landing zone repository for automated speculative terraform plan execution, policy checks (Checkov / TFLint), and approved terraform apply steps.",
-                proof: "✓ Continuous Compliance & Automated PR Checks",
-                tags: ["GitHub Actions", "Azure DevOps", "GitLab CI"]
-              },
-              {
-                q: "Is documentation and post-deployment support included?",
-                a: "Yes, comprehensive deployment guides, architecture diagrams, step-by-step setup guides, and operational playbooks are provided with all repositories. Our cloud engineering team is also available for guided implementation workshops.",
-                proof: "✓ Architecture Blueprints & 24/7 Expert Support",
-                tags: ["Full Documentation", "Architecture Diagrams", "Guided Setup"]
-              }
-            ].map((item, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={item.q} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group cursor-pointer"
-                  >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {item.q}
-                    </span>
-                    <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
-                  </button>
-
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-normal max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
-                      <p>{item.a}</p>
-
-                      {item.proof && (
-                        <span className="text-[10px] text-emerald-400 font-semibold tracking-wide font-mono">
-                          {item.proof}
-                        </span>
-                      )}
-
-                      {item.tags && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {item.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 text-[10px] font-mono font-medium tracking-wide"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Below FAQ Callout Box */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-normal">
-                Still have questions? Reach out to our cloud architects — we respond to every message personally.
-              </p>
-              <button
-                onClick={() => setDemoModalOpen(true)}
-                className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-xl text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
-              >
-                Contact Our Engineers <ArrowUpRight size={14} className="text-rose-500" />
-              </button>
-            </div>
-          </Reveal>
-
-        </div>
-      </section>
-
-      {/* 16. CTA SECTION */}
+      <FAQ faqs={landingZoneFaqs} />
       <RepresentativeCTA
         title="Ready To Build Your Enterprise"
         highlightText="Cloud Landing Zone?"

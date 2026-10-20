@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -36,6 +38,46 @@ import {
   Building,
   Terminal
 } from "lucide-react";
+
+
+const faqs = [
+              {
+                q: "Who can join Devopstrio Certification Programs?",
+                a: "Students, software developers, cloud engineers, DevOps practitioners, and technology leaders looking to validate their skills with hands-on labs can enroll.",
+                proof: "✓ 15,000+ Certified Learners Worldwide",
+                tags: ["Students & Professionals", "All Experience Levels", "Global Enroll"]
+              },
+              {
+                q: "Are the certification study cohorts free or paid?",
+                a: "All study cohorts, curriculum materials, and sandbox labs are 100% free for active members of the Devopstrio Talent Network.",
+                proof: "✓ 100% Sponsored for Talent Network Members",
+                tags: ["Free Training", "Free Sandboxes", "Sponsored Exams"]
+              },
+              {
+                q: "Do learners receive digital certificates upon completion?",
+                a: "Yes. Upon completing capstone project requirements, learners receive verifiable digital certificates and GitHub profile badges.",
+                proof: "✓ Verifiable Digital Badging Included",
+                tags: ["Digital Certificate", "LinkedIn Badge", "GitHub Verified"]
+              },
+              {
+                q: "Are live cloud sandbox environments included in the training?",
+                a: "Yes. We provision ephemeral Azure, AWS, and Kubernetes sandbox accounts automatically so you can practice on real infrastructure without personal cost.",
+                proof: "✓ 200+ Ephemeral Cloud Sandboxes",
+                tags: ["Real Cloud Labs", "AWS & Azure Sandboxes", "No Credit Card Needed"]
+              },
+              {
+                q: "Can university students participate in certification tracks?",
+                a: "Yes! University students are encouraged to join. We offer specialized beginner pathways to prepare students for early-career cloud roles.",
+                proof: "✓ Dedicated University Student Tracks",
+                tags: ["Student Friendly", "Beginner Tracks", "Portfolio Building"]
+              },
+              {
+                q: "How long does each certification track typically take?",
+                a: "Most certification tracks run for 8 to 12 weeks, requiring approximately 8-10 hours per week of study and lab work.",
+                proof: "✓ Flexible 8-12 Week Sprints",
+                tags: ["8-12 Weeks", "Self-Paced Option", "Weekly Live Labs"]
+              }
+            ];
 
 export default function CertificationProgramsPage() {
   // Modal states
@@ -564,152 +606,14 @@ export default function CertificationProgramsPage() {
         </div>
       </section>
 
-      {/* 12. FAQ SECTION (Matching Accordion Standard) */}
-      <section id="faq" className="py-20 md:py-28 bg-[#030303] text-white border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-
-          <Reveal className="max-w-3xl mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-                KNOWLEDGE BASE
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Questions we get <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
-            </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-semibold">
-              Everything you need to know about Devopstrio Certification Programs.
-            </p>
-          </Reveal>
-
-          {/* Accordion FAQ */}
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {[
-              {
-                q: "Who can join Devopstrio Certification Programs?",
-                a: "Students, software developers, cloud engineers, DevOps practitioners, and technology leaders looking to validate their skills with hands-on labs can enroll.",
-                proof: "✓ 15,000+ Certified Learners Worldwide",
-                tags: ["Students & Professionals", "All Experience Levels", "Global Enroll"]
-              },
-              {
-                q: "Are the certification study cohorts free or paid?",
-                a: "All study cohorts, curriculum materials, and sandbox labs are 100% free for active members of the Devopstrio Talent Network.",
-                proof: "✓ 100% Sponsored for Talent Network Members",
-                tags: ["Free Training", "Free Sandboxes", "Sponsored Exams"]
-              },
-              {
-                q: "Do learners receive digital certificates upon completion?",
-                a: "Yes. Upon completing capstone project requirements, learners receive verifiable digital certificates and GitHub profile badges.",
-                proof: "✓ Verifiable Digital Badging Included",
-                tags: ["Digital Certificate", "LinkedIn Badge", "GitHub Verified"]
-              },
-              {
-                q: "Are live cloud sandbox environments included in the training?",
-                a: "Yes. We provision ephemeral Azure, AWS, and Kubernetes sandbox accounts automatically so you can practice on real infrastructure without personal cost.",
-                proof: "✓ 200+ Ephemeral Cloud Sandboxes",
-                tags: ["Real Cloud Labs", "AWS & Azure Sandboxes", "No Credit Card Needed"]
-              },
-              {
-                q: "Can university students participate in certification tracks?",
-                a: "Yes! University students are encouraged to join. We offer specialized beginner pathways to prepare students for early-career cloud roles.",
-                proof: "✓ Dedicated University Student Tracks",
-                tags: ["Student Friendly", "Beginner Tracks", "Portfolio Building"]
-              },
-              {
-                q: "How long does each certification track typically take?",
-                a: "Most certification tracks run for 8 to 12 weeks, requiring approximately 8-10 hours per week of study and lab work.",
-                proof: "✓ Flexible 8-12 Week Sprints",
-                tags: ["8-12 Weeks", "Self-Paced Option", "Weekly Live Labs"]
-              }
-            ].map((item, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={item.q} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group cursor-pointer"
-                  >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {item.q}
-                    </span>
-                    <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
-                  </button>
-
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-medium max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
-                      <p>{item.a}</p>
-
-                      {item.proof && (
-                        <span className="text-[10px] text-emerald-400 font-semibold tracking-wide font-mono">
-                          {item.proof}
-                        </span>
-                      )}
-
-                      {item.tags && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {item.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 text-[10px] font-mono font-medium tracking-wide"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Below FAQ Callout Box */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-semibold">
-                Need corporate training for your engineering team or university cohort? Contact our Learning Relations Team.
-              </p>
-              <button
-                onClick={() => setContactModalOpen(true)}
-                className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
-              >
-                Contact Learning Team <ArrowUpRight size={14} className="text-rose-500" />
-              </button>
-            </div>
-          </Reveal>
-
-        </div>
-      </section>
-
-      {/* 13. CTA SECTION */}
-      <section className="py-28 relative overflow-hidden bg-[#030303]">
-        <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Build Skills That Power Your Future
-          </h2>
-          <p className="text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed font-semibold">
-            Whether you&apos;re a student, developer, or experienced engineer, Devopstrio Certification Programs help you gain practical expertise, validate your skills, and accelerate your technology career.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <button
-              onClick={() => setEnrollModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Award className="w-4 h-4 mr-2" /> Browse Certification Programs
-            </button>
-            <button
-              onClick={() => setContactModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-            >
-              <BookOpen className="w-4 h-4 text-rose-500 mr-2" /> Contact Learning Team
-            </button>
-          </div>
-        </div>
-      </section>
+      <FAQ faqs={faqs} />
+      <CTA
+        ctaTitle="Build Skills That Power Your Future With"
+        ctaHighlight="Devopstrio Certifications"
+        ctaDesc="Gain hands-on expertise, validate your cloud and AI capabilities with real-world sandboxes, and accelerate your engineering career."
+        ctaBtnText="JOIN CERTIFICATION COHORT"
+        backLink="/ecosystem/community-talent-network"
+      />
 
       {/* MODAL 1: BROWSE & ENROLL */}
       {enrollModalOpen && (

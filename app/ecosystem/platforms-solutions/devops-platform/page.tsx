@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -933,27 +935,13 @@ export default function DevOpsPlatformPage() {
         </div>
       </section>
 
-      {/* 8. CTA SECTION */}
-      <section className="w-full py-32 bg-black text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
-        <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Accelerate Engineering Cycles</h2>
-          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
-            Connect with our system engineers to build unified Golden Paths.
-          </p>
-          <Link
-            href="/contact#contact-form"
-            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(225,29,72,0.2)]"
-          >
-            Talk To Platform Engineers
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-            </div>
-          </Link>
-        </div>
-      </section>
-
+      <CTA
+        ctaTitle="Accelerate Engineering Cycles With"
+        ctaHighlight="DevOps Golden Paths"
+        ctaDesc="Connect with our system engineers to build unified internal developer platforms, automated CI/CD pipelines, and GitOps sync engines."
+        ctaBtnText="TALK TO PLATFORM ENGINEERS"
+        backLink="/ecosystem/platforms-solutions"
+      />
     </main>
   );
 }

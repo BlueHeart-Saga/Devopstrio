@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -77,6 +79,25 @@ interface RelatedLab {
   desc: string;
   href: string;
 }
+
+const dataLabFaqs = [
+  {
+    q: "What data architectures does the Data Analytics Lab prototype?",
+    a: "We architect modern data lakehouses (Delta Lake, Apache Iceberg), real-time streaming topologies (Kafka, Flink), and automated ELT pipelines for high-throughput enterprise analytics."
+  },
+  {
+    q: "How does the lab support AI and machine learning readiness?",
+    a: "We build unified feature stores, automated data validation pipelines, and scalable vector databases (Milvus, Pinecone, pgvector) to fuel GenAI and predictive models."
+  },
+  {
+    q: "Can we evaluate high-velocity distributed compute engines in the lab?",
+    a: "Yes. We benchmark workloads across Databricks, Snowflake, BigQuery, and DuckDB to determine optimal price-to-performance characteristics for your estate."
+  },
+  {
+    q: "How do you handle enterprise data governance and lineage?",
+    a: "We implement automated data catalogs, access control masking, and metadata lineage tracking with tools like Unity Catalog, OpenMetadata, and Apache Atlas."
+  }
+];
 
 export default function DataAnalyticsInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Executive Performance Reporting");
@@ -981,44 +1002,16 @@ export default function DataAnalyticsInnovationLabPage() {
             </div>
           </div>
 
-          {/* Final CTA Block */}
-          <div className="relative rounded-[32px] border border-white/[0.04] bg-zinc-950/50 p-8 md:p-16 text-center overflow-hidden max-w-4xl mx-auto">
-            {/* Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/[0.02] rounded-full blur-[100px] pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                Data Engineering
-              </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
-                Ready to turn fragmented data into business intelligence at scale?
-              </h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8">
-                Partner with the Devopstrio Data & Analytics Lab to build modern data platforms, real-time reporting ecosystems, analytics-ready architectures, and trusted decision intelligence across your enterprise.
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact#contact-form"
-                  className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-                >
-                  Book a Data Strategy Session
-                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                    <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                  </div>
-                </Link>
-                <Link
-                  href="/contact#contact-form"
-                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  Talk to Analytics Experts
-                </Link>
-              </div>
-            </div>
           </div>
-
-        </div>
       </section>
+      <FAQ faqs={dataLabFaqs} />
+      <CTA
+        ctaTitle="Unleash Real-Time Value From"
+        ctaHighlight="Enterprise Data"
+        ctaDesc="Partner with our data engineers to design modern lakehouses, streaming pipelines, and automated intelligence layers that drive faster business decisions."
+        ctaBtnText="BOOK DATA STRATEGY SESSION"
+        backLink="/ecosystem/innovation-labs"
+      />
 
     </main>
   );

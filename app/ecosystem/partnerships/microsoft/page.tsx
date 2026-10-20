@@ -1,4 +1,5 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
 
 import Image from "next/image";
 import Link from "next/link";

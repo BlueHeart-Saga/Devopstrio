@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -41,6 +43,52 @@ import {
   Zap,
   Rocket
 } from "lucide-react";
+
+
+const faqs = [
+              {
+                q: "How do I join the Devopstrio Engineering Community?",
+                a: "Simply click the 'Join Community' button on this page. Registration is instant and grants you access to our active community Discord/Slack channels, GitHub org invite, and event notifications.",
+                proof: "✓ Free Instant Access · 10,000+ Active Members",
+                tags: ["Free Registration", "Global Discord/Slack", "GitHub Org Access"]
+              },
+              {
+                q: "Is membership completely free?",
+                a: "Yes, 100% free forever. We believe developer communities should be open to all without paywalls or subscription barriers.",
+                proof: "✓ 0$ Cost · Open Source Community Policy",
+                tags: ["No Credit Card Required", "Free Workshops", "Open Access"]
+              },
+              {
+                q: "Can computer science students and beginners join?",
+                a: "Absolutely! We encourage students and career-switchers to join. Our senior architects provide dedicated mentorship, code reviews, and project guidance.",
+                proof: "✓ 30+ University Partners · Student Mentorship Program",
+                tags: ["Student Friendly", "Code Reviews", "Mentorship"]
+              },
+              {
+                q: "Can enterprises and companies collaborate with the community?",
+                a: "Yes. Enterprise partners sponsor hackathons, co-host technical meetups, and recruit vetted engineering talent directly from our MVP network.",
+                proof: "✓ Trusted by Fortune 500 & Series-C Startups",
+                tags: ["Enterprise Sponsorship", "Talent Recruitment", "Co-hosted Meetups"]
+              },
+              {
+                q: "Do you organize in-person meetups?",
+                a: "We host bi-weekly global virtual sessions and monthly localized in-person meetups across London, New York, San Francisco, Bangalore, and Singapore.",
+                proof: "✓ 80+ Annual Meetups Worldwide",
+                tags: ["In-Person Meetups", "Global Virtual Summits", "Local Chapters"]
+              },
+              {
+                q: "How can I contribute to Devopstrio public GitHub repositories?",
+                a: "Check out our GitHub repository organization page at github.com/Devopstrio, filter by issues tagged 'good first issue' or 'help wanted', and submit your pull request!",
+                proof: "✓ 250+ Active Open Source Repositories",
+                tags: ["Good First Issue", "Terraform Modules", "PR Reviews"]
+              },
+              {
+                q: "How do I become a Devopstrio Community Mentor or MVP?",
+                a: "Members who consistently contribute open-source PRs, publish technical articles, or host workshops are awarded MVP status with conference speaking slots and sponsored certifications.",
+                proof: "✓ Recognized Engineering Leadership Track",
+                tags: ["MVP Status", "Conference Passes", "Sponsored Certifications"]
+              }
+            ];
 
 export default function EngineeringCommunityPage() {
   // Modal States
@@ -785,369 +833,14 @@ export default function EngineeringCommunityPage() {
         </div>
       </section>
 
-      {/* 13. FAQ SECTION (Matching FAQ.tsx Accordion Standard) */}
-      <section id="faq" className="py-20 md:py-28 bg-[#030303] text-white border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-
-          <Reveal className="max-w-3xl mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-                KNOWLEDGE BASE
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Questions we get <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
-            </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-semibold">
-              Everything you need to know before joining the Devopstrio Engineering Community.
-            </p>
-          </Reveal>
-
-          {/* Accordion FAQ */}
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {[
-              {
-                q: "How do I join the Devopstrio Engineering Community?",
-                a: "Simply click the 'Join Community' button on this page. Registration is instant and grants you access to our active community Discord/Slack channels, GitHub org invite, and event notifications.",
-                proof: "✓ Free Instant Access · 10,000+ Active Members",
-                tags: ["Free Registration", "Global Discord/Slack", "GitHub Org Access"]
-              },
-              {
-                q: "Is membership completely free?",
-                a: "Yes, 100% free forever. We believe developer communities should be open to all without paywalls or subscription barriers.",
-                proof: "✓ 0$ Cost · Open Source Community Policy",
-                tags: ["No Credit Card Required", "Free Workshops", "Open Access"]
-              },
-              {
-                q: "Can computer science students and beginners join?",
-                a: "Absolutely! We encourage students and career-switchers to join. Our senior architects provide dedicated mentorship, code reviews, and project guidance.",
-                proof: "✓ 30+ University Partners · Student Mentorship Program",
-                tags: ["Student Friendly", "Code Reviews", "Mentorship"]
-              },
-              {
-                q: "Can enterprises and companies collaborate with the community?",
-                a: "Yes. Enterprise partners sponsor hackathons, co-host technical meetups, and recruit vetted engineering talent directly from our MVP network.",
-                proof: "✓ Trusted by Fortune 500 & Series-C Startups",
-                tags: ["Enterprise Sponsorship", "Talent Recruitment", "Co-hosted Meetups"]
-              },
-              {
-                q: "Do you organize in-person meetups?",
-                a: "We host bi-weekly global virtual sessions and monthly localized in-person meetups across London, New York, San Francisco, Bangalore, and Singapore.",
-                proof: "✓ 80+ Annual Meetups Worldwide",
-                tags: ["In-Person Meetups", "Global Virtual Summits", "Local Chapters"]
-              },
-              {
-                q: "How can I contribute to Devopstrio public GitHub repositories?",
-                a: "Check out our GitHub repository organization page at github.com/Devopstrio, filter by issues tagged 'good first issue' or 'help wanted', and submit your pull request!",
-                proof: "✓ 250+ Active Open Source Repositories",
-                tags: ["Good First Issue", "Terraform Modules", "PR Reviews"]
-              },
-              {
-                q: "How do I become a Devopstrio Community Mentor or MVP?",
-                a: "Members who consistently contribute open-source PRs, publish technical articles, or host workshops are awarded MVP status with conference speaking slots and sponsored certifications.",
-                proof: "✓ Recognized Engineering Leadership Track",
-                tags: ["MVP Status", "Conference Passes", "Sponsored Certifications"]
-              }
-            ].map((item, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={item.q} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group cursor-pointer"
-                  >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {item.q}
-                    </span>
-                    <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
-                  </button>
-
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-medium max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
-                      <p>{item.a}</p>
-
-                      {item.proof && (
-                        <span className="text-[10px] text-emerald-400 font-semibold tracking-wide font-mono">
-                          {item.proof}
-                        </span>
-                      )}
-
-                      {item.tags && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {item.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 text-[10px] font-mono font-medium tracking-wide"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Below FAQ Callout Box */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-semibold">
-                Have specific questions about community chapters or sponsorships? Reach out to our community team directly.
-              </p>
-              <button
-                onClick={() => setJoinModalOpen(true)}
-                className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
-              >
-                Contact Community Team <ArrowUpRight size={14} className="text-rose-500" />
-              </button>
-            </div>
-          </Reveal>
-
-        </div>
-      </section>
-
-      {/* 14. CTA SECTION */}
-      <section className="py-28 relative overflow-hidden bg-[#030303]">
-        <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Join Thousands of Engineers Building Tomorrow
-          </h2>
-          <p className="text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed font-semibold">
-            Become part of a growing community focused on innovation, collaboration, and continuous learning.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <button
-              onClick={() => setJoinModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Users className="w-4 h-4 mr-2" /> Join Community
-            </button>
-            <button
-              onClick={() => setMentorModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Sparkles className="w-4 h-4 text-rose-500 mr-2" /> Become a Mentor
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* JOIN COMMUNITY MODAL */}
-      {joinModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-6 space-y-6 relative shadow-2xl">
-            <button
-              onClick={() => {
-                setJoinModalOpen(false);
-                setJoinSubmitted(false);
-              }}
-              className="absolute top-5 right-5 p-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {joinSubmitted ? (
-              <div className="py-8 text-center space-y-4">
-                <div className="w-14 h-14 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Welcome to Devopstrio Community!</h3>
-                <p className="text-xs text-zinc-300 max-w-sm mx-auto font-medium">
-                  We&apos;ve sent an invite link to your email for our global Discord server and GitHub contributor organization.
-                </p>
-                <button
-                  onClick={() => {
-                    setJoinModalOpen(false);
-                    setJoinSubmitted(false);
-                  }}
-                  className="px-6 py-2.5 rounded-xl bg-[#E11D48] text-white text-xs font-bold cursor-pointer"
-                >
-                  Close Window
-                </button>
-              </div>
-            ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setJoinSubmitted(true);
-                }}
-                className="space-y-4"
-              >
-                <div>
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                    <Users className="w-5 h-5 text-rose-500" />
-                    Join Engineering Community
-                  </h3>
-                  <p className="text-xs text-zinc-400 mt-1 font-medium">
-                    Free membership to global developer channels, open source projects, and meetups.
-                  </p>
-                </div>
-
-                <div className="space-y-3 text-xs">
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Jordan Lee"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Email Address *</label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="jordan@example.com"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Primary Role / Interest</label>
-                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none">
-                      <option>Software Developer / Engineer</option>
-                      <option>Cloud / DevOps / SRE Engineer</option>
-                      <option>AI / Machine Learning Engineer</option>
-                      <option>Solution / Enterprise Architect</option>
-                      <option>Computer Science Student / Graduate</option>
-                      <option>Technology Leader / Executive</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="pt-2 flex justify-end gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setJoinModalOpen(false)}
-                    className="px-4 py-2 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-semibold cursor-pointer"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="px-5 py-2 rounded-xl bg-[#E11D48] hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer"
-                  >
-                    <Users className="w-3.5 h-3.5" /> Submit Membership
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* BECOME A MENTOR MODAL */}
-      {mentorModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-6 space-y-6 relative shadow-2xl">
-            <button
-              onClick={() => {
-                setMentorModalOpen(false);
-                setMentorSubmitted(false);
-              }}
-              className="absolute top-5 right-5 p-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {mentorSubmitted ? (
-              <div className="py-8 text-center space-y-4">
-                <div className="w-14 h-14 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Mentor Application Received!</h3>
-                <p className="text-xs text-zinc-300 max-w-sm mx-auto font-medium">
-                  Thank you for offering your expertise. Our community leads will connect with you to discuss workshop hosting and CFP speaking slots.
-                </p>
-                <button
-                  onClick={() => {
-                    setMentorModalOpen(false);
-                    setMentorSubmitted(false);
-                  }}
-                  className="px-6 py-2.5 rounded-xl bg-[#E11D48] text-white text-xs font-bold cursor-pointer"
-                >
-                  Close Window
-                </button>
-              </div>
-            ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setMentorSubmitted(true);
-                }}
-                className="space-y-4"
-              >
-                <div>
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-rose-500" />
-                    Become a Community Mentor
-                  </h3>
-                  <p className="text-xs text-zinc-400 mt-1 font-medium">
-                    Share your experience through workshops, CFP speaking sessions, and code reviews.
-                  </p>
-                </div>
-
-                <div className="space-y-3 text-xs">
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Full Name *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Dr. Maya Lin"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Work Email *</label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="maya@company.com"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Area of Expertise</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Terraform, Kubernetes, GenAI RAG, Site Reliability"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div className="pt-2 flex justify-end gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setMentorModalOpen(false)}
-                    className="px-4 py-2 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-semibold cursor-pointer"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="px-5 py-2 rounded-xl bg-[#E11D48] hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer"
-                  >
-                    <Sparkles className="w-3.5 h-3.5" /> Submit Mentor Profile
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
-
+      <FAQ faqs={faqs} />
+      <CTA
+        ctaTitle="Join a Global Community of Over"
+        ctaHighlight="5,000+ Engineers"
+        ctaDesc="Collaborate with top developers, cloud architects, and AI researchers across community meetups, hackathons, and open Discord spaces."
+        ctaBtnText="JOIN OUR COMMUNITY"
+        backLink="/ecosystem/community-talent-network"
+      />
     </main>
   );
 }

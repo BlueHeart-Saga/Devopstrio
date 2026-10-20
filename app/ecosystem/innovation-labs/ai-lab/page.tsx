@@ -1,5 +1,8 @@
 "use client";
 
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
+
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
@@ -962,77 +965,17 @@ export default function AIInnovationLabPage() {
         </div>
       </section>
 
-      {/* 11. FAQ ACCORDION SECTION */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto w-full px-6 md:px-12 relative z-10">
-          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Inquiries
-            </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-              Frequently Asked <span className="text-rose-500">Questions</span>
-            </h2>
-            <p className="text-zinc-400 text-base leading-relaxed font-normal">
-              Technical answers regarding security, compliance, data sovereignty, and prototype production readiness.
-            </p>
-          </Reveal>
+      {/* 11. FAQ */}
+      <FAQ faqs={faqs} />
 
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <Reveal key={idx} delay={idx * 0.05}>
-                <div className="bg-zinc-950/60 border border-zinc-900 hover:border-zinc-800 rounded-2xl p-6 md:p-8 transition-colors">
-                  <h3 className="text-base md:text-lg font-bold text-white mb-3 flex items-start gap-3">
-                    <HelpCircle className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
-                    {faq.q}
-                  </h3>
-                  <p className="text-sm md:text-base text-zinc-400 font-normal leading-relaxed pl-8">
-                    {faq.a}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 12. DUAL CTA SECTION */}
-      <section className="w-full py-24 bg-gradient-to-b from-black to-zinc-950 text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-600/10 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-              Co-Engineer With Us
-            </span>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold tracking-tight leading-tight text-white mb-6">
-              Turn Cognitive Prototypes Into <br />
-              <span className="text-rose-500">Mission-Critical Production Systems</span>
-            </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10 font-normal">
-              Partner with our AI systems architects to design custom multi-agent workflows, self-hosted LLM clusters, and sovereign RAG platforms.
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/contact#contact-form"
-                className="inline-flex items-center gap-3 pl-8 pr-4 py-4 bg-rose-600 hover:bg-rose-500 text-white font-semibold text-sm tracking-wider rounded-full transition-all duration-300 shadow-xl shadow-rose-600/20"
-              >
-                Schedule A Technical Briefing
-                <div className="w-8 h-8 rounded-full bg-black/20 flex items-center justify-center">
-                  <ArrowUpRight className="w-4 h-4 text-white" />
-                </div>
-              </Link>
-              <Link
-                href="/ecosystem/innovation-labs"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-zinc-800 hover:border-zinc-700 bg-zinc-900/60 hover:bg-zinc-900 text-white font-semibold text-sm tracking-wider transition-all duration-300"
-              >
-                Explore All Innovation Labs
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
+      {/* 12. CTA */}
+      <CTA
+        ctaTitle="Turn Cognitive Prototypes Into"
+        ctaHighlight="Mission-Critical Systems"
+        ctaDesc="Partner with our AI systems architects to design custom multi-agent workflows, self-hosted LLM clusters, and sovereign RAG platforms."
+        ctaBtnText="SCHEDULE TECHNICAL BRIEFING"
+        backLink="/ecosystem/innovation-labs"
+      />
     </main>
   );
 }

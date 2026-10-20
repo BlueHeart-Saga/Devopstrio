@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -336,51 +338,18 @@ const PlatformFAQ = () => {
     { q: "How does Platform Engineering differ from DevOps?", a: "DevOps is an operational philosophy emphasizing collaboration between Dev and Ops. Platform Engineering is the concrete practice of building an internal product (the platform) that product teams use to autonomously build and deploy code." },
     { q: "Can we integrate our existing CI/CD pipelines with Backstage?", a: "Yes. Backstage has official plugins for GitHub Actions, GitLab CI, ArgoCD, SonarQube, and Kubernetes, allowing full visibility across existing pipelines." }
   ];
-
-  return (
-    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
-      <div className="max-w-4xl mx-auto px-6 xl:px-8">
-        <Reveal>
-          <div className="text-center mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">KNOWLEDGE BASE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white">Frequently Asked Questions</h2>
-          </div>
-        </Reveal>
-
-        <div className="space-y-4">
-          {faqs.map((faq, i) => (
-            <div key={i} className="p-6 bg-zinc-950 border border-zinc-900 rounded-2xl">
-              <h3 className="text-base md:text-lg font-bold text-white mb-2">{faq.q}</h3>
-              <p className="text-sm md:text-base text-zinc-400 font-normal leading-relaxed">{faq.a}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return <FAQ faqs={faqs} />;
 };
 
 const PlatformCTA = () => {
   return (
-    <section className="w-full py-24 bg-black relative">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <Reveal>
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
-            Ready to Build Your Self-Service Developer Platform?
-          </h2>
-          <p className="text-zinc-400 text-base md:text-lg mb-8 max-w-2xl mx-auto">
-            Consult with Devopstrio platform architects to design automated golden paths and modernize your internal engineering portals.
-          </p>
-          <Link
-            href="/contact#contact-form"
-            className="inline-flex items-center gap-3 pl-8 pr-4 py-4 bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm tracking-wider rounded-full transition-all duration-300 shadow-lg shadow-rose-600/30"
-          >
-            Schedule a Platform Discovery Session
-            <ArrowUpRight className="w-4 h-4" />
-          </Link>
-        </Reveal>
-      </div>
-    </section>
+    <CTA
+      ctaTitle="Accelerate Developer Velocity With"
+      ctaHighlight="Internal Developer Platforms"
+      ctaDesc="Provide self-service infrastructure, automated golden paths, and standardized guardrails for your engineering teams."
+      ctaBtnText="EXPLORE PLATFORM SOLUTIONS"
+      backLink="/ecosystem/technology-stack"
+    />
   );
 };
 

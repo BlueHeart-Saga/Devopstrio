@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -36,6 +38,52 @@ import {
   Globe,
   ChevronRight
 } from "lucide-react";
+
+
+const faqs = [
+              {
+                q: "How can universities partner with Devopstrio?",
+                a: "Universities can submit an inquiry through the 'Partner With Us' button. Our academic relations team evaluates curriculum alignment, student intake, and lab facilities within 48 hours.",
+                proof: "✓ 50+ Partner Universities Worldwide",
+                tags: ["Free Partnership", "Curriculum Co-development", "MoU Agreement"]
+              },
+              {
+                q: "Are the student programs and workshops free for universities?",
+                a: "Yes, 100% of our campus workshops, guest lectures, and student cloud sandbox environments are fully funded by Devopstrio.",
+                proof: "✓ 0$ Cost for Universities & Students",
+                tags: ["Fully Funded", "Free Sandboxes", "Sponsored Grants"]
+              },
+              {
+                q: "Do students receive official certificates upon completing internships?",
+                a: "Yes, all students receive a verified Devopstrio Engineering Certificate, along with GitHub contribution badging and LinkedIn credentials.",
+                proof: "✓ Recognized Enterprise Certification",
+                tags: ["Digital Certificate", "GitHub Badging", "Recommendation Letters"]
+              },
+              {
+                q: "How do paid summer internships work?",
+                a: "Internships run for 12 weeks during summer breaks. Interns are paired 1-on-1 with a senior architect and integrated directly into client or open-source engineering sprints.",
+                proof: "✓ 100% Paid Placements · 250+ Interns",
+                tags: ["12 Weeks", "Paid Salary", "1-on-1 Mentor"]
+              },
+              {
+                q: "Can computer science faculty members participate in training?",
+                a: "Yes, we offer dedicated 'Faculty Enablement' bootcamps to bring lecturers up to speed on current cloud-native, IaC, and GenAI best practices.",
+                proof: "✓ Faculty Enablement Track",
+                tags: ["Professor Bootcamps", "Syllabus Updates", "Lab Grants"]
+              },
+              {
+                q: "Are research grants available for PhD and Master students?",
+                a: "Yes, Devopstrio provides dedicated research grants and GPU compute resources for postgraduate projects focused on cloud infrastructure and GenAI.",
+                proof: "✓ $2M+ Research Grants Allocated",
+                tags: ["Research Grants", "GPU Allocation", "Co-authored Papers"]
+              },
+              {
+                q: "Do final-year students get fast-tracked for full-time roles?",
+                a: "Yes, top performers in our internship program, hackathons, and campus ambassador network receive direct full-time employment offers prior to graduation.",
+                proof: "✓ 95% Retention & Hire Rate",
+                tags: ["Direct Placement", "Graduate Engineering Roles", "Fast-Track Offer"]
+              }
+            ];
 
 export default function UniversityProgramsPage() {
   // Modal states
@@ -668,158 +716,14 @@ export default function UniversityProgramsPage() {
         </div>
       </section>
 
-      {/* 13. FAQ SECTION (Matching Standard Accordion FAQ) */}
-      <section id="faq" className="py-20 md:py-28 bg-[#030303] text-white border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
-
-          <Reveal className="max-w-3xl mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-                KNOWLEDGE BASE
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Questions we get <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
-            </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-semibold">
-              Everything you need to know about partnering with Devopstrio Academic Programs.
-            </p>
-          </Reveal>
-
-          {/* Accordion FAQ */}
-          <div className="flex flex-col border-t border-zinc-900 mb-16">
-            {[
-              {
-                q: "How can universities partner with Devopstrio?",
-                a: "Universities can submit an inquiry through the 'Partner With Us' button. Our academic relations team evaluates curriculum alignment, student intake, and lab facilities within 48 hours.",
-                proof: "✓ 50+ Partner Universities Worldwide",
-                tags: ["Free Partnership", "Curriculum Co-development", "MoU Agreement"]
-              },
-              {
-                q: "Are the student programs and workshops free for universities?",
-                a: "Yes, 100% of our campus workshops, guest lectures, and student cloud sandbox environments are fully funded by Devopstrio.",
-                proof: "✓ 0$ Cost for Universities & Students",
-                tags: ["Fully Funded", "Free Sandboxes", "Sponsored Grants"]
-              },
-              {
-                q: "Do students receive official certificates upon completing internships?",
-                a: "Yes, all students receive a verified Devopstrio Engineering Certificate, along with GitHub contribution badging and LinkedIn credentials.",
-                proof: "✓ Recognized Enterprise Certification",
-                tags: ["Digital Certificate", "GitHub Badging", "Recommendation Letters"]
-              },
-              {
-                q: "How do paid summer internships work?",
-                a: "Internships run for 12 weeks during summer breaks. Interns are paired 1-on-1 with a senior architect and integrated directly into client or open-source engineering sprints.",
-                proof: "✓ 100% Paid Placements · 250+ Interns",
-                tags: ["12 Weeks", "Paid Salary", "1-on-1 Mentor"]
-              },
-              {
-                q: "Can computer science faculty members participate in training?",
-                a: "Yes, we offer dedicated 'Faculty Enablement' bootcamps to bring lecturers up to speed on current cloud-native, IaC, and GenAI best practices.",
-                proof: "✓ Faculty Enablement Track",
-                tags: ["Professor Bootcamps", "Syllabus Updates", "Lab Grants"]
-              },
-              {
-                q: "Are research grants available for PhD and Master students?",
-                a: "Yes, Devopstrio provides dedicated research grants and GPU compute resources for postgraduate projects focused on cloud infrastructure and GenAI.",
-                proof: "✓ $2M+ Research Grants Allocated",
-                tags: ["Research Grants", "GPU Allocation", "Co-authored Papers"]
-              },
-              {
-                q: "Do final-year students get fast-tracked for full-time roles?",
-                a: "Yes, top performers in our internship program, hackathons, and campus ambassador network receive direct full-time employment offers prior to graduation.",
-                proof: "✓ 95% Retention & Hire Rate",
-                tags: ["Direct Placement", "Graduate Engineering Roles", "Fast-Track Offer"]
-              }
-            ].map((item, idx) => {
-              const isOpen = openFaqIndex === idx;
-              return (
-                <div key={item.q} className="border-b border-zinc-900 py-6">
-                  <button
-                    onClick={() => toggleFaq(idx)}
-                    className="flex justify-between items-center w-full text-left focus:outline-none group cursor-pointer"
-                  >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                      {item.q}
-                    </span>
-                    <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                    </div>
-                  </button>
-
-                  {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-medium max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
-                      <p>{item.a}</p>
-
-                      {item.proof && (
-                        <span className="text-[10px] text-emerald-400 font-semibold tracking-wide font-mono">
-                          {item.proof}
-                        </span>
-                      )}
-
-                      {item.tags && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {item.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 text-[10px] font-mono font-medium tracking-wide"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Below FAQ Callout Box */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-semibold">
-                Have specific questions about campus hackathons or research grants? Reach out to our Academic Relations team directly.
-              </p>
-              <button
-                onClick={() => setPartnerModalOpen(true)}
-                className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
-              >
-                Contact Academic Team <ArrowUpRight size={14} className="text-rose-500" />
-              </button>
-            </div>
-          </Reveal>
-
-        </div>
-      </section>
-
-      {/* 14. CTA SECTION (Become a Partner University) */}
-      <section className="py-28 relative overflow-hidden bg-[#030303]">
-        <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Build the Next Generation of Engineers
-          </h2>
-          <p className="text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed font-semibold">
-            Partner with Devopstrio to prepare students for enterprise technology careers through innovation, mentorship, and real-world engineering experiences.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <button
-              onClick={() => setPartnerModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 cursor-pointer"
-            >
-              <GraduationCap className="w-4 h-4 mr-2" /> Partner With Us
-            </button>
-            <button
-              onClick={() => setWorkshopModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-            >
-              <BookOpen className="w-4 h-4 text-rose-500 mr-2" /> Request Campus Workshop
-            </button>
-          </div>
-        </div>
-      </section>
+      <FAQ faqs={faqs} />
+      <CTA
+        ctaTitle="Empower Next-Gen Engineering Talent at"
+        ctaHighlight="Your University"
+        ctaDesc="Partner with Devopstrio to bring industry-grade cloud curriculum, capstone hackathons, and global internship opportunities to your students."
+        ctaBtnText="BECOME A PARTNER UNIVERSITY"
+        backLink="/ecosystem/community-talent-network"
+      />
 
       {/* MODAL 1: PARTNER WITH US */}
       {partnerModalOpen && (

@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -77,6 +79,26 @@ const DataEngineeringOverview = () => {
   );
 };
 
+
+const dataEngineeringFaqs = [
+  {
+    q: "What data warehousing solutions do you design?",
+    a: "We architect modern data warehouses and lakehouses across Snowflake, Databricks, Google BigQuery, and AWS Redshift tailored for enterprise scale."
+  },
+  {
+    q: "Do you support real-time streaming architectures?",
+    a: "Yes. We implement real-time streaming with Apache Kafka, Apache Flink, AWS Kinesis, and Azure Event Hubs for sub-second event processing."
+  },
+  {
+    q: "How do you ensure data quality and governance?",
+    a: "We implement automated data validation using Great Expectations, data lineage tracking, and centralized catalog governance with Unity Catalog and OpenMetadata."
+  },
+  {
+    q: "Can you migrate legacy ETL pipelines to modern ELT?",
+    a: "Yes. We modernize legacy SSIS, Informatica, and custom scripts to automated dbt (data build tool) models and orchestrations using Airflow or Prefect."
+  }
+];
+
 export function DataEngineeringTechStackClient() {
   return (
     <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden">
@@ -92,6 +114,14 @@ export function DataEngineeringTechStackClient() {
         ]}
       />
       <DataEngineeringOverview />
+      <FAQ faqs={dataEngineeringFaqs} />
+      <CTA
+        ctaTitle="Transform Data Into Value With"
+        ctaHighlight="Modern Data Engineering"
+        ctaDesc="Architect scalable lakehouses, streaming pipelines, and governed data layers ready for analytics and enterprise AI."
+        ctaBtnText="TALK TO DATA ARCHITECTS"
+        backLink="/ecosystem/technology-stack"
+      />
     </main>
   );
 }

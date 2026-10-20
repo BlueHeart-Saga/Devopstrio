@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -81,6 +83,25 @@ interface RelatedLab {
   desc: string;
   href: string;
 }
+
+const securityLabFaqs = [
+  {
+    q: "What core research happens in the Cybersecurity Innovation Lab?",
+    a: "We focus on Zero Trust network access, automated Cloud Security Posture Management (CSPM), DevSecOps CI/CD vulnerability scanning, and eBPF-based container runtime protection."
+  },
+  {
+    q: "How do you validate threat models for modern enterprise architectures?",
+    a: "We simulate red-team attack vectors against cloud-native Kubernetes clusters, API gateways, and IAM permission graphs to identify privilege escalation paths and misconfigurations."
+  },
+  {
+    q: "Can the Cybersecurity Lab help us meet regulatory compliance standards?",
+    a: "Yes. We codify automated compliance checks for SOC 2, HIPAA, PCI-DSS, and ISO 27001 into Infrastructure as Code blueprints and CI/CD pipelines."
+  },
+  {
+    q: "How does the lab integrate with production DevSecOps pipelines?",
+    a: "We develop custom policy-as-code rules using Open Policy Agent (OPA) and Checkov, enabling engineering teams to enforce automated security gates seamlessly."
+  }
+];
 
 export default function CybersecurityInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Cloud & Infrastructure Security");
@@ -990,44 +1011,16 @@ export default function CybersecurityInnovationLabPage() {
             </div>
           </div>
 
-          {/* Final CTA Block */}
-          <div className="relative rounded-[32px] border border-white/[0.04] bg-zinc-950/50 p-8 md:p-16 text-center overflow-hidden max-w-4xl mx-auto">
-            {/* Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/[0.02] rounded-full blur-[100px] pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col items-center max-w-2xl mx-auto">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                Security Engineering
-              </span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
-                Ready to strengthen your security architecture and cyber resilience?
-              </h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8">
-                Partner with the Devopstrio Cybersecurity Innovation Lab to design secure cloud foundations, improve detection and response, modernize identity controls, and build resilient digital systems with confidence.
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link
-                  href="/contact#contact-form"
-                  className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-                >
-                  Book a Security Strategy Session
-                  <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                    <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-                  </div>
-                </Link>
-                <Link
-                  href="/contact#contact-form"
-                  className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-                >
-                  Talk to Our Security Team
-                </Link>
-              </div>
-            </div>
           </div>
-
-        </div>
       </section>
+      <FAQ faqs={securityLabFaqs} />
+      <CTA
+        ctaTitle="Safeguard Your Mission-Critical"
+        ctaHighlight="Digital Assets"
+        ctaDesc="Collaborate with our cybersecurity researchers to implement zero-trust architectures, automate security guardrails, and build resilient defense-in-depth."
+        ctaBtnText="BOOK SECURITY STRATEGY SESSION"
+        backLink="/ecosystem/innovation-labs"
+      />
 
     </main>
   );

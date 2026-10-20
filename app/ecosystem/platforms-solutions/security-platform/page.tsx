@@ -1,4 +1,6 @@
 "use client";
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState, useEffect, useRef } from "react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -875,50 +877,7 @@ const SecurityFAQ = () => {
     { q: "Which security standards are supported?", a: "The platform natively checks rules against CIS Benchmarks, NIST Cybersecurity framework, and local Cyber Essentials requirements." },
     { q: "Does it support Zero Trust?", a: "Yes, it validates device signatures, tracks browser footprints, and authenticates session credentials continuously to enforce Zero Trust." }
   ];
-
-  return (
-    <section id="faq" className="w-full py-24 bg-[#030303] text-white relative border-b border-zinc-900/60">
-      <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
-        <Reveal className="max-w-3xl mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
-              FAQ
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
-            Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-650 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
-          </h2>
-        </Reveal>
-
-        {/* Accordion FAQ */}
-        <div className="flex flex-col border-t border-zinc-900 mb-16">
-          {faqs.map((faq, idx) => {
-            const isOpen = openIdx === idx;
-            return (
-              <div key={idx} className="border-b border-zinc-900 py-6">
-                <button
-                  onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="flex justify-between items-center w-full text-left focus:outline-none group"
-                >
-                  <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                    {faq.q}
-                  </span>
-                  <div className="text-zinc-550 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                    {isOpen ? <Minus size={16} /> : <Plus size={16} />}
-                  </div>
-                </button>
-                {isOpen && (
-                  <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-bold max-w-3xl animate-fadeIn flex flex-col gap-4">
-                    <p>{faq.a}</p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
+  return <FAQ faqs={faqs} />;
 };
 
 // ==========================================
@@ -926,40 +885,13 @@ const SecurityFAQ = () => {
 // ==========================================
 const SecurityCTA = () => {
   return (
-    <section className="w-full py-32 bg-black text-center relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.025),transparent_60%)] pointer-events-none" />
-
-      <div className="max-w-3xl mx-auto px-6 relative z-10">
-        <Reveal>
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">GET STARTED</span>
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">Secure Your Enterprise with Confidence</h2>
-          <p className="text-zinc-300 text-sm md:text-base font-medium mb-10 max-w-lg mx-auto leading-relaxed">
-            Protect users, infrastructure, applications, and data through an intelligent security platform built for modern enterprises.
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact#contact-form"
-              className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
-            >
-              Schedule a Security Assessment
-              <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-              </div>
-            </Link>
-            <Link
-              href="/contact#contact-form"
-              className="px-6 py-3.5 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300"
-            >
-              Talk to Our Security Team
-            </Link>
-          </div>
-        </Reveal>
-      </div>
-    </section>
+    <CTA
+      ctaTitle="Protect Critical Infrastructure With"
+      ctaHighlight="Automated Security Operations"
+      ctaDesc="Deploy continuous compliance monitoring, automated vulnerability remediation, and zero-trust perimeter enforcement across multi-cloud environments."
+      ctaBtnText="REQUEST SECURITY EVALUATION"
+      backLink="/ecosystem/platforms-solutions"
+    />
   );
 };
 

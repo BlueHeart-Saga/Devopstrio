@@ -295,12 +295,32 @@ export default function TalentNetworkPage() {
                     </p>
                   </div>
                   <div className="pt-4 border-t border-zinc-900">
-                    <button
-                      onClick={() => setJoinModalOpen(true)}
-                      className="text-xs sm:text-sm font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1.5 cursor-pointer"
-                    >
-                      Join Network <ArrowUpRight className="w-4 h-4" />
-                    </button>
+                    {role.title === "Enterprise Partners" ? (
+                      <button
+                        onClick={() => setContactModalOpen(true)}
+                        className="text-xs sm:text-sm font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1.5 cursor-pointer"
+                      >
+                        Request Talent <ArrowUpRight className="w-4 h-4" />
+                      </button>
+                    ) : role.title === "Students & Graduates" ? (
+                      <Link
+                        href="https://devopstrio.co.uk/about/global-internship"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs sm:text-sm font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1.5 cursor-pointer"
+                      >
+                        Explore Internship <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    ) : (
+                      <Link
+                        href="https://devopstrio.co.uk/careers"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs sm:text-sm font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1.5 cursor-pointer"
+                      >
+                        Explore Careers <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </Reveal>
