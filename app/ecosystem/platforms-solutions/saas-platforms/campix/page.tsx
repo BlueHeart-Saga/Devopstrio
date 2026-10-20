@@ -332,9 +332,6 @@ function RolesSection() {
           <h2 className="text-2xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-[-0.64px] leading-[40px] mb-4">
             One Platform. Every Member of Your Institution.
           </h2>
-          <p className="text-[16px] sm:text-[18px] text-white/80 leading-[28px]">
-            Campix provides role-based experiences that help every member of your educational community work, communicate, and stay connected more effectively.
-          </p>
         </div>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-[27px] gap-y-[23px] max-w-[1200px] mx-auto">
@@ -378,9 +375,6 @@ function HighlightsSection() {
             <h2 className="text-[30px] leading-[39px] font-bold text-white tracking-[-0.5px] max-w-[500px]">
               Everything Your Institution Needs. One Powerful Platform.
             </h2>
-            <p className="mt-5 text-[16px] leading-[28px] text-white/90 max-w-[410px]">
-              Campix provides a comprehensive suite of tools designed to streamline educational management, empowering administrators and educators to focus on what matters most.
-            </p>
             <ul className="mt-7 space-y-4">
               {["Multiple Modules", "Role-Based Access", "Scalable & Flexible"].map((t) => (
                 <li key={t} className="flex items-center gap-3 text-[16px] text-white">
@@ -425,9 +419,6 @@ function CtaBanner() {
         <div className="max-w-[1216px] mx-auto min-h-[275px] rounded-[12px] bg-[#FFCA54] px-8 sm:px-12 flex flex-col md:flex-row items-center justify-between gap-8 py-10">
           <div className="text-center md:text-left">
             <h2 className="text-[28px] sm:text-[32px] leading-[40px] font-bold tracking-[-0.5px] text-black">Ready to transform your institution?</h2>
-            <p className="mt-2 text-[16px] sm:text-[18px] font-medium text-black/90">
-              Join thousands of educators streamlining their daily operations with Campix.
-            </p>
           </div>
           <Link
             href="/contact#contact-form"
@@ -487,9 +478,6 @@ export default function CampixLandingPage() {
               <h2 className="text-2xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-[0.14px] leading-[40px] mb-4">
                 A Smarter Way to Manage Your Institution
               </h2>
-              <p className="text-[16px] sm:text-[18px] text-white/80 font-normal leading-[28px] mb-10">
-                Campix is a comprehensive educational management platform designed to simplify everyday institutional operations, connect every stakeholder, and provide better visibility across your organization.
-              </p>
 
               {/* 2x2 Feature List */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 w-full">
@@ -620,9 +608,6 @@ export default function CampixLandingPage() {
             <h2 className="text-2xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-[-0.64px] leading-[40px] mb-4">
               Everything Your Institution Needs. All in One Place.
             </h2>
-            <p className="text-[16px] sm:text-[18px] text-white/80 font-normal leading-[28px]">
-              From student management and academics to administration and analytics, Campix brings essential institutional functions together through one connected platform.
-            </p>
           </div>
 
           {/* Carousel Track — Contained within page layout container */}
@@ -692,9 +677,6 @@ export default function CampixLandingPage() {
               <h2 className="text-2xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-[-0.64px] leading-[40px] mb-4">
                 Empower Better Learning Management
               </h2>
-              <p className="text-[16px] sm:text-[18px] text-white/80 font-normal leading-[28px] mb-8">
-                Bring academic activities, courses, classes, learning resources, and student progress together in one organized platform.
-              </p>
 
               {/* 4 Feature Items (2x2 Grid) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 w-full mb-10">
@@ -743,7 +725,7 @@ export default function CampixLandingPage() {
                   fill
                   className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
                 />
-                <div className="absolute top-3 right-3 bg-black/80 px-2.5 py-1 rounded-full border border-white/20 text-[11px] font-semibold text-[#FFCA54] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-3 right-3 bg-black/80 px-2.5 py-1 rounded-full border border-white/20 text-xs font-semibold text-[#FFCA54] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Maximize2 className="w-3 h-3" /> Click to Zoom
                 </div>
               </motion.div>
@@ -776,7 +758,7 @@ export default function CampixLandingPage() {
                   fill
                   className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
                 />
-                <div className="absolute top-3 right-3 bg-black/80 px-2.5 py-1 rounded-full border border-white/20 text-[11px] font-semibold text-[#FFCA54] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-3 right-3 bg-black/80 px-2.5 py-1 rounded-full border border-white/20 text-xs font-semibold text-[#FFCA54] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                   <Maximize2 className="w-3 h-3" /> Click to Zoom
                 </div>
               </motion.div>
@@ -790,9 +772,6 @@ export default function CampixLandingPage() {
               <h2 className="text-2xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-[-0.64px] leading-[40px] mb-4">
                 Simplify Every Administrative Process
               </h2>
-              <p className="text-[16px] sm:text-[18px] text-white/80 font-normal leading-[28px] mb-8">
-                Centralize your institution&apos;s essential operations and streamline administrative workflows for greater efficiency and visibility.
-              </p>
 
               {/* Checklist */}
               <div className="space-y-4 w-full mb-10">
@@ -845,9 +824,6 @@ export default function CampixLandingPage() {
             <h2 className="text-2xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-[-0.64px] leading-[40px] mb-4">
               Manage. Connect. Analyze. Grow.
             </h2>
-            <p className="text-[16px] sm:text-[18px] text-white/80 font-normal leading-[28px]">
-              Bring your institution, people, and information together through a simple and connected platform.
-            </p>
           </div>
         </div>
 
@@ -866,7 +842,7 @@ export default function CampixLandingPage() {
               >
                 <span className="text-[13px] font-bold text-[#FFCA54] mb-0.5">{m.step}</span>
                 <h4 className="text-[18px] sm:text-[20px] font-bold text-white mb-1 leading-tight">{m.title}</h4>
-                <p className="text-[11px] sm:text-[12px] text-zinc-400 leading-snug line-clamp-2">{m.desc}</p>
+                <p className="text-xs sm:text-[12px] text-zinc-400 leading-snug line-clamp-2">{m.desc}</p>
               </div>
             ))}
           </div>
@@ -885,7 +861,7 @@ export default function CampixLandingPage() {
             <div className="absolute left-[5%] top-[12%] z-10 pointer-events-none">
               <div className="flex flex-col items-center">
                 {/* Sign board */}
-                <div className="bg-white/90 text-black text-[10px] font-bold px-2.5 py-1 rounded flex items-center gap-1 shadow-md">
+                <div className="bg-white/90 text-black text-xs font-bold px-2.5 py-1 rounded flex items-center gap-1 shadow-md">
                   <span>→</span>
                   <span>SCHOOL</span>
                 </div>

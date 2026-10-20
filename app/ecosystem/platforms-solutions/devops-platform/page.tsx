@@ -158,7 +158,7 @@ export default function DevOpsPlatformPage() {
             {/* Top Badge */}
             <Reveal>
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-zinc-900/50 border border-zinc-800 mb-12 shadow-lg">
-                <span className="px-2 py-1 text-[9px] font-bold uppercase tracking-widest text-rose-400 bg-rose-400/10 rounded">Unified</span>
+                <span className="px-2 py-1 text-xs font-bold uppercase tracking-widest text-rose-400 bg-rose-400/10 rounded">Unified</span>
                 <span className="text-xs font-medium text-zinc-300">Empower your developers with our portal <ChevronRight className="inline w-3 h-3 text-zinc-500" /></span>
               </div>
             </Reveal>
@@ -186,9 +186,6 @@ export default function DevOpsPlatformPage() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
                 Self-Service <br className="md:hidden" /> Portal
               </h2>
-              <p className="max-w-2xl mx-auto text-zinc-400 text-lg md:text-xl leading-relaxed mb-10">
-                Devopstrio empowers 5,000+ engineering teams to <span className="text-rose-400 font-semibold">reduce cognitive load</span>, deploy <span className="text-rose-400 font-semibold">repository templates</span>, and configure environments — <span className="text-rose-400 font-semibold">without manual tickets</span>.
-              </p>
 
               <Link href="/contact#contact-form" className="inline-flex items-center justify-center px-8 py-4 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-lg transition-colors shadow-[0_0_20px_rgba(52,211,153,0.2)]">
                 Request a demo
@@ -263,7 +260,7 @@ export default function DevOpsPlatformPage() {
           {/* Bottom Ticker */}
           <Reveal delay={0.4}>
             <div className="mt-32 border-t border-zinc-900/50 pt-12 pb-6">
-              <p className="text-center text-[10px] font-bold tracking-widest text-zinc-600 uppercase mb-8">Powering the World's Best Engineering Teams</p>
+              <p className="text-center text-xs font-bold tracking-widest text-zinc-600 uppercase mb-8">Powering the World's Best Engineering Teams</p>
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700">
                 <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Globe className="w-6 h-6" /> Webflow</span>
                 <span className="text-lg md:text-xl font-bold text-zinc-300 flex items-center gap-2"><Terminal className="w-6 h-6" /> Discord</span>
@@ -289,13 +286,10 @@ export default function DevOpsPlatformPage() {
 
           <div className="text-center max-w-3xl mx-auto mb-20">
             <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PIPELINE RUNNERS</span>
+              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PIPELINE RUNNERS</span>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
                 CI/CD <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-rose-500">Pipelines</span>
               </h2>
-              <p className="text-zinc-400 text-lg leading-relaxed">
-                Automate your entire delivery lifecycle. From code commit to production deployment, our CI/CD factory ensures zero-downtime releases and rigorous quality gates.
-              </p>
             </Reveal>
           </div>
 
@@ -324,8 +318,8 @@ export default function DevOpsPlatformPage() {
                           <div className="w-10 h-10 mx-auto bg-rose-500/10 rounded-full flex items-center justify-center mb-3 text-rose-400">
                             <node.icon className="w-5 h-5" />
                           </div>
-                          <h4 className="text-sm font-bold text-white mb-1">{node.title}</h4>
-                          <p className="text-[10px] text-zinc-400 uppercase tracking-wider">{node.desc}</p>
+                          <h4 className="text-base md:text-lg font-bold text-white mb-1">{node.title}</h4>
+                          <p className="text-xs text-zinc-400 uppercase tracking-wider">{node.desc}</p>
                         </div>
                         {/* Arrow to next */}
                         {i < 3 && (
@@ -362,8 +356,8 @@ export default function DevOpsPlatformPage() {
                           <div className="w-10 h-10 mx-auto bg-rose-500/10 rounded-full flex items-center justify-center mb-3 text-rose-400">
                             <node.icon className="w-5 h-5" />
                           </div>
-                          <h4 className="text-sm font-bold text-white mb-1">{node.title}</h4>
-                          <p className="text-[10px] text-zinc-400 uppercase tracking-wider">{node.desc}</p>
+                          <h4 className="text-base md:text-lg font-bold text-white mb-1">{node.title}</h4>
+                          <p className="text-xs text-zinc-400 uppercase tracking-wider">{node.desc}</p>
                         </div>
                         {i < 3 && (
                           <div className="absolute top-1/2 -right-10 -translate-y-1/2 text-rose-500/50 hidden md:block">
@@ -382,7 +376,7 @@ export default function DevOpsPlatformPage() {
           {/* Supported Tools / Original Features */}
           <Reveal delay={0.8}>
             <div className="mt-20 pt-10 border-t border-zinc-900/50">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-500 mb-6 block text-center">Supported Integrations & Capabilities</span>
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-zinc-500 mb-6 block text-center">Supported Integrations & Capabilities</span>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {cicdFeatures.map((feat, idx) => (
                   <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-zinc-950/50 border border-zinc-900 hover:border-zinc-700 transition-colors">
@@ -474,11 +468,8 @@ export default function DevOpsPlatformPage() {
 
           <div className="text-center max-w-3xl mx-auto mb-20">
             <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM ECOSYSTEM</span>
+              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM ECOSYSTEM</span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Enterprise DevOps Platform</h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                Unify developer tools, automate delivery pipelines, provision secure cloud nodes, and monitor services telemetry inside one powerful platform.
-              </p>
             </Reveal>
           </div>
 
@@ -571,9 +562,6 @@ export default function DevOpsPlatformPage() {
           {/* Header */}
           <Reveal className="mb-20 text-center flex flex-col items-center">
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold text-white mb-6 tracking-tight">Unified Observability Orchestration</h2>
-            <p className="text-zinc-400 text-lg max-w-3xl leading-relaxed">
-              Aggregate metrics, traces, and logs from diverse monitoring stacks into a single pane of glass to rapidly identify, debug, and resolve performance bottlenecks across your entire infrastructure.
-            </p>
           </Reveal>
 
           {/* Flow Diagram */}
@@ -679,11 +667,8 @@ export default function DevOpsPlatformPage() {
 
             <div className="lg:col-span-5 relative z-20">
               <Reveal>
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">GOVERNANCE & SEC</span>
+                <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">GOVERNANCE & SEC</span>
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Security & Compliance</h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  Inject policy verification templates, manage configuration values inside vault boundaries, and audit pipeline steps automatically across the entire software supply chain.
-                </p>
 
                 <div className="mt-10 flex items-center gap-4">
                   <div className="flex -space-x-3">
@@ -728,7 +713,7 @@ export default function DevOpsPlatformPage() {
 
                         {/* Hidden Pill - slides up and fades in on hover */}
                         <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-12 group-hover:opacity-100 transition-all duration-500 ease-in-out mt-3">
-                          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-rose-500/30 bg-rose-500/10 text-rose-500 text-[10px] font-mono tracking-widest uppercase shadow-sm">
+                          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-rose-500/30 bg-rose-500/10 text-rose-500 text-xs font-mono tracking-widest uppercase shadow-sm">
                             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(225,29,72,0.8)]" />
                             Active Policy
                           </span>
@@ -752,9 +737,8 @@ export default function DevOpsPlatformPage() {
 
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
           <Reveal className="mb-24 text-center flex flex-col items-center">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ARCHITECTURE BLUEPRINT</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ARCHITECTURE BLUEPRINT</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Platform Architecture</h2>
-            <p className="text-zinc-400 text-lg max-w-2xl">Discover how code transforms into highly available cloud infrastructure through our seamless five-stage automated pipeline.</p>
           </Reveal>
 
           <div className="relative w-full max-w-5xl mx-auto py-8 px-4 md:px-0">
@@ -772,13 +756,13 @@ export default function DevOpsPlatformPage() {
                   </div>
                   {/* Content - Left Side */}
                   <div className="w-full md:w-1/2 pl-24 md:pl-0 md:pr-16 flex flex-col md:items-end text-left md:text-right pt-1 md:pt-0">
-                    <span className="text-[10px] font-bold tracking-widest text-rose-500 uppercase mb-2">Stage 01</span>
+                    <span className="text-xs font-bold tracking-widest text-rose-500 uppercase mb-2">Stage 01</span>
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Developers & Engineering</h3>
                     <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Trigger code push, system configuration requests, and infrastructure changes via standard Git workflows without ever leaving the IDE.</p>
                   </div>
                   {/* Extra - Right Side */}
                   <div className="hidden md:flex w-1/2 pl-16 items-center">
-                    <div className="px-5 py-4 rounded-xl bg-zinc-950/80 border border-zinc-800 font-mono text-[11px] text-zinc-300 shadow-xl group-hover:border-rose-500/30 transition-colors">
+                    <div className="px-5 py-4 rounded-xl bg-zinc-950/80 border border-zinc-800 font-mono text-xs text-zinc-300 shadow-xl group-hover:border-rose-500/30 transition-colors">
                       <span className="text-rose-400">~/project</span>$ git commit -m "feat: setup"
                     </div>
                   </div>
@@ -792,7 +776,7 @@ export default function DevOpsPlatformPage() {
                     <Layout className="w-6 h-6 md:w-7 md:h-7 text-rose-400" />
                   </div>
                   <div className="w-full md:w-1/2 pl-24 md:pl-16 flex flex-col items-start text-left pt-1 md:pt-0">
-                    <span className="text-[10px] font-bold tracking-widest text-rose-400 uppercase mb-2">Stage 02</span>
+                    <span className="text-xs font-bold tracking-widest text-rose-400 uppercase mb-2">Stage 02</span>
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Self-Service Portal</h3>
                     <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Discover templates, register new microservices, and manage ownership through a unified UI catalog powered by Backstage architecture.</p>
                   </div>
@@ -813,7 +797,7 @@ export default function DevOpsPlatformPage() {
                     <Workflow className="w-6 h-6 md:w-7 md:h-7 text-rose-500" />
                   </div>
                   <div className="w-full md:w-1/2 pl-24 md:pl-0 md:pr-16 flex flex-col md:items-end text-left md:text-right pt-1 md:pt-0">
-                    <span className="text-[10px] font-bold tracking-widest text-rose-500 uppercase mb-2">Stage 03</span>
+                    <span className="text-xs font-bold tracking-widest text-rose-500 uppercase mb-2">Stage 03</span>
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-3">CI/CD Factory</h3>
                     <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Automated vulnerability scanning, syntax linting, container image building, and test execution triggered automatically on every commit.</p>
                   </div>
@@ -833,13 +817,13 @@ export default function DevOpsPlatformPage() {
                     <Box className="w-6 h-6 md:w-7 md:h-7 text-rose-400" />
                   </div>
                   <div className="w-full md:w-1/2 pl-24 md:pl-16 flex flex-col items-start text-left pt-1 md:pt-0">
-                    <span className="text-[10px] font-bold tracking-widest text-rose-400 uppercase mb-2">Stage 04</span>
+                    <span className="text-xs font-bold tracking-widest text-rose-400 uppercase mb-2">Stage 04</span>
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-3">GitOps K8s Engine</h3>
                     <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Declarative state synchronization loop via ArgoCD, ensuring zero configuration drift across all application clusters continuously.</p>
                   </div>
                   <div className="hidden md:flex w-1/2 pr-16 justify-end items-center">
                     <div className="flex flex-col gap-2.5 w-48 bg-zinc-950/80 p-4 rounded-xl border border-zinc-800 group-hover:border-rose-500/30 transition-colors">
-                      <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500 mb-1"><span>CLUSTER-01</span><span className="text-rose-500">SYNCED</span></div>
+                      <div className="flex items-center justify-between text-xs font-mono text-zinc-500 mb-1"><span>CLUSTER-01</span><span className="text-rose-500">SYNCED</span></div>
                       <div className="h-1.5 w-full bg-rose-500/10 rounded-full overflow-hidden"><div className="h-full bg-rose-500 w-full opacity-70 group-hover:animate-pulse" /></div>
                       <div className="h-1.5 w-full bg-rose-500/10 rounded-full overflow-hidden"><div className="h-full bg-rose-500 w-[80%] opacity-70 group-hover:animate-pulse" /></div>
                       <div className="h-1.5 w-full bg-rose-500/10 rounded-full overflow-hidden"><div className="h-full bg-rose-500 w-[95%] opacity-70 group-hover:animate-pulse" /></div>
@@ -855,7 +839,7 @@ export default function DevOpsPlatformPage() {
                     <Cloud className="w-6 h-6 md:w-7 md:h-7 text-zinc-300" />
                   </div>
                   <div className="w-full md:w-1/2 pl-24 md:pl-0 md:pr-16 flex flex-col md:items-end text-left md:text-right pt-1 md:pt-0">
-                    <span className="text-[10px] font-bold tracking-widest text-zinc-400 uppercase mb-2">Stage 05</span>
+                    <span className="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-2">Stage 05</span>
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Cloud Infrastructure</h3>
                     <p className="text-zinc-400 text-sm md:text-base leading-relaxed">Automatically provisioned resource grids, managed databases, and highly available networks deployed across multi-cloud environments.</p>
                   </div>
@@ -879,16 +863,13 @@ export default function DevOpsPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-3xl mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
+              <span className="text-xs font-medium tracking-[0.2em] uppercase text-zinc-400">
                 FAQ
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
               Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
             </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-              Everything you need to know about our internal developer platforms, CI/CD automated setups, and GitOps sync engines. Can&apos;t find what you&apos;re looking for? Reach out to our team — we respond to every question personally.
-            </p>
           </Reveal>
 
           {/* Accordion FAQ */}

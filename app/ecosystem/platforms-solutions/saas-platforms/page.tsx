@@ -298,7 +298,7 @@ export default function SaaSPlatformsPage() {
       >
         {/* Infinite Scroll Tech Marquee */}
         <div className="w-screen relative left-1/2 -translate-x-1/2 mt-16 pt-8 border-t border-zinc-800/50 overflow-hidden opacity-75 hover:opacity-100 transition-opacity duration-500">
-          <p className="text-center text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold mb-8">
+          <p className="text-center text-xs tracking-[0.2em] uppercase text-zinc-500 font-bold mb-8">
             Powered by industry-leading cloud architecture
           </p>
 
@@ -359,15 +359,12 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-12 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-8">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
               SYSTEM ORCHESTRATION
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
               Product Ecosystem Diagram
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Our applications are built on a cohesive cloud substrate, allowing cross-system triggers and secure communication pathways.
-            </p>
           </Reveal>
 
           {/* Circular Orbit Node Diagram */}
@@ -394,15 +391,12 @@ export default function SaaSPlatformsPage() {
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
 
           <div className="max-w-3xl mb-12">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
               RECOMMENDED SAAS PORTFOLIO
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
               Enterprise SaaS Platforms Built for Modern Businesses
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-medium">
-              Explore our comprehensive portfolio. Select a platform below to discover key capabilities, live mirrors, and deployment parameters.
-            </p>
           </div>
 
           {/* Main Showcase Card */}
@@ -495,7 +489,7 @@ export default function SaaSPlatformsPage() {
                       loading="lazy" />
                     </div>
                     {/* Optional text label for clarity */}
-                    <span className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${isActive ? "text-white" : "text-zinc-600"}`}>
+                    <span className={`text-xs font-bold uppercase tracking-widest transition-colors ${isActive ? "text-white" : "text-zinc-600"}`}>
                       {p.name}
                     </span>
                   </button>
@@ -517,9 +511,6 @@ export default function SaaSPlatformsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
                 A season of shipped work.
               </h2>
-              <p className="text-zinc-400 text-base md:text-lg font-medium">
-                New identities, platforms, and launch sites — built with the in-house teams who run them now across diverse industries.
-              </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <button onClick={() => document.getElementById('industry-scroll')?.scrollBy({ left: -424, behavior: 'smooth' })} className="w-12 h-12 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors">
@@ -572,7 +563,7 @@ export default function SaaSPlatformsPage() {
                     {ind.logo ? (
                       <Image src={ind.logo} alt={ind.badge} width={100} height={28} className="h-5 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity" unoptimized />
                     ) : (
-                      <span className="text-[10px] font-bold text-white tracking-widest uppercase">{ind.badge}</span>
+                      <span className="text-xs font-bold text-white tracking-widest uppercase">{ind.badge}</span>
                     )}
                   </div>
                 </div>
@@ -596,7 +587,7 @@ export default function SaaSPlatformsPage() {
             <div className="flex-1 h-[1px] bg-zinc-800 relative">
               <div className="absolute left-0 top-0 h-full w-[22%]" style={{ backgroundImage: 'linear-gradient(90deg, #fff, #555)' }} />
             </div>
-            <div className="text-[10px] font-mono text-zinc-400 font-bold tracking-widest uppercase">02 / 09</div>
+            <div className="text-xs font-mono text-zinc-400 font-bold tracking-widest uppercase">02 / 09</div>
           </div>
 
         </div>
@@ -606,15 +597,12 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-12 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="max-w-3xl mb-8">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
               PLATFORM INDEX
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
               Compare Our Solutions
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-bold">
-              A quick guide to finding the right workspace or transactional system.
-            </p>
           </div>
 
           <FeaturesAccordion
@@ -627,7 +615,7 @@ export default function SaaSPlatformsPage() {
                   <div className="flex flex-col gap-3 mt-2">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <span className="block text-[10px] uppercase tracking-wider text-zinc-600 mb-1">Target Audience</span>
+                        <span className="block text-xs uppercase tracking-wider text-zinc-600 mb-1">Target Audience</span>
                         <span className="text-zinc-300 font-semibold">{product.category}</span>
                       </div>
                     </div>
@@ -654,21 +642,18 @@ export default function SaaSPlatformsPage() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
               Why Organizations Choose Devopstrio.
             </h2>
-            <p className="text-zinc-400 text-lg md:text-xl font-medium">
-              Hard engineering and measurable values behind our deployment models.
-            </p>
           </div>
 
           {/* Aesthetic Filter Bar (Static) */}
           <div className="flex flex-wrap items-center justify-between border-t border-b border-zinc-900/80 py-4 mb-6 gap-4">
             <div className="flex items-center gap-2 md:gap-4 overflow-x-auto hide-scrollbar [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              <span className="text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase mr-4">Filter</span>
+              <span className="text-xs font-bold tracking-[0.2em] text-zinc-500 uppercase mr-4">Filter</span>
               <button className="px-5 py-2 rounded-full bg-white text-black text-xs font-bold shrink-0">All</button>
               <button className="px-5 py-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 text-xs font-bold transition-colors shrink-0">Architecture</button>
               <button className="px-5 py-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 text-xs font-bold transition-colors shrink-0">Security</button>
               <button className="px-5 py-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 text-xs font-bold transition-colors shrink-0">Automation</button>
             </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase shrink-0">8 Pillars</span>
+            <span className="text-xs font-bold tracking-[0.2em] text-zinc-500 uppercase shrink-0">8 Pillars</span>
           </div>
 
           {/* Horizontal Scrolling Cards */}
@@ -706,10 +691,10 @@ export default function SaaSPlatformsPage() {
 
                     {/* Pill Badges */}
                     <div className="absolute bottom-4 left-4 flex gap-2">
-                      <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[9px] font-bold text-white uppercase tracking-widest border border-white/10">
+                      <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold text-white uppercase tracking-widest border border-white/10">
                         {category}
                       </span>
-                      <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[9px] font-bold text-white uppercase tracking-widest border border-white/10">
+                      <span className="px-3 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold text-white uppercase tracking-widest border border-white/10">
                         {tag}
                       </span>
                     </div>
@@ -725,7 +710,7 @@ export default function SaaSPlatformsPage() {
                       <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">{prop.title}</h3>
                       <p className="text-sm text-zinc-400 font-medium leading-relaxed line-clamp-2">{prop.desc}</p>
                     </div>
-                    <div className="text-[10px] font-mono text-zinc-600 mt-1.5 tracking-widest">0{idx + 1}</div>
+                    <div className="text-xs font-mono text-zinc-600 mt-1.5 tracking-widest">0{idx + 1}</div>
                   </div>
                 </div>
               );
@@ -761,7 +746,7 @@ export default function SaaSPlatformsPage() {
               </div>
 
               <div className="mt-16 pt-8 border-t border-zinc-900/60">
-                <div className="text-[10px] font-mono tracking-widest text-zinc-600 uppercase mb-4 font-bold">In Good Company</div>
+                <div className="text-xs font-mono tracking-widest text-zinc-600 uppercase mb-4 font-bold">In Good Company</div>
                 <div className="flex items-center gap-6 text-sm font-semibold text-zinc-400">
                   <span className="hover:text-white transition-colors cursor-pointer">Northstar</span>
                   <span className="hover:text-white transition-colors cursor-pointer">Relay</span>
@@ -900,15 +885,12 @@ export default function SaaSPlatformsPage() {
       <section id="lead-form" className="w-full py-12 bg-[#030303]">
         <div className="max-w-4xl mx-auto px-12 xl:px-8">
           <div className="text-center mb-8">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
               CONNECT WITH US
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
               Talk to Our Product Team
             </h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold max-w-md mx-auto leading-relaxed">
-              Schedule a live demo, request a trial workspace, or assess custom cloud deployments.
-            </p>
           </div>
 
           <div className="bg-zinc-950 border border-zinc-900 p-8 md:p-12 rounded-3xl relative overflow-hidden">
@@ -928,7 +910,7 @@ export default function SaaSPlatformsPage() {
               <form onSubmit={handleFormSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Your Name</label>
+                    <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Your Name</label>
                     <input
                       type="text"
                       required
@@ -939,7 +921,7 @@ export default function SaaSPlatformsPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Email Address</label>
+                    <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Email Address</label>
                     <input
                       type="email"
                       required
@@ -953,7 +935,7 @@ export default function SaaSPlatformsPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Organization Name</label>
+                    <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Organization Name</label>
                     <input
                       type="text"
                       required
@@ -964,7 +946,7 @@ export default function SaaSPlatformsPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Platform of Interest</label>
+                    <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Platform of Interest</label>
                     <select
                       value={formState.platform}
                       onChange={(e) => setFormState({ ...formState, platform: e.target.value })}
@@ -984,7 +966,7 @@ export default function SaaSPlatformsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Your Message / Requirements</label>
+                  <label className="block text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2 font-bold">Your Message / Requirements</label>
                   <textarea
                     rows={4}
                     required

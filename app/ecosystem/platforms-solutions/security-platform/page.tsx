@@ -33,13 +33,10 @@ const SecurityOverview = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM OVERVIEW</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM OVERVIEW</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               One Platform for Complete Enterprise Protection
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
-              Organizations now manage users, cloud infrastructure, endpoints, applications, APIs, and sensitive data across multiple environments. Our Security Platform brings everything together into a single, intelligent security layer that continuously protects, monitors, and responds to threats.
-            </p>
           </div>
         </Reveal>
 
@@ -84,7 +81,7 @@ const SecurityChallenges = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">THE RISK LANDSCAPE</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">THE RISK LANDSCAPE</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Modern Security Challenges</h2>
           </div>
         </Reveal>
@@ -97,7 +94,7 @@ const SecurityChallenges = () => {
                   <AlertTriangle className="w-4 h-4 text-rose-600 flex-shrink-0" />
                   <h3 className="text-sm md:text-base font-bold text-zinc-100 tracking-tight leading-tight">{item.title}</h3>
                 </div>
-                <p className="text-xs text-zinc-400 leading-relaxed font-bold">{item.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -127,7 +124,7 @@ const SecurityCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">CORE CAPABILITIES</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">CORE CAPABILITIES</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Enterprise Security Capabilities</h2>
           </div>
         </Reveal>
@@ -142,7 +139,7 @@ const SecurityCapabilities = () => {
                 <h3 className="text-base font-bold text-white mb-2 tracking-tight group-hover:text-rose-400 transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-bold">
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                   {item.desc}
                 </p>
               </div>
@@ -176,13 +173,10 @@ const SecurityArchitecture = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ARCHITECTURE</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ARCHITECTURE</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Enterprise Security Reference Architecture
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
-              Traffic traverses identity layer firewalls, policy gateways, and machine learning engines before accessing isolated resource layers.
-            </p>
           </div>
         </Reveal>
 
@@ -209,7 +203,7 @@ const SecurityArchitecture = () => {
                 {/* Right Side / Mobile Layout */}
                 <div className={`w-full md:w-[45%] pl-8 md:pl-8 text-left ${isEven ? "md:opacity-0 md:pointer-events-none" : ""}`}>
                   <div className="md:hidden">
-                    <h4 className="text-[10px] font-mono text-zinc-550 uppercase tracking-wider">{`Layer 0${idx + 1}`}</h4>
+                    <h4 className="text-xs font-mono text-zinc-550 uppercase tracking-wider">{`Layer 0${idx + 1}`}</h4>
                     <h3 className="text-base font-bold text-white mb-1 tracking-tight">{node.title}</h3>
                     <span className="text-xs text-rose-500 font-semibold">{node.status}</span>
                   </div>
@@ -248,7 +242,7 @@ const SecurityModules = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Core Security Modules</h2>
           </div>
         </Reveal>
@@ -261,9 +255,9 @@ const SecurityModules = () => {
                   <div className="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-5">
                     <item.icon className="w-4 h-4 text-rose-500" />
                   </div>
-                  <h3 className="text-sm md:text-base font-bold text-white mb-2 tracking-tight">{item.title}</h3>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 tracking-tight">{item.title}</h3>
                 </div>
-                <p className="text-xs text-zinc-400 leading-relaxed font-bold">{item.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -305,7 +299,7 @@ const ThreatWorkflow = () => {
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
               PLAYBOOK SEC
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
@@ -378,7 +372,7 @@ const SecurityFeatures = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURES</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURES</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Platform Features</h2>
           </div>
         </Reveal>
@@ -388,7 +382,7 @@ const SecurityFeatures = () => {
             <Reveal key={idx} delay={idx * 0.05}>
               <div className="p-6 bg-zinc-950/20 border border-zinc-900 rounded-xl hover:border-zinc-800 transition-all duration-300 min-h-[140px] flex flex-col justify-between">
                 <h3 className="text-base font-bold text-zinc-100 tracking-tight mb-2">{item.title}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-bold">{item.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -418,7 +412,7 @@ const ComplianceSection = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">AUDIT READY</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">AUDIT READY</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Built for Regulatory Compliance</h2>
           </div>
         </Reveal>
@@ -430,15 +424,15 @@ const ComplianceSection = () => {
                 <div>
                   <div className="flex justify-between items-center mb-3">
                     <h3 className="text-lg font-bold text-white tracking-tight">{item.title}</h3>
-                    <span className="text-[9px] font-mono text-rose-500 bg-rose-500/10 px-2 py-0.5 rounded-full border border-rose-500/10">
+                    <span className="text-xs font-mono text-rose-500 bg-rose-500/10 px-2 py-0.5 rounded-full border border-rose-500/10">
                       PASSED
                     </span>
                   </div>
-                  <span className="text-[10px] font-semibold text-zinc-550 uppercase tracking-widest block mb-4">
+                  <span className="text-xs font-semibold text-zinc-550 uppercase tracking-widest block mb-4">
                     {item.badge}
                   </span>
                 </div>
-                <p className="text-xs text-zinc-400 leading-relaxed font-bold">{item.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -476,7 +470,7 @@ const TechnologyStack = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">INTEGRATIONS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">INTEGRATIONS</span>
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-6">Supported Technologies</h2>
           </div>
         </Reveal>
@@ -492,7 +486,7 @@ const TechnologyStack = () => {
                     <ShieldCheck className="w-4 h-4 text-rose-500" />
                   </div>
                 )}
-                <span className="text-[10px] font-bold text-zinc-400 group-hover:text-white transition-colors">
+                <span className="text-xs font-bold text-zinc-400 group-hover:text-white transition-colors">
                   {item.name}
                 </span>
               </div>
@@ -560,15 +554,12 @@ const AISecurity = () => {
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
               MACHINE LEARNING
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
               AI-Driven Threat Intelligence
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold mt-3">
-              Artificial Intelligence continuously analyzes security events to identify suspicious behavior, detect anomalies, prioritize risks, and recommend automated responses before threats impact business operations.
-            </p>
           </Reveal>
         </div>
 
@@ -611,7 +602,7 @@ const AISecurity = () => {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed max-w-[210px]">
+                      <p className="text-xs text-zinc-400 font-semibold leading-relaxed max-w-[210px]">
                         {p.desc}
                       </p>
                     </div>
@@ -650,7 +641,7 @@ const BusinessOutcomes = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">IMPACT SUMMARY</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">IMPACT SUMMARY</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6">Business Outcomes</h2>
           </div>
         </Reveal>
@@ -663,7 +654,7 @@ const BusinessOutcomes = () => {
                   <div className="text-3xl font-bold text-white mb-2">{item.value}</div>
                   <h3 className="text-sm md:text-base font-bold text-rose-500 mb-2 tracking-tight">{item.title}</h3>
                 </div>
-                <p className="text-xs text-zinc-400 leading-relaxed font-bold">{item.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -692,13 +683,10 @@ const IndustryUseCases = () => {
         {/* Header */}
         <Reveal>
           <div className="max-w-3xl mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-4">
               Comprehensive security built to protect your business
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-              Explore integrated security solutions designed to protect specific industry regulatory frameworks and compliance standards.
-            </p>
           </div>
         </Reveal>
 
@@ -717,14 +705,14 @@ const IndustryUseCases = () => {
                 </div>
 
                 <div className="relative z-10 flex flex-col h-full justify-between items-start">
-                  <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-rose-500 bg-rose-500/10 px-3.5 py-1 rounded-full mb-8">
+                  <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 bg-rose-500/10 px-3.5 py-1 rounded-full mb-8">
                     TAILORED POLICIES
                   </span>
                   <div>
                     <h3 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">
                       Devopstrio Security <br />delivers layered protection
                     </h3>
-                    <p className="text-xs text-zinc-450 leading-relaxed font-bold mb-6 max-w-sm">
+                    <p className="text-xs text-zinc-400 leading-relaxed font-bold mb-6 max-w-sm">
                       Deploy custom playbooks and zero trust compliance profiles tailored for unique sector environments.
                     </p>
                     <Link
@@ -752,10 +740,10 @@ const IndustryUseCases = () => {
                         <div className="w-10 h-10 rounded-2xl bg-rose-600/10 text-rose-500 flex items-center justify-center mb-5">
                           <Icon size={18} />
                         </div>
-                        <h4 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                        <h4 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
                           {item.title}
                         </h4>
-                        <p className="text-xs text-zinc-400 leading-relaxed font-bold">
+                        <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -798,7 +786,7 @@ const WhyChoosePlatform = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">WHY DEVOPSTRIO</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">WHY DEVOPSTRIO</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6">Why Devopstrio Security Platform</h2>
           </div>
         </Reveal>
@@ -808,7 +796,7 @@ const WhyChoosePlatform = () => {
             <Reveal key={idx} delay={idx * 0.05}>
               <div className="p-6 bg-zinc-950/20 border border-zinc-900 rounded-2xl flex flex-col justify-between min-h-[150px] hover:border-zinc-800 transition-all duration-300">
                 <h3 className="text-base font-bold text-white mb-2 tracking-tight">{item.title}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-bold">{item.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -838,7 +826,7 @@ const RelatedSolutions = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6">Related Solutions</h2>
           </div>
         </Reveal>

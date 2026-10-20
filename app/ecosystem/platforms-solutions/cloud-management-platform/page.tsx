@@ -294,7 +294,7 @@ const CloudPartners = () => {
     <section className="w-full py-24 bg-[#050505] border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 mb-16 text-center relative z-10">
         <Reveal>
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ECOSYSTEM</span>
+          <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ECOSYSTEM</span>
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white">
             Integrated Technologies & Trusted Partners
           </h2>
@@ -473,15 +473,12 @@ export default function CloudManagementPlatformPage() {
           {/* Centered Header */}
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
                 OPS CONTROL
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Complete visibility across <span className="text-rose-500">multi-cloud environments</span>
               </h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                Unify control nodes, monitor infrastructure status, track host limits, and secure bare-metal virtualization servers through a single unified operations platform.
-              </p>
             </div>
           </Reveal>
 
@@ -500,7 +497,7 @@ export default function CloudManagementPlatformPage() {
                   </div>
 
                   <div className="relative z-10">
-                    <span className="text-[10px] font-mono tracking-widest text-rose-500 uppercase block mb-4 font-bold">Unified Management</span>
+                    <span className="text-xs font-mono tracking-wider text-rose-500 uppercase block mb-3 font-bold">Unified Management</span>
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-snug max-w-md group-hover:-translate-y-1 transition-transform duration-500">
                       Integrate Azure, AWS, and OCI portals into a single pane of glass.
                     </h3>
@@ -529,7 +526,7 @@ export default function CloudManagementPlatformPage() {
                     <div className="absolute top-0 right-0 w-40 h-40 bg-[radial-gradient(circle_at_top_right,rgba(244,63,94,0.06),transparent_75%)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                     <div>
-                      <span className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase block mb-3 font-bold group-hover:text-rose-400 transition-colors">Hybrid Sync</span>
+                      <span className="text-xs font-mono tracking-wider text-rose-500 uppercase block mb-2 font-bold group-hover:text-rose-400 transition-colors">Hybrid Sync</span>
                       <span className="block text-4xl md:text-5xl font-mono font-bold text-white mb-2">
                         {"< 10ms"}
                       </span>
@@ -549,7 +546,7 @@ export default function CloudManagementPlatformPage() {
                     <div className="absolute bottom-0 right-0 w-48 h-48 bg-[radial-gradient(circle_at_bottom_right,rgba(225,29,72,0.08),transparent_75%)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                     <div>
-                      <span className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase block mb-3 font-bold group-hover:text-rose-400 transition-colors">Billing Umbrellas</span>
+                      <span className="text-xs font-mono tracking-wider text-rose-500 uppercase block mb-2 font-bold group-hover:text-rose-400 transition-colors">Billing Umbrellas</span>
                       <span className="block text-4xl md:text-5xl font-mono font-bold text-rose-500 mb-2">
                         100%
                       </span>
@@ -576,11 +573,8 @@ export default function CloudManagementPlatformPage() {
 
           <div className="text-center max-w-3xl mx-auto mb-20">
             <Reveal>
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">UNIFIED GOVERNANCE</span>
+              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">UNIFIED GOVERNANCE</span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Cloud Management Platform</h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                Audit global cloud spend, enforce resource tagging standards, isolate networks, and discover cost anomalies in one unified dashboard.
-              </p>
             </Reveal>
           </div>
 
@@ -669,15 +663,12 @@ export default function CloudManagementPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
                 COMPLIANCE HUB
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Governance Center
               </h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                Enforce security guidelines automatically. Restrict provisioning of unsafe instance classes and lock database enclaves to secure regions.
-              </p>
             </div>
           </Reveal>
 
@@ -692,11 +683,8 @@ export default function CloudManagementPlatformPage() {
         <div className="w-full relative z-10">
           <Reveal>
             <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 text-center max-w-3xl mb-4">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SECURITY CHECKS</span>
+              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">SECURITY CHECKS</span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Cloud Security</h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                Inspect identity assignments, audit credential setups, trace admin changes, and verify firewall parameters with zero-trust posture.
-              </p>
             </div>
           </Reveal>
 
@@ -709,7 +697,7 @@ export default function CloudManagementPlatformPage() {
       <section className="w-full py-28 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">TOPOLOGY MAP</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">TOPOLOGY MAP</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Multi-Cloud Management</h2>
           </Reveal>
 
@@ -743,15 +731,12 @@ export default function CloudManagementPlatformPage() {
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
                 CAPACITY AUDIT
               </span>
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight mb-5 text-white">
                 Cloud Analytics
               </h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                Plot database utilization records, compare cloud performance metrics, and forecast sizing requirements for seasonal scaling.
-              </p>
             </div>
           </Reveal>
 
@@ -836,16 +821,13 @@ export default function CloudManagementPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-3xl mb-16">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
+              <span className="text-xs font-medium tracking-[0.2em] uppercase text-zinc-400">
                 FAQ
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
               Questions we get <span className="text-white font-bold bg-gradient-to-r from-red-655 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
             </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-bold">
-              Everything you need to know about our cloud operations, FinOps budget tracking, and governance enforcements. Can&apos;t find what you&apos;re looking for? Reach out to our team — we respond to every question personally.
-            </p>
           </Reveal>
 
           {/* Accordion FAQ */}

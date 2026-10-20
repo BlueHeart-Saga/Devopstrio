@@ -46,7 +46,7 @@ const DataPlatformOverview = () => {
         <Reveal>
           <div className="w-full bg-zinc-950/80 border border-zinc-900 rounded-[2.5rem] p-8 md:p-12 mb-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 hover:border-zinc-800 transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
             <div className="lg:w-1/2 flex flex-col items-start text-left">
-              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block">FRONTIER TRANSFORMATION</span>
+              <span className="text-xs font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block">FRONTIER TRANSFORMATION</span>
               <h3 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 leading-snug">
                 Turn enterprise data into your core business engine
               </h3>
@@ -73,13 +73,10 @@ const DataPlatformOverview = () => {
         {/* Section Heading & Explore Button */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">GET INSIGHTS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">GET INSIGHTS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4 uppercase">
               Advance your Data Transformation
             </h2>
-            <p className="text-zinc-450 text-sm leading-relaxed font-semibold mb-8 max-w-2xl">
-              Move from data fragmentation to business impact with expert platforms and guidance.
-            </p>
             <Link
               href="/contact#contact-form"
               className="px-6 py-3 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-800 bg-zinc-900/40 text-white hover:bg-zinc-900/80 transition-all duration-300"
@@ -109,7 +106,7 @@ const DataPlatformOverview = () => {
                     <h3 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -157,13 +154,10 @@ const DataChallenges = () => {
         {/* Section Header */}
         <Reveal>
           <div className="max-w-3xl mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">DATA BOTTLENECKS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">DATA BOTTLENECKS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
               Comprehensive analytics solutions built for scale
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-              Explore integrated data engineering strategies designed to eliminate fragmentation and deliver reliable enterprise data.
-            </p>
           </div>
         </Reveal>
 
@@ -183,14 +177,14 @@ const DataChallenges = () => {
                 </div>
 
                 <div className="relative z-10 flex flex-col h-full justify-between items-start">
-                  <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-rose-500 bg-rose-500/10 px-3.5 py-1 rounded-full mb-8">
+                  <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 bg-rose-500/10 px-3.5 py-1 rounded-full mb-8">
                     DATA STRATEGY
                   </span>
                   <div>
                     <h3 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">
                       Centralize and clean fragmented data streams
                     </h3>
-                    <p className="text-xs text-zinc-450 leading-relaxed font-bold mb-6 max-w-sm">
+                    <p className="text-xs text-zinc-400 leading-relaxed font-bold mb-6 max-w-sm">
                       Save engineering overhead by replacing custom ingestion scripts and manual spreadsheets with an automated, fully governed source of truth.
                     </p>
                     <Link
@@ -218,10 +212,10 @@ const DataChallenges = () => {
                         <div className="w-10 h-10 rounded-2xl bg-rose-600/10 text-rose-500 flex items-center justify-center mb-5">
                           <Icon size={18} />
                         </div>
-                        <h4 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                        <h4 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
                           {item.title}
                         </h4>
-                        <p className="text-xs text-zinc-400 leading-relaxed font-bold">
+                        <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -265,7 +259,7 @@ const DataCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM ENGINE</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM ENGINE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Core Data Platform Capabilities</h2>
           </div>
         </Reveal>
@@ -278,8 +272,8 @@ const DataCapabilities = () => {
                   <item.icon size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm md:text-base font-bold text-white mb-2 tracking-tight">{item.title}</h3>
-                  <p className="text-xs text-zinc-455 leading-relaxed font-bold">{item.desc}</p>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">{item.desc}</p>
                 </div>
               </div>
             </Reveal>
@@ -396,15 +390,12 @@ const DataArchitecture = () => {
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
               REFERENCE ARCHITECTURE
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
               Enterprise Data Architecture
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold mt-3">
-              Our reference architecture maps data flows cleanly from system endpoints into highly governed analytics tables.
-            </p>
           </Reveal>
         </div>
 
@@ -447,7 +438,7 @@ const DataArchitecture = () => {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed max-w-[230px]">
+                      <p className="text-xs text-zinc-400 font-semibold leading-relaxed max-w-[230px]">
                         {p.desc}
                       </p>
                     </div>
@@ -488,7 +479,7 @@ const DataModules = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Core Platform Modules</h2>
           </div>
         </Reveal>
@@ -503,7 +494,7 @@ const DataModules = () => {
                   </div>
                   <h3 className="text-sm md:text-base font-bold text-white tracking-tight">{item.title}</h3>
                 </div>
-                <p className="text-xs text-zinc-450 leading-relaxed font-bold mt-4">{item.desc}</p>
+                <p className="text-xs text-zinc-400 leading-relaxed font-bold mt-4">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -538,7 +529,7 @@ const DataPipelineWorkflow = () => {
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
               PIPELINE LIFECYCLE
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
@@ -567,12 +558,12 @@ const DataPipelineWorkflow = () => {
                     </div>
 
                     {/* Step Title */}
-                    <h3 className="text-sm font-bold text-white mb-3 hover:text-rose-400 transition-colors duration-300 uppercase tracking-wider">
+                    <h3 className="text-base md:text-lg font-bold text-white mb-3 hover:text-rose-400 transition-colors duration-300 uppercase tracking-wider">
                       {step.name}
                     </h3>
 
                     {/* Step Description */}
-                    <p className="text-xs text-zinc-400 font-semibold leading-relaxed">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {step.desc}
                     </p>
                   </div>
@@ -611,7 +602,7 @@ const PlatformFeatures = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURE GRID</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURE GRID</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Complete Data Platform Features</h2>
           </div>
         </Reveal>
@@ -621,8 +612,8 @@ const PlatformFeatures = () => {
             <Reveal key={idx} delay={idx * 0.04}>
               <div className="p-6 bg-zinc-950/40 border border-zinc-900 rounded-2xl hover:border-zinc-800 hover:bg-zinc-900/10 transition-all duration-300 min-h-[160px] flex flex-col justify-between">
                 <div>
-                  <h3 className="text-sm md:text-base font-bold text-white mb-2 tracking-tight">{item.title}</h3>
-                  <p className="text-xs text-zinc-450 leading-relaxed font-bold">{item.desc}</p>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">{item.desc}</p>
                 </div>
               </div>
             </Reveal>
@@ -686,13 +677,10 @@ const DataGovernance = () => {
         {/* Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">GOVERNANCE & TRUST</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">GOVERNANCE & TRUST</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">
               Trusted Data Starts with Governance
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-              Establish rigid compliance rules, trace lineage maps, and secure enterprise databases using automated governance controls.
-            </p>
           </div>
         </Reveal>
 
@@ -768,15 +756,12 @@ const AIAnalyticsIntegration = () => {
         {/* Left Side */}
         <div className="lg:col-span-5 text-left">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
               DATA PIPELINE FLOW
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">
               Power Business Intelligence & AI
             </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-semibold">
-              The platform prepares clean, governed, and scalable datasets that support business intelligence dashboards, machine learning models, predictive analytics, and Generative AI initiatives.
-            </p>
             <Link
               href="/contact#contact-form"
               className="px-6 py-3 rounded-full text-xs font-bold tracking-wider uppercase bg-white text-black hover:bg-zinc-200 transition-all duration-300 shadow-md shadow-white/5"
@@ -810,10 +795,10 @@ const AIAnalyticsIntegration = () => {
                       style={{ background: `radial-gradient(circle at 10% 50%, ${item.glow}, transparent 55%)` }} />
 
                     <div className="relative z-10">
-                      <h4 className="text-sm font-bold text-white mb-1.5 tracking-tight group-hover:text-white transition-colors duration-300">
+                      <h4 className="text-base md:text-lg font-bold text-white mb-1.5 tracking-tight group-hover:text-white transition-colors duration-300">
                         {item.name}
                       </h4>
-                      <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed max-w-xl">
+                      <p className="text-xs text-zinc-400 font-semibold leading-relaxed max-w-xl">
                         {item.desc}
                       </p>
                     </div>
@@ -855,7 +840,7 @@ const TechnologyStack = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">INTEGRATED STACK</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">INTEGRATED STACK</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Supported Technologies</h2>
           </div>
         </Reveal>
@@ -872,7 +857,7 @@ const TechnologyStack = () => {
                   loading="lazy" />
                 </div>
                 {/* Title */}
-                <span className="text-[10px] font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
+                <span className="text-xs font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
                   {item.name}
                 </span>
               </div>
@@ -902,7 +887,7 @@ const BusinessOutcomes = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Business Outcomes</h2>
           </div>
         </Reveal>
@@ -914,8 +899,8 @@ const BusinessOutcomes = () => {
                 <div className="text-xl md:text-2xl xl:text-3xl font-bold text-rose-500 mb-3 tracking-tight">
                   {item.value}
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2 tracking-tight uppercase tracking-wider">{item.title}</h4>
-                <p className="text-[11px] text-zinc-400 leading-relaxed font-semibold max-w-[240px]">{item.desc}</p>
+                <h4 className="text-base md:text-lg font-bold text-white mb-2 tracking-tight uppercase tracking-wider">{item.title}</h4>
+                <p className="text-xs text-zinc-400 leading-relaxed font-semibold max-w-[240px]">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -946,13 +931,10 @@ const IndustryUseCases = () => {
         {/* Header */}
         <Reveal>
           <div className="max-w-3xl mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
               Tailored Sector Solutions
             </h2>
-            <p className="text-zinc-455 text-sm md:text-base leading-relaxed font-semibold">
-              Explore integrated data platform blueprints designed to protect specific industry regulatory frameworks and compliance standards.
-            </p>
           </div>
         </Reveal>
 
@@ -971,14 +953,14 @@ const IndustryUseCases = () => {
                 </div>
 
                 <div className="relative z-10 flex flex-col h-full justify-between items-start">
-                  <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-rose-500 bg-rose-500/10 px-3.5 py-1 rounded-full mb-8">
+                  <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 bg-rose-500/10 px-3.5 py-1 rounded-full mb-8">
                     TAILORED POLICIES
                   </span>
                   <div>
                     <h3 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">
                       Devopstrio Data <br />delivers trusted insights
                     </h3>
-                    <p className="text-xs text-zinc-450 leading-relaxed font-bold mb-6 max-w-sm">
+                    <p className="text-xs text-zinc-400 leading-relaxed font-bold mb-6 max-w-sm">
                       Deploy custom data integration pipelines and zero trust compliance profiles tailored for unique sector environments.
                     </p>
                     <Link
@@ -1006,10 +988,10 @@ const IndustryUseCases = () => {
                         <div className="w-10 h-10 rounded-2xl bg-rose-600/10 text-rose-500 flex items-center justify-center mb-5">
                           <Icon size={18} />
                         </div>
-                        <h4 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                        <h4 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
                           {item.title}
                         </h4>
-                        <p className="text-xs text-zinc-400 leading-relaxed font-bold">
+                        <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1128,15 +1110,12 @@ const WhyChooseDataPlatform = () => {
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
               OUR ADVANTAGE
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
               Why Choose Devopstrio Data Platform
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold mt-3">
-              We help companies bridge the gap between complex database configurations and high-impact business decisions.
-            </p>
           </Reveal>
         </div>
 
@@ -1169,7 +1148,7 @@ const WhyChooseDataPlatform = () => {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-[11px] text-zinc-400 font-semibold leading-relaxed max-w-[220px]">
+                      <p className="text-xs text-zinc-400 font-semibold leading-relaxed max-w-[220px]">
                         {p.desc}
                       </p>
                     </div>
@@ -1205,7 +1184,7 @@ const RelatedSolutions = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Related Solutions</h2>
           </div>
         </Reveal>

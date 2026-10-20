@@ -35,13 +35,10 @@ const CustomerExperienceOverview = () => {
 
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">EXCEPTIONAL EXPERIENCES</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">EXCEPTIONAL EXPERIENCES</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4 uppercase">
               Deliver Exceptional Customer Experiences Everywhere
             </h2>
-            <p className="text-zinc-450 text-sm leading-relaxed font-semibold mb-8 max-w-2xl">
-              Customers expect fast, personalized, and consistent experiences across every channel. Our Customer Experience Platform connects customer data, communication channels, AI, and business workflows into a unified ecosystem that improves satisfaction, loyalty, and long-term business growth.
-            </p>
           </div>
         </Reveal>
 
@@ -58,7 +55,7 @@ const CustomerExperienceOverview = () => {
                     <h3 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-rose-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -93,7 +90,7 @@ const CustomerChallenges = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">BOTTLENECKS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">BOTTLENECKS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
               Solving Modern Customer Experience Challenges
             </h2>
@@ -110,10 +107,10 @@ const CustomerChallenges = () => {
                     <div className="w-10 h-10 rounded-2xl bg-zinc-900 border border-zinc-800 text-zinc-400 flex items-center justify-center mb-5 group-hover:text-rose-500 transition-colors">
                       <Icon size={18} />
                     </div>
-                    <h4 className="text-sm font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                    <h4 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-zinc-450 leading-relaxed font-bold">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -147,7 +144,7 @@ const CustomerCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM ENGINE</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM ENGINE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Customer Experience Capabilities</h2>
           </div>
         </Reveal>
@@ -160,8 +157,8 @@ const CustomerCapabilities = () => {
                   <item.icon size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white mb-2 tracking-tight">{item.title}</h3>
-                  <p className="text-xs text-zinc-455 leading-relaxed font-bold">{item.desc}</p>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">{item.desc}</p>
                 </div>
               </div>
             </Reveal>
@@ -192,7 +189,7 @@ const CustomerArchitecture = () => {
     <section className="py-24 bg-black text-white relative overflow-hidden border-b border-zinc-900/60">
       <div className="max-w-4xl mx-auto px-6 xl:px-8 relative z-10 text-center">
         <Reveal>
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+          <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
             REFERENCE ARCHITECTURE
           </span>
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase mb-16">
@@ -242,7 +239,7 @@ const CustomerModules = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Core Platform Modules</h2>
           </div>
         </Reveal>
@@ -255,9 +252,9 @@ const CustomerModules = () => {
                   <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-rose-500">
                     <item.icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-sm font-bold text-white tracking-tight">{item.title}</h3>
+                  <h3 className="text-base md:text-lg font-bold text-white tracking-tight">{item.title}</h3>
                 </div>
-                <p className="text-xs text-zinc-450 leading-relaxed font-bold mt-4">{item.desc}</p>
+                <p className="text-xs text-zinc-400 leading-relaxed font-bold mt-4">{item.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -286,7 +283,7 @@ const CustomerJourney = () => {
       <div className="max-w-7xl mx-auto px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">LIFECYCLE</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">LIFECYCLE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Customer Journey Lifecycle</h2>
           </div>
         </Reveal>
@@ -302,7 +299,7 @@ const CustomerJourney = () => {
               <span className="mt-4 text-sm font-bold uppercase tracking-wider text-zinc-300 group-hover:text-white transition-colors">
                 {step.name}
               </span>
-              <span className="mt-1 text-[10px] font-bold uppercase text-zinc-500 bg-zinc-900 px-2 py-0.5 rounded-full">
+              <span className="mt-1 text-xs font-bold uppercase text-zinc-500 bg-zinc-900 px-2 py-0.5 rounded-full">
                 {step.kpi}
               </span>
             </Reveal>
@@ -328,7 +325,7 @@ const PlatformFeatures = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURE GRID</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURE GRID</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Complete Platform Features</h2>
           </div>
         </Reveal>
@@ -359,15 +356,12 @@ const AIPersonalization = () => {
         {/* Left Side */}
         <div className="lg:col-span-5 text-left">
           <Reveal>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
               COGNITIVE EXPERIENCES
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">
               Intelligent Customer Engagement
             </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed mb-8 font-semibold">
-              Artificial Intelligence continuously analyzes customer behavior, predicts intent, recommends personalized experiences, automates support, and improves engagement across every touchpoint.
-            </p>
           </Reveal>
         </div>
 
@@ -381,7 +375,7 @@ const AIPersonalization = () => {
                 <div key={i} className="flex items-center gap-6">
                   <div className="w-3 h-3 rounded-full bg-rose-500 flex-shrink-0 absolute left-[15px]" />
                   <div className="bg-zinc-950 border border-zinc-800 rounded-lg px-6 py-4 flex-grow shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-                    <span className="text-sm font-bold text-white uppercase tracking-wider">{step}</span>
+                    <span className="text-base md:text-lg font-bold text-white uppercase tracking-wider">{step}</span>
                   </div>
                 </div>
               ))}
@@ -413,11 +407,8 @@ const OmnichannelEngagement = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">OMNICHANNEL</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">OMNICHANNEL</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">Meet Customers Wherever They Are</h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-bold leading-relaxed">
-              Connect seamlessly across every communication layer through our unified digital CX hub.
-            </p>
           </div>
         </Reveal>
 
@@ -460,7 +451,7 @@ const TechnologyStack = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">INTEGRATED STACK</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">INTEGRATED STACK</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Supported Technologies</h2>
           </div>
         </Reveal>
@@ -477,7 +468,7 @@ const TechnologyStack = () => {
                     className="w-5 h-5 object-contain opacity-80 group-hover:opacity-100 transition-all duration-350 filter brightness-110 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.25)]"
                   />
                 </div>
-                <span className="text-[9px] font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
+                <span className="text-xs font-bold text-zinc-400 group-hover:text-white transition-colors duration-300 uppercase tracking-widest leading-none">
                   {item.name}
                 </span>
               </div>
@@ -507,7 +498,7 @@ const BusinessOutcomes = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Business Outcomes</h2>
           </div>
         </Reveal>
@@ -549,7 +540,7 @@ const IndustryUseCases = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
               Industry Use Cases
             </h2>
@@ -563,10 +554,10 @@ const IndustryUseCases = () => {
                 <div className="w-10 h-10 rounded-2xl bg-rose-600/10 text-rose-500 flex items-center justify-center mb-5">
                   <item.icon size={18} />
                 </div>
-                <h4 className="text-sm font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
+                <h4 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors duration-300">
                   {item.title}
                 </h4>
-                <p className="text-xs text-zinc-400 leading-relaxed font-bold">
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                   {item.desc}
                 </p>
               </div>
@@ -597,7 +588,7 @@ const WhyChooseCustomerPlatform = () => {
     <section className="py-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900/60">
       <div className="max-w-7xl mx-auto px-6 xl:px-8 relative z-10 text-center">
         <Reveal>
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+          <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
             OUR ADVANTAGE
           </span>
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase mb-16">
@@ -644,7 +635,7 @@ const RelatedSolutions = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
+            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Related Solutions</h2>
           </div>
         </Reveal>
