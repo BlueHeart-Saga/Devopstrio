@@ -438,7 +438,7 @@ export default function CybersecurityInnovationLabPage() {
             </span>
           </>
         }
-        subtitle="Defend complex cloud-native architectures through multi-tiered identity validation, continuous container vulnerability assessments, and automated incident response loops."
+        
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },
@@ -482,9 +482,7 @@ export default function CybersecurityInnovationLabPage() {
                   Proactive Defense Architecture <br />
                   <span className="text-rose-500">For Cloud-Native Estates</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  The Devopstrio Cybersecurity Innovation Lab is focused on building secure-by-design technology environments that protect modern enterprises from evolving threats. We combine security architecture, DevSecOps, cloud security, identity governance, threat monitoring, and compliance engineering to help organizations move from reactive security controls to proactive, resilient defense strategies.
-                </p>
+                
               </Reveal>
             </div>
 
@@ -520,9 +518,7 @@ export default function CybersecurityInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Core Areas of <span className="text-rose-500">Cybersecurity Innovation</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              The primary capability vectors driving modern Zero Trust architectures, secure pipelines, and compliance assurance.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -558,9 +554,7 @@ export default function CybersecurityInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               How the Cybersecurity Lab Strengthens <span className="text-rose-500">Enterprise Security</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              A structured lifecycle process ensuring that trust boundaries and defense mechanisms are modeled, implemented, and monitored.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -608,9 +602,7 @@ export default function CybersecurityInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Security Solutions Built <span className="text-rose-500">Inside the Lab</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Operational blueprints and platform blueprints engineered to secure enterprise infrastructure.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -665,9 +657,7 @@ export default function CybersecurityInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
                   Our Cybersecurity Innovation <span className="text-rose-500">Reference Architecture</span>
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
-                  A comprehensive layered defense model safeguarding users, workloads, networks, and data.
-                </p>
+                
 
                 <div className="flex flex-wrap gap-3">
                   {techChips.map((tech, idx) => (
@@ -731,9 +721,7 @@ export default function CybersecurityInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Security Use Cases We Engineer <span className="text-rose-500">Across the Enterprise</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Targeted security architectures designed to resolve real-world enterprise threat vectors.
-            </p>
+            
           </Reveal>
 
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
@@ -864,9 +852,7 @@ export default function CybersecurityInnovationLabPage() {
                   Outcomes the Cybersecurity Lab <br />
                   <span className="text-rose-500">Helps Deliver</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  Key outcomes and metrics demonstrating mature enterprise defense postures.
-                </p>
+                
 
                 {/* Manifesto-style Stats */}
                 <div className="space-y-6 text-xl md:text-2xl font-light text-zinc-300 mt-10 pt-6 border-t border-white/[0.04]">
@@ -924,9 +910,7 @@ export default function CybersecurityInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
                   Why Organizations Build Security Resilience with the <span className="text-rose-500">Devopstrio Cybersecurity Lab</span>
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
-                  Our security approach integrates engineering with defense to build robust digital foundations. Our innovation labs deliver measurable outcomes through engineered precision.
-                </p>
+                
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-zinc-800/50">
                   <div>

@@ -434,7 +434,7 @@ export default function CloudInnovationLabPage() {
             </span>
           </>
         }
-        subtitle="Accelerate hyper-scale execution through robust landing zones, platform engineering, automated Infrastructure as Code, and production-grade Kubernetes orchestration across public, hybrid, and multi-cloud environments."
+        
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },
@@ -478,9 +478,7 @@ export default function CloudInnovationLabPage() {
                   Architecting Resilient Platforms <br />
                   <span className="text-rose-500">For Modern Enterprise Scale</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  The Devopstrio Cloud Innovation Lab is dedicated to designing, testing, and operationalizing cloud-native architectures that support modern enterprise workloads. We help organizations move from fragmented infrastructure to secure, scalable, automated cloud platforms by combining architecture design, platform engineering, DevOps, observability, and governance.
-                </p>
+                
               </Reveal>
             </div>
 
@@ -516,9 +514,7 @@ export default function CloudInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Core Areas of <span className="text-rose-500">Cloud Innovation</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              The main capability vectors driving modern cloud transformation, platform automation, and cloud-native excellence.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -554,9 +550,7 @@ export default function CloudInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               How the Cloud Lab Builds <span className="text-rose-500">Modern Platform Foundations</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              A structured lifecycle method prioritizing early validation and rigorous engineering checks.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -604,9 +598,7 @@ export default function CloudInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Cloud Solutions Built <span className="text-rose-500">Inside the Lab</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Actual software platforms and functional cloud integrations designed for real business setups.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -661,9 +653,7 @@ export default function CloudInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
                   Our Cloud Innovation <span className="text-rose-500">Reference Architecture</span>
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
-                  The layered framework powering secure cloud-native environments and automated infrastructure delivery.
-                </p>
+                
 
                 <div className="flex flex-wrap gap-3">
                   {techChips.map((tech, idx) => (
@@ -727,9 +717,7 @@ export default function CloudInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Cloud Use Cases We Engineer <span className="text-rose-500">Across the Enterprise</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Targeted implementations mapping robust platform models directly to enterprise operational segments.
-            </p>
+            
           </Reveal>
 
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
@@ -860,9 +848,7 @@ export default function CloudInnovationLabPage() {
                   Outcomes the Cloud Lab <br />
                   <span className="text-rose-500">Helps Deliver</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  Providing enterprise metrics, operational availability models, and platform accelerators.
-                </p>
+                
 
                 {/* Manifesto-style Stats */}
                 <div className="space-y-6 text-xl md:text-2xl font-light text-zinc-300 mt-10 pt-6 border-t border-white/[0.04]">
@@ -920,9 +906,7 @@ export default function CloudInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
                   Why Organizations Build with the <span className="text-rose-500">Devopstrio Cloud Lab</span>
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
-                  We combine strategy and deep execution to design platforms that scale safely. Our innovation labs deliver measurable outcomes through engineered precision.
-                </p>
+                
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-zinc-800/50">
                   <div>

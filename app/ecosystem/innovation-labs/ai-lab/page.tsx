@@ -429,7 +429,7 @@ export default function AIInnovationLabPage() {
             </span>
           </>
         }
-        subtitle="Moving organizations from experimental sandbox prototypes to secure, highly optimized production ecosystems. We design custom agentic architectures, configure private RAG search networks, and audit model drift under enterprise-grade governance profiles."
+        
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },
@@ -473,9 +473,7 @@ export default function AIInnovationLabPage() {
                   Where Cognitive Research Meets <br />
                   <span className="text-rose-500">Production Systems Engineering</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6 font-normal">
-                  The Devopstrio AI Innovation Lab bridges the gap between academic cognitive research and enterprise-grade software execution. We test and harden agentic orchestration frameworks, private GPU inference clusters, and context retrieval pipelines so your organization deploys reliable, low-latency, and sovereign AI systems at scale.
-                </p>
+                
               </Reveal>
             </div>
 
@@ -511,9 +509,7 @@ export default function AIInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Core Areas of <span className="text-rose-500">AI Innovation</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal">
-              Applied research vectors dedicated to building reliable, high-throughput, and private cognitive systems.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -549,9 +545,7 @@ export default function AIInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               How the AI Lab Builds <span className="text-rose-500">Production Cognitive Platforms</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal">
-              A structured lifecycle method prioritizing early mathematical validation and rigorous engineering checks.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -599,9 +593,7 @@ export default function AIInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               AI Solutions Built <span className="text-rose-500">Inside the Lab</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal">
-              Actual software platforms and functional cognitive integrations designed for real business setups.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -650,9 +642,7 @@ export default function AIInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
                   Our Enterprise AI <span className="text-rose-500">Reference Architecture</span>
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
-                  The layered framework powering secure model alignment, sub-50ms inference, and deterministic cognitive outputs.
-                </p>
+                
 
                 <div className="flex flex-wrap gap-3">
                   {techChips.map((tech, idx) => (
@@ -716,9 +706,7 @@ export default function AIInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               AI Use Cases We Engineer <span className="text-rose-500">Across the Enterprise</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal">
-              Targeted implementations mapping robust cognitive models directly to enterprise operational segments.
-            </p>
+            
           </Reveal>
 
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
@@ -850,9 +838,7 @@ export default function AIInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Measurable Results Delivered <span className="text-rose-500">By the AI Lab</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8 font-normal">
-                  Our lab benchmarks ensure cognitive architectures transition into production with verifiable accuracy, cost predictability, and zero data leakage.
-                </p>
+                
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {labDeliverables.map((item, idx) => (
@@ -900,9 +886,7 @@ export default function AIInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Why Partner With the <span className="text-rose-500">Devopstrio AI Lab</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal">
-              We bridge academic model innovation with enterprise-grade systems engineering, security, and infrastructure rigor.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -934,9 +918,7 @@ export default function AIInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Explore Our Other <span className="text-rose-500">Innovation Labs</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal">
-              Cross-disciplinary engineering pods pioneering cloud, DevOps, security, and data innovations.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

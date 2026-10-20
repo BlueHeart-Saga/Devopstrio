@@ -436,7 +436,7 @@ export default function DevOpsInnovationLabPage() {
             </span>
           </>
         }
-        subtitle="Accelerate code delivery, simplify environment management, and build highly reliable internal platforms utilizing automated pipelines, IaC, Kubernetes orchestration, and Site Reliability Engineering."
+        
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },
@@ -480,9 +480,7 @@ export default function DevOpsInnovationLabPage() {
                   Where Delivery Engineering <br />
                   <span className="text-rose-500">Becomes Competitive Advantage</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  The Devopstrio DevOps Innovation Lab is focused on building the systems, workflows, and engineering foundations that help organizations ship software faster, operate more reliably, and scale securely. We combine release automation, platform engineering, observability, Infrastructure as Code, and reliability practices to turn fragmented delivery pipelines into high-performance engineering platforms.
-                </p>
+                
               </Reveal>
             </div>
 
@@ -518,9 +516,7 @@ export default function DevOpsInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Core Areas of <span className="text-rose-500">DevOps Innovation</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              The primary capability vectors driving modern release automation, container deployments, and SRE excellence.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -556,9 +552,7 @@ export default function DevOpsInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               How the DevOps Lab Transforms <span className="text-rose-500">Delivery Workflows</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              A structured process designed to transition engineering teams to high-velocity, reliable GitOps operations.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -606,9 +600,7 @@ export default function DevOpsInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               DevOps Solutions Built <span className="text-rose-500">Inside the Lab</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Functional automation architectures and platform components built to standardize modern delivery loops.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -663,9 +655,7 @@ export default function DevOpsInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
                   Our DevOps Innovation <span className="text-rose-500">Reference Architecture</span>
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
-                  A comprehensive delivery pipeline blueprint bridging development and operational environments securely.
-                </p>
+                
 
                 <div className="flex flex-wrap gap-3">
                   {techChips.map((tech, idx) => (
@@ -729,9 +719,7 @@ export default function DevOpsInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               DevOps Use Cases We Engineer <span className="text-rose-500">Across the Delivery Lifecycle</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Practical engineering solutions mapped to real-world software delivery bottlenecks.
-            </p>
+            
           </Reveal>
 
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
@@ -862,9 +850,7 @@ export default function DevOpsInnovationLabPage() {
                   Outcomes the DevOps Lab <br />
                   <span className="text-rose-500">Helps Deliver</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  Quantifiable improvements in release cycles, operational stability, and developer velocity.
-                </p>
+                
 
                 {/* Manifesto-style Stats */}
                 <div className="space-y-6 text-xl md:text-2xl font-light text-zinc-300 mt-10 pt-6 border-t border-white/[0.04]">
@@ -922,9 +908,7 @@ export default function DevOpsInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
                   Why Organizations Build Delivery Excellence with the <span className="text-rose-500">Devopstrio DevOps Lab</span>
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
-                  We focus on reusable platforms, engineering standards, and scalable operating models that reduce long-term complexity. Our innovation labs deliver measurable outcomes through engineered precision.
-                </p>
+                
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-zinc-800/50">
                   <div>

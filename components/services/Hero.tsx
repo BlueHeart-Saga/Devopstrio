@@ -24,7 +24,7 @@ const Iridescence = dynamic(() => import("@/components/ui/Iridescence"), { ssr: 
 export interface HeroProps {
   badge?: string;
   title: string | React.ReactNode;
-  subtitle: string;
+  subtitle?: string;
   stats?: { value: string; label: string }[];
   breadcrumbs: { label: string; href?: string }[];
   bgImage?: string;
@@ -549,3 +549,4 @@ export function Hero({
     </section>
   );
 }
+

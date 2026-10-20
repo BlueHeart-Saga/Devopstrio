@@ -426,7 +426,7 @@ export default function DataAnalyticsInnovationLabPage() {
             </span>
           </>
         }
-        subtitle="Consolidating fragmented data silos into high-performance, petabyte-scale cloud lakehouses and real-time event streaming pipelines."
+        
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "INNOVATION LABS", href: "/ecosystem/innovation-labs" },
@@ -470,12 +470,8 @@ export default function DataAnalyticsInnovationLabPage() {
                   Building the Data Backbone <br />
                   <span className="text-rose-500">of Modern Digital Enterprises</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  The Devopstrio Data & Analytics Lab is focused on designing scalable data ecosystems that turn operational, customer, financial, and product data into meaningful business intelligence. From ingestion pipelines and cloud data platforms to analytics models, executive dashboards, and governance frameworks, we help organizations move from siloed reporting to connected, decision-ready intelligence.
-                </p>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  We work across the full data lifecycle — integrating data from multiple systems, structuring it for analytics, improving quality and trust, enabling real-time visibility, and laying the groundwork for advanced AI and machine learning initiatives.
-                </p>
+                
+                
               </Reveal>
             </div>
 
@@ -511,9 +507,7 @@ export default function DataAnalyticsInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Core Areas of <span className="text-rose-500">Data & Analytics Innovation</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              The primary capability vectors driving cloud database consolidation, transformation orchestration, and self-service dashboards.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -549,9 +543,7 @@ export default function DataAnalyticsInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               How the Data & Analytics Lab Builds <span className="text-rose-500">Insight-Driven Platforms</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              A structured lifecycle process ensuring pipeline stability, data completeness, and dashboard trustworthiness.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -599,9 +591,7 @@ export default function DataAnalyticsInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Data & Analytics Solutions Built <span className="text-rose-500">Inside the Lab</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Deployable architectures and analytical modules designed for the enterprise.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -656,9 +646,7 @@ export default function DataAnalyticsInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
                   Our Data & Analytics Innovation <span className="text-rose-500">Reference Architecture</span>
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
-                  A complete data flow structure from multiple source pipelines to decision intelligence.
-                </p>
+                
 
                 <div className="flex flex-wrap gap-3">
                   {techChips.map((tech, idx) => (
@@ -722,9 +710,7 @@ export default function DataAnalyticsInnovationLabPage() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Data & Analytics Use Cases We Engineer <span className="text-rose-500">Across the Enterprise</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Custom data engineering models built to power modern digital organizations.
-            </p>
+            
           </Reveal>
 
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
@@ -855,9 +841,7 @@ export default function DataAnalyticsInnovationLabPage() {
                   Outcomes the Data & Analytics Lab <br />
                   <span className="text-rose-500">Helps Deliver</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
-                  Key outcomes and metrics demonstrating mature enterprise data architectures.
-                </p>
+                
 
                 {/* Manifesto-style Stats */}
                 <div className="space-y-6 text-xl md:text-2xl font-light text-zinc-300 mt-10 pt-6 border-t border-white/[0.04]">
@@ -915,9 +899,7 @@ export default function DataAnalyticsInnovationLabPage() {
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
                   Why Organizations Build Data Intelligence with <span className="text-rose-500">Devopstrio</span>
                 </h2>
-                <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-medium mb-10">
-                  We design secure data platforms around your real reporting goals and compliance rules. Our innovation labs deliver measurable outcomes through engineered precision.
-                </p>
+                
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 border-t border-zinc-800/50">
                   <div>
