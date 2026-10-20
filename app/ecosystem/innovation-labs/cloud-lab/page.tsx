@@ -462,8 +462,13 @@ export default function CloudInnovationLabPage() {
 
       {/* 2. OVERVIEW / MISSION SECTION */}
       <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
-        {/* Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-500/[0.01] rounded-full blur-[120px] pointer-events-none" />
+        {/* Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        />
+        
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -486,7 +491,8 @@ export default function CloudInnovationLabPage() {
             <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {miniMissionCards.map((card, idx) => (
                 <Reveal key={card.title} delay={idx * 0.05}>
-                  <div className="bg-zinc-950/40 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-5 transition-all duration-300 min-h-[140px] flex flex-col justify-between">
+                  <div className="group relative bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 rounded-[20px] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(244,63,94,0.12)] min-h-[140px] flex flex-col justify-between overflow-hidden">
+                    <div className="absolute -top-8 -right-8 w-24 h-24 bg-rose-500/[0.06] group-hover:bg-rose-500/20 rounded-full blur-xl transition-all duration-500 pointer-events-none" />
                     <div>
                       <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2">
                         {card.title}
@@ -506,6 +512,13 @@ export default function CloudInnovationLabPage() {
 
       {/* 3. CORE INNOVATION AREAS */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        />
+        
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-14 text-center max-w-3xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -520,9 +533,10 @@ export default function CloudInnovationLabPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {innovationAreas.map((area, idx) => (
               <Reveal key={area.title} delay={idx * 0.04} className="h-full">
-                <div className="bg-[#0a0a0a]/60 border border-white/[0.03] hover:border-rose-500/20 rounded-[20px] p-6 transition-all duration-300 flex flex-col justify-between h-full min-h-[220px]">
+                <div className="group relative bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 rounded-[22px] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_30px_rgba(244,63,94,0.12)] flex flex-col justify-between h-full min-h-[220px] overflow-hidden">
+                  <div className="absolute -top-10 -right-10 w-28 h-28 bg-rose-500/[0.08] group-hover:bg-rose-500/25 rounded-full blur-2xl transition-all duration-500 pointer-events-none" />
                   <div>
-                    <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
+                    <div className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-800 group-hover:border-rose-500/40 group-hover:bg-rose-500/10 flex items-center justify-center mb-5 transition-colors duration-300">
                       {area.icon}
                     </div>
                     <h4 className="text-base md:text-lg font-bold text-white tracking-tight mb-2.5">
@@ -541,6 +555,13 @@ export default function CloudInnovationLabPage() {
 
       {/* 4. CLOUD LAB LIFECYCLE / OPERATING MODEL */}
       <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        />
+        
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           
           <Reveal className="mb-14 text-left max-w-3xl">
@@ -590,6 +611,13 @@ export default function CloudInnovationLabPage() {
 
       {/* 5. SOLUTIONS BUILT IN THE LAB */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        />
+        
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-14 text-center max-w-3xl mx-auto">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
@@ -607,7 +635,8 @@ export default function CloudInnovationLabPage() {
               const Icon = icons[idx % icons.length];
               return (
                 <Reveal key={block.title} delay={idx * 0.04} className="h-full">
-                  <div className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-3xl p-8 hover:bg-zinc-900/80 hover:border-rose-500/30 transition-all duration-500 relative group h-full flex flex-col justify-between shadow-lg">
+                  <div className="group relative bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(244,63,94,0.14)] h-full flex flex-col justify-between overflow-hidden">
+                    <div className="absolute -top-12 -right-12 w-32 h-32 bg-rose-500/[0.08] group-hover:bg-rose-500/25 rounded-full blur-2xl transition-all duration-500 pointer-events-none" />
                     
                     {/* Glassmorphic Sheen & Quote-like Icon */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none rounded-3xl" />
@@ -638,8 +667,13 @@ export default function CloudInnovationLabPage() {
 
       {/* 6. REFERENCE ARCHITECTURE */}
       <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
-        {/* Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-650/[0.015] rounded-full blur-[130px] pointer-events-none" />
+        {/* Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        />
+        
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
@@ -708,6 +742,13 @@ export default function CloudInnovationLabPage() {
 
       {/* 7. USE CASES / SCENARIOS */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        />
+        
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           
           <Reveal className="mb-14 text-center max-w-3xl mx-auto">
@@ -834,6 +875,13 @@ export default function CloudInnovationLabPage() {
 
       {/* 8. INNOVATION OUTCOMES / IMPACT */}
       <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        />
+        
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -894,6 +942,13 @@ export default function CloudInnovationLabPage() {
 
       {/* 9. WHY DEVOPSTRIO CLOUD LAB */}
       <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+        {/* Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        />
+        
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
@@ -957,6 +1012,13 @@ export default function CloudInnovationLabPage() {
 
       {/* 10. RELATED LABS / CTA */}
       <section className="w-full py-24 bg-[#020202] relative overflow-hidden">
+        {/* Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        />
+        
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           
           {/* Related Labs Grid */}
