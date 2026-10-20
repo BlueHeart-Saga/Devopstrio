@@ -537,17 +537,21 @@ export default function SaaSPlatformsPage() {
             className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] relative"
           >
             {[
-              { title: "Banking & Finance", subtitle: "Secure financial frameworks · 2026", badge: "Brio", logo: "/webp/assets/Home-page/our-products/logo/brio.webp", image: "/webp/assets/Home-page/industries/bankifinance.webp" },
-              { title: "Healthcare", subtitle: "Clinical operational suites · 2026", badge: "CareSuite", logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp", image: "/webp/assets/Home-page/industries/healthcaree.webp" },
-              { title: "Education", subtitle: "Collaborative learning hubs · 2026", badge: "Prestivo", logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp", image: "/webp/assets/Home-page/industries/educationn.webp" },
-              { title: "Government", subtitle: "Public sector automation · 2026", badge: "Justivon", logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp", image: "/webp/assets/Home-page/industries/governmentsector.webp" },
-              { title: "Manufacturing", subtitle: "Supply chain integrations · 2026", badge: "Humanex", logo: "/webp/assets/Home-page/our-products/logo/humanex.webp", image: "/webp/assets/Home-page/industries/manufacturingg.webp" },
-              { title: "Media & Ent.", subtitle: "Asset coordination matrix · 2026", badge: "Campix", logo: "/webp/assets/Home-page/our-products/logo/Campix.webp", image: "/webp/assets/Home-page/industries/mediaentertainment.webp" },
-              { title: "Telecom", subtitle: "Network lifecycle tooling · 2026", badge: "SafeSign", logo: "/webp/assets/Home-page/our-products/logo/safesign.webp", image: "/webp/assets/Home-page/industries/telecommunicationn.webp" },
-              { title: "Retail", subtitle: "Omnichannel workflows · 2026", badge: "Humanex", logo: "/webp/assets/Home-page/our-products/logo/humanex.webp", image: "/webp/assets/Home-page/industries/retailecommerce.webp" },
-              { title: "Real Estate", subtitle: "Property asset telemetry · 2026", badge: "Homela", logo: "/webp/assets/Home-page/our-products/logo/homela.webp", image: "/webp/assets/Home-page/industries/4.webp" }
+              { title: "Banking & Finance", subtitle: "Secure financial frameworks · 2026", badge: "Brio", logo: "/webp/assets/Home-page/our-products/logo/brio.webp", image: "/webp/assets/Home-page/industries/bankifinance.webp", href: "/industries/banking-finance" },
+              { title: "Healthcare", subtitle: "Clinical operational suites · 2026", badge: "CareSuite", logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp", image: "/webp/assets/Home-page/industries/healthcaree.webp", href: "/industries/healthcare-life-sciences" },
+              { title: "Education", subtitle: "Collaborative learning hubs · 2026", badge: "Prestivo", logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp", image: "/webp/assets/Home-page/industries/educationn.webp", href: "/industries/education" },
+              { title: "Government", subtitle: "Public sector automation · 2026", badge: "Justivon", logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp", image: "/webp/assets/Home-page/industries/governmentsector.webp", href: "/industries/government-public-sector" },
+              { title: "Manufacturing", subtitle: "Supply chain integrations · 2026", badge: "Humanex", logo: "/webp/assets/Home-page/our-products/logo/humanex.webp", image: "/webp/assets/Home-page/industries/manufacturingg.webp", href: "/industries/manufacturing" },
+              { title: "Media & Ent.", subtitle: "Asset coordination matrix · 2026", badge: "Campix", logo: "/webp/assets/Home-page/our-products/logo/Campix.webp", image: "/webp/assets/Home-page/industries/mediaentertainment.webp", href: "/industries/media-entertainment" },
+              { title: "Telecom", subtitle: "Network lifecycle tooling · 2026", badge: "SafeSign", logo: "/webp/assets/Home-page/our-products/logo/safesign.webp", image: "/webp/assets/Home-page/industries/telecommunicationn.webp", href: "/industries/telecommunications" },
+              { title: "Retail", subtitle: "Omnichannel workflows · 2026", badge: "Humanex", logo: "/webp/assets/Home-page/our-products/logo/humanex.webp", image: "/webp/assets/Home-page/industries/retailecommerce.webp", href: "/industries/retail-ecommerce" },
+              { title: "Real Estate", subtitle: "Property asset telemetry · 2026", badge: "Homela", logo: "/webp/assets/Home-page/our-products/logo/homela.webp", image: "/webp/assets/Home-page/industries/4.webp", href: "/ecosystem/platforms-solutions/saas-platforms/homela" }
             ].map((ind, idx) => (
-              <div key={idx} className="min-w-[280px] md:min-w-[340px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] p-2 hover:border-zinc-700 transition-colors">
+              <Link
+                key={idx}
+                href={ind.href}
+                className="min-w-[280px] md:min-w-[340px] snap-start group cursor-pointer bg-[#0c0c0c] border border-zinc-800/80 rounded-[2rem] p-2 hover:border-zinc-700 transition-colors block"
+              >
                 {/* Visual Box */}
                 <div className="bg-zinc-900 rounded-[1.5rem] border border-zinc-800/50 aspect-[4/3] relative overflow-hidden mb-4 shadow-inner">
 
@@ -583,7 +587,7 @@ export default function SaaSPlatformsPage() {
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
