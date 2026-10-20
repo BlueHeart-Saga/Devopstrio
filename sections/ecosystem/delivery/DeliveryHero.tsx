@@ -3,6 +3,7 @@
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import Image from "next/image";
+import { RelayPulse } from "@/sections/ecosystem/delivery/RelayToolkit";
 
 export function DeliveryHero() {
   return (
@@ -36,6 +37,7 @@ export function DeliveryHero() {
           </div>
         </Reveal>
 
+        <RelayPulse active="all" />
       </div>
 
       {/* Bottom black blur fade overlay */}

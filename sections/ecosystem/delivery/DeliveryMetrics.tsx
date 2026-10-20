@@ -37,7 +37,7 @@ export function DeliveryMetrics() {
           {metrics.map((metric) => (
             <div
               key={metric.label}
-              className="bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 text-center flex flex-col justify-center items-center min-h-[140px] hover:border-rose-500/10 transition-all duration-300"
+              className="dv-spot relative bg-zinc-950/20 border border-zinc-900/80 rounded-2xl p-6 text-center flex flex-col justify-center items-center min-h-[140px] hover:border-rose-500/10 transition-all duration-300"
             >
               <div className="text-3xl md:text-4xl font-semibold text-rose-500 tracking-tight mb-2 font-mono">
                 {metric.value}

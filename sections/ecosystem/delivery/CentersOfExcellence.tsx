@@ -81,7 +81,7 @@ export function CentersOfExcellence() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {centers.map((center, idx) => (
             <Reveal key={center.discipline} delay={idx * 0.05} className="h-full">
-              <div className="group flex flex-col justify-between bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl overflow-hidden hover:shadow-[0_0_30px_rgba(244,63,94,0.06)] transition-all duration-300">
+              <div className="dv-spot relative group flex flex-col justify-between bg-zinc-950/40 border border-zinc-900 hover:border-rose-500/20 rounded-3xl overflow-hidden hover:shadow-[0_0_30px_rgba(244,63,94,0.06)] transition-all duration-300">
                 
                 {/* Top Image Banner */}
                 <div className="relative w-full h-36 overflow-hidden bg-zinc-900 border-b border-zinc-900">

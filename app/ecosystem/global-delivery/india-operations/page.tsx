@@ -4,6 +4,7 @@ import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { RelayEnhancer, RelayPulse, SunCoverage } from "@/sections/ecosystem/delivery/RelayToolkit";
 import { Hero } from "@/components/services/Hero";
 import {
   ArrowRight,
@@ -138,6 +139,7 @@ export default function IndiaEngineeringCenterPage() {
 
   return (
     <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+      <RelayEnhancer />
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
@@ -198,6 +200,7 @@ export default function IndiaEngineeringCenterPage() {
             </span>
           ))}
         </div>
+        <RelayPulse active="in" />
       </Hero>
 
       {/* 2. OVERVIEW */}
@@ -223,7 +226,7 @@ export default function IndiaEngineeringCenterPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {engineeringExcellence.map((item, idx) => (
-              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col items-center text-center group">
+              <div key={idx} className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col items-center text-center group">
                 <div className="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center mb-4 text-rose-500 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
@@ -243,7 +246,7 @@ export default function IndiaEngineeringCenterPage() {
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {deliveryCapabilities.map((cap, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:bg-zinc-900/80 transition-all duration-300">
+              <div key={idx} className="dv-spot relative p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:bg-zinc-900/80 transition-all duration-300">
                 <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0" />
                   {cap.title}
@@ -266,7 +269,7 @@ export default function IndiaEngineeringCenterPage() {
             {lifecycleStages.map((stage, idx) => (
               <React.Fragment key={idx}>
                 <div className="relative group w-full md:w-auto">
-                  <div className="px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-orange-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
+                  <div className="dv-spot relative px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-orange-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
                     <div className="text-orange-500 text-[10px] font-bold tracking-[0.2em] mb-1 font-mono group-hover:text-orange-400">0{idx + 1} //</div>
                     <div className="text-sm font-bold text-white tracking-wide">{stage}</div>
                   </div>
@@ -389,7 +392,7 @@ export default function IndiaEngineeringCenterPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
             {outcomes.map((metric, idx) => (
-              <div key={idx} className="p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
+              <div key={idx} className="dv-spot relative p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
                 <span className="text-2xl lg:text-3xl font-black text-white mb-2 tracking-tighter">{metric.value}</span>
                 <span className="text-[10px] lg:text-xs uppercase font-bold text-rose-500">{metric.label}</span>
               </div>
@@ -415,6 +418,11 @@ export default function IndiaEngineeringCenterPage() {
           </div>
         </div>
       </section>
+
+      {/* FOLLOW-THE-SUN COVERAGE (interactive) */}
+
+      <SunCoverage active="in" />
+
 
       <FAQ faqs={faqs} />
 

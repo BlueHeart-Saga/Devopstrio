@@ -44,7 +44,7 @@ export function CapabilityMatrix() {
         </Reveal>
 
         {/* Enterprise Table Container */}
-        <div className="max-w-5xl mx-auto overflow-hidden border border-zinc-900 rounded-3xl bg-zinc-950/30 backdrop-blur-md">
+        <div className="dv-spot relative max-w-5xl mx-auto overflow-hidden border border-zinc-900 rounded-3xl bg-zinc-950/30 backdrop-blur-md">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>

@@ -4,6 +4,7 @@ import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { RelayEnhancer, RelayPulse, SunCoverage } from "@/sections/ecosystem/delivery/RelayToolkit";
 import { Hero } from "@/components/services/Hero";
 import {
   ArrowRight,
@@ -133,6 +134,7 @@ export default function EuropeDeliveryHubPage() {
 
   return (
     <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+      <RelayEnhancer />
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
@@ -193,6 +195,7 @@ export default function EuropeDeliveryHubPage() {
             </span>
           ))}
         </div>
+        <RelayPulse active="eu" />
       </Hero>
 
       {/* 2. OVERVIEW */}
@@ -218,7 +221,7 @@ export default function EuropeDeliveryHubPage() {
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {supportBusinesses.map((item, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 group">
+              <div key={idx} className="dv-spot relative p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 group">
                 <div className="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center mb-6 text-rose-500 group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
@@ -276,7 +279,7 @@ export default function EuropeDeliveryHubPage() {
             {lifecycleStages.map((stage, idx) => (
               <React.Fragment key={idx}>
                 <div className="relative group w-full md:w-auto">
-                  <div className="px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-emerald-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
+                  <div className="dv-spot relative px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-emerald-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
                     <div className="text-emerald-500 text-[10px] font-bold tracking-[0.2em] mb-1 font-mono group-hover:text-emerald-400">0{idx + 1} //</div>
                     <div className="text-sm font-bold text-white tracking-wide">{stage}</div>
                   </div>
@@ -299,7 +302,7 @@ export default function EuropeDeliveryHubPage() {
           </Reveal>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">Cloud</h3>
               <div className="flex flex-col gap-3">
                 {techExpertise.cloud.map((tech, idx) => (
@@ -307,7 +310,7 @@ export default function EuropeDeliveryHubPage() {
                 ))}
               </div>
             </div>
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">AI</h3>
               <div className="flex flex-col gap-3">
                 {techExpertise.ai.map((tech, idx) => (
@@ -315,7 +318,7 @@ export default function EuropeDeliveryHubPage() {
                 ))}
               </div>
             </div>
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">Development</h3>
               <div className="flex flex-col gap-3">
                 {techExpertise.development.map((tech, idx) => (
@@ -323,7 +326,7 @@ export default function EuropeDeliveryHubPage() {
                 ))}
               </div>
             </div>
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">DevOps</h3>
               <div className="flex flex-col gap-3">
                 {techExpertise.devops.map((tech, idx) => (
@@ -331,7 +334,7 @@ export default function EuropeDeliveryHubPage() {
                 ))}
               </div>
             </div>
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">Data</h3>
               <div className="flex flex-col gap-3">
                 {techExpertise.data.map((tech, idx) => (
@@ -386,7 +389,7 @@ export default function EuropeDeliveryHubPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
             {outcomes.map((metric, idx) => (
-              <div key={idx} className="p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
+              <div key={idx} className="dv-spot relative p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
                 <span className="text-2xl lg:text-3xl font-black text-white mb-2 tracking-tighter leading-none">{metric.value}</span>
                 <span className="text-[10px] lg:text-xs uppercase font-bold text-rose-500 mt-2">{metric.label}</span>
               </div>
@@ -413,6 +416,11 @@ export default function EuropeDeliveryHubPage() {
         </div>
       </section>
 
+      {/* FOLLOW-THE-SUN COVERAGE (interactive) */}
+
+      <SunCoverage active="eu" />
+
+
       <FAQ faqs={faqs} />
 
       {/* 13. RELATED GLOBAL DELIVERY CENTERS */}
@@ -424,7 +432,7 @@ export default function EuropeDeliveryHubPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {relatedCenters.map((center, idx) => (
-              <Link key={idx} href={center.path} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/50 transition-all duration-300 group flex items-center gap-4">
+              <Link key={idx} href={center.path} className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/50 transition-all duration-300 group flex items-center gap-4">
                 <span className="text-2xl">{center.flag}</span>
                 <span className="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">{center.name}</span>
                 <LinkIcon className="w-4 h-4 text-zinc-600 ml-auto group-hover:text-rose-500 transition-colors" />

@@ -4,6 +4,7 @@ import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { RelayEnhancer, RelayPulse, SunCoverage } from "@/sections/ecosystem/delivery/RelayToolkit";
 import { Hero } from "@/components/services/Hero";
 import {
   ArrowRight,
@@ -165,6 +166,7 @@ export default function ManagedServicesCenterPage() {
 
   return (
     <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+      <RelayEnhancer />
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
@@ -225,6 +227,7 @@ export default function ManagedServicesCenterPage() {
             </span>
           ))}
         </div>
+        <RelayPulse active="all" />
       </Hero>
 
       {/* 2. MANAGED SERVICES OVERVIEW */}
@@ -240,7 +243,7 @@ export default function ManagedServicesCenterPage() {
           </Reveal>
           <div className="grid grid-cols-2 gap-4">
             {overviewFeatures.map((feature, idx) => (
-              <div key={idx} className="flex flex-col items-center gap-3 p-6 rounded-xl border border-zinc-800/50 bg-zinc-950/40 hover:border-rose-500/30 transition-colors text-center group">
+              <div key={idx} className="dv-spot relative flex flex-col items-center gap-3 p-6 rounded-xl border border-zinc-800/50 bg-zinc-950/40 hover:border-rose-500/30 transition-colors text-center group">
                 <div className="group-hover:scale-110 transition-transform">{feature.icon}</div>
                 <span className="text-sm font-bold text-zinc-200">{feature.title}</span>
               </div>
@@ -258,7 +261,7 @@ export default function ManagedServicesCenterPage() {
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyManagedServices.map((item, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col items-start">
+              <div key={idx} className="dv-spot relative p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col items-start">
                 <div className="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center mb-6 text-rose-500">
                   <Settings className="w-5 h-5" />
                 </div>
@@ -298,7 +301,7 @@ export default function ManagedServicesCenterPage() {
             {deliveryFramework.map((stage, idx) => (
               <React.Fragment key={idx}>
                 <div className="relative group w-full md:w-auto">
-                  <div className="px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-indigo-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
+                  <div className="dv-spot relative px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-indigo-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
                     <div className="text-indigo-500 text-[10px] font-bold tracking-[0.2em] mb-1 font-mono group-hover:text-indigo-400">0{idx + 1} //</div>
                     <div className="text-sm font-bold text-white tracking-wide">{stage}</div>
                   </div>
@@ -389,7 +392,7 @@ export default function ManagedServicesCenterPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {aiOperations.map((ai, idx) => (
-              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/20 transition-colors flex flex-col items-center text-center">
+              <div key={idx} className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/20 transition-colors flex flex-col items-center text-center">
                 <Bot className="w-5 h-5 text-rose-500 mb-3" />
                 <h4 className="text-sm font-bold text-zinc-200">{ai}</h4>
               </div>
@@ -407,7 +410,7 @@ export default function ManagedServicesCenterPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {serviceGovernance.map((gov, idx) => (
-              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/20 transition-colors flex flex-col items-center text-center">
+              <div key={idx} className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/20 transition-colors flex flex-col items-center text-center">
                 <CheckCircle2 className="w-5 h-5 text-rose-500 mb-3" />
                 <h4 className="text-sm font-bold text-zinc-200">{gov}</h4>
               </div>
@@ -425,7 +428,7 @@ export default function ManagedServicesCenterPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
             {outcomes.map((metric, idx) => (
-              <div key={idx} className="p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
+              <div key={idx} className="dv-spot relative p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
                 <span className="text-xl lg:text-2xl font-black text-white mb-2 tracking-tighter leading-none">{metric.value}</span>
                 <span className="text-[10px] lg:text-xs uppercase font-bold text-rose-500 mt-2">{metric.label}</span>
               </div>
@@ -451,6 +454,11 @@ export default function ManagedServicesCenterPage() {
           </div>
         </div>
       </section>
+
+      {/* FOLLOW-THE-SUN COVERAGE (interactive) */}
+
+      <SunCoverage active="all" />
+
 
       <FAQ faqs={faqs} />
 

@@ -4,6 +4,7 @@ import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { RelayEnhancer, RelayPulse, SunCoverage } from "@/sections/ecosystem/delivery/RelayToolkit";
 import { Hero } from "@/components/services/Hero";
 import {
   ArrowRight,
@@ -134,6 +135,7 @@ export default function UnitedKingdomHubPage() {
 
   return (
     <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+      <RelayEnhancer />
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
@@ -186,6 +188,7 @@ export default function UnitedKingdomHubPage() {
             Schedule Consultation
           </Link>
         </div>
+        <RelayPulse active="uk" />
       </Hero>
 
       {/* 2. OVERVIEW */}
@@ -211,7 +214,7 @@ export default function UnitedKingdomHubPage() {
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyUK.map((item, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300">
+              <div key={idx} className="dv-spot relative p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300">
                 <div className="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center mb-6 text-rose-500">
                   {item.icon}
                 </div>
@@ -288,7 +291,7 @@ export default function UnitedKingdomHubPage() {
             {lifecycleStages.map((stage, idx) => (
               <React.Fragment key={idx}>
                 <div className="relative group w-full md:w-auto">
-                  <div className="px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-blue-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
+                  <div className="dv-spot relative px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-blue-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
                     <div className="text-blue-500 text-[10px] font-bold tracking-[0.2em] mb-1 font-mono group-hover:text-blue-400">0{idx + 1} //</div>
                     <div className="text-sm font-bold text-white tracking-wide">{stage}</div>
                   </div>
@@ -311,7 +314,7 @@ export default function UnitedKingdomHubPage() {
           </Reveal>
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 text-center">
             {ecosystem.map((tech, idx) => (
-              <div key={idx} className="p-4 rounded-xl border border-zinc-900 bg-zinc-950/40 hover:bg-rose-500/10 hover:border-rose-500/30 transition-all flex items-center justify-center">
+              <div key={idx} className="dv-spot relative p-4 rounded-xl border border-zinc-900 bg-zinc-950/40 hover:bg-rose-500/10 hover:border-rose-500/30 transition-all flex items-center justify-center">
                 <span className="text-xs font-bold text-zinc-300">{tech}</span>
               </div>
             ))}
@@ -328,7 +331,7 @@ export default function UnitedKingdomHubPage() {
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {securityCompliance.map((sec, idx) => (
-              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/20 transition-colors flex flex-col items-start text-left">
+              <div key={idx} className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/20 transition-colors flex flex-col items-start text-left">
                 <ShieldCheck className="w-5 h-5 text-rose-500 mb-4" />
                 <h4 className="text-base font-bold text-white mb-2">{sec.title}</h4>
                 <p className="text-xs text-zinc-400 font-medium leading-relaxed">{sec.desc}</p>
@@ -347,7 +350,7 @@ export default function UnitedKingdomHubPage() {
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {engagementModels.map((model, idx) => (
-              <div key={idx} className="p-8 border border-zinc-800 bg-zinc-900/20 rounded-2xl hover:bg-zinc-900/50 transition-all">
+              <div key={idx} className="dv-spot relative p-8 border border-zinc-800 bg-zinc-900/20 rounded-2xl hover:bg-zinc-900/50 transition-all">
                 <Briefcase className="w-5 h-5 text-rose-500 mb-4" />
                 <h4 className="text-lg font-bold text-white mb-3">{model.title}</h4>
                 <p className="text-sm text-zinc-400 font-medium leading-relaxed">{model.desc}</p>
@@ -366,7 +369,7 @@ export default function UnitedKingdomHubPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {outcomes.map((metric, idx) => (
-              <div key={idx} className="p-8 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center">
+              <div key={idx} className="dv-spot relative p-8 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center">
                 <span className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter">{metric.value}</span>
                 <span className="text-[10px] uppercase tracking-widest font-bold text-rose-500">{metric.label}</span>
               </div>
@@ -395,6 +398,11 @@ export default function UnitedKingdomHubPage() {
           </div>
         </div>
       </section>
+
+      {/* FOLLOW-THE-SUN COVERAGE (interactive) */}
+
+      <SunCoverage active="uk" />
+
 
       <FAQ faqs={faqs} />
 

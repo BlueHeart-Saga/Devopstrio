@@ -200,7 +200,7 @@ export function GlobalNetworkOverview() {
           </div>
 
           {/* Right: Iframe Map */}
-          <div className="lg:col-span-7 rounded-2xl border border-zinc-900 overflow-hidden bg-zinc-950 relative min-h-[350px] lg:min-h-full">
+          <div className="dv-spot lg:col-span-7 rounded-2xl border border-zinc-900 overflow-hidden bg-zinc-950 relative min-h-[350px] lg:min-h-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}

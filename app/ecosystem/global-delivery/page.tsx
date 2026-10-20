@@ -14,6 +14,7 @@ import { CentersOfExcellence } from "@/sections/ecosystem/delivery/CentersOfExce
 import { DeliveryLifecycle } from "@/sections/ecosystem/delivery/DeliveryLifecycle";
 import { DeliveryMetrics } from "@/sections/ecosystem/delivery/DeliveryMetrics";
 import { DeliveryCTA } from "@/sections/ecosystem/delivery/DeliveryCTA";
+import { RelayEnhancer, SunCoverage } from "@/sections/ecosystem/delivery/RelayToolkit";
 
 export default function GlobalDeliveryPage() {
   const domain = "global-delivery";
@@ -37,6 +38,7 @@ export default function GlobalDeliveryPage() {
 
   return (
     <main className="min-h-screen bg-black text-white pt-12 md:pt-14 font-sans">
+      <RelayEnhancer />
       
       {/* 01. Hero Section */}
       <DeliveryHero />
@@ -78,6 +80,9 @@ export default function GlobalDeliveryPage() {
       <div id="metrics">
         <DeliveryMetrics />
       </div>
+
+      {/* FOLLOW-THE-SUN COVERAGE (interactive) */}
+      <SunCoverage active="all" id="relay" />
 
       {/* FAQ */}
       <FAQ faqs={data.faqs} />

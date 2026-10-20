@@ -113,7 +113,7 @@ export function FollowTheSunModel() {
         </div>
 
         {/* Bottom Benefits Section */}
-        {/* <div className="mt-16 bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* <div className="dv-spot relative mt-16 bg-zinc-950/40 border border-zinc-900 rounded-3xl p-8 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
             <span className="relative flex h-3 w-3 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>

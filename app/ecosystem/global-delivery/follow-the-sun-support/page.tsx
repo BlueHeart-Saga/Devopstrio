@@ -4,6 +4,7 @@ import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { RelayEnhancer, RelayPulse, SunCoverage } from "@/sections/ecosystem/delivery/RelayToolkit";
 import { Hero } from "@/components/services/Hero";
 import {
   ArrowRight,
@@ -153,6 +154,7 @@ export default function FollowTheSunSupportPage() {
 
   return (
     <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+      <RelayEnhancer />
       {/* Background ambient mesh grid */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
@@ -213,6 +215,7 @@ export default function FollowTheSunSupportPage() {
             </span>
           ))}
         </div>
+        <RelayPulse active="all" />
       </Hero>
 
       {/* 2. ALWAYS-ON OPERATIONS */}
@@ -228,7 +231,7 @@ export default function FollowTheSunSupportPage() {
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {alwaysOnFeatures.map((feature, idx) => (
-              <div key={idx} className="flex items-center gap-3 p-4 rounded-xl border border-zinc-800/50 bg-zinc-950/40 hover:border-rose-500/30 transition-colors group">
+              <div key={idx} className="dv-spot relative flex items-center gap-3 p-4 rounded-xl border border-zinc-800/50 bg-zinc-950/40 hover:border-rose-500/30 transition-colors group">
                 <Globe className="w-5 h-5 text-rose-500 shrink-0 group-hover:rotate-12 transition-transform" />
                 <span className="text-sm font-bold text-zinc-200">{feature}</span>
               </div>
@@ -246,7 +249,7 @@ export default function FollowTheSunSupportPage() {
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whySupport.map((item, idx) => (
-              <div key={idx} className="p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:bg-zinc-900/80 transition-all duration-300 flex flex-col items-start group">
+              <div key={idx} className="dv-spot relative p-8 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:bg-zinc-900/80 transition-all duration-300 flex flex-col items-start group">
                 <div className="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center mb-6 text-rose-500">
                   <Clock className="w-5 h-5" />
                 </div>
@@ -288,7 +291,7 @@ export default function FollowTheSunSupportPage() {
               {incidentLifecycle.map((stage, idx) => (
                 <React.Fragment key={idx}>
                   <div className="relative group w-full md:w-auto">
-                    <div className="px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-yellow-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
+                    <div className="dv-spot relative px-6 py-4 bg-zinc-950/60 backdrop-blur-md border border-zinc-800/80 rounded-2xl text-center hover:border-yellow-500/50 hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
                       <div className="text-yellow-500 text-[10px] font-bold tracking-[0.2em] mb-1 font-mono group-hover:text-yellow-400">0{idx + 1} //</div>
                       <div className="text-sm font-bold text-white tracking-wide">{stage}</div>
                     </div>
@@ -312,8 +315,8 @@ export default function FollowTheSunSupportPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {operationsCenter.map((item, idx) => (
-              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col items-center text-center group">
-                <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+              <div key={idx} className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl hover:border-rose-500/30 transition-all duration-300 flex flex-col items-center text-center group">
+                <div className="dv-spot relative w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
                   {item.icon}
                 </div>
                 <h4 className="text-sm font-bold text-white">{item.title}</h4>
@@ -366,7 +369,7 @@ export default function FollowTheSunSupportPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {aiOperations.map((ai, idx) => (
-              <div key={idx} className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/20 transition-colors flex flex-col items-center text-center">
+              <div key={idx} className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-xl hover:border-rose-500/20 transition-colors flex flex-col items-center text-center">
                 <Bot className="w-5 h-5 text-rose-500 mb-3" />
                 <h4 className="text-sm font-bold text-zinc-200">{ai}</h4>
               </div>
@@ -384,7 +387,7 @@ export default function FollowTheSunSupportPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
             {serviceLevelManagement.map((sla, idx) => (
-              <div key={idx} className="p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
+              <div key={idx} className="dv-spot relative p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
                 <span className="text-xl lg:text-2xl font-black text-white mb-2 tracking-tighter leading-none">{sla.value}</span>
                 <span className="text-[10px] lg:text-xs uppercase font-bold text-rose-500 mt-2">{sla.title}</span>
               </div>
@@ -402,7 +405,7 @@ export default function FollowTheSunSupportPage() {
           </Reveal>
           
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">Monitoring</h3>
               <div className="flex flex-col gap-3">
                 {techStack.monitoring.map((tech, idx) => (
@@ -410,7 +413,7 @@ export default function FollowTheSunSupportPage() {
                 ))}
               </div>
             </div>
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">Incident</h3>
               <div className="flex flex-col gap-3">
                 {techStack.incident.map((tech, idx) => (
@@ -418,7 +421,7 @@ export default function FollowTheSunSupportPage() {
                 ))}
               </div>
             </div>
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">Automation</h3>
               <div className="flex flex-col gap-3">
                 {techStack.automation.map((tech, idx) => (
@@ -426,7 +429,7 @@ export default function FollowTheSunSupportPage() {
                 ))}
               </div>
             </div>
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">Collaboration</h3>
               <div className="flex flex-col gap-3">
                 {techStack.collaboration.map((tech, idx) => (
@@ -434,7 +437,7 @@ export default function FollowTheSunSupportPage() {
                 ))}
               </div>
             </div>
-            <div className="p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
+            <div className="dv-spot relative p-6 bg-zinc-950/40 border border-zinc-900/80 rounded-2xl">
               <h3 className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-4 font-bold border-b border-zinc-800 pb-3">Cloud</h3>
               <div className="flex flex-col gap-3">
                 {techStack.cloud.map((tech, idx) => (
@@ -455,7 +458,7 @@ export default function FollowTheSunSupportPage() {
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
             {outcomes.map((metric, idx) => (
-              <div key={idx} className="p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
+              <div key={idx} className="dv-spot relative p-6 rounded-2xl border border-zinc-900 bg-zinc-950/30 flex flex-col justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.4)]">
                 <span className="text-xl lg:text-2xl font-black text-white mb-2 tracking-tighter leading-none">{metric.value}</span>
                 <span className="text-[10px] lg:text-xs uppercase font-bold text-rose-500 mt-2">{metric.label}</span>
               </div>
@@ -481,6 +484,11 @@ export default function FollowTheSunSupportPage() {
           </div>
         </div>
       </section>
+
+      {/* FOLLOW-THE-SUN COVERAGE (interactive) */}
+
+      <SunCoverage active="all" />
+
 
       <FAQ faqs={faqs} />
 
