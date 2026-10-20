@@ -107,7 +107,7 @@ function Head({
         </span>
       )}
       <h2 className={h2}>{title}</h2>
-      {body && <p className={`${lead} mt-4`}>{body}</p>}
+      
     </div>
   );
 }
@@ -201,13 +201,7 @@ function Hero() {
               </h1>
             </Reveal>
 
-            <Reveal delay={0.2}>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-8 max-w-[620px]">
-                Architect, migrate, and operate mission-critical workloads on Microsoft Azure. From
-                enterprise Cloud Adoption Framework (CAF) landing zones and AKS container platforms to
-                intelligent data fabrics and automated zero-trust security operations.
-              </p>
-            </Reveal>
+            
 
             {/* Bullet Highlights Grid with Red Check Icons */}
             <Reveal delay={0.3} className="w-full mb-10">
@@ -224,9 +218,7 @@ function Hero() {
                       <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                         {pt.text}
                       </h4>
-                      <p className="text-[11px] text-zinc-400 font-medium leading-relaxed mt-0.5">
-                        {pt.desc}
-                      </p>
+                      
                     </div>
                   </div>
                 ))}
@@ -258,18 +250,6 @@ function Hero() {
                   className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full blur-[2px] shadow-[0_0_14px_#E11D48] animate-ping"
                   style={{ animationDuration: "2.8s" }}
                 />
-              </div>
-
-              {/* Floating Top Badge */}
-              <div className="absolute -top-2 right-6 z-20 hidden sm:flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/90 px-3 py-1 shadow-lg backdrop-blur-md">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-[10px] font-semibold text-zinc-300">99.99% Cloud SLA</span>
-              </div>
-
-              {/* Floating Bottom Badge */}
-              <div className="absolute -bottom-2 left-6 z-20 hidden sm:flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-950/90 px-3 py-1 shadow-lg backdrop-blur-md">
-                <Sparkles className="w-3 h-3 text-amber-400" />
-                <span className="text-[10px] font-semibold text-zinc-300">CAF Certified Architects</span>
               </div>
 
               {/* Cards Container */}

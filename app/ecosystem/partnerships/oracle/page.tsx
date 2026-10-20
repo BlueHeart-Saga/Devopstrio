@@ -401,11 +401,7 @@ export default function OracleStrategicAllianceHub() {
                 </h1>
               </Reveal>
 
-              <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  Modernize enterprise workloads, data platforms, and mission-critical operations with Oracle technologies across cloud infrastructure, databases, applications, and secure digital transformation.
-                </p>
-              </Reveal>
+              
 
               {/* Hero Bullet Points Grid */}
               <Reveal delay={0.3} className="w-full mb-10">
@@ -417,7 +413,7 @@ export default function OracleStrategicAllianceHub() {
                       </div>
                       <div>
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider">{pt.text}</h4>
-                        <p className="text-[10px] text-zinc-450 font-semibold">{pt.desc}</p>
+                        
                       </div>
                     </div>
                   ))}
@@ -507,14 +503,7 @@ export default function OracleStrategicAllianceHub() {
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Modernizing Core Enterprise <span className="text-rose-500">Systems with Oracle</span>
                 </h2>
-                <div className="space-y-4 text-zinc-300 text-sm md:text-base font-semibold leading-relaxed">
-                  <p>
-                    Oracle serves as a foundational platform for business-critical infrastructure, enterprise databases, and operational ERP systems.
-                  </p>
-                  <p>
-                    Devopstrio leverages Oracle Cloud Infrastructure (OCI) to assist organizations with hybrid cloud modernization, enabling safe migrations of data-intensive workloads without disrupting operations.
-                  </p>
-                </div>
+                
               </Reveal>
             </div>
 
@@ -552,9 +541,7 @@ export default function OracleStrategicAllianceHub() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Our Oracle <span className="text-rose-500">Capabilities</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Deep capability profiles tailored to modernize core infrastructure and secure enterprise databases.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -623,9 +610,7 @@ export default function OracleStrategicAllianceHub() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               A Reference Architecture for <span className="text-rose-500">Oracle-Powered Delivery</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Layered visual representation of Oracle cloud stack workflows from clients to high-speed bare-metal nodes.
-            </p>
+            
           </Reveal>
 
           {/* Layered Flow Diagram */}

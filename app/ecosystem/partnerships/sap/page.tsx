@@ -464,11 +464,7 @@ export default function SAPStrategicAllianceHub() {
                 </h1>
               </Reveal>
 
-              <Reveal delay={0.2}>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  Transform finance, supply chain, procurement, HR, manufacturing, and customer operations through SAP Business Suite and SAP BTP.
-                </p>
-              </Reveal>
+              
 
               {/* Hero Bullet Points Grid */}
               <Reveal delay={0.3} className="w-full mb-10">
@@ -480,7 +476,7 @@ export default function SAPStrategicAllianceHub() {
                       </div>
                       <div>
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider">{pt.text}</h4>
-                        <p className="text-[10px] text-zinc-450 font-semibold">{pt.desc}</p>
+                        
                       </div>
                     </div>
                   ))}
@@ -567,9 +563,7 @@ export default function SAPStrategicAllianceHub() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               SAP Platform <span className="text-rose-500">Overview</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Positioned to drive enterprise operations on a single unified data layer.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -798,9 +792,7 @@ export default function SAPStrategicAllianceHub() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               SAP Solution <span className="text-rose-500">Portfolio</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Core platform applications configured for digital core operations.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1012,9 +1004,7 @@ export default function SAPStrategicAllianceHub() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
               Certified SAP <span className="text-rose-500">Engineers</span>
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Proven credentials validating our capability to construct secure, high-performance SAP systems and BTP applications.
-            </p>
+            
           </Reveal>
 
           {/* Badge Grid */}
@@ -1058,9 +1048,7 @@ export default function SAPStrategicAllianceHub() {
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Business Value <span className="text-rose-500">Metrics</span>
                 </h2>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                  Realized operational improvements and savings recorded after upgrading to an intelligent SAP S/4HANA digital core.
-                </p>
+                
               </Reveal>
             </div>
 
