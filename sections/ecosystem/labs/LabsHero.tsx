@@ -2,8 +2,7 @@
 
 import React from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowUpRight, Maximize2, Globe } from "lucide-react";
-import Link from "next/link";
+import { Maximize2, Globe } from "lucide-react";
 import Image from "next/image";
 
 export function LabsHero() {
@@ -112,18 +111,7 @@ export function LabsHero() {
           </h1>
         </Reveal>
 
-        {/* Explorer Pill CTA Button */}
-        <Reveal delay={0.4}>
-          <Link
-            href="#all-labs"
-            className="inline-flex items-center gap-4 pl-7 pr-2.5 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5"
-          >
-            Explore Labs & Initiatives
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center transition-transform duration-300 hover:scale-105">
-              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-            </div>
-          </Link>
-        </Reveal>
+
 
       </div>
 
