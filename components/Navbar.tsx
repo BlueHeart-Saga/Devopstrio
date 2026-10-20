@@ -887,13 +887,13 @@ export function Navbar() {
             <div
               onMouseEnter={() => setActiveMenu("services")}
             >
-              <Link
-                href="/services"
-                onClick={() => setActiveMenu(null)}
+              <button
+                type="button"
+                onClick={() => setActiveMenu(activeMenu === "services" ? null : "services")}
                 className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
                 Services <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
-              </Link>
+              </button>
               {activeMenu === "services" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
                   <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-7 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr_1fr] xl:grid-cols-[280px_1fr_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
@@ -1034,13 +1034,13 @@ export function Navbar() {
             <div
               onMouseEnter={() => setActiveMenu("industries")}
             >
-              <Link
-                href="/industries"
-                onClick={() => setActiveMenu(null)}
+              <button
+                type="button"
+                onClick={() => setActiveMenu(activeMenu === "industries" ? null : "industries")}
                 className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
                 Industries <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "industries" ? "rotate-180" : ""}`} />
-              </Link>
+              </button>
               {activeMenu === "industries" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
                   <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr] xl:grid-cols-[280px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
@@ -1131,13 +1131,13 @@ export function Navbar() {
             <div
               onMouseEnter={() => setActiveMenu("ecosystem")}
             >
-              <Link
-                href="/ecosystem"
-                onClick={() => setActiveMenu(null)}
+              <button
+                type="button"
+                onClick={() => setActiveMenu(activeMenu === "ecosystem" ? null : "ecosystem")}
                 className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
                 Ecosystem <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "ecosystem" ? "rotate-180" : ""}`} />
-              </Link>
+              </button>
               {activeMenu === "ecosystem" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
                   <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_1fr_1fr] xl:grid-cols-[280px_1fr_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
@@ -1272,13 +1272,13 @@ export function Navbar() {
             <div
               onMouseEnter={() => setActiveMenu("insights")}
             >
-              <Link
-                href="/insights"
-                onClick={() => setActiveMenu(null)}
+              <button
+                type="button"
+                onClick={() => setActiveMenu(activeMenu === "insights" ? null : "insights")}
                 className="flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 text-base xl:text-[17px] 2xl:text-[19px] font-semibold tracking-[0.3px] text-white hover:text-rose-500 transition-colors"
               >
                 Insights <ChevronDown size={15} className={`transition-transform duration-300 ${activeMenu === "insights" ? "rotate-180" : ""}`} />
-              </Link>
+              </button>
               {activeMenu === "insights" && (
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[1200px] max-w-[95vw] pointer-events-auto z-50">
                   <div className="animate-fadeIn bg-black border border-zinc-900 rounded-2xl pt-8 px-8 pb-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] grid grid-cols-[220px_200px_1fr] xl:grid-cols-[280px_240px_1fr] gap-x-4 xl:gap-x-8 gap-y-3 text-left relative">
