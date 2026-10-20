@@ -1,3 +1,33 @@
+"use client";
+
+import { FAQ } from "@/components/ecosystem/FAQ";
+import { CTA } from "@/components/ecosystem/CTA";
+
+import React, { useState, useRef } from "react";
+import { Reveal } from "@/components/ui/Reveal";
+import { Hero } from "@/components/services/Hero";
+import LightRays from "@/components/ui/LightRays";
+import {
+  ArrowUpRight,
+  Plus,
+  Minus,
+  Terminal,
+  Cpu,
+  Workflow,
+  Database,
+  Layers,
+  Sparkles,
+  Link as LinkIcon,
+  ShieldCheck,
+  Server,
+  Activity,
+  GitBranch,
+  Code,
+  ChevronRight,
+  ChevronLeft
+} from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 // ==========================================
 // ENGINEERING SUITE (CAPABILITIES SCROLLER)
@@ -180,36 +210,6 @@ const SoftwareIndustryUseCases = () => {
     </section>
   );
 };
-
-"use client";
-import { FAQ } from "@/components/ecosystem/FAQ";
-import { CTA } from "@/components/ecosystem/CTA";
-
-import React, { useState, useRef } from "react";
-import { Reveal } from "@/components/ui/Reveal";
-import { Hero } from "@/components/services/Hero";
-import LightRays from "@/components/ui/LightRays";
-import {
-  ArrowUpRight,
-  Plus,
-  Minus,
-  Terminal,
-  Cpu,
-  Workflow,
-  Database,
-  Layers,
-  Sparkles,
-  Link as LinkIcon,
-  ShieldCheck,
-  Server,
-  Activity,
-  GitBranch,
-  Code,
-  ChevronRight,
-  ChevronLeft
-} from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
 
 export default function SoftwareEngineeringPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -584,3 +584,4 @@ export default function SoftwareEngineeringPage() {
     </main>
   );
 }
+
