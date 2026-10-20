@@ -54,7 +54,7 @@ export default function TalentNetworkPage() {
   return (
     <main className="relative min-h-screen bg-[#030303] text-white font-sans overflow-x-hidden selection:bg-rose-600 selection:text-white">
 
-      {/* 1. HERO SECTION (Using Standard Devopstrio Hero Component) */}
+      {/* 1. HERO SECTION */}
       <Hero
         badge="COMMUNITY & TALENT NETWORK"
         prism={true}
@@ -62,57 +62,82 @@ export default function TalentNetworkPage() {
         title={
           <>
             Devopstrio <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-rose-400 to-red-600">
               Talent Network
             </span>
           </>
         }
-        subtitle="Connect with global opportunities, industry experts, enterprise projects, and a thriving engineering community designed to accelerate your technology career."
+        subtitle="Connect with global enterprise opportunities, principal mentors, scalable cloud projects, and a thriving engineering community built to accelerate technology careers."
         breadcrumbs={[
           { label: "ECOSYSTEM", href: "/ecosystem" },
           { label: "COMMUNITY & TALENT NETWORK", href: "/ecosystem/community-talent-network" },
           { label: "TALENT NETWORK" }
         ]}
       >
-        <div className="flex flex-wrap gap-4 items-center justify-start">
-          <button
-            onClick={() => setJoinModalOpen(true)}
-            className="inline-flex items-center gap-3 pl-6 pr-3 py-3 bg-white text-black font-semibold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer"
-          >
-            Join the Network
-            <div className="w-7 h-7 rounded-full bg-black flex items-center justify-center">
-              <ArrowUpRight className="w-3.5 h-3.5 text-white" />
-            </div>
-          </button>
-          <button
-            onClick={() => {
-              const el = document.getElementById("global-marketplace");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 text-white transition-all cursor-pointer"
-          >
-            Explore Opportunities
-          </button>
+        <div className="flex flex-col items-center gap-6">
+          {/* Hero Highlights Badges */}
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {[
+              "Global Engineering Network",
+              "25,000+ Vetted Practitioners",
+              "Zero Placement Fees",
+              "1-on-1 Architecture Mentorship",
+              "Enterprise Cloud Placements",
+              "Remote & Hybrid Opportunities"
+            ].map((item, idx) => (
+              <span
+                key={idx}
+                className="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold tracking-wide bg-zinc-900/90 border border-zinc-800 text-zinc-300 shadow-sm"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 pt-2">
+            <button
+              onClick={() => setJoinModalOpen(true)}
+              className="inline-flex items-center gap-3 pl-7 pr-3 py-3.5 bg-white text-black font-bold text-xs md:text-sm tracking-wider rounded-full hover:bg-zinc-200 transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer"
+            >
+              Join the Network
+              <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
+                <ArrowUpRight className="w-4 h-4 text-white" />
+              </div>
+            </button>
+            <button
+              onClick={() => {
+                const el = document.getElementById("global-marketplace");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 text-white transition-all cursor-pointer hover:bg-zinc-900"
+            >
+              Explore Opportunities
+            </button>
+          </div>
         </div>
       </Hero>
 
       {/* HERO STATS STRIP */}
-      <section className="w-full py-12 bg-[#030303] border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto px-12 xl:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <section className="w-full py-16 bg-[#030303] border-b border-zinc-900/80 relative">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6">
             {[
-              { val: "25K+", label: "Engineering Professionals" },
-              { val: "500+", label: "Enterprise Opportunities" },
-              { val: "50+", label: "Technology Partners" },
-              { val: "20+", label: "Countries Represented" },
-              { val: "100+", label: "Dedicated Mentors" }
+              { val: "25K+", label: "Engineering Professionals", sub: "Worldwide Network" },
+              { val: "500+", label: "Enterprise Roles", sub: "Annual Placements" },
+              { val: "50+", label: "Technology Partners", sub: "AWS, Azure, GCP & More" },
+              { val: "20+", label: "Countries Represented", sub: "Global Reach" },
+              { val: "100+", label: "Principal Mentors", sub: "1-on-1 Guidance" }
             ].map((stat, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 text-center hover:border-rose-500/40 transition-colors">
-                <span className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-1 block">
+              <div key={idx} className="p-6 md:p-7 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 text-center hover:border-rose-500/40 transition-all duration-300 group">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-2 block group-hover:text-rose-500 transition-colors">
                   {stat.val}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-400">
+                <span className="text-xs md:text-sm font-bold uppercase tracking-wider text-zinc-300 block mb-1">
                   {stat.label}
+                </span>
+                <span className="text-[11px] font-mono text-rose-400/90 font-medium block">
+                  {stat.sub}
                 </span>
               </div>
             ))}
@@ -120,20 +145,22 @@ export default function TalentNetworkPage() {
         </div>
       </section>
 
-      {/* 2. TALENT NETWORK OVERVIEW (Split Layout) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* 2. TALENT NETWORK OVERVIEW */}
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Left Image */}
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
-                <img src="/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp"
-                  alt="Engineers discussing cloud architecture in modern office"
-                  className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/80 backdrop-blur-sm border border-zinc-800 text-xs font-mono text-zinc-300">
+                <img
+                  src="/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp"
+                  alt="Engineers collaborating in a modern technology center"
+                  className="w-full h-[440px] object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/85 backdrop-blur-md border border-zinc-800 text-xs sm:text-sm font-mono text-zinc-300">
                   <span className="text-rose-400 font-bold">✓ Global Engineering Community</span> &bull; 25,000+ Vetted Technology Professionals
                 </div>
               </div>
@@ -141,21 +168,21 @@ export default function TalentNetworkPage() {
 
             {/* Right Overview Content */}
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
                 ABOUT THE NETWORK
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
-                A Community Built for Technology Professionals
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
+                A Community Built for High-Impact Engineers
               </h2>
-              <blockquote className="text-zinc-300 text-sm md:text-base border-l-2 border-rose-500 pl-4 py-1 italic font-semibold">
-                &quot;Connecting exceptional engineering talent with enterprise innovation through a global technology community.&quot;
+              <blockquote className="text-zinc-300 text-base md:text-lg border-l-2 border-rose-500 pl-4 py-1.5 italic font-medium leading-relaxed">
+                &quot;Connecting exceptional engineering talent with enterprise innovation through a global technology ecosystem.&quot;
               </blockquote>
 
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-semibold">
-                The Devopstrio Talent Network connects developers, architects, DevOps engineers, AI specialists, cybersecurity experts, cloud engineers, students, and technology leaders with enterprise projects, mentorship, and continuous learning opportunities.
+              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-normal">
+                The Devopstrio Talent Network connects developers, cloud architects, DevOps practitioners, AI specialists, cybersecurity leads, and technology graduates with high-impact enterprise projects, hands-on mentorship, and continuous career advancement.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
                 {[
                   "Exclusive enterprise project matches",
                   "Direct 1-on-1 architecture mentorship",
@@ -164,7 +191,7 @@ export default function TalentNetworkPage() {
                   "Peer code reviews & hackathons",
                   "Zero placement fee for candidates"
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs md:text-sm text-zinc-300 font-medium bg-zinc-900/60 p-3 rounded-xl border border-zinc-800">
+                  <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-zinc-200 font-medium bg-zinc-950/70 p-3.5 rounded-xl border border-zinc-800/80">
                     <CheckCircle2 className="w-4 h-4 text-rose-500 shrink-0" />
                     <span>{item}</span>
                   </div>
@@ -174,7 +201,7 @@ export default function TalentNetworkPage() {
               <div className="pt-4">
                 <button
                   onClick={() => setJoinModalOpen(true)}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-lg cursor-pointer"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] cursor-pointer"
                 >
                   Join Talent Ecosystem <ArrowRight className="w-4 h-4" />
                 </button>
@@ -186,39 +213,38 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 3. COMMUNITY IMPACT (Large KPI Cards) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 ECOSYSTEM SCALE
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Our Community Impact
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+                Our Global Community Impact
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Building career opportunities and enterprise partnerships across the global technology ecosystem.
-              </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-5">
             {[
               { val: "25K+", label: "Community Members", desc: "Global Talent Network" },
               { val: "2,000+", label: "Job Opportunities", desc: "Enterprise Listings" },
               { val: "1,000+", label: "Successful Placements", desc: "Roles Filled" },
               { val: "300+", label: "Senior Mentors", desc: "Principal Architects" },
-              { val: "150+", label: "Enterprise Clients", desc: "Fortune 500 & Scaleups" },
+              { val: "150+", label: "Enterprise Clients", desc: "Global Scaleups" },
               { val: "40+", label: "Tech Events", desc: "Annual Summits" }
             ].map((kpi, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
-                <div className="p-6 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all text-center space-y-2 group h-full">
-                  <span className="text-2xl md:text-3xl font-black text-rose-500 tracking-tight block group-hover:scale-110 transition-transform">
+                <div className="p-6 rounded-[22px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all text-center space-y-2.5 group h-full flex flex-col justify-between">
+                  <span className="text-3xl sm:text-4xl font-black text-rose-500 tracking-tight block group-hover:scale-105 transition-transform">
                     {kpi.val}
                   </span>
-                  <h4 className="text-xs font-bold text-white">{kpi.label}</h4>
-                  <p className="text-[10px] text-zinc-500 font-mono">{kpi.desc}</p>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-bold text-white mb-1">{kpi.label}</h4>
+                    <p className="text-[11px] text-zinc-500 font-mono">{kpi.desc}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -228,49 +254,50 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 4. WHO CAN JOIN (8 Large Feature Cards) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 INCLUSIVE ECOSYSTEM
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Who Can Join
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+                Who Can Join the Network
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Designed for professionals at every stage of their engineering journey, from students to principal leads.
-              </p>
             </div>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Software Engineers", icon: Code, desc: "Frontend, Backend, and Full-Stack developers building scalable enterprise microservices." },
-              { title: "Cloud Engineers", icon: Cloud, desc: "Azure, AWS, and GCP infrastructure architects and landing zone engineers." },
-              { title: "DevOps Engineers", icon: Settings, desc: "GitOps practitioners, Kubernetes operators, and CI/CD automation specialists." },
-              { title: "AI Engineers", icon: BrainCircuit, desc: "LLM orchestration, RAG architectures, and vector database researchers." },
-              { title: "Data Engineers", icon: Database, desc: "Apache Kafka streaming, Databricks, and Snowflake pipeline developers." },
-              { title: "Cybersecurity Experts", icon: ShieldCheck, desc: "Zero Trust architects, DevSecOps practitioners, and SOC compliance leads." },
-              { title: "Students & Graduates", icon: GraduationCap, desc: "Early-career tech talent seeking internships, bootcamps, and entry-level roles." },
-              { title: "Enterprise Partners", icon: Building, desc: "Organizations looking to hire vetted engineering talent or deploy agile pods." }
+              { title: "Software Engineers", icon: Code, desc: "Frontend, Backend, and Full-Stack developers architecting robust microservices and distributed APIs." },
+              { title: "Cloud Engineers", icon: Cloud, desc: "Azure, AWS, and GCP infrastructure specialists, landing zone builders, and cloud modernizers." },
+              { title: "DevOps Engineers", icon: Settings, desc: "GitOps practitioners, Kubernetes cluster operators, Terraform authors, and CI/CD automation specialists." },
+              { title: "AI Engineers", icon: BrainCircuit, desc: "LLM orchestration, autonomous agent developers, RAG pipelines, and vector database researchers." },
+              { title: "Data Engineers", icon: Database, desc: "Apache Kafka streaming, Databricks lakehouses, Snowflake pipelines, and real-time telemetry analytics." },
+              { title: "Cybersecurity Experts", icon: ShieldCheck, desc: "Zero Trust architects, DevSecOps pipeline gatekeepers, SOC compliance leads, and IAM specialists." },
+              { title: "Students & Graduates", icon: GraduationCap, desc: "Early-career tech talent seeking accredited internships, architecture bootcamps, and entry-level roles." },
+              { title: "Enterprise Partners", icon: Building, desc: "Global organizations looking to recruit pre-vetted senior engineers or deploy dedicated agile squads." }
             ].map((role, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
-                <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all duration-300 space-y-3 group h-full flex flex-col justify-between">
-                  <div className="space-y-3">
+                <div className="p-7 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all duration-300 space-y-4 group h-full flex flex-col justify-between">
+                  <div className="space-y-3.5">
                     <div className="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                       <role.icon className="w-6 h-6 text-rose-500" />
                     </div>
-                    <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{role.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{role.desc}</p>
+                    <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
+                      {role.title}
+                    </h3>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
+                      {role.desc}
+                    </p>
                   </div>
-                  <div className="pt-3 border-t border-zinc-900">
+                  <div className="pt-4 border-t border-zinc-900">
                     <button
                       onClick={() => setJoinModalOpen(true)}
-                      className="text-xs font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1 cursor-pointer"
+                      className="text-xs sm:text-sm font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1.5 cursor-pointer"
                     >
-                      Join Network <ArrowUpRight className="w-3.5 h-3.5" />
+                      Join Network <ArrowUpRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -282,38 +309,41 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 5. TALENT CATEGORIES (Grid) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 SPECIALIZATION MATRIX
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Talent Categories & Domain Focus
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+                Talent Categories & Core Stacks
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Core technical stacks covered across our talent ecosystem.
-              </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-5">
             {[
-              { cat: "Software Engineering", skills: "React, Next.js, Node.js, Go, Python" },
-              { cat: "Cloud Engineering", skills: "Azure CAF, AWS Control Tower, GCP" },
-              { cat: "DevOps & GitOps", skills: "Kubernetes, Terraform, GitHub Actions" },
-              { cat: "AI & ML", skills: "LangChain, OpenAI, Qdrant, Vector DBs" },
-              { cat: "Cybersecurity", skills: "HashiCorp Vault, SOC2, Zero Trust" },
-              { cat: "Data Engineering", skills: "Kafka, Flink, Spark, Snowflake" },
-              { cat: "QA Automation", skills: "Playwright, Jest, E2E Testing" },
-              { cat: "Product SaaS", skills: "Microservices, System Architecture" }
+              { cat: "Software Engineering", skills: "React, Next.js, Node.js, Go, Python, Spring Boot" },
+              { cat: "Cloud Infrastructure", skills: "Azure CAF, AWS Control Tower, Google Cloud, Terraform" },
+              { cat: "DevOps & GitOps", skills: "Kubernetes, Helm, ArgoCD, GitHub Actions, GitLab CI" },
+              { cat: "AI & Machine Learning", skills: "LangChain, LlamaIndex, OpenAI, Qdrant, Vector DBs" },
+              { cat: "Cybersecurity & IAM", skills: "HashiCorp Vault, SOC2, Zero Trust, Entra ID, Sentinel" },
+              { cat: "Data & Analytics", skills: "Apache Kafka, Flink, Spark, Snowflake, Databricks" },
+              { cat: "Quality Engineering", skills: "Playwright, Cypress, Jest, k6, Performance & Chaos" },
+              { cat: "Product & Architecture", skills: "Event-Driven Systems, Domain-Driven Design, SaaS" }
             ].map((tc, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-2 group">
-                <span className="text-[9px] font-mono text-rose-400 font-bold uppercase block">DOMAIN 0{idx + 1}</span>
-                <h4 className="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">{tc.cat}</h4>
-                <p className="text-[11px] text-zinc-400 font-mono font-medium">{tc.skills}</p>
+              <div key={idx} className="p-6 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-2.5 group">
+                <span className="text-[11px] font-mono text-rose-400 font-bold uppercase tracking-wider block">
+                  DOMAIN 0{idx + 1}
+                </span>
+                <h4 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
+                  {tc.cat}
+                </h4>
+                <p className="text-xs text-zinc-400 font-mono font-normal leading-relaxed">
+                  {tc.skills}
+                </p>
               </div>
             ))}
           </div>
@@ -321,48 +351,49 @@ export default function TalentNetworkPage() {
         </div>
       </section>
 
-      {/* 6. ENGINEERING CAREER JOURNEY (Microsoft-style Roadmap) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+      {/* 6. ENGINEERING CAREER JOURNEY (Roadmap) */}
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 CAREER TRAJECTORY
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
                 Engineering Career Journey
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Continuous professional growth roadmap guided by industry mentors.
-              </p>
             </div>
           </Reveal>
 
-          <div className="p-8 rounded-[28px] bg-[#0A0A0A] border border-zinc-800/80 overflow-x-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-2 min-w-[950px]">
+          <div className="p-8 md:p-10 rounded-[28px] bg-[#0A0A0A] border border-zinc-800/80 overflow-x-auto">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-3 min-w-[1000px]">
               {[
-                { step: "Student", desc: "CS Foundations" },
-                { step: "Learning", desc: "DevOps & Cloud 101" },
-                { step: "Certification", desc: "Azure/AWS Badge" },
-                { step: "Internship", desc: "12-Week Practice" },
-                { step: "Associate", desc: "Junior Developer" },
-                { step: "Software Eng", desc: "Production Coding" },
-                { step: "Senior Eng", desc: "Lead Feature PRs" },
-                { step: "Architect", desc: "System Design" },
-                { step: "Principal", desc: "Enterprise Lead" },
-                { step: "Tech Leader", desc: "Executive VP" }
+                { step: "Student", desc: "CS Foundations & Logic" },
+                { step: "Learning", desc: "Cloud & DevOps 101" },
+                { step: "Certification", desc: "Azure / AWS Badges" },
+                { step: "Internship", desc: "12-Week Production Lab" },
+                { step: "Associate", desc: "Junior Cloud Dev" },
+                { step: "Software Eng", desc: "Core Microservices" },
+                { step: "Senior Eng", desc: "Feature Lead & CI/CD" },
+                { step: "Architect", desc: "System Design & CAF" },
+                { step: "Principal", desc: "Enterprise Domain Lead" },
+                { step: "Tech Leader", desc: "VP & Engineering Fellow" }
               ].map((stage, idx) => (
                 <React.Fragment key={idx}>
-                  <div className="flex flex-col items-center text-center p-2.5 rounded-xl bg-black border border-zinc-800 w-full group hover:border-rose-500/50 transition-all">
-                    <span className="text-[8px] font-mono text-rose-400 font-bold mb-0.5">0{idx + 1}</span>
-                    <h4 className="text-[11px] font-bold text-white mb-0.5">{stage.step}</h4>
-                    <p className="text-[8px] text-zinc-500 font-medium">{stage.desc}</p>
+                  <div className="flex flex-col items-center text-center p-3.5 rounded-xl bg-black border border-zinc-800/90 w-full group hover:border-rose-500/50 transition-all">
+                    <span className="text-[11px] font-mono text-rose-400 font-bold mb-1">0{idx + 1}</span>
+                    <h4 className="text-xs sm:text-sm font-bold text-white mb-1 group-hover:text-rose-400 transition-colors">
+                      {stage.step}
+                    </h4>
+                    <p className="text-[11px] text-zinc-400 font-normal leading-tight">
+                      {stage.desc}
+                    </p>
                   </div>
 
                   {idx < 9 && (
                     <div className="hidden lg:block text-rose-500 shrink-0">
-                      <ArrowRight className="w-3 h-3 animate-pulse" />
+                      <ArrowRight className="w-4 h-4 animate-pulse" />
                     </div>
                   )}
                 </React.Fragment>
@@ -374,42 +405,50 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 7. GLOBAL TALENT MARKETPLACE (Image + Text) */}
-      <section id="global-marketplace" className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <section id="global-marketplace" className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-[10px] font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
                 GLOBAL OPPORTUNITIES
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
                 Global Talent Marketplace
               </h2>
-              <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-semibold">
-                Connect with enterprise organizations, technology partners, startups, and digital transformation projects across industries.
-              </p>
 
-              <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-2 gap-3.5 pt-2">
                 {[
-                  "Enterprise Cloud Projects", "Remote Opportunities",
+                  "Enterprise Cloud Projects", "Remote-First Flexibility",
                   "Contract & Fractional Roles", "Full-Time Career Tracks",
                   "Graduate Internships", "Consulting Engagements"
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs text-zinc-300 font-medium bg-zinc-900/60 p-3 rounded-xl border border-zinc-800">
+                  <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-zinc-200 font-medium bg-zinc-950/70 p-3.5 rounded-xl border border-zinc-800/80">
                     <CheckCircle2 className="w-4 h-4 text-rose-500 shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
+
+              <div className="pt-2">
+                <button
+                  onClick={() => setJoinModalOpen(true)}
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] cursor-pointer"
+                >
+                  Browse Open Positions <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
             <div className="lg:col-span-6">
               <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 group">
-                <img src="/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
-                  alt="Global engineering teams collaborating"
-                  className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy" />
-                <div className="p-4 bg-black/80 backdrop-blur-sm border-t border-zinc-800 text-xs font-mono text-zinc-300 flex justify-between items-center">
+                <img
+                  src="/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
+                  alt="Global engineering teams collaborating remotely"
+                  className="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="p-4 bg-black/85 backdrop-blur-md border-t border-zinc-800 text-xs sm:text-sm font-mono text-zinc-300 flex justify-between items-center">
                   <span>Remote Engineering Pod Collaboration</span>
                   <span className="text-rose-400 font-bold">20+ Countries</span>
                 </div>
@@ -420,25 +459,38 @@ export default function TalentNetworkPage() {
         </div>
       </section>
 
-      {/* 8. SKILLS & CERTIFICATIONS (Technology Badges with Logos) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-10">
+      {/* 8. SKILLS & CERTIFICATIONS (Technology Badges) */}
+      <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
-          <div className="text-center space-y-2">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-400 block">
+          <div className="text-center">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-zinc-400 block mb-3">
               VERIFIED CREDENTIALS
             </span>
-            <h3 className="text-xl font-bold text-white">Skills & Certification Badging</h3>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
+              Skills & Certification Badging
+            </h3>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-4 text-zinc-300 font-bold text-xs font-mono">
+          <div className="flex flex-wrap justify-center items-center gap-3.5 text-zinc-300 font-mono text-xs md:text-sm">
             {[
-              "Microsoft Azure Solutions Architect", "AWS Certified DevOps Engineer", "Google Cloud Professional",
-              "Certified Kubernetes Administrator (CKA)", "HashiCorp Certified: Terraform Associate",
-              "GitHub Actions Specialist", "Docker Certified Associate", "Python Institute PCEP",
-              "FastAPI Developer", "CISSP Security Specialist", "Security+ Credential", "Databricks Data Engineer"
+              "Microsoft Azure Solutions Architect (AZ-305)",
+              "AWS Certified DevOps Engineer – Professional",
+              "Google Cloud Professional Cloud Architect",
+              "Certified Kubernetes Administrator (CKA)",
+              "HashiCorp Certified: Terraform Associate",
+              "GitHub Actions Specialist",
+              "Docker Certified Associate (DCA)",
+              "Python Institute Certified Developer",
+              "FastAPI & Microservices Architect",
+              "CISSP – Information Systems Security",
+              "CompTIA Security+ Credential",
+              "Databricks Certified Data Engineer"
             ].map((cert, idx) => (
-              <span key={idx} className="px-4 py-2.5 rounded-xl bg-[#0A0A0A] border border-zinc-800 hover:border-rose-500/40 hover:text-white transition-colors">
+              <span
+                key={idx}
+                className="px-5 py-3 rounded-xl bg-[#0A0A0A] border border-zinc-800 hover:border-rose-500/50 hover:text-white transition-all duration-300 font-medium shadow-sm"
+              >
                 📜 {cert}
               </span>
             ))}
@@ -448,37 +500,38 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 9. LEARNING & MENTORSHIP (Cards) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
-                CAREER GROWTH
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+                CAREER ACCELERATION
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
                 Learning & Mentorship Programs
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Access structured mentorship and 1-on-1 coaching from principal architects.
-              </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-5">
             {[
-              { title: "Career Mentoring", desc: "1-on-1 career path guidance with principal architects." },
-              { title: "Technical Coaching", desc: "Hands-on code reviews and system architecture design." },
-              { title: "Mock Interviews", desc: "Simulated system design and algorithmic technical screens." },
-              { title: "Resume Guidance", desc: "Optimizing engineering profiles for enterprise hiring managers." },
-              { title: "Cert Preparation", desc: "Sponsored study groups for AWS/Azure certifications." },
-              { title: "Leadership Track", desc: "Preparing senior engineers for Engineering Manager roles." },
-              { title: "Architecture Reviews", desc: "Live whiteboarding feedback on personal side projects." },
-              { title: "Community Forum", desc: "24/7 private Slack & Discord technical Q&A channels." }
+              { title: "Career Mentoring", desc: "1-on-1 personalized career roadmapping with practicing principal architects." },
+              { title: "Technical Coaching", desc: "Hands-on code reviews, refactoring sessions, and system design whiteboarding." },
+              { title: "Mock Interviews", desc: "Simulated algorithmic interviews and high-concurrency system architecture tests." },
+              { title: "Resume Guidance", desc: "Portfolio optimization to meet the strict screening criteria of enterprise leaders." },
+              { title: "Cert Preparation", desc: "Sponsored cohorts and study circles targeting high-value AWS and Azure credentials." },
+              { title: "Leadership Track", desc: "Preparing experienced senior developers for Engineering Manager and Staff roles." },
+              { title: "Architecture Reviews", desc: "Constructive teardowns and architectural feedback on personal code repositories." },
+              { title: "Community Forum", desc: "24/7 dedicated Discord and Slack channels for real-time technical problem solving." }
             ].map((m, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-[#0A0A0A] border border-zinc-800 space-y-2 hover:border-rose-500/40 transition-all">
-                <h4 className="text-sm font-bold text-white">{m.title}</h4>
-                <p className="text-xs text-zinc-400 font-medium leading-relaxed">{m.desc}</p>
+              <div key={idx} className="p-6 rounded-2xl bg-[#0A0A0A] border border-zinc-800 space-y-2.5 hover:border-rose-500/40 transition-all duration-300 group">
+                <h4 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
+                  {m.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed">
+                  {m.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -487,44 +540,45 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 10. SUCCESS STORIES */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
-                REAL JOURNEYS
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+                PROVEN OUTCOMES
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
                 Network Success Stories
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                How members of our talent network progressed their careers.
-              </p>
             </div>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "From Intern to Cloud Engineer", tag: "Career Advancement", desc: "Joined as a university graduate, completed 1-on-1 Azure mentoring, and was placed as a full-time Cloud Architect in 6 months." },
-              { title: "Enterprise DevOps Specialist", tag: "Promotion Story", desc: "DevOps engineer gained CKA certification through community study groups and led a 100-node Kubernetes migration." },
-              { title: "AI Engineer Placement", tag: "Production AI", desc: "Built open-source RAG projects with community support and landed a Principal AI Architect role at a fintech scaleup." },
-              { title: "Community Mentor Growth", tag: "Mentorship", desc: "Senior Architect mentored 12 junior developers while co-authoring Devopstrio Terraform modules." }
+              { title: "From Graduate to Cloud Architect", tag: "Career Acceleration", desc: "Joined as a university graduate, completed intensive 1-on-1 Azure mentorship, and secured a full-time Cloud Architect position within 6 months." },
+              { title: "Enterprise DevOps Specialist", tag: "Promotion Milestone", desc: "Senior engineer earned CKA certification through community study groups and spearheaded a 100-node mission-critical Kubernetes migration." },
+              { title: "Principal AI Engineer Placement", tag: "Production AI", desc: "Architected open-source RAG frameworks with community peers and secured a Principal AI Architect role at a premier fintech organization." },
+              { title: "Community Mentor Growth", tag: "Mentorship Impact", desc: "Staff Architect guided 12 junior practitioners through production CI/CD pipelines while co-authoring production Terraform modules." }
             ].map((story, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
-                <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-4 group h-full flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded">
+                <div className="p-7 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-4 group h-full flex flex-col justify-between">
+                  <div className="space-y-3.5">
+                    <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-md inline-block">
                       {story.tag}
                     </span>
-                    <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{story.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{story.desc}</p>
+                    <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
+                      {story.title}
+                    </h3>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
+                      {story.desc}
+                    </p>
                   </div>
                   <button
                     onClick={() => setJoinModalOpen(true)}
-                    className="text-xs font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1 cursor-pointer pt-2"
+                    className="text-xs sm:text-sm font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1.5 cursor-pointer pt-3 border-t border-zinc-900"
                   >
-                    Read Story <ArrowUpRight className="w-3.5 h-3.5" />
+                    Read Story <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>
               </Reveal>
@@ -535,22 +589,27 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 11. PARTNER COMPANIES (Logo Wall) */}
-      <section className="py-20 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-10">
+      <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
-          <div className="text-center space-y-2">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-400 block">
-              ENTERPRISE OPPORTUNITIES
+          <div className="text-center">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-zinc-400 block mb-3">
+              ENTERPRISE ALLIANCES
             </span>
-            <h3 className="text-xl font-bold text-white">Partner Companies & Clients</h3>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
+              Trusted by Leading Technology Partners & Enterprises
+            </h3>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-6 text-zinc-400 font-bold text-xs md:text-sm font-mono">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-zinc-300 font-mono text-sm md:text-base font-semibold">
             {[
               "Microsoft", "AWS", "Google Cloud", "Oracle", "SAP",
               "Cisco", "GitHub", "Docker", "Red Hat", "HashiCorp"
             ].map((company, idx) => (
-              <span key={idx} className="px-4 py-2.5 rounded-xl bg-[#0A0A0A] border border-zinc-800/80 hover:text-white hover:border-rose-500/40 transition-colors">
+              <span
+                key={idx}
+                className="px-5 py-3 rounded-xl bg-[#0A0A0A] border border-zinc-800/80 hover:text-white hover:border-rose-500/40 transition-colors"
+              >
                 🏢 {company}
               </span>
             ))}
@@ -560,30 +619,33 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 12. COMMUNITY BENEFITS (Feature Grid) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
-                MEMBER PERKS
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+                MEMBERSHIP ADVANTAGES
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Community Member Benefits
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+                Comprehensive Member Benefits
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                What you receive when joining the Devopstrio Talent Network.
-              </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-5">
             {[
-              "Exclusive Job Listings", "1-on-1 Mentorship Access", "Global Networking Events", "Hands-on Tech Workshops",
-              "Certification Voucher Discounts", "Monthly Industry Webinars", "Open Source Collaborations", "Career Coaching Sessions"
+              "Exclusive Enterprise Job Board",
+              "1-on-1 Mentor Office Hours",
+              "Global Networking Summits",
+              "Hands-on Cloud Labs",
+              "Exam Voucher Subsidies",
+              "Monthly Architecture Webinars",
+              "Open-Source Framework Teams",
+              "Executive Career Advisory"
             ].map((ben, idx) => (
-              <div key={idx} className="p-5 rounded-xl bg-[#0A0A0A] border border-zinc-800 flex items-center gap-3 text-xs font-bold text-white hover:border-rose-500/40 transition-colors">
-                <CheckCircle2 className="w-4 h-4 text-rose-500 shrink-0" />
+              <div key={idx} className="p-5 sm:p-6 rounded-2xl bg-[#0A0A0A] border border-zinc-800 flex items-center gap-3.5 text-xs sm:text-sm font-semibold text-white hover:border-rose-500/40 transition-all duration-300">
+                <CheckCircle2 className="w-5 h-5 text-rose-500 shrink-0" />
                 <span>{ben}</span>
               </div>
             ))}
@@ -592,25 +654,22 @@ export default function TalentNetworkPage() {
         </div>
       </section>
 
-      {/* 13. EVENTS & NETWORKING (Timeline & Photos) */}
-      <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-        <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
+      {/* 13. EVENTS & NETWORKING */}
+      <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
-            <div className="text-center space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
-                NETWORKING CALENDAR
+            <div className="text-center">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
+                GLOBAL GATHERINGS
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-                Events & Community Gatherings
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+                Summits, Meetups & Hackathons
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Connect virtually and in-person at our annual engineering summits.
-              </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-3 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-3.5 text-center">
             {[
               { step: "01", event: "Engineering Meetup" },
               { step: "02", event: "Cloud Summit" },
@@ -619,9 +678,9 @@ export default function TalentNetworkPage() {
               { step: "05", event: "Career Fair" },
               { step: "06", event: "Global Conference" }
             ].map((evt, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-[#0A0A0A] border border-zinc-800 hover:border-rose-500/50 transition-colors">
-                <span className="text-[10px] font-mono text-rose-400 font-bold block mb-1">EVENT {evt.step}</span>
-                <h4 className="text-xs font-bold text-white">{evt.event}</h4>
+              <div key={idx} className="p-5 rounded-2xl bg-[#0A0A0A] border border-zinc-800 hover:border-rose-500/50 transition-colors">
+                <span className="text-[11px] font-mono text-rose-400 font-bold block mb-1.5">EVENT {evt.step}</span>
+                <h4 className="text-xs sm:text-sm font-bold text-white">{evt.event}</h4>
               </div>
             ))}
           </div>
@@ -629,22 +688,19 @@ export default function TalentNetworkPage() {
         </div>
       </section>
 
-      {/* 14. FAQ SECTION (Matching Accordion Standard) */}
+      {/* 14. FAQ SECTION */}
       <section id="faq" className="py-20 md:py-28 bg-[#030303] text-white border-b border-zinc-900/80 relative">
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-12">
 
-          <Reveal className="max-w-3xl mb-16">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-zinc-400">
+          <Reveal className="max-w-3xl mb-14">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-zinc-400">
                 KNOWLEDGE BASE
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15]">
               Questions we get <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">asked every day</span>.
             </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed font-semibold">
-              Everything you need to know about joining or hiring through the Talent Network.
-            </p>
           </Reveal>
 
           {/* Accordion FAQ */}
@@ -652,38 +708,38 @@ export default function TalentNetworkPage() {
             {[
               {
                 q: "Who can join the Devopstrio Talent Network?",
-                a: "Engineers of all levels—software developers, cloud architects, DevOps specialists, AI researchers, cybersecurity engineers, and university students—are welcome to join.",
+                a: "Engineers of all levels—software developers, cloud architects, DevOps specialists, AI researchers, cybersecurity practitioners, and technology students—are welcome to apply and join.",
                 proof: "✓ 25,000+ Active Members Worldwide",
                 tags: ["All Experience Levels", "Free Membership", "Global Network"]
               },
               {
                 q: "Is membership in the Talent Network completely free?",
-                a: "Yes, 100% free for candidates and community members. There are zero placement fees or membership dues for developers.",
+                a: "Yes, 100% free for candidates and community members. We never charge developers placement fees, recruitment commissions, or subscription dues.",
                 proof: "✓ $0 Cost for Engineers & Students",
-                tags: ["Free Access", "No Fees", "Open Community"]
+                tags: ["Free Access", "Zero Fees", "Open Community"]
               },
               {
-                q: "Do I need prior work experience to join?",
-                a: "No! We have specialized tracks for students and junior developers, providing mentorship, internships, and certification preparation to build your portfolio.",
+                q: "Do I need prior enterprise experience to join?",
+                a: "No prior enterprise experience is required. We maintain specialized tracks for university students and early-career developers, complete with hands-on labs, 1-on-1 mentorship, and certification bootcamps.",
                 proof: "✓ Student & Junior Pathways Included",
                 tags: ["Student Track", "Mentorship", "Internships"]
               },
               {
-                q: "Are remote job opportunities available?",
-                a: "Yes! Over 80% of enterprise project placements matched through our network offer full remote flexibility or hybrid options across 20+ countries.",
+                q: "Are remote opportunities available worldwide?",
+                a: "Yes! Over 80% of enterprise project placements matched through our network offer full remote flexibility or hybrid options across North America, Europe, the UK, and APAC.",
                 proof: "✓ 80%+ Remote Opportunities",
                 tags: ["Remote Work", "Contract Roles", "Full-Time Roles"]
               },
               {
                 q: "How do I connect with senior engineering mentors?",
-                a: "Once you register, you gain access to our private community Slack/Discord where you can request 1-on-1 office hours with Principal Cloud Architects.",
+                a: "Once registered, you gain access to our private community Slack and Discord platforms, where you can reserve 1-on-1 office hours with Principal Cloud Architects and Engineering Managers.",
                 proof: "✓ 100+ Senior Mentors Available",
                 tags: ["1-on-1 Mentorship", "Slack Community", "Code Reviews"]
               },
               {
                 q: "How can enterprise companies hire engineers through the network?",
-                a: "Enterprise clients can click 'Contact Our Community Team' or submit a hiring request. We match pre-vetted candidates or assemble agile pods in under 14 days.",
-                proof: "✓ Under 14-Day Average Time-to-Hire",
+                a: "Enterprise clients can click 'Contact Community Team' or submit an agile team request. We match pre-vetted engineers or deploy dedicated pods in under 14 days.",
+                proof: "✓ Under 14-Day Average Time-to-Deploy",
                 tags: ["Enterprise Hiring", "Agile Pods", "Vetted Talent"]
               }
             ].map((item, idx) => {
@@ -694,20 +750,20 @@ export default function TalentNetworkPage() {
                     onClick={() => toggleFaq(idx)}
                     className="flex justify-between items-center w-full text-left focus:outline-none group cursor-pointer"
                   >
-                    <span className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
+                    <span className="text-base md:text-lg font-bold text-zinc-200 group-hover:text-white transition-colors">
                       {item.q}
                     </span>
                     <div className="text-zinc-500 group-hover:text-rose-500 transition-colors ml-4 flex-shrink-0">
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                      {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                     </div>
                   </button>
 
                   {isOpen && (
-                    <div className="mt-4 text-xs md:text-sm text-zinc-400 leading-relaxed font-medium max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
+                    <div className="mt-4 text-sm md:text-base text-zinc-400 leading-relaxed font-normal max-w-3xl animate-in fade-in duration-200 flex flex-col gap-4">
                       <p>{item.a}</p>
 
                       {item.proof && (
-                        <span className="text-[10px] text-emerald-400 font-semibold tracking-wide font-mono">
+                        <span className="text-xs text-emerald-400 font-semibold tracking-wide font-mono">
                           {item.proof}
                         </span>
                       )}
@@ -717,7 +773,7 @@ export default function TalentNetworkPage() {
                           {item.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 text-[10px] font-mono font-medium tracking-wide"
+                              className="px-3 py-1 rounded-md bg-zinc-900 text-zinc-400 border border-zinc-800 text-xs font-mono font-medium tracking-wide"
                             >
                               {tag}
                             </span>
@@ -733,15 +789,15 @@ export default function TalentNetworkPage() {
 
           {/* Below FAQ Callout Box */}
           <Reveal delay={0.2}>
-            <div className="border border-zinc-900 bg-zinc-950/40 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-zinc-400 text-xs md:text-sm font-semibold">
+            <div className="border border-zinc-800/80 bg-zinc-950/60 p-7 md:p-8 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-6">
+              <p className="text-zinc-300 text-sm md:text-base font-normal">
                 Looking to recruit an agile engineering team for your cloud transformation? Contact our Community Recruitment Team.
               </p>
               <button
                 onClick={() => setContactModalOpen(true)}
-                className="gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
+                className="gap-2.5 inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex-shrink-0"
               >
-                Contact Community Team <ArrowUpRight size={14} className="text-rose-500" />
+                Contact Community Team <ArrowUpRight size={16} className="text-rose-500" />
               </button>
             </div>
           </Reveal>
@@ -750,27 +806,27 @@ export default function TalentNetworkPage() {
       </section>
 
       {/* 15. CTA SECTION */}
-      <section className="py-28 relative overflow-hidden bg-[#030303]">
+      <section className="py-24 md:py-32 relative overflow-hidden bg-[#030303]">
         <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
         <div className="max-w-5xl mx-auto px-6 text-center space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.15]">
             Your Next Engineering Opportunity Starts Here
           </h2>
-          <p className="text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed font-semibold">
-            Become part of a global engineering community where learning, collaboration, and innovation create lasting career opportunities.
+          <p className="text-base md:text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed font-normal">
+            Become part of a global engineering ecosystem where continuous learning, peer collaboration, and innovation create lasting career milestones.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <button
               onClick={() => setJoinModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 cursor-pointer"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs md:text-sm font-bold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5 cursor-pointer"
             >
               <Users className="w-4 h-4 mr-2" /> Join the Talent Network
             </button>
             <button
               onClick={() => setContactModalOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-xs md:text-sm font-bold tracking-wider uppercase border border-zinc-800 hover:border-zinc-700 bg-zinc-950/80 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
             >
-              <Building className="w-4 h-4 text-rose-500 mr-2" /> Contact Our Community Team
+              <Building className="w-4 h-4 text-rose-500 mr-2" /> Request Enterprise Talent
             </button>
           </div>
         </div>
@@ -779,7 +835,7 @@ export default function TalentNetworkPage() {
       {/* MODAL 1: JOIN THE NETWORK */}
       {joinModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-6 space-y-6 relative shadow-2xl">
+          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-7 space-y-6 relative shadow-2xl">
             <button
               onClick={() => {
                 setJoinModalOpen(false);
@@ -792,19 +848,19 @@ export default function TalentNetworkPage() {
 
             {joinSubmitted ? (
               <div className="py-8 text-center space-y-4">
-                <div className="w-14 h-14 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
+                <div className="w-16 h-16 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-9 h-9" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Application Submitted!</h3>
-                <p className="text-xs text-zinc-300 max-w-sm mx-auto font-medium">
-                  Welcome to the Devopstrio Talent Network! Check your inbox for your community Slack/Discord invitation and profile setup link.
+                <h3 className="text-2xl font-bold text-white">Application Submitted!</h3>
+                <p className="text-sm text-zinc-300 max-w-sm mx-auto font-normal leading-relaxed">
+                  Welcome to the Devopstrio Talent Network! Check your inbox for your community Slack/Discord invitation and onboarding link.
                 </p>
                 <button
                   onClick={() => {
                     setJoinModalOpen(false);
                     setJoinSubmitted(false);
                   }}
-                  className="px-6 py-2.5 rounded-xl bg-[#E11D48] text-white text-xs font-bold cursor-pointer"
+                  className="px-7 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold uppercase tracking-wider cursor-pointer"
                 >
                   Close Window
                 </button>
@@ -818,39 +874,39 @@ export default function TalentNetworkPage() {
                 className="space-y-4"
               >
                 <div>
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                  <h3 className="text-xl font-bold text-white flex items-center gap-2.5">
                     <Users className="w-5 h-5 text-rose-500" />
                     Join Devopstrio Talent Network
                   </h3>
-                  <p className="text-xs text-zinc-400 mt-1 font-medium">
+                  <p className="text-xs text-zinc-400 mt-1 font-normal">
                     Free global engineering community membership. Access enterprise roles and 1-on-1 mentorship.
                   </p>
                 </div>
 
-                <div className="space-y-3 text-xs">
+                <div className="space-y-3.5 text-xs sm:text-sm">
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Full Name *</label>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Full Name *</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Maria Santos"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Email Address *</label>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Email Address *</label>
                     <input
                       type="email"
                       required
                       placeholder="maria@example.com"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Primary Technical Discipline</label>
-                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none">
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Primary Technical Discipline</label>
+                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none">
                       <option>Cloud Engineering & Infrastructure</option>
                       <option>DevOps, GitOps & Kubernetes</option>
                       <option>AI, LLMs & Vector Databases</option>
@@ -862,8 +918,8 @@ export default function TalentNetworkPage() {
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Years of Experience</label>
-                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none">
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Years of Experience</label>
+                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none">
                       <option>Student / Recent Graduate</option>
                       <option>1 - 3 Years</option>
                       <option>4 - 7 Years</option>
@@ -872,19 +928,19 @@ export default function TalentNetworkPage() {
                   </div>
                 </div>
 
-                <div className="pt-2 flex justify-end gap-3">
+                <div className="pt-3 flex justify-end gap-3">
                   <button
                     type="button"
                     onClick={() => setJoinModalOpen(false)}
-                    className="px-4 py-2 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-semibold cursor-pointer"
+                    className="px-5 py-2.5 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-semibold hover:text-white cursor-pointer"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2 rounded-xl bg-[#E11D48] hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                    className="px-6 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-2 cursor-pointer shadow-md"
                   >
-                    <Users className="w-3.5 h-3.5" /> Submit Profile
+                    <Users className="w-4 h-4" /> Submit Profile
                   </button>
                 </div>
               </form>
@@ -896,7 +952,7 @@ export default function TalentNetworkPage() {
       {/* MODAL 2: CONTACT COMMUNITY TEAM (FOR ENTERPRISES) */}
       {contactModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-6 space-y-6 relative shadow-2xl">
+          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-7 space-y-6 relative shadow-2xl">
             <button
               onClick={() => {
                 setContactModalOpen(false);
@@ -909,11 +965,11 @@ export default function TalentNetworkPage() {
 
             {contactSubmitted ? (
               <div className="py-8 text-center space-y-4">
-                <div className="w-14 h-14 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
+                <div className="w-16 h-16 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-9 h-9" />
                 </div>
-                <h3 className="text-xl font-bold text-white">Inquiry Received!</h3>
-                <p className="text-xs text-zinc-300 max-w-sm mx-auto font-medium">
+                <h3 className="text-2xl font-bold text-white">Inquiry Received!</h3>
+                <p className="text-sm text-zinc-300 max-w-sm mx-auto font-normal leading-relaxed">
                   Our Community Talent Account Lead will reach out within 24 hours to discuss your engineering team requirements.
                 </p>
                 <button
@@ -921,7 +977,7 @@ export default function TalentNetworkPage() {
                     setContactModalOpen(false);
                     setContactSubmitted(false);
                   }}
-                  className="px-6 py-2.5 rounded-xl bg-[#E11D48] text-white text-xs font-bold cursor-pointer"
+                  className="px-7 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold uppercase tracking-wider cursor-pointer"
                 >
                   Close Window
                 </button>
@@ -935,39 +991,39 @@ export default function TalentNetworkPage() {
                 className="space-y-4"
               >
                 <div>
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                  <h3 className="text-xl font-bold text-white flex items-center gap-2.5">
                     <Building className="w-5 h-5 text-rose-500" />
                     Enterprise Hiring & Talent Request
                   </h3>
-                  <p className="text-xs text-zinc-400 mt-1 font-medium">
-                    Hire pre-vetted developers or deploy dedicated agile engineering pods.
+                  <p className="text-xs text-zinc-400 mt-1 font-normal">
+                    Hire pre-vetted senior engineers or deploy dedicated agile cloud pods.
                   </p>
                 </div>
 
-                <div className="space-y-3 text-xs">
+                <div className="space-y-3.5 text-xs sm:text-sm">
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Company / Organization Name *</label>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Company / Organization Name *</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Acme Financial Technologies"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Work Email *</label>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Work Email *</label>
                     <input
                       type="email"
                       required
                       placeholder="manager@acme.com"
-                      className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-zinc-300 font-semibold mb-1">Roles Needed</label>
-                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-3.5 py-2.5 text-white focus:border-rose-500 focus:outline-none">
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Roles Needed</label>
+                    <select className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none">
                       <option>Cloud & Infrastructure Architects (Azure/AWS)</option>
                       <option>DevOps & Kubernetes Engineers</option>
                       <option>AI & GenAI Product Developers</option>
@@ -977,19 +1033,19 @@ export default function TalentNetworkPage() {
                   </div>
                 </div>
 
-                <div className="pt-2 flex justify-end gap-3">
+                <div className="pt-3 flex justify-end gap-3">
                   <button
                     type="button"
                     onClick={() => setContactModalOpen(false)}
-                    className="px-4 py-2 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-semibold cursor-pointer"
+                    className="px-5 py-2.5 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-semibold hover:text-white cursor-pointer"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2 rounded-xl bg-[#E11D48] hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+                    className="px-6 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-2 cursor-pointer shadow-md"
                   >
-                    <Building className="w-3.5 h-3.5" /> Request Talent Pod
+                    <Building className="w-4 h-4" /> Request Talent Pod
                   </button>
                 </div>
               </form>

@@ -1,17 +1,28 @@
-
 import React from "react";
 import { notFound } from "next/navigation";
-import { getEcosystemSubpage } from "@/data/ecosystem";
+import { getEcosystemSubpage, ecosystemSubpages } from "@/data/ecosystem";
 import { Hero } from "@/components/ecosystem/Hero";
 import { FAQ } from "@/components/ecosystem/FAQ";
 import { CTA } from "@/components/ecosystem/CTA";
 
-
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo-utils";
 
+const DEDICATED_COMMUNITY = new Set([
+  "certification-programs",
+  "engineering-community",
+  "open-source-contributions",
+  "talent-network",
+  "university-programs"
+]);
+
+interface SubpageProps {
+  params: Promise<{ subpage: string }>;
+}
+
 export async function generateMetadata({ params }: SubpageProps): Promise<Metadata> {
   const { subpage } = await params;
+  if (DEDICATED_COMMUNITY.has(subpage)) return {};
   const domain = "community-talent-network";
   const data = getEcosystemSubpage(domain, subpage);
   if (!data) return {};
@@ -23,12 +34,11 @@ export async function generateMetadata({ params }: SubpageProps): Promise<Metada
   });
 }
 
-interface SubpageProps {
-  params: Promise<{ subpage: string }>;
-}
-
 export default async function EcosystemSubpage({ params }: SubpageProps) {
   const { subpage } = await params;
+  if (DEDICATED_COMMUNITY.has(subpage)) {
+    notFound();
+  }
   const domain = "community-talent-network";
   const data = getEcosystemSubpage(domain, subpage);
 
@@ -57,18 +67,18 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_top_right,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
           <div>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               THE CHALLENGE
             </span>
-            <p className="text-zinc-200 text-base md:text-lg font-medium leading-relaxed">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               {data.challenge}
             </p>
           </div>
           <div>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               OUR SOLUTION
             </span>
-            <p className="text-zinc-200 text-base md:text-lg font-medium leading-relaxed">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
               {data.solution}
             </p>
           </div>
@@ -79,7 +89,7 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               CORE CAPABILITIES
             </span>
             <ul className="flex flex-col gap-4">
@@ -92,7 +102,7 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
             </ul>
           </div>
           <div>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ENTERPRISE BENEFITS
             </span>
             <ul className="flex flex-col gap-4">
@@ -110,10 +120,10 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
       {/* Tech Stack */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-center mb-16">
-          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             TECHNOLOGY STACK
           </span>
-          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white">
+          <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
             Powered by Modern Tools
           </h2>
         </div>
@@ -138,14 +148,12 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
   );
 }
 
-
-import { ecosystemSubpages } from "@/data/ecosystem";
-
 export async function generateStaticParams() {
   const domain = "community-talent-network";
   const subpages = ecosystemSubpages[domain] || {};
-  return Object.keys(subpages).map((slug) => ({
-    subpage: slug
-  }));
+  return Object.keys(subpages)
+    .filter((slug) => !DEDICATED_COMMUNITY.has(slug))
+    .map((slug) => ({
+      subpage: slug
+    }));
 }
-
