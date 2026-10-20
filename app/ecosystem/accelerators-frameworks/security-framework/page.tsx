@@ -487,15 +487,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-20 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
               FOUNDATIONAL OVERVIEW
             </span>
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">
               Enterprise Security by Design
             </h2>
-            <p className="text-zinc-300 text-base md:text-xl leading-relaxed font-medium">
-              The Devopstrio Security Framework provides reusable architectures, governance policies, cloud security controls, identity management, and automation templates to help organizations secure applications, infrastructure, and digital operations at scale.
-            </p>
           </Reveal>
 
           {/* Overview Highlights 4 Pillars */}
@@ -514,7 +511,7 @@ export default function SecurityFrameworkPage() {
                   <pillar.icon className="w-5 h-5 text-rose-500" />
                 </div>
                 <h3 className="text-base font-bold text-white mb-2">{pillar.title}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-medium">{pillar.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -525,15 +522,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ENTERPRISE RISKS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Challenges We Address
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Eliminate identity complexity, cloud vulnerabilities, compliance gaps, and security misconfigurations.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -549,14 +543,14 @@ export default function SecurityFrameworkPage() {
                       <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Icon className="w-4 h-4 text-rose-500" />
                       </div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
+                      <span className="text-xs font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
                         {card.tag}
                       </span>
                     </div>
                     <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {card.desc}
                     </p>
                   </div>
@@ -571,15 +565,12 @@ export default function SecurityFrameworkPage() {
       <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ENTERPRISE BLUEPRINT
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Security Framework Architecture
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Interactive 6-layer enterprise security stack from identities to SIEM threat response.
-            </p>
           </Reveal>
 
           {/* Layer Selector Tabs */}
@@ -639,15 +630,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               10 CORE PILLARS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Core Security Pillars
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Comprehensive defense-in-depth framework across every digital layer.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -665,7 +653,7 @@ export default function SecurityFrameworkPage() {
                     <h3 className="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {pillar.desc}
                     </p>
                   </div>
@@ -683,15 +671,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               NEVER TRUST, ALWAYS VERIFY
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Zero Trust Architecture
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Eliminate trusted perimeters with strict cryptographic identity checks on every session.
-            </p>
           </Reveal>
 
           {/* Zero Trust Workflow Diagram */}
@@ -720,7 +705,7 @@ export default function SecurityFrameworkPage() {
                 <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                   {zt.title}
                 </h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                   {zt.desc}
                 </p>
               </div>
@@ -733,15 +718,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               IDENTITY GOVERNANCE
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Identity & Access Management
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Centralized identity controls, passwordless MFA, and privileged session governance.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -758,7 +740,7 @@ export default function SecurityFrameworkPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {idCard.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {idCard.desc}
                   </p>
                 </div>
@@ -772,15 +754,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               WORKLOAD HARDENING
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Cloud & Infrastructure Security
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Protection for Azure Defender, AWS Security Hub, Google Cloud, and Kubernetes clusters.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -797,7 +776,7 @@ export default function SecurityFrameworkPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {cloudCard.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {cloudCard.desc}
                   </p>
                 </div>
@@ -811,15 +790,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               SECURE SDLC & APIS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Application & API Security
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Embedding WAF, OAuth 2.0, SAST/DAST, and runtime container protection.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -836,7 +812,7 @@ export default function SecurityFrameworkPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {appCard.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {appCard.desc}
                   </p>
                 </div>
@@ -850,15 +826,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               CRYPTOGRAPHIC SAFEGUARDS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Data Protection & Encryption
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              AES-256 encryption, TLS 1.3, hardware key management, and Data Loss Prevention (DLP).
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -875,7 +848,7 @@ export default function SecurityFrameworkPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {dataCard.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {dataCard.desc}
                   </p>
                 </div>
@@ -889,15 +862,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               REGULATORY FRAMEWORKS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Compliance & Governance
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Automated compliance evidence collection for global security & privacy standards.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -914,7 +884,7 @@ export default function SecurityFrameworkPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {compCard.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {compCard.desc}
                   </p>
                 </div>
@@ -928,15 +898,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               DEVSECOPS PIPELINE
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Security Automation
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Interactive 8-stage automated security scanner flow from commit to runtime SIEM.
-            </p>
           </Reveal>
 
           {/* Pipeline Stage Selector Buttons */}
@@ -1007,15 +974,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               SECURITY ECOSYSTEM
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Technology Stack
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Integrations across identity platforms, cloud providers, container runtimes, SIEM, and DevSecOps tooling.
-            </p>
           </Reveal>
 
           {/* Category Filter Tabs */}
@@ -1051,7 +1015,7 @@ export default function SecurityFrameworkPage() {
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                       {tech.name}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium mt-1">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal mt-1">
                       {tech.desc}
                     </p>
                   </div>
@@ -1066,15 +1030,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MEASURABLE BENEFITS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Business Outcomes
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Guarantee continuous compliance, zero-trust isolation, and operational cyber resilience.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1090,7 +1051,7 @@ export default function SecurityFrameworkPage() {
                   <h3 className="text-lg font-bold text-white mb-2">
                     {outcome.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {outcome.desc}
                   </p>
                 </div>
@@ -1104,15 +1065,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               REAL-WORLD BLUEPRINTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Use Cases
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Security architectures tailored for enterprise domains, financial services, healthcare, and government.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1130,7 +1088,7 @@ export default function SecurityFrameworkPage() {
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                       {useCase.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {useCase.desc}
                     </p>
                   </div>
@@ -1145,15 +1103,12 @@ export default function SecurityFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ECOSYSTEM SYNERGY
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Related Accelerators
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Explore complementary frameworks in the Devopstrio engineering ecosystem.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1165,7 +1120,7 @@ export default function SecurityFrameworkPage() {
               >
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    <span className="text-xs font-mono font-bold uppercase px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
                       {acc.tag}
                     </span>
                     <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-rose-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -1173,7 +1128,7 @@ export default function SecurityFrameworkPage() {
                   <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
                     {acc.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {acc.desc}
                   </p>
                 </div>
@@ -1231,7 +1186,7 @@ export default function SecurityFrameworkPage() {
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
-                  <span className="text-[10px] font-mono text-rose-500 font-bold uppercase block mb-1">
+                  <span className="text-xs font-mono text-rose-500 font-bold uppercase block mb-1">
                     DEVOPSTRIO SECURITY ASSESSMENT
                   </span>
                   <h3 className="text-xl font-bold text-white">Schedule a Security Consultation</h3>

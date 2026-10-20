@@ -626,15 +626,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-20 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
               FOUNDATIONAL OVERVIEW
             </span>
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">
               Build Cloud Infrastructure Faster
             </h2>
-            <p className="text-zinc-300 text-base md:text-xl leading-relaxed font-medium">
-              Our Cloud Accelerator provides reusable Infrastructure as Code modules, deployment automation, networking blueprints, and governance templates that help engineering teams provision secure cloud environments consistently across multiple cloud providers.
-            </p>
           </Reveal>
 
           {/* Overview Highlights 4 Pillars */}
@@ -653,7 +650,7 @@ export default function CloudAcceleratorPage() {
                   <pillar.icon className="w-5 h-5 text-rose-500" />
                 </div>
                 <h3 className="text-base font-bold text-white mb-2">{pillar.title}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-medium">{pillar.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -664,15 +661,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               PAIN POINTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Common Infrastructure Problems
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Traditional cloud provisioning is slowed down by fragmented scripts, security gaps, and manual operational overhead.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -688,14 +682,14 @@ export default function CloudAcceleratorPage() {
                       <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Icon className="w-4 h-4 text-rose-500" />
                       </div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
+                      <span className="text-xs font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
                         {card.tag}
                       </span>
                     </div>
                     <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {card.desc}
                     </p>
                   </div>
@@ -710,15 +704,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MODULAR BLUEPRINTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Accelerator Components
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Interconnected building blocks engineered to work in unison or as standalone modules.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -736,13 +727,13 @@ export default function CloudAcceleratorPage() {
                     <h3 className="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">
                       {comp.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {comp.desc}
                     </p>
                   </div>
 
                   <div className="pt-3 border-t border-zinc-900">
-                    <span className="text-[10px] font-mono text-zinc-500 block mb-1 uppercase tracking-wider font-bold">
+                    <span className="text-xs font-mono text-zinc-500 block mb-1 uppercase tracking-wider font-bold">
                       Connects with:
                     </span>
                     <div className="flex flex-wrap gap-1">
@@ -764,15 +755,12 @@ export default function CloudAcceleratorPage() {
       <section id="architecture" className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               TOPOLOGY & FLOW
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Reference Architecture
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Interactive end-to-end cloud foundation diagram. Click or hover on infrastructure layers to view configurations.
-            </p>
           </Reveal>
 
           {/* Flow Diagram Container */}
@@ -789,7 +777,7 @@ export default function CloudAcceleratorPage() {
                 return (
                   <React.Fragment key={idx}>
                     <div className="flex flex-col items-center text-center p-4 rounded-xl bg-black border border-zinc-850 w-full md:w-52 hover:border-rose-500/40 transition-colors">
-                      <span className="text-[10px] font-mono text-rose-400 font-bold uppercase tracking-widest mb-1">
+                      <span className="text-xs font-mono text-rose-400 font-bold uppercase tracking-widest mb-1">
                         {step.badge}
                       </span>
                       <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-2">
@@ -839,7 +827,7 @@ export default function CloudAcceleratorPage() {
                     </div>
                     <div>
                       <h4 className="text-sm font-bold">{layer.name}</h4>
-                      <span className="text-[10px] font-mono text-zinc-500 uppercase block font-bold">
+                      <span className="text-xs font-mono text-zinc-500 uppercase block font-bold">
                         {isSelected ? "Active Layer" : "Click to view"}
                       </span>
                     </div>
@@ -885,15 +873,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               AUTOMATION TIMELINE
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Deployment Workflow
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              7-Step automated pipeline from repository clone to monitored production cloud environment.
-            </p>
           </Reveal>
 
           {/* Timeline Steps Selector */}
@@ -910,7 +895,7 @@ export default function CloudAcceleratorPage() {
                       : "bg-zinc-950 border-zinc-850 text-zinc-400 hover:border-zinc-700"
                   }`}
                 >
-                  <span className="text-[10px] font-mono text-rose-400 font-bold block mb-1">
+                  <span className="text-xs font-mono text-rose-400 font-bold block mb-1">
                     Step 0{wf.step}
                   </span>
                   <span className="text-xs font-bold block truncate">{wf.short}</span>
@@ -964,15 +949,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               HYPERSCALER COMPATIBILITY
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Supported Cloud Platforms
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Pre-built Infrastructure as Code modules tailored for major hyper-scale cloud providers.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -982,7 +964,7 @@ export default function CloudAcceleratorPage() {
                 className="p-6 bg-zinc-950/60 border border-zinc-800 rounded-3xl hover:border-rose-500/50 transition-all duration-300 flex flex-col justify-between space-y-6 group shadow-xl"
               >
                 <div className="space-y-4">
-                  <span className="inline-block px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-rose-500/10 text-rose-400 border border-rose-500/20">
                     {platform.badge}
                   </span>
                   <div>
@@ -998,7 +980,7 @@ export default function CloudAcceleratorPage() {
                   </p>
 
                   <div className="space-y-2 pt-2 border-t border-zinc-900">
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider font-bold block">
+                    <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider font-bold block">
                       Supported Services:
                     </span>
                     {platform.services.map((svc, i) => (
@@ -1019,15 +1001,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               TERRAFORM LIBRARIES
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Infrastructure Modules
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Modular, version-controlled Infrastructure as Code components ready for production use.
-            </p>
           </Reveal>
 
           {/* Module Category Filter Tabs */}
@@ -1059,14 +1038,14 @@ export default function CloudAcceleratorPage() {
                     <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center">
                       <Code className="w-4 h-4 text-rose-500" />
                     </div>
-                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-zinc-900 text-rose-400 border border-zinc-800">
+                    <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-zinc-900 text-rose-400 border border-zinc-800">
                       {mod.badge}
                     </span>
                   </div>
                   <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                     {mod.name}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {mod.desc}
                   </p>
                 </div>
@@ -1080,15 +1059,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               CONTINUOUS INTEGRATION
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Automation Pipeline
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              End-to-end GitOps pipeline executing automated code validation, speculative planning, and safe deployment.
-            </p>
           </Reveal>
 
           {/* CI/CD Flow Visual Grid */}
@@ -1127,15 +1103,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ZERO TRUST GUARDRAILS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Security & Governance
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Enterprise security features embedded directly into Infrastructure as Code blueprints.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1153,7 +1126,7 @@ export default function CloudAcceleratorPage() {
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {card.desc}
                     </p>
                   </div>
@@ -1168,15 +1141,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               CORE FEATURES
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Key Capabilities
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Capabilities designed to accelerate engineering velocity and guarantee security compliance.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1193,7 +1163,7 @@ export default function CloudAcceleratorPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {cap.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {cap.desc}
                   </p>
                 </div>
@@ -1207,15 +1177,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MEASURABLE OUTCOMES
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Business Benefits
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Proven operational impact delivered across enterprise cloud environments.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1231,7 +1198,7 @@ export default function CloudAcceleratorPage() {
                   <h3 className="text-lg font-bold text-white mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {benefit.desc}
                   </p>
                 </div>
@@ -1245,15 +1212,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               DEPLOYMENT SCENARIOS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Use Cases
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Tailored cloud foundation implementations for common enterprise engineering needs.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1271,7 +1235,7 @@ export default function CloudAcceleratorPage() {
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                       {useCase.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {useCase.desc}
                     </p>
                   </div>
@@ -1286,15 +1250,12 @@ export default function CloudAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ECOSYSTEM SYNERGY
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Related Accelerators
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Explore complementary frameworks in the Devopstrio engineering ecosystem.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1306,7 +1267,7 @@ export default function CloudAcceleratorPage() {
               >
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    <span className="text-xs font-mono font-bold uppercase px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
                       {acc.tag}
                     </span>
                     <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-rose-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -1314,7 +1275,7 @@ export default function CloudAcceleratorPage() {
                   <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
                     {acc.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {acc.desc}
                   </p>
                 </div>
@@ -1369,7 +1330,7 @@ export default function CloudAcceleratorPage() {
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
-                  <span className="text-[10px] font-mono text-rose-500 font-bold uppercase block mb-1">
+                  <span className="text-xs font-mono text-rose-500 font-bold uppercase block mb-1">
                     DEVOPSTRIO ACCELERATOR SPEC DEMO
                   </span>
                   <h3 className="text-xl font-bold text-white">Request Architecture & Demo</h3>

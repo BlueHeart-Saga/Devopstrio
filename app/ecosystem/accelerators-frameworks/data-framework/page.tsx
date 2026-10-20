@@ -482,15 +482,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-20 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
               FOUNDATIONAL OVERVIEW
             </span>
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">
               Transform Data into Business Intelligence
             </h2>
-            <p className="text-zinc-300 text-base md:text-xl leading-relaxed font-medium">
-              Modern organizations rely on trusted, high-quality data to drive innovation. The Devopstrio Data Framework provides reusable architectures, data pipelines, governance models, and analytics foundations that enable businesses to collect, process, and utilize data efficiently across cloud environments.
-            </p>
           </Reveal>
 
           {/* Overview Highlights 4 Pillars */}
@@ -509,7 +506,7 @@ export default function DataFrameworkPage() {
                   <pillar.icon className="w-5 h-5 text-rose-500" />
                 </div>
                 <h3 className="text-base font-bold text-white mb-2">{pillar.title}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-medium">{pillar.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -520,15 +517,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               PAIN POINTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Challenges We Solve
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Eliminate data silos, manual processing friction, slow reporting, and AI readiness gaps.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -544,14 +538,14 @@ export default function DataFrameworkPage() {
                       <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Icon className="w-4 h-4 text-rose-500" />
                       </div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
+                      <span className="text-xs font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
                         {card.tag}
                       </span>
                     </div>
                     <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {card.desc}
                     </p>
                   </div>
@@ -566,15 +560,12 @@ export default function DataFrameworkPage() {
       <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ENTERPRISE BLUEPRINT
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Data Framework Architecture
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Interactive 5-layer modern data platform stack from sources to business dashboards.
-            </p>
           </Reveal>
 
           {/* Layer Selector Tabs */}
@@ -634,15 +625,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               BUILDING BLOCKS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Core Data Components
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              10 modular components built for enterprise scalability, streaming, and AI integrations.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -660,7 +648,7 @@ export default function DataFrameworkPage() {
                     <h3 className="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">
                       {comp.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {comp.desc}
                     </p>
                   </div>
@@ -678,15 +666,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               END-TO-END PIPELINE
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Data Lifecycle
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Interactive 8-stage progression from raw event collection to automated query optimization.
-            </p>
           </Reveal>
 
           {/* Lifecycle Stage Buttons */}
@@ -757,15 +742,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MULTI-SOURCE INGESTION
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Data Ingestion & Integration
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              High-throughput CDC, API connectors, file processing, and SaaS sync.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -782,7 +764,7 @@ export default function DataFrameworkPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {ing.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {ing.desc}
                   </p>
                 </div>
@@ -796,15 +778,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               REAL-TIME ANALYTICS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Process Data as It Happens
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Low-latency event processing with Apache Kafka, Apache Flink, and stream analytics.
-            </p>
           </Reveal>
 
           {/* Streaming Architecture Diagram */}
@@ -833,7 +812,7 @@ export default function DataFrameworkPage() {
                 <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                   {st.title}
                 </h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                   {st.desc}
                 </p>
               </div>
@@ -846,15 +825,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MODERN STORAGE PATTERNS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Data Lake & Data Warehouse
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Combining the cheap scale of object lakes with the speed and ACID guarantees of lakehouses.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -901,15 +877,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               VALUABLE INSIGHTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Analytics & AI Data Foundation
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Powering business intelligence, ML feature stores, and RAG vector indexes.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -926,7 +899,7 @@ export default function DataFrameworkPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {anCard.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {anCard.desc}
                   </p>
                 </div>
@@ -940,15 +913,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               TRUSTED & COMPLIANT
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Data Governance & Security
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Data lineage, automated PII masking, catalog metadata, and RBAC policies.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -965,7 +935,7 @@ export default function DataFrameworkPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {govCard.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {govCard.desc}
                   </p>
                 </div>
@@ -979,15 +949,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               DATA ECOSYSTEM
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Technology Stack
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Deep integrations across streaming, batch processing, data platforms, and analytics.
-            </p>
           </Reveal>
 
           {/* Category Filter Tabs */}
@@ -1023,7 +990,7 @@ export default function DataFrameworkPage() {
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                       {tech.name}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium mt-1">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal mt-1">
                       {tech.desc}
                     </p>
                   </div>
@@ -1038,15 +1005,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MEASURABLE IMPACT
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Business Outcomes
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Accelerate real-time analytics while ensuring enterprise governance and AI readiness.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1062,7 +1026,7 @@ export default function DataFrameworkPage() {
                   <h3 className="text-lg font-bold text-white mb-2">
                     {outcome.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {outcome.desc}
                   </p>
                 </div>
@@ -1076,15 +1040,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ENTERPRISE DOMAINS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Use Cases
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Data platform deployment blueprints across industry domains and AI workloads.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1102,7 +1063,7 @@ export default function DataFrameworkPage() {
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                       {useCase.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {useCase.desc}
                     </p>
                   </div>
@@ -1117,15 +1078,12 @@ export default function DataFrameworkPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ECOSYSTEM SYNERGY
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Related Accelerators
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Explore complementary frameworks in the Devopstrio engineering ecosystem.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1137,7 +1095,7 @@ export default function DataFrameworkPage() {
               >
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    <span className="text-xs font-mono font-bold uppercase px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
                       {acc.tag}
                     </span>
                     <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-rose-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -1145,7 +1103,7 @@ export default function DataFrameworkPage() {
                   <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
                     {acc.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {acc.desc}
                   </p>
                 </div>
@@ -1200,7 +1158,7 @@ export default function DataFrameworkPage() {
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
-                  <span className="text-[10px] font-mono text-rose-500 font-bold uppercase block mb-1">
+                  <span className="text-xs font-mono text-rose-500 font-bold uppercase block mb-1">
                     DEVOPSTRIO DATA WORKSHOP
                   </span>
                   <h3 className="text-xl font-bold text-white">Schedule a Data Strategy Workshop</h3>

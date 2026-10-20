@@ -446,15 +446,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-20 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-4xl mx-auto text-center space-y-6">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
               FOUNDATIONAL OVERVIEW
             </span>
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white leading-tight">
               Accelerating Modern Software Delivery
             </h2>
-            <p className="text-zinc-300 text-base md:text-xl leading-relaxed font-medium">
-              The Devopstrio DevOps Accelerator provides reusable automation frameworks, deployment pipelines, GitOps templates, and Infrastructure as Code modules that enable engineering teams to release software faster, securely, and consistently across cloud environments.
-            </p>
           </Reveal>
 
           {/* Overview Highlights 4 Pillars */}
@@ -473,7 +470,7 @@ export default function DevOpsAcceleratorPage() {
                   <pillar.icon className="w-5 h-5 text-rose-500" />
                 </div>
                 <h3 className="text-base font-bold text-white mb-2">{pillar.title}</h3>
-                <p className="text-xs text-zinc-400 leading-relaxed font-medium">{pillar.desc}</p>
+                <p className="text-sm text-zinc-400 leading-relaxed font-normal">{pillar.desc}</p>
               </div>
             ))}
           </div>
@@ -484,15 +481,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               PAIN POINTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Challenges We Solve
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Eliminate release bottlenecks, environment drift, and manual engineering overhead.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -508,14 +502,14 @@ export default function DevOpsAcceleratorPage() {
                       <div className="w-9 h-9 rounded-xl bg-rose-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                         <Icon className="w-4 h-4 text-rose-500" />
                       </div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
+                      <span className="text-xs font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-bold">
                         {card.tag}
                       </span>
                     </div>
                     <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {card.desc}
                     </p>
                   </div>
@@ -530,15 +524,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               PLATFORM CAPABILITIES
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Accelerator Capabilities
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              10 core automation frameworks designed to scale engineering delivery speed.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -556,7 +547,7 @@ export default function DevOpsAcceleratorPage() {
                     <h3 className="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">
                       {cap.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -574,15 +565,12 @@ export default function DevOpsAcceleratorPage() {
       <section id="pipeline" className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               CONTINUOUS DELIVERY FLOW
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               DevOps Delivery Pipeline
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Interactive 9-stage pipeline: Developer → Git → PR → Review → Build → Test → Security Scan → Deploy → Monitor.
-            </p>
           </Reveal>
 
           {/* Pipeline Stage Selectors */}
@@ -653,15 +641,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               DECLARATIVE DEPLOYMENTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Git as the Single Source of Truth
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Continuous synchronization between Git repositories and Kubernetes clusters using ArgoCD and Flux.
-            </p>
           </Reveal>
 
           {/* GitOps Flow Diagram */}
@@ -690,15 +675,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               TOOLCHAIN INTEGRATION
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               CI/CD Components
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Modular components spanning Source Control, Build, Testing, Deployment, Release, and Notifications.
-            </p>
           </Reveal>
 
           {/* Component Category Tabs */}
@@ -727,14 +709,14 @@ export default function DevOpsAcceleratorPage() {
               >
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
                       {comp.badge}
                     </span>
                   </div>
                   <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                     {comp.name}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {comp.desc}
                   </p>
                 </div>
@@ -748,15 +730,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               IAC BLUEPRINTS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Infrastructure Automation
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Declarative IaC templates automating cloud resources from Git commits.
-            </p>
           </Reveal>
 
           {/* Flow Diagram: Git -> Terraform -> Cloud -> Infrastructure Ready */}
@@ -792,7 +771,7 @@ export default function DevOpsAcceleratorPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {tool.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {tool.desc}
                   </p>
                 </div>
@@ -806,15 +785,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               CONTAINER ORCHESTRATION
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Container & Kubernetes
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Production-ready Kubernetes manifests, Helm charts, and cloud container cluster configurations.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -831,7 +807,7 @@ export default function DevOpsAcceleratorPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {tool.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {tool.desc}
                   </p>
                 </div>
@@ -845,15 +821,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               FULL-STACK TELEMETRY
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Observability & Monitoring
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Real-time monitoring, metrics scraping, centralized logging, and automated alert manager routing.
-            </p>
           </Reveal>
 
           {/* Flow Diagram: Application -> Metrics/Logs/Tracing -> Dashboard -> Alerts */}
@@ -889,7 +862,7 @@ export default function DevOpsAcceleratorPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {tool.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {tool.desc}
                   </p>
                 </div>
@@ -903,15 +876,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               DEVSECOPS PIPELINE GATES
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Security Integration
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Shift-left security: Secrets management, container scanning, policy enforcement, and SBOM compliance.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -928,7 +898,7 @@ export default function DevOpsAcceleratorPage() {
                   <h3 className="text-base font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
                     {sec.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {sec.desc}
                   </p>
                 </div>
@@ -942,15 +912,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               TECHNOLOGY ECOSYSTEM
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Supported Technologies
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Deep integration across industry-standard DevOps, CI/CD, and cloud native tools.
-            </p>
           </Reveal>
 
           {/* Category Filter Tabs */}
@@ -986,7 +953,7 @@ export default function DevOpsAcceleratorPage() {
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                       {tech.name}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium mt-1">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal mt-1">
                       {tech.desc}
                     </p>
                   </div>
@@ -1001,15 +968,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MEASURABLE OUTCOMES
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Business Outcomes
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Accelerate software releases while ensuring zero-downtime reliability and enterprise compliance.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1025,7 +989,7 @@ export default function DevOpsAcceleratorPage() {
                   <h3 className="text-lg font-bold text-white mb-2">
                     {outcome.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {outcome.desc}
                   </p>
                 </div>
@@ -1039,15 +1003,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               DEPLOYMENT SCENARIOS
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Use Cases
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Proven implementation patterns for modern software engineering teams.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1065,7 +1026,7 @@ export default function DevOpsAcceleratorPage() {
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
                       {useCase.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                       {useCase.desc}
                     </p>
                   </div>
@@ -1080,15 +1041,12 @@ export default function DevOpsAcceleratorPage() {
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ECOSYSTEM SYNERGY
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
               Related Accelerators
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Explore complementary frameworks in the Devopstrio engineering ecosystem.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1100,7 +1058,7 @@ export default function DevOpsAcceleratorPage() {
               >
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[10px] font-mono font-bold uppercase px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    <span className="text-xs font-mono font-bold uppercase px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">
                       {acc.tag}
                     </span>
                     <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-rose-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
@@ -1108,7 +1066,7 @@ export default function DevOpsAcceleratorPage() {
                   <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
                     {acc.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">
                     {acc.desc}
                   </p>
                 </div>
@@ -1122,15 +1080,12 @@ export default function DevOpsAcceleratorPage() {
       <section id="faq" className="w-full py-24 bg-black border-b border-zinc-900/80 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="max-w-3xl mb-16">
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
               Everything you need to know
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base font-semibold">
-              Have questions about the Devopstrio DevOps Accelerator? Check out answers to common inquiries below.
-            </p>
           </Reveal>
 
           {/* Accordion List */}
@@ -1172,15 +1127,12 @@ export default function DevOpsAcceleratorPage() {
 
         <div className="max-w-3xl mx-auto px-12 xl:px-8 relative z-10 space-y-8">
           <Reveal>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-2">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-2">
               AUTOMATE YOUR SOFTWARE RELEASES
             </span>
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">
               Accelerate Every Software Release
             </h2>
-            <p className="text-zinc-300 text-sm md:text-base font-medium max-w-xl mx-auto leading-relaxed">
-              Deliver secure, automated, and scalable software faster with the Devopstrio DevOps Accelerator.
-            </p>
           </Reveal>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -1238,7 +1190,7 @@ export default function DevOpsAcceleratorPage() {
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
                 <div>
-                  <span className="text-[10px] font-mono text-rose-500 font-bold uppercase block mb-1">
+                  <span className="text-xs font-mono text-rose-500 font-bold uppercase block mb-1">
                     DEVOPSTRIO ACCELERATOR WORKSHOP
                   </span>
                   <h3 className="text-xl font-bold text-white">Schedule a DevOps Workshop</h3>

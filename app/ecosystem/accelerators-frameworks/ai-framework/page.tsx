@@ -489,9 +489,6 @@ export default function AIFrameworkPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
               Production-Grade AI Application Engineering
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium max-w-4xl mx-auto">
-              The Devopstrio Enterprise AI Framework delivers reusable architectures, prompt management registries, hybrid vector search, autonomous AI agent swarms, and MLOps deployment pipelines to help organizations build secure, scalable, and hallucination-free AI applications.
-            </p>
           </Reveal>
 
           {/* Overview Highlights 4 Pillars */}
@@ -524,12 +521,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ENTERPRISE ADOPTION RISKS
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Challenges We Address
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Eliminate model hallucination risks, vendor lock-in, ungrounded prompts, and AI security blind spots.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -570,12 +564,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ENTERPRISE BLUEPRINT
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               AI Framework Architecture
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Interactive 6-layer enterprise AI system stack from client interfaces to vector knowledge and MLOps telemetry.
-            </p>
           </Reveal>
 
           {/* Layer Selector Tabs */}
@@ -638,12 +629,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               10 CORE COMPONENTS
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Core AI Components
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Modular, production-ready AI building blocks engineered for enterprise scale, speed, and governance.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -665,7 +653,7 @@ export default function AIFrameworkPage() {
                       {cap.desc}
                     </p>
                   </div>
-                  <span className="text-[10px] md:text-xs font-mono px-2 py-0.5 rounded bg-zinc-900 text-rose-400 border border-zinc-800 font-bold self-start uppercase">
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-zinc-900 text-rose-400 border border-zinc-800 font-bold self-start uppercase">
                     {cap.connects}
                   </span>
                 </div>
@@ -682,12 +670,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               GROUNDED INTELLIGENCE
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Enterprise RAG & Knowledge Grounding
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Eliminate hallucinations with deterministic, multi-source vector retrieval, re-ranking, and verifiable citations.
-            </p>
           </Reveal>
 
           {/* RAG Workflow Flowchart */}
@@ -697,7 +682,7 @@ export default function AIFrameworkPage() {
                 <div className="flex flex-col items-center text-center p-4 rounded-xl bg-black border border-zinc-900 w-full md:w-52">
                   <step.icon className="w-6 h-6 text-rose-500 mb-2" />
                   <span className="text-xs md:text-sm font-bold text-white">{step.step}</span>
-                  <span className="text-[10px] md:text-xs text-zinc-400 font-mono mt-0.5">{step.sub}</span>
+                  <span className="text-xs text-zinc-400 font-mono mt-0.5">{step.sub}</span>
                 </div>
                 {i < 4 && <ArrowRight className="w-5 h-5 text-rose-500 hidden md:block shrink-0" />}
               </React.Fragment>
@@ -732,12 +717,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               AGENTIC REASONING
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Autonomous AI Agents & Workflows
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Orchestrate multi-step reasoning, dynamic tool invocation, and collaborative agent swarms.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -771,12 +753,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MODEL AGNOSTIC
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Multi-Model Orchestration & LLM Routing
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Intelligently distribute queries across frontier LLMs, cost-efficient models, and self-hosted open weights.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -810,12 +789,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               API SECURITY & DEFENSE
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Enterprise AI Gateway & Security
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Centralized API reverse proxy securing prompts, sanitizing PII, and enforcing enterprise governance.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -849,12 +825,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               VECTOR INFRASTRUCTURE
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Data Pipelines & Vector Storage
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              High-throughput embedding ingestion and ultra-low-latency similarity search across billions of vectors.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -888,12 +861,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ETHICS & REGULATION
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               AI Governance & Responsible AI
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Align enterprise AI systems with global regulations, ethical guardrails, and compliance audits.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -927,12 +897,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MLOPS AUTOMATION
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               AI Development & MLOps Pipeline
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Interactive 9-stage engineering flow from business discovery to continuous production telemetry.
-            </p>
           </Reveal>
 
           {/* Pipeline Stage Selector Buttons */}
@@ -949,7 +916,7 @@ export default function AIFrameworkPage() {
                       : "bg-zinc-950 border-zinc-850 text-zinc-400 hover:border-zinc-700"
                   }`}
                 >
-                  <span className="text-[10px] md:text-xs font-mono text-rose-400 font-bold block mb-0.5">
+                  <span className="text-xs font-mono text-rose-400 font-bold block mb-0.5">
                     Step {stg.step}
                   </span>
                   <span className="text-xs font-bold block truncate">{stg.short}</span>
@@ -987,7 +954,7 @@ export default function AIFrameworkPage() {
             </div>
 
             <div className="lg:col-span-7 bg-black rounded-2xl p-5 border border-zinc-900 font-mono text-xs md:text-sm text-emerald-400 overflow-x-auto shadow-inner">
-              <div className="flex justify-between text-zinc-500 text-[10px] md:text-xs mb-3 pb-2 border-b border-zinc-900">
+              <div className="flex justify-between text-zinc-500 text-xs mb-3 pb-2 border-b border-zinc-900">
                 <span>mlops-step-{aiPipelineSteps[activePipelineStep].step}.py</span>
                 <span>EXECUTION LOG</span>
               </div>
@@ -1006,12 +973,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               TECHNOLOGY ECOSYSTEM
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Technology Stack
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Integrations across leading AI frameworks, vector databases, foundation models, and cloud runtimes.
-            </p>
           </Reveal>
 
           {/* Category Filter Tabs */}
@@ -1065,12 +1029,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               MEASURABLE IMPACT
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Business Outcomes
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Deliver production-grade AI applications with verified business ROI, lower compute costs, and strict compliance.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1103,12 +1064,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               PRODUCTION BLUEPRINTS
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Enterprise Use Cases
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Proven deployment architectures powering customer support, financial intelligence, and knowledge discovery.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1144,12 +1102,9 @@ export default function AIFrameworkPage() {
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
               ECOSYSTEM SYNERGY
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
               Related Accelerators
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto">
-              Explore complementary frameworks in the Devopstrio engineering ecosystem.
-            </p>
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
