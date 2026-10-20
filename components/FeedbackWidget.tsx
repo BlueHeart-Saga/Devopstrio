@@ -19,6 +19,12 @@ export function FeedbackWidget() {
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
+    try {
+      if (sessionStorage.getItem("feedback_tooltip_dismissed") === "true") {
+        return;
+      }
+    } catch (e) {}
+
     // 8 seconds delay before showing the questions pop
     const timer = setTimeout(() => {
       setShowTooltip(true);
@@ -41,6 +47,9 @@ export function FeedbackWidget() {
   useEffect(() => {
     if (isOpen) {
       setShowTooltip(false);
+      try {
+        sessionStorage.setItem("feedback_tooltip_dismissed", "true");
+      } catch (err) {}
     }
   }, [isOpen]);
 
@@ -201,6 +210,9 @@ export function FeedbackWidget() {
               onClick={(e) => {
                 e.stopPropagation();
                 setShowTooltip(false);
+                try {
+                  sessionStorage.setItem("feedback_tooltip_dismissed", "true");
+                } catch (err) {}
               }}
               title="Dismiss suggestions"
               aria-label="Dismiss suggestions"

@@ -21,6 +21,12 @@ export function FloatingChatbot() {
   const [tooltipStep, setTooltipStep] = useState(0);
 
   useEffect(() => {
+    try {
+      if (sessionStorage.getItem("echo_tooltip_dismissed") === "true") {
+        return;
+      }
+    } catch (e) {}
+
     // 15 seconds delay before showing the first bubble
     const timer = setTimeout(() => {
       setShowTooltip(true);
@@ -52,6 +58,9 @@ export function FloatingChatbot() {
   useEffect(() => {
     if (isOpen) {
       setShowTooltip(false);
+      try {
+        sessionStorage.setItem("echo_tooltip_dismissed", "true");
+      } catch (err) {}
     }
   }, [isOpen]);
 
@@ -131,6 +140,9 @@ export function FloatingChatbot() {
               onClick={(e) => {
                 e.stopPropagation();
                 setShowTooltip(false);
+                try {
+                  sessionStorage.setItem("echo_tooltip_dismissed", "true");
+                } catch (err) {}
               }}
               title="Dismiss suggestions"
               aria-label="Dismiss suggestions"
