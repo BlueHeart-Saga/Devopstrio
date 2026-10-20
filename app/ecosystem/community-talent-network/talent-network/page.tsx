@@ -138,7 +138,7 @@ export default function TalentNetworkPage() {
                 <span className="text-xs md:text-sm font-bold uppercase tracking-wider text-zinc-300 block mb-1">
                   {stat.label}
                 </span>
-                <span className="text-[11px] font-mono text-rose-400/90 font-medium block">
+                <span className="text-xs font-mono text-rose-400/90 font-medium block">
                   {stat.sub}
                 </span>
               </div>
@@ -149,11 +149,11 @@ export default function TalentNetworkPage() {
 
       {/* 2. TALENT NETWORK OVERVIEW */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -222,11 +222,11 @@ export default function TalentNetworkPage() {
 
       {/* 3. COMMUNITY IMPACT (Large KPI Cards) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
@@ -252,12 +252,12 @@ export default function TalentNetworkPage() {
             ].map((kpi, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[22px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all text-center space-y-2.5 group h-full flex flex-col justify-between">
-                  <span className="text-3xl sm:text-4xl font-black text-rose-500 tracking-tight block group-hover:scale-105 transition-transform">
+                  <span className="text-3xl sm:text-4xl font-bold text-rose-500 tracking-tight block group-hover:scale-105 transition-transform">
                     {kpi.val}
                   </span>
                   <div>
                     <h4 className="text-xs sm:text-sm font-bold text-white mb-1">{kpi.label}</h4>
-                    <p className="text-[11px] text-zinc-500 font-mono">{kpi.desc}</p>
+                    <p className="text-xs text-zinc-500 font-mono">{kpi.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -269,11 +269,11 @@ export default function TalentNetworkPage() {
 
       {/* 4. WHO CAN JOIN (8 Large Feature Cards) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
@@ -350,11 +350,11 @@ export default function TalentNetworkPage() {
 
       {/* 5. TALENT CATEGORIES (Grid) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
@@ -381,7 +381,7 @@ export default function TalentNetworkPage() {
               { cat: "Product & Architecture", skills: "Event-Driven Systems, Domain-Driven Design, SaaS" }
             ].map((tc, idx) => (
               <div key={idx} className="p-6 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-2.5 group">
-                <span className="text-[11px] font-mono text-rose-400 font-bold uppercase tracking-wider block">
+                <span className="text-xs font-mono text-rose-400 font-bold uppercase tracking-wider block">
                   DOMAIN 0{idx + 1}
                 </span>
                 <h4 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">
@@ -399,11 +399,11 @@ export default function TalentNetworkPage() {
 
       {/* 6. ENGINEERING CAREER JOURNEY (Roadmap) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
@@ -434,11 +434,11 @@ export default function TalentNetworkPage() {
               ].map((stage, idx) => (
                 <React.Fragment key={idx}>
                   <div className="flex flex-col items-center text-center p-3.5 rounded-xl bg-black border border-zinc-800/90 w-full group hover:border-rose-500/50 transition-all">
-                    <span className="text-[11px] font-mono text-rose-400 font-bold mb-1">0{idx + 1}</span>
+                    <span className="text-xs font-mono text-rose-400 font-bold mb-1">0{idx + 1}</span>
                     <h4 className="text-xs sm:text-sm font-bold text-white mb-1 group-hover:text-rose-400 transition-colors">
                       {stage.step}
                     </h4>
-                    <p className="text-[11px] text-zinc-400 font-normal leading-tight">
+                    <p className="text-xs text-zinc-400 font-normal leading-tight">
                       {stage.desc}
                     </p>
                   </div>
@@ -458,11 +458,11 @@ export default function TalentNetworkPage() {
 
       {/* 7. GLOBAL TALENT MARKETPLACE (Image + Text) */}
       <section id="global-marketplace" className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -519,11 +519,11 @@ export default function TalentNetworkPage() {
 
       {/* 8. SKILLS & CERTIFICATIONS (Technology Badges) */}
       <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
@@ -565,11 +565,11 @@ export default function TalentNetworkPage() {
 
       {/* 9. LEARNING & MENTORSHIP (Cards) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
@@ -611,11 +611,11 @@ export default function TalentNetworkPage() {
 
       {/* 10. SUCCESS STORIES */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
@@ -640,7 +640,7 @@ export default function TalentNetworkPage() {
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-7 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-4 group h-full flex flex-col justify-between">
                   <div className="space-y-3.5">
-                    <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-md inline-block">
+                    <span className="text-xs font-mono font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-3 py-1 rounded-md inline-block">
                       {story.tag}
                     </span>
                     <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">
@@ -650,12 +650,6 @@ export default function TalentNetworkPage() {
                       {story.desc}
                     </p>
                   </div>
-                  <button
-                    onClick={() => setJoinModalOpen(true)}
-                    className="text-xs sm:text-sm font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1.5 cursor-pointer pt-3 border-t border-zinc-900"
-                  >
-                    Read Story <ArrowUpRight className="w-4 h-4" />
-                  </button>
                 </div>
               </Reveal>
             ))}
@@ -666,11 +660,11 @@ export default function TalentNetworkPage() {
 
       {/* 11. PARTNER COMPANIES (Logo Wall) */}
       <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
@@ -702,11 +696,11 @@ export default function TalentNetworkPage() {
 
       {/* 12. COMMUNITY BENEFITS (Feature Grid) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
@@ -744,11 +738,11 @@ export default function TalentNetworkPage() {
 
       {/* 13. EVENTS & NETWORKING */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
@@ -773,7 +767,7 @@ export default function TalentNetworkPage() {
               { step: "06", event: "Global Conference" }
             ].map((evt, idx) => (
               <div key={idx} className="p-5 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(244,63,94,0.12)] transition-colors">
-                <span className="text-[11px] font-mono text-rose-400 font-bold block mb-1.5">EVENT {evt.step}</span>
+                <span className="text-xs font-mono text-rose-400 font-bold block mb-1.5">EVENT {evt.step}</span>
                 <h4 className="text-xs sm:text-sm font-bold text-white">{evt.event}</h4>
               </div>
             ))}

@@ -217,7 +217,7 @@ export default function OpenSourcePage() {
                 <span className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-1 block">
                   {stat.val}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-400">
+                <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
                   {stat.label}
                 </span>
               </div>
@@ -228,11 +228,11 @@ export default function OpenSourcePage() {
 
       {/* 2. OUR OPEN SOURCE MISSION (Split Layout) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -253,7 +253,7 @@ export default function OpenSourcePage() {
 
             {/* Right Mission Text */}
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 OUR MISSION
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
@@ -295,17 +295,17 @@ export default function OpenSourcePage() {
 
       {/* 3. CONTRIBUTION IMPACT (Large KPI Section) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 GLOBAL FOOTPRINT
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -328,11 +328,11 @@ export default function OpenSourcePage() {
             ].map((kpi, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all text-center space-y-2 group h-full">
-                  <span className="text-2xl md:text-3xl font-black text-rose-500 tracking-tight block group-hover:scale-110 transition-transform">
+                  <span className="text-2xl md:text-3xl font-bold text-rose-500 tracking-tight block group-hover:scale-110 transition-transform">
                     {kpi.val}
                   </span>
                   <h4 className="text-xs font-bold text-white">{kpi.label}</h4>
-                  <p className="text-[10px] text-zinc-500 font-mono">{kpi.desc}</p>
+                  <p className="text-xs text-zinc-500 font-mono">{kpi.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -343,17 +343,17 @@ export default function OpenSourcePage() {
 
       {/* 4. FEATURED OPEN SOURCE PROJECTS */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 FLAGSHIP BLUEPRINTS
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -400,15 +400,15 @@ export default function OpenSourcePage() {
                       <span className="text-rose-400 font-bold flex items-center gap-1">
                         <Github className="w-3.5 h-3.5" /> Devopstrio
                       </span>
-                      <span className="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold">Public Repo</span>
+                      <span className="text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20 font-bold">Public Repo</span>
                     </div>
 
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{proj.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{proj.desc}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">{proj.desc}</p>
 
                     <div className="flex flex-wrap gap-1.5 pt-2">
                       {proj.tags.map((t, i) => (
-                        <span key={i} className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
+                        <span key={i} className="text-xs font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
                           {t}
                         </span>
                       ))}
@@ -435,17 +435,17 @@ export default function OpenSourcePage() {
 
       {/* 5. ENGINEERING FRAMEWORKS (Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 REUSABLE ASSETS
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -474,17 +474,17 @@ export default function OpenSourcePage() {
 
       {/* 6. GITHUB REPOSITORY SHOWCASE ⭐ (GitHub-Style Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block flex items-center justify-center gap-2">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block flex items-center justify-center gap-2">
                 <Github className="w-4 h-4" /> REPOSITORY SHOWCASE
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -577,7 +577,7 @@ export default function OpenSourcePage() {
 
                     <p className="text-xs text-zinc-300 leading-relaxed font-semibold">{repo.desc}</p>
 
-                    <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono text-zinc-400 pt-2 border-t border-zinc-900">
+                    <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-400 pt-2 border-t border-zinc-900">
                       <span className="flex items-center gap-1 text-rose-400 font-bold">
                         <Star className="w-3 h-3 fill-rose-500" /> {repo.stars}
                       </span>
@@ -589,7 +589,7 @@ export default function OpenSourcePage() {
                       </span>
                     </div>
 
-                    <div className="flex justify-between items-center text-[10px] font-mono text-zinc-500 pt-1">
+                    <div className="flex justify-between items-center text-xs font-mono text-zinc-500 pt-1">
                       <span>Lang: {repo.lang}</span>
                       <span>License: {repo.license}</span>
                     </div>
@@ -615,17 +615,17 @@ export default function OpenSourcePage() {
 
       {/* 7. TECHNOLOGY CATEGORIES (Colorful Category Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 CORE DOMAINS
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -653,7 +653,7 @@ export default function OpenSourcePage() {
                   <cat.icon className="w-5 h-5 text-rose-500" />
                 </div>
                 <h4 className="text-sm font-bold text-white">{cat.title}</h4>
-                <span className="text-[10px] font-mono text-zinc-500 block">{cat.count}</span>
+                <span className="text-xs font-mono text-zinc-500 block">{cat.count}</span>
               </div>
             ))}
           </div>
@@ -663,17 +663,17 @@ export default function OpenSourcePage() {
 
       {/* 8. COMMUNITY CONTRIBUTIONS WORKFLOW (Timeline) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 CONTRIBUTION LIFECYCLE
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -718,17 +718,17 @@ export default function OpenSourcePage() {
 
       {/* 9. PROJECT LIFECYCLE (Large Diagram / Steps) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 GOVERNANCE
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -757,17 +757,17 @@ export default function OpenSourcePage() {
 
       {/* 10. DEVELOPER CONTRIBUTION GUIDE (Step-by-Step Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 DEVELOPER ONBOARDING
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -799,17 +799,17 @@ export default function OpenSourcePage() {
 
       {/* 11. ENGINEERING STANDARDS (Cards Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 QUALITY BAR
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -838,17 +838,17 @@ export default function OpenSourcePage() {
 
       {/* 12. LATEST RELEASES (Timeline) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 RELEASE LOG
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -883,7 +883,7 @@ export default function OpenSourcePage() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-10">
 
           <div className="text-center space-y-2">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-400 block">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase text-zinc-400 block">
               ECOSYSTEM FOUNDATIONS & COLLABORATORS
             </span>
             <h3 className="text-xl font-bold text-white">Partner Communities & Standards</h3>
@@ -905,17 +905,17 @@ export default function OpenSourcePage() {
 
       {/* 14. SUCCESS STORIES */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 COMMUNITY ADOPTION
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -953,18 +953,12 @@ export default function OpenSourcePage() {
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-4 group h-full flex flex-col justify-between">
                   <div className="space-y-3">
-                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded">
+                    <span className="text-xs font-mono font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-0.5 rounded">
                       {story.tag}
                     </span>
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{story.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{story.desc}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">{story.desc}</p>
                   </div>
-                  <button
-                    onClick={() => setContributorModalOpen(true)}
-                    className="text-xs font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1 cursor-pointer pt-2"
-                  >
-                    Read Story <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
                 </div>
               </Reveal>
             ))}

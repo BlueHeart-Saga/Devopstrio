@@ -222,7 +222,7 @@ export default function EngineeringCommunityPage() {
                 <span className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-1 block">
                   {stat.val}
                 </span>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-rose-400">
+                <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
                   {stat.label}
                 </span>
               </div>
@@ -233,11 +233,11 @@ export default function EngineeringCommunityPage() {
 
       {/* 2. COMMUNITY STORY SECTION (Microsoft-Style Split Layout using assets/common images) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -258,7 +258,7 @@ export default function EngineeringCommunityPage() {
 
             {/* Right Story Text */}
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 OUR ENGINEERING PHILOSOPHY
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
@@ -297,17 +297,17 @@ export default function EngineeringCommunityPage() {
 
       {/* 3. COMMUNITY HIGHLIGHTS (Large KPI Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 COMMUNITY IMPACT
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -330,11 +330,11 @@ export default function EngineeringCommunityPage() {
             ].map((kpi, idx) => (
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all duration-300 text-center space-y-2 group h-full">
-                  <span className="text-2xl md:text-3xl font-black text-rose-500 tracking-tight block group-hover:scale-110 transition-transform">
+                  <span className="text-2xl md:text-3xl font-bold text-rose-500 tracking-tight block group-hover:scale-110 transition-transform">
                     {kpi.val}
                   </span>
                   <h4 className="text-xs font-bold text-white">{kpi.label}</h4>
-                  <p className="text-[10px] text-zinc-500 font-mono">{kpi.desc}</p>
+                  <p className="text-xs text-zinc-500 font-mono">{kpi.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -345,17 +345,17 @@ export default function EngineeringCommunityPage() {
 
       {/* 4. COMMUNITY PILLARS (6 Premium Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 SPECIALIZED GUILDS
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -383,16 +383,11 @@ export default function EngineeringCommunityPage() {
                       <pillar.icon className={`w-6 h-6 ${pillar.color}`} />
                     </div>
                     <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">{pillar.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{pillar.desc}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">{pillar.desc}</p>
                   </div>
-                  <div className="pt-6 mt-4 border-t border-zinc-900 flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase">Active Guild</span>
-                    <button
-                      onClick={() => setJoinModalOpen(true)}
-                      className="text-xs font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1 cursor-pointer"
-                    >
-                      Join Guild <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
+                  <div className="pt-4 mt-auto border-t border-zinc-900/80 flex items-center justify-between">
+                    <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">Active Community Guild</span>
+                    <span className="text-xs font-semibold text-rose-500 uppercase tracking-wider">Enterprise Track</span>
                   </div>
                 </div>
               </Reveal>
@@ -404,17 +399,17 @@ export default function EngineeringCommunityPage() {
 
       {/* 5. REAL ENGINEERING ACTIVITIES ⭐ (Alternating Sections using assets/common images) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-20">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 HANDS-ON LEARNING & BUILD
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -429,7 +424,7 @@ export default function EngineeringCommunityPage() {
           {/* Activity 1: Open Source Collaboration */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 space-y-4">
-              <span className="text-[10px] font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+              <span className="text-xs font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
                 01. OPEN SOURCE & IAC
               </span>
               <h3 className="text-2xl md:text-3xl font-bold text-white">Open Source Collaboration</h3>
@@ -455,7 +450,7 @@ export default function EngineeringCommunityPage() {
           {/* Activity 2: Architecture Workshops */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 lg:order-2 space-y-4">
-              <span className="text-[10px] font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+              <span className="text-xs font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
                 02. SYSTEM DESIGN
               </span>
               <h3 className="text-2xl md:text-3xl font-bold text-white">Architecture Workshops</h3>
@@ -481,7 +476,7 @@ export default function EngineeringCommunityPage() {
           {/* Activity 3: AI Innovation Sessions */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 space-y-4">
-              <span className="text-[10px] font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+              <span className="text-xs font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
                 03. ENTERPRISE AI
               </span>
               <h3 className="text-2xl md:text-3xl font-bold text-white">AI Innovation Sessions</h3>
@@ -507,7 +502,7 @@ export default function EngineeringCommunityPage() {
           {/* Activity 4: DevOps Hackathons */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 lg:order-2 space-y-4">
-              <span className="text-[10px] font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+              <span className="text-xs font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
                 04. 48-HOUR CHALLENGES
               </span>
               <h3 className="text-2xl md:text-3xl font-bold text-white">DevOps Hackathons</h3>
@@ -535,17 +530,17 @@ export default function EngineeringCommunityPage() {
 
       {/* 6. OPEN SOURCE PROJECTS (GitHub-Style Cards Grid) */}
       <section id="open-source-projects" className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block flex items-center justify-center gap-2">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block flex items-center justify-center gap-2">
                 <Github className="w-4 h-4" /> COMMUNITY BLUEPRINTS
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -613,11 +608,11 @@ export default function EngineeringCommunityPage() {
                     </div>
 
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{proj.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{proj.desc}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">{proj.desc}</p>
 
                     <div className="flex flex-wrap gap-1.5 pt-2">
                       {proj.tags.map((t, i) => (
-                        <span key={i} className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
+                        <span key={i} className="text-xs font-mono px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">
                           {t}
                         </span>
                       ))}
@@ -644,17 +639,17 @@ export default function EngineeringCommunityPage() {
 
       {/* 7. TECHNICAL MEETUPS & EVENTS (Timeline Layout) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 ANNUAL SCHEDULE
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -687,7 +682,7 @@ export default function EngineeringCommunityPage() {
                 <div className="p-6 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-colors space-y-2">
                   <span className="md:hidden text-xs font-mono font-bold text-rose-400 uppercase block">{evt.month}</span>
                   <h4 className="text-lg font-bold text-white">{evt.title}</h4>
-                  <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{evt.desc}</p>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal">{evt.desc}</p>
                 </div>
               </div>
             ))}
@@ -698,17 +693,17 @@ export default function EngineeringCommunityPage() {
 
       {/* 8. KNOWLEDGE HUB (Cards Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 LEARNING & RESOURCES
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -736,15 +731,10 @@ export default function EngineeringCommunityPage() {
                       <hub.icon className="w-5 h-5 text-rose-500" />
                     </div>
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{hub.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{hub.desc}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">{hub.desc}</p>
                   </div>
-                  <div className="pt-4 border-t border-zinc-900">
-                    <button
-                      onClick={() => setJoinModalOpen(true)}
-                      className="text-xs font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1 cursor-pointer"
-                    >
-                      Access Content <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
+                  <div className="pt-3 border-t border-zinc-900/80 flex items-center justify-between">
+                    <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">Verified Resource Hub</span>
                   </div>
                 </div>
               </Reveal>
@@ -756,17 +746,17 @@ export default function EngineeringCommunityPage() {
 
       {/* 9. LEARNING PATHS / CAREER ROADMAP */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 CAREER GROWTH
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -791,9 +781,9 @@ export default function EngineeringCommunityPage() {
               ].map((path, idx) => (
                 <React.Fragment key={idx}>
                   <div className="flex flex-col items-center text-center p-4 rounded-xl bg-black border border-zinc-800 w-full group hover:border-rose-500/50 transition-all">
-                    <span className="text-[10px] font-mono text-rose-400 font-bold mb-1">LEVEL 0{idx + 1}</span>
+                    <span className="text-xs font-mono text-rose-400 font-bold mb-1">LEVEL 0{idx + 1}</span>
                     <h4 className="text-sm font-bold text-white mb-1">{path.level}</h4>
-                    <p className="text-[10px] text-zinc-500 font-medium">{path.desc}</p>
+                    <p className="text-xs text-zinc-500 font-medium">{path.desc}</p>
                   </div>
 
                   {idx < 6 && (
@@ -811,17 +801,17 @@ export default function EngineeringCommunityPage() {
 
       {/* 10. COMMUNITY GALLERY ⭐ (Visual Grid using assets/common images) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 LIFE IN THE COMMUNITY
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -864,17 +854,17 @@ export default function EngineeringCommunityPage() {
 
       {/* 11. COMMUNITY SUCCESS STORIES */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 MEMBER ACHIEVEMENTS
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -912,18 +902,12 @@ export default function EngineeringCommunityPage() {
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] space-y-4 group h-full flex flex-col justify-between">
                   <div className="space-y-3">
-                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded">
+                    <span className="text-xs font-mono font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-0.5 rounded">
                       {story.tag}
                     </span>
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{story.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{story.desc}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">{story.desc}</p>
                   </div>
-                  <button
-                    onClick={() => setJoinModalOpen(true)}
-                    className="text-xs font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1 cursor-pointer pt-2"
-                  >
-                    Read Story <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
                 </div>
               </Reveal>
             ))}
@@ -937,7 +921,7 @@ export default function EngineeringCommunityPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-10">
 
           <div className="text-center">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-400 block">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase text-zinc-400 block">
               ECOSYSTEM & COMMUNITY PARTNERS
             </span>
           </div>

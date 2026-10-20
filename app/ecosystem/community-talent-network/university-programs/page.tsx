@@ -216,7 +216,7 @@ export default function UniversityProgramsPage() {
                 <span className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-1 block">
                   {stat.val}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-rose-400">
+                <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
                   {stat.label}
                 </span>
               </div>
@@ -227,11 +227,11 @@ export default function UniversityProgramsPage() {
 
       {/* 2. PROGRAM OVERVIEW (Bridging Academia and Industry) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -252,7 +252,7 @@ export default function UniversityProgramsPage() {
 
             {/* Right Overview Text */}
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 PROGRAM OVERVIEW
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
@@ -294,17 +294,17 @@ export default function UniversityProgramsPage() {
 
       {/* 3. WHY UNIVERSITIES PARTNER WITH DEVOPSTRIO (6 Feature Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 MUTUAL VALUE
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -332,13 +332,11 @@ export default function UniversityProgramsPage() {
                       <card.icon className="w-6 h-6 text-rose-500" />
                     </div>
                     <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">{card.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{card.desc}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">{card.desc}</p>
                   </div>
                   <div className="pt-6 mt-4 border-t border-zinc-900 flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase">Academic Pillar</span>
-                    <span className="text-xs font-bold text-rose-500 flex items-center gap-1">
-                      Explore Pillar <ChevronRight className="w-3.5 h-3.5" />
-                    </span>
+                    <span className="text-xs font-mono text-zinc-500 uppercase">Academic Pillar</span>
+                    <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">Core Academic Pillar</span>
                   </div>
                 </div>
               </Reveal>
@@ -350,17 +348,17 @@ export default function UniversityProgramsPage() {
 
       {/* 4. UNIVERSITY PARTNERSHIP PROGRAMS (6 Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 PARTNERSHIP FRAMEWORK
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -408,19 +406,14 @@ export default function UniversityProgramsPage() {
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all duration-300 space-y-4 group h-full flex flex-col justify-between">
                   <div className="space-y-3">
-                    <span className="text-[10px] font-mono font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-0.5 rounded">
+                    <span className="text-xs font-mono font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-0.5 rounded">
                       {prog.tag}
                     </span>
                     <h3 className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors">{prog.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{prog.desc}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">{prog.desc}</p>
                   </div>
-                  <div className="pt-4 border-t border-zinc-900">
-                    <button
-                      onClick={() => setPartnerModalOpen(true)}
-                      className="text-xs font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1 cursor-pointer"
-                    >
-                      Apply For Program <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
+                  <div className="pt-3 border-t border-zinc-900/80 flex items-center justify-between">
+                    <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">Academic Initiative</span>
                   </div>
                 </div>
               </Reveal>
@@ -432,17 +425,17 @@ export default function UniversityProgramsPage() {
 
       {/* 5. INDUSTRY-ACADEMIA COLLABORATION (Microsoft-Style Alternating Feature) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-[10px] font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+              <span className="text-xs font-mono font-bold text-rose-400 uppercase tracking-widest bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
                 REAL-WORLD CO-CREATION
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
@@ -484,17 +477,17 @@ export default function UniversityProgramsPage() {
 
       {/* 6. STUDENT LEARNING JOURNEY (Step-by-Step Roadmap) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 CAREER TRAJECTORY
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -544,7 +537,7 @@ export default function UniversityProgramsPage() {
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 SPECIALIZED PATHWAYS
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -570,21 +563,16 @@ export default function UniversityProgramsPage() {
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] space-y-4 group flex flex-col justify-between h-full">
                   <div className="space-y-3">
-                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
+                    <span className="text-xs font-mono text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded">
                       {track.duration}
                     </span>
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{track.title}</h3>
                     <p className="text-xs text-zinc-300 font-mono font-medium">{track.tech}</p>
-                    <p className="text-[11px] text-zinc-400 leading-relaxed font-semibold">Skills: {track.skills}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">Skills: {track.skills}</p>
                   </div>
-                  <div className="pt-4 border-t border-zinc-900 flex justify-between items-center text-xs">
+                  <div className="pt-3 border-t border-zinc-900/80 flex justify-between items-center text-xs">
                     <span className="text-zinc-500 font-mono">Certificate Included</span>
-                    <button
-                      onClick={() => setPartnerModalOpen(true)}
-                      className="font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1 cursor-pointer"
-                    >
-                      Apply Track <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
+                    <span className="text-xs font-semibold text-rose-500 uppercase tracking-wider">Curriculum Track</span>
                   </div>
                 </div>
               </Reveal>
@@ -596,17 +584,17 @@ export default function UniversityProgramsPage() {
 
       {/* 8. INNOVATION LABS & RESEARCH */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 PRACTICAL ENVIRONMENTS
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -632,7 +620,7 @@ export default function UniversityProgramsPage() {
                   <div className="absolute inset-0 bg-black/40" />
                 </div>
                 <h4 className="text-xs font-bold text-white group-hover:text-rose-400 transition-colors">{lab.name}</h4>
-                <p className="text-[10px] text-zinc-400 font-mono">{lab.focus}</p>
+                <p className="text-xs text-zinc-400 font-mono">{lab.focus}</p>
               </div>
             ))}
           </div>
@@ -642,17 +630,17 @@ export default function UniversityProgramsPage() {
 
       {/* 9. HACKATHONS & TECHNICAL EVENTS (Timeline) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 CAMPUS CALENDAR
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -674,7 +662,7 @@ export default function UniversityProgramsPage() {
               { step: "06", event: "Research Showcase" }
             ].map((evt, idx) => (
               <div key={idx} className="p-4 rounded-xl bg-[#0A0A0A] border border-zinc-800 hover:border-rose-500/50 transition-colors">
-                <span className="text-[10px] font-mono text-rose-400 font-bold block mb-1">STAGE {evt.step}</span>
+                <span className="text-xs font-mono text-rose-400 font-bold block mb-1">STAGE {evt.step}</span>
                 <h4 className="text-xs font-bold text-white">{evt.event}</h4>
               </div>
             ))}
@@ -685,17 +673,17 @@ export default function UniversityProgramsPage() {
 
       {/* 10. MENTORSHIP NETWORK (Architect Profiles) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 ENGINEERING LEADERSHIP
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -722,7 +710,7 @@ export default function UniversityProgramsPage() {
                   <div>
                     <h4 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{mentor.name}</h4>
                     <p className="text-xs text-rose-400 font-mono">{mentor.exp}</p>
-                    <p className="text-[11px] text-zinc-400 font-medium">{mentor.expertise}</p>
+                    <p className="text-xs text-zinc-400 font-medium">{mentor.expertise}</p>
                   </div>
                 </div>
               </Reveal>
@@ -734,17 +722,17 @@ export default function UniversityProgramsPage() {
 
       {/* 11. UNIVERSITY SUCCESS STORIES */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
-      {/* Ambient Background Glow */}
+            {/* Subtle Ambient Background Glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
       />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 block">
                 PROVEN OUTCOMES
               </span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -782,18 +770,12 @@ export default function UniversityProgramsPage() {
               <Reveal key={idx} delay={idx * 0.05}>
                 <div className="p-6 rounded-[24px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-4 group h-full flex flex-col justify-between">
                   <div className="space-y-3">
-                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded">
+                    <span className="text-xs font-mono font-bold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-0.5 rounded">
                       {story.tag}
                     </span>
                     <h3 className="text-base font-bold text-white group-hover:text-rose-400 transition-colors">{story.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed font-semibold">{story.desc}</p>
+                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">{story.desc}</p>
                   </div>
-                  <button
-                    onClick={() => setPartnerModalOpen(true)}
-                    className="text-xs font-bold text-rose-500 hover:text-rose-400 flex items-center gap-1 cursor-pointer pt-2"
-                  >
-                    Read Story <ArrowUpRight className="w-3.5 h-3.5" />
-                  </button>
                 </div>
               </Reveal>
             ))}
@@ -807,7 +789,7 @@ export default function UniversityProgramsPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-10">
 
           <div className="text-center space-y-2">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-zinc-400 block">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase text-zinc-400 block">
               ACADEMIC NETWORK & INSTITUTIONS
             </span>
             <h3 className="text-xl font-bold text-white">50+ Global Partner Universities</h3>

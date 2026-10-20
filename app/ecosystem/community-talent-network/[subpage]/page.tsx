@@ -67,7 +67,7 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_top_right,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
           <div>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               THE CHALLENGE
             </span>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
@@ -75,7 +75,7 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
             </p>
           </div>
           <div>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               OUR SOLUTION
             </span>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
@@ -89,7 +89,7 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
       <section className="w-full py-24 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               CORE CAPABILITIES
             </span>
             <ul className="flex flex-col gap-4">
@@ -102,7 +102,7 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
             </ul>
           </div>
           <div>
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
               ENTERPRISE BENEFITS
             </span>
             <ul className="flex flex-col gap-4">
@@ -120,7 +120,7 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
       {/* Tech Stack */}
       <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-center mb-16">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+          <span className="text-xs font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
             TECHNOLOGY STACK
           </span>
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
