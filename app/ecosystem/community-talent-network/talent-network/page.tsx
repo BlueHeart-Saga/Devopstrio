@@ -389,39 +389,36 @@ export default function TalentNetworkPage() {
             </div>
           </Reveal>
 
-          <div className="p-8 md:p-10 rounded-[28px] bg-[#0A0A0A] border border-zinc-800/80 overflow-x-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-3 min-w-[1000px]">
-              {[
-                { step: "Student", desc: "CS Foundations & Logic" },
-                { step: "Learning", desc: "Cloud & DevOps 101" },
-                { step: "Certification", desc: "Azure / AWS Badges" },
-                { step: "Internship", desc: "12-Week Production Lab" },
-                { step: "Associate", desc: "Junior Cloud Dev" },
-                { step: "Software Eng", desc: "Core Microservices" },
-                { step: "Senior Eng", desc: "Feature Lead & CI/CD" },
-                { step: "Architect", desc: "System Design & CAF" },
-                { step: "Principal", desc: "Enterprise Domain Lead" },
-                { step: "Tech Leader", desc: "VP & Engineering Fellow" }
-              ].map((stage, idx) => (
-                <React.Fragment key={idx}>
-                  <div className="flex flex-col items-center text-center p-3.5 rounded-xl bg-black border border-zinc-800/90 w-full group hover:border-rose-500/50 transition-all">
-                    <span className="text-xs font-mono text-rose-400 font-bold mb-1">0{idx + 1}</span>
-                    <h4 className="text-xs sm:text-sm font-bold text-white mb-1 group-hover:text-rose-400 transition-colors">
-                      {stage.step}
-                    </h4>
-                    <p className="text-xs text-zinc-400 font-normal leading-tight">
-                      {stage.desc}
-                    </p>
-                  </div>
-
-                  {idx < 9 && (
-                    <div className="hidden lg:block text-rose-500 shrink-0">
-                      <ArrowRight className="w-4 h-4 animate-pulse" />
-                    </div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+            {[
+              { step: "Student", desc: "CS fundamentals, system architecture theory, and algorithms." },
+              { step: "Learning", desc: "Cloud platforms, containerization, and GitOps workflows." },
+              { step: "Certification", desc: "Official AWS, Azure, and Google Cloud associate badges." },
+              { step: "Internship", desc: "12-week paid client-facing delivery squad residency." },
+              { step: "Associate", desc: "Production microservices, API integrations, and code reviews." },
+              { step: "Software Eng", desc: "Scalable backend systems, resilient event messaging, and SRE." },
+              { step: "Senior Eng", desc: "Feature squad tech leadership, CI/CD pipelines, and FinOps." },
+              { step: "Architect", desc: "Enterprise cloud landing zones, CAF compliance, and zero trust." },
+              { step: "Principal", desc: "Multi-region enterprise delivery governance and technical advisory." },
+              { step: "Tech Leader", desc: "Engineering fellowship, strategic technology roadmaps, and MVP." }
+            ].map((stage, idx) => (
+              <div
+                key={idx}
+                className="group relative p-6 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-center"
+              >
+                <div>
+                  <span className="text-xs font-mono text-rose-500 font-bold uppercase tracking-wider block mb-2">
+                    STAGE {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                  </span>
+                  <h4 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {stage.step}
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-normal leading-relaxed">
+                    {stage.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
@@ -730,16 +727,19 @@ export default function TalentNetworkPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-6 gap-3.5 text-center">
             {[
-              { step: "01", event: "Engineering Meetup" },
-              { step: "02", event: "Cloud Summit" },
-              { step: "03", event: "AI Workshop" },
-              { step: "04", event: "DevOps Bootcamp" },
-              { step: "05", event: "Career Fair" },
-              { step: "06", event: "Global Conference" }
+              { step: "01", event: "Engineering Meetup", desc: "Monthly technical teardowns & peer code sessions." },
+              { step: "02", event: "Cloud Summit", desc: "Multi-cloud architecture keynotes & enterprise panels." },
+              { step: "03", event: "AI Workshop", desc: "Hands-on GenAI agentic workflows & RAG labs." },
+              { step: "04", event: "DevOps Bootcamp", desc: "Production Kubernetes, GitOps & security scanning." },
+              { step: "05", event: "Career Fair", desc: "Exclusive hiring roundtables with enterprise clients." },
+              { step: "06", event: "Global Conference", desc: "Annual Devopstrio global flagship engineering summit." }
             ].map((evt, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(244,63,94,0.12)] transition-colors">
-                <span className="text-xs font-mono text-rose-400 font-bold block mb-1.5">EVENT {evt.step}</span>
-                <h4 className="text-xs sm:text-sm font-bold text-white">{evt.event}</h4>
+              <div key={idx} className="p-6 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(244,63,94,0.12)] transition-all flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-mono text-rose-500 font-bold uppercase tracking-wider block mb-2">EVENT {evt.step}</span>
+                  <h4 className="text-base sm:text-lg font-bold text-white mb-2">{evt.event}</h4>
+                  <p className="text-sm text-zinc-400 font-normal leading-relaxed">{evt.desc}</p>
+                </div>
               </div>
             ))}
           </div>

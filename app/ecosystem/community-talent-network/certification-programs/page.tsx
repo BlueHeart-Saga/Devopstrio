@@ -307,9 +307,6 @@ export default function CertificationProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Why Get Certified with Devopstrio
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Designed for engineers who want real proof of capability, not just multiple-choice test scores.
-              </p>
             </div>
           </Reveal>
 
@@ -361,9 +358,6 @@ export default function CertificationProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Certification Categories
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Eight technical domains offering structured learning and badging.
-              </p>
             </div>
           </Reveal>
 
@@ -422,38 +416,41 @@ export default function CertificationProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Certification Learning Journey
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Step-by-step methodology from initial enrollment to official badge issuance.
-              </p>
             </div>
           </Reveal>
 
-          <div className="p-8 rounded-[28px] bg-[#0A0A0A] border border-zinc-800/80 overflow-x-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-3 min-w-[850px]">
-              {[
-                { step: "Enroll", desc: "Cohort selection" },
-                { step: "Learn", desc: "Video & live sessions" },
-                { step: "Hands-on Labs", desc: "40+ hours sandbox" },
-                { step: "Project Assessment", desc: "Capstone Terraform PR" },
-                { step: "Skill Validation", desc: "Internal mock exam" },
-                { step: "Certification", desc: "Official exam pass" },
-                { step: "Career Growth", desc: "Talent pool placement" }
-              ].map((stage, idx) => (
-                <React.Fragment key={idx}>
-                  <div className="flex flex-col items-center text-center p-3 rounded-xl bg-black border border-zinc-800 w-full group hover:border-rose-500/50 transition-all">
-                    <span className="text-[9px] font-mono text-rose-400 font-bold mb-1">STAGE 0{idx + 1}</span>
-                    <h4 className="text-xs font-bold text-white mb-1">{stage.step}</h4>
-                    <p className="text-[9px] text-zinc-500 font-medium">{stage.desc}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { step: "Cohort Enrollment", desc: "Personalized onboarding, skill assessment, and assigned study cohort." },
+              { step: "Interactive Learning", desc: "Deep architectural theory, weekly live sessions, and office hours with principal engineers." },
+              { step: "Hands-on Sandboxes", desc: "40+ hours of dedicated multi-cloud lab environments with automated grading." },
+              { step: "Capstone Assessment", desc: "Production-grade repository delivery evaluated via CI/CD test gates." },
+              { step: "Skill Validation", desc: "Simulated scenario-based exam covering real-world incident response." },
+              { step: "Official Certification", desc: "Globally verifiable digital credential issued on Credly and LinkedIn." },
+              { step: "Career Acceleration", desc: "Direct priority placement into enterprise client pods and talent network." }
+            ].map((stage, idx) => (
+              <div
+                key={idx}
+                className="group relative p-6 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-mono text-rose-500 font-bold uppercase tracking-wider">
+                      STAGE 0{idx + 1}
+                    </span>
+                    <span className="w-7 h-7 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold flex items-center justify-center">
+                      {idx + 1}
+                    </span>
                   </div>
-
-                  {idx < 6 && (
-                    <div className="hidden lg:block text-rose-500 shrink-0">
-                      <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
-                    </div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
+                  <h4 className="text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {stage.step}
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-normal leading-relaxed">
+                    {stage.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
@@ -477,9 +474,6 @@ export default function CertificationProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Learning Paths by Expertise Level
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Five distinct tiers ensuring engineers progress from fundamentals to enterprise leadership.
-              </p>
             </div>
           </Reveal>
 
@@ -514,9 +508,6 @@ export default function CertificationProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                 Hands-on Labs & Cloud Sandboxes
               </h2>
-              <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-semibold">
-                Learners gain access to live ephemeral cloud sandboxes where they build cloud-native applications, AI solutions, DevOps pipelines, and secure enterprise systems.
-              </p>
 
               <div className="grid grid-cols-2 gap-3 pt-2">
                 {[
@@ -567,9 +558,6 @@ export default function CertificationProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Certification Benefits
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Tangible career assets gained upon program completion.
-              </p>
             </div>
           </Reveal>
 
@@ -631,9 +619,6 @@ export default function CertificationProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Certification Success Stories
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Real stories of career transformation through Devopstrio learning tracks.
-              </p>
             </div>
           </Reveal>
 
@@ -679,9 +664,6 @@ export default function CertificationProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Certification Levels
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Clear credential levels reflecting increasing technical difficulty.
-              </p>
             </div>
           </Reveal>
 

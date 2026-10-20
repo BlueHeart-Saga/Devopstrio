@@ -307,9 +307,6 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Contribution Impact
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Quantifiable metrics demonstrating the adoption and scale of our public open-source repositories.
-              </p>
             </div>
           </Reveal>
 
@@ -355,9 +352,6 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Featured Open Source Projects
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Five core open-source repositories powering enterprise cloud platforms worldwide.
-              </p>
             </div>
           </Reveal>
 
@@ -447,9 +441,6 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Engineering Frameworks
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Ten core modular blueprints available across the Devopstrio open-source ecosystem.
-              </p>
             </div>
           </Reveal>
 
@@ -486,9 +477,6 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 GitHub Repository Matrix
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Live metrics, active licenses, stars, and release versions for our primary GitHub repositories.
-              </p>
             </div>
           </Reveal>
 
@@ -627,9 +615,6 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Technology Categories
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Explore repositories grouped by enterprise engineering domain.
-              </p>
             </div>
           </Reveal>
 
@@ -675,38 +660,41 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Community Contribution Workflow
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Transparent step-by-step workflow from GitHub issue creation to global production release.
-              </p>
             </div>
           </Reveal>
 
-          <div className="p-8 rounded-[28px] bg-[#0A0A0A] border border-zinc-800/80 overflow-x-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-3 min-w-[800px]">
-              {[
-                { step: "Issue Created", desc: "Feature or bug logged" },
-                { step: "Discussion", desc: "Maintainer RFC review" },
-                { step: "Pull Request", desc: "Code submission" },
-                { step: "Code Review", desc: "Peer & security check" },
-                { step: "Automated Testing", desc: "CI pipeline execution" },
-                { step: "Approval", desc: "Maintainer LGTM" },
-                { step: "Production Release", desc: "Semantic version tag" }
-              ].map((wf, idx) => (
-                <React.Fragment key={idx}>
-                  <div className="flex flex-col items-center text-center p-3 rounded-xl bg-black border border-zinc-800 w-full group hover:border-rose-500/50 transition-all">
-                    <span className="text-[9px] font-mono text-rose-400 font-bold mb-1">STAGE 0{idx + 1}</span>
-                    <h4 className="text-xs font-bold text-white mb-1">{wf.step}</h4>
-                    <p className="text-[9px] text-zinc-500 font-medium">{wf.desc}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { step: "Issue Created", desc: "Feature request, architectural proposal, or bug logged in public repo." },
+              { step: "Discussion", desc: "Maintainer RFC review, feasibility analysis, and design alignment." },
+              { step: "Pull Request", desc: "Branch fork submission adhering to repository coding standards." },
+              { step: "Code Review", desc: "Peer architectural check, SonarQube static analysis, and sign-off." },
+              { step: "Automated Testing", desc: "GitHub Actions CI pipeline matrix execution across OS targets." },
+              { step: "Approval", desc: "Maintainer LGTM approval with security & vulnerability clearance." },
+              { step: "Production Release", desc: "Semantic version tag published to Docker Hub, npm, and PyPI." }
+            ].map((wf, idx) => (
+              <div
+                key={idx}
+                className="group relative p-6 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-mono text-rose-500 font-bold uppercase tracking-wider">
+                      STAGE 0{idx + 1}
+                    </span>
+                    <span className="w-7 h-7 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold flex items-center justify-center">
+                      {idx + 1}
+                    </span>
                   </div>
-
-                  {idx < 6 && (
-                    <div className="hidden lg:block text-rose-500 shrink-0">
-                      <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
-                    </div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
+                  <h4 className="text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {wf.step}
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-normal leading-relaxed">
+                    {wf.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
@@ -730,20 +718,35 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Open Source Project Lifecycle
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                How Devopstrio incubates, matures, and maintains open-source repositories over time.
-              </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 text-center">
             {[
-              "Idea", "Prototype", "Community Feedback", "Development",
-              "Testing", "Release", "Maintenance", "Long-Term Support"
+              { title: "Idea", desc: "Problem statement & architectural RFC" },
+              { title: "Prototype", desc: "Working proof-of-concept in sandbox" },
+              { title: "Community Feedback", desc: "Open review & guild consensus" },
+              { title: "Development", desc: "Modular build & test coverage" },
+              { title: "Testing", desc: "Integration & automated regression" },
+              { title: "Release", desc: "Production release & package publish" },
+              { title: "Maintenance", desc: "SLA bug fixes & security patches" },
+              { title: "Long-Term Support", desc: "Enterprise stability & governance" }
             ].map((lc, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-[#0A0A0A] border border-zinc-800 hover:border-rose-500/50 transition-colors">
-                <span className="text-[9px] font-mono text-rose-400 font-bold block mb-1">0{idx + 1}</span>
-                <h4 className="text-xs font-bold text-white">{lc}</h4>
+              <div
+                key={idx}
+                className="group relative p-6 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-xs font-mono text-rose-500 font-bold uppercase tracking-wider block mb-2">
+                    PHASE 0{idx + 1}
+                  </span>
+                  <h4 className="text-base sm:text-lg font-bold text-white mb-1.5 group-hover:text-rose-400 transition-colors">
+                    {lc.title}
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-normal leading-relaxed">
+                    {lc.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -769,23 +772,22 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Developer Contribution Guide
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Quick start steps to make your first open-source pull request today.
-              </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { step: "Fork Repository", desc: "Click Fork on GitHub Devopstrio org." },
-              { step: "Clone & Branch", desc: "git checkout -b feature/my-enhancement" },
-              { step: "Develop & Test", desc: "Write clean code with automated tests." },
-              { step: "Submit Pull Request", desc: "Open PR and tag @devopstrio-reviewers." }
+              { step: "Fork Repository", desc: "Fork the repository to your personal GitHub account from github.com/Devopstrio." },
+              { step: "Clone & Branch", desc: "Clone locally and create a dedicated feature branch following git-flow standards." },
+              { step: "Develop & Test", desc: "Implement modular code with complete automated unit and integration tests." },
+              { step: "Submit Pull Request", desc: "Open PR with conventional commits and tag @devopstrio-core maintainers." }
             ].map((guide, idx) => (
-              <div key={idx} className="p-6 rounded-[20px] bg-[#0A0A0A] border border-zinc-800 space-y-3 hover:border-rose-500/50 transition-all">
-                <span className="text-xs font-mono font-bold text-rose-400">STEP 0{idx + 1}</span>
-                <h4 className="text-sm font-bold text-white">{guide.step}</h4>
-                <p className="text-xs text-zinc-400 font-medium leading-relaxed">{guide.desc}</p>
+              <div key={idx} className="p-6 md:p-7 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/50 hover:-translate-y-1 transition-all duration-300 space-y-3 flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-mono font-bold text-rose-500 uppercase tracking-wider block mb-2">STEP 0{idx + 1}</span>
+                  <h4 className="text-lg font-bold text-white mb-2">{guide.step}</h4>
+                  <p className="text-sm text-zinc-400 font-normal leading-relaxed">{guide.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -811,19 +813,16 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Engineering Standards
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Every line of code submitted is subject to our production-grade quality policies.
-              </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
             {[
               "Mandatory Peer Code Review", "Comprehensive Documentation", "Automated Security Validation", "CI/CD Test Coverage > 85%",
               "Semantic Versioning Tags", "Open Source Licensing", "Static Analysis (Checkov/Trivy)", "Backwards Compatibility"
             ].map((std, idx) => (
-              <div key={idx} className="p-5 rounded-xl bg-[#0A0A0A] border border-zinc-800 flex items-center gap-3 text-xs font-bold text-white hover:border-rose-500/40 transition-colors">
-                <CheckCircle2 className="w-4 h-4 text-rose-500 shrink-0" />
+              <div key={idx} className="p-6 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 flex items-center gap-3.5 text-sm font-semibold text-white hover:border-rose-500/40 hover:-translate-y-0.5 transition-all">
+                <CheckCircle2 className="w-5 h-5 text-rose-500 shrink-0" />
                 <span>{std}</span>
               </div>
             ))}
@@ -850,23 +849,22 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Latest Production Releases
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Recent major release versions published across our repository catalog.
-              </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { ver: "v3.2", title: "Landing Zone Accelerator", desc: "Added Azure CAF Hub-Spoke vWAN modules and automated Terraform state locking." },
               { ver: "v2.8", title: "DevOps Accelerator", desc: "Integrated Cilium eBPF network perimeters and ArgoCD multi-cluster sync." },
               { ver: "v1.5", title: "AI Framework", desc: "Added LangGraph agent state persistence and Qdrant hybrid vector search." },
               { ver: "v4.0", title: "Security Framework", desc: "Full HashiCorp Vault secrets isolation and SOC2 policy compliance rules." }
             ].map((rel, idx) => (
-              <div key={idx} className="p-6 rounded-[20px] bg-[#0A0A0A] border border-zinc-800 space-y-2 hover:border-rose-500/50 transition-all">
-                <span className="text-xs font-mono font-bold text-rose-400 bg-rose-500/10 px-2.5 py-0.5 rounded border border-rose-500/20">{rel.ver}</span>
-                <h4 className="text-sm font-bold text-white pt-2">{rel.title}</h4>
-                <p className="text-xs text-zinc-400 font-medium leading-relaxed">{rel.desc}</p>
+              <div key={idx} className="p-6 md:p-7 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 space-y-3 hover:border-rose-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <span className="text-xs font-mono font-bold text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20 inline-block mb-2">{rel.ver}</span>
+                  <h4 className="text-lg font-bold text-white mb-2">{rel.title}</h4>
+                  <p className="text-sm text-zinc-400 font-normal leading-relaxed">{rel.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -917,9 +915,6 @@ export default function OpenSourcePage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Open Source Success Stories
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Real stories of enterprise adoption and open-source collaboration worldwide.
-              </p>
             </div>
           </Reveal>
 

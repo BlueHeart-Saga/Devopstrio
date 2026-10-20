@@ -254,9 +254,6 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
                 Bridging Academia and Industry
               </h2>
-              <p className="text-zinc-300 text-base leading-relaxed font-semibold">
-                Devopstrio collaborates directly with top computer science and engineering faculties globally. We equip students with hands-on enterprise cloud, DevOps, AI, and cybersecurity skills before graduation.
-              </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {[
@@ -306,9 +303,6 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Why Universities Partner with Devopstrio
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Transforming traditional computer science curriculums into cloud-native engineering powerhouses.
-              </p>
             </div>
           </Reveal>
 
@@ -360,9 +354,6 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 University Partnership Programs
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Structured academic programs tailored for undergraduate students, postgraduate researchers, and university faculty.
-              </p>
             </div>
           </Reveal>
 
@@ -437,9 +428,6 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                 Industry-Academia Collaboration
               </h2>
-              <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-semibold">
-                Students work alongside experienced cloud architects, software engineers, DevOps specialists, AI engineers, and cybersecurity professionals on active enterprise projects.
-              </p>
               <div className="space-y-3 pt-2">
                 {[
                   "Direct code reviews on enterprise GitHub pull requests.",
@@ -489,39 +477,42 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Student Learning Journey
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                From first-year computer science student to full-time enterprise cloud engineer.
-              </p>
             </div>
           </Reveal>
 
-          <div className="p-8 rounded-[28px] bg-[#0A0A0A] border border-zinc-800/80 overflow-x-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-3 min-w-[850px]">
-              {[
-                { step: "University Student", desc: "Core CS Studies" },
-                { step: "Technical Bootcamp", desc: "Devops & Cloud 101" },
-                { step: "Certification", desc: "Azure/AWS Associate" },
-                { step: "Hackathon", desc: "Sprint Coding Challenge" },
-                { step: "Internship", desc: "12-Week Paid Sprint" },
-                { step: "Live Project", desc: "Production Feature PR" },
-                { step: "Graduate Program", desc: "Fast-track Placement" },
-                { step: "Full-Time Engineer", desc: "Senior Practice Hire" }
-              ].map((stage, idx) => (
-                <React.Fragment key={idx}>
-                  <div className="flex flex-col items-center text-center p-3 rounded-xl bg-black border border-zinc-800 w-full group hover:border-rose-500/50 transition-all">
-                    <span className="text-[9px] font-mono text-rose-400 font-bold mb-1">STEP 0{idx + 1}</span>
-                    <h4 className="text-xs font-bold text-white mb-1">{stage.step}</h4>
-                    <p className="text-[9px] text-zinc-500 font-medium">{stage.desc}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { step: "University Student", desc: "Core computer science fundamentals, data structures, and algorithms." },
+              { step: "Technical Bootcamp", desc: "Intensive 4-week immersion into modern cloud-native and DevOps tools." },
+              { step: "Certification", desc: "Targeted preparation and sponsorship for official AWS, Azure, or GCP credentials." },
+              { step: "Hackathon", desc: "Collaborative 48-hour sprint building production-grade enterprise prototypes." },
+              { step: "Internship", desc: "12-week paid engineering residency inside client-facing delivery squads." },
+              { step: "Live Project", desc: "Direct production code contributions reviewed by principal architects." },
+              { step: "Graduate Program", desc: "Accelerated engineering onboarding with cross-disciplinary rotation." },
+              { step: "Full-Time Engineer", desc: "Direct transition into high-impact client engagements as an associate engineer." }
+            ].map((stage, idx) => (
+              <div
+                key={idx}
+                className="group relative p-6 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-mono text-rose-500 font-bold uppercase tracking-wider">
+                      STEP 0{idx + 1}
+                    </span>
+                    <span className="w-7 h-7 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold flex items-center justify-center">
+                      {idx + 1}
+                    </span>
                   </div>
-
-                  {idx < 7 && (
-                    <div className="hidden lg:block text-rose-500 shrink-0">
-                      <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
-                    </div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
+                  <h4 className="text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {stage.step}
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-normal leading-relaxed">
+                    {stage.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
@@ -539,9 +530,6 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Internship & Graduate Engineering Tracks
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Eight specialized engineering domain pathways for interns and graduate hires.
-              </p>
             </div>
           </Reveal>
 
@@ -596,9 +584,6 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Campus Innovation Labs
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Students gain access to practical environments where they build cloud-native applications, AI solutions, DevOps pipelines, and secure enterprise systems.
-              </p>
             </div>
           </Reveal>
 
@@ -642,9 +627,6 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Hackathons & Technical Events
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Year-round academic competitions, bootcamps, and technical innovation summits.
-              </p>
             </div>
           </Reveal>
 
@@ -685,9 +667,6 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Dedicated Mentorship Network
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Students receive direct 1-on-1 guidance from Devopstrio principal engineers and architects.
-              </p>
             </div>
           </Reveal>
 
@@ -734,9 +713,6 @@ export default function UniversityProgramsPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 University Success Stories
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Real transformation stories from partner academic institutions.
-              </p>
             </div>
           </Reveal>
 

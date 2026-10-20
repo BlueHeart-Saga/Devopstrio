@@ -260,9 +260,6 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
                 Building More Than Software
               </h2>
-              <p className="text-zinc-300 text-base leading-relaxed font-semibold">
-                We believe innovation grows through collaboration. Our Engineering Community connects professionals, students, researchers, and technology leaders to learn, share knowledge, contribute to open-source projects, and build enterprise-grade solutions together.
-              </p>
 
               <div className="space-y-4 pt-2">
                 {[
@@ -309,9 +306,6 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Global Community Scale
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Measurable growth, open collaboration, and active developer engagement worldwide.
-              </p>
             </div>
           </Reveal>
 
@@ -357,9 +351,6 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Our 6 Community Pillars
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Focused technical domains where members connect, exchange ideas, and build specialized tooling.
-              </p>
             </div>
           </Reveal>
 
@@ -411,9 +402,6 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Real Engineering Activities
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                No passive webinars. We engage through real pull requests, system design whiteboard sessions, and hackathons.
-              </p>
             </div>
           </Reveal>
 
@@ -542,9 +530,6 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Featured Open Source Projects
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Production-ready codebases, Terraform modules, and frameworks open for public contribution.
-              </p>
             </div>
           </Reveal>
 
@@ -651,9 +636,6 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Technical Meetups & Events Timeline
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Join our virtual summits, local meetups, and open-source sprint sessions throughout the year.
-              </p>
             </div>
           </Reveal>
 
@@ -705,9 +687,6 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Developer Knowledge Hub
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Access open engineering blogs, architecture decision records, tutorials, and step-by-step labs.
-              </p>
             </div>
           </Reveal>
 
@@ -758,38 +737,39 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Engineering Progression Roadmap
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Clear skill progression supported by our community mentors, open-source work, and certification tracks.
-              </p>
             </div>
           </Reveal>
 
-          <div className="p-8 rounded-[28px] bg-[#0A0A0A] border border-zinc-800/80 overflow-x-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 min-w-[700px]">
-              {[
-                { level: "Student", desc: "Foundational CS & Cloud concepts" },
-                { level: "Intern", desc: "First open source PR contributions" },
-                { level: "Associate Engineer", desc: "Terraform & CI/CD deployment" },
-                { level: "Software Engineer", desc: "Production feature ownership" },
-                { level: "Senior Engineer", desc: "System design & mentoring" },
-                { level: "Architect", desc: "Enterprise cloud topologies" },
-                { level: "Principal Engineer", desc: "Global ecosystem leadership" }
-              ].map((path, idx) => (
-                <React.Fragment key={idx}>
-                  <div className="flex flex-col items-center text-center p-4 rounded-xl bg-black border border-zinc-800 w-full group hover:border-rose-500/50 transition-all">
-                    <span className="text-xs font-mono text-rose-400 font-bold mb-1">LEVEL 0{idx + 1}</span>
-                    <h4 className="text-sm font-bold text-white mb-1">{path.level}</h4>
-                    <p className="text-xs text-zinc-500 font-medium">{path.desc}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {[
+              { level: "Student", desc: "Foundational CS, Linux, Git, and core cloud architecture fundamentals." },
+              { level: "Contributor", desc: "First open-source PR submission, bug triage, and active RFC debate." },
+              { level: "Core Member", desc: "Regular pull request author, modular package maintainer, and reviewer." },
+              { level: "Technical Mentor", desc: "Guiding early-career engineers through architecture tear-downs and code reviews." },
+              { level: "Fellow / MVP", desc: "Shaping global engineering guidelines, speaking at summits, and leading RFCs." }
+            ].map((prog, idx) => (
+              <div
+                key={idx}
+                className="group relative p-6 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-mono text-rose-500 font-bold uppercase tracking-wider">
+                      STAGE 0{idx + 1}
+                    </span>
+                    <span className="w-7 h-7 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold flex items-center justify-center">
+                      {idx + 1}
+                    </span>
                   </div>
-
-                  {idx < 6 && (
-                    <div className="hidden lg:block text-rose-500 shrink-0">
-                      <ArrowRight className="w-4 h-4 animate-pulse" />
-                    </div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
+                  <h4 className="text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    {prog.level}
+                  </h4>
+                  <p className="text-sm text-zinc-400 font-normal leading-relaxed">
+                    {prog.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
@@ -813,9 +793,6 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Community Gallery
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Snapshots from our global hackathons, technical meetups, university sessions, and open-source coding sprints.
-              </p>
             </div>
           </Reveal>
 
@@ -866,9 +843,6 @@ export default function EngineeringCommunityPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
                 Community Success Stories
               </h2>
-              <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-semibold">
-                Real engineers sharing their journey from community contributor to enterprise leader.
-              </p>
             </div>
           </Reveal>
 
