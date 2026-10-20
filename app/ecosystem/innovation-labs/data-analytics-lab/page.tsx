@@ -82,20 +82,44 @@ interface RelatedLab {
 
 const dataLabFaqs = [
   {
-    q: "What data architectures does the Data Analytics Lab prototype?",
-    a: "We architect modern data lakehouses (Delta Lake, Apache Iceberg), real-time streaming topologies (Kafka, Flink), and automated ELT pipelines for high-throughput enterprise analytics."
+    "q": "What modern data stack architectures does the Data & Analytics Lab engineer?",
+    "a": "We architect end-to-end modern data platforms incorporating modern Lakehouse designs (Apache Iceberg, Delta Lake), cloud warehouses (Snowflake, Databricks, BigQuery), dbt transformation pipelines, and real-time streaming engines (Apache Kafka, Flink)."
   },
   {
-    q: "How does the lab support AI and machine learning readiness?",
-    a: "We build unified feature stores, automated data validation pipelines, and scalable vector databases (Milvus, Pinecone, pgvector) to fuel GenAI and predictive models."
+    "q": "How does the lab handle high-throughput real-time streaming and CDC?",
+    "a": "We configure change data capture (CDC) pipelines using Debezium and Kafka Connect to stream transactional database modifications into event streams, processing millions of events per second with sub-second analytical ingestion latency."
   },
   {
-    q: "Can we evaluate high-velocity distributed compute engines in the lab?",
-    a: "Yes. We benchmark workloads across Databricks, Snowflake, BigQuery, and DuckDB to determine optimal price-to-performance characteristics for your estate."
+    "q": "How do you ensure data quality, freshness, and governance across pipelines?",
+    "a": "We embed automated data contract testing using Great Expectations, Soda, and dbt tests into the CI/CD pipeline, halting downstream ingestion if schema drift, null threshold violations, or data anomalies are detected."
   },
   {
-    q: "How do you handle enterprise data governance and lineage?",
-    a: "We implement automated data catalogs, access control masking, and metadata lineage tracking with tools like Unity Catalog, OpenMetadata, and Apache Atlas."
+    "q": "What is the lab's approach to vector search and AI data readiness?",
+    "a": "We construct automated vector indexing pipelines that extract unstructured enterprise content (documents, tickets, audio), generate embeddings with optimized models, and store them in Pinecone, Qdrant, or pgvector for sub-50ms hybrid retrieval."
+  },
+  {
+    "q": "How does the lab optimize cloud data warehouse costs and query performance?",
+    "a": "We implement partition pruning, clustering strategies, automated warehouse auto-suspend policies, and semantic caching layers, frequently reducing cloud analytics spend by 40% to 65% while speeding up p95 query runtimes."
+  },
+  {
+    "q": "What data mesh and decentralized ownership models does the lab support?",
+    "a": "We design domain-driven data mesh architectures with centralized governance catalogs (Unity Catalog, AWS Glue, DataHub), enabling distributed domain teams to publish self-serve, discoverable, and auditable data products."
+  },
+  {
+    "q": "How does the lab enforce data privacy, masking, and GDPR/CCPA compliance?",
+    "a": "We implement automated dynamic data masking, column-level and row-level access controls, pseudonymization pipelines, and automated 'right-to-be-forgotten' cryptographic deletion workflows across analytical storage."
+  },
+  {
+    "q": "Can the lab prototype automated data observability and anomaly detection?",
+    "a": "Yes. We integrate Monte Carlo and custom Prometheus/Grafana monitors tracking schema changes, volume irregularities, pipeline freshness SLAs, and distributed tracing across all ingestion DAGs."
+  },
+  {
+    "q": "What reverse ETL and operational analytics pipelines are tested in the lab?",
+    "a": "We deploy reverse ETL connectors (Census, Hightouch) that synchronize analytical insights, customer segmentations, and propensity scores directly back into operational SaaS platforms like Salesforce, HubSpot, and Zendesk."
+  },
+  {
+    "q": "How does the lab transition existing legacy ETL/DW systems to modern Lakehouses?",
+    "a": "We provide automated migration scripts, schema translation tools, and dual-run reconciliation frameworks that ensure zero downtime and 100% data fidelity when migrating from legacy Teradata, Oracle, or SSIS to cloud Lakehouses."
   }
 ];
 

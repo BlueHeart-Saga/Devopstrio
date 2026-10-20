@@ -83,20 +83,44 @@ interface RelatedLab {
 
 const devopsLabFaqs = [
   {
-    q: "What research initiatives does the DevOps Innovation Lab drive?",
-    a: "We pioneer Internal Developer Platforms (IDPs), GitOps continuous delivery engines, ephemeral testing environments, and AI-assisted deployment verification."
+    "q": "What core DevOps and platform engineering practices are tested in the lab?",
+    "a": "We test GitOps delivery workflows, ephemeral preview environments, automated canary deployments, platform developer portals (Backstage), and end-to-end OpenTelemetry distributed observability."
   },
   {
-    q: "How does the lab help reduce lead time for code changes?",
-    a: "We architect automated CI/CD golden paths, container build optimizations, and automated canary rollouts with ArgoCD and Flagger that bring deployment times down from hours to minutes."
+    "q": "How does the lab implement GitOps with ArgoCD and Flux?",
+    "a": "We configure declarative, version-controlled cluster state management where every Kubernetes manifest, Helm release, and infrastructure change is stored in Git, enabling automated drift detection, reconciliation, and instant rollbacks."
   },
   {
-    q: "Do you integrate AI agents into DevOps pipelines?",
-    a: "Yes. We prototype autonomous PR review copilots, automated log triage agents, and synthetic testing generators that detect regressions before code reaches staging."
+    "q": "What deployment strategies are evaluated to guarantee zero downtime?",
+    "a": "We engineer and benchmark progressive delivery strategies using Argo Rollouts and Flagger, including blue/green switching, automated canary analysis with Prometheus metric thresholds, and instant automated traffic rollbacks on error spikes."
   },
   {
-    q: "Can our engineers participate in a DevOps prototype pilot?",
-    a: "Yes. We run accelerated 2-week pilots where our DevOps architects build and validate a customized platform engineering proof-of-concept tailored to your tech stack."
+    "q": "How does the DevOps Lab approach Internal Developer Platforms (IDPs)?",
+    "a": "We build custom developer self-service portals using Spotify Backstage and Port, allowing developers to spin up secure, compliant microservices, databases, and CI/CD pipelines in minutes using vetted software templates."
+  },
+  {
+    "q": "How do you measure and accelerate DORA metrics in the lab?",
+    "a": "We integrate automated DORA metric tracking (Deployment Frequency, Lead Time for Changes, Change Failure Rate, and Time to Restore Service) into CI/CD pipelines, displaying real-time velocity and reliability telemetry on team dashboards."
+  },
+  {
+    "q": "What is the lab's strategy for ephemeral and on-demand test environments?",
+    "a": "We use Kubernetes-based operators (vcluster, Loft) and Terraform to dynamically spin up isolated, production-like test environments for each pull request, tearing them down automatically once tests complete to optimize cloud costs."
+  },
+  {
+    "q": "How does the DevOps Lab integrate Infrastructure as Code (IaC) drift management?",
+    "a": "We implement scheduled automated IaC pipeline runs using Terraform Cloud, Atlantis, and OpenTofu to detect configuration drift between Git repository definitions and actual cloud runtime environments, auto-alerting on discrepancies."
+  },
+  {
+    "q": "How do you implement full-stack observability with OpenTelemetry?",
+    "a": "We instrument microservices with vendor-neutral OpenTelemetry SDKs, collecting distributed traces, structured logs, and metrics forwarded to Jaeger, Grafana Tempo, and Prometheus for correlated, sub-second root-cause diagnosis."
+  },
+  {
+    "q": "How does the lab automate release security and compliance gates?",
+    "a": "We incorporate policy-as-code gates using Open Policy Agent (OPA/Gatekeeper) and Kyverno, automatically verifying that container images are signed, root execution is disabled, and resource limits are specified before any deployment."
+  },
+  {
+    "q": "How can our engineering organization engage the DevOps Lab for transformation?",
+    "a": "We offer hands-on DevOps acceleration sprints where our SREs and platform engineers audit your current deployment bottlenecks, implement modern CI/CD/GitOps blueprints, and train your internal teams on platform self-service."
   }
 ];
 

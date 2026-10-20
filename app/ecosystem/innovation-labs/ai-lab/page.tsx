@@ -393,23 +393,47 @@ export default function AIInnovationLabPage() {
   ];
 
   const faqs = [
-    {
-      q: "How does the AI Lab prevent proprietary enterprise data from training external models?",
-      a: "All models tested and deployed in our AI Lab run entirely within dedicated, isolated client VPC environments or on-premises GPU nodes. We use self-hosted open-weight architectures (vLLM, TensorRT-LLM) where data never leaves your network perimeter, ensuring complete compliance with GDPR, HIPAA, and corporate IP standards."
-    },
-    {
-      q: "What is the difference between simple prompt engineering and your multi-agent architecture?",
-      a: "Prompt engineering is single-turn and non-deterministic. Our lab builds stateful agent networks using LangGraph, where tasks are decomposed into discrete, specialized agent nodes with typed schema validation, memory persistence, dynamic tool invocation (MCP), and human-in-the-loop approval gates."
-    },
-    {
-      q: "How do you evaluate and eliminate hallucinations in production RAG systems?",
-      a: "We implement a multi-layered evaluation framework incorporating Ragas metrics (measuring context relevancy, faithfullness, and answer relevancy), reciprocal rank fusion (combining dense vector and sparse lexical BM25 search), and deterministic cross-encoder rerankers that discard low-confidence retrieval matches."
-    },
-    {
-      q: "How quickly can a lab prototype transition into enterprise production?",
-      a: "Because all lab prototypes are containerized from day one and packaged with Terraform / Kubernetes Helm charts, validated POCs can be promoted to production staging environments in as little as 2 to 4 weeks, complete with CI/CD deployment pipelines and MLOps monitoring."
-    }
-  ];
+  {
+    "q": "How does the AI Lab prevent proprietary enterprise data from training external models?",
+    "a": "All models tested and deployed in our AI Lab run entirely within dedicated, isolated client VPC environments or on-premises GPU nodes. We use self-hosted open-weight architectures (vLLM, TensorRT-LLM) where data never leaves your network perimeter, ensuring complete compliance with GDPR, HIPAA, and corporate IP standards."
+  },
+  {
+    "q": "What is the difference between simple prompt engineering and your multi-agent architecture?",
+    "a": "Prompt engineering is single-turn and non-deterministic. Our lab builds stateful agent networks using LangGraph, where tasks are decomposed into discrete, specialized agent nodes with typed schema validation, memory persistence, dynamic tool invocation (MCP), and human-in-the-loop approval gates."
+  },
+  {
+    "q": "How do you evaluate and eliminate hallucinations in production RAG systems?",
+    "a": "We implement a multi-layered evaluation framework incorporating Ragas metrics (measuring context relevancy, faithfulness, and answer relevancy), reciprocal rank fusion (combining dense vector and sparse lexical BM25 search), and deterministic cross-encoder rerankers that discard low-confidence retrieval matches."
+  },
+  {
+    "q": "How quickly can a lab prototype transition into enterprise production?",
+    "a": "Because all lab prototypes are containerized from day one and packaged with Terraform and Kubernetes Helm charts, validated POCs can be promoted to production staging environments in as little as 2 to 4 weeks, complete with CI/CD deployment pipelines and MLOps monitoring."
+  },
+  {
+    "q": "What GPU serving frameworks and optimization runtimes does the AI Lab benchmark?",
+    "a": "We benchmark and optimize high-throughput inference runtimes using vLLM with PagedAttention, NVIDIA TensorRT-LLM, and TGI (Text Generation Inference). We employ AWQ/GPTQ 4-bit and FP8 quantization to achieve sub-50ms Time-to-First-Token (TTFT) while cutting GPU memory footprints by up to 60%."
+  },
+  {
+    "q": "How does the AI Lab address model drift and continuous evaluation post-deployment?",
+    "a": "We establish automated MLOps evaluation pipelines that continuously sample production inferences, monitor embedding space distribution shifts, and benchmark response quality against golden reference datasets using automated LLM-as-a-judge pipelines with confidence scoring."
+  },
+  {
+    "q": "Can the AI Lab build custom fine-tuned models on specialized domain datasets?",
+    "a": "Yes. We perform parameter-efficient fine-tuning (PEFT/LoRA and QLoRA) on open foundation models (Llama 3, Mistral, DeepSeek) for specialized domain tasks including financial contract parsing, legal entity extraction, and proprietary code generation."
+  },
+  {
+    "q": "How does the lab integrate Model Context Protocol (MCP) and external enterprise APIs?",
+    "a": "We implement standardized Model Context Protocol (MCP) clients and servers that allow agentic systems to securely authenticate and interact with internal databases, ERP systems (SAP, Salesforce), Jira, and cloud APIs via typed schemas with strict permission boundaries."
+  },
+  {
+    "q": "What FinOps mechanisms does the AI Lab implement to control LLM operational costs?",
+    "a": "We engineer intelligent semantic caching layers (GPTCache, Redis semantic cache), multi-tier model routing (dispatching simple queries to fast SLMs and complex reasoning to frontier LLMs), and prompt compression techniques that routinely cut token expenditure by 60% to 85%."
+  },
+  {
+    "q": "How do you enforce security guardrails and jailbreak prevention in deployed AI solutions?",
+    "a": "We embed multi-tier guardrails (NeMo Guardrails, Llama Guard) at both input and output stages. Inbound queries are sanitized against prompt injections and jailbreaks, while outbound completions are audited for PII leakage, regulatory compliance, and brand alignment before reaching the client."
+  }
+];
 
   return (
     <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">

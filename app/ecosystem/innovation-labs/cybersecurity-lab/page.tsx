@@ -86,20 +86,44 @@ interface RelatedLab {
 
 const securityLabFaqs = [
   {
-    q: "What core research happens in the Cybersecurity Innovation Lab?",
-    a: "We focus on Zero Trust network access, automated Cloud Security Posture Management (CSPM), DevSecOps CI/CD vulnerability scanning, and eBPF-based container runtime protection."
+    "q": "What core security domains does the Cybersecurity Lab specialize in?",
+    "a": "We focus on Zero Trust architecture, DevSecOps pipeline automation, automated threat modeling, cloud posture management (CSPM), container runtime security, and cryptographic identity engineering."
   },
   {
-    q: "How do you validate threat models for modern enterprise architectures?",
-    a: "We simulate red-team attack vectors against cloud-native Kubernetes clusters, API gateways, and IAM permission graphs to identify privilege escalation paths and misconfigurations."
+    "q": "How does the lab evaluate supply chain security and software vulnerabilities?",
+    "a": "We implement automated Software Bill of Materials (SBOM) generation, continuous dependency auditing via Trivy and Snyk, signature verification with Sigstore/Cosign, and SLSA Level 3 compliance verification across all build artifacts."
   },
   {
-    q: "Can the Cybersecurity Lab help us meet regulatory compliance standards?",
-    a: "Yes. We codify automated compliance checks for SOC 2, HIPAA, PCI-DSS, and ISO 27001 into Infrastructure as Code blueprints and CI/CD pipelines."
+    "q": "Can the Cybersecurity Lab simulate real-world Advanced Persistent Threat (APT) attacks?",
+    "a": "Yes. Our red-team automation framework executes controlled adversary emulation scripts based on the MITRE ATT&CK matrix, testing detection capabilities, firewall evasion techniques, and incident response containment speeds."
   },
   {
-    q: "How does the lab integrate with production DevSecOps pipelines?",
-    a: "We develop custom policy-as-code rules using Open Policy Agent (OPA) and Checkov, enabling engineering teams to enforce automated security gates seamlessly."
+    "q": "How are secrets and sensitive credentials managed in lab architectures?",
+    "a": "We enforce a strict zero-hardcoded-secrets policy using HashiCorp Vault, AWS Secrets Manager, and Kubernetes External Secrets with automated 30-day rotation, dynamic ephemeral credentials, and strict RBAC audit trails."
+  },
+  {
+    "q": "How does the lab automate DevSecOps in existing CI/CD pipelines?",
+    "a": "We embed pre-commit hooks, static application security testing (SAST), dynamic testing (DAST), infrastructure-as-code linting (Checkov), and container image vulnerability scanners directly into GitHub Actions and GitLab CI with automated build break thresholds."
+  },
+  {
+    "q": "What is the lab's methodology for Zero Trust Network Access (ZTNA)?",
+    "a": "We replace traditional perimeter VPNs with identity-aware proxies, mutual TLS (mTLS) microsegmentation via eBPF, continuous device posture verification, and least-privilege conditional access policies."
+  },
+  {
+    "q": "How does the Cybersecurity Lab handle API security and OAuth token validation?",
+    "a": "We deploy automated API discovery and testing frameworks to detect broken object-level authorization (BOLA), validate schema conformance against OpenAPI specs, and enforce rate limiting and cryptographic JWT token inspection."
+  },
+  {
+    "q": "How do you automate compliance readiness for SOC 2, ISO 27001, and HIPAA?",
+    "a": "We implement continuous cloud compliance auditing using Open Policy Agent (OPA) and Cloud Custodian, generating automated audit evidence, infrastructure drift reports, and remediation pull requests."
+  },
+  {
+    "q": "How does the lab test and secure generative AI and LLM enterprise deployments?",
+    "a": "We audit LLM applications against the OWASP Top 10 for LLMs, evaluating defenses against prompt injection, training data poisoning, insecure output handling, sensitive information disclosure, and unconstrained tool usage."
+  },
+  {
+    "q": "How quickly can the Cybersecurity Lab deploy an emergency remediation blueprint?",
+    "a": "For critical zero-day vulnerabilities (e.g., Log4j, OpenSSL exploits), our team produces verified detection rules, virtual patching WAF configurations, and automated remediation scripts within 24 to 48 hours."
   }
 ];
 
