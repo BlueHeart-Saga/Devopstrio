@@ -81,9 +81,7 @@ export function SoftwareHeroOverview() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Engineering Software That Solves Business Problems
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              At Devopstrio, software engineering is more than writing code. We combine business understanding, modern architecture, cloud technologies, automation, and engineering best practices to deliver digital products that scale, perform, and evolve with changing business needs.
-            </p>
+            
           </Reveal>
         </div>
       </section>

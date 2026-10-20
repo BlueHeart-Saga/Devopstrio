@@ -107,9 +107,7 @@ export function QualityStrategyCapabilities() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Shift-Left Automation Pyramid
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
-              Structuring test automation for fast execution speed, high reliability, and minimal maintenance overhead.
-            </p>
+            
           </Reveal>
 
           <div className="max-w-3xl mx-auto flex flex-col gap-4">

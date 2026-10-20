@@ -81,9 +81,7 @@ export function DevSecOpsHeroOverview() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Security Built Into Every Release
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              Security is no longer a final checkpoint—it is a continuous process. Devopstrio integrates security into planning, development, testing, deployment, and operations, enabling organizations to release software faster while maintaining strong security, compliance, and operational resilience.
-            </p>
+            
           </Reveal>
         </div>
       </section>

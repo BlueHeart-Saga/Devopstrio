@@ -70,9 +70,7 @@ export function PlatformHeroOverview() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Empowering Developers to Build Faster and Safer
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              Platform Engineering creates the underlying infrastructure, automated toolchains, and self-service capabilities that allow product development teams to deliver value rapidly without friction. We design Internal Developer Platforms (IDPs) that standardise delivery while enabling autonomy.
-            </p>
+            
           </Reveal>
         </div>
       </section>

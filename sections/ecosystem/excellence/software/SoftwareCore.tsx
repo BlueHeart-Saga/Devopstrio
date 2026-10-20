@@ -81,9 +81,7 @@ export function SoftwareCore() {
               <Reveal>
                 <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">ARCHITECTURE</span>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">Architecture Patterns</h2>
-                <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium mb-8">
-                  We deploy battle-tested architectural patterns tailored to your scalability and performance needs.
-                </p>
+                
                 <div className="flex flex-col gap-3.5">
                   {architecturePatterns.map((pattern, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-sm md:text-base font-semibold text-zinc-200">

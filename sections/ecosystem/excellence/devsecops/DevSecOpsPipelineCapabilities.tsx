@@ -86,9 +86,7 @@ export function DevSecOpsPipelineCapabilities() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Security Embedded Into Every Deployment
             </h2>
-            <p className="text-base md:text-lg text-zinc-300 font-medium max-w-2xl mx-auto leading-relaxed">
-              Automated security checkpoints spanning from developer IDEs through CI/CD pipelines into cloud runtime.
-            </p>
+            
           </Reveal>
 
           <div className="bg-zinc-950/60 border border-zinc-900 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">

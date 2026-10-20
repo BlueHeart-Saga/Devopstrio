@@ -91,9 +91,7 @@ export function PlatformExperienceOps() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Building Better Experiences for Engineers
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg max-w-xl mx-auto font-medium leading-relaxed">
-              Reduce friction, context-switching, and onboarding time with developer-centric tooling.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -146,9 +144,7 @@ export function PlatformExperienceOps() {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
                   Everything Defined as Code
                 </h2>
-                <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-                  Version-controlled, reproducible, and audit-ready infrastructure provisioning using industry-standard IaC tooling and GitOps workflows.
-                </p>
+                
               </Reveal>
             </div>
             <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4">

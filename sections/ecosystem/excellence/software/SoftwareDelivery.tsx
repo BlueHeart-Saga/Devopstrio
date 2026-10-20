@@ -59,9 +59,7 @@ export function SoftwareDelivery() {
               <Reveal>
                 <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">ASSURANCE</span>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">Quality Engineering</h2>
-                <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium mb-8">
-                  We integrate automation-first testing strategies to catch regressions instantly and guarantee flawless releases.
-                </p>
+                
               </Reveal>
             </div>
             <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4">

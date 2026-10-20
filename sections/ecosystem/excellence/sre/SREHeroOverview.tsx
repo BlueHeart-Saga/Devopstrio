@@ -81,9 +81,7 @@ export function SREHeroOverview() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               How We Ensure Systems Remain Available 24×7
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              Site Reliability Engineering (SRE) applies software engineering practices to infrastructure and operations problems. At Devopstrio, we build resilient production systems with automated observability, strict error budget policies, proactive incident response, and performance engineering.
-            </p>
+            
           </Reveal>
         </div>
       </section>

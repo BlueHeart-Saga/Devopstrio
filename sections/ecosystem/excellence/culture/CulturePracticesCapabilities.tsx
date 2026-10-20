@@ -42,9 +42,7 @@ export function CulturePracticesCapabilities() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Core Cultural Practices
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
-              How we work determines what we deliver. We maintain high standards through collaborative rituals designed to eliminate friction and maximize developer velocity.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

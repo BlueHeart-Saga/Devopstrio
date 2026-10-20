@@ -101,9 +101,7 @@ export function PlatformCoreCapabilities() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Internal Developer Platform (IDP)
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
-              Empower engineering teams with a unified self-service control plane for provisioning environments, enforcing compliance, and shipping code.
-            </p>
+            
           </Reveal>
 
           {/* Workflow Diagram */}
@@ -153,9 +151,7 @@ export function PlatformCoreCapabilities() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Cloud Platform Architecture
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg max-w-2xl mx-auto mb-12 font-medium leading-relaxed">
-              Standardized, multi-layer cloud architecture designed for security, performance, and automated governance.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

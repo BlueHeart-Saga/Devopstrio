@@ -91,9 +91,7 @@ export function CultureHeroOverview() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Built by Engineers, for Engineers
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              Our engineering culture is the foundation of everything we build. We eliminate corporate bureaucracy, foster ruthless automation, and grant engineers true end-to-end ownership—from local prototyping through to global multi-region production telemetry.
-            </p>
+            
           </Reveal>
         </div>
       </section>

@@ -84,9 +84,7 @@ export function PlatformCapabilitiesArchitecture() {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">
               Powered by Spotify Backstage
             </h2>
-            <p className="text-zinc-400 text-sm md:text-base max-w-2xl mx-auto">
-              A unified portal unifying code repositories, service catalogs, deployment status, and developer tools into one intuitive interface.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

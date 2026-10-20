@@ -65,9 +65,7 @@ export function CultureTalentGrowth() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Engineering Career Pathways
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg max-w-2xl mx-auto font-medium leading-relaxed">
-              Clear, transparent career progression tracks for both individual contributors (IC) and engineering leadership.
-            </p>
+            
           </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

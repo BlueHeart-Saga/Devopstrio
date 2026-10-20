@@ -70,9 +70,7 @@ export function QualityHeroOverview() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
               Continuous Quality Built into Every Stage of Delivery
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              Quality Engineering is not a final checkpoint—it is an ongoing engineering discipline. At Devopstrio, we embed automated test coverage, performance benchmarking, and AI self-healing test suites into CI/CD pipelines to guarantee bug-free, enterprise-grade releases.
-            </p>
+            
           </Reveal>
         </div>
       </section>
