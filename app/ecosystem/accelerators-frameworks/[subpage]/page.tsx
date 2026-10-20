@@ -1,17 +1,29 @@
-
 import React from "react";
 import { notFound } from "next/navigation";
-import { getEcosystemSubpage } from "@/data/ecosystem";
+import { getEcosystemSubpage, ecosystemSubpages } from "@/data/ecosystem";
 import { Hero } from "@/components/ecosystem/Hero";
 import { FAQ } from "@/components/ecosystem/FAQ";
 import { CTA } from "@/components/ecosystem/CTA";
 
-
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo-utils";
 
+const DEDICATED_ACCELERATORS = new Set([
+  "ai-framework",
+  "cloud-accelerator",
+  "data-framework",
+  "devops-accelerator",
+  "landing-zone",
+  "security-framework"
+]);
+
+interface SubpageProps {
+  params: Promise<{ subpage: string }>;
+}
+
 export async function generateMetadata({ params }: SubpageProps): Promise<Metadata> {
   const { subpage } = await params;
+  if (DEDICATED_ACCELERATORS.has(subpage)) return {};
   const domain = "accelerators-frameworks";
   const data = getEcosystemSubpage(domain, subpage);
   if (!data) return {};
@@ -23,12 +35,11 @@ export async function generateMetadata({ params }: SubpageProps): Promise<Metada
   });
 }
 
-interface SubpageProps {
-  params: Promise<{ subpage: string }>;
-}
-
 export default async function EcosystemSubpage({ params }: SubpageProps) {
   const { subpage } = await params;
+  if (DEDICATED_ACCELERATORS.has(subpage)) {
+    notFound();
+  }
   const domain = "accelerators-frameworks";
   const data = getEcosystemSubpage(domain, subpage);
 
@@ -138,14 +149,12 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
   );
 }
 
-
-import { ecosystemSubpages } from "@/data/ecosystem";
-
 export async function generateStaticParams() {
   const domain = "accelerators-frameworks";
   const subpages = ecosystemSubpages[domain] || {};
-  return Object.keys(subpages).map((slug) => ({
-    subpage: slug
-  }));
+  return Object.keys(subpages)
+    .filter((slug) => !DEDICATED_ACCELERATORS.has(slug))
+    .map((slug) => ({
+      subpage: slug
+    }));
 }
-

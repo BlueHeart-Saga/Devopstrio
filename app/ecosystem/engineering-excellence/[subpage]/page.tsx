@@ -1,27 +1,30 @@
-
 import React from "react";
 import { notFound } from "next/navigation";
-import { getEcosystemSubpage } from "@/data/ecosystem";
+import { getEcosystemSubpage, ecosystemSubpages } from "@/data/ecosystem";
 import { Hero } from "@/components/ecosystem/Hero";
 import { FAQ } from "@/components/ecosystem/FAQ";
 import { CTA } from "@/components/ecosystem/CTA";
-
-
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo-utils";
 
-const DEDICATED_SUBPAGES = [
+const DEDICATED_SUBPAGES = new Set([
   "devsecops",
   "software-engineering",
   "platform-engineering",
   "site-reliability-engineering",
   "quality-engineering",
-  "engineering-culture"
-];
+  "engineering-culture",
+  "engineering-operations",
+  "solution-architecture"
+]);
+
+interface SubpageProps {
+  params: Promise<{ subpage: string }>;
+}
 
 export async function generateMetadata({ params }: SubpageProps): Promise<Metadata> {
   const { subpage } = await params;
-  if (DEDICATED_SUBPAGES.includes(subpage)) return {};
+  if (DEDICATED_SUBPAGES.has(subpage)) return {};
   const domain = "engineering-excellence";
   const data = getEcosystemSubpage(domain, subpage);
   if (!data) return {};
@@ -33,13 +36,9 @@ export async function generateMetadata({ params }: SubpageProps): Promise<Metada
   });
 }
 
-interface SubpageProps {
-  params: Promise<{ subpage: string }>;
-}
-
 export default async function EcosystemSubpage({ params }: SubpageProps) {
   const { subpage } = await params;
-  if (DEDICATED_SUBPAGES.includes(subpage)) {
+  if (DEDICATED_SUBPAGES.has(subpage)) {
     notFound();
   }
   const domain = "engineering-excellence";
@@ -151,14 +150,12 @@ export default async function EcosystemSubpage({ params }: SubpageProps) {
   );
 }
 
-
-import { ecosystemSubpages } from "@/data/ecosystem";
-
 export async function generateStaticParams() {
   const domain = "engineering-excellence";
   const subpages = ecosystemSubpages[domain] || {};
-  return Object.keys(subpages).map((slug) => ({
-    subpage: slug
-  }));
+  return Object.keys(subpages)
+    .filter((slug) => !DEDICATED_SUBPAGES.has(slug))
+    .map((slug) => ({
+      subpage: slug
+    }));
 }
-
