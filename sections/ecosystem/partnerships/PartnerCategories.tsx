@@ -410,19 +410,37 @@ export function PartnerCategories() {
                     </div>
                   </div>
 
-                  {/* Bottom Side: Explore + Arrow */}
-                  <div className="relative z-10 pt-3.5 border-t border-white/10 flex items-center justify-between">
-                    <Link
-                      href={partner.href}
-                      className="inline-flex items-center gap-2 text-rose-400 hover:text-rose-300 font-semibold text-sm md:text-base tracking-wider transition-colors group/link"
-                    >
-                      <span>Explore</span>
-                      <ArrowUpRight
-                        size={17}
-                        className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
-                      />
-                    </Link>
-                  </div>
+                  {activeTab === "cloud" ? (
+                    /* Bottom Side: Explore + Arrow (Only for Cloud Partners) */
+                    <div className="relative z-10 pt-3.5 border-t border-white/10 flex items-center justify-between">
+                      <Link
+                        href={partner.href}
+                        className="inline-flex items-center gap-2 text-rose-400 hover:text-rose-300 font-semibold text-sm md:text-base tracking-wider transition-colors group/link"
+                      >
+                        <span>Explore</span>
+                        <ArrowUpRight
+                          size={17}
+                          className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                        />
+                      </Link>
+                    </div>
+                  ) : (
+                    /* Non-clickable: Reveal short description on hover */
+                    <div className="relative z-10 pt-3 border-t border-white/10 mt-auto min-h-[44px] flex items-center">
+                      <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal opacity-0 max-h-0 group-hover/card:opacity-100 group-hover/card:max-h-24 overflow-hidden transition-all duration-300 ease-out">
+                        {partner.desc}
+                      </p>
+                      <div className="flex items-center justify-between w-full text-zinc-500 text-xs group-hover/card:hidden transition-all duration-200">
+                        <span className="text-[11px] font-mono tracking-wider uppercase text-zinc-400 font-medium">
+                          {partner.action}
+                        </span>
+                        <span className="text-[11px] text-zinc-500 flex items-center gap-1 font-mono">
+                          <span className="w-1.5 h-1.5 rounded-full bg-rose-500/70" />
+                          Overview
+                        </span>
+                      </div>
+                    </div>
+                  )}
 
                 </div>
               </Reveal>
