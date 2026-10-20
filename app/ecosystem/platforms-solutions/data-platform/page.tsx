@@ -930,14 +930,14 @@ const BusinessOutcomes = () => {
 // ==========================================
 const IndustryUseCases = () => {
   const useCases = [
-    { title: "Banking", desc: "Fraud analytics, database lineage audit logs, and unified customer profile tables.", icon: Database },
-    { title: "Healthcare", desc: "Clinical operations dashboards, patient history metrics, and HIPAA compliant warehouses.", icon: Heart },
-    { title: "Retail", desc: "Customer behavior trends, conversion trackers, and real-time checkout monitoring.", icon: ShoppingBag },
-    { title: "Manufacturing", desc: "Production lines monitoring, supply telemetry logs, and predictive maintenance rules.", icon: Factory },
-    { title: "Telecommunications", desc: "Network routing performance metrics and volume connection filters.", icon: Workflow },
-    { title: "Government", desc: "Citizen file catalogs, query reporting APIs, and open database structures.", icon: Globe },
-    { title: "Education", desc: "Student portal registries, learning telemetry maps, and academic data sharing.", icon: BookOpen },
-    { title: "Logistics", desc: "Fleet tracking routes, warehouse supply statistics, and delivery timeline metrics.", icon: Activity }
+    { title: "Banking", desc: "Fraud analytics, database lineage audit logs, and unified customer profile tables.", icon: Database, href: "/industries/banking-finance" },
+    { title: "Healthcare", desc: "Clinical operations dashboards, patient history metrics, and HIPAA compliant warehouses.", icon: Heart, href: "/industries/healthcare-life-sciences" },
+    { title: "Retail", desc: "Customer behavior trends, conversion trackers, and real-time checkout monitoring.", icon: ShoppingBag, href: "/industries/retail-ecommerce" },
+    { title: "Manufacturing", desc: "Production lines monitoring, supply telemetry logs, and predictive maintenance rules.", icon: Factory, href: "/industries/manufacturing" },
+    { title: "Telecommunications", desc: "Network routing performance metrics and volume connection filters.", icon: Workflow, href: "/industries/telecommunications" },
+    { title: "Government", desc: "Citizen file catalogs, query reporting APIs, and open database structures.", icon: Globe, href: "/industries/government-public-sector" },
+    { title: "Education", desc: "Student portal registries, learning telemetry maps, and academic data sharing.", icon: BookOpen, href: "/industries/education" },
+    { title: "Logistics", desc: "Fleet tracking routes, warehouse supply statistics, and delivery timeline metrics.", icon: Activity, href: "/industries" }
   ];
 
   return (
@@ -1016,7 +1016,7 @@ const IndustryUseCases = () => {
 
                       {/* Link at bottom */}
                       <div className="mt-5">
-                        <Link href="/contact#contact-form" className="text-xs font-semibold text-rose-500 hover:text-rose-400 hover:underline inline-flex items-center gap-1.5 transition-all">
+                        <Link href={item.href} className="text-xs font-semibold text-rose-500 hover:text-rose-400 hover:underline inline-flex items-center gap-1.5 transition-all">
                           Learn more <ChevronRight className="w-3 h-3" />
                         </Link>
                       </div>

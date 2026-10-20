@@ -678,12 +678,12 @@ const BusinessOutcomes = () => {
 // ==========================================
 const IndustryUseCases = () => {
   const useCases = [
-    { title: "Banking & Finance", desc: "Monitor transaction logs and audit directories continuously to prevent fraudulent access.", icon: Database },
-    { title: "Healthcare & Med", desc: "Secure database endpoints and encrypt medical records to keep storage HIPAA compliant.", icon: Shield },
-    { title: "Retail & E-comm", desc: "Audit customer checkout channels and secure payment API endpoints in real-time.", icon: Zap },
-    { title: "Manufacturing", desc: "Isolate operational tech environments and lock down staging server nodes.", icon: Cpu },
-    { title: "Government Agencies", desc: "Establish strict access credentials and index audit streams to protect citizen files.", icon: Lock },
-    { title: "Telecommunications", desc: "Monitor infrastructure metrics and filter large volume network routing lines.", icon: Network }
+    { title: "Banking & Finance", desc: "Monitor transaction logs and audit directories continuously to prevent fraudulent access.", icon: Database, href: "/industries/banking-finance" },
+    { title: "Healthcare & Med", desc: "Secure database endpoints and encrypt medical records to keep storage HIPAA compliant.", icon: Shield, href: "/industries/healthcare-life-sciences" },
+    { title: "Retail & E-comm", desc: "Audit customer checkout channels and secure payment API endpoints in real-time.", icon: Zap, href: "/industries/retail-ecommerce" },
+    { title: "Manufacturing", desc: "Isolate operational tech environments and lock down staging server nodes.", icon: Cpu, href: "/industries/manufacturing" },
+    { title: "Government Agencies", desc: "Establish strict access credentials and index audit streams to protect citizen files.", icon: Lock, href: "/industries/government-public-sector" },
+    { title: "Telecommunications", desc: "Monitor infrastructure metrics and filter large volume network routing lines.", icon: Network, href: "/industries/telecommunications" }
   ];
 
   return (
@@ -762,7 +762,7 @@ const IndustryUseCases = () => {
 
                       {/* Link at bottom */}
                       <div className="mt-5">
-                        <Link href="/contact#contact-form" className="text-xs font-semibold text-rose-500 hover:text-rose-400 hover:underline inline-flex items-center gap-1.5 transition-all">
+                        <Link href={item.href} className="text-xs font-semibold text-rose-500 hover:text-rose-400 hover:underline inline-flex items-center gap-1.5 transition-all">
                           Learn more <ChevronRight className="w-3 h-3" />
                         </Link>
                       </div>
