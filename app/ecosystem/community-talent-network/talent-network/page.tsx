@@ -132,7 +132,7 @@ export default function TalentNetworkPage() {
               { val: "100+", label: "Principal Mentors", sub: "1-on-1 Guidance" }
             ].map((stat, idx) => (
               <div key={idx} className="p-6 md:p-7 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 text-center hover:border-rose-500/40 transition-all duration-300 group">
-                <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-2 block group-hover:text-rose-500 transition-colors">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-2 block group-hover:text-rose-500 transition-colors">
                   {stat.val}
                 </span>
                 <span className="text-xs md:text-sm font-bold uppercase tracking-wider text-zinc-300 block mb-1">
@@ -149,6 +149,12 @@ export default function TalentNetworkPage() {
 
       {/* 2. TALENT NETWORK OVERVIEW */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -173,7 +179,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
                 ABOUT THE NETWORK
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
                 A Community Built for High-Impact Engineers
               </h2>
               <blockquote className="text-zinc-300 text-base md:text-lg border-l-2 border-rose-500 pl-4 py-1.5 italic font-medium leading-relaxed">
@@ -216,6 +222,12 @@ export default function TalentNetworkPage() {
 
       {/* 3. COMMUNITY IMPACT (Large KPI Cards) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
@@ -223,7 +235,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 ECOSYSTEM SCALE
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 Our Global Community Impact
               </h2>
             </div>
@@ -257,6 +269,12 @@ export default function TalentNetworkPage() {
 
       {/* 4. WHO CAN JOIN (8 Large Feature Cards) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
@@ -264,7 +282,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 INCLUSIVE ECOSYSTEM
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 Who Can Join the Network
               </h2>
             </div>
@@ -332,6 +350,12 @@ export default function TalentNetworkPage() {
 
       {/* 5. TALENT CATEGORIES (Grid) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
@@ -339,7 +363,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 SPECIALIZATION MATRIX
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 Talent Categories & Core Stacks
               </h2>
             </div>
@@ -375,6 +399,12 @@ export default function TalentNetworkPage() {
 
       {/* 6. ENGINEERING CAREER JOURNEY (Roadmap) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
@@ -382,7 +412,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 CAREER TRAJECTORY
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 Engineering Career Journey
               </h2>
             </div>
@@ -428,6 +458,12 @@ export default function TalentNetworkPage() {
 
       {/* 7. GLOBAL TALENT MARKETPLACE (Image + Text) */}
       <section id="global-marketplace" className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -435,7 +471,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
                 GLOBAL OPPORTUNITIES
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
                 Global Talent Marketplace
               </h2>
 
@@ -483,13 +519,19 @@ export default function TalentNetworkPage() {
 
       {/* 8. SKILLS & CERTIFICATIONS (Technology Badges) */}
       <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
           <div className="text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-zinc-400 block mb-3">
               VERIFIED CREDENTIALS
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
               Skills & Certification Badging
             </h3>
           </div>
@@ -511,7 +553,7 @@ export default function TalentNetworkPage() {
             ].map((cert, idx) => (
               <span
                 key={idx}
-                className="px-5 py-3 rounded-xl bg-[#0A0A0A] border border-zinc-800 hover:border-rose-500/50 hover:text-white transition-all duration-300 font-medium shadow-sm"
+                className="px-5 py-3 rounded-xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(244,63,94,0.12)] hover:text-white transition-all duration-300 font-medium shadow-sm"
               >
                 📜 {cert}
               </span>
@@ -523,6 +565,12 @@ export default function TalentNetworkPage() {
 
       {/* 9. LEARNING & MENTORSHIP (Cards) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
@@ -530,7 +578,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 CAREER ACCELERATION
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 Learning & Mentorship Programs
               </h2>
             </div>
@@ -563,6 +611,12 @@ export default function TalentNetworkPage() {
 
       {/* 10. SUCCESS STORIES */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
@@ -570,7 +624,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 PROVEN OUTCOMES
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 Network Success Stories
               </h2>
             </div>
@@ -612,13 +666,19 @@ export default function TalentNetworkPage() {
 
       {/* 11. PARTNER COMPANIES (Logo Wall) */}
       <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
           <div className="text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-zinc-400 block mb-3">
               ENTERPRISE ALLIANCES
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
               Trusted by Leading Technology Partners & Enterprises
             </h3>
           </div>
@@ -642,6 +702,12 @@ export default function TalentNetworkPage() {
 
       {/* 12. COMMUNITY BENEFITS (Feature Grid) */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
@@ -649,7 +715,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 MEMBERSHIP ADVANTAGES
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 Comprehensive Member Benefits
               </h2>
             </div>
@@ -678,6 +744,12 @@ export default function TalentNetworkPage() {
 
       {/* 13. EVENTS & NETWORKING */}
       <section className="py-20 md:py-28 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-12 space-y-12">
 
           <Reveal>
@@ -685,7 +757,7 @@ export default function TalentNetworkPage() {
               <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block mb-3">
                 GLOBAL GATHERINGS
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.15]">
                 Summits, Meetups & Hackathons
               </h2>
             </div>
@@ -700,7 +772,7 @@ export default function TalentNetworkPage() {
               { step: "05", event: "Career Fair" },
               { step: "06", event: "Global Conference" }
             ].map((evt, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-[#0A0A0A] border border-zinc-800 hover:border-rose-500/50 transition-colors">
+              <div key={idx} className="p-5 rounded-2xl bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(244,63,94,0.12)] transition-colors">
                 <span className="text-[11px] font-mono text-rose-400 font-bold block mb-1.5">EVENT {evt.step}</span>
                 <h4 className="text-xs sm:text-sm font-bold text-white">{evt.event}</h4>
               </div>
@@ -716,43 +788,108 @@ export default function TalentNetworkPage() {
         title="Questions we get"
         highlight="asked every day."
         faqs={[
-          {
-            q: "Who can join the Devopstrio Talent Network?",
-            a: "Engineers of all levels—software developers, cloud architects, DevOps specialists, AI researchers, cybersecurity practitioners, and technology students—are welcome to apply and join.",
-            proof: "✓ 25,000+ Active Members Worldwide",
-            tags: ["All Experience Levels", "Free Membership", "Global Network"]
-          },
-          {
-            q: "Is membership in the Talent Network completely free?",
-            a: "Yes, 100% free for candidates and community members. We never charge developers placement fees, recruitment commissions, or subscription dues.",
-            proof: "✓ $0 Cost for Engineers & Students",
-            tags: ["Free Access", "Zero Fees", "Open Community"]
-          },
-          {
-            q: "Do I need prior enterprise experience to join?",
-            a: "No prior enterprise experience is required. We maintain specialized tracks for university students and early-career developers, complete with hands-on labs, 1-on-1 mentorship, and certification bootcamps.",
-            proof: "✓ Student & Junior Pathways Included",
-            tags: ["Student Track", "Mentorship", "Internships"]
-          },
-          {
-            q: "Are remote opportunities available worldwide?",
-            a: "Yes! Over 80% of enterprise project placements matched through our network offer full remote flexibility or hybrid options across North America, Europe, the UK, and APAC.",
-            proof: "✓ 80%+ Remote Opportunities",
-            tags: ["Remote Work", "Contract Roles", "Full-Time Roles"]
-          },
-          {
-            q: "How do I connect with senior engineering mentors?",
-            a: "Once registered, you gain access to our private community Slack and Discord platforms, where you can reserve 1-on-1 office hours with Principal Cloud Architects and Engineering Managers.",
-            proof: "✓ 100+ Senior Mentors Available",
-            tags: ["1-on-1 Mentorship", "Slack Community", "Code Reviews"]
-          },
-          {
-            q: "How can enterprise companies hire engineers through the network?",
-            a: "Enterprise clients can click 'Contact Community Team' or submit an agile team request. We match pre-vetted engineers or deploy dedicated pods in under 14 days.",
-            proof: "✓ Under 14-Day Average Time-to-Deploy",
-            tags: ["Enterprise Hiring", "Agile Pods", "Vetted Talent"]
-          }
-        ]}
+  {
+    "q": "Who can join the Devopstrio Talent Network?",
+    "a": "Engineers of all levels—software developers, cloud architects, DevOps specialists, AI researchers, cybersecurity practitioners, and technology students—are welcome to apply and join.",
+    "proof": "✓ 25,000+ Active Members Worldwide",
+    "tags": [
+      "All Experience Levels",
+      "Free Membership",
+      "Global Network"
+    ]
+  },
+  {
+    "q": "Is membership in the Talent Network completely free?",
+    "a": "Yes, 100% free for candidates and community members. We never charge developers placement fees, recruitment commissions, or subscription dues.",
+    "proof": "✓ $0 Cost for Engineers & Students",
+    "tags": [
+      "Free Access",
+      "Zero Fees",
+      "Open Community"
+    ]
+  },
+  {
+    "q": "Do I need prior enterprise experience to join?",
+    "a": "No prior enterprise experience is required. We maintain specialized tracks for university students and early-career developers, complete with hands-on labs, 1-on-1 mentorship, and certification bootcamps.",
+    "proof": "✓ Student & Junior Pathways Included",
+    "tags": [
+      "Student Track",
+      "Mentorship",
+      "Internships"
+    ]
+  },
+  {
+    "q": "Are remote opportunities available worldwide?",
+    "a": "Yes! Over 80% of enterprise project placements matched through our network offer full remote flexibility or hybrid options across North America, Europe, the UK, and APAC.",
+    "proof": "✓ 80%+ Remote Opportunities",
+    "tags": [
+      "Remote Work",
+      "Global Placement",
+      "Flexible Models"
+    ]
+  },
+  {
+    "q": "How do I connect with senior engineering mentors?",
+    "a": "Upon joining, members gain access to our weekly architecture office hours, private community Slack channels, and 1-on-1 mentor matching with principal engineers from AWS, Azure, and Google Cloud.",
+    "proof": "✓ 100+ Active Principal Mentors",
+    "tags": [
+      "1-on-1 Mentorship",
+      "Office Hours",
+      "Principal Engineers"
+    ]
+  },
+  {
+    "q": "How can enterprise companies hire engineers through the network?",
+    "a": "Enterprise hiring teams can click 'Hire Talent' to connect with our talent solutions team. We provide curated, pre-vetted candidate shortlists matched to specific cloud, DevOps, or AI architectures within 72 hours.",
+    "proof": "✓ 72-Hour Candidate Shortlists",
+    "tags": [
+      "Enterprise Hiring",
+      "Pre-Vetted",
+      "Fast Onboarding"
+    ]
+  },
+  {
+    "q": "How does Devopstrio vet engineers in the network?",
+    "a": "Our multi-stage assessment includes peer-reviewed system design interviews, automated coding benchmarks, production infrastructure troubleshooting scenarios, and verified security credentials.",
+    "proof": "✓ Rigorous 4-Stage Technical Vetting",
+    "tags": [
+      "System Design",
+      "Code Challenges",
+      "Verified Skills"
+    ]
+  },
+  {
+    "q": "What technical domains are currently in highest demand?",
+    "a": "Enterprise demand is heavily centered on Kubernetes platform engineering, Multi-Cloud SRE, Generative AI inference architectures, DevSecOps automation, and Data Lakehouse engineering.",
+    "proof": "✓ High-Growth Enterprise Focus Areas",
+    "tags": [
+      "Kubernetes",
+      "Platform Engineering",
+      "GenAI",
+      "DevSecOps"
+    ]
+  },
+  {
+    "q": "Can university students and recent graduates join the network?",
+    "a": "Yes. Students can apply for our dedicated Global Internship Programme, participate in sponsored hackathons, and gain access to free sandbox cloud credits.",
+    "proof": "✓ Dedicated Student Corridor",
+    "tags": [
+      "Internships",
+      "University MoUs",
+      "Free Credits"
+    ]
+  },
+  {
+    "q": "What is the typical timeline from joining to enterprise project placement?",
+    "a": "Pre-vetted members are typically introduced to enterprise projects within 1 to 2 weeks. Vetting is asynchronous and can be completed at your own pace.",
+    "proof": "✓ 1-2 Week Average Placement Window",
+    "tags": [
+      "Rapid Matching",
+      "Direct Enterprise Roles",
+      "Fast Track"
+    ]
+  }
+]}
       />
 
       {/* 15. CTA SECTION */}

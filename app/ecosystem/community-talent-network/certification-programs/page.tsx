@@ -41,43 +41,108 @@ import {
 
 
 const faqs = [
-              {
-                q: "Who can join Devopstrio Certification Programs?",
-                a: "Students, software developers, cloud engineers, DevOps practitioners, and technology leaders looking to validate their skills with hands-on labs can enroll.",
-                proof: "✓ 15,000+ Certified Learners Worldwide",
-                tags: ["Students & Professionals", "All Experience Levels", "Global Enroll"]
-              },
-              {
-                q: "Are the certification study cohorts free or paid?",
-                a: "All study cohorts, curriculum materials, and sandbox labs are 100% free for active members of the Devopstrio Talent Network.",
-                proof: "✓ 100% Sponsored for Talent Network Members",
-                tags: ["Free Training", "Free Sandboxes", "Sponsored Exams"]
-              },
-              {
-                q: "Do learners receive digital certificates upon completion?",
-                a: "Yes. Upon completing capstone project requirements, learners receive verifiable digital certificates and GitHub profile badges.",
-                proof: "✓ Verifiable Digital Badging Included",
-                tags: ["Digital Certificate", "LinkedIn Badge", "GitHub Verified"]
-              },
-              {
-                q: "Are live cloud sandbox environments included in the training?",
-                a: "Yes. We provision ephemeral Azure, AWS, and Kubernetes sandbox accounts automatically so you can practice on real infrastructure without personal cost.",
-                proof: "✓ 200+ Ephemeral Cloud Sandboxes",
-                tags: ["Real Cloud Labs", "AWS & Azure Sandboxes", "No Credit Card Needed"]
-              },
-              {
-                q: "Can university students participate in certification tracks?",
-                a: "Yes! University students are encouraged to join. We offer specialized beginner pathways to prepare students for early-career cloud roles.",
-                proof: "✓ Dedicated University Student Tracks",
-                tags: ["Student Friendly", "Beginner Tracks", "Portfolio Building"]
-              },
-              {
-                q: "How long does each certification track typically take?",
-                a: "Most certification tracks run for 8 to 12 weeks, requiring approximately 8-10 hours per week of study and lab work.",
-                proof: "✓ Flexible 8-12 Week Sprints",
-                tags: ["8-12 Weeks", "Self-Paced Option", "Weekly Live Labs"]
-              }
-            ];
+  {
+    "q": "Who can join Devopstrio Certification Programs?",
+    "a": "Software engineers, cloud architects, DevOps practitioners, cybersecurity analysts, and technology students looking to validate skills through hands-on labs are eligible to enroll.",
+    "proof": "✓ 15,000+ Certified Learners Worldwide",
+    "tags": [
+      "Students & Professionals",
+      "All Skill Levels",
+      "Global Cohorts"
+    ]
+  },
+  {
+    "q": "Are the certification study cohorts and sandbox labs free or paid?",
+    "a": "All study cohorts, curriculum tracks, practice examinations, and cloud sandbox environments are 100% free for verified members of the Devopstrio Talent Network.",
+    "proof": "✓ 100% Sponsored for Talent Network Members",
+    "tags": [
+      "Free Training",
+      "Free Sandboxes",
+      "Sponsored Exams"
+    ]
+  },
+  {
+    "q": "Do learners receive digital certificates upon completion?",
+    "a": "Yes. Upon passing capstone project requirements, learners receive verifiable cryptographic digital certificates and badges formatted for LinkedIn and GitHub.",
+    "proof": "✓ Verifiable Digital Badging Included",
+    "tags": [
+      "Digital Certificate",
+      "LinkedIn Badge",
+      "GitHub Verified"
+    ]
+  },
+  {
+    "q": "What certification tracks are currently supported?",
+    "a": "We support official tracks including AWS Solutions Architect & DevOps Pro, Azure Solutions Architect & DevOps Expert, Google Cloud Architect, and CKA/CKAD (Kubernetes).",
+    "proof": "✓ AWS, Azure, Google Cloud & Linux Foundation",
+    "tags": [
+      "AWS Architect",
+      "Azure Expert",
+      "GCP Professional",
+      "CKA/CKAD"
+    ]
+  },
+  {
+    "q": "How do the hands-on virtual sandbox environments work?",
+    "a": "Learners receive temporary, isolated cloud accounts running real infrastructure topologies where they solve chaos engineering challenges, debug pods, and write live IaC.",
+    "proof": "✓ Real-World Isolated Cloud Sandboxes",
+    "tags": [
+      "Live Sandboxes",
+      "Chaos Scenarios",
+      "Zero Simulation"
+    ]
+  },
+  {
+    "q": "Does Devopstrio sponsor official cloud certification exam vouchers?",
+    "a": "Yes. Top-performing cohort participants who achieve 90%+ on our mock certification exams receive fully sponsored exam vouchers for their official AWS, Azure, or Linux Foundation exams.",
+    "proof": "✓ 1,000+ Exam Vouchers Awarded Annually",
+    "tags": [
+      "Exam Vouchers",
+      "100% Fee Coverage",
+      "Merit Sponsorship"
+    ]
+  },
+  {
+    "q": "What is the average pass rate for cohort participants?",
+    "a": "Participants who complete all sandbox labs and mock evaluations achieve an industry-leading 94.6% first-attempt pass rate on official certification exams.",
+    "proof": "✓ 94.6% First-Attempt Pass Rate",
+    "tags": [
+      "High Pass Rate",
+      "Proven Methodology",
+      "Mock Rehearsals"
+    ]
+  },
+  {
+    "q": "How much time commitment is required per week for a study cohort?",
+    "a": "Cohorts are designed for working professionals and students, requiring 4 to 6 hours per week over a 6-to-8 week period, including weekend live mentor Q&A sessions.",
+    "proof": "✓ 4-6 Hours / Week Flexible Commitment",
+    "tags": [
+      "Working Professionals",
+      "Weekend Sessions",
+      "Self-Paced Labs"
+    ]
+  },
+  {
+    "q": "How are digital badges verified on LinkedIn and GitHub?",
+    "a": "Certificates are issued with unique SHA-256 cryptographic hashes that integrate with Credly, LinkedIn Certifications, and GitHub profile README widgets.",
+    "proof": "✓ Instant One-Click Social Verification",
+    "tags": [
+      "Credly Integration",
+      "Cryptographic Hashes",
+      "LinkedIn Badges"
+    ]
+  },
+  {
+    "q": "Can corporate enterprise teams enroll in tailored private cohorts?",
+    "a": "Yes. We partner with enterprise engineering departments to deliver customized multi-week cohorts aligned with their internal cloud migration and platform engineering roadmaps.",
+    "proof": "✓ Custom Corporate Upskilling Tracks",
+    "tags": [
+      "Enterprise Training",
+      "Private Sandboxes",
+      "Custom Roadmaps"
+    ]
+  }
+];
 
 export default function CertificationProgramsPage() {
   // Modal states
@@ -163,6 +228,12 @@ export default function CertificationProgramsPage() {
 
       {/* 2. CERTIFICATION PROGRAMS OVERVIEW (Learn. Practice. Get Certified.) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -224,6 +295,12 @@ export default function CertificationProgramsPage() {
 
       {/* 3. WHY GET CERTIFIED WITH DEVOPSTRIO (6 Premium Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -277,6 +354,12 @@ export default function CertificationProgramsPage() {
 
       {/* 4. CERTIFICATION CATEGORIES (Grid Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -332,6 +415,12 @@ export default function CertificationProgramsPage() {
 
       {/* 5. CERTIFICATION LEARNING JOURNEY (Interactive Roadmap) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -381,6 +470,12 @@ export default function CertificationProgramsPage() {
 
       {/* 6. LEARNING PATHS (5 Skill Levels) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -465,6 +560,12 @@ export default function CertificationProgramsPage() {
 
       {/* 8. CERTIFICATION BENEFITS (8 Feature Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -523,6 +624,12 @@ export default function CertificationProgramsPage() {
 
       {/* 10. SUCCESS STORIES */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -571,6 +678,12 @@ export default function CertificationProgramsPage() {
 
       {/* 11. CERTIFICATION LEVELS (Stacked Premium Tiers) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>

@@ -46,49 +46,109 @@ import {
 
 
 const faqs = [
-              {
-                q: "How do I join the Devopstrio Engineering Community?",
-                a: "Simply click the 'Join Community' button on this page. Registration is instant and grants you access to our active community Discord/Slack channels, GitHub org invite, and event notifications.",
-                proof: "✓ Free Instant Access · 10,000+ Active Members",
-                tags: ["Free Registration", "Global Discord/Slack", "GitHub Org Access"]
-              },
-              {
-                q: "Is membership completely free?",
-                a: "Yes, 100% free forever. We believe developer communities should be open to all without paywalls or subscription barriers.",
-                proof: "✓ 0$ Cost · Open Source Community Policy",
-                tags: ["No Credit Card Required", "Free Workshops", "Open Access"]
-              },
-              {
-                q: "Can computer science students and beginners join?",
-                a: "Absolutely! We encourage students and career-switchers to join. Our senior architects provide dedicated mentorship, code reviews, and project guidance.",
-                proof: "✓ 30+ University Partners · Student Mentorship Program",
-                tags: ["Student Friendly", "Code Reviews", "Mentorship"]
-              },
-              {
-                q: "Can enterprises and companies collaborate with the community?",
-                a: "Yes. Enterprise partners sponsor hackathons, co-host technical meetups, and recruit vetted engineering talent directly from our MVP network.",
-                proof: "✓ Trusted by Fortune 500 & Series-C Startups",
-                tags: ["Enterprise Sponsorship", "Talent Recruitment", "Co-hosted Meetups"]
-              },
-              {
-                q: "Do you organize in-person meetups?",
-                a: "We host bi-weekly global virtual sessions and monthly localized in-person meetups across London, New York, San Francisco, Bangalore, and Singapore.",
-                proof: "✓ 80+ Annual Meetups Worldwide",
-                tags: ["In-Person Meetups", "Global Virtual Summits", "Local Chapters"]
-              },
-              {
-                q: "How can I contribute to Devopstrio public GitHub repositories?",
-                a: "Check out our GitHub repository organization page at github.com/Devopstrio, filter by issues tagged 'good first issue' or 'help wanted', and submit your pull request!",
-                proof: "✓ 250+ Active Open Source Repositories",
-                tags: ["Good First Issue", "Terraform Modules", "PR Reviews"]
-              },
-              {
-                q: "How do I become a Devopstrio Community Mentor or MVP?",
-                a: "Members who consistently contribute open-source PRs, publish technical articles, or host workshops are awarded MVP status with conference speaking slots and sponsored certifications.",
-                proof: "✓ Recognized Engineering Leadership Track",
-                tags: ["MVP Status", "Conference Passes", "Sponsored Certifications"]
-              }
-            ];
+  {
+    "q": "How do I join the Devopstrio Engineering Community?",
+    "a": "Registration is instant and 100% free. Clicking 'Join Community' grants access to our global Discord and Slack channels, GitHub organization, and calendar of technical sessions.",
+    "proof": "✓ Free Instant Access · 25,000+ Active Members",
+    "tags": [
+      "Instant Access",
+      "Global Discord/Slack",
+      "GitHub Org Access"
+    ]
+  },
+  {
+    "q": "Is community membership completely free?",
+    "a": "Yes, 100% free forever. We believe knowledge sharing, architectural peer reviews, and open-source tooling must remain open to all engineers globally.",
+    "proof": "✓ $0 Cost · Open Source Community Policy",
+    "tags": [
+      "No Paywall",
+      "Free Workshops",
+      "Open Access"
+    ]
+  },
+  {
+    "q": "Can computer science students and beginners join?",
+    "a": "Yes. We maintain early-career and student channels where senior architects host dedicated office hours, perform live code reviews, and guide project architectures.",
+    "proof": "✓ Student Friendly · 1-on-1 Mentorship",
+    "tags": [
+      "Mentorship",
+      "Code Reviews",
+      "Learning Tracks"
+    ]
+  },
+  {
+    "q": "Can enterprises and companies collaborate with the community?",
+    "a": "Yes. Enterprise partners sponsor hackathons, co-host technical summits, propose architectural RFCs, and recruit vetted engineering practitioners directly.",
+    "proof": "✓ Fortune 500 & High-Growth Scale-Up Partners",
+    "tags": [
+      "Enterprise Collaboration",
+      "Hackathons",
+      "Tech Summits"
+    ]
+  },
+  {
+    "q": "Do you organize in-person meetups and global conferences?",
+    "a": "We host quarterly in-person technical meetups across London, Manchester, New York, Bangalore, and Chennai, alongside monthly virtual global conferences.",
+    "proof": "✓ 5 Global Delivery Hubs",
+    "tags": [
+      "London",
+      "New York",
+      "Bangalore",
+      "Virtual Conferences"
+    ]
+  },
+  {
+    "q": "How can I contribute to Devopstrio public GitHub repositories?",
+    "a": "Visit github.com/Devopstrio, explore repositories tagged 'good first issue', fork the repo, and submit pull requests following our CONTRIBUTING.md guidelines.",
+    "proof": "✓ 500+ Public Contributors · 250+ Repositories",
+    "tags": [
+      "GitHub",
+      "Pull Requests",
+      "Open Source"
+    ]
+  },
+  {
+    "q": "How do I become a Devopstrio Community Mentor or MVP?",
+    "a": "Members who consistently contribute high-quality code reviews, lead technical workshops, or publish community articles can apply for annual Devopstrio MVP recognition.",
+    "proof": "✓ Annual MVP Honors & Global Travel Grants",
+    "tags": [
+      "MVP Recognition",
+      "Community Leadership",
+      "Speaking Grants"
+    ]
+  },
+  {
+    "q": "What engineering guilds are active within the community?",
+    "a": "We host specialized guilds including Cloud Architecture & SRE, GenAI & Model Ops, Zero Trust Cybersecurity, Platform Engineering & GitOps, and Data Lakehouses.",
+    "proof": "✓ 5 Specialized Guild Corridors",
+    "tags": [
+      "SRE Guild",
+      "AI Guild",
+      "Security Guild",
+      "Platform Guild"
+    ]
+  },
+  {
+    "q": "Are there architectural feedback sessions for personal projects?",
+    "a": "Yes! Every alternate Thursday, principal engineers host live 'Architecture Tear-downs' where community members can present system designs for constructive peer review.",
+    "proof": "✓ Bi-Weekly Architectural Reviews",
+    "tags": [
+      "System Design",
+      "Peer Review",
+      "Architecture Feedback"
+    ]
+  },
+  {
+    "q": "How does the community handle intellectual property and licensing?",
+    "a": "All code shared in public community repositories is licensed under permissive Apache 2.0 or MIT licenses, ensuring contributors retain authorship and public credit.",
+    "proof": "✓ Apache 2.0 & MIT Permissive Standards",
+    "tags": [
+      "Open Source",
+      "Apache 2.0",
+      "Contributor Rights"
+    ]
+  }
+];
 
 export default function EngineeringCommunityPage() {
   // Modal States
@@ -173,6 +233,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 2. COMMUNITY STORY SECTION (Microsoft-Style Split Layout using assets/common images) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -231,6 +297,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 3. COMMUNITY HIGHLIGHTS (Large KPI Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -273,6 +345,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 4. COMMUNITY PILLARS (6 Premium Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -326,6 +404,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 5. REAL ENGINEERING ACTIVITIES ⭐ (Alternating Sections using assets/common images) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-20">
 
           <Reveal>
@@ -451,6 +535,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 6. OPEN SOURCE PROJECTS (GitHub-Style Cards Grid) */}
       <section id="open-source-projects" className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -554,6 +644,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 7. TECHNICAL MEETUPS & EVENTS (Timeline Layout) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -602,6 +698,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 8. KNOWLEDGE HUB (Cards Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -654,6 +756,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 9. LEARNING PATHS / CAREER ROADMAP */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -703,6 +811,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 10. COMMUNITY GALLERY ⭐ (Visual Grid using assets/common images) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -750,6 +864,12 @@ export default function EngineeringCommunityPage() {
 
       {/* 11. COMMUNITY SUCCESS STORIES */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>

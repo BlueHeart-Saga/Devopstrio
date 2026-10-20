@@ -41,49 +41,107 @@ import {
 
 
 const faqs = [
-              {
-                q: "How can universities partner with Devopstrio?",
-                a: "Universities can submit an inquiry through the 'Partner With Us' button. Our academic relations team evaluates curriculum alignment, student intake, and lab facilities within 48 hours.",
-                proof: "✓ 50+ Partner Universities Worldwide",
-                tags: ["Free Partnership", "Curriculum Co-development", "MoU Agreement"]
-              },
-              {
-                q: "Are the student programs and workshops free for universities?",
-                a: "Yes, 100% of our campus workshops, guest lectures, and student cloud sandbox environments are fully funded by Devopstrio.",
-                proof: "✓ 0$ Cost for Universities & Students",
-                tags: ["Fully Funded", "Free Sandboxes", "Sponsored Grants"]
-              },
-              {
-                q: "Do students receive official certificates upon completing internships?",
-                a: "Yes, all students receive a verified Devopstrio Engineering Certificate, along with GitHub contribution badging and LinkedIn credentials.",
-                proof: "✓ Recognized Enterprise Certification",
-                tags: ["Digital Certificate", "GitHub Badging", "Recommendation Letters"]
-              },
-              {
-                q: "How do paid summer internships work?",
-                a: "Internships run for 12 weeks during summer breaks. Interns are paired 1-on-1 with a senior architect and integrated directly into client or open-source engineering sprints.",
-                proof: "✓ 100% Paid Placements · 250+ Interns",
-                tags: ["12 Weeks", "Paid Salary", "1-on-1 Mentor"]
-              },
-              {
-                q: "Can computer science faculty members participate in training?",
-                a: "Yes, we offer dedicated 'Faculty Enablement' bootcamps to bring lecturers up to speed on current cloud-native, IaC, and GenAI best practices.",
-                proof: "✓ Faculty Enablement Track",
-                tags: ["Professor Bootcamps", "Syllabus Updates", "Lab Grants"]
-              },
-              {
-                q: "Are research grants available for PhD and Master students?",
-                a: "Yes, Devopstrio provides dedicated research grants and GPU compute resources for postgraduate projects focused on cloud infrastructure and GenAI.",
-                proof: "✓ $2M+ Research Grants Allocated",
-                tags: ["Research Grants", "GPU Allocation", "Co-authored Papers"]
-              },
-              {
-                q: "Do final-year students get fast-tracked for full-time roles?",
-                a: "Yes, top performers in our internship program, hackathons, and campus ambassador network receive direct full-time employment offers prior to graduation.",
-                proof: "✓ 95% Retention & Hire Rate",
-                tags: ["Direct Placement", "Graduate Engineering Roles", "Fast-Track Offer"]
-              }
-            ];
+  {
+    "q": "How can universities partner with Devopstrio?",
+    "a": "University department heads and placement cells can submit an inquiry through our academic portal. Our team evaluates curriculum alignment and signs MoUs within 48 hours.",
+    "proof": "✓ 50+ Global Partner Universities",
+    "tags": [
+      "Free Partnership",
+      "Curriculum Co-development",
+      "MoU Agreement"
+    ]
+  },
+  {
+    "q": "Are the student programs and workshops free for universities?",
+    "a": "Yes, 100% of campus workshops, guest lectures, student cloud sandbox environments, and hackathon prizes are fully funded by Devopstrio.",
+    "proof": "✓ $0 Cost for Universities & Students",
+    "tags": [
+      "Fully Funded",
+      "Free Sandboxes",
+      "Sponsored Grants"
+    ]
+  },
+  {
+    "q": "Do students receive official certificates upon completing internships?",
+    "a": "Yes. Students receive verifiable digital credentials, official letters of recommendation, and recognized enterprise project certificates.",
+    "proof": "✓ Verifiable Enterprise Certification",
+    "tags": [
+      "Digital Certificate",
+      "GitHub Badging",
+      "Recommendation Letters"
+    ]
+  },
+  {
+    "q": "What academic research topics do Devopstrio university labs support?",
+    "a": "We support research in distributed consensus protocols, confidential computing, energy-efficient cloud virtualization, and agentic AI evaluation testbeds.",
+    "proof": "✓ Published Research & Conference Papers",
+    "tags": [
+      "Distributed Systems",
+      "AI Testbeds",
+      "Confidential Computing"
+    ]
+  },
+  {
+    "q": "Can university faculty collaborate on joint research grants and whitepapers?",
+    "a": "Yes! Our principal architects co-author whitepapers, co-sponsor academic conference submissions, and provide enterprise compute clusters for faculty projects.",
+    "proof": "✓ Faculty Sabbatical & Co-Author Grants",
+    "tags": [
+      "Joint Papers",
+      "Compute Grants",
+      "Faculty Sabbaticals"
+    ]
+  },
+  {
+    "q": "How does the Devopstrio Global Internship Programme work?",
+    "a": "Selected students undergo a 12-to-24 week immersive internship pairing directly with client-facing engineering pods working on production cloud and AI codebases.",
+    "proof": "✓ 12-24 Week Production Pod Placements",
+    "tags": [
+      "Hands-on Internships",
+      "Real Production Code",
+      "Paid Stipends"
+    ]
+  },
+  {
+    "q": "What cloud resources are provided to students in partner universities?",
+    "a": "Partner students receive sandbox accounts with pre-allocated credits across AWS, Azure, and Google Cloud, with automated spend caps to enable safe experimentation.",
+    "proof": "✓ Pre-Allocated Multi-Cloud Sandboxes",
+    "tags": [
+      "AWS Credits",
+      "Azure Sandboxes",
+      "Zero Personal Cost"
+    ]
+  },
+  {
+    "q": "How do campus hackathons and coding awards operate?",
+    "a": "We organize annual 48-hour inter-college hackathons with real-world enterprise problem statements, cash prizes, and fast-track interview offers for winning teams.",
+    "proof": "✓ $50,000+ Annual Student Cash Grants",
+    "tags": [
+      "48-Hour Hackathons",
+      "Cash Grants",
+      "Fast-Track Job Offers"
+    ]
+  },
+  {
+    "q": "Can university graduates transition directly into full-time roles at Devopstrio?",
+    "a": "Over 70% of interns who demonstrate technical rigor and collaborative culture transition into full-time junior associate engineering positions upon graduation.",
+    "proof": "✓ 70%+ Full-time Conversion Rate",
+    "tags": [
+      "Graduate Hiring",
+      "Direct Career Path",
+      "Full-Time Placement"
+    ]
+  },
+  {
+    "q": "How quickly can a university establish a formal Memorandum of Understanding (MoU)?",
+    "a": "Our standardized, non-commercial academic MoU framework enables legal and department reviews to conclude in under 5 business days.",
+    "proof": "✓ 5-Day Standardized Onboarding Framework",
+    "tags": [
+      "Fast-Track Legal",
+      "Standard MoU",
+      "Immediate Launch"
+    ]
+  }
+];
 
 export default function UniversityProgramsPage() {
   // Modal states
@@ -169,6 +227,12 @@ export default function UniversityProgramsPage() {
 
       {/* 2. PROGRAM OVERVIEW (Bridging Academia and Industry) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -230,6 +294,12 @@ export default function UniversityProgramsPage() {
 
       {/* 3. WHY UNIVERSITIES PARTNER WITH DEVOPSTRIO (6 Feature Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -280,6 +350,12 @@ export default function UniversityProgramsPage() {
 
       {/* 4. UNIVERSITY PARTNERSHIP PROGRAMS (6 Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -356,6 +432,12 @@ export default function UniversityProgramsPage() {
 
       {/* 5. INDUSTRY-ACADEMIA COLLABORATION (Microsoft-Style Alternating Feature) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
@@ -402,6 +484,12 @@ export default function UniversityProgramsPage() {
 
       {/* 6. STUDENT LEARNING JOURNEY (Step-by-Step Roadmap) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -508,6 +596,12 @@ export default function UniversityProgramsPage() {
 
       {/* 8. INNOVATION LABS & RESEARCH */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -548,6 +642,12 @@ export default function UniversityProgramsPage() {
 
       {/* 9. HACKATHONS & TECHNICAL EVENTS (Timeline) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -585,6 +685,12 @@ export default function UniversityProgramsPage() {
 
       {/* 10. MENTORSHIP NETWORK (Architect Profiles) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -628,6 +734,12 @@ export default function UniversityProgramsPage() {
 
       {/* 11. UNIVERSITY SUCCESS STORIES */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>

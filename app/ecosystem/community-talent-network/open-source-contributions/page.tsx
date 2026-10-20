@@ -42,49 +42,110 @@ import {
 
 
 const faqs = [
-              {
-                q: "How do I start contributing to Devopstrio open-source projects?",
-                a: "Navigate to github.com/Devopstrio, pick any repository, check issues tagged 'good first issue', fork the repository, and submit your pull request following our CONTRIBUTING.md guidelines.",
-                proof: "✓ 500+ Active Contributors · 250+ Repositories",
-                tags: ["GitHub PRs", "Good First Issue", "Open Community"]
-              },
-              {
-                q: "Are all Devopstrio open-source projects free to use commercially?",
-                a: "Yes. All our repositories are released under permissive open-source licenses (primarily Apache 2.0 and MIT), allowing free commercial and private use.",
-                proof: "✓ 100% Free Apache 2.0 / MIT Licensing",
-                tags: ["Commercial Use", "Apache 2.0", "MIT License"]
-              },
-              {
-                q: "Can enterprise companies contribute code or sponsor features?",
-                a: "Yes! We partner with enterprise teams to co-develop modules, review custom RFCs, and integrate custom cloud policies into our public frameworks.",
-                proof: "✓ Trusted by Enterprise Technology Teams",
-                tags: ["Enterprise Co-development", "RFC Reviews", "Sponsorship"]
-              },
-              {
-                q: "Are university students welcome to contribute?",
-                a: "Absolutely! We provide dedicated mentorship and code reviews for student pull requests to help them build real-world engineering credentials.",
-                proof: "✓ Student Contributor Mentorship Program",
-                tags: ["Student Friendly", "Code Reviews", "Portfolio Building"]
-              },
-              {
-                q: "How are code reviews and security vulnerabilities handled?",
-                a: "Every pull request passes static security analysis (Checkov/Trivy) and automated unit testing before two senior maintainers approve and merge it.",
-                proof: "✓ Automated CI/CD & Security Scans",
-                tags: ["Checkov", "Trivy", "Peer Review"]
-              },
-              {
-                q: "How are release versions managed?",
-                a: "We adhere strictly to Semantic Versioning (MAJOR.MINOR.PATCH). Breaking changes are only released in major version increments with full migration documentation.",
-                proof: "✓ Strict Semantic Versioning Standards",
-                tags: ["SemVer", "Migration Guides", "Release Logs"]
-              },
-              {
-                q: "Where can I find complete documentation for Terraform modules?",
-                a: "All modules feature automated terraform-docs documentation in their README.md files, complete with input variables, outputs, and usage examples.",
-                proof: "✓ Auto-generated terraform-docs",
-                tags: ["Documentation", "Usage Examples", "README Specs"]
-              }
-            ];
+  {
+    "q": "How do I start contributing to Devopstrio open-source projects?",
+    "a": "Browse github.com/Devopstrio, select any repository, inspect issues labeled 'good first issue', fork the repo, and submit your PR adhering to our CONTRIBUTING.md guidelines.",
+    "proof": "✓ 500+ Active Contributors · 250+ Repositories",
+    "tags": [
+      "GitHub PRs",
+      "Good First Issue",
+      "Open Community"
+    ]
+  },
+  {
+    "q": "Are all Devopstrio open-source projects free to use commercially?",
+    "a": "Yes. All our repositories are released under permissive open-source licenses (primarily Apache 2.0 and MIT), allowing unrestricted commercial and private use.",
+    "proof": "✓ 100% Free Apache 2.0 / MIT Licensing",
+    "tags": [
+      "Commercial Use",
+      "Apache 2.0",
+      "MIT License"
+    ]
+  },
+  {
+    "q": "Can enterprise companies contribute code or sponsor features?",
+    "a": "Yes. We collaborate with enterprise engineering teams to co-develop modules, review custom RFCs, and integrate cloud landing zone policies into public frameworks.",
+    "proof": "✓ Trusted by Enterprise Technology Teams",
+    "tags": [
+      "Enterprise Co-Dev",
+      "RFCs",
+      "Open Governance"
+    ]
+  },
+  {
+    "q": "What is Devopstrio's code review and PR turnaround time?",
+    "a": "Our core maintainers triage and review community pull requests within 24 to 48 hours, providing actionable architectural feedback and automated CI test results.",
+    "proof": "✓ 24-48 Hour SLA on Pull Request Reviews",
+    "tags": [
+      "Fast PR Review",
+      "Automated CI Tests",
+      "Constructive Feedback"
+    ]
+  },
+  {
+    "q": "What technology stacks do your public repositories primarily cover?",
+    "a": "Our open-source projects focus on Terraform / OpenTofu cloud modules, Kubernetes operators, Helm charts, eBPF security monitors, and LangGraph multi-agent adapters.",
+    "proof": "✓ Multi-Cloud Infrastructure & AI Tooling",
+    "tags": [
+      "Terraform",
+      "Kubernetes",
+      "Helm",
+      "eBPF",
+      "LangGraph"
+    ]
+  },
+  {
+    "q": "How do you ensure security and dependency integrity in open-source modules?",
+    "a": "All repositories utilize automated Dependabot updates, CodeQL vulnerability analysis, Snyk container scanning, and cryptographic Cosign commit signing.",
+    "proof": "✓ SLSA Level 3 Automated Pipeline Verification",
+    "tags": [
+      "CodeQL",
+      "Snyk",
+      "Cosign Signed",
+      "Zero Malware"
+    ]
+  },
+  {
+    "q": "Can community contributors become official repository maintainers?",
+    "a": "Yes! Contributors who demonstrate consistent code quality, thoughtful review participation, and architectural stewardship are invited to join our Maintainers Council.",
+    "proof": "✓ Open Merit-Based Governance",
+    "tags": [
+      "Maintainer Status",
+      "Triage Rights",
+      "Steering Committee"
+    ]
+  },
+  {
+    "q": "Are there bug bounty rewards or grants for critical open-source contributions?",
+    "a": "Yes. We allocate quarterly community grants and bounties for contributors who resolve high-priority security disclosures or implement significant performance optimizations.",
+    "proof": "✓ Quarterly Contributor Grant Pool",
+    "tags": [
+      "Bug Bounties",
+      "Open Grants",
+      "Direct Rewards"
+    ]
+  },
+  {
+    "q": "How do you handle RFCs (Requests for Comments) for major architecture changes?",
+    "a": "Major framework modifications are proposed through public RFC markdown documents in our 'devopstrio/rfcs' repository, followed by an open 14-day community review period.",
+    "proof": "✓ Transparent 14-Day Public RFC Review",
+    "tags": [
+      "RFC Process",
+      "Open Feedback",
+      "Democratic Design"
+    ]
+  },
+  {
+    "q": "Where can I report security vulnerabilities in Devopstrio repositories?",
+    "a": "Please report potential security issues confidentially to security@devopstrio.com or through GitHub Private Vulnerability Reporting; our SRE team responds within 6 hours.",
+    "proof": "✓ 6-Hour Security Response Guarantee",
+    "tags": [
+      "Responsible Disclosure",
+      "Private Triage",
+      "Rapid Fixes"
+    ]
+  }
+];
 
 export default function OpenSourcePage() {
   // Modal states
@@ -167,6 +228,12 @@ export default function OpenSourcePage() {
 
       {/* 2. OUR OPEN SOURCE MISSION (Split Layout) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -228,6 +295,12 @@ export default function OpenSourcePage() {
 
       {/* 3. CONTRIBUTION IMPACT (Large KPI Section) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -270,6 +343,12 @@ export default function OpenSourcePage() {
 
       {/* 4. FEATURED OPEN SOURCE PROJECTS */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -356,6 +435,12 @@ export default function OpenSourcePage() {
 
       {/* 5. ENGINEERING FRAMEWORKS (Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -389,6 +474,12 @@ export default function OpenSourcePage() {
 
       {/* 6. GITHUB REPOSITORY SHOWCASE ⭐ (GitHub-Style Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -524,6 +615,12 @@ export default function OpenSourcePage() {
 
       {/* 7. TECHNOLOGY CATEGORIES (Colorful Category Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -566,6 +663,12 @@ export default function OpenSourcePage() {
 
       {/* 8. COMMUNITY CONTRIBUTIONS WORKFLOW (Timeline) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -615,6 +718,12 @@ export default function OpenSourcePage() {
 
       {/* 9. PROJECT LIFECYCLE (Large Diagram / Steps) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -648,6 +757,12 @@ export default function OpenSourcePage() {
 
       {/* 10. DEVELOPER CONTRIBUTION GUIDE (Step-by-Step Cards) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -684,6 +799,12 @@ export default function OpenSourcePage() {
 
       {/* 11. ENGINEERING STANDARDS (Cards Grid) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -717,6 +838,12 @@ export default function OpenSourcePage() {
 
       {/* 12. LATEST RELEASES (Timeline) */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
@@ -778,6 +905,12 @@ export default function OpenSourcePage() {
 
       {/* 14. SUCCESS STORIES */}
       <section className="py-24 bg-[#030303] border-b border-zinc-900/80">
+      {/* Ambient Background Glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[500px] rounded-full blur-[100px] opacity-25"
+        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
+      />
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8 space-y-12">
 
           <Reveal>
