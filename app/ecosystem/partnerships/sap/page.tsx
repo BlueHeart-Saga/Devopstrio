@@ -425,23 +425,23 @@ export default function SAPStrategicAllianceHub() {
         {/* Concentric Wave Elements in SAP Blue/Cyan Theme */}
         <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
           <div className="relative w-full h-full flex items-center justify-end">
-            <div className="absolute w-[200%] h-[160%] right-[-50%] rounded-[120px] md:rounded-[260px] border border-blue-900/10 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-cyan-500/10 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-blue-500/15 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-cyan-600/15 rotate-[-28deg] pointer-events-none" />
+            <div className="absolute w-[200%] h-[160%] right-[-50%] rounded-[120px] md:rounded-[260px] border border-red-950/10 rotate-[-28deg] pointer-events-none" />
+            <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-rose-500/10 rotate-[-28deg] pointer-events-none" />
+            <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-rose-500/15 rotate-[-28deg] pointer-events-none" />
+            <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-rose-600/15 rotate-[-28deg] pointer-events-none" />
 
-            <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-blue-500/20 rotate-[-28deg] pointer-events-none" />
-            <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-cyan-500/25 rotate-[-28deg] pointer-events-none" />
+            <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-rose-500/20 rotate-[-28deg] pointer-events-none" />
+            <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-rose-500/25 rotate-[-28deg] pointer-events-none" />
 
-            <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-blue-600/15 via-cyan-600/10 to-teal-500/5 rounded-full blur-[50px] opacity-40 animate-pulse" />
+            <div className="absolute right-[5%] w-[180px] h-[90px] bg-gradient-to-r from-red-600/15 via-rose-600/10 to-rose-500/5 rounded-full blur-[50px] opacity-40 animate-pulse" />
           </div>
         </div>
 
         {/* Soft Ambient Light Theme Effect Gradients on Pitch-Black */}
         <div className="absolute inset-0 z-0 opacity-70 pointer-events-none select-none">
-          <div className="absolute top-[20%] right-[10%] w-[450px] h-[450px] bg-blue-900/10 rounded-full blur-[110px]" />
-          <div className="absolute bottom-[10%] right-[30%] w-[350px] h-[350px] bg-cyan-500/5 rounded-full blur-[100px]" />
-          <div className="absolute top-[35%] right-[0%] w-[250px] h-[250px] bg-sky-500/5 rounded-full blur-[90px]" />
+          <div className="absolute top-[20%] right-[10%] w-[450px] h-[450px] bg-red-950/10 rounded-full blur-[110px]" />
+          <div className="absolute bottom-[10%] right-[30%] w-[350px] h-[350px] bg-rose-500/5 rounded-full blur-[100px]" />
+          <div className="absolute top-[35%] right-[0%] w-[250px] h-[250px] bg-rose-500/5 rounded-full blur-[90px]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#0c162f_1px,transparent_1px),linear-gradient(to_bottom,#0c162f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30" />
         </div>
 
@@ -460,7 +460,7 @@ export default function SAPStrategicAllianceHub() {
 
               <Reveal delay={0.1}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
-                  SAP Enterprise <span className="text-[#3b82f6] whitespace-nowrap">Ecosystem</span>
+                  SAP Enterprise <span className="text-[#E11D48] whitespace-nowrap">Ecosystem</span>
                 </h1>
               </Reveal>
 
@@ -471,7 +471,7 @@ export default function SAPStrategicAllianceHub() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {heroHighlights.map((pt, idx) => (
                     <div key={idx} className="flex gap-3 animate-fadeIn">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-500 mt-0.5">
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 mt-0.5">
                         <Check className="w-3 h-3" />
                       </div>
                       <div>
@@ -487,7 +487,7 @@ export default function SAPStrategicAllianceHub() {
               <Reveal delay={0.4} className="flex flex-wrap gap-4">
                 <Link
                   href="/contact#contact-form"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-500 text-white hover:from-blue-500 hover:to-cyan-400 hover:shadow-[0_0_28px_rgba(59,130,246,0.4)]"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 bg-gradient-to-r from-red-600 to-rose-500 text-white hover:from-rose-500 hover:to-rose-500 hover:shadow-[0_0_28px_rgba(59,130,246,0.4)]"
                 >
                   Talk to SAP Experts
                 </Link>
@@ -505,17 +505,17 @@ export default function SAPStrategicAllianceHub() {
               <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
 
                 {/* Connecting glowing line and animation */}
-                <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-blue-500/25 via-cyan-500/30 to-blue-500/25 z-0 pointer-events-none">
+                <div className="absolute inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/25 via-rose-500/30 to-rose-500/25 z-0 pointer-events-none">
                   {/* Energy Pulse */}
-                  <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full blur-[2px] shadow-[0_0_12px_#3b82f6] animate-ping" style={{ animationDuration: '3s' }} />
+                  <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full blur-[2px] shadow-[0_0_12px_#E11D48] animate-ping" style={{ animationDuration: '3s' }} />
                 </div>
 
                 <div className="flex items-center justify-between w-full relative z-10 px-4">
 
                   {/* Devopstrio Logo Card */}
-                  <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/80 border border-zinc-800 hover:border-blue-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-555 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
+                  <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
+                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-red-600 to-rose-600 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
                     <img src="/webp/assets/logo/logo.webp"
                       alt="Devopstrio Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
@@ -524,13 +524,13 @@ export default function SAPStrategicAllianceHub() {
 
                   {/* Plus Connector Indicator */}
                   <div className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-lg relative z-20">
-                    <Sparkles className="w-4 h-4 text-yellow-450 animate-pulse" />
+                    <Sparkles className="w-4 h-4 text-rose-400 animate-pulse" />
                   </div>
 
                   {/* SAP Logo Card */}
-                  <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/80 border border-zinc-800 hover:border-blue-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
+                  <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/80 border border-zinc-800 hover:border-rose-500/30 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.03] to-transparent rounded-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity" />
+                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-red-600 to-rose-500 opacity-0 group-hover/logo:opacity-20 blur-md transition-opacity" />
                     <img src="/assets/Tech_logos/sap.svg"
                       alt="SAP Logo"
                       className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-110"

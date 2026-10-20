@@ -127,7 +127,7 @@ function Button({
       className={`inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 ${
         ghost
           ? "border border-zinc-800 bg-zinc-950/70 text-zinc-200 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white"
-          : "bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 text-white hover:from-red-500 hover:to-rose-400 hover:shadow-[0_0_28px_rgba(225,29,72,0.4)]"
+          : "bg-gradient-to-r from-red-600 to-rose-500 text-white hover:from-red-500 hover:to-rose-400 hover:shadow-[0_0_28px_rgba(225,29,72,0.4)]"
       }`}
     >
       {children}
@@ -164,20 +164,20 @@ function Hero() {
       <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
         <div className="relative w-full h-full flex items-center justify-end">
           <div className="absolute w-[200%] h-[160%] right-[-50%] rounded-[120px] md:rounded-[260px] border border-red-950/15 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-blue-500/10 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-rose-500/10 rotate-[-28deg] pointer-events-none" />
           <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-rose-500/10 rotate-[-28deg] pointer-events-none" />
           <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-red-600/15 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-blue-500/20 rotate-[-28deg] pointer-events-none" />
+          <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-rose-500/20 rotate-[-28deg] pointer-events-none" />
           <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-rose-500/25 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute right-[5%] w-[200px] h-[100px] bg-gradient-to-r from-blue-600/20 via-rose-600/15 to-emerald-500/10 rounded-full blur-[55px] opacity-50 animate-pulse" />
+          <div className="absolute right-[5%] w-[200px] h-[100px] bg-gradient-to-r from-red-600/20 via-rose-600/15 to-rose-500/10 rounded-full blur-[55px] opacity-50 animate-pulse" />
         </div>
       </div>
 
       {/* Ambient Radial Gradients & Precision Blueprint Grid */}
       <div className="absolute inset-0 z-0 opacity-70 pointer-events-none select-none">
-        <div className="absolute top-[20%] right-[10%] w-[480px] h-[480px] bg-blue-950/20 rounded-full blur-[120px]" />
+        <div className="absolute top-[20%] right-[10%] w-[480px] h-[480px] bg-red-950/20 rounded-full blur-[120px]" />
         <div className="absolute bottom-[10%] right-[30%] w-[380px] h-[380px] bg-rose-950/15 rounded-full blur-[100px]" />
-        <div className="absolute top-[35%] right-[0%] w-[260px] h-[260px] bg-emerald-950/15 rounded-full blur-[90px]" />
+        <div className="absolute top-[35%] right-[0%] w-[260px] h-[260px] bg-red-950/15 rounded-full blur-[90px]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f0c0c_1px,transparent_1px),linear-gradient(to_bottom,#1f0c0c_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35" />
       </div>
 
@@ -187,7 +187,7 @@ function Hero() {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <Reveal className="mb-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/60 mb-6 backdrop-blur-sm">
-                <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
+                <span className="h-2 w-2 rounded-full bg-rose-500 animate-pulse" />
                 <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-300">
                   Google Cloud Premier Partner
                 </span>
@@ -245,7 +245,7 @@ function Hero() {
               <div className="absolute w-[60%] h-[60%] rounded-full border border-zinc-800/30 pointer-events-none z-0" />
 
               {/* Connecting glowing line and animated energy node */}
-              <div className="absolute inset-x-8 sm:inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/30 via-blue-500/50 to-emerald-500/30 z-0 pointer-events-none">
+              <div className="absolute inset-x-8 sm:inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/30 via-red-500/50 to-rose-500/30 z-0 pointer-events-none">
                 <div
                   className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full blur-[2px] shadow-[0_0_14px_#4285F4] animate-ping"
                   style={{ animationDuration: "2.8s" }}
@@ -267,14 +267,14 @@ function Hero() {
                 </div>
 
                 {/* Central Connector Node */}
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-xl relative z-20 group hover:border-blue-500/40 transition-colors">
-                  <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-xl relative z-20 group hover:border-rose-500/40 transition-colors">
+                  <Sparkles className="w-4 h-4 text-rose-400 animate-pulse" />
                 </div>
 
                 {/* Google Cloud Logo Card */}
-                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-blue-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.05] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
+                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-rose-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.05] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
+                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-red-600 to-rose-500 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
                   <div className="flex flex-col items-center justify-center gap-2 w-full h-full">
                     <img
                       src="/assets/Tech_logos/Google_Cloud.svg"
@@ -336,11 +336,11 @@ function Why() {
             <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-800/80 mb-2">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
               </div>
               <span className="text-[11px] font-mono text-zinc-400">gcp-bigquery-gke.tf</span>
-              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+              <span className="text-[10px] font-mono text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">
                 GKE AUTOPILOT LIVE
               </span>
             </div>
@@ -358,12 +358,12 @@ function Why() {
             {/* Bottom Architecture Pill */}
             <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="h-2 w-2 rounded-full bg-rose-400 animate-pulse" />
                 <span className="text-xs font-semibold text-white tracking-wide">
                   Enterprise Google Cloud Hub
                 </span>
               </div>
-              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded border border-blue-500/25">
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/25">
                 GCP Premier Certified
               </span>
             </div>
@@ -382,12 +382,12 @@ function Why() {
           <div className="mt-8 space-y-4">
             {reasons.map(({ Icon, t, d }, i) => (
               <Reveal key={t} delay={i * 90}>
-                <div className="flex gap-4 p-5 rounded-2xl border border-zinc-800/80 bg-zinc-950/40 hover:border-blue-500/30 hover:bg-zinc-900/30 transition-all duration-300 group">
-                  <div className="flex-shrink-0 grid h-11 w-11 place-items-center rounded-xl bg-zinc-900 border border-zinc-800 transition-colors duration-300 group-hover:border-blue-500/40 group-hover:bg-blue-500/10">
+                <div className="flex gap-4 p-5 rounded-2xl border border-zinc-800/80 bg-zinc-950/40 hover:border-rose-500/30 hover:bg-zinc-900/30 transition-all duration-300 group">
+                  <div className="flex-shrink-0 grid h-11 w-11 place-items-center rounded-xl bg-zinc-900 border border-zinc-800 transition-colors duration-300 group-hover:border-rose-500/40 group-hover:bg-rose-500/10">
                     <Icon size={20} color={ROSE} />
                   </div>
                   <div>
-                    <h3 className="text-[16px] font-bold text-white group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-[16px] font-bold text-white group-hover:text-rose-400 transition-colors">
                       {t}
                     </h3>
                     <p className="mt-1.5 text-[13px] leading-[23px] text-zinc-400">{d}</p>
@@ -459,16 +459,16 @@ function Services() {
           {services.map(({ badge, Icon, t, d }, i) => (
             <Reveal key={t} delay={(i % 3) * 90}>
               <article className="group relative h-full rounded-2xl border border-zinc-800/80 bg-[#0D0E12] p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(244,63,94,0.45)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.6)] overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-rose-500/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="flex items-center justify-between">
                   <span className="grid h-12 w-12 place-items-center rounded-xl bg-zinc-900 border border-zinc-800 transition-colors duration-300 group-hover:bg-[rgba(244,63,94,0.14)] group-hover:border-rose-500/30">
                     <Icon size={22} color={ROSE} />
                   </span>
-                  <span className="text-[10px] font-mono font-semibold tracking-wider uppercase text-zinc-500 group-hover:text-blue-400 transition-colors">
+                  <span className="text-[10px] font-mono font-semibold tracking-wider uppercase text-zinc-500 group-hover:text-rose-400 transition-colors">
                     {badge}
                   </span>
                 </div>
-                <h3 className="mt-6 text-[19px] font-bold text-white group-hover:text-blue-400 transition-colors">
+                <h3 className="mt-6 text-[19px] font-bold text-white group-hover:text-rose-400 transition-colors">
                   {t}
                 </h3>
                 <p className="mt-2.5 text-[14px] leading-[24px] text-zinc-400">{d}</p>
@@ -566,14 +566,14 @@ function TransformationStack() {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-zinc-800/80 bg-[#0D0E12] p-6 text-left relative overflow-hidden group hover:border-blue-500/40 transition-colors"
+                  className="rounded-2xl border border-zinc-800/80 bg-[#0D0E12] p-6 text-left relative overflow-hidden group hover:border-rose-500/40 transition-colors"
                 >
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-60" />
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-rose-500 opacity-60" />
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-blue-400 transition-colors">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-rose-400 transition-colors">
                       {m.value}
                     </span>
-                    <Icon size={18} className="text-blue-500/70" />
+                    <Icon size={18} className="text-rose-500/70" />
                   </div>
                   <div className="text-xs font-bold uppercase tracking-wider text-zinc-300">
                     {m.label}
@@ -601,7 +601,7 @@ function TransformationStack() {
               </div>
               <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-amber-400" />
+                  <Zap className="w-4 h-4 text-rose-400" />
                   <span className="text-xs font-semibold text-white">
                     End-to-End GCP Engineering Pods
                   </span>
@@ -617,13 +617,13 @@ function TransformationStack() {
               const Icon = p.icon;
               return (
                 <Reveal key={p.title} delay={i * 80}>
-                  <div className="rounded-xl border border-zinc-800/80 bg-[#0D0E12] p-5 transition-all duration-300 hover:border-blue-500/40 hover:bg-zinc-900/50 flex gap-4 items-start group">
-                    <div className="flex-shrink-0 grid h-10 w-10 place-items-center rounded-lg bg-zinc-900 border border-zinc-800 text-blue-500 group-hover:border-blue-500/30 group-hover:bg-blue-500/10 transition-colors">
+                  <div className="rounded-xl border border-zinc-800/80 bg-[#0D0E12] p-5 transition-all duration-300 hover:border-rose-500/40 hover:bg-zinc-900/50 flex gap-4 items-start group">
+                    <div className="flex-shrink-0 grid h-10 w-10 place-items-center rounded-lg bg-zinc-900 border border-zinc-800 text-rose-500 group-hover:border-rose-500/30 group-hover:bg-rose-500/10 transition-colors">
                       <Icon size={19} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <h4 className="text-[16px] font-bold text-white group-hover:text-blue-400 transition-colors">
+                        <h4 className="text-[16px] font-bold text-white group-hover:text-rose-400 transition-colors">
                           {p.title}
                         </h4>
                         <span className="text-[10px] font-mono text-zinc-500 bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">
@@ -684,14 +684,14 @@ function Process() {
           <ol className="relative grid gap-8 md:grid-cols-4 md:gap-6">
             <span
               aria-hidden
-              className="absolute left-0 right-0 top-[20px] hidden h-[2px] origin-left bg-gradient-to-r from-blue-600 via-rose-500 to-transparent md:block"
+              className="absolute left-0 right-0 top-[20px] hidden h-[2px] origin-left bg-gradient-to-r from-red-600 via-rose-500 to-transparent md:block"
             />
             {steps.map((s, i) => (
               <li key={s.t} className="relative">
-                <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full border border-blue-500/60 bg-black text-[14px] font-bold text-blue-400 shadow-[0_0_15px_rgba(66,133,244,0.3)]">
+                <span className="relative z-10 grid h-10 w-10 place-items-center rounded-full border border-rose-500/60 bg-black text-[14px] font-bold text-rose-400 shadow-[0_0_15px_rgba(66,133,244,0.3)]">
                   {i + 1}
                 </span>
-                <span className="mt-4 block text-[10px] font-mono font-semibold tracking-wider text-blue-400">
+                <span className="mt-4 block text-[10px] font-mono font-semibold tracking-wider text-rose-400">
                   {s.step}
                 </span>
                 <h3 className="mt-2 text-[18px] font-bold text-white">{s.t}</h3>
@@ -763,7 +763,7 @@ function Industries() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-[18px] font-bold text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-[18px] font-bold text-white group-hover:text-rose-400 transition-colors">
                     {c.t}
                   </h3>
                   <p className="mt-2 text-[13px] leading-[22px] text-zinc-400">{c.d}</p>

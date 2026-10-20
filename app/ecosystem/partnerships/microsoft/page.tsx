@@ -127,7 +127,7 @@ function Button({
       className={`inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-[13px] font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 ${
         ghost
           ? "border border-zinc-800 bg-zinc-950/70 text-zinc-200 hover:border-zinc-700 hover:bg-zinc-900 hover:text-white"
-          : "bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 text-white hover:from-red-500 hover:to-rose-400 hover:shadow-[0_0_28px_rgba(225,29,72,0.4)]"
+          : "bg-gradient-to-r from-red-600 to-rose-500 text-white hover:from-red-500 hover:to-rose-400 hover:shadow-[0_0_28px_rgba(225,29,72,0.4)]"
       }`}
     >
       {children}
@@ -169,7 +169,7 @@ function Hero() {
           <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-red-600/15 rotate-[-28deg] pointer-events-none" />
           <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-rose-500/20 rotate-[-28deg] pointer-events-none" />
           <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-red-500/25 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute right-[5%] w-[200px] h-[100px] bg-gradient-to-r from-red-600/20 via-rose-600/15 to-blue-500/10 rounded-full blur-[55px] opacity-50 animate-pulse" />
+          <div className="absolute right-[5%] w-[200px] h-[100px] bg-gradient-to-r from-red-600/20 via-rose-600/15 to-rose-500/10 rounded-full blur-[55px] opacity-50 animate-pulse" />
         </div>
       </div>
 
@@ -177,7 +177,7 @@ function Hero() {
       <div className="absolute inset-0 z-0 opacity-70 pointer-events-none select-none">
         <div className="absolute top-[20%] right-[10%] w-[480px] h-[480px] bg-red-950/20 rounded-full blur-[120px]" />
         <div className="absolute bottom-[10%] right-[30%] w-[380px] h-[380px] bg-rose-950/15 rounded-full blur-[100px]" />
-        <div className="absolute top-[35%] right-[0%] w-[260px] h-[260px] bg-blue-950/15 rounded-full blur-[90px]" />
+        <div className="absolute top-[35%] right-[0%] w-[260px] h-[260px] bg-red-950/15 rounded-full blur-[90px]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f0c0c_1px,transparent_1px),linear-gradient(to_bottom,#1f0c0c_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35" />
       </div>
 
@@ -245,7 +245,7 @@ function Hero() {
               <div className="absolute w-[60%] h-[60%] rounded-full border border-zinc-800/30 pointer-events-none z-0" />
 
               {/* Connecting glowing line and animated energy node */}
-              <div className="absolute inset-x-8 sm:inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/30 via-red-500/50 to-blue-500/30 z-0 pointer-events-none">
+              <div className="absolute inset-x-8 sm:inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/30 via-red-500/50 to-rose-500/30 z-0 pointer-events-none">
                 <div
                   className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full blur-[2px] shadow-[0_0_14px_#E11D48] animate-ping"
                   style={{ animationDuration: "2.8s" }}
@@ -268,13 +268,13 @@ function Hero() {
 
                 {/* Central Connector Node */}
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-xl relative z-20 group hover:border-rose-500/40 transition-colors">
-                  <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
+                  <Sparkles className="w-4 h-4 text-rose-400 animate-pulse" />
                 </div>
 
                 {/* Microsoft Azure Logo Card */}
-                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-blue-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.05] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
+                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-rose-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.05] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
+                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-red-600 to-rose-500 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
                   <div className="flex flex-col items-center justify-center gap-2 w-full h-full">
                     <img
                       src="/assets/Tech_logos/Microsoft-Azure.svg"
@@ -336,11 +336,11 @@ function Why() {
             <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-800/80 mb-2">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
               </div>
               <span className="text-[11px] font-mono text-zinc-400">azure-landing-zone.tf</span>
-              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+              <span className="text-[10px] font-mono text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">
                 LIVE CLUSTER
               </span>
             </div>
@@ -358,7 +358,7 @@ function Why() {
             {/* Bottom Architecture Pill */}
             <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="h-2 w-2 rounded-full bg-rose-400 animate-pulse" />
                 <span className="text-xs font-semibold text-white tracking-wide">
                   Enterprise Azure Infrastructure Hub
                 </span>
@@ -601,7 +601,7 @@ function TransformationStack() {
               </div>
               <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-amber-400" />
+                  <Zap className="w-4 h-4 text-rose-400" />
                   <span className="text-xs font-semibold text-white">
                     End-to-End Enterprise Delivery Pods
                   </span>
