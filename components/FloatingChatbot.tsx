@@ -132,9 +132,11 @@ export function FloatingChatbot() {
                 e.stopPropagation();
                 setShowTooltip(false);
               }}
-              className="self-end p-1.5 rounded-full bg-zinc-950/80 border border-zinc-800 text-zinc-400 hover:text-white transition-colors hover:scale-105 active:scale-95 shadow-lg"
+              title="Dismiss suggestions"
+              aria-label="Dismiss suggestions"
+              className="self-end w-7 h-7 rounded-full bg-zinc-900/95 hover:bg-rose-600 border border-zinc-600/90 hover:border-rose-500 text-white flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 shadow-xl shadow-black/60 cursor-pointer mb-1"
             >
-              <X size={10} />
+              <X size={14} strokeWidth={2.5} className="text-white" />
             </button>
             
             {/* Clickable Speech Bubble Stack */}
