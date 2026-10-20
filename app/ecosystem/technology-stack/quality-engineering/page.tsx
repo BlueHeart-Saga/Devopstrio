@@ -2,13 +2,13 @@
 import { FAQ } from "@/components/ecosystem/FAQ";
 import { CTA } from "@/components/ecosystem/CTA";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
 import {
   ArrowUpRight, Plus, Minus, Database, Cpu, BarChart2,
   Activity, Layers, Sparkles, Server, Workflow, HardDrive, Shield,
-  Zap, Lock, Globe, AlertTriangle, ChevronRight, ShieldCheck, EyeOff, Gauge,
+  Zap, Lock, Globe, AlertTriangle, ChevronRight, ChevronLeft, ShieldCheck, EyeOff, Gauge,
   Settings, RefreshCw, ShoppingBag, Factory, BookOpen, Heart, FileText, Sliders,
   Terminal, Box, GitBranch, Key, Users, Command, Network, Monitor, Send, Bell, Cloud,
   Search, Smartphone, Phone, Mail, MessageCircle, MessageSquare, Twitter, Headset, Smile, User, Star, Map,
@@ -39,9 +39,7 @@ const QualityOverview = () => {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               Zero-Defect Engineering for High-Velocity Releases
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal mb-8 max-w-2xl">
-              Quality Engineering is not a final sign-off phase — it is an automated discipline built into every code commit. At Devopstrio, we integrate automated end-to-end suites, contract tests, and performance gates to guarantee software resilience at enterprise scale.
-            </p>
+            
           </div>
         </Reveal>
 
@@ -179,6 +177,14 @@ const QualityArchitecture = () => {
 // 4. QUALITY CAPABILITIES
 // ==========================================
 const QualityCapabilities = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 380;
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const capabilities = [
     { title: "Playwright E2E Automation", tag: "Validate", desc: "Fast, resilient browser automation with auto-wait, network interception, and video artifacts.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp", href: "/ecosystem/technology-stack/quality-engineering/end-to-end-test-automation" },
     { title: "k6 Performance Probes", tag: "Benchmark", desc: "Developer-centric load testing scripts executed as code in CI/CD before every production rollout.", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp", href: "/ecosystem/technology-stack/quality-engineering/performance-load-testing" },
@@ -193,12 +199,12 @@ const QualityCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">QUALITY CAPABILITIES</span>
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ENGINEERING SUITE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Complete Quality Engineering Coverage</h2>
           </div>
         </Reveal>
 
-        <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div ref={scrollRef} className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {capabilities.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="min-w-[300px] md:min-w-[360px] flex-shrink-0 snap-start">
               <div className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden hover:border-rose-500/50 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col h-full min-h-[420px] group">
@@ -229,6 +235,29 @@ const QualityCapabilities = () => {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        {/* Navigation below scroller */}
+        <div className="flex items-center justify-between mt-6 px-2">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => scroll('left')}
+              className="w-11 h-11 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-rose-500/50 transition-all duration-300"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="w-11 h-11 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-rose-500/50 transition-all duration-300"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+          <span className="text-xs font-mono text-zinc-500 tracking-wider">
+            Explore all capabilities →
+          </span>
         </div>
       </div>
     </section>
@@ -330,6 +359,94 @@ const QualityOutcomes = () => {
 };
 
 // ==========================================
+// INDUSTRY USE CASES
+// ==========================================
+const QualityIndustryUseCases = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 380;
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const useCases = [
+    { title: "Financial Systems", tag: "Finance", desc: "Automated ledger regression suites, idempotency tests, and ISO 20022 message compliance.", image: "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp", href: "/industries/banking-finance" },
+    { title: "Healthcare & MedTech", tag: "Health", desc: "FDA Title 21 CFR Part 11 validation, audit trails, and deterministic EHR contract tests.", image: "/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp", href: "/industries/healthcare-life-sciences" },
+    { title: "Retail & E-Commerce", tag: "Commerce", desc: "Flash sale concurrency simulations with k6, checkout cart resilience, and payment webhook checks.", image: "/webp/assets/common/b384eb0438c55e43c61e7595acc29638-1.webp", href: "/industries/retail-ecommerce" },
+    { title: "Industrial & Manufacturing", tag: "Industrial", desc: "Hardware-in-the-loop firmware simulation and MQTT sensor stream fuzz testing.", image: "/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp", href: "/industries/manufacturing" },
+    { title: "Telecommunications", tag: "Networking", desc: "Carrier-grade latency testing, 5G packet verification, and automated fault injection.", image: "/webp/assets/common/f03cc521fb070dfae9d87768b791ff70-1.webp", href: "/industries/telecommunications" },
+    { title: "Government & Public Sector", tag: "Public", desc: "Accessibility Section 508 / WCAG 2.1 AA automated compliance sweeps and citizen portal tests.", image: "/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp", href: "/industries/government-public-sector" },
+    { title: "Education & Learning", tag: "Learning", desc: "Mass concurrent exam delivery load testing and media streaming playback QA.", image: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp", href: "/industries/education" },
+    { title: "Logistics & Supply Chain", tag: "Supply Chain", desc: "Fleet telemetry ingestion verification and cross-border customs schema validation.", image: "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp", href: "/industries/retail-ecommerce" }
+  ];
+
+  return (
+    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+      <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
+        <Reveal>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SOLUTIONS</span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+              Industry Use Cases
+            </h2>
+          </div>
+        </Reveal>
+
+        <div ref={scrollRef} className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          {useCases.map((item, idx) => (
+            <Reveal key={idx} delay={idx * 0.05} className="min-w-[300px] md:min-w-[360px] flex-shrink-0 snap-start">
+              <div className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden hover:border-rose-500/50 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col h-full min-h-[420px] group">
+                <div className="w-full h-40 relative bg-zinc-900 overflow-hidden border-b border-zinc-800">
+                  <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" unoptimized />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <Link 
+                    href={item.href}
+                    className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
+                      <ChevronRight size={14} />
+                    </div>
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Navigation below scroller */}
+        <div className="flex items-center justify-between mt-6 px-2">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => scroll('left')}
+              className="w-11 h-11 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-rose-500/50 transition-all duration-300"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="w-11 h-11 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-rose-500/50 transition-all duration-300"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+          <span className="text-xs font-mono text-zinc-500 tracking-wider">
+            Explore industry deployments →
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ==========================================
 // 7. FAQ & CTA
 // ==========================================
 const QualityFAQ = () => {
@@ -370,9 +487,7 @@ const QualityCTA = () => {
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
             Ready to Build a Zero-Defect Continuous Testing Pipeline?
           </h2>
-          <p className="text-zinc-400 text-base md:text-lg mb-8 max-w-2xl mx-auto">
-            Partner with Devopstrio quality architects to audit your test suites, eliminate flaky tests, and accelerate deployment frequency.
-          </p>
+
           <Link
             href="/contact#contact-form"
             className="inline-flex items-center gap-3 pl-8 pr-4 py-4 bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm tracking-wider rounded-full transition-all duration-300 shadow-lg shadow-rose-600/30"
@@ -428,6 +543,7 @@ export default function QualityEngineeringTechPage() {
       <QualityCapabilities />
       <QualityTechnologies />
       <QualityOutcomes />
+      <QualityIndustryUseCases />
       <QualityFAQ />
       <QualityCTA />
     </main>

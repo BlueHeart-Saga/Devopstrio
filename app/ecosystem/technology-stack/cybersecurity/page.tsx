@@ -2,13 +2,13 @@
 import { FAQ } from "@/components/ecosystem/FAQ";
 import { CTA } from "@/components/ecosystem/CTA";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/services/Hero";
 import {
   ArrowUpRight, Plus, Minus, Database, Cpu, BarChart2,
   Activity, Layers, Sparkles, Server, Workflow, HardDrive, Shield,
-  Zap, Lock, Globe, AlertTriangle, ChevronRight, ShieldCheck, EyeOff, Gauge,
+  Zap, Lock, Globe, AlertTriangle, ChevronRight, ChevronLeft, ShieldCheck, EyeOff, Gauge,
   Settings, RefreshCw, ShoppingBag, Factory, BookOpen, Heart, FileText, Sliders,
   Terminal, Box, GitBranch, Key, Users, Command, Network, Monitor, Send, Bell, Cloud,
   Search, Smartphone, Phone, Mail, MessageCircle, MessageSquare, Twitter, Headset, Smile, User, Star, Map,
@@ -42,9 +42,7 @@ const CybersecurityOverview = () => {
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
               Engineering Security into Every Layer
             </h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-normal mb-8 max-w-2xl">
-              Cybersecurity is no longer a standalone function—it is an essential part of modern digital transformation. At Devopstrio, we integrate security across cloud infrastructure, software engineering, identities, data, and operations to build resilient, compliant, and enterprise-ready environments.
-            </p>
+            
           </div>
         </Reveal>
 
@@ -238,6 +236,14 @@ const ZeroTrustArchitecture = () => {
 // 5. SECURITY TECHNOLOGY DOMAINS
 // ==========================================
 const SecurityDomains = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 380;
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const capabilities = [
     { title: "Identity & Access Security", tag: "Identity", desc: "Secure identities, authentication, authorization, and privileged access.", image: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp", href: "/ecosystem/technology-stack/cybersecurity/identity-access-management" },
     { title: "Cloud Security", desc: "Protect workloads across Azure, AWS, GCP, and hybrid environments.", tag: "Cloud", image: "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp", href: "/ecosystem/technology-stack/cybersecurity/security-assessments" },
@@ -254,12 +260,12 @@ const SecurityDomains = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">DOMAINS</span>
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ENGINEERING SUITE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Comprehensive Security Across Every Layer</h2>
           </div>
         </Reveal>
 
-        <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div ref={scrollRef} className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {capabilities.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="min-w-[300px] md:min-w-[360px] flex-shrink-0 snap-start">
               <div className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden hover:border-rose-500/50 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col h-full min-h-[420px] group">
@@ -283,6 +289,29 @@ const SecurityDomains = () => {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        {/* Navigation below scroller */}
+        <div className="flex items-center justify-between mt-6 px-2">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => scroll('left')}
+              className="w-11 h-11 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-rose-500/50 transition-all duration-300"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="w-11 h-11 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-rose-500/50 transition-all duration-300"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+          <span className="text-xs font-mono text-zinc-500 tracking-wider">
+            Explore all capabilities →
+          </span>
         </div>
       </div>
     </section>
@@ -553,6 +582,14 @@ const BusinessOutcomes = () => {
 // 13. INDUSTRY USE CASES
 // ==========================================
 const IndustryUseCases = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 380;
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const useCases = [
     { title: "Banking", tag: "Finance", desc: "Fraud prevention, secure digital banking, PCI compliance.", image: "/webp/assets/common/945ab601f043c558e0a8162da2a1eb4c-1.webp", href: "/industries/banking-finance" },
     { title: "Healthcare", tag: "Health", desc: "Patient data protection and healthcare compliance.", image: "/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp", href: "/industries/healthcare-life-sciences" },
@@ -576,7 +613,7 @@ const IndustryUseCases = () => {
           </div>
         </Reveal>
 
-        <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div ref={scrollRef} className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {useCases.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="min-w-[300px] md:min-w-[360px] flex-shrink-0 snap-start">
               <div className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden hover:border-rose-500/50 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col h-full min-h-[420px] group">
@@ -600,6 +637,29 @@ const IndustryUseCases = () => {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        {/* Navigation below scroller */}
+        <div className="flex items-center justify-between mt-6 px-2">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => scroll('left')}
+              className="w-11 h-11 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-rose-500/50 transition-all duration-300"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="w-11 h-11 rounded-full border border-zinc-800 bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-rose-500/50 transition-all duration-300"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+          <span className="text-xs font-mono text-zinc-500 tracking-wider">
+            Explore industry deployments →
+          </span>
         </div>
       </div>
     </section>
