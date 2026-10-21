@@ -331,42 +331,15 @@ function Why() {
                 "radial-gradient(closest-side, rgba(244,63,94,0.35), rgba(0,120,212,0.2), transparent 100%)",
             }}
           />
-          <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3 shadow-2xl backdrop-blur-md group">
-            {/* Console Header Bar */}
-            <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-800/80 mb-2">
-              <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-              </div>
-              <span className="text-[11px] font-mono text-zinc-400">azure-landing-zone.tf</span>
-              <span className="text-[10px] font-mono text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">
-                LIVE CLUSTER
-              </span>
-            </div>
-
-            <div className="relative overflow-hidden rounded-xl">
-              <Image
-                src={`${AI_IMG}/cloud-infrastructure-hub.png`}
-                alt="Devopstrio Microsoft Azure Enterprise Architecture Hub"
-                width={720}
-                height={540}
-                className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              />
-            </div>
-
-            {/* Bottom Architecture Pill */}
-            <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <span className="h-2 w-2 rounded-full bg-rose-400 animate-pulse" />
-                <span className="text-xs font-semibold text-white tracking-wide">
-                  Enterprise Azure Infrastructure Hub
-                </span>
-              </div>
-              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/25">
-                CAF Certified
-              </span>
-            </div>
+          <div className="relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-950/40 shadow-2xl backdrop-blur-md group hover:border-rose-500/30 transition-all duration-500">
+            <Image
+              src={`${IMG}/the-devopstrio-advantage.webp`}
+              alt="The Devopstrio Advantage"
+              width={1764}
+              height={1863}
+              className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              priority
+            />
           </div>
         </Reveal>
 
@@ -589,25 +562,14 @@ function TransformationStack() {
         <div className="mt-16 grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: 3D Collaboration Graphic */}
           <Reveal delay={150} className="lg:col-span-6 relative">
-            <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3 shadow-2xl backdrop-blur-md group">
-              <div className="relative overflow-hidden rounded-xl">
-                <Image
-                  src={`${AI_IMG}/cloud-collaboration-growth.png`}
-                  alt="Enterprise Azure Collaboration and Workload Modernization"
-                  width={720}
-                  height={540}
-                  className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                />
-              </div>
-              <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-rose-400" />
-                  <span className="text-xs font-semibold text-white">
-                    End-to-End Enterprise Delivery Pods
-                  </span>
-                </div>
-                <span className="text-[11px] font-mono text-zinc-400">Multi-Cloud Ready</span>
-              </div>
+            <div className="relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-950/40 shadow-2xl backdrop-blur-md group hover:border-rose-500/30 transition-all duration-500">
+              <Image
+                src={`${IMG}/enterprise-modernization-stack.webp`}
+                alt="Enterprise Modernization Stack"
+                width={1842}
+                height={1842}
+                className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              />
             </div>
           </Reveal>
 
@@ -729,9 +691,9 @@ const industries = [
   },
   {
     n: "education",
-    tag: "Entra ID & Synapse",
-    t: "Financial & Corporate Services",
-    d: "PCI-DSS banking enclaves, Azure Confidential Computing, real-time transaction analytics in Synapse, and Entra ID PIM governance.",
+    tag: "Azure Cloud & Entra ID",
+    t: "Education & Public Sector",
+    d: "Scalable student information systems on Azure, compliant public cloud enclaves, secure tenant identities with Entra ID, and campus research analytics.",
   },
 ];
 
@@ -749,24 +711,26 @@ function Industries() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {industries.map((c, i) => (
             <Reveal key={c.n} delay={i * 90}>
-              <article className="group h-full overflow-hidden rounded-2xl border border-zinc-800/80 bg-[#0D0E12] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(244,63,94,0.45)] hover:shadow-xl">
-                <div className="overflow-hidden relative">
+              <article className="group h-full flex flex-col overflow-hidden rounded-2xl border border-zinc-800/80 bg-[#0D0E12] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(244,63,94,0.45)] hover:shadow-xl">
+                <div className="overflow-hidden relative aspect-[16/9] w-full bg-zinc-900">
                   <Image
                     src={`${IMG}/${c.n}.webp`}
                     alt={c.t}
-                    width={512}
-                    height={279}
-                    className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
+                    width={855}
+                    height={465}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-3 right-3 rounded-full bg-black/80 px-2.5 py-1 text-[10px] font-mono text-zinc-300 border border-white/10 backdrop-blur-sm">
                     {c.tag}
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-[18px] font-bold text-white group-hover:text-rose-400 transition-colors">
-                    {c.t}
-                  </h3>
-                  <p className="mt-2 text-[13px] leading-[22px] text-zinc-400">{c.d}</p>
+                <div className="p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3 className="text-[18px] font-bold text-white group-hover:text-rose-400 transition-colors">
+                      {c.t}
+                    </h3>
+                    <p className="mt-2 text-[13px] leading-[22px] text-zinc-400">{c.d}</p>
+                  </div>
                 </div>
               </article>
             </Reveal>
