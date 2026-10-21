@@ -37,11 +37,15 @@ export function SectionNavbar({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!navRef.current) return;
-      const rect = navRef.current.getBoundingClientRect();
-
-      const activeStickyTop = isMainNavbarVisible ? 88 : 20;
-      setIsSticky(rect.top <= activeStickyTop + 5);
+      const parentEl = document.getElementById("section-navbar-parent");
+      const activeStickyTop = isMainNavbarVisible ? 80 : 16;
+      if (parentEl) {
+        const parentRect = parentEl.getBoundingClientRect();
+        setIsSticky(parentRect.top <= activeStickyTop);
+      } else if (navRef.current) {
+        const rect = navRef.current.getBoundingClientRect();
+        setIsSticky(rect.top <= activeStickyTop + 5);
+      }
 
       // Check if user is scrolled to the very bottom of the page
       const isAtBottom =
@@ -114,17 +118,22 @@ export function SectionNavbar({
     };
   }, [sections, isMainNavbarVisible]);
 
-  // Smoothly center the active tab into view in horizontally overflowing navbars
+  // Smoothly center the active tab horizontally into view in the navbar container
   useEffect(() => {
-    if (!navContainerRef.current) return;
-    const activeLink = navContainerRef.current.querySelector(
+    const container = navContainerRef.current;
+    if (!container) return;
+    const activeLink = container.querySelector(
       `a[href="#${activeSection}"]`
     ) as HTMLElement;
     if (activeLink) {
-      activeLink.scrollIntoView({
+      const containerRect = container.getBoundingClientRect();
+      const activeRect = activeLink.getBoundingClientRect();
+      const relativeLeft = activeRect.left - containerRect.left + container.scrollLeft;
+      const targetScrollLeft =
+        relativeLeft - containerRect.width / 2 + activeRect.width / 2;
+      container.scrollTo({
+        left: Math.max(0, targetScrollLeft),
         behavior: "smooth",
-        block: "nearest",
-        inline: "center",
       });
     }
   }, [activeSection]);
@@ -156,11 +165,16 @@ export function SectionNavbar({
 
   return (
     <>
-      <div id="section-navbar-parent" className="h-0" />
+      <div
+        id="section-navbar-parent"
+        className={isSticky ? "h-14 w-full" : "h-0 w-full"}
+      />
       <div
         ref={navRef}
-        className="sticky z-40 w-full transition-all duration-300 pointer-events-none"
-        style={{ top: isMainNavbarVisible ? "88px" : "20px" }}
+        className={`z-40 w-full transition-all duration-300 pointer-events-none ${
+          isSticky ? "fixed inset-x-0" : "relative"
+        }`}
+        style={{ top: isSticky ? (isMainNavbarVisible ? "80px" : "16px") : undefined }}
       >
         <div className="max-w-site mx-auto px-4 md:px-12 lg:px-16">
           <nav
@@ -168,7 +182,7 @@ export function SectionNavbar({
             aria-label="Section navigation"
             className={`pointer-events-auto w-full transition-all duration-350 ${
               isSticky
-                ? "bg-[#000000]/75 border border-zinc-900/80 backdrop-blur-md rounded-full px-6 py-2 shadow-2xl scale-[0.98]"
+                ? "bg-[#000000]/85 border border-zinc-900/90 backdrop-blur-md rounded-full px-6 py-2 shadow-2xl scale-[0.98]"
                 : "border-b border-zinc-900 bg-transparent py-4 px-2"
             } flex items-center justify-start md:justify-center overflow-x-auto scrollbar-none gap-6 md:gap-8`}
           >

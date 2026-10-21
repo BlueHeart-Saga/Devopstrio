@@ -1,0 +1,183 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 520px;
+  height: clamp(540px, 72vh, 700px);
+  overflow: hidden;
+  background: #020612;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.webgl,
+.earthFallback,
+.stars,
+.vignette,
+.bottomGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.webgl {
+  z-index: 1;
+}
+
+.webgl canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.earthFallback {
+  z-index: 0;
+  background: radial-gradient(ellipse at 50% 85%, #08224d 0%, #030b1a 45%, #020612 80%);
+  transition: opacity 750ms ease;
+}
+
+.stars {
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, rgba(255, 255, 255, 0.75) 99%, transparent),
+    radial-gradient(1.5px 1.5px at 78% 14%, rgba(157, 190, 238, 0.8) 99%, transparent),
+    radial-gradient(2px 2px at 35% 25%, rgba(209, 230, 255, 0.9) 99%, transparent),
+    radial-gradient(1px 1px at 60% 12%, rgba(255, 255, 255, 0.7) 99%, transparent),
+    radial-gradient(1.5px 1.5px at 90% 32%, rgba(255, 255, 255, 0.8) 99%, transparent),
+    radial-gradient(1px 1px at 8% 42%, rgba(145, 186, 255, 0.75) 99%, transparent);
+  background-size: 540px 480px;
+  opacity: 0.65;
+}
+
+.vignette {
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(2, 6, 18, 0.35) 0%, transparent 35%, transparent 70%, rgba(2, 6, 18, 0.75) 100%),
+    radial-gradient(ellipse at 50% 15%, rgba(2, 6, 18, 0.3) 0%, transparent 65%);
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100% - 32px, 1200px);
+  padding-top: clamp(40px, 5.5vh, 64px);
+  height: max-content;
+}
+
+.eyebrow {
+  color: #94a3b8;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  width: 6px;
+  height: 6px;
+  background: #f43f5e;
+  box-shadow: 0 0 12px #f43f5e;
+  border-radius: 50%;
+}
+
+.eyebrow i {
+  height: 3px;
+  width: 3px;
+  background: #64748b;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  font-size: clamp(24px, 4.3vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  margin: 0;
+}
+
+.title span {
+  color: #ffffff;
+  display: inline;
+}
+
+.accent {
+  display: inline;
+  font-weight: 850;
+  background: linear-gradient(135deg, #fda4af 0%, #f43f5e 50%, #e11d48 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(244, 63, 94, 0.25));
+}
+
+.bottomGlow {
+  z-index: 1;
+  position: absolute;
+  inset: auto 0 0;
+  height: 48%;
+  background: radial-gradient(ellipse at 50% 100%, rgba(14, 116, 233, 0.16) 0%, rgba(2, 6, 18, 0.8) 70%, #020612 100%);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 480px;
+    min-height: 440px;
+  }
+  .content {
+    padding-top: 32px;
+  }
+  .title {
+    font-size: clamp(20px, 4.8vw, 32px);
+    gap: 0.3em;
+  }
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 440px;
+    min-height: 400px;
+  }
+  .content {
+    padding-top: 24px;
+  }
+  .title {
+    font-size: clamp(16px, 4.9vw, 22px);
+    gap: 0.25em;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .earthFallback {
+    transition: none;
+  }
+}

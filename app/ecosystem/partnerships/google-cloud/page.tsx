@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { FAQ } from "@/components/ecosystem/FAQ";
 import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
+import { HeroParticleCanvas } from "@/components/ecosystem/HeroParticleCanvas";
 import {
   ArrowRight,
   Check,
@@ -38,8 +39,8 @@ const AI_IMG = "/ai/gcp-partnership";
    ========================================================================= */
 const ROSE = "#F43F5E";
 const wrap = "mx-auto w-full max-w-[1280px] px-6 sm:px-8";
-const h2 = "text-[32px] leading-[40px] sm:text-[42px] sm:leading-[48px] font-bold tracking-[-1.2px] text-white";
-const lead = "text-[16px] sm:text-[17px] leading-[28px] text-zinc-400";
+const h2 = "text-[36px] leading-[44px] sm:text-[46px] sm:leading-[52px] lg:text-[52px] lg:leading-[58px] font-bold tracking-[-1.5px] text-white";
+const lead = "text-[16px] sm:text-[18px] leading-[28px] text-zinc-400";
 
 /* =========================================================================
    REVEAL ON SCROLL HELPER
@@ -100,14 +101,13 @@ function Head({
   subtitle?: string;
 }) {
   return (
-    <div className={center ? "mx-auto max-w-[760px] text-center" : "max-w-[760px]"}>
+    <div className={center ? "mx-auto max-w-[820px] text-center" : "max-w-[820px]"}>
       {subtitle && (
-        <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3 block">
+        <span className="text-[12px] sm:text-[13px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
           {subtitle}
         </span>
       )}
       <h2 className={h2}>{title}</h2>
-      
     </div>
   );
 }
@@ -136,160 +136,136 @@ function Button({
 }
 
 /* =========================================================================
-   1. HERO SECTION (Oracle-Style Connected Cards + Orbiting Curve Wave Lines)
+   1. HERO SECTION: GOOGLE CLOUD ECOSYSTEM HERO
    ========================================================================= */
-const heroHighlights = [
-  {
-    text: "BigQuery & Data Modernization",
-    desc: "Real-time streaming analytics, enterprise data mesh & serverless SQL",
-  },
-  {
-    text: "Enterprise Kubernetes (GKE)",
-    desc: "Autopilot clusters, multi-cluster Anthos mesh & microservices agility",
-  },
-  {
-    text: "Vertex AI & Gemini Models",
-    desc: "Enterprise GenAI copilots, custom embeddings & Agentic AI workflows",
-  },
-  {
-    text: "BeyondCorp Zero-Trust Security",
-    desc: "Cloud Armor DDoS protection, VPC Service Controls & Security Command Center",
-  },
-];
+const DEVOPSTRIO_LOGO_SRC = "/webp/assets/logo/logo.webp";
+const GCP_LOGO_SRC = "/assets/Tech_logos/Google_Cloud.svg";
 
 function Hero() {
   return (
-    <section className="relative w-full min-h-[95vh] flex flex-col items-center justify-center bg-black overflow-hidden pt-28 pb-20 border-b border-zinc-900/60">
-      {/* Concentric Orbital Wave Elements in Crimson/Blue Theme */}
-      <div className="absolute right-[-10%] md:right-[-5%] top-1/2 -translate-y-1/2 w-[85%] md:w-[65%] h-[130%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
-        <div className="relative w-full h-full flex items-center justify-end">
-          <div className="absolute w-[200%] h-[160%] right-[-50%] rounded-[120px] md:rounded-[260px] border border-red-950/15 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute w-[170%] h-[135%] right-[-40%] rounded-[110px] md:rounded-[230px] border border-rose-500/10 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute w-[140%] h-[110%] right-[-30%] rounded-[100px] md:rounded-[200px] border border-rose-500/10 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute w-[110%] h-[85%] right-[-20%] rounded-[90px] md:rounded-[170px] border border-red-600/15 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute w-[80%] h-[60%] right-[-10%] rounded-[80px] md:rounded-[140px] border border-rose-500/20 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute w-[50%] h-[35%] right-[0%] rounded-[70px] md:rounded-[110px] border border-rose-500/25 rotate-[-28deg] pointer-events-none" />
-          <div className="absolute right-[5%] w-[200px] h-[100px] bg-gradient-to-r from-red-600/20 via-rose-600/15 to-rose-500/10 rounded-full blur-[55px] opacity-50 animate-pulse" />
-        </div>
-      </div>
+    <section className="relative isolate flex min-h-[calc(100vh-4rem)] w-full items-center overflow-hidden bg-black text-white pt-24 pb-16 lg:py-28 border-b border-zinc-900/60">
+      <style>{`
+        /* Partnership Connector Rail - Bounded, stops cleanly before Google Cloud logo */
+        @keyframes connectorTravel {
+          0% {
+            left: 0px;
+            opacity: 0;
+            transform: translateY(-50%) scale(0.5);
+          }
+          15% {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.15);
+          }
+          80% {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.15);
+          }
+          96% {
+            left: calc(100% - 14px);
+            opacity: 0.8;
+            transform: translateY(-50%) scale(0.9);
+          }
+          100% {
+            left: calc(100% - 12px);
+            opacity: 0;
+            transform: translateY(-50%) scale(0.4);
+          }
+        }
 
-      {/* Ambient Radial Gradients & Precision Blueprint Grid */}
-      <div className="absolute inset-0 z-0 opacity-70 pointer-events-none select-none">
-        <div className="absolute top-[20%] right-[10%] w-[480px] h-[480px] bg-red-950/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[30%] w-[380px] h-[380px] bg-rose-950/15 rounded-full blur-[100px]" />
-        <div className="absolute top-[35%] right-[0%] w-[260px] h-[260px] bg-red-950/15 rounded-full blur-[90px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f0c0c_1px,transparent_1px),linear-gradient(to_bottom,#1f0c0c_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35" />
-      </div>
+        @keyframes laserBeam {
+          0% {
+            left: 0px;
+            width: 16px;
+            opacity: 0;
+          }
+          20% {
+            opacity: 1;
+            width: 70px;
+          }
+          75% {
+            opacity: 1;
+            width: 70px;
+          }
+          95% {
+            left: calc(100% - 70px);
+            width: 60px;
+            opacity: 0.7;
+          }
+          100% {
+            left: calc(100% - 30px);
+            width: 25px;
+            opacity: 0;
+          }
+        }
 
-      <div className="max-w-7xl mx-auto w-full px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column Content */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
-            <Reveal className="mb-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800/80 bg-zinc-950/60 mb-6 backdrop-blur-sm">
-                <span className="h-2 w-2 rounded-full bg-rose-500 animate-pulse" />
-                <span className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-zinc-300">
-                  Google Cloud Premier Partner
-                </span>
-              </div>
-            </Reveal>
+        .connector-node {
+          animation: connectorTravel 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        .connector-laser {
+          animation: laserBeam 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
 
-            <Reveal delay={0.1}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.12] text-white mb-6">
-                Google Cloud{" "}
-                <span className="text-[#E11D48] whitespace-nowrap">Ecosystem</span>
-              </h1>
-            </Reveal>
+        @media (prefers-reduced-motion: reduce) {
+          .connector-node, .connector-laser {
+            animation: none !important;
+          }
+        }
+      `}</style>
 
-            
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] [background-size:56px_56px]" />
 
-            {/* Bullet Highlights Grid with Red Check Icons */}
-            <Reveal delay={0.3} className="w-full mb-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                {heroHighlights.map((pt, idx) => (
-                  <div
-                    key={idx}
-                    className="flex gap-3 p-3 rounded-xl bg-zinc-950/40 border border-zinc-900/80 hover:border-zinc-800 transition-colors"
-                  >
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-500 mt-0.5">
-                      <Check className="w-3 h-3 stroke-[2.5]" />
-                    </div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                        {pt.text}
-                      </h4>
-                      
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-6 sm:px-8 lg:grid-cols-2 lg:gap-8 lg:px-12">
+        {/* Left Column Content */}
+        <div className="min-w-0">
+          <span className="inline-flex items-center gap-3 rounded-full border border-zinc-800 bg-zinc-950/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-zinc-300">
+            <span className="h-2 w-2 rounded-full bg-rose-500 animate-pulse" />
+            Google Cloud Premier Partner
+          </span>
 
-            {/* Action Buttons */}
-            <Reveal delay={0.4} className="flex flex-wrap gap-4">
-              <Button href="/contact#contact-form">
-                Talk to a GCP Solutions Expert
-              </Button>
-              <Button href="#services" ghost>
-                Explore GCP Capabilities
-              </Button>
-            </Reveal>
-          </div>
+          <h1 className="mt-8 text-5xl font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
+            <span className="block">Google Cloud</span>
+            <span className="block bg-gradient-to-r from-rose-500 via-rose-400 to-rose-300 bg-clip-text text-transparent">
+              Ecosystem
+            </span>
+          </h1>
 
-          {/* Right Column: Devopstrio + Google Cloud Connected Cards */}
-          <div className="lg:col-span-5 relative flex items-center justify-center select-none z-10">
-            <div className="relative w-full max-w-[440px] aspect-square flex items-center justify-center">
-              {/* Outer concentric integration rings */}
-              <div className="absolute w-[95%] h-[95%] rounded-full border border-zinc-900/40 pointer-events-none z-0" />
-              <div className="absolute w-[80%] h-[80%] rounded-full border border-zinc-900/60 pointer-events-none z-0" />
-              <div className="absolute w-[60%] h-[60%] rounded-full border border-zinc-800/30 pointer-events-none z-0" />
+          <p className="mt-6 text-base sm:text-lg text-zinc-400 max-w-xl leading-relaxed font-normal">
+            Co-engineered enterprise cloud architectures, high-performance GKE modernizations, and BigQuery & Vertex AI sovereign intelligence powered by Google Cloud.
+          </p>
 
-              {/* Connecting glowing line and animated energy node */}
-              <div className="absolute inset-x-8 sm:inset-x-12 h-[2px] bg-gradient-to-r from-rose-500/30 via-red-500/50 to-rose-500/30 z-0 pointer-events-none">
-                <div
-                  className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full blur-[2px] shadow-[0_0_14px_#4285F4] animate-ping"
-                  style={{ animationDuration: "2.8s" }}
-                />
-              </div>
+          {/* Partnership connector row */}
+          <div className="mt-12 flex items-center gap-3 sm:gap-5 pt-8 border-t border-zinc-900/80">
+            {/* Devopstrio Logo Card */}
+            <div className="flex h-16 w-16 sm:h-20 sm:w-20 shrink-0 items-center justify-center rounded-2xl sm:rounded-3xl border border-zinc-800/90 bg-zinc-950/90 p-3 sm:p-4 shadow-[0_8px_32px_rgba(0,0,0,0.6)] backdrop-blur-md hover:border-rose-500/50 hover:shadow-[0_0_25px_rgba(244,63,94,0.25)] transition-all duration-300">
+              <img src={DEVOPSTRIO_LOGO_SRC} alt="Devopstrio" className="h-full w-full object-contain" />
+            </div>
 
-              {/* Cards Container */}
-              <div className="flex items-center justify-between w-full relative z-10 px-3 sm:px-6">
-                {/* Devopstrio Logo Card */}
-                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-rose-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.04] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-rose-600 to-red-600 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
-                  <img
-                    src="/webp/assets/logo/logo.webp"
-                    alt="Devopstrio"
-                    className="w-full h-auto max-h-[85%] object-contain select-none filter brightness-105"
-                    loading="lazy"
-                  />
-                </div>
+            {/* Connecting Track with bounded laser tracer and travelling pulse node */}
+            <div className="relative h-2 w-32 sm:w-52 flex-none flex items-center overflow-hidden">
+              {/* Base rail track */}
+              <div className="w-full h-0.5 bg-gradient-to-r from-rose-500/50 via-zinc-700/40 to-blue-500/50 rounded-full" />
+              
+              {/* Laser tracer beam bounded along line */}
+              <div className="connector-laser absolute inset-y-0 h-1 rounded-full bg-gradient-to-r from-transparent via-rose-500 to-transparent blur-[1px]" />
+              
+              {/* Energy pulse particle stopping cleanly before GCP card */}
+              <div className="connector-node absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-white shadow-[0_0_16px_5px_rgba(244,63,94,0.9)]" />
+            </div>
 
-                {/* Central Connector Node */}
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-xl relative z-20 group hover:border-rose-500/40 transition-colors">
-                  <Sparkles className="w-4 h-4 text-rose-400 animate-pulse" />
-                </div>
-
-                {/* Google Cloud Logo Card */}
-                <div className="relative group/logo w-[128px] h-[128px] sm:w-[146px] sm:h-[146px] rounded-[28px] bg-[#09090b]/90 border border-zinc-800 hover:border-rose-500/40 flex items-center justify-center p-5 shadow-2xl backdrop-blur-md transition-all duration-500 hover:-translate-y-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-rose-500/[0.05] to-transparent rounded-[28px] opacity-0 group-hover/logo:opacity-100 transition-opacity" />
-                  <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-red-600 to-rose-500 opacity-0 group-hover/logo:opacity-25 blur-md transition-opacity" />
-                  <div className="flex flex-col items-center justify-center gap-2 w-full h-full">
-                    <img
-                      src="/assets/Tech_logos/Google_Cloud.svg"
-                      alt="Google Cloud"
-                      className="w-12 h-12 sm:w-14 sm:h-14 object-contain select-none filter drop-shadow-[0_2px_10px_rgba(66,133,244,0.4)]"
-                      loading="lazy"
-                    />
-                    <span className="text-[10px] font-bold tracking-wider text-zinc-300 uppercase">
-                      Google Cloud
-                    </span>
-                  </div>
-                </div>
-              </div>
+            {/* Google Cloud Logo Card */}
+            <div className="flex h-16 w-16 sm:h-20 sm:w-20 shrink-0 items-center justify-center rounded-2xl sm:rounded-3xl border border-zinc-800/90 bg-zinc-950/90 p-3.5 sm:p-4 shadow-[0_8px_32px_rgba(0,0,0,0.6)] backdrop-blur-md hover:border-blue-500/50 hover:shadow-[0_0_25px_rgba(66,133,244,0.25)] transition-all duration-300">
+              <img
+                src={GCP_LOGO_SRC}
+                alt="Google Cloud"
+                className="h-full w-full object-contain filter drop-shadow-[0_2px_8px_rgba(66,133,244,0.35)]"
+              />
             </div>
           </div>
+        </div>
+
+        {/* Right Column: Algoscale-style 3D Particle Field Canvas */}
+        <div className="hidden lg:block">
+          <HeroParticleCanvas />
         </div>
       </div>
     </section>
@@ -321,53 +297,16 @@ function Why() {
   return (
     <section className="py-24 lg:py-32 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className={`${wrap} grid items-center gap-14 lg:grid-cols-12 lg:gap-16`}>
-        {/* Left Visual: 3D Enterprise Architecture Hub */}
-        <Reveal className="lg:col-span-6 relative justify-self-center w-full">
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-0 scale-105 rounded-3xl blur-2xl opacity-35"
-            style={{
-              background:
-                "radial-gradient(closest-side, rgba(66,133,244,0.35), rgba(244,63,94,0.2), transparent 100%)",
-            }}
+        {/* Left Visual: The Devopstrio Advantage */}
+        <Reveal className="lg:col-span-6 relative justify-self-center w-full flex items-center justify-center">
+          <Image
+            src="/webp/assets/partnerships/google-cloud/the-devopstrio-advantage.webp"
+            alt="The Devopstrio Advantage"
+            width={1764}
+            height={1863}
+            className="h-auto w-full max-w-[540px] object-contain rounded-2xl"
+            priority
           />
-          <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3 shadow-2xl backdrop-blur-md group">
-            {/* Console Header Bar */}
-            <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-800/80 mb-2">
-              <div className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-              </div>
-              <span className="text-[11px] font-mono text-zinc-400">gcp-bigquery-gke.tf</span>
-              <span className="text-[10px] font-mono text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">
-                GKE AUTOPILOT LIVE
-              </span>
-            </div>
-
-            <div className="relative overflow-hidden rounded-xl">
-              <Image
-                src={`${AI_IMG}/gcp-infrastructure-hub.png`}
-                alt="Devopstrio Google Cloud Enterprise Architecture Hub"
-                width={720}
-                height={540}
-                className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              />
-            </div>
-
-            {/* Bottom Architecture Pill */}
-            <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <span className="h-2 w-2 rounded-full bg-rose-400 animate-pulse" />
-                <span className="text-xs font-semibold text-white tracking-wide">
-                  Enterprise Google Cloud Hub
-                </span>
-              </div>
-              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/25">
-                GCP Premier Certified
-              </span>
-            </div>
-          </div>
         </Reveal>
 
         {/* Right Content */}
@@ -558,57 +497,17 @@ function TransformationStack() {
           />
         </Reveal>
 
-        {/* Metrics Row */}
-        <Reveal delay={100} className="mt-14">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            {transformationMetrics.map((m, idx) => {
-              const Icon = m.icon;
-              return (
-                <div
-                  key={idx}
-                  className="rounded-2xl border border-zinc-800/80 bg-[#0D0E12] p-6 text-left relative overflow-hidden group hover:border-rose-500/40 transition-colors"
-                >
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-rose-500 opacity-60" />
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-rose-400 transition-colors">
-                      {m.value}
-                    </span>
-                    <Icon size={18} className="text-rose-500/70" />
-                  </div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-zinc-300">
-                    {m.label}
-                  </div>
-                  <p className="mt-1.5 text-[11px] text-zinc-400 leading-normal">{m.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        </Reveal>
-
         {/* Showcase Grid: 3D Collaboration Graphic + Architecture Pillars */}
-        <div className="mt-16 grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: 3D Collaboration Graphic */}
-          <Reveal delay={150} className="lg:col-span-6 relative">
-            <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950/80 p-3 shadow-2xl backdrop-blur-md group">
-              <div className="relative overflow-hidden rounded-xl">
-                <Image
-                  src={`${AI_IMG}/gcp-collaboration-growth.png`}
-                  alt="Enterprise Google Cloud Collaboration and Workload Modernization"
-                  width={720}
-                  height={540}
-                  className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                />
-              </div>
-              <div className="mt-3 rounded-xl border border-white/10 bg-black/90 px-4 py-3 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-rose-400" />
-                  <span className="text-xs font-semibold text-white">
-                    End-to-End GCP Engineering Pods
-                  </span>
-                </div>
-                <span className="text-[11px] font-mono text-zinc-400">GCP Premier Ready</span>
-              </div>
-            </div>
+        <div className="mt-14 grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          {/* Left Column: Enterprise Modernization Stack */}
+          <Reveal delay={150} className="lg:col-span-6 relative flex items-center justify-center">
+            <Image
+              src="/webp/assets/partnerships/google-cloud/enterprise-modernization-stack.webp"
+              alt="Enterprise Modernization Stack"
+              width={1842}
+              height={1842}
+              className="h-auto w-full max-w-[540px] object-contain rounded-2xl"
+            />
           </Reveal>
 
           {/* Right Column: 4 Architecture Pillars */}
@@ -714,26 +613,71 @@ const industries = [
     tag: "Vertex AI & Cloud Healthcare",
     t: "Healthcare & Life Sciences",
     d: "FHIR-native clinical data stores, Vertex AI Medical Search models, and Google Cloud Healthcare API compliance fabrics.",
+    img: "/webp/assets/partnerships/google-cloud/healthcare.webp"
   },
   {
     n: "manufacturing",
     tag: "Supply Chain Twin",
     t: "Industrial & Manufacturing",
     d: "Visual Inspection AI for assembly defect detection, real-time Google Supply Chain Twin, and smart factory telemetry in BigQuery.",
+    img: "/webp/assets/partnerships/google-cloud/manufacturing.webp"
   },
   {
     n: "retail",
     tag: "BigQuery & Vertex Search",
     t: "Retail & Consumer Brands",
     d: "Real-time omni-channel stock indexing in BigQuery, Google Search-quality product recommendations, and elastic GKE checkouts.",
+    img: "/webp/assets/partnerships/google-cloud/retail.webp"
   },
   {
     n: "education",
-    tag: "Cloud Spanner & AML AI",
-    t: "Financial Services & FinTech",
-    d: "Globally distributed ACID transactions on Cloud Spanner, real-time Anti Money Laundering (AML) AI, and PCI-DSS GKE security.",
+    tag: "FedRAMP & Education",
+    t: "Education & Public Sector",
+    d: "Secure research environments, campus-wide BigQuery analytics, and FedRAMP-compliant Google Cloud infrastructure.",
+    img: "/webp/assets/partnerships/google-cloud/education.webp"
   },
 ];
+
+function TransformationMetricsSection() {
+  return (
+    <section className="py-14 sm:py-16 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+      <div className={wrap}>
+        <Reveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {transformationMetrics.map((m, idx) => {
+              const Icon = m.icon;
+              return (
+                <div
+                  key={idx}
+                  className="group relative p-6 rounded-2xl sm:rounded-3xl border border-zinc-800/80 bg-zinc-950/70 hover:bg-zinc-900/40 hover:border-rose-500/40 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col justify-between min-h-[190px] text-left"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight group-hover:text-rose-400 transition-colors">
+                      {m.value}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <Icon size={18} className="text-zinc-500 group-hover:text-rose-400 transition-colors" />
+                      <div className="w-2 h-2 rounded-full bg-rose-500/80 group-hover:animate-ping" />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="h-0.5 w-12 bg-gradient-to-r from-rose-500 to-amber-500 rounded-full mb-3 group-hover:w-20 transition-all duration-500" />
+                    <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-200 group-hover:text-white transition-colors mb-1.5">
+                      {m.label}
+                    </div>
+                    <p className="text-[12px] sm:text-[13px] text-zinc-400 leading-relaxed font-normal">
+                      {m.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
 function Industries() {
   return (
@@ -752,7 +696,7 @@ function Industries() {
               <article className="group h-full overflow-hidden rounded-2xl border border-zinc-800/80 bg-[#0D0E12] transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(66,133,244,0.45)] hover:shadow-xl">
                 <div className="overflow-hidden relative">
                   <Image
-                    src={`${IMG}/${c.n}.webp`}
+                    src={c.img}
                     alt={c.t}
                     width={512}
                     height={279}
@@ -819,6 +763,7 @@ export default function GoogleCloudPartnershipPage() {
       <Services />
       <TransformationStack />
       <Process />
+      <TransformationMetricsSection />
       <Industries />
       <FAQ faqs={faqs} />
       <RepresentativeCTA

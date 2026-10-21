@@ -74,13 +74,13 @@ export function EcosystemPillars() {
         </Reveal>
 
         {/* Tab Pills Selector */}
-        <div id="ecosystem-tab-pills-container" className="flex items-center gap-2 mb-12 pb-4 overflow-x-auto scrollbar-hide scroll-smooth -mx-6 px-6 md:mx-0 md:px-0 border-b border-zinc-900/60">
+        <div id="ecosystem-tab-pills-container" className="flex items-center gap-2.5 mb-12 pb-4 overflow-x-auto scrollbar-hide scroll-smooth -mx-6 px-6 md:mx-0 md:px-0 border-b border-zinc-900/60">
           {domainsList.map((dom) => (
             <button
               key={dom.slug}
               id={`ecosystem-tab-pill-${dom.slug}`}
               onClick={() => setActiveTab(dom.slug)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 border ${activeTab === dom.slug
+              className={`px-6 py-3 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-300 border cursor-pointer ${activeTab === dom.slug
                 ? "bg-rose-600 border-rose-600 text-white shadow-[0_4px_20px_rgba(225,29,72,0.35)]"
                 : "bg-zinc-950/40 border-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-900/50 hover:border-zinc-800"
                 }`}
@@ -95,36 +95,52 @@ export function EcosystemPillars() {
 
           {/* Left Tall Card (Col 1) */}
           <Reveal className="lg:col-span-1 h-full">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 flex flex-col justify-between h-full min-h-[380px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 hover:border-rose-500/30 p-8 md:p-9 flex flex-col justify-between h-full min-h-[480px] bg-gradient-to-br from-zinc-950/90 via-[#0a0506]/90 to-[#0f0709]/90 group/tall backdrop-blur-md transition-all duration-500 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
               {/* Internal decorative glowing meshes */}
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-rose-600/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
               <div className="absolute -left-10 -bottom-10 w-48 h-48 bg-orange-600/5 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover/tall:scale-110" />
 
               {/* Dynamic Abstract Wave Backgrounds with Crossfade */}
               {domainsList.map((dom) => (
-                <img key={dom.slug}
+                <img
+                  key={dom.slug}
                   src={bgWaves[dom.slug]}
-                  alt=""
-                  className={`absolute inset-0 w-full h-full object-cover mix-blend-screen pointer-events-none transition-opacity duration-700 ease-in-out ${activeTab === dom.slug ? "opacity-35" : "opacity-0"}`}
-                loading="lazy" />
+                  alt={dom.title}
+                  loading="lazy"
+                  decoding="async"
+                  className={`absolute inset-0 w-full h-full object-cover pointer-events-none transition-all duration-700 ease-in-out group-hover/tall:scale-105 ${activeTab === dom.slug ? "opacity-50 scale-100" : "opacity-0 scale-105"
+                    }`}
+                />
               ))}
+
+              {/* Dark Gradient Overlay for High Contrast & Text Legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/75 to-zinc-950/30 pointer-events-none z-[1]" />
 
               {/* Card top details */}
               <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight leading-tight group-hover/tall:text-rose-400 transition-colors">
+                <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-tight leading-snug mb-4 group-hover/tall:text-rose-400 transition-colors font-sans">
                   Explore {selectedDomain.title}
                 </h3>
+                {selectedDomain.subtitle && (
+                  <div className="grid grid-rows-[0fr] group-hover/tall:grid-rows-[1fr] opacity-0 group-hover/tall:opacity-100 transition-all duration-300 ease-in-out">
+                    <div className="overflow-hidden">
+                      <p className="text-zinc-200 text-sm md:text-base font-medium leading-relaxed pb-2 transform translate-y-2 group-hover/tall:translate-y-0 transition-transform duration-300 ease-in-out">
+                        {selectedDomain.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Card bottom button */}
               <div className="relative z-10 mt-8">
                 <Link
                   href={`/ecosystem/${selectedDomain.slug}`}
-                  className="gap-2 w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
+                  className="gap-2 w-fit inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wider uppercase bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white transition-all duration-300 hover:shadow-[0_0_25px_rgba(225,29,72,0.35)] hover:-translate-y-0.5"
                 >
                   Explore Pillar{" "}
                   <ArrowUpRight
-                    size={13}
+                    size={14}
                     className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
                   />
                 </Link>
@@ -136,16 +152,25 @@ export function EcosystemPillars() {
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {selectedDomain.subpages.slice(0, 6).map((subpage, idx) => (
               <Reveal key={subpage.slug} delay={idx * 0.04} className="h-full">
-                <div className="group/card flex flex-col justify-between bg-zinc-950/30 border border-white/5 hover:border-rose-500/20 hover:bg-zinc-950/60 rounded-2xl p-6 transition-all duration-300 min-h-[160px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+                <div className="group/card flex flex-col justify-between bg-zinc-950/40 border border-white/10 hover:border-rose-500/30 hover:bg-zinc-950/70 rounded-2xl p-6 md:p-7 transition-all duration-300 min-h-[180px] md:min-h-[200px] h-full relative overflow-hidden backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
 
                   {/* Subtle color highlight glow on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-600/0 via-rose-600/0 to-rose-600/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                   {/* Text details */}
                   <div>
-                    <h4 className="text-base font-semibold text-rose-500 group-hover:text-rose-400 transition-colors">
+                    <h4 className="text-lg md:text-xl font-semibold text-rose-500 group-hover:text-rose-400 transition-colors mb-2.5">
                       {subpage.title}
                     </h4>
+                    {subpage.description && (
+                      <div className="grid grid-rows-[0fr] group-hover/card:grid-rows-[1fr] opacity-0 group-hover/card:opacity-100 transition-all duration-300 ease-in-out">
+                        <div className="overflow-hidden">
+                          <p className="text-sm md:text-base text-zinc-300 font-normal leading-relaxed pb-4 transform translate-y-2 group-hover/card:translate-y-0 transition-transform duration-300 ease-in-out">
+                            {subpage.description}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Link action details */}
@@ -153,13 +178,13 @@ export function EcosystemPillars() {
                     href={`/ecosystem/${selectedDomain.slug}/${subpage.slug}`}
                     className="inline-flex items-center gap-2.5 group/link mt-auto w-fit"
                   >
-                    <span className="w-7 h-7 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
+                    <span className="w-8 h-8 rounded-full bg-rose-600/10 group-hover/link:bg-rose-600 text-rose-500 group-hover/link:text-white flex items-center justify-center transition-all duration-300">
                       <ChevronRight
-                        size={12}
+                        size={14}
                         className="transition-transform duration-300 group-hover/link:translate-x-0.5"
                       />
                     </span>
-                    <span className="text-[12px] font-semibold text-zinc-400 group-hover/link:text-zinc-200 transition-colors">
+                    <span className="text-xs sm:text-sm font-semibold text-zinc-400 group-hover/link:text-zinc-100 transition-colors">
                       Explore solution
                     </span>
                   </Link>
@@ -170,18 +195,6 @@ export function EcosystemPillars() {
           </div>
 
         </div>
-
-        {/* Full Size Integrated Ecosystem Image without border, blending into the dark theme */}
-        {/* <Reveal delay={0.2} className="mt-12 w-full">
-          <div className="relative w-full overflow-hidden rounded-3xl bg-[#030303] flex items-center justify-center">
-            Blending gradients to merge the image edges smoothly into the background theme
-            <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent pointer-events-none z-10" />
-            <img src="/webp/assets/ecosystem/domains/Ecosystem_main_page_poster.webp"
-              alt="Ecosystem Alliance Map"
-              className="w-full h-auto object-contain select-none pointer-events-none z-0"
-            loading="lazy" />
-          </div>
-        </Reveal> */}
 
       </div>
     </section>

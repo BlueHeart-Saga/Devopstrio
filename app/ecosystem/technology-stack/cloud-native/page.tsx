@@ -16,6 +16,23 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
+
+const subSections = [
+  { id: "overview", label: "Overview" },
+  { id: "evolution", label: "Evolution" },
+  { id: "architecture", label: "Architecture" },
+  { id: "capabilities", label: "Capabilities" },
+  { id: "lifecycle", label: "Lifecycle" },
+  { id: "modularity", label: "Modularity" },
+  { id: "productivity", label: "Productivity" },
+  { id: "security", label: "Security" },
+  { id: "tech-stack", label: "Ecosystem" },
+  { id: "business-value", label: "Business Value" },
+  { id: "solutions", label: "Solutions" },
+  { id: "why-devopstrio", label: "Why Devopstrio" },
+  { id: "faq", label: "FAQ" }
+];
 
 // ==========================================
 // 2. CLOUD-NATIVE OVERVIEW
@@ -31,7 +48,7 @@ const CloudNativeOverview = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+    <section id="overview" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         
         <Reveal>
@@ -85,7 +102,7 @@ const WhyCloudNative = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+    <section id="evolution" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -141,7 +158,7 @@ const WhyCloudNative = () => {
 // ==========================================
 const CloudNativeArchitecture = () => {
   return (
-    <section className="py-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900/60">
+    <section id="architecture" className="py-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900/60">
       <div className="max-w-6xl mx-auto px-6 xl:px-8 relative z-10">
         <Reveal>
           <div className="text-center mb-16">
@@ -285,7 +302,7 @@ const CloudNativeCapabilities = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+    <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
@@ -369,7 +386,7 @@ const DevelopmentLifecycle = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
+    <section id="lifecycle" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
@@ -407,20 +424,31 @@ const MicroservicesSection = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+    <section id="modularity" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">MODULARITY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Modular Applications Built for Scale</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Modular Applications Built for Scale</h2>
           </div>
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {items.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.03}>
-              <div className="p-5 bg-zinc-950/40 border border-zinc-900 rounded-xl hover:border-rose-500/30 hover:bg-zinc-900/10 transition-all duration-300 text-center flex items-center justify-center h-full min-h-[100px]">
-                <span className="text-xs font-bold text-zinc-300 tracking-wider uppercase">{item}</span>
+              <div className="group relative p-6 bg-zinc-950/60 border border-zinc-800/80 rounded-2xl hover:border-rose-500/40 hover:bg-zinc-900/30 transition-all duration-300 flex flex-col justify-between min-h-[140px] overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:12px_12px] opacity-40 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                <div className="relative z-10 flex items-center justify-between mb-4">
+                  <div className="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center font-mono text-xs font-bold">
+                    {String(idx + 1).padStart(2, "0")}
+                  </div>
+                  <Box className="w-4 h-4 text-zinc-600 group-hover:text-rose-400 transition-colors" />
+                </div>
+                <div className="relative z-10">
+                  <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-zinc-200 group-hover:text-white transition-colors">
+                    {item}
+                  </h3>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -440,20 +468,32 @@ const PlatformEngineering = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+    <section id="productivity" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PRODUCTIVITY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Accelerating Developer Productivity</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Accelerating Developer Productivity</h2>
           </div>
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {items.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.03}>
-              <div className="p-5 bg-zinc-950/40 border border-zinc-900 rounded-xl hover:border-emerald-500/30 hover:bg-zinc-900/10 transition-all duration-300 text-center flex items-center justify-center h-full min-h-[100px]">
-                <span className="text-xs font-bold text-zinc-300 tracking-wider uppercase">{item}</span>
+              <div className="group relative p-6 bg-zinc-950/60 border border-zinc-800/80 rounded-2xl hover:border-emerald-500/40 hover:shadow-[0_8px_30px_rgba(16,185,129,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[140px]">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                    <Zap className="w-4 h-4" />
+                  </div>
+                  <span className="text-[10px] font-mono tracking-widest uppercase text-emerald-500/80 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                    Velocity
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-zinc-200 group-hover:text-emerald-300 transition-colors">
+                    {item}
+                  </h3>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -473,20 +513,32 @@ const DevSecOpsSection = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+    <section id="security" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SECURITY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Secure Automation Across Deployments</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Secure Automation Across Deployments</h2>
           </div>
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {items.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.03}>
-              <div className="p-5 bg-zinc-950/40 border border-zinc-900 rounded-xl hover:border-blue-500/30 hover:bg-zinc-900/10 transition-all duration-300 text-center flex items-center justify-center h-full min-h-[100px]">
-                <span className="text-xs font-bold text-zinc-300 tracking-wider uppercase">{item}</span>
+              <div className="group relative p-6 bg-zinc-950/60 border border-zinc-800/80 rounded-2xl hover:border-blue-500/40 hover:shadow-[0_8px_30px_rgba(59,130,246,0.12)] transition-all duration-300 flex flex-col justify-between min-h-[140px]">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <span className="text-[10px] font-mono tracking-widest uppercase text-blue-400/80 bg-blue-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <Lock className="w-2.5 h-2.5" /> Guardrail
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-zinc-200 group-hover:text-blue-300 transition-colors">
+                    {item}
+                  </h3>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -562,7 +614,7 @@ const TechnologyStack = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+    <section id="tech-stack" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-5xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -622,23 +674,31 @@ const BusinessOutcomes = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
+    <section id="business-value" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Business Outcomes</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Business Outcomes</h2>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {outcomes.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.05}>
-              <div className="p-8 bg-zinc-950/40 border border-zinc-900 rounded-[2rem] hover:border-rose-500/20 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[190px]">
-                <div className="text-3xl md:text-4xl font-black text-rose-500 mb-3 tracking-tight">
-                  {item.value}
+              <div className="group relative p-7 bg-zinc-950/60 border border-zinc-800/80 rounded-3xl hover:border-rose-500/40 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col justify-between min-h-[170px]">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-3xl md:text-4xl font-bold tracking-tight text-white group-hover:text-rose-400 transition-colors">
+                    {item.value}
+                  </div>
+                  <div className="w-2 h-2 rounded-full bg-rose-500/80 group-hover:animate-ping" />
                 </div>
-                <h4 className="text-xs font-bold text-white tracking-widest uppercase">{item.title}</h4>
+                <div>
+                  <div className="h-0.5 w-12 bg-gradient-to-r from-rose-500 to-amber-500 rounded-full mb-3 group-hover:w-20 transition-all duration-500" />
+                  <h4 className="text-xs sm:text-sm font-semibold text-zinc-300 tracking-wider uppercase group-hover:text-white transition-colors">
+                    {item.title}
+                  </h4>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -672,7 +732,7 @@ const IndustryUseCases = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
+    <section id="solutions" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -753,20 +813,25 @@ const WhyChooseCloudNative = () => {
   ];
 
   return (
-    <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+    <section id="why-devopstrio" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">WHY DEVOPSTRIO</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Why Choose Devopstrio Cloud-Native</h2>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Why Choose Devopstrio Cloud-Native</h2>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.04}>
-              <div className="px-6 py-4 bg-zinc-950/40 border border-zinc-900 rounded-full hover:border-rose-500/30 transition-all duration-300 text-center">
-                <span className="text-xs font-bold text-zinc-300 tracking-wider uppercase">{item}</span>
+              <div className="group p-5 bg-zinc-950/60 border border-zinc-800/80 rounded-2xl hover:border-rose-500/40 hover:bg-zinc-900/40 transition-all duration-300 flex items-center gap-4">
+                <div className="w-8 h-8 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-500 flex items-center justify-center shrink-0 group-hover:bg-rose-500 group-hover:text-white transition-all duration-300">
+                  <CheckCircle className="w-4 h-4" />
+                </div>
+                <span className="text-xs sm:text-sm font-semibold text-zinc-200 tracking-wide group-hover:text-white transition-colors">
+                  {item}
+                </span>
               </div>
             </Reveal>
           ))}
@@ -819,7 +884,7 @@ const TechnologyCTA = () => {
 // ==========================================
 export default function CloudNativeTechnologyStackPage() {
   return (
-    <main className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-rose-500 selection:text-white">
+    <main className="relative min-h-screen bg-black text-white font-sans selection:bg-rose-500 selection:text-white">
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       <Hero
@@ -871,6 +936,8 @@ export default function CloudNativeTechnologyStackPage() {
           </Link>
         </div>
       </Hero>
+
+      <SectionNavbar sections={subSections} />
 
       <CloudNativeOverview />
       <WhyCloudNative />

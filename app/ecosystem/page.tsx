@@ -7,7 +7,9 @@ import { SectionNavbar } from "@/components/ui/SectionNavbar";
 // Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
 const EcosystemOverview = dynamic(() => import("@/sections/ecosystem/EcosystemOverview").then((mod) => mod.EcosystemOverview));
 const EcosystemPillars = dynamic(() => import("@/sections/ecosystem/EcosystemPillars").then((mod) => mod.EcosystemPillars));
-const CloudPartnerShowcase = dynamic(() => import("@/sections/ecosystem/CloudPartnerShowcase").then((mod) => mod.CloudPartnerShowcase));
+const PartnerShowcase = dynamic(() => import("@/sections/ecosystem/PartnerShowcase").then((mod) => mod.PartnerShowcase || mod.default));
+const InnovationLabsSection = dynamic(() => import("@/sections/ecosystem/InnovationLabsSection").then((mod) => mod.InnovationLabsSection || mod.default));
+const BlueprintCoverflow = dynamic(() => import("@/sections/ecosystem/BlueprintCoverflow").then((mod) => mod.BlueprintCoverflow || mod.default));
 const PlatformPortfolio = dynamic(() => import("@/sections/ecosystem/PlatformPortfolio").then((mod) => mod.PlatformPortfolio));
 const TechnologyLandscape = dynamic(() => import("@/sections/ecosystem/TechnologyLandscape").then((mod) => mod.TechnologyLandscape));
 const AllianceNetwork = dynamic(() => import("@/sections/ecosystem/AllianceNetwork").then((mod) => mod.AllianceNetwork));
@@ -20,12 +22,14 @@ const EcosystemCTA = dynamic(() => import("@/sections/ecosystem/EcosystemCTA").t
 const ecosystemSections = [
   { id: "overview", label: "Overview" },
   { id: "domains", label: "Domains" },
+  { id: "alliances", label: "Alliances" },
+  { id: "innovation-labs", label: "Labs" },
+  { id: "blueprints-flow", label: "Blueprints" },
   { id: "portfolio", label: "Portfolio" },
   { id: "landscape", label: "Landscape" },
-  { id: "alliances", label: "Alliances" },
   { id: "delivery", label: "Delivery" },
-  { id: "excellence", label: "Excellence" },
-  { id: "labs", label: "Labs" },
+
+
   { id: "metrics", label: "Metrics" }
 ];
 
@@ -79,12 +83,22 @@ export default function EcosystemLandingPage() {
         <EcosystemPillars />
       </div>
 
-      {/* Cloud Partner Showcase */}
-      {/* <div id="cloud-partners">
-        <CloudPartnerShowcase />
-      </div> */}
+      {/* 4. Strategic Alliances (Above Product Portfolio) */}
+      {/* Strategic Alliances (Above Product Portfolio) */}
+      <div id="alliances">
+        <PartnerShowcase />
+      </div>
 
-      {/* 4. Platform Portfolio */}
+      {/* 5. Emerging Tech R&D: Innovation Labs */}
+      <div id="innovation-labs">
+        <InnovationLabsSection />
+      </div>
+
+      {/* 6. Reusable Engineering Assets Coverflow */}
+      <div id="blueprints-flow">
+        <BlueprintCoverflow />
+      </div>
+
       <div id="portfolio">
         <PlatformPortfolio />
       </div>
