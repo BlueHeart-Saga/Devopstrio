@@ -405,6 +405,8 @@ const Hyperspeed = ({ effectOptions = {} }: HyperspeedProps) => {
       speedUpTarget: number;
       speedUp: number;
       timeOffset: number;
+      isPaused: boolean;
+      rafId: number | null;
       renderPass!: RenderPass;
       bloomPass!: EffectPass;
 
