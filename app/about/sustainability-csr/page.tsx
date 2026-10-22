@@ -30,6 +30,7 @@ import Link from "next/link";
 
 import { FAQ } from "@/components/services/FAQ";
 import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
+import CategoryPopup from "@/components/CategoryPopup";
 
 const csrFaqs = [
   {
@@ -58,6 +59,8 @@ export default function CSRPage() {
   const [cloudBudget, setCloudBudget] = useState(25000);
   const [auditSubmitted, setAuditSubmitted] = useState(false);
   const [auditData, setAuditData] = useState({ name: "", email: "", company: "" });
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isNewsletterPopupOpen, setIsNewsletterPopupOpen] = useState(false);
 
   // Carbon calculator logic
   const co2Saved = ((cloudBudget * 12 * 0.0005) * 0.45).toFixed(1);
@@ -414,7 +417,15 @@ export default function CSRPage() {
                     Get the latest updates on our sustainability projects and CSR initiatives.
                   </p>
                   
-                  <div className="space-y-4">
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      if (newsletterEmail) {
+                        setIsNewsletterPopupOpen(true);
+                      }
+                    }}
+                    className="space-y-4"
+                  >
                     <input
                       type="text"
                       placeholder="Your Name"
@@ -422,13 +433,19 @@ export default function CSRPage() {
                     />
                     <input
                       type="email"
+                      required
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
                       placeholder="Your Email"
                       className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-3.5 px-4 text-base text-white placeholder:text-zinc-500 outline-none focus:border-emerald-500"
                     />
-                    <button className="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-base py-4 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(16,185,129,0.2)]">
+                    <button
+                      type="submit"
+                      className="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-base py-4 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(16,185,129,0.2)] cursor-pointer"
+                    >
                       Subscribe Now
                     </button>
-                  </div>
+                  </form>
                 </div>
               </Reveal>
 
@@ -582,6 +599,14 @@ export default function CSRPage() {
         secondaryBtnText="PARTNER WITH US"
         secondaryBtnHref="/contact#contact-form"
       />
+
+      {/* Centralized Category Preference Modal */}
+      {isNewsletterPopupOpen && (
+        <CategoryPopup
+          email={newsletterEmail}
+          closePopup={() => setIsNewsletterPopupOpen(false)}
+        />
+      )}
 
     </main>
   );

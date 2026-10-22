@@ -27,6 +27,7 @@ const CommunityJoinSection = dynamic(() => import("@/sections/home/CommunityJoin
 const PartnersSection = dynamic(() => import("@/sections/home/PartnersSection").then((mod) => mod.PartnersSection));
 const Insights = dynamic(() => import("@/sections/home/Insights").then((mod) => mod.Insights));
 const ImperativesBanner = dynamic(() => import("@/sections/home/ImperativesBanner").then((mod) => mod.ImperativesBanner));
+const TrustpilotHomeSection = dynamic(() => import("@/sections/home/TrustpilotHomeSection").then((mod) => mod.TrustpilotHomeSection));
 
 // Commented-out imports (available to re-enable)
 import { TrustBanner } from "@/sections/home/TrustBanner";
@@ -82,6 +83,9 @@ export default function Home() {
 
       {/* 10. Announcement Banner (Flipbook) */}
       <ImperativesBanner />
+
+      {/* 11. Trustpilot Verified Reviews Section */}
+      <TrustpilotHomeSection />
 
       {/* Commented-out sections */}
       

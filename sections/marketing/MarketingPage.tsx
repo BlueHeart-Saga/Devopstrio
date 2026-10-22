@@ -37,7 +37,7 @@ export default function MarketingPage() {
   // fetch with abort + retry
   const load = useCallback((signal?: AbortSignal) => {
     setStatus("loading");
-    fetch("/api/marketing-resources", { signal })
+    fetch("/api/marketing-resources", { signal, cache: "no-store" })
       .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
       .then((data) => {
         if (!Array.isArray(data)) throw new Error("bad payload");

@@ -459,8 +459,27 @@ export default function FloatingLines({
     }
 
     let raf = 0;
+    let isVisible = true;
+    let observer: IntersectionObserver | null = null;
+
+    const startLoop = () => {
+      if (!raf && active) {
+        raf = requestAnimationFrame(renderLoop);
+      }
+    };
+
+    const stopLoop = () => {
+      if (raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    };
+
     const renderLoop = () => {
-      if (!active) return;
+      if (!active || !isVisible) {
+        raf = 0;
+        return;
+      }
 
       uniforms.iTime.value = clock.getElapsedTime();
 
@@ -480,13 +499,30 @@ export default function FloatingLines({
       renderer.render(scene, camera);
       raf = requestAnimationFrame(renderLoop);
     };
-    renderLoop();
+
+    if (typeof IntersectionObserver !== 'undefined') {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          const nowVisible = entry.isIntersecting;
+          if (nowVisible !== isVisible) {
+            isVisible = nowVisible;
+            if (isVisible) {
+              startLoop();
+            } else {
+              stopLoop();
+            }
+          }
+        },
+        { rootMargin: '100px 0px' }
+      );
+      observer.observe(container);
+    }
+    startLoop();
 
     return () => {
       active = false;
-
-      cancelAnimationFrame(raf);
-
+      stopLoop();
+      if (observer) observer.disconnect();
       if (ro) ro.disconnect();
 
       if (interactive) {

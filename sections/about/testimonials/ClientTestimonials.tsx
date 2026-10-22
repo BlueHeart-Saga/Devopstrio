@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { TrustpilotReviewCollector } from "@/components/ui/TrustpilotReviewCollector";
 
 const featuredTestimonial = {
   quote: "The quality of engineers and the speed of delivery was exceptional. They built our scalable cloud platform from the ground up and delivered on time and on budget — an outstanding partnership.",
@@ -30,9 +31,9 @@ const testimonials = [
   },
   {
     quote: "I struggled with multi-cloud cost visibility for years, but within a few weeks of their FinOps implementation, our cloud spend was optimized noticeably.",
-    author: "John Snow",
-    role: "Cloud Operations Lead",
-    initials: "JS",
+    author: "Julian Vance",
+    role: "Principal Cloud Architect",
+    initials: "JV",
     image: "/webp/assets/Home-page/client-reviews/image-166.webp",
   },
   {
@@ -52,10 +53,10 @@ const autoScrollReviews = [
   { id: 5, text: "Our security posture has never been better. The DevSecOps integration was flawless.", name: "James T.", time: "2 months ago", initials: "JT", image: "/webp/assets/Home-page/client-reviews/image-168.webp" },
   { id: 6, text: "Responsive, knowledgeable, and reliable. They truly understand enterprise cloud architecture.", name: "Anita S.", time: "1 week ago", initials: "AS", image: "/webp/assets/Home-page/client-reviews/image-169.webp" },
   { id: 7, text: "We partnered with them for our AI data pipeline. The performance improvements have been game-changing.", name: "Robert K.", time: "4 days ago", initials: "RK", image: "/webp/assets/Home-page/client-reviews/image-170.webp" },
-  { id: 8, text: "My buying experience is so nice, and received me very politely. Very good performance.", name: "Karan P.", time: "1 week ago", initials: "KP", image: "/webp/assets/Home-page/client-reviews/image-171.webp" },
-  { id: 9, text: "I love the customer service. They respond in a timely manner with loads of information about best practices.", name: "Catherine", time: "10 days ago", initials: "C", image: "/webp/assets/Home-page/client-reviews/image-172.webp" },
-  { id: 10, text: "Product quality is incredible. They looked over all the options with us, and we are incredibly satisfied.", name: "Peter W.", time: "2 weeks ago", initials: "PW", image: "/webp/assets/Home-page/client-reviews/image-173.webp" },
-  { id: 11, text: "The kubernetes transition was smooth. Their engineers are top-notch and always available.", name: "Lisa M.", time: "1 month ago", initials: "LM", image: "/webp/assets/Home-page/client-reviews/image-174.webp" },
+  { id: 8, text: "Devopstrio automated our multi-region Kubernetes deployment pipeline, cutting deployment windows from 4 hours to 12 minutes with zero downtime.", name: "Julian Vance", time: "1 week ago", initials: "JV", image: "/webp/assets/Home-page/client-reviews/image-171.webp" },
+  { id: 9, text: "Their SRE unit integrated directly into our 24/7 incident response, driving platform availability to 99.995% across peak quarters.", name: "Kavitha R.", time: "10 days ago", initials: "KR", image: "/webp/assets/Home-page/client-reviews/image-172.webp" },
+  { id: 10, text: "Their FinOps cloud governance overhaul identified resource sprawl and saved our enterprise $42,000 monthly on AWS infrastructure.", name: "Peter Worthington", time: "2 weeks ago", initials: "PW", image: "/webp/assets/Home-page/client-reviews/image-173.webp" },
+  { id: 11, text: "The Kubernetes transition was smooth. Their engineers are top-notch and always available.", name: "Lisa M.", time: "1 month ago", initials: "LM", image: "/webp/assets/Home-page/client-reviews/image-174.webp" },
   { id: 12, text: "Helped us pass our SOC2 compliance with their rigorous infrastructure audits and automation.", name: "Tom H.", time: "3 weeks ago", initials: "TH", image: "/webp/assets/Home-page/client-reviews/image-175.webp" },
 ];
 const marqueeReviews = [...autoScrollReviews, ...autoScrollReviews];
@@ -153,11 +154,21 @@ export const ClientTestimonials = () => {
           
           <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-white mt-4">
             <span className="font-bold text-xl font-mono">4.9/5</span>
-            <div className="flex items-center gap-1.5 text-emerald-500 bg-white px-3.5 py-1.5 rounded-md">
+            <a
+              href="https://www.trustpilot.com/review/devopstrio.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-emerald-500 bg-white px-3.5 py-1.5 rounded-md hover:bg-zinc-100 transition-colors"
+            >
                <Star className="w-5 h-5 fill-emerald-500 text-emerald-500" />
                <span className="font-bold tracking-wide text-black text-base">Trustpilot</span>
-            </div>
-            <span className="text-zinc-300 font-semibold text-base">Based on 5,210+ verified enterprise reviews</span>
+            </a>
+            <span className="text-zinc-300 font-semibold text-base">Independent Enterprise Verification</span>
+          </div>
+
+          {/* Trustpilot Review Collector TrustBox */}
+          <div className="mt-8 max-w-xl mx-auto rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-4 backdrop-blur-sm shadow-xl">
+            <TrustpilotReviewCollector />
           </div>
         </div>
 

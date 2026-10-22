@@ -232,15 +232,15 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <p className="text-rose-500 text-xs font-bold uppercase tracking-widest mb-2 flex items-center gap-2">
+              <p className="text-rose-500 text-xs sm:text-sm font-semibold uppercase tracking-widest font-mono mb-3 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
                 Pillar Capabilities
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
                 Engineered for High-Concurrency Production
               </h2>
             </div>
-            <p className="text-zinc-400 text-sm max-w-md mt-4 md:mt-0 leading-relaxed">
+            <p className="text-zinc-300 text-sm sm:text-base max-w-md mt-4 md:mt-0 leading-relaxed">
               Modular microservices designed to slot into enterprise Kubernetes environments with automated failover and sub-second execution.
             </p>
           </div>
@@ -381,7 +381,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               EXECUTION TOPOLOGY
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
               End-to-End Architecture Dataflow
             </h2>
             <p className="text-zinc-400 text-sm sm:text-base mt-3 leading-relaxed">
@@ -440,7 +440,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               ENTERPRISE CAPABILITIES
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
               Production-Grade Infrastructure
             </h2>
           </div>
@@ -490,7 +490,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
               VERIFIED ECOSYSTEM
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
               Supported Technologies & Frameworks
             </h2>
             <p className="text-zinc-400 text-sm mt-3">
@@ -533,7 +533,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                 THE IMPACT
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
                 Legacy Approaches vs Managed Enterprise Architecture
               </h2>
             </div>
@@ -588,7 +588,7 @@ export function CapabilityMasterTemplate({ data }: { data: CapabilityPageData })
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
                 ARCHITECTURE FAQS
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
                 Frequently Asked Questions
               </h2>
             </div>

@@ -36,10 +36,10 @@ const DataEngineeringOverview = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">
               CAPABILITIES MATRIX
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-0">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-0">
               Enterprise Data Architecture
             </h2>
           </div>
@@ -58,7 +58,7 @@ const DataEngineeringOverview = () => {
                     <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mb-6 group-hover:scale-110 transition-transform">
                       <Icon size={22} />
                     </div>
-                    <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 group-hover:text-rose-400 transition-colors">
                       {card.title}
                     </h3>
                     <p className="text-sm text-zinc-400 font-normal leading-relaxed">
@@ -97,8 +97,8 @@ const DataArchitecture = () => {
       <div className="max-w-4xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ARCHITECTURE FRAMEWORK</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-0">Multi-Tier Enterprise Data Fabric</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ARCHITECTURE FRAMEWORK</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-0">Multi-Tier Enterprise Data Fabric</h2>
           </div>
         </Reveal>
 
@@ -145,8 +145,8 @@ const DataCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ENGINEERING SUITE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-0">Our Data Engineering Capabilities</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ENGINEERING SUITE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-0">Our Data Engineering Capabilities</h2>
           </div>
         </Reveal>
 
@@ -165,8 +165,8 @@ const DataCapabilities = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="text-[11px] font-mono font-bold tracking-widest text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base md:text-lg font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   
                   <Link 
                     href={item.href}
@@ -229,8 +229,8 @@ const DataTechnologies = () => {
       <div className="max-w-5xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ECOSYSTEM</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-0">Technologies We Architect With</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ECOSYSTEM</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-0">Technologies We Architect With</h2>
           </div>
         </Reveal>
 
@@ -292,8 +292,8 @@ const DataIndustryUseCases = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SOLUTIONS</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-0">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">SOLUTIONS</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-0">
               Industry Use Cases
             </h2>
           </div>
@@ -307,9 +307,9 @@ const DataIndustryUseCases = () => {
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" unoptimized />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base md:text-lg font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <span className="text-xs font-semibold tracking-[0.2em] text-rose-400 font-mono uppercase mb-2 block">{item.tag}</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   <Link 
                     href={item.href}
                     className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
@@ -370,8 +370,8 @@ const DataOutcomes = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-0">Measurable Data Engineering Outcomes</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">BUSINESS VALUE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-0">Measurable Data Engineering Outcomes</h2>
           </div>
         </Reveal>
 
@@ -379,7 +379,7 @@ const DataOutcomes = () => {
           {outcomes.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.05}>
               <div className="p-8 bg-zinc-950/50 border border-zinc-900 rounded-3xl hover:border-rose-500/30 transition-all flex flex-col justify-between min-h-[180px]">
-                <div className="text-3xl md:text-4xl font-extrabold text-rose-500 mb-2 font-mono">{item.value}</div>
+                <div className="text-4xl sm:text-5xl font-extrabold text-rose-500 tracking-tight mb-2 font-mono">{item.value}</div>
                 <div className="text-base md:text-lg font-bold text-white">{item.title}</div>
               </div>
             </Reveal>

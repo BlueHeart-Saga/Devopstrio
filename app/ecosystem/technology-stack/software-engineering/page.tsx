@@ -57,8 +57,8 @@ const SoftwareCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ENGINEERING SUITE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-0">Our Software Engineering Capabilities</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ENGINEERING SUITE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-0">Our Software Engineering Capabilities</h2>
           </div>
         </Reveal>
 
@@ -77,8 +77,8 @@ const SoftwareCapabilities = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="text-[11px] font-mono font-bold tracking-widest text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base md:text-lg font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   
                   <Link 
                     href={item.href}
@@ -151,8 +151,8 @@ const SoftwareIndustryUseCases = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SOLUTIONS</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-0">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">SOLUTIONS</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-0">
               Industry Use Cases
             </h2>
           </div>
@@ -166,9 +166,9 @@ const SoftwareIndustryUseCases = () => {
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" unoptimized />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-base md:text-lg font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <span className="text-xs font-semibold tracking-[0.2em] text-rose-400 font-mono uppercase mb-2 block">{item.tag}</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   <Link 
                     href={item.href}
                     className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
@@ -346,8 +346,8 @@ export default function SoftwareEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">FRONTEND</span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Frontend Engineering</h2>
+              <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">FRONTEND</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-6">Frontend Engineering</h2>
               <Link 
                 href="/ecosystem/technology-stack/software-engineering/responsive-edge-frontends"
                 className="inline-flex items-center gap-2 mt-6 text-rose-500 text-xs font-bold hover:text-white transition-colors group/btn"
@@ -388,8 +388,8 @@ export default function SoftwareEngineeringPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">BACKEND CORE</span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Backend Engineering</h2>
+              <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">BACKEND CORE</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-6">Backend Engineering</h2>
               <Link 
                 href="/ecosystem/technology-stack/software-engineering/high-throughput-backends"
                 className="inline-flex items-center gap-2 mt-6 text-rose-500 text-xs font-bold hover:text-white transition-colors group/btn"
@@ -409,8 +409,8 @@ export default function SoftwareEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">API SYSTEM</span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">API Ecosystem</h2>
+              <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">API SYSTEM</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-6">API Ecosystem</h2>
               <Link 
                 href="/ecosystem/technology-stack/software-engineering/tamper-proof-integrations"
                 className="inline-flex items-center gap-2 mt-6 text-rose-500 text-xs font-bold hover:text-white transition-colors group/btn"
@@ -451,8 +451,8 @@ export default function SoftwareEngineeringPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">PATTERNS</span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Architecture Patterns</h2>
+              <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">PATTERNS</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-6">Architecture Patterns</h2>
               <Link 
                 href="/ecosystem/technology-stack/software-engineering/cross-platform-mobile-apps"
                 className="inline-flex items-center gap-2 mt-6 text-rose-500 text-xs font-bold hover:text-white transition-colors group/btn"
@@ -472,8 +472,8 @@ export default function SoftwareEngineeringPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">QUALITY</span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Quality Engineering</h2>
+              <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">QUALITY</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-6">Quality Engineering</h2>
             </div>
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {qualityFeatures.map((feat, idx) => (
@@ -505,8 +505,8 @@ export default function SoftwareEngineeringPage() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:order-1">
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">DEVELOPER EXPERIENCE</span>
-              <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Productivity</h2>
+              <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">DEVELOPER EXPERIENCE</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Productivity</h2>
             </div>
           </div>
         </div>

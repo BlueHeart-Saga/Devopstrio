@@ -35,8 +35,8 @@ const QualityOverview = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">TEST ARCHITECTURE & RELIABILITY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">TEST ARCHITECTURE & RELIABILITY</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
               Zero-Defect Engineering for High-Velocity Releases
             </h2>
             
@@ -53,10 +53,10 @@ const QualityOverview = () => {
                     <div className="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center mb-6">
                       <Icon size={20} />
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 tracking-tight group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 tracking-tight group-hover:text-rose-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
+                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -88,8 +88,8 @@ const WhyQualityEngineering = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PARADIGM SHIFT</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">PARADIGM SHIFT</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               Moving from Manual Testing to Automated Quality Assurance
             </h2>
           </div>
@@ -153,8 +153,8 @@ const QualityArchitecture = () => {
       <div className="max-w-4xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">TEST PYRAMID ARCHITECTURE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Multi-Tier Continuous Quality Framework</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">TEST PYRAMID ARCHITECTURE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Multi-Tier Continuous Quality Framework</h2>
           </div>
         </Reveal>
 
@@ -199,8 +199,8 @@ const QualityCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ENGINEERING SUITE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Complete Quality Engineering Coverage</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ENGINEERING SUITE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Complete Quality Engineering Coverage</h2>
           </div>
         </Reveal>
 
@@ -219,8 +219,8 @@ const QualityCapabilities = () => {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <span className="text-[11px] font-mono font-bold tracking-widest text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   
                   <Link 
                     href={item.href}
@@ -283,8 +283,8 @@ const QualityTechnologies = () => {
       <div className="max-w-5xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">TEST TOOLCHAIN</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Technologies in Our Testing Stack</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">TEST TOOLCHAIN</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Technologies in Our Testing Stack</h2>
           </div>
         </Reveal>
 
@@ -338,8 +338,8 @@ const QualityOutcomes = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Proven Quality Engineering Outcomes</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">BUSINESS VALUE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Proven Quality Engineering Outcomes</h2>
           </div>
         </Reveal>
 
@@ -347,7 +347,7 @@ const QualityOutcomes = () => {
           {outcomes.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.05}>
               <div className="p-8 bg-zinc-950/50 border border-zinc-900 rounded-3xl hover:border-rose-500/30 transition-all flex flex-col justify-between min-h-[180px]">
-                <div className="text-3xl md:text-4xl font-extrabold text-rose-500 mb-2 font-mono">{item.value}</div>
+                <div className="text-4xl sm:text-5xl font-extrabold text-rose-500 tracking-tight mb-2 font-mono">{item.value}</div>
                 <div className="text-base md:text-lg font-bold text-white">{item.title}</div>
               </div>
             </Reveal>
@@ -386,8 +386,8 @@ const QualityIndustryUseCases = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SOLUTIONS</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">SOLUTIONS</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               Industry Use Cases
             </h2>
           </div>
@@ -401,9 +401,9 @@ const QualityIndustryUseCases = () => {
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" unoptimized />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <span className="text-xs font-semibold tracking-[0.2em] text-rose-400 font-mono uppercase mb-2 block">{item.tag}</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   <Link 
                     href={item.href}
                     className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
@@ -461,15 +461,15 @@ const QualityFAQ = () => {
       <div className="max-w-4xl mx-auto px-6 xl:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">KNOWLEDGE BASE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white">Frequently Asked Questions</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">KNOWLEDGE BASE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">Frequently Asked Questions</h2>
           </div>
         </Reveal>
 
         <div className="space-y-4">
           {faqs.map((faq, i) => (
             <div key={i} className="p-6 bg-zinc-950 border border-zinc-900 rounded-2xl">
-              <h3 className="text-base md:text-lg font-bold text-white mb-2">{faq.q}</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5">{faq.q}</h3>
               <p className="text-sm md:text-base text-zinc-400 font-normal leading-relaxed">{faq.a}</p>
             </div>
           ))}

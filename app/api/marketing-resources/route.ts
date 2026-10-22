@@ -107,7 +107,13 @@ export async function GET(req: Request) {
       );
     }
 
-    return NextResponse.json(formatted);
+    return NextResponse.json(formatted, {
+      headers: {
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+        Pragma: "no-cache",
+        Expires: "0",
+      },
+    });
   } catch (error) {
     console.error("Failed to fetch marketing resources:", error);
     return NextResponse.json({ error: "Failed to fetch resources" }, { status: 500 });

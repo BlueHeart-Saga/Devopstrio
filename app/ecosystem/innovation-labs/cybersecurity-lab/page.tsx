@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
 import { Hero } from "@/components/services/Hero";
+import Image from "next/image";
 import {
   ArrowUpRight,
   Shield,
@@ -66,6 +67,7 @@ interface ArchLayer {
 
 interface IndustryUseCase {
   name: string;
+  image: string;
   items: string[];
 }
 
@@ -318,6 +320,7 @@ export default function CybersecurityInnovationLabPage() {
   const industryUseCases: IndustryUseCase[] = [
     {
       name: "Cloud & Infrastructure Security",
+      image: "/webp/assets/ecosystem/cybersecurity-lab/scenarios/cloud-infrastructure-security.webp",
       items: [
         "secure cloud landing zones",
         "workload hardening",
@@ -327,6 +330,7 @@ export default function CybersecurityInnovationLabPage() {
     },
     {
       name: "Application & DevSecOps Security",
+      image: "/webp/assets/ecosystem/cybersecurity-lab/scenarios/application-devsecops-security.webp",
       items: [
         "secure CI/CD pipelines",
         "secrets governance",
@@ -336,6 +340,7 @@ export default function CybersecurityInnovationLabPage() {
     },
     {
       name: "Identity & Access Security",
+      image: "/webp/assets/ecosystem/cybersecurity-lab/scenarios/identity-access-security.webp",
       items: [
         "MFA and conditional access strategies",
         "privileged access governance",
@@ -345,6 +350,7 @@ export default function CybersecurityInnovationLabPage() {
     },
     {
       name: "Detection & Response",
+      image: "/webp/assets/ecosystem/cybersecurity-lab/scenarios/detection-response.webp",
       items: [
         "centralized security monitoring",
         "threat detection workflows",
@@ -354,6 +360,7 @@ export default function CybersecurityInnovationLabPage() {
     },
     {
       name: "Data Protection & Compliance",
+      image: "/webp/assets/ecosystem/cybersecurity-lab/scenarios/data-protection-compliance.webp",
       items: [
         "encryption strategy",
         "data access governance",
@@ -363,6 +370,7 @@ export default function CybersecurityInnovationLabPage() {
     },
     {
       name: "Resilience & Risk Reduction",
+      image: "/webp/assets/ecosystem/cybersecurity-lab/scenarios/resilience-risk-reduction.webp",
       items: [
         "ransomware readiness support",
         "security posture improvement",
@@ -499,41 +507,34 @@ export default function CybersecurityInnovationLabPage() {
         
 
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left side content */}
-            <div className="lg:col-span-6">
-              <Reveal>
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
-                  Mission Overview
-                </span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
-                  Proactive Defense Architecture <br />
-                  <span className="text-rose-500">For Cloud-Native Estates</span>
-                </h2>
-                
-              </Reveal>
-            </div>
+          {/* Top Heading */}
+          <Reveal className="mb-10 max-w-3xl">
+            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+              Mission Overview
+            </span>
+            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+              Proactive Defense Architecture <br />
+              <span className="text-rose-500">For Cloud-Native Estates</span>
+            </h2>
+          </Reveal>
 
-            {/* Right side - 4 mini cards */}
-            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {miniMissionCards.map((card, idx) => (
-                <Reveal key={card.title} delay={idx * 0.05}>
-                  <div className="group relative bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 rounded-[20px] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(244,63,94,0.12)] min-h-[140px] flex flex-col justify-between overflow-hidden">
-                    <div className="absolute -top-8 -right-8 w-24 h-24 bg-rose-500/[0.06] group-hover:bg-rose-500/20 rounded-full blur-xl transition-all duration-500 pointer-events-none" />
-                    <div>
-                      <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2">
-                        {card.title}
-                      </h4>
-                      <p className="text-xs md:text-sm text-zinc-400 font-normal leading-relaxed">
-                        {card.desc}
-                      </p>
-                    </div>
+          {/* 4 mini cards below heading */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {miniMissionCards.map((card, idx) => (
+              <Reveal key={card.title} delay={idx * 0.05} className="h-full">
+                <div className="group relative bg-[#0D0E12] border border-zinc-800/80 hover:border-rose-500/40 rounded-[20px] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(244,63,94,0.12)] min-h-[140px] h-full flex flex-col justify-between overflow-hidden">
+                  <div className="absolute -top-8 -right-8 w-24 h-24 bg-rose-500/[0.06] group-hover:bg-rose-500/20 rounded-full blur-xl transition-all duration-500 pointer-events-none" />
+                  <div>
+                    <h4 className="text-sm md:text-base font-bold text-white tracking-wide mb-2">
+                      {card.title}
+                    </h4>
+                    <p className="text-xs md:text-sm text-zinc-400 font-normal leading-relaxed">
+                      {card.desc}
+                    </p>
                   </div>
-                </Reveal>
-              ))}
-            </div>
-
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -549,7 +550,7 @@ export default function CybersecurityInnovationLabPage() {
         
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
               Capabilities
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
@@ -593,7 +594,7 @@ export default function CybersecurityInnovationLabPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           
           <Reveal className="mb-14 text-left max-w-3xl">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
               Operating Framework
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
@@ -648,7 +649,7 @@ export default function CybersecurityInnovationLabPage() {
         
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
               Deliverables
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
@@ -706,18 +707,17 @@ export default function CybersecurityInnovationLabPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
             
-            {/* Left: Heading & Context */}
-            <div className="lg:w-1/2 sticky top-24">
+            {/* Left: Heading, Chips & Blueprint Image */}
+            <div className="lg:w-1/2 sticky top-16 lg:top-20">
               <Reveal>
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-2 block">
                   Reference Blueprint
                 </span>
-                <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
+                <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-3">
                   Our Cybersecurity Innovation <span className="text-rose-500">Reference Architecture</span>
                 </h2>
-                
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-6">
                   {techChips.map((tech, idx) => (
                     <motion.span
                       key={idx}
@@ -725,11 +725,22 @@ export default function CybersecurityInnovationLabPage() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.2 + (idx * 0.05) }}
-                      className="px-4 py-2 rounded-full bg-zinc-950 border border-zinc-800 text-zinc-300 text-xs font-bold hover:border-rose-500/50 hover:text-rose-400 transition-colors cursor-default"
+                      className="px-3.5 py-1.5 rounded-full bg-zinc-950 border border-zinc-800 text-zinc-300 text-xs font-medium hover:border-rose-500/50 hover:text-rose-400 transition-colors cursor-default"
                     >
                       {tech}
                     </motion.span>
                   ))}
+                </div>
+
+                {/* Blueprint Visual */}
+                <div className="w-full rounded-2xl overflow-hidden border border-zinc-800/80 bg-zinc-950/60 shadow-2xl relative group">
+                  <img
+                    src="/webp/assets/ecosystem/cybersecurity-lab/reference-blueprint.webp"
+                    alt="Cybersecurity Innovation Reference Architecture"
+                    className="w-full h-64 sm:h-72 md:h-80 xl:h-[350px] object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 </div>
               </Reveal>
             </div>
@@ -780,7 +791,7 @@ export default function CybersecurityInnovationLabPage() {
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
           
           <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
               Scenarios
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
@@ -818,30 +829,32 @@ export default function CybersecurityInnovationLabPage() {
               })}
             </div>
 
-            {/* RIGHT: Rectangular Low Height Image Card */}
-            <div className="flex-1 w-full bg-[#0A0A0A] rounded-[24px] border border-zinc-800 shadow-xl overflow-hidden min-h-[360px] lg:min-h-[400px] flex flex-col sm:flex-row">
+            {/* RIGHT: Rectangular Image Card */}
+            <div className="flex-1 w-full bg-[#0A0A0A] rounded-[24px] border border-zinc-800 shadow-xl overflow-hidden min-h-[400px] lg:min-h-[450px] flex flex-col sm:flex-row">
               
-              {/* Abstract Visual Half */}
-              <div className="w-full sm:w-5/12 lg:w-5/12 relative h-48 sm:h-auto overflow-hidden bg-zinc-950 flex items-center justify-center">
-                <AnimatePresence mode="popLayout">
-                  {industryUseCases.map((cat, idx) => {
+              {/* Image Left Side - Full Frame */}
+              <div className="w-full sm:w-1/2 lg:w-5/12 relative min-h-[320px] sm:min-h-full overflow-hidden bg-black flex items-center justify-center border-b sm:border-b-0 sm:border-r border-zinc-800/80">
+                <AnimatePresence mode="wait">
+                  {industryUseCases.map((cat) => {
                     if (cat.name !== activeTab) return null;
-                    const icons = [Cloud, Workflow, Activity, Shield, Settings, Cpu, Database, Terminal, Network, Layers, Zap, Sparkles];
-                    const Icon = icons[idx % icons.length];
                     
                     return (
                       <motion.div
                         key={cat.name + "-visual"}
-                        initial={{ opacity: 0, scale: 1.05 }}
+                        initial={{ opacity: 0, scale: 0.98 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.4 }}
-                        className="absolute inset-0 flex flex-col items-center justify-center"
+                        exit={{ opacity: 0, scale: 1.02 }}
+                        transition={{ duration: 0.35 }}
+                        className="absolute inset-0 w-full h-full bg-black flex items-center justify-center"
                       >
-                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(244,63,94,0.15),transparent)]" />
-                        <Icon className="w-32 h-32 text-rose-500/10 drop-shadow-2xl relative z-10" strokeWidth={1} />
-                        <div className="absolute bottom-0 w-full h-full bg-gradient-to-t from-[#0A0A0A] to-transparent sm:hidden z-20" />
-                        <div className="absolute right-0 w-full h-full bg-gradient-to-l from-[#0A0A0A] to-transparent hidden sm:block z-20" />
+                        <Image
+                          src={cat.image}
+                          alt={cat.name}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 42vw"
+                          className="object-contain object-center w-full h-full p-2 sm:p-4"
+                          priority
+                        />
                       </motion.div>
                     );
                   })}
@@ -849,7 +862,7 @@ export default function CybersecurityInnovationLabPage() {
               </div>
 
               {/* Content Half */}
-              <div className="w-full sm:w-7/12 lg:w-7/12 p-8 md:p-12 flex flex-col justify-center relative z-30">
+              <div className="w-full sm:w-1/2 lg:w-7/12 p-8 md:p-12 flex flex-col justify-center relative z-30">
                 <AnimatePresence mode="wait">
                   {industryUseCases.map((cat, idx) => {
                     if (cat.name !== activeTab) return null;
@@ -917,7 +930,7 @@ export default function CybersecurityInnovationLabPage() {
             {/* Left Header */}
             <div className="lg:col-span-5">
               <Reveal>
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+                <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
                   Innovation Impact
                 </span>
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
@@ -983,7 +996,7 @@ export default function CybersecurityInnovationLabPage() {
             {/* Left: Heading & Stats */}
             <div className="sticky top-32">
               <Reveal>
-                <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 block mb-4">
+                <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 block mb-4">
                   Why Devopstrio
                 </span>
                 <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
@@ -1052,7 +1065,7 @@ export default function CybersecurityInnovationLabPage() {
           {/* Related Labs Grid */}
           <div className="mb-24">
             <Reveal className="mb-14 text-left">
-              <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">
+              <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
                 Ecosystem
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">

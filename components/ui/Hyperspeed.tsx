@@ -464,8 +464,12 @@ const Hyperspeed = ({ effectOptions = {} }: HyperspeedProps) => {
         this.speedUpTarget = 0;
         this.speedUp = 0;
         this.timeOffset = 0;
+        this.isPaused = false;
+        this.rafId = null;
 
         this.tick = this.tick.bind(this);
+        this.startLoop = this.startLoop.bind(this);
+        this.stopLoop = this.stopLoop.bind(this);
         this.init = this.init.bind(this);
         this.setSize = this.setSize.bind(this);
         this.onMouseDown = this.onMouseDown.bind(this);
@@ -651,6 +655,7 @@ const Hyperspeed = ({ effectOptions = {} }: HyperspeedProps) => {
       }
 
       dispose() {
+        this.stopLoop();
         this.disposed = true;
 
         if (this.scene) {
@@ -704,8 +709,27 @@ const Hyperspeed = ({ effectOptions = {} }: HyperspeedProps) => {
         this.hasValidSize = true;
       }
 
+      startLoop() {
+        if (!this.rafId && !this.disposed) {
+          this.isPaused = false;
+          this.clock.getDelta();
+          this.rafId = requestAnimationFrame(this.tick);
+        }
+      }
+
+      stopLoop() {
+        this.isPaused = true;
+        if (this.rafId) {
+          cancelAnimationFrame(this.rafId);
+          this.rafId = null;
+        }
+      }
+
       tick() {
-        if (this.disposed) return;
+        if (this.disposed || this.isPaused) {
+          this.rafId = null;
+          return;
+        }
 
         if (!this.hasValidSize) {
           const w = this.container.offsetWidth;
@@ -717,7 +741,7 @@ const Hyperspeed = ({ effectOptions = {} }: HyperspeedProps) => {
             this.composer.setSize(w, h);
             this.hasValidSize = true;
           } else {
-            requestAnimationFrame(this.tick);
+            this.rafId = requestAnimationFrame(this.tick);
             return;
           }
         }
@@ -736,7 +760,7 @@ const Hyperspeed = ({ effectOptions = {} }: HyperspeedProps) => {
           this.update(delta);
         }
 
-        requestAnimationFrame(this.tick);
+        this.rafId = requestAnimationFrame(this.tick);
       }
     }
 
@@ -1253,7 +1277,20 @@ const Hyperspeed = ({ effectOptions = {} }: HyperspeedProps) => {
     appRef.current = myApp;
     myApp.loadAssets().then(myApp.init);
 
+    let observer: IntersectionObserver | null = null;
+    if (typeof IntersectionObserver !== "undefined") {
+      observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          myApp.startLoop();
+        } else {
+          myApp.stopLoop();
+        }
+      }, { rootMargin: "100px 0px" });
+      observer.observe(container);
+    }
+
     return () => {
+      if (observer) observer.disconnect();
       if (appRef.current) {
         appRef.current.dispose();
         appRef.current = null;

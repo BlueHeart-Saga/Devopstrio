@@ -14,9 +14,9 @@ export function EcosystemOverview() {
           <div className="group relative overflow-hidden rounded-3xl border border-zinc-800/60 bg-zinc-950/30 backdrop-blur-xl">
 
             {/* Background Glow */}
-            <div className="absolute inset-0">
-              <div className="absolute -top-20 -left-20 w-96 h-96 bg-rose-600/10 blur-[120px]" />
-              <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-600/10 blur-[120px]" />
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-20 -left-20 w-96 h-96 bg-[radial-gradient(circle,rgba(225,29,72,0.12)_0%,transparent_70%)]" />
+              <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-[radial-gradient(circle,rgba(37,99,235,0.12)_0%,transparent_70%)]" />
             </div>
 
             <div className="relative grid lg:grid-cols-2 gap-0">
@@ -33,15 +33,15 @@ export function EcosystemOverview() {
                   </span>
                 </h2>
 
-                <a
-                  href="#architecture"
+                <Link
+                  href="/ecosystem/accelerators-frameworks"
                   className="inline-flex items-center gap-2 text-white font-semibold group/link w-fit"
                 >
                   Explore Architecture Stack
                   <span className="w-9 h-9 rounded-full bg-[#E11D48] flex items-center justify-center transition-transform duration-300 group-hover/link:translate-x-1">
                     <ArrowUpRight size={16} />
                   </span>
-                </a>
+                </Link>
               </div>
 
               {/* RIGHT IMAGE */}

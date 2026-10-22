@@ -27,18 +27,19 @@ export async function GET(
     const sanitizedFile = blobFilename.replace(/^\/+/, "").replace(/\.\./g, "");
     const cleanDisplayName = filename.replace(/[^a-zA-Z0-9._-]/g, "_");
 
-    // Delegate to internal pdf-proxy logic
-    const proxyUrl = new URL("/api/pdf-proxy", req.url);
-    proxyUrl.searchParams.set("file", sanitizedFile);
-    proxyUrl.searchParams.set("filename", cleanDisplayName);
-    if (isDownload) {
-      proxyUrl.searchParams.set("download", "true");
+    // Stream directly from Azure Blob storage (avoids internal loopback fetch failure on Azure Linux)
+    const targetUrl = `https://marketingstorein.blob.core.windows.net/devopstrio/uploads/${sanitizedFile}`;
+
+    const upstreamHeaders: HeadersInit = {
+      "User-Agent": "Devopstrio-Doc-Stream/1.0",
+    };
+    const incomingRange = req.headers.get("range");
+    if (incomingRange) {
+      upstreamHeaders["Range"] = incomingRange;
     }
 
-    const upstreamRes = await fetch(proxyUrl.toString(), {
-      headers: {
-        ...(req.headers.get("range") ? { Range: req.headers.get("range")! } : {}),
-      },
+    const upstreamRes = await fetch(targetUrl, {
+      headers: upstreamHeaders,
     });
 
     if (!upstreamRes.ok && upstreamRes.status !== 206) {

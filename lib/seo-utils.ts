@@ -837,6 +837,11 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     description: "Migrate and scale mission-critical SAP S/4HANA workloads on enterprise cloud runtimes with zero downtime.",
     keywords: ["SAP on Cloud", "S/4HANA Migration", "Enterprise Cloud Runtimes"]
   },
+  "/ecosystem/technology-stack/artificial-intelligence": {
+    title: "Enterprise AI & Generative AI Tech Stack | Devopstrio",
+    description: "Explore our verified enterprise AI technology stack featuring Generative AI pipelines, LangGraph multi-agent orchestration, vector databases, and MLOps.",
+    keywords: ["Enterprise AI", "Generative AI Pipelines", "LangGraph Agents", "Vector Databases", "MLOps Automation", "LLM Inference"]
+  },
   "/ecosystem/technology-stack/cloud-native": {
     title: "Cloud Native Stack | Kubernetes, Service Mesh & Containers",
     description: "Explore our production-proven cloud-native technology stack including Kubernetes, Istio, Envoy, Helm, and ArgoCD.",

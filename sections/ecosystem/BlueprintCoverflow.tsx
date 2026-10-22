@@ -113,8 +113,8 @@ export function BlueprintCoverflow() {
     >
       <style>{`
         .bpc-card {
-          -webkit-box-reflect: below 12px linear-gradient(to bottom, transparent 65%, rgba(0, 0, 0, 0.45) 100%);
-          transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.85s ease, filter 0.85s ease, box-shadow 0.85s ease;
+          transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.85s ease, box-shadow 0.85s ease;
+          will-change: transform, opacity;
         }
         @keyframes bpcFade {
           from { opacity: 0; transform: translateY(6px); }
@@ -125,7 +125,7 @@ export function BlueprintCoverflow() {
       {/* Atmospheric Radial Glow behind the stage */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[850px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-rose-600/10 blur-[140px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[850px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(225,29,72,0.12),transparent_70%)]"
       />
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 z-10">

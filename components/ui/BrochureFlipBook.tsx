@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  BookOpen, Download, ExternalLink,
+  BookOpen, Download,
   FileText, Loader2, Maximize2, Minimize2, RotateCcw, X,
   ZoomIn, ZoomOut, Share2, Check,
 } from "lucide-react";
@@ -24,10 +24,10 @@ type Direction = "next" | "prev";
 type Asset = { canvas: HTMLCanvasElement; width: number; height: number; resolution: number };
 type Dimensions = { width: number; height: number };
 const TURN_MS = 900;
-// Bound total canvas memory, while allowing higher-quality output on capable desktops.
-const MAX_CACHED_PAGES = 20;
+// Bound total canvas memory, while allowing crisp high-DPI output
+const MAX_CACHED_PAGES = 60;
 const MAX_RENDER_EDGE = 4096;
-const MAX_CACHE_BYTES = 160 * 1024 * 1024;
+const MAX_CACHE_BYTES = 320 * 1024 * 1024;
 function renderPixelBudget() {
   if (typeof window === "undefined") return 4_000_000;
   const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 4;
@@ -353,21 +353,24 @@ export function BrochureFlipBook({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pdf, mode, spreadIndex, total, single, Math.round(scale * 10), metadata, loadPage, spreadForIndex]);
 
-  // When in PDF mode, load document pages for smooth canvas-based continuous scrolling (no iframe auto-downloads)
+  // When in PDF mode, load document pages with crisp high-DPI resolution for razor-sharp view
   useEffect(() => {
     if (!pdf || mode !== "pdf" || total < 1) return;
     let cancelled = false;
     const run = async () => {
       for (let n = 1; n <= total; n++) {
         if (cancelled) break;
-        await metadata(n);
+        const pageDims = await metadata(n);
         if (cancelled) break;
-        await loadPage(n, scale);
+        const rawWidth = pageDims.width || 595;
+        const pWidth = Math.min(840, rawWidth) * zoom;
+        const highDpiTargetScale = Math.max(1.8, (pWidth / rawWidth) * 1.5);
+        await loadPage(n, highDpiTargetScale);
       }
     };
     void run().catch((e) => console.warn("PDF scroll mode load error", e));
     return () => { cancelled = true; };
-  }, [pdf, mode, total, scale, metadata, loadPage]);
+  }, [pdf, mode, total, zoom, metadata, loadPage]);
 
   const navigate = useCallback(async (direction: Direction) => {
     if (turningRef.current || !pdfRef.current || total < 1) return;
@@ -439,10 +442,6 @@ export function BrochureFlipBook({
     ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(blobFileParam)}&download=true`
     : `/api/pdf-proxy?url=${encodeURIComponent(effectiveFileUrl)}&filename=${encodeURIComponent(cleanDocName)}&download=true`;
 
-  const secureViewUrl = blobFileParam
-    ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(blobFileParam)}`
-    : `/api/pdf-proxy?url=${encodeURIComponent(effectiveFileUrl)}&filename=${encodeURIComponent(cleanDocName)}`;
-
   const secureShareUrl = typeof window !== "undefined"
     ? `${window.location.origin}${blobFileParam ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(blobFileParam)}` : `/api/pdf-proxy?url=${encodeURIComponent(effectiveFileUrl)}&filename=${encodeURIComponent(cleanDocName)}`}`
     : effectiveFileUrl;
@@ -488,7 +487,6 @@ export function BrochureFlipBook({
             {copied ? <Check size={16} /> : <Share2 size={16} />}
           </button>
           <a href={secureDownloadUrl} download={cleanDocName} aria-label="Download original document" title="Download document" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white"><Download size={16}/></a>
-          <a href={secureViewUrl} target="_blank" rel="noopener noreferrer" aria-label="Open in new tab" title="Open in new tab" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white inline-flex"><ExternalLink size={16}/></a>
           <button type="button" onClick={toggleFullscreen} aria-label="Toggle fullscreen" title="Toggle fullscreen" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white">{fullscreen ? <Minimize2 size={16}/> : <Maximize2 size={16}/>}</button>
           {onClose && <button type="button" onClick={onClose} aria-label="Close document" title="Close" className="rounded-lg bg-rose-600 p-2.5 text-white hover:bg-rose-500"><X size={16}/></button>}
         </div>

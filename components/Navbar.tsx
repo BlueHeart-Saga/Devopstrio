@@ -810,41 +810,52 @@ export function Navbar() {
   }, [mobileOpen]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrolled(currentScrollY > 20);
+    let ticking = false;
+    let rafId: number | null = null;
 
+    const performScroll = () => {
+      const currentScrollY = window.scrollY;
+      const nextScrolled = currentScrollY > 20;
+      setScrolled((prev) => (prev !== nextScrolled ? nextScrolled : prev));
+
+      let nextVisible = true;
       const sectionNavParent = document.getElementById("section-navbar-parent");
       if (sectionNavParent) {
         const rect = sectionNavParent.getBoundingClientRect();
         // Once the section navbar's parent has touched/crossed the main navbar area (approx 90px from top)
         if (rect.top <= 90) {
-          if (currentScrollY > lastScrollY.current) {
-            setIsVisible(false);
-          } else {
-            setIsVisible(true);
-          }
+          nextVisible = currentScrollY <= lastScrollY.current;
         } else {
-          // Keep main navbar visible until it is touched by the section navbar
-          setIsVisible(true);
+          nextVisible = true;
         }
       } else {
         // Fallback for pages without SectionNavbar
         if (currentScrollY > 100) {
-          if (currentScrollY > lastScrollY.current) {
-            setIsVisible(false);
-          } else {
-            setIsVisible(true);
-          }
+          nextVisible = currentScrollY <= lastScrollY.current;
         } else {
-          setIsVisible(true);
+          nextVisible = true;
         }
       }
 
+      setIsVisible((prev) => (prev !== nextVisible ? nextVisible : prev));
       lastScrollY.current = currentScrollY;
     };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        rafId = requestAnimationFrame(() => {
+          performScroll();
+          ticking = false;
+        });
+      }
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (

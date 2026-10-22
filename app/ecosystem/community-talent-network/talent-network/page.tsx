@@ -130,19 +130,13 @@ export default function TalentNetworkPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             {/* Left Image */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
-                <img
-                  src="/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp"
-                  alt="Engineers collaborating in a modern technology center"
-                  className="w-full h-[440px] object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/85 backdrop-blur-md border border-zinc-800 text-xs sm:text-sm font-mono text-zinc-300">
-                  <span className="text-rose-400 font-bold">✓ Global Engineering Community</span> &bull; 25,000+ Vetted Technology Professionals
-                </div>
-              </div>
+            <div className="lg:col-span-6 relative flex items-center justify-center">
+              <img
+                src="/webp/assets/ecosystem/talent-network/about-the-network.webp"
+                alt="About The Network"
+                className="w-full h-auto object-contain rounded-2xl"
+                loading="lazy"
+              />
             </div>
 
             {/* Right Overview Content */}
@@ -466,19 +460,13 @@ export default function TalentNetworkPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-6">
-              <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 group">
-                <img
-                  src="/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
-                  alt="Global engineering teams collaborating remotely"
-                  className="w-full h-[380px] object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="p-4 bg-black/85 backdrop-blur-md border-t border-zinc-800 text-xs sm:text-sm font-mono text-zinc-300 flex justify-between items-center">
-                  <span>Remote Engineering Pod Collaboration</span>
-                  <span className="text-rose-400 font-bold">20+ Countries</span>
-                </div>
-              </div>
+            <div className="lg:col-span-6 flex items-center justify-center">
+              <img
+                src="/webp/assets/ecosystem/talent-network/global-opportunities.webp"
+                alt="Global Opportunities"
+                className="w-full h-auto object-contain rounded-2xl"
+                loading="lazy"
+              />
             </div>
 
           </div>

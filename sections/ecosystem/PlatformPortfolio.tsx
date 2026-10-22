@@ -60,7 +60,7 @@ export function PlatformPortfolio() {
   return (
     <section id="portfolio" className="w-full py-24 bg-black text-white border-b border-zinc-900/60 relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(225,29,72,0.08)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 xl:px-8 relative z-10">
         <Reveal className="mb-16 text-center max-w-3xl mx-auto">

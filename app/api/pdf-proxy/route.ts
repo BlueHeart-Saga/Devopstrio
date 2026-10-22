@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
 export const dynamic = "force-dynamic";
 
@@ -7,7 +9,7 @@ const ALLOWED_HOST_PATTERNS = [
   /\.blob\.core\.windows\.net$/i,
   /^devopstrio\.co\.uk$/i,
   /^devopstrio-global-qa.*\.azurewebsites\.net$/i,
-  ...(process.env.NODE_ENV !== "production" ? [/^127\.0\.0\.1:3005$/i, /^localhost:3005$/i] : []),
+  ...(process.env.NODE_ENV !== "production" ? [/^127\.0\.0\.1(:\d+)?$/i, /^localhost(:\d+)?$/i] : []),
 ];
 
 export async function GET(req: NextRequest) {
@@ -18,6 +20,40 @@ export async function GET(req: NextRequest) {
     const filenameParam = searchParams.get("filename") || "Devopstrio_Document.pdf";
     const cleanFilename = filenameParam.replace(/[^a-zA-Z0-9._-]/g, "_");
     const isDownload = searchParams.get("download") === "true";
+
+    // Direct local file serving for local relative paths (e.g. /uploads/pdf/...)
+    if (targetUrl && targetUrl.startsWith("/")) {
+      const cleanRelativePath = targetUrl.split("?")[0].split("#")[0].replace(/^\/+/, "").replace(/\.\./g, "");
+      const localFilePath = path.join(process.cwd(), "public", cleanRelativePath);
+      if (fs.existsSync(localFilePath)) {
+        const stat = fs.statSync(localFilePath);
+        const fileStream = fs.createReadStream(localFilePath);
+        const webStream = new ReadableStream({
+          start(controller) {
+            fileStream.on("data", (chunk) => controller.enqueue(chunk));
+            fileStream.on("end", () => controller.close());
+            fileStream.on("error", (err) => controller.error(err));
+          },
+          cancel() {
+            fileStream.destroy();
+          },
+        });
+
+        const headers = new Headers();
+        headers.set("Content-Type", "application/pdf");
+        headers.set("Content-Length", stat.size.toString());
+        headers.set("Accept-Ranges", "bytes");
+        headers.set("Access-Control-Allow-Origin", "*");
+        headers.set(
+          "Content-Disposition",
+          `${isDownload ? "attachment" : "inline"}; filename="${cleanFilename}"`
+        );
+        headers.set("Cache-Control", "public, max-age=86400");
+        return new NextResponse(webStream, { status: 200, headers });
+      }
+      // If file not in public, resolve against req.url
+      targetUrl = new URL(targetUrl, req.url).toString();
+    }
 
     // Auto-resolve relative file path to Azure Blob storage
     if (!targetUrl && fileParam) {

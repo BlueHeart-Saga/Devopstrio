@@ -56,6 +56,11 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-NGV5DC74RW"
           strategy="afterInteractive"
         />
+        {/* Trustpilot Bootstrap Script */}
+        <Script
+          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          strategy="lazyOnload"
+        />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];

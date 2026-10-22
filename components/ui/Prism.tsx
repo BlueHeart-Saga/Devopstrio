@@ -37,7 +37,7 @@ export default function Prism({
   hoverStrength = 2,
   inertia = 0.05,
   bloom = 1,
-  suspendWhenOffscreen = false,
+  suspendWhenOffscreen = true,
   timeScale = 0.5,
 }: PrismProps) {
   const containerRef = useRef<HTMLDivElement>(null);

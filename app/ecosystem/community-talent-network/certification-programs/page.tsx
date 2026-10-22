@@ -234,17 +234,13 @@ export default function CertificationProgramsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             {/* Left Large Image */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
-                <img src="/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp"
-                  alt="Classroom and engineering lab environment"
-                  className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/80 backdrop-blur-sm border border-zinc-800 text-xs font-mono text-zinc-300">
-                  <span className="text-rose-400 font-bold">✓ Industry-Aligned Certification</span> &bull; Practical Hands-on Sandbox Labs
-                </div>
-              </div>
+            <div className="lg:col-span-6 relative flex items-center justify-center">
+              <img
+                src="/webp/assets/ecosystem/certification-programs/overview.webp"
+                alt="Certification Programs Overview"
+                className="w-full h-auto object-contain rounded-2xl"
+                loading="lazy"
+              />
             </div>
 
             {/* Right Content */}
@@ -523,17 +519,13 @@ export default function CertificationProgramsPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-6">
-              <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 group">
-                <img src="/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp"
-                  alt="Students working on cloud portals and Kubernetes clusters"
-                  className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy" />
-                <div className="p-4 bg-black/80 backdrop-blur-sm border-t border-zinc-800 text-xs font-mono text-zinc-300 flex justify-between items-center">
-                  <span>Live Kubernetes & Azure Sandbox</span>
-                  <span className="text-rose-400 font-bold">Auto-provisioned</span>
-                </div>
-              </div>
+            <div className="lg:col-span-6 flex items-center justify-center">
+              <img
+                src="/webp/assets/ecosystem/certification-programs/practical-engine.webp"
+                alt="Practical Engine"
+                className="w-full h-auto object-contain rounded-2xl"
+                loading="lazy"
+              />
             </div>
 
           </div>

@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { RibbonGraphic } from "@/components/ui/RibbonGraphic";
 
@@ -35,27 +33,9 @@ export function EcosystemTopHero() {
             {/* Description Subtitle - Indented / Offset Right Under Heading */}
             <div className="ml-0 sm:ml-16 md:ml-36 lg:ml-52 max-w-xl">
               <Reveal delay={0.15}>
-                <p className="text-zinc-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-8">
+                <p className="text-zinc-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed">
                   Our interconnected technology ecosystem combining enterprise cloud accelerators, open-source frameworks, strategic hyper-scaler partnerships, and next-gen AI platforms.
                 </p>
-              </Reveal>
-
-              {/* Split Action Button (Hovered Red BG State) */}
-              <Reveal delay={0.25}>
-                <Link
-                  href="#overview"
-                  className="inline-flex items-center bg-zinc-950 hover:bg-rose-600 border border-zinc-700/90 hover:border-rose-500 rounded-md overflow-hidden transition-all duration-300 group cursor-pointer shadow-2xl hover:shadow-[0_0_30px_rgba(225,29,72,0.4)]"
-                >
-                  {/* Left Text */}
-                  <span className="px-7 py-4 text-sm md:text-base font-semibold text-white tracking-wide border-r border-zinc-800 group-hover:border-rose-500/60 transition-colors">
-                    Explore Ecosystem
-                  </span>
-                  
-                  {/* Right Arrow Box */}
-                  <span className="px-4 py-4 text-white bg-zinc-900 group-hover:bg-rose-700 transition-colors flex items-center justify-center">
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                </Link>
               </Reveal>
             </div>
 

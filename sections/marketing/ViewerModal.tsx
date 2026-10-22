@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { X, Video } from "lucide-react";
 import { MarketingResourceItem } from "./config";
 import { isVideo } from "./utils";
@@ -16,6 +16,36 @@ const DEFAULT_BROCHURE_PDF = "/uploads/pdf/1787301408362_Devopstrio_Carousal.pdf
 
 export function ViewerModal({ item, onClose }: { item: MarketingResourceItem; onClose: () => void }) {
   useModal(true, onClose);
+
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
+
+  // Support Chrome / browser Back button navigation to close modal without leaving the site
+  useEffect(() => {
+    let closedByBack = false;
+
+    // Push history entry if not already in modal state
+    if (window.history.state?.modal !== "viewer") {
+      window.history.pushState({ modal: "viewer" }, "");
+    }
+
+    const handlePopState = (e: PopStateEvent) => {
+      closedByBack = true;
+      onCloseRef.current();
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      // Clean up modal state safely without triggering popstate or navigating backwards
+      if (!closedByBack && window.history.state?.modal === "viewer") {
+        window.history.replaceState(null, "");
+      }
+    };
+  }, []);
 
   const isVideoItem = isVideo(item);
   const fileUrl = item.fileUrl || DEFAULT_BROCHURE_PDF;

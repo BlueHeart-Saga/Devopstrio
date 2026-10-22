@@ -130,11 +130,37 @@ const DotField = memo(({
       m.prevY = m.y;
     }
 
-    const speedInterval = setInterval(updateMouseSpeed, 20);
+    let isVisible = true;
+    let observer: IntersectionObserver | null = null;
+    let speedInterval: ReturnType<typeof setInterval> | null = null;
+
+    function startLoop() {
+      if (!rafRef.current) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+      if (!speedInterval) {
+        speedInterval = setInterval(updateMouseSpeed, 20);
+      }
+    }
+
+    function stopLoop() {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+      if (speedInterval) {
+        clearInterval(speedInterval);
+        speedInterval = null;
+      }
+    }
 
     let frameCount = 0;
 
     function tick() {
+      if (!isVisible) {
+        rafRef.current = null;
+        return;
+      }
       frameCount++;
       const dots = dotsRef.current;
       const m = mouseRef.current;
@@ -234,7 +260,25 @@ const DotField = memo(({
     doResize();
     window.addEventListener('resize', resize);
     window.addEventListener('mousemove', onMouseMove, { passive: true });
-    rafRef.current = requestAnimationFrame(tick);
+    startLoop();
+
+    if (typeof IntersectionObserver !== 'undefined' && canvas.parentElement) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          const nowVisible = entry.isIntersecting;
+          if (nowVisible !== isVisible) {
+            isVisible = nowVisible;
+            if (isVisible) {
+              startLoop();
+            } else {
+              stopLoop();
+            }
+          }
+        },
+        { rootMargin: '100px 0px' }
+      );
+      observer.observe(canvas.parentElement);
+    }
 
     rebuildRef.current = () => {
       const { w, h } = sizeRef.current;
@@ -242,8 +286,8 @@ const DotField = memo(({
     };
 
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      clearInterval(speedInterval);
+      stopLoop();
+      observer?.disconnect();
       clearTimeout(resizeTimer);
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', onMouseMove);

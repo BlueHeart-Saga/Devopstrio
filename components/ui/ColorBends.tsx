@@ -229,7 +229,27 @@ export default function ColorBends({
       window.addEventListener("resize", handleResize);
     }
 
+    let isVisible = true;
+    let observer: IntersectionObserver | null = null;
+
+    const startLoop = () => {
+      if (rafRef.current === null) {
+        rafRef.current = requestAnimationFrame(loop);
+      }
+    };
+
+    const stopLoop = () => {
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+
     const loop = () => {
+      if (!isVisible) {
+        rafRef.current = null;
+        return;
+      }
       const dt = clock.getDelta();
       const elapsed = clock.elapsedTime;
       material.uniforms.uTime.value = elapsed;
@@ -248,10 +268,29 @@ export default function ColorBends({
       renderer.render(scene, camera);
       rafRef.current = requestAnimationFrame(loop);
     };
-    rafRef.current = requestAnimationFrame(loop);
+
+    if (typeof IntersectionObserver !== "undefined") {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          const nowVisible = entry.isIntersecting;
+          if (nowVisible !== isVisible) {
+            isVisible = nowVisible;
+            if (isVisible) {
+              startLoop();
+            } else {
+              stopLoop();
+            }
+          }
+        },
+        { rootMargin: "100px 0px" }
+      );
+      observer.observe(container);
+    }
+    startLoop();
 
     return () => {
-      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      stopLoop();
+      if (observer) observer.disconnect();
       if (resizeObserverRef.current) resizeObserverRef.current.disconnect();
       else window.removeEventListener("resize", handleResize);
       geometry.dispose();

@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Mail, ArrowUpRight, FileText, BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
 import { BookReaderModal } from "@/components/ui/BookReaderModal";
+import CategoryPopup from "@/components/CategoryPopup";
 
 type Announcement = {
   id: string | number;
@@ -29,6 +30,7 @@ export function ImperativesBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [isReaderOpen, setIsReaderOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isFading, setIsFading] = useState(false);
 
@@ -83,8 +85,7 @@ export function ImperativesBanner() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      alert(`Thank you! ${email} has been registered.`);
-      setEmail("");
+      setIsPopupOpen(true);
     }
   };
 
@@ -105,6 +106,14 @@ export function ImperativesBanner() {
         onClose={() => setIsReaderOpen(false)}
         report={current}
       />
+
+      {/* ── CENTRALIZED CATEGORY PREFERENCE MODAL ── */}
+      {isPopupOpen && (
+        <CategoryPopup
+          email={email}
+          closePopup={() => setIsPopupOpen(false)}
+        />
+      )}
 
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-8">
         <Reveal>

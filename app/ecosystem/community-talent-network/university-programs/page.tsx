@@ -233,17 +233,13 @@ export default function UniversityProgramsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             {/* Left Large Image */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 group">
-                <img src="/webp/assets/common/e76e125035885aab9c9070ce85df239e-1.webp"
-                  alt="Students working in Devopstrio engineering labs"
-                  className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/80 backdrop-blur-sm border border-zinc-800 text-xs font-mono text-zinc-300">
-                  <span className="text-rose-400 font-bold">✓ Industry-Academia Bridge</span> &bull; Hands-on Cloud & AI Engineering Sandbox
-                </div>
-              </div>
+            <div className="lg:col-span-6 relative flex items-center justify-center">
+              <img
+                src="/webp/assets/ecosystem/university-programs/our-engineering-philosophy.webp"
+                alt="Program Overview"
+                className="w-full h-auto object-contain rounded-2xl"
+                loading="lazy"
+              />
             </div>
 
             {/* Right Overview Text */}
@@ -442,17 +438,13 @@ export default function UniversityProgramsPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-6">
-              <div className="rounded-[24px] overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950 group">
-                <img src="/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp"
-                  alt="Faculty and engineers discussing architecture"
-                  className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy" />
-                <div className="p-4 bg-black/80 backdrop-blur-sm border-t border-zinc-800 text-xs font-mono text-zinc-300 flex justify-between items-center">
-                  <span>Faculty & Engineer Architecture Review</span>
-                  <span className="text-rose-400 font-bold">Devopstrio Campus Hub</span>
-                </div>
-              </div>
+            <div className="lg:col-span-6 flex items-center justify-center">
+              <img
+                src="/webp/assets/ecosystem/university-programs/real-world-co-creation.webp"
+                alt="Real-World Co-Creation"
+                className="w-full h-auto object-contain rounded-2xl"
+                loading="lazy"
+              />
             </div>
 
           </div>
@@ -589,16 +581,15 @@ export default function UniversityProgramsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { name: "Cloud Engineering Lab", img: "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp", focus: "Azure & AWS Landing Zones" },
-              { name: "GenAI & LLM Lab", img: "/webp/assets/common/9d91b93f83e6d4cd494ec13611b3e50e-1.webp", focus: "Vector DBs & Multi-Agents" },
-              { name: "DevOps & K8s Sandbox", img: "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp", focus: "ArgoCD & GitOps Workflows" },
-              { name: "Cybersecurity Perimeter Lab", img: "/webp/assets/common/f317dd71184f5c47d601eeb9508bf92c-1.webp", focus: "Zero Trust & eBPF Networks" },
-              { name: "IoT & Edge Computing Lab", img: "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp", focus: "Edge Data Processing" }
+              { name: "Cloud Engineering Lab", img: "/webp/assets/ecosystem/university-programs/cloud-engineering-lab.webp", focus: "Azure & AWS Landing Zones" },
+              { name: "GenAI & LLM Lab", img: "/webp/assets/ecosystem/university-programs/genai-llm-lab.webp", focus: "Vector DBs & Multi-Agents" },
+              { name: "DevOps & K8s Sandbox", img: "/webp/assets/ecosystem/university-programs/devops-k8s-sandbox.webp", focus: "ArgoCD & GitOps Workflows" },
+              { name: "Cybersecurity Perimeter Lab", img: "/webp/assets/ecosystem/university-programs/cybersecurity-perimeter-lab.webp", focus: "Zero Trust & eBPF Networks" },
+              { name: "IoT & Edge Computing Lab", img: "/webp/assets/ecosystem/university-programs/iot-edge-computing-lab.webp", focus: "Edge Data Processing" }
             ].map((lab, idx) => (
               <div key={idx} className="p-4 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-all space-y-3 group">
-                <div className="h-32 rounded-xl overflow-hidden relative">
-                  <img src={lab.img} alt={lab.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
-                  <div className="absolute inset-0 bg-black/40" />
+                <div className="h-32 rounded-xl overflow-hidden relative bg-black flex items-center justify-center p-2">
+                  <img src={lab.img} alt={lab.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <h4 className="text-xs font-bold text-white group-hover:text-rose-400 transition-colors">{lab.name}</h4>
                 <p className="text-xs text-zinc-400 font-mono">{lab.focus}</p>

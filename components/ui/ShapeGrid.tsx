@@ -224,7 +224,27 @@ const ShapeGrid: React.FC<ShapeGridProps> = ({
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
 
+    let isVisible = true;
+    let observer: IntersectionObserver | null = null;
+
+    const startLoop = () => {
+      if (!requestRef.current) {
+        requestRef.current = requestAnimationFrame(updateAnimation);
+      }
+    };
+
+    const stopLoop = () => {
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+        requestRef.current = null;
+      }
+    };
+
     const updateAnimation = () => {
+      if (!isVisible) {
+        requestRef.current = null;
+        return;
+      }
       const effectiveSpeed = Math.max(speed, 0.1);
       const wrapX = isHex ? hexHoriz * 2 : squareSize;
       const wrapY = isHex ? hexVert : isTri ? squareSize * 2 : squareSize;
@@ -393,11 +413,30 @@ const ShapeGrid: React.FC<ShapeGridProps> = ({
 
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
-    requestRef.current = requestAnimationFrame(updateAnimation);
+    startLoop();
+
+    if (typeof IntersectionObserver !== 'undefined' && canvas.parentElement) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          const nowVisible = entry.isIntersecting;
+          if (nowVisible !== isVisible) {
+            isVisible = nowVisible;
+            if (isVisible) {
+              startLoop();
+            } else {
+              stopLoop();
+            }
+          }
+        },
+        { rootMargin: '100px 0px' }
+      );
+      observer.observe(canvas.parentElement);
+    }
 
     return () => {
+      stopLoop();
+      observer?.disconnect();
       window.removeEventListener('resize', resizeCanvas);
-      if (requestRef.current) cancelAnimationFrame(requestRef.current);
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };

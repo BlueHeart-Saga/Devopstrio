@@ -16,6 +16,7 @@ interface LabShowcaseItem {
   description: string;
   link: string;
   image: string;
+  objectPosition?: string;
 }
 
 const labsShowcaseItems: LabShowcaseItem[] = [
@@ -36,6 +37,7 @@ const labsShowcaseItems: LabShowcaseItem[] = [
     description: "Next-gen GitOps engines, dynamic container provisioning, and automated continuous delivery loops.",
     link: "/ecosystem/innovation-labs/devops-lab",
     image: "/webp/assets/ecosystem/innovation-labs-page-Showcase-_Card/Devops.webp",
+    objectPosition: "center 0%",
   },
   {
     title: "Cybersecurity Lab",
@@ -164,11 +166,9 @@ export const InnovationLabsSection = () => {
       aria-label="Emerging Tech R&D Innovation Labs"
     >
       {/* Ambient glowing radial light */}
-      <motion.div
+      <div
         aria-hidden
-        className="absolute -top-40 -left-40 w-[620px] h-[620px] rounded-full bg-rose-600/10 blur-[140px] pointer-events-none"
-        animate={reduceMotion ? undefined : { x: [0, 100, 0], y: [0, 50, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-40 -left-40 w-[620px] h-[620px] rounded-full bg-[radial-gradient(circle,rgba(225,29,72,0.12)_0%,transparent_70%)] pointer-events-none"
       />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-rose-900/10 via-black to-black opacity-70 pointer-events-none" />
 
@@ -235,6 +235,7 @@ export const InnovationLabsSection = () => {
                         fill
                         unoptimized
                         draggable={false}
+                        style={{ objectPosition: item.objectPosition || "center" }}
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 select-none"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

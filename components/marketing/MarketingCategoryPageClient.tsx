@@ -64,7 +64,7 @@ export function MarketingCategoryPageClient({
       try {
         const isAll = category === "Downloads Library" || category === "Latest Releases" || category === "all";
         const url = isAll ? "/api/marketing-resources" : `/api/marketing-resources?category=${encodeURIComponent(category)}`;
-        const res = await fetch(url);
+        const res = await fetch(url, { cache: "no-store" });
         if (!res.ok) return;
         const data = await res.json();
         if (Array.isArray(data)) {
@@ -126,20 +126,30 @@ export function MarketingCategoryPageClient({
     if (e) e.stopPropagation();
     if (!item.fileUrl) return;
 
-    const downloadUrl = item.fileUrl;
-    const cleanUrl = downloadUrl.split("?")[0].split("#")[0];
+    const cleanUrl = item.fileUrl.split("?")[0].split("#")[0];
     const urlExt = cleanUrl.split(".").pop()?.toLowerCase();
     const nameExt = item.fileName?.split(".").pop()?.toLowerCase();
     const defaultExt = item.type === "PPT" ? "pptx" : item.type === "Word" ? "docx" : item.type === "Video" ? "mp4" : "pdf";
     const ext = urlExt && urlExt.length <= 5 ? urlExt : (nameExt || defaultExt);
+    const cleanDocName = `${item.title.replace(/[^a-zA-Z0-9_-]/g, "_")}.${ext}`;
+
+    // Extract blob filename if from Azure Blob storage to ensure proper attachment stream
+    let fileParam = "";
+    const match = item.fileUrl.match(/marketingstorein\.blob\.core\.windows\.net\/devopstrio\/uploads\/(.*)/i);
+    if (match) {
+      fileParam = match[1];
+    }
+
+    const downloadUrl = fileParam
+      ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(fileParam)}&download=true`
+      : `/api/pdf-proxy?url=${encodeURIComponent(item.fileUrl)}&filename=${encodeURIComponent(cleanDocName)}&download=true`;
 
     setToastMessage(`Downloading "${item.title}" (${ext.toUpperCase()})...`);
     setTimeout(() => setToastMessage(null), 3500);
 
-    const safeTitle = item.title.replace(/[^a-zA-Z0-9_-]/g, "_");
     const a = document.createElement("a");
     a.href = downloadUrl;
-    a.download = `${safeTitle}.${ext}`;
+    a.download = cleanDocName;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

@@ -36,22 +36,28 @@ export function SectionNavbar({
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+    let rafId: number | null = null;
+
+    const performScrollCheck = () => {
       const parentEl = document.getElementById("section-navbar-parent");
       const activeStickyTop = isMainNavbarVisible ? 80 : 16;
+      let nextSticky = false;
       if (parentEl) {
         const parentRect = parentEl.getBoundingClientRect();
-        setIsSticky(parentRect.top <= activeStickyTop);
+        nextSticky = parentRect.top <= activeStickyTop;
       } else if (navRef.current) {
         const rect = navRef.current.getBoundingClientRect();
-        setIsSticky(rect.top <= activeStickyTop + 5);
+        nextSticky = rect.top <= activeStickyTop + 5;
       }
+      setIsSticky((prev) => (prev !== nextSticky ? nextSticky : prev));
 
       // Check if user is scrolled to the very bottom of the page
       const isAtBottom =
         window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
       if (isAtBottom && sections.length > 0) {
-        setActiveSection(sections[sections.length - 1].id);
+        const bottomId = sections[sections.length - 1].id;
+        setActiveSection((prev) => (prev !== bottomId ? bottomId : prev));
         return;
       }
 
@@ -70,20 +76,31 @@ export function SectionNavbar({
       }
 
       if (currentActive) {
-        setActiveSection(currentActive);
+        setActiveSection((prev) => (prev !== currentActive ? currentActive : prev));
       } else if (sections.length > 0) {
         // Fallback: reverse check for the last section scrolled past threshold
+        let fallbackActive = sections[0].id;
         for (let i = sections.length - 1; i >= 0; i--) {
           const el = document.getElementById(sections[i].id);
           if (el) {
             const elRect = el.getBoundingClientRect();
             if (elRect.top <= 240) {
-              setActiveSection(sections[i].id);
-              return;
+              fallbackActive = sections[i].id;
+              break;
             }
           }
         }
-        setActiveSection(sections[0].id);
+        setActiveSection((prev) => (prev !== fallbackActive ? fallbackActive : prev));
+      }
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        rafId = requestAnimationFrame(() => {
+          performScrollCheck();
+          ticking = false;
+        });
       }
     };
 
@@ -110,10 +127,11 @@ export function SectionNavbar({
       setTimeout(() => clearInterval(interval), 3000);
     }
 
-    handleScroll();
+    performScrollCheck();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
       if (unsubLenis) unsubLenis();
     };
   }, [sections, isMainNavbarVisible]);

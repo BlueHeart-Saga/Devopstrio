@@ -171,7 +171,7 @@ export function TechnologyLandscape() {
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* Background ambient radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-rose-600/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(225,29,72,0.08)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 xl:px-12 relative z-10 text-center">
         

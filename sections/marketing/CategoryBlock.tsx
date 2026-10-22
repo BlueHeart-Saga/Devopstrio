@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { MarketingResourceItem, SectionConfig, SECTIONS, INITIAL_LIMIT } from "./config";
 import { MarketingCard } from "./MarketingCard";
 import { DownloadCard } from "./DownloadCard";
@@ -31,21 +31,12 @@ export function CategoryBlock({
   revealId?: string | null;
   highlightId?: string | null;
 }) {
-  const [showAll, setShowAll] = useState(false);
   const Icon = section.icon;
   const layout = section.layout ?? "default";
-  const isShowcase = layout !== "default"; // downloads / latest: always exactly 6, rest lives on a dedicated page
+  const isShowcase = layout !== "default";
 
-  // a "Latest" arrow pointing at a card hidden behind Show more expands this section
-  useEffect(() => {
-    if (!revealId || isShowcase) return;
-    if (items.findIndex((i) => i.id === revealId) >= INITIAL_LIMIT) {
-      setShowAll(true);
-    }
-  }, [revealId, items, isShowcase]);
-
-  const expanded = !isShowcase && (showAll || forceExpand);
-  const visible = expanded ? items : items.slice(0, INITIAL_LIMIT);
+  const isRevealed = !!revealId && items.some((i) => i.id === revealId);
+  const visible = forceExpand || isRevealed ? items : items.slice(0, INITIAL_LIMIT);
   const hidden = items.length - INITIAL_LIMIT;
   const showExplore = section.exploreLink && (!isShowcase || hidden > 0);
 
@@ -102,30 +93,13 @@ export function CategoryBlock({
           )}
         </div>
 
-        {!isShowcase && hidden > 0 && !forceExpand && (
-          <div className="mt-8 flex justify-center">
-            <button
-              type="button"
-              onClick={() => setShowAll((s) => !s)}
-              aria-expanded={showAll}
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900 px-6 py-2.5 text-xs font-semibold text-zinc-300 transition hover:border-rose-500/50 hover:text-white cursor-pointer"
-            >
-              {showAll ? (
-                <>Show less <ChevronUp className="h-4 w-4 text-rose-400" aria-hidden /></>
-              ) : (
-                <>Show {hidden} more <ChevronDown className="h-4 w-4 text-rose-400" aria-hidden /></>
-              )}
-            </button>
-          </div>
-        )}
-
-        {isShowcase && hidden > 0 && section.exploreLink && (
+        {hidden > 0 && section.exploreLink && !forceExpand && (
           <div className="mt-8 flex justify-center">
             <Link
               href={section.exploreLink}
               className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900 px-6 py-2.5 text-xs font-semibold text-zinc-300 transition hover:border-rose-500/50 hover:text-white"
             >
-              {section.exploreLabel || "View all"} ({items.length}) <ChevronRight className="h-4 w-4 text-rose-400" aria-hidden />
+              Show {hidden} more <ChevronRight className="h-4 w-4 text-rose-400" aria-hidden />
             </Link>
           </div>
         )}

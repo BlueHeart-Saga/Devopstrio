@@ -53,8 +53,8 @@ const CloudNativeOverview = () => {
         
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">MODERN ENGINEERING</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">MODERN ENGINEERING</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
               Building Modern Applications for the Cloud Era
             </h2>
             
@@ -71,10 +71,10 @@ const CloudNativeOverview = () => {
                     <div className="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center mb-6">
                       <Icon size={20} />
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 tracking-tight group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 tracking-tight group-hover:text-rose-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-zinc-400 leading-relaxed font-normal">
+                    <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -106,8 +106,8 @@ const WhyCloudNative = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">EVOLUTION</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">EVOLUTION</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               Why Organizations Are Moving to Cloud-Native
             </h2>
           </div>
@@ -162,10 +162,10 @@ const CloudNativeArchitecture = () => {
       <div className="max-w-6xl mx-auto px-6 xl:px-8 relative z-10">
         <Reveal>
           <div className="text-center mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-3 block">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-3 block">
               REFERENCE ARCHITECTURE
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-16">
               Enterprise Cloud-Native Architecture
             </h2>
           </div>
@@ -306,8 +306,8 @@ const CloudNativeCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ENGINEERING SUITE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Our Cloud-Native Capabilities</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ENGINEERING SUITE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Our Cloud-Native Capabilities</h2>
           </div>
         </Reveal>
 
@@ -325,9 +325,9 @@ const CloudNativeCapabilities = () => {
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <span className="text-xs font-semibold tracking-[0.2em] text-rose-400 font-mono uppercase mb-2 block">{item.tag}</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   
                   <Link 
                     href={item.href}
@@ -390,8 +390,8 @@ const DevelopmentLifecycle = () => {
       <div className="max-w-7xl mx-auto px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">LIFECYCLE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Cloud-Native Development Lifecycle</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">LIFECYCLE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Cloud-Native Development Lifecycle</h2>
           </div>
         </Reveal>
 
@@ -428,8 +428,8 @@ const MicroservicesSection = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">MODULARITY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Modular Applications Built for Scale</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">MODULARITY</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">Modular Applications Built for Scale</h2>
           </div>
         </Reveal>
 
@@ -445,7 +445,7 @@ const MicroservicesSection = () => {
                   <Box className="w-4 h-4 text-zinc-600 group-hover:text-rose-400 transition-colors" />
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-zinc-200 group-hover:text-white transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-white transition-colors">
                     {item}
                   </h3>
                 </div>
@@ -472,8 +472,8 @@ const PlatformEngineering = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">PRODUCTIVITY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Accelerating Developer Productivity</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">PRODUCTIVITY</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">Accelerating Developer Productivity</h2>
           </div>
         </Reveal>
 
@@ -490,7 +490,7 @@ const PlatformEngineering = () => {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-zinc-200 group-hover:text-emerald-300 transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-emerald-300 transition-colors">
                     {item}
                   </h3>
                 </div>
@@ -517,8 +517,8 @@ const DevSecOpsSection = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SECURITY</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Secure Automation Across Deployments</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">SECURITY</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">Secure Automation Across Deployments</h2>
           </div>
         </Reveal>
 
@@ -535,7 +535,7 @@ const DevSecOpsSection = () => {
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-xs sm:text-sm font-semibold tracking-wide text-zinc-200 group-hover:text-blue-300 transition-colors">
+                  <h3 className="text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-blue-300 transition-colors">
                     {item}
                   </h3>
                 </div>
@@ -618,8 +618,8 @@ const TechnologyStack = () => {
       <div className="max-w-5xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">ECOSYSTEM</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Technologies We Use</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ECOSYSTEM</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Technologies We Use</h2>
           </div>
         </Reveal>
 
@@ -678,8 +678,8 @@ const BusinessOutcomes = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Business Outcomes</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">BUSINESS VALUE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">Business Outcomes</h2>
           </div>
         </Reveal>
 
@@ -736,8 +736,8 @@ const IndustryUseCases = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">SOLUTIONS</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">SOLUTIONS</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               Industry Use Cases
             </h2>
           </div>
@@ -757,9 +757,9 @@ const IndustryUseCases = () => {
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-rose-500 uppercase mb-2 block">{item.tag}</span>
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <span className="text-xs font-semibold tracking-[0.2em] text-rose-400 font-mono uppercase mb-2 block">{item.tag}</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
                   
                   <Link 
                     href={item.href}
@@ -817,8 +817,8 @@ const WhyChooseCloudNative = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-rose-500 mb-4 block">WHY DEVOPSTRIO</span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">Why Choose Devopstrio Cloud-Native</h2>
+            <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">WHY DEVOPSTRIO</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">Why Choose Devopstrio Cloud-Native</h2>
           </div>
         </Reveal>
 
@@ -898,14 +898,6 @@ export default function CloudNativeTechnologyStackPage() {
           </>
         }
         subtitle="Build scalable, resilient, and cloud-first applications using containers, Kubernetes, microservices, DevSecOps, and platform engineering."
-        shapeGrid={true}
-        shapeGridSpeed={0.5}
-        shapeGridSquareSize={50}
-        shapeGridDirection="diagonal"
-        shapeGridBorderColor="rgba(255, 255, 255, 0.08)"
-        shapeGridHoverFillColor="rgba(225, 29, 72, 0.2)"
-        shapeGridShape="square"
-        shapeGridHoverTrailAmount={3}
         dotField={true}
         dotFieldProps={{
           dotRadius: 2,

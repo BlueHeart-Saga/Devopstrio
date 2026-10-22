@@ -170,11 +170,11 @@ export function PartnerShowcase() {
       {/* Ambient background glows */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/4 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-rose-600/5 blur-[150px]"
+        className="pointer-events-none absolute left-1/2 top-1/4 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(225,29,72,0.08)_0%,transparent_70%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute right-10 bottom-10 h-[500px] w-[500px] rounded-full bg-rose-500/5 blur-[130px]"
+        className="pointer-events-none absolute right-10 bottom-10 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(225,29,72,0.06)_0%,transparent_70%)]"
       />
       <div
         aria-hidden
