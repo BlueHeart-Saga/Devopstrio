@@ -838,7 +838,7 @@ const RelatedSolutions = () => {
                 <h3 className="text-base font-bold text-white mb-2 tracking-tight">{item.title}</h3>
                 <p className="text-xs text-zinc-400 leading-relaxed font-bold mb-4">{item.desc}</p>
                 <Link href="/contact#contact-form" className="text-xs text-rose-500 font-bold hover:underline flex items-center gap-1">
-                  Learn More <ArrowUpRight size={12} />
+                  Contact Our Team <ArrowUpRight size={12} />
                 </Link>
               </div>
             </Reveal>
