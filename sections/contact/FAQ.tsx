@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
-import { Plus, Minus, ArrowUpRight } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import Link from "next/link";
 
 interface FAQItem {
@@ -113,21 +113,6 @@ export function FAQ() {
             );
           })}
         </div>
-
-        {/* Below FAQ callout */}
-        <Reveal delay={0.2}>
-          <div className="border border-zinc-900 bg-zinc-950/20 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm md:text-base font-semibold text-zinc-200 group-hover:text-white transition-colors">
-              Still have questions? Don&apos;t sit with them. Reach out to our team — we respond to every message personally.
-            </p>
-            <a
-              href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-              className="gap-2 inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-xs font-bold tracking-wider uppercase border border-zinc-850 hover:border-zinc-750 bg-zinc-950/60 hover:bg-zinc-900 text-white transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Contact Our Engineers <ArrowUpRight size={12} />
-            </a>
-          </div>
-        </Reveal>
 
       </div>
     </section>
