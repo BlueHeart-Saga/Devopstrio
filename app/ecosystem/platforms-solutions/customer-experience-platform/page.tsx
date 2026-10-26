@@ -705,9 +705,9 @@ export default function CustomerExperiencePlatformPage() {
         badge="Customer Experience Platform"
         title={
           <>
-            Customer Experience <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-rose-700">
-              Platform
+            Devopstrio <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-rose-400 to-red-600 font-bold">
+              Customer Experience Platform
             </span>
           </>
         }
