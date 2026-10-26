@@ -3,23 +3,23 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./GlobalEarthHero.module.css";
 
-// Sun direction in WORLD space. The globe spins under it, so the day/night line moves naturally.
-const SUN_DIR: [number, number, number] = [1.0, 0.42, 0.9];
-const EARTH_RADIUS = 8.6;
-const AXIAL_TILT = -0.41; // ~23.4 degrees, real Earth tilt
+// Sun direction in WORLD space. Day/night line moves as the globe spins.
+const SUN_DIR: [number, number, number] = [1.0, 0.3, 0.75];
+const EARTH_R = 8.6;
+const AXIAL_TILT = -0.41; // ~23.4 degrees
 
-// ---------- Shaders ----------
+// ---------- Earth surface ----------
 
 const earthVert = /* glsl */ `
   varying vec2 vUv;
-  varying vec3 vWorldNormal;
-  varying vec3 vWorldPos;
+  varying vec3 vN;
+  varying vec3 vP;
 
   void main() {
     vUv = uv;
     vec4 wp = modelMatrix * vec4(position, 1.0);
-    vWorldPos = wp.xyz;
-    vWorldNormal = normalize(mat3(modelMatrix) * normal);
+    vP = wp.xyz;
+    vN = normalize(mat3(modelMatrix) * normal);
     gl_Position = projectionMatrix * viewMatrix * wp;
   }
 `;
@@ -32,94 +32,93 @@ const earthFrag = /* glsl */ `
   uniform vec3 uCamPos;
 
   varying vec2 vUv;
-  varying vec3 vWorldNormal;
-  varying vec3 vWorldPos;
+  varying vec3 vN;
+  varying vec3 vP;
 
   void main() {
-    vec3 N = normalize(vWorldNormal);
+    vec3 N = normalize(vN);
     vec3 L = normalize(uSunDir);
-    vec3 V = normalize(uCamPos - vWorldPos);
+    vec3 V = normalize(uCamPos - vP);
     float ndl = dot(N, L);
 
+    // Day texture is sRGB, so the sample is already linear
     vec3 albedo = texture2D(uDay, vUv).rgb;
-    float ocean = texture2D(uSpec, vUv).r;
+    float water = texture2D(uSpec, vUv).r;
 
-    // Day side: soft terminator, tiny ambient so the dark side is not pure black
-    float dayAmt = smoothstep(-0.1, 0.3, ndl);
-    vec3 day = albedo * (0.03 + 1.15 * max(ndl, 0.0));
+    float lit = smoothstep(-0.12, 0.25, ndl);
+    vec3 col = albedo * (0.025 + 1.25 * max(ndl, 0.0));
 
-    // Sun glint on oceans
+    // Sun glint on oceans only
     vec3 H = normalize(L + V);
-    float glint = pow(max(dot(N, H), 0.0), 60.0) * ocean * dayAmt;
-    day += vec3(1.0, 0.95, 0.85) * glint * 0.5;
+    float glint = pow(max(dot(N, H), 0.0), 90.0) * water * step(0.0, ndl);
+    col += vec3(1.0, 0.96, 0.9) * glint * 0.9;
 
-    // Night side: city lights, warm tint
-    float nightAmt = 1.0 - smoothstep(-0.08, 0.22, ndl);
-    vec3 city = texture2D(uNight, vUv).rgb * vec3(1.0, 0.8, 0.5) * 1.6;
+    // Atmosphere scattering at the limb (blue edge on the lit side)
+    float rim = pow(1.0 - max(dot(N, V), 0.0), 3.5);
+    col += vec3(0.22, 0.5, 1.0) * rim * (0.08 + 0.9 * lit) * 0.55;
 
-    vec3 col = day + city * nightAmt;
+    // Night side city lights
+    float night = 1.0 - smoothstep(-0.1, 0.12, ndl);
+    vec3 city = texture2D(uNight, vUv).rgb * vec3(1.0, 0.78, 0.45) * 2.2;
+    col += city * night;
 
-    // Limb brightening (atmosphere seen at the edge of the disc)
-    float rim = pow(1.0 - max(dot(N, V), 0.0), 3.0);
-    col += vec3(0.15, 0.4, 0.9) * rim * 0.35 * dayAmt;
-
-    gl_FragColor = vec4(col, 1.0);
-    #include <tonemapping_fragment>
-    #include <colorspace_fragment>
+    gl_FragColor = vec4(pow(col, vec3(1.0 / 2.2)), 1.0);
   }
 `;
+
+// ---------- Clouds ----------
 
 const cloudFrag = /* glsl */ `
   uniform sampler2D uClouds;
   uniform vec3 uSunDir;
 
   varying vec2 vUv;
-  varying vec3 vWorldNormal;
+  varying vec3 vN;
 
   void main() {
-    vec3 N = normalize(vWorldNormal);
+    vec3 N = normalize(vN);
     float ndl = dot(N, normalize(uSunDir));
-    float lit = smoothstep(-0.2, 0.35, ndl);
+    float lit = max(ndl, 0.0);
 
-    float c = texture2D(uClouds, vUv).r;
-    c = smoothstep(0.25, 0.9, c); // crisper cloud edges
+    float c = smoothstep(0.2, 0.85, texture2D(uClouds, vUv).r);
 
-    vec3 col = mix(vec3(0.10, 0.14, 0.22), vec3(1.0), lit);
-    gl_FragColor = vec4(col, c * 0.85);
-    #include <tonemapping_fragment>
-    #include <colorspace_fragment>
+    vec3 col = vec3(0.92, 0.95, 1.0) * (0.06 + 1.1 * lit);
+    gl_FragColor = vec4(pow(col, vec3(1.0 / 2.2)), c * 0.9);
   }
 `;
 
-const atmosVert = /* glsl */ `
-  varying vec3 vNormal;
-  varying vec3 vWorldN;
+// ---------- Atmosphere halo (alpha-based, no hard rectangle) ----------
+
+const haloVert = /* glsl */ `
+  varying vec3 vN;
+  varying vec3 vWN;
 
   void main() {
-    vNormal = normalize(normalMatrix * normal);
-    vWorldN = normalize(mat3(modelMatrix) * normal);
+    vN = normalize(normalMatrix * normal);
+    vWN = normalize(mat3(modelMatrix) * normal);
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
 `;
 
-const atmosFrag = /* glsl */ `
+const haloFrag = /* glsl */ `
   uniform vec3 uColor;
   uniform vec3 uSunDir;
-  uniform float uOffset;
-  uniform float uPower;
+  uniform float uC;
+  uniform float uP;
   uniform float uStrength;
 
-  varying vec3 vNormal;
-  varying vec3 vWorldN;
+  varying vec3 vN;
+  varying vec3 vWN;
 
   void main() {
-    float intensity = pow(max(uOffset - dot(vNormal, vec3(0.0, 0.0, 1.0)), 0.0), uPower);
-    // Glow is brightest on the sunlit side, faint on the night side
-    float sunSide = smoothstep(-0.35, 0.55, dot(vWorldN, normalize(uSunDir)));
-    float a = intensity * uStrength * (0.15 + 0.85 * sunSide);
-    gl_FragColor = vec4(uColor * a, 1.0);
-    #include <tonemapping_fragment>
-    #include <colorspace_fragment>
+    // Bright at the silhouette, zero in the middle of the disc
+    float f = pow(max(0.0, uC - dot(vN, vec3(0.0, 0.0, 1.0))), uP);
+
+    // Brighter on the sunlit side, faint on the night side
+    float sunSide = smoothstep(-0.4, 0.6, dot(vWN, normalize(uSunDir)));
+    float a = clamp(f * uStrength * (0.2 + 0.8 * sunSide), 0.0, 1.0);
+
+    gl_FragColor = vec4(uColor, a);
   }
 `;
 
@@ -150,22 +149,16 @@ export default function GlobalEarthHero() {
 
         const sunDir = new THREE.Vector3(...SUN_DIR).normalize();
 
-        // Scene & camera
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 200);
         camera.position.set(0, 0, 18);
 
-        // Renderer
         const renderer = new THREE.WebGLRenderer({
           alpha: true,
           antialias: true,
-          premultipliedAlpha: true,
           powerPreference: "high-performance",
         });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-        renderer.outputColorSpace = THREE.SRGBColorSpace;
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.05;
         renderer.setClearColor(0x000000, 0);
         renderer.domElement.setAttribute("aria-hidden", "true");
         renderer.domElement.style.width = "100%";
@@ -174,7 +167,6 @@ export default function GlobalEarthHero() {
 
         const maxAniso = renderer.capabilities.getMaxAnisotropy();
 
-        // Textures
         const loader = new THREE.TextureLoader();
         const load = (url: string) =>
           new Promise<InstanceType<typeof THREE.Texture>>((resolve, reject) => {
@@ -196,14 +188,13 @@ export default function GlobalEarthHero() {
           return;
         }
 
+        // Color textures are sRGB; masks stay linear data
         day.colorSpace = THREE.SRGBColorSpace;
         night.colorSpace = THREE.SRGBColorSpace;
-        // spec and clouds are data masks, keep them linear (NoColorSpace)
         allTextures.forEach((t) => {
           t.anisotropy = Math.min(maxAniso, 8);
         });
 
-        // World & globe
         const world = new THREE.Group();
         world.position.y = -8.7;
         scene.add(world);
@@ -213,7 +204,7 @@ export default function GlobalEarthHero() {
         world.add(globe);
 
         // 1. Earth surface
-        const surfaceGeo = new THREE.SphereGeometry(EARTH_RADIUS, 192, 144);
+        const surfaceGeo = new THREE.SphereGeometry(EARTH_R, 192, 144);
         const earthMat = new THREE.ShaderMaterial({
           uniforms: {
             uDay: { value: day },
@@ -228,8 +219,8 @@ export default function GlobalEarthHero() {
         const surface = new THREE.Mesh(surfaceGeo, earthMat);
         globe.add(surface);
 
-        // 2. Clouds (lit by the same sun)
-        const cloudGeo = new THREE.SphereGeometry(EARTH_RADIUS * 1.006, 160, 120);
+        // 2. Clouds
+        const cloudGeo = new THREE.SphereGeometry(EARTH_R * 1.006, 160, 120);
         const cloudMat = new THREE.ShaderMaterial({
           uniforms: {
             uClouds: { value: clouds },
@@ -243,22 +234,20 @@ export default function GlobalEarthHero() {
         const cloudSphere = new THREE.Mesh(cloudGeo, cloudMat);
         globe.add(cloudSphere);
 
-        // 3. Atmosphere: tight bright rim + soft outer halo
-        const makeAtmos = (scale: number, color: number, offset: number, power: number, strength: number) => {
-          const geo = new THREE.SphereGeometry(EARTH_RADIUS * scale, 128, 96);
+        // 3. Atmosphere halos (tight inner rim + soft outer glow)
+        const makeHalo = (scale: number, color: number, c: number, p: number, strength: number) => {
+          const geo = new THREE.SphereGeometry(EARTH_R * scale, 128, 96);
           const mat = new THREE.ShaderMaterial({
             uniforms: {
               uColor: { value: new THREE.Color(color) },
               uSunDir: { value: sunDir },
-              uOffset: { value: offset },
-              uPower: { value: power },
+              uC: { value: c },
+              uP: { value: p },
               uStrength: { value: strength },
             },
-            vertexShader: atmosVert,
-            fragmentShader: atmosFrag,
-            side: THREE.BackSide,
-            blending: THREE.AdditiveBlending,
-            premultipliedAlpha: true,
+            vertexShader: haloVert,
+            fragmentShader: haloFrag,
+            side: THREE.FrontSide,
             transparent: true,
             depthWrite: false,
           });
@@ -267,15 +256,14 @@ export default function GlobalEarthHero() {
           return { geo, mat };
         };
 
-        const innerAtmos = makeAtmos(1.02, 0x62b8ff, 0.62, 4.2, 1.35);
-        const outerAtmos = makeAtmos(1.12, 0x2a7fff, 0.6, 2.4, 0.9);
+        const innerHalo = makeHalo(1.03, 0x6ec6ff, 0.7, 4.0, 1.4);
+        const outerHalo = makeHalo(1.14, 0x2a7fff, 0.6, 2.0, 0.6);
 
         // 4. Starfield
         const starGeo = new THREE.BufferGeometry();
         const starCount = 500;
         const starPos = new Float32Array(starCount * 3);
         for (let i = 0; i < starCount; i++) {
-          // random points on a far spherical shell, in the upper hemisphere
           const theta = Math.random() * Math.PI * 2;
           const phi = Math.acos(Math.random() * 0.9 + 0.1);
           const r = 40 + Math.random() * 20;
@@ -289,7 +277,6 @@ export default function GlobalEarthHero() {
           color: 0xbfd8ff,
           transparent: true,
           opacity: 0.8,
-          sizeAttenuation: true,
         });
         const starfield = new THREE.Points(starGeo, starMat);
         scene.add(starfield);
@@ -311,10 +298,8 @@ export default function GlobalEarthHero() {
         let targetX = 0;
         let targetY = 0;
         const onMouseMove = (e: MouseEvent) => {
-          const nx = (e.clientX / window.innerWidth) * 2 - 1;
-          const ny = (e.clientY / window.innerHeight) * 2 - 1;
-          targetX = nx * 0.45;
-          targetY = ny * 0.25;
+          targetX = ((e.clientX / window.innerWidth) * 2 - 1) * 0.45;
+          targetY = ((e.clientY / window.innerHeight) * 2 - 1) * 0.25;
         };
         window.addEventListener("mousemove", onMouseMove, { passive: true });
 
@@ -338,7 +323,6 @@ export default function GlobalEarthHero() {
 
           const dt = Math.min(clock.getDelta(), 0.05);
 
-          // Earth spins (real-ish speed, slightly exaggerated for visibility), clouds drift a bit faster
           surface.rotation.y += dt * 0.012;
           cloudSphere.rotation.y += dt * 0.016;
 
@@ -364,10 +348,10 @@ export default function GlobalEarthHero() {
           earthMat.dispose();
           cloudGeo.dispose();
           cloudMat.dispose();
-          innerAtmos.geo.dispose();
-          innerAtmos.mat.dispose();
-          outerAtmos.geo.dispose();
-          outerAtmos.mat.dispose();
+          innerHalo.geo.dispose();
+          innerHalo.mat.dispose();
+          outerHalo.geo.dispose();
+          outerHalo.mat.dispose();
           starGeo.dispose();
           starMat.dispose();
           allTextures.forEach((t) => t.dispose());
