@@ -79,20 +79,10 @@ export const SupportHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base md:text-[19px] text-zinc-400 max-w-[540px] mx-auto mb-10 leading-relaxed font-medium"
+            className="text-base md:text-[19px] text-zinc-400 max-w-[540px] mx-auto leading-relaxed font-medium"
           >
             Enterprise support ensures every request lands exactly where it should, no matter the platform or device. Learn more about our <Link href="/services/managed-services" className="text-white hover:underline font-bold">managed services</Link> model.
           </motion.p>
-
-          <motion.a
-            href="#support-request"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-white hover:bg-zinc-200 text-black rounded-full font-semibold transition-all hover:scale-105 pointer-events-auto shadow-[0_10px_30px_rgba(255,255,255,0.1)]"
-          >
-            Learn more
-          </motion.a>
         </div>
 
       </div>
