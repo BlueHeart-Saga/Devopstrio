@@ -353,13 +353,19 @@ export function PlatformCategories() {
     return () => clearInterval(interval);
   }, [isPaused, categories]);
 
-  // Center active tab in scroll container whenever active tab changes
+  // Center active tab strictly inside the tab scroll container without scrolling the browser window
   useEffect(() => {
-    if (activeTabRef.current) {
-      activeTabRef.current.scrollIntoView({
+    if (activeTabRef.current && tabsContainerRef.current) {
+      const container = tabsContainerRef.current;
+      const tab = activeTabRef.current;
+      const tabLeft = tab.offsetLeft;
+      const tabWidth = tab.offsetWidth;
+      const containerWidth = container.clientWidth;
+
+      const targetScroll = tabLeft - (containerWidth / 2) + (tabWidth / 2);
+      container.scrollTo({
+        left: targetScroll,
         behavior: "smooth",
-        inline: "center",
-        block: "nearest",
       });
     }
   }, [activeCategory]);
@@ -382,17 +388,17 @@ export function PlatformCategories() {
 
         {/* Tab Pills Selector with Navigation Controls */}
         <div
-          className="relative max-w-5xl mx-auto mb-12"
+          className="relative max-w-6xl mx-auto mb-12"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center justify-between gap-3">
             {/* Left Prev Navigation Button */}
             <button
               type="button"
               onClick={handlePrevTab}
               aria-label="Previous platform category"
-              className="flex shrink-0 w-9 h-9 items-center justify-center rounded-full bg-zinc-950/80 border border-zinc-800/80 text-zinc-400 hover:text-white hover:border-rose-500/50 hover:bg-zinc-900 transition-all shadow-md cursor-pointer group"
+              className="flex shrink-0 w-9 h-9 items-center justify-center rounded-full bg-zinc-950/80 border border-zinc-800/80 text-zinc-400 hover:text-white hover:border-rose-500/50 hover:bg-zinc-900 transition-all shadow-md cursor-pointer group z-10"
             >
               <ChevronLeft size={18} className="transition-transform group-hover:-translate-x-0.5" />
             </button>
@@ -400,7 +406,7 @@ export function PlatformCategories() {
             {/* Scrollable Tab Pills Container */}
             <div
               ref={tabsContainerRef}
-              className="flex items-center gap-2 overflow-x-auto scrollbar-hide scroll-smooth py-2 px-1 w-full justify-start md:justify-center border-b border-zinc-900/60"
+              className="flex items-center gap-2.5 overflow-x-auto scrollbar-hide scroll-smooth py-2.5 px-3 w-full justify-start xl:justify-center border-b border-zinc-900/60"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {categories.map((cat) => {
@@ -428,7 +434,7 @@ export function PlatformCategories() {
               type="button"
               onClick={handleNextTab}
               aria-label="Next platform category"
-              className="flex shrink-0 w-9 h-9 items-center justify-center rounded-full bg-zinc-950/80 border border-zinc-800/80 text-zinc-400 hover:text-white hover:border-rose-500/50 hover:bg-zinc-900 transition-all shadow-md cursor-pointer group"
+              className="flex shrink-0 w-9 h-9 items-center justify-center rounded-full bg-zinc-950/80 border border-zinc-800/80 text-zinc-400 hover:text-white hover:border-rose-500/50 hover:bg-zinc-900 transition-all shadow-md cursor-pointer group z-10"
             >
               <ChevronRight size={18} className="transition-transform group-hover:translate-x-0.5" />
             </button>
