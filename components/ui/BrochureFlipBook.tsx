@@ -353,25 +353,6 @@ export function BrochureFlipBook({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pdf, mode, spreadIndex, total, single, Math.round(scale * 10), metadata, loadPage, spreadForIndex]);
 
-  // When in PDF mode, load document pages with crisp high-DPI resolution for razor-sharp view
-  useEffect(() => {
-    if (!pdf || mode !== "pdf" || total < 1) return;
-    let cancelled = false;
-    const run = async () => {
-      for (let n = 1; n <= total; n++) {
-        if (cancelled) break;
-        const pageDims = await metadata(n);
-        if (cancelled) break;
-        const rawWidth = pageDims.width || 595;
-        const pWidth = Math.min(840, rawWidth) * zoom;
-        const highDpiTargetScale = Math.max(1.8, (pWidth / rawWidth) * 1.5);
-        await loadPage(n, highDpiTargetScale);
-      }
-    };
-    void run().catch((e) => console.warn("PDF scroll mode load error", e));
-    return () => { cancelled = true; };
-  }, [pdf, mode, total, zoom, metadata, loadPage]);
-
   const navigate = useCallback(async (direction: Direction) => {
     if (turningRef.current || !pdfRef.current || total < 1) return;
     const destinationIndex = spreadIndex + (direction === "next" ? 1 : -1);
@@ -446,6 +427,13 @@ export function BrochureFlipBook({
     ? `${window.location.origin}${blobFileParam ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(blobFileParam)}` : `/api/pdf-proxy?url=${encodeURIComponent(effectiveFileUrl)}&filename=${encodeURIComponent(cleanDocName)}`}`
     : effectiveFileUrl;
 
+  const rawInlinePdfUrl = blobFileParam
+    ? `/documents/${encodeURIComponent(cleanDocName)}?file=${encodeURIComponent(blobFileParam)}`
+    : effectiveFileUrl.startsWith("http://") || effectiveFileUrl.startsWith("https://")
+    ? `/api/pdf-proxy?url=${encodeURIComponent(effectiveFileUrl)}&filename=${encodeURIComponent(cleanDocName)}`
+    : effectiveFileUrl;
+  const viewerPdfUrl = `${rawInlinePdfUrl.split("#")[0]}#toolbar=1&navpanes=1`;
+
   return (
     <div ref={rootRef} className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-[#DDDDDD] font-sans text-white">
       <header className="z-30 flex min-h-14 shrink-0 flex-wrap items-center justify-between gap-2 border-b border-white/10 bg-[#090909] px-3 py-2 sm:px-6">
@@ -458,11 +446,13 @@ export function BrochureFlipBook({
             <button type="button" onClick={() => setMode("flipbook")} aria-pressed={mode === "flipbook"} className={`rounded-md px-2.5 py-1.5 text-xs font-medium ${mode === "flipbook" ? "bg-rose-600" : "text-zinc-400 hover:text-white"}`}><BookOpen className="mr-1 inline h-3.5 w-3.5" />Flipbook</button>
             <button type="button" onClick={() => setMode("pdf")} aria-pressed={mode === "pdf"} className={`rounded-md px-2.5 py-1.5 text-xs font-medium ${mode === "pdf" ? "bg-rose-600" : "text-zinc-400 hover:text-white"}`}><FileText className="mr-1 inline h-3.5 w-3.5" />PDF View</button>
           </div>
-          <div className="hidden items-center rounded-lg border border-white/10 bg-zinc-900 sm:flex">
-            <button type="button" aria-label="Zoom out" onClick={() => setZoom(z => Math.max(0.5, z - 0.25))} className="p-2"><ZoomOut size={16} /></button>
-            <span className="min-w-12 text-center text-xs">{Math.round(zoom * 100)}%</span>
-            <button type="button" aria-label="Zoom in" onClick={() => setZoom(z => Math.min(2, z + 0.25))} className="p-2"><ZoomIn size={16} /></button>
-          </div>
+          {mode === "flipbook" && (
+            <div className="hidden items-center rounded-lg border border-white/10 bg-zinc-900 sm:flex">
+              <button type="button" aria-label="Zoom out" onClick={() => setZoom(z => Math.max(0.5, z - 0.25))} className="p-2"><ZoomOut size={16} /></button>
+              <span className="min-w-12 text-center text-xs">{Math.round(zoom * 100)}%</span>
+              <button type="button" aria-label="Zoom in" onClick={() => setZoom(z => Math.min(2, z + 0.25))} className="p-2"><ZoomIn size={16} /></button>
+            </div>
+          )}
           <button
             type="button"
             onClick={async () => {
@@ -494,25 +484,31 @@ export function BrochureFlipBook({
 
       <main className="relative min-h-0 flex-1 overflow-hidden">
         {mode === "pdf" ? (
-          <div className="relative h-full w-full overflow-y-auto bg-[#262626] p-4 sm:p-8 flex flex-col items-center gap-6">
-            {Array.from({ length: total }, (_, i) => i + 1).map((pageNum) => {
-              const pDims = dims(pageNum);
-              const baseWidth = Math.min(840, pDims.width || 600);
-              const pWidth = baseWidth * zoom;
-              const pHeight = (pDims.width ? (baseWidth / pDims.width) * pDims.height : 840) * zoom;
-              return (
-                <div
-                  key={`pdf-scroll-page-${pageNum}`}
-                  className="relative shadow-[0_10px_30px_rgba(0,0,0,0.5)] rounded-sm overflow-hidden bg-white shrink-0 transition-all duration-200"
-                  style={{ width: pWidth, height: pHeight }}
-                >
-                  <PageFace asset={shown(pageNum)} label={`Page ${pageNum}`} />
-                  <div className="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded bg-black/75 backdrop-blur-sm text-[11px] font-mono text-white select-none shadow pointer-events-none">
-                    {pageNum} / {total}
-                  </div>
+          <div className="relative h-full w-full bg-[#18181b]">
+            <object
+              data={viewerPdfUrl}
+              type="application/pdf"
+              className="h-full w-full border-0"
+              title={pdfTitle}
+            >
+              <iframe
+                src={viewerPdfUrl}
+                className="h-full w-full border-0"
+                title={pdfTitle}
+              >
+                <div className="flex h-full w-full flex-col items-center justify-center gap-4 p-6 text-center text-zinc-300">
+                  <p className="text-sm">Your browser does not support embedded PDF viewing.</p>
+                  <a
+                    href={rawInlinePdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg bg-rose-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rose-500"
+                  >
+                    Open PDF in New Tab
+                  </a>
                 </div>
-              );
-            })}
+              </iframe>
+            </object>
           </div>
         ) : (
           <div ref={stageRef} className="relative h-full w-full overflow-hidden bg-[#DDDDDD]">
