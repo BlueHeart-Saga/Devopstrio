@@ -763,9 +763,9 @@ export default function GoogleCloudPartnershipPage() {
       <VendorServicesMarquee vendor="google-cloud" />
       <Why />
       <Services />
+      <TransformationMetricsSection />
       <TransformationStack />
       <Process />
-      <TransformationMetricsSection />
       <Industries />
       <FAQ faqs={faqs} />
       <RepresentativeCTA

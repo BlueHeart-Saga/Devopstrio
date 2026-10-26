@@ -760,9 +760,9 @@ export default function ServiceNowPartnershipPage() {
       <VendorServicesMarquee vendor="servicenow" />
       <Why />
       <Services />
+      <TransformationMetricsSection />
       <TransformationStack />
       <Process />
-      <TransformationMetricsSection />
       <Industries />
       <FAQ faqs={faqs} />
       <RepresentativeCTA

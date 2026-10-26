@@ -759,9 +759,9 @@ export default function AzurePartnershipPage() {
       <VendorServicesMarquee vendor="microsoft" />
       <Why />
       <Services />
+      <TransformationMetricsSection />
       <TransformationStack />
       <Process />
-      <TransformationMetricsSection />
       <Industries />
       <FAQ faqs={faqs} />
       <RepresentativeCTA

@@ -642,16 +642,13 @@ export function VendorServicesMarquee({ vendor }: { vendor: VendorKey }) {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Headings */}
-        <div className="mb-12 text-center max-w-3xl mx-auto">
+        <div className="mb-10 text-center max-w-3xl mx-auto">
           <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
             {data.kicker}
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white">
             {data.title} <span className="text-rose-500">{data.titleHighlight}</span>
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed font-normal">
-            {data.desc}
-          </p>
         </div>
       </div>
 

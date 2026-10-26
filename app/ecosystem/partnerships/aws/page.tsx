@@ -764,9 +764,9 @@ export default function AWSPartnershipPage() {
       <VendorServicesMarquee vendor="aws" />
       <Why />
       <Services />
+      <TransformationMetricsSection />
       <TransformationStack />
       <Process />
-      <TransformationMetricsSection />
       <Industries />
       <FAQ faqs={faqs} />
       <RepresentativeCTA
