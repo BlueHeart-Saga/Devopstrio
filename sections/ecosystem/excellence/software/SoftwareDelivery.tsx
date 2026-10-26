@@ -58,7 +58,7 @@ export function SoftwareDelivery() {
             <div className="lg:col-span-5">
               <Reveal>
                 <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">ASSURANCE</span>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">Quality Engineering</h2>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Quality Engineering</h2>
                 
               </Reveal>
             </div>
@@ -79,7 +79,7 @@ export function SoftwareDelivery() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">SECURITY</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">Security Throughout Development</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Security Throughout Development</h2>
           </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {devSecOpsCards.map((item, idx) => (
@@ -97,7 +97,7 @@ export function SoftwareDelivery() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">KPI DASHBOARD</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">Engineering Metrics</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Engineering Metrics</h2>
           </Reveal>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -105,7 +105,7 @@ export function SoftwareDelivery() {
               <div key={idx} className="p-6 bg-zinc-950/80 border border-zinc-900 rounded-2xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-rose-500/0 to-rose-500/5 group-hover:to-rose-500/10 transition-colors pointer-events-none" />
                 <span className="block text-xs md:text-sm font-medium text-zinc-400 mb-2 uppercase tracking-wider">{metric.label}</span>
-                <span className="block text-2xl md:text-3xl font-extrabold text-white mb-1">{metric.value}</span>
+                <span className="block text-2xl md:text-3xl font-bold text-white mb-1">{metric.value}</span>
                 <div className="flex items-center gap-2 mt-4">
                   <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
                   <span className="text-xs font-mono text-zinc-400 tracking-wider">{metric.trend}</span>
@@ -121,7 +121,7 @@ export function SoftwareDelivery() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">END-TO-END</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">Delivery Workflow</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Delivery Workflow</h2>
           </Reveal>
           
           {/* Interactive Flow */}

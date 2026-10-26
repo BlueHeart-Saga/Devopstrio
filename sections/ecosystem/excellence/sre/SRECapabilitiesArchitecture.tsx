@@ -52,7 +52,7 @@ export function SRECapabilitiesArchitecture() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-3 block">CAPABILITIES</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Core SRE Capabilities
             </h2>
           </Reveal>
@@ -79,7 +79,7 @@ export function SRECapabilitiesArchitecture() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-3 block">TOPOLOGY</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Resilient Production Topology
             </h2>
           </Reveal>
@@ -111,7 +111,7 @@ export function SRECapabilitiesArchitecture() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-3 block">TELEMETRY</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Observability Platform Architecture
             </h2>
           </Reveal>

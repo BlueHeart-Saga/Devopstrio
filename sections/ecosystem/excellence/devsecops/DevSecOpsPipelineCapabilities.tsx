@@ -56,7 +56,7 @@ export function DevSecOpsPipelineCapabilities() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">CAPABILITIES</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Core DevSecOps Capabilities
             </h2>
           </Reveal>
@@ -83,7 +83,7 @@ export function DevSecOpsPipelineCapabilities() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">PIPELINE FLOW</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Security Embedded Into Every Deployment
             </h2>
             
@@ -120,7 +120,7 @@ export function DevSecOpsPipelineCapabilities() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">CLOUD PROTECTION</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Cloud & Container Security
             </h2>
           </Reveal>

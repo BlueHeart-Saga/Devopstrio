@@ -67,10 +67,12 @@ export function QualityHeroOverview() {
         <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 text-center">
           <Reveal>
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-amber-400 mb-4 block">OVERVIEW</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Continuous Quality Built into Every Stage of Delivery
             </h2>
-            
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-3xl mx-auto">
+              Quality is an intrinsic architectural discipline, not an afterthought in a staging environment. At Devopstrio, our Quality Engineering practice integrates shift-left automated testing suites, AI-driven test case generation, end-to-end performance chaos engineering, and continuous observability directly into CI/CD loops, guaranteeing deterministic system reliability and zero-defect enterprise deployments.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -80,7 +82,7 @@ export function QualityHeroOverview() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-amber-400 mb-3 block">PHILOSOPHY</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Our Quality Philosophy
             </h2>
           </Reveal>

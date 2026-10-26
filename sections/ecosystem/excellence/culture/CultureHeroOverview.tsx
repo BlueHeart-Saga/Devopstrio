@@ -88,10 +88,12 @@ export function CultureHeroOverview() {
         <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 text-center">
           <Reveal>
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">OVERVIEW</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Built by Engineers, for Engineers
             </h2>
-            
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-3xl mx-auto">
+              Engineering culture is the core operating system of digital transformation. At Devopstrio, we cultivate high-trust, autonomous environments where psychological safety meets radical technical ownership. Our engineers architect resilient distributed systems, eliminate operational friction through proactive automation, and collaborate across cross-functional pods to turn audacious business challenges into deterministic software outcomes.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -101,7 +103,7 @@ export function CultureHeroOverview() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">CORE TENETS</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Our Engineering Philosophy
             </h2>
           </Reveal>

@@ -70,8 +70,8 @@ export function SolutionHeroOverview() {
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Designing Future-Ready Enterprise Foundations
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              Architecture is the blueprint of enterprise transformation. At Devopstrio, our Solution Architecture practice establishes robust, adaptable, and cost-efficient system designs before a single line of code is committed. We align legacy infrastructure with modern cloud-native standards to guarantee scalability, security, and speed.
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-3xl mx-auto">
+              Architecture is the definitive blueprint of sustainable digital transformation. At Devopstrio, our Solution Architecture practice formulates resilient, scalable, and cost-optimized system blueprints before a single line of code is committed. We harmonize legacy enterprise infrastructure with modern cloud-native standards, establishing resilient topologies that safeguard business continuity and accelerate execution.
             </p>
           </Reveal>
         </div>

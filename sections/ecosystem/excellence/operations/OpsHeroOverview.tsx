@@ -70,8 +70,8 @@ export function OpsHeroOverview() {
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Predictable, High-Quality Software Delivery at Scale
             </h2>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-medium">
-              Engineering Operations bridges the gap between strategic vision and execution. At Devopstrio, we build operating models, delivery governance, and DORA-driven analytics that enable engineering teams to ship faster, reduce friction, and maintain high standards.
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-3xl mx-auto">
+              Engineering Operations bridges the gap between high-level technology strategy and relentless execution. At Devopstrio, we architect modern operating models, unified delivery governance, and DORA-driven telemetry dashboards that eliminate handoff friction, optimize developer throughput, and establish predictable, high-cadence release cycles at enterprise scale.
             </p>
           </Reveal>
         </div>

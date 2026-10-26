@@ -78,10 +78,12 @@ export function SoftwareHeroOverview() {
         <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 text-center">
           <Reveal>
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">OVERVIEW</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Engineering Software That Solves Business Problems
             </h2>
-            
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-3xl mx-auto">
+              Software engineering is the foundation of competitive advantage in modern enterprise business. At Devopstrio, our full-stack engineers design modular distributed microservices, event-driven backends, and responsive user interfaces built on domain-driven design, clean code architecture, and high-performance telemetry—delivering scalable digital platforms that evolve seamlessly as business needs expand.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -91,7 +93,7 @@ export function SoftwareHeroOverview() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">PHILOSOPHY</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">Our Engineering Philosophy</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Our Engineering Philosophy</h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {principles.map((p, idx) => {
@@ -115,7 +117,7 @@ export function SoftwareHeroOverview() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">PROCESS</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">Software Development Lifecycle</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Software Development Lifecycle</h2>
           </Reveal>
           
           {/* Horizontal Timeline */}

@@ -78,10 +78,12 @@ export function DevSecOpsHeroOverview() {
         <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 text-center">
           <Reveal>
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-4 block">OVERVIEW</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Security Built Into Every Release
             </h2>
-            
+            <p className="text-zinc-300 text-base md:text-lg leading-relaxed font-normal max-w-3xl mx-auto">
+              Security should accelerate delivery velocity, not constrain it. At Devopstrio, our DevSecOps engineering embeds continuous SAST, DAST, software bill of materials (SBOM), and policy-as-code guardrails directly into developer workflows and automated pipelines. We empower agile teams to ship fearlessly with zero-trust architecture, ensuring continuous regulatory compliance and defense-in-depth resilience without compromising engineering speed.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -91,7 +93,7 @@ export function DevSecOpsHeroOverview() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">PHILOSOPHY</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Secure by Design. Automated by Default.
             </h2>
           </Reveal>
@@ -118,7 +120,7 @@ export function DevSecOpsHeroOverview() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-red-500 mb-3 block">SECURE SDLC</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Secure Software Delivery Lifecycle
             </h2>
           </Reveal>

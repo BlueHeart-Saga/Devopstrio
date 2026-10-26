@@ -88,7 +88,7 @@ export function PlatformExperienceOps() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">DEVEX</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Building Better Experiences for Engineers
             </h2>
             
@@ -115,7 +115,7 @@ export function PlatformExperienceOps() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">AUTOMATION</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Automation at Every Layer
             </h2>
           </Reveal>
@@ -141,7 +141,7 @@ export function PlatformExperienceOps() {
             <div className="lg:col-span-5">
               <Reveal>
                 <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">DECLARATIVE INFRASTRUCTURE</span>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
                   Everything Defined as Code
                 </h2>
                 
@@ -164,7 +164,7 @@ export function PlatformExperienceOps() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">TELEMETRY</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Real-Time Platform Insights
             </h2>
           </Reveal>
@@ -190,7 +190,7 @@ export function PlatformExperienceOps() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           <Reveal className="mb-16 text-center">
             <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-sky-400 mb-3 block">SECURITY & GOVERNANCE</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Secure Platforms by Design
             </h2>
           </Reveal>
