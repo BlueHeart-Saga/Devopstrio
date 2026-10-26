@@ -33,6 +33,7 @@ import Link from "next/link";
 import { FAQ } from "@/components/ecosystem/FAQ";
 import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 import { HeroParticleCanvas } from "@/components/ecosystem/HeroParticleCanvas";
+import { VendorServicesMarquee } from "@/sections/ecosystem/partnerships/VendorServicesMarquee";
 
 const sapSections = [
   { id: "overview", label: "Overview" },
@@ -547,6 +548,9 @@ export default function SAPStrategicAllianceHub() {
           </div>
         </div>
       </section>
+
+      {/* TOP SERVICES WORKED ON MARQUEE */}
+      <VendorServicesMarquee vendor="sap" />
 
       {/* STICKY SECTION NAVBAR */}
       <SectionNavbar sections={sapSections} />

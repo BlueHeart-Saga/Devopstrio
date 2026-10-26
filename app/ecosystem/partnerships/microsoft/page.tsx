@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
 import { HeroParticleCanvas } from "@/components/ecosystem/HeroParticleCanvas";
+import { VendorServicesMarquee } from "@/sections/ecosystem/partnerships/VendorServicesMarquee";
 import {
   ArrowRight,
   Check,
@@ -755,6 +756,7 @@ export default function AzurePartnershipPage() {
   return (
     <main className="overflow-x-clip bg-black font-sans text-white">
       <Hero />
+      <VendorServicesMarquee vendor="microsoft" />
       <Why />
       <Services />
       <TransformationStack />
