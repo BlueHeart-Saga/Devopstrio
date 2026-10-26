@@ -2,14 +2,40 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, Mail, Calendar, X, Send, CheckCircle2 } from "lucide-react";
+import { MessageSquare, Mail, Calendar, X, Send, CheckCircle2, AlertCircle } from "lucide-react";
+
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+const checkNameError = (val: string): string | null => {
+  if (!val.trim()) return null;
+  if (/\d/.test(val)) {
+    return "Name must contain alphabets only. Numbers are not allowed.";
+  }
+  if (/[^a-zA-Z\s.'’-]/.test(val)) {
+    return "Special characters are not allowed. Please use letters only.";
+  }
+  return null;
+};
+
+const checkEmailError = (val: string, isRequired: boolean): string | null => {
+  const trimmed = val.trim();
+  if (!trimmed) {
+    return isRequired ? "Email address is required." : null;
+  }
+  if (!EMAIL_REGEX.test(trimmed)) {
+    return "Please enter a valid email address (e.g. name@company.com).";
+  }
+  return null;
+};
 
 export function FeedbackWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("contact");
   const [feedback, setFeedback] = useState("");
   const [email, setEmail] = useState("");
+  const [emailTouched, setEmailTouched] = useState(false);
   const [name, setName] = useState("");
+  const [nameTouched, setNameTouched] = useState(false);
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -57,6 +83,8 @@ export function FeedbackWidget() {
   const [scheduleDate, setScheduleDate] = useState("");
   const [scheduleTime, setScheduleTime] = useState("");
 
+  const todayStr = typeof window !== "undefined" ? new Date().toISOString().split("T")[0] : "";
+
   useEffect(() => {
     const handleHashChange = () => {
       if (window.location.hash === '#contact') { setIsOpen(true); setActiveTab('contact'); }
@@ -71,14 +99,44 @@ export function FeedbackWidget() {
 
   const handleClose = () => {
     setIsOpen(false);
+    setNameTouched(false);
+    setEmailTouched(false);
     if (['#contact', '#feedback', '#schedule-call'].includes(window.location.hash)) {
       history.pushState("", document.title, window.location.pathname + window.location.search);
     }
   };
 
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+    setNameTouched(false);
+    setEmailTouched(false);
+  };
+
+  // Validation States
+  const nameError = (nameTouched || name.length > 0) ? checkNameError(name) : null;
+  const isNameValid = !name.trim() || checkNameError(name) === null;
+
+  // Contact tab validation
+  const contactEmailError = (emailTouched || email.length > 0) ? checkEmailError(email, true) : null;
+  const isContactEmailValid = email.trim().length > 0 && EMAIL_REGEX.test(email.trim());
+  const isContactValid = isContactEmailValid && isNameValid && feedback.trim().length > 0 && !nameError && !contactEmailError;
+
+  // Feedback tab validation
+  const feedbackEmailError = email.trim().length > 0 ? checkEmailError(email, false) : null;
+  const isFeedbackEmailValid = !email.trim() || EMAIL_REGEX.test(email.trim());
+  const isFeedbackValid = isFeedbackEmailValid && isNameValid && feedback.trim().length > 0 && !nameError && !feedbackEmailError;
+
+  // Schedule Call validation
+  const scheduleEmailError = (emailTouched || email.length > 0) ? checkEmailError(email, true) : null;
+  const isScheduleEmailValid = email.trim().length > 0 && EMAIL_REGEX.test(email.trim());
+  const isScheduleValid = isScheduleEmailValid && isNameValid && scheduleDate.trim().length > 0 && scheduleTime.trim().length > 0 && !nameError && !scheduleEmailError;
+
   const handleScheduleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim() || !scheduleDate || !scheduleTime) return;
+    setNameTouched(true);
+    setEmailTouched(true);
+
+    if (!isScheduleValid) return;
 
     setLoading(true);
 
@@ -107,6 +165,8 @@ export function FeedbackWidget() {
       setCompany("");
       setScheduleDate("");
       setScheduleTime("");
+      setNameTouched(false);
+      setEmailTouched(false);
 
       setTimeout(() => {
         setSubmitted(false);
@@ -122,7 +182,11 @@ export function FeedbackWidget() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!feedback.trim()) return;
+    setNameTouched(true);
+    setEmailTouched(true);
+
+    if (activeTab === "contact" && !isContactValid) return;
+    if (activeTab === "feedback" && !isFeedbackValid) return;
 
     setLoading(true);
 
@@ -169,6 +233,8 @@ export function FeedbackWidget() {
       setName("");
       setPhone("");
       setCompany("");
+      setNameTouched(false);
+      setEmailTouched(false);
 
       setTimeout(() => {
         setSubmitted(false);
@@ -229,7 +295,7 @@ export function FeedbackWidget() {
                 transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
                 onClick={() => {
                   setIsOpen(true);
-                  setActiveTab("contact");
+                  handleTabChange("contact");
                 }}
                 className="bg-white text-zinc-950 hover:bg-rose-50 border border-rose-100/40 px-4 py-2.5 rounded-2xl rounded-br-sm text-xs sm:text-sm font-semibold shadow-[0_8px_30px_rgba(0,0,0,0.15)] cursor-pointer transition-all text-right"
               >
@@ -242,7 +308,7 @@ export function FeedbackWidget() {
                 transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.3 }}
                 onClick={() => {
                   setIsOpen(true);
-                  setActiveTab("schedule");
+                  handleTabChange("schedule");
                 }}
                 className="bg-white text-zinc-950 hover:bg-rose-50 border border-rose-100/40 px-4 py-2.5 rounded-2xl rounded-br-sm text-xs sm:text-sm font-semibold shadow-[0_8px_30px_rgba(0,0,0,0.15)] cursor-pointer transition-all text-right"
               >
@@ -255,7 +321,7 @@ export function FeedbackWidget() {
                 transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.5 }}
                 onClick={() => {
                   setIsOpen(true);
-                  setActiveTab("feedback");
+                  handleTabChange("feedback");
                 }}
                 className="bg-white text-zinc-950 hover:bg-rose-50 border border-rose-100/40 px-4 py-2.5 rounded-2xl rounded-br-sm text-xs sm:text-sm font-semibold shadow-[0_8px_30px_rgba(0,0,0,0.15)] cursor-pointer transition-all text-right"
               >
@@ -281,7 +347,7 @@ export function FeedbackWidget() {
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-lg h-[600px] max-h-[90vh] bg-zinc-950/40 backdrop-blur-3xl rounded-[2rem] shadow-[0_30px_60px_rgba(0,0,0,0.8),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex flex-col overflow-hidden border border-white/10 ring-1 ring-white/5"
+              className="w-full max-w-lg h-[620px] max-h-[92vh] bg-zinc-950/80 backdrop-blur-3xl rounded-[2rem] shadow-[0_30px_60px_rgba(0,0,0,0.8),inset_0_0_0_1px_rgba(255,255,255,0.05)] flex flex-col overflow-hidden border border-white/10 ring-1 ring-white/5"
             >
               {/* Header */}
               <div className="bg-gradient-to-br from-rose-600 to-rose-900 p-6 flex justify-between items-start relative overflow-hidden shrink-0">
@@ -292,7 +358,7 @@ export function FeedbackWidget() {
                 </div>
                 <button 
                   onClick={handleClose}
-                  className="relative z-10 w-8 h-8 rounded-full bg-black/20 flex items-center justify-center text-white hover:bg-black/40 backdrop-blur-md transition-colors border border-white/10"
+                  className="relative z-10 w-8 h-8 rounded-full bg-black/20 flex items-center justify-center text-white hover:bg-black/40 backdrop-blur-md transition-colors border border-white/10 cursor-pointer"
                 >
                   <X size={16} />
                 </button>
@@ -307,8 +373,8 @@ export function FeedbackWidget() {
                 ].map(tab => (
                   <button
                     key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`flex-1 flex items-center justify-center gap-2 py-3 text-sm font-bold border-b-2 transition-colors ${
+                    onClick={() => handleTabChange(tab.id)}
+                    className={`flex-1 flex items-center justify-center gap-2 py-3 text-sm font-bold border-b-2 transition-colors cursor-pointer ${
                       activeTab === tab.id
                         ? "border-rose-500 text-rose-500"
                         : "border-transparent text-zinc-500 hover:text-zinc-300"
@@ -338,21 +404,45 @@ export function FeedbackWidget() {
                         <input
                           type="text"
                           value={name}
-                          onChange={(e) => setName(e.target.value)}
+                          onChange={(e) => {
+                            setName(e.target.value);
+                            setNameTouched(true);
+                          }}
+                          onBlur={() => setNameTouched(true)}
                           placeholder="e.g. Sarah Jenkins"
-                          className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                          className={`w-full bg-black/40 backdrop-blur-sm border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none transition-colors ${
+                            nameError ? "border-rose-500/80 bg-rose-950/20 focus:border-rose-500" : "border-white/10 focus:border-rose-500"
+                          }`}
                         />
+                        {nameError && (
+                          <p className="text-[11px] text-rose-400 font-medium flex items-center gap-1 mt-0.5">
+                            <AlertCircle size={12} className="shrink-0 text-rose-400" />
+                            <span>{nameError}</span>
+                          </p>
+                        )}
                       </div>
                       <div className="flex flex-col gap-1.5">
                         <label className="text-xs font-bold text-zinc-300">Work Email *</label>
                         <input
                           type="email"
                           value={email}
-                          onChange={(e) => setEmail(e.target.value)}
+                          onChange={(e) => {
+                            setEmail(e.target.value);
+                            setEmailTouched(true);
+                          }}
+                          onBlur={() => setEmailTouched(true)}
                           required
                           placeholder="sarah@company.com"
-                          className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                          className={`w-full bg-black/40 backdrop-blur-sm border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none transition-colors ${
+                            scheduleEmailError ? "border-rose-500/80 bg-rose-950/20 focus:border-rose-500" : "border-white/10 focus:border-rose-500"
+                          }`}
                         />
+                        {scheduleEmailError && (
+                          <p className="text-[11px] text-rose-400 font-medium flex items-center gap-1 mt-0.5">
+                            <AlertCircle size={12} className="shrink-0 text-rose-400" />
+                            <span>{scheduleEmailError}</span>
+                          </p>
+                        )}
                       </div>
                     </div>
 
@@ -384,8 +474,14 @@ export function FeedbackWidget() {
                         <label className="text-xs font-bold text-zinc-300">Preferred Date *</label>
                         <input
                           type="date"
+                          min={todayStr}
                           value={scheduleDate}
                           onChange={(e) => setScheduleDate(e.target.value)}
+                          onClick={(e) => {
+                            try {
+                              (e.currentTarget as any).showPicker?.();
+                            } catch (_) {}
+                          }}
                           required
                           className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-rose-500 transition-colors cursor-pointer"
                           style={{ colorScheme: 'dark' }}
@@ -397,6 +493,11 @@ export function FeedbackWidget() {
                           type="time"
                           value={scheduleTime}
                           onChange={(e) => setScheduleTime(e.target.value)}
+                          onClick={(e) => {
+                            try {
+                              (e.currentTarget as any).showPicker?.();
+                            } catch (_) {}
+                          }}
                           required
                           className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-rose-500 transition-colors cursor-pointer"
                           style={{ colorScheme: 'dark' }}
@@ -410,14 +511,14 @@ export function FeedbackWidget() {
                         value={feedback}
                         onChange={(e) => setFeedback(e.target.value)}
                         placeholder="Tell us brief details about your cloud, DevOps, or consulting requirements..."
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 min-h-[75px] resize-none transition-colors"
+                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 min-h-[70px] resize-none transition-colors"
                       />
                     </div>
 
                     <button 
                       type="submit"
-                      disabled={loading || !email.trim() || !scheduleDate || !scheduleTime}
-                      className="w-full py-3.5 mt-auto bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white text-sm font-bold rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(225,29,72,0.3)]"
+                      disabled={loading || !isScheduleValid}
+                      className="w-full py-3.5 mt-auto bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white text-sm font-bold rounded-xl transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:from-rose-600 disabled:hover:to-rose-500 flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(225,29,72,0.3)] cursor-pointer"
                     >
                       {loading ? "Scheduling Call..." : "Confirm & Schedule Call"}
                       {!loading && <Send size={16} />}
@@ -432,24 +533,50 @@ export function FeedbackWidget() {
                       <input
                         type="text"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={(e) => {
+                          setName(e.target.value);
+                          setNameTouched(true);
+                        }}
+                        onBlur={() => setNameTouched(true)}
                         placeholder="e.g. Alex Morgan"
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                        className={`w-full bg-black/40 backdrop-blur-sm border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none transition-colors ${
+                          nameError ? "border-rose-500/80 bg-rose-950/20 focus:border-rose-500" : "border-white/10 focus:border-rose-500"
+                        }`}
                       />
+                      {nameError && (
+                        <p className="text-[11px] text-rose-400 font-medium flex items-center gap-1 mt-0.5">
+                          <AlertCircle size={12} className="shrink-0 text-rose-400" />
+                          <span>{nameError}</span>
+                        </p>
+                      )}
                     </div>
 
                     <div className="flex flex-col gap-1.5">
                       <label className="text-xs font-bold text-zinc-300">
-                        Email Address {activeTab === 'feedback' && '(Optional)'}
+                        Email Address {activeTab === 'feedback' ? '(Optional)' : '*'}
                       </label>
                       <input
                         type="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                          setEmailTouched(true);
+                        }}
+                        onBlur={() => setEmailTouched(true)}
                         required={activeTab === "contact"}
                         placeholder="alex@company.com"
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 transition-colors"
+                        className={`w-full bg-black/40 backdrop-blur-sm border rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none transition-colors ${
+                          (activeTab === 'contact' ? contactEmailError : feedbackEmailError)
+                            ? "border-rose-500/80 bg-rose-950/20 focus:border-rose-500"
+                            : "border-white/10 focus:border-rose-500"
+                        }`}
                       />
+                      {(activeTab === 'contact' ? contactEmailError : feedbackEmailError) && (
+                        <p className="text-[11px] text-rose-400 font-medium flex items-center gap-1 mt-0.5">
+                          <AlertCircle size={12} className="shrink-0 text-rose-400" />
+                          <span>{activeTab === 'contact' ? contactEmailError : feedbackEmailError}</span>
+                        </p>
+                      )}
                     </div>
 
                     <div className="flex flex-col gap-1.5">
@@ -460,15 +587,15 @@ export function FeedbackWidget() {
                         value={feedback}
                         onChange={(e) => setFeedback(e.target.value)}
                         placeholder={activeTab === "contact" ? "Describe your inquiry in detail..." : "Tell us what you think..."}
-                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 min-h-[110px] resize-none transition-colors"
+                        className="w-full bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-rose-500 min-h-[105px] resize-none transition-colors"
                         required
                       />
                     </div>
 
                     <button 
                       type="submit"
-                      disabled={loading || !feedback.trim()}
-                      className="w-full py-3.5 mt-auto bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white text-sm font-bold rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(225,29,72,0.3)]"
+                      disabled={loading || (activeTab === "contact" ? !isContactValid : !isFeedbackValid)}
+                      className="w-full py-3.5 mt-auto bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white text-sm font-bold rounded-xl transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:from-rose-600 disabled:hover:to-rose-500 flex items-center justify-center gap-2 shadow-[0_5px_15px_rgba(225,29,72,0.3)] cursor-pointer"
                     >
                       {loading ? "Sending..." : "Send Message"}
                       {!loading && <Send size={16} />}

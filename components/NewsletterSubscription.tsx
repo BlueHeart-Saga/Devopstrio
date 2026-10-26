@@ -3,13 +3,20 @@
 import React, { useState } from "react";
 import CategoryPopup from "@/components/CategoryPopup";
 
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 export function NewsletterSubscription({ className = "" }: { className?: string }) {
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email.trim() || !EMAIL_REGEX.test(email.trim())) {
+      setEmailError("Please enter a valid email address (e.g. name@domain.com)");
+      return;
+    }
+    setEmailError("");
     setIsPopupOpen(true);
   };
 
@@ -46,21 +53,34 @@ export function NewsletterSubscription({ className = "" }: { className?: string 
           to all global events.
         </h3>
 
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            className="flex-grow bg-white/5 backdrop-blur-md border border-white/20 rounded-full px-5 py-3.5 text-sm font-medium text-white focus:outline-none focus:border-white focus:bg-white/10 transition-all placeholder:text-white/60 shadow-inner"
-          />
-          <button
-            type="submit"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-[13px] font-bold tracking-wider bg-white text-black hover:bg-zinc-200 transition-all duration-300 whitespace-nowrap shrink-0 cursor-pointer"
-          >
-            Subscribe Now &rarr;
-          </button>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full">
+          <div className="flex flex-col sm:flex-row gap-3 w-full">
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                if (emailError) setEmailError("");
+              }}
+              placeholder="Enter your email"
+              className={`flex-grow bg-white/5 backdrop-blur-md border rounded-full px-5 py-3.5 text-sm font-medium text-white focus:outline-none transition-all placeholder:text-white/60 shadow-inner ${
+                emailError ? "border-rose-500 bg-rose-950/20" : "border-white/20 focus:border-white focus:bg-white/10"
+              }`}
+            />
+            <button
+              type="submit"
+              disabled={!email.trim()}
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-[13px] font-bold tracking-wider bg-white text-black hover:bg-zinc-200 transition-all duration-300 whitespace-nowrap shrink-0 cursor-pointer disabled:opacity-50"
+            >
+              Subscribe Now &rarr;
+            </button>
+          </div>
+          {emailError && (
+            <p className="text-xs text-rose-400 font-medium px-4">
+              ⚠ {emailError}
+            </p>
+          )}
         </form>
       </div>
 
