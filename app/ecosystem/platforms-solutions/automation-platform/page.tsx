@@ -615,7 +615,7 @@ const WhyChooseAutomation = () => {
 // ==========================================
 const RelatedSolutions = () => {
   const solutions = [
-    { title: "DevOps & Automation", path: "/ecosystem/platforms-solutions/automation-platform" },
+    { title: "DevOps & Automation", path: "/services/devops-automation" },
     { title: "Cloud Services", path: "/ecosystem/platforms-solutions/cloud-management-platform" },
     { title: "Managed Services", path: "/services/managed-services" },
     { title: "AI & Data Innovation", path: "/ecosystem/innovation-labs/ai-lab" },

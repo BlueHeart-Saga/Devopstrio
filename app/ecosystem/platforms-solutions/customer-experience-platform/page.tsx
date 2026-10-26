@@ -620,7 +620,7 @@ const WhyChooseCustomerPlatform = () => {
 // ==========================================
 const RelatedSolutions = () => {
   const solutions = [
-    { title: "Customer Experience Consulting", path: "/ecosystem/platforms-solutions/customer-experience-platform" },
+    { title: "Customer Experience Consulting", path: "/services/digital-transformation" },
     { title: "Software Development", path: "/services/software-development" },
     { title: "AI & Data Innovation", path: "/ecosystem/innovation-labs/ai-lab" },
     { title: "Digital Transformation", path: "/services/digital-transformation" },

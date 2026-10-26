@@ -1051,14 +1051,14 @@ const WhyChooseDataPlatform = () => {
 // ==========================================
 const RelatedSolutions = () => {
   const solutions = [
-    { title: "Data Engineering", path: "/ecosystem/platforms-solutions/data-platform" },
-    { title: "AI & Data Innovation", path: "/ecosystem/innovation-labs/ai-lab" },
-    { title: "Cloud Services", path: "/ecosystem/platforms-solutions/cloud-management-platform" },
-    { title: "Business Intelligence", path: "/ecosystem/platforms-solutions/data-platform" },
-    { title: "Managed Services", path: "/ecosystem/platforms-solutions/data-platform" },
-    { title: "Digital Transformation", path: "/ecosystem/platforms-solutions/data-platform" },
-    { title: "Microsoft Partnership", path: "/about" },
-    { title: "Google Cloud Partnership", path: "/about" }
+    { title: "Data Engineering", path: "/services/data-engineering" },
+    { title: "AI & Data Innovation", path: "/services/ai-data-innovation" },
+    { title: "Cloud Services", path: "/services/cloud-services" },
+    { title: "Business Intelligence", path: "/ecosystem/innovation-labs/data-analytics-lab" },
+    { title: "Managed Services", path: "/services/managed-services" },
+    { title: "Digital Transformation", path: "/services/digital-transformation" },
+    { title: "Microsoft Partnership", path: "/ecosystem/partnerships/microsoft" },
+    { title: "Google Cloud Partnership", path: "/ecosystem/partnerships/google-cloud" }
   ];
 
   return (
