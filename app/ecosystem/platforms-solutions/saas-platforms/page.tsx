@@ -458,22 +458,12 @@ export default function SaaSPlatformsPage() {
                 </div>
               </div>
 
-              {/* Right Image Half */}
-              <div className="w-full lg:w-1/2 relative min-h-[380px] sm:min-h-[460px] lg:min-h-[540px] bg-gradient-to-br from-zinc-950/80 to-black border-t lg:border-t-0 lg:border-l border-zinc-800/80 p-5 sm:p-7 lg:p-9 flex items-center justify-center overflow-hidden">
-                {/* Subtle Ambient Red/Rose Radial Glow */}
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 blur-3xl opacity-20"
-                  style={{
-                    background: "radial-gradient(circle at center, rgba(225,29,72,0.3) 0%, transparent 70%)"
-                  }}
-                />
-
-                {/* Cover Image directly fitted */}
+              {/* Right Image Half - Full Bleed Cover */}
+              <div className="w-full lg:w-1/2 relative min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] border-t lg:border-t-0 lg:border-l border-zinc-800/80 overflow-hidden bg-black flex">
                 <img
                   src={activeProduct.image || `/webp/assets/Home-page/our-products/${activeProduct.slug}.webp`}
                   alt={`${activeProduct.name} Cover`}
-                  className="w-full max-w-[480px] h-auto aspect-[1805/2183] object-cover rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-500 relative z-10"
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
               </div>
