@@ -616,34 +616,58 @@ export default function TalentNetworkPage() {
 
       {/* 11. PARTNER COMPANIES (Logo Wall) */}
       <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
-            {/* Subtle Ambient Background Glow */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
-        style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
-      />
+        {/* Subtle Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
+        />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
-          <div className="text-center">
-            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-zinc-400 block mb-3">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
               ENTERPRISE ALLIANCES
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
               Trusted by Leading Technology Partners & Enterprises
             </h3>
+            <p className="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed">
+              Collaborating with industry pioneers across cloud, data, security, and enterprise infrastructure platforms worldwide.
+            </p>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-zinc-300 font-mono text-sm md:text-base font-semibold">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5">
             {[
-              "Microsoft", "AWS", "Google Cloud", "Oracle", "SAP",
-              "Cisco", "GitHub", "Docker", "Red Hat", "HashiCorp"
-            ].map((company, idx) => (
-              <span
+              { name: "Microsoft", logo: "/assets/Tech_logos/Microsoft-Azure.svg", href: "/ecosystem/partnerships/microsoft" },
+              { name: "AWS", logo: "/assets/Tech_logos/AWS.svg", href: "/ecosystem/partnerships/aws" },
+              { name: "Google Cloud", logo: "/assets/Tech_logos/Google_Cloud.svg", href: "/ecosystem/partnerships/google-cloud" },
+              { name: "Oracle", logo: "/assets/Tech_logos/Oracle_Cloud.svg", href: "/ecosystem/partnerships/oracle" },
+              { name: "SAP", logo: "/assets/Tech_logos/sap.svg", href: "/ecosystem/partnerships/sap" },
+              { name: "ServiceNow", logo: "/assets/Tech_logos/Service_now.svg", href: "/ecosystem/partnerships/servicenow" },
+              { name: "Cisco", logo: "/assets/Tech_logos/cisco.svg", href: "/ecosystem/partnerships/cisco" },
+              { name: "GitHub", logo: "/assets/Tech_logos/GitHub.svg", href: "/ecosystem/technology-stack" },
+              { name: "Docker", logo: "/assets/Tech_logos/Docker.svg", href: "/ecosystem/technology-stack" },
+              { name: "Kubernetes", logo: "/assets/Tech_logos/Kubernetes.svg", href: "/ecosystem/technology-stack" },
+              { name: "HashiCorp", logo: "/assets/Tech_logos/HashiCorp.svg", href: "/ecosystem/technology-stack" },
+              { name: "Snowflake", logo: "/assets/Tech_logos/Snowflake.svg", href: "/ecosystem/technology-stack" }
+            ].map((partner, idx) => (
+              <Link
                 key={idx}
-                className="px-5 py-3 rounded-xl bg-[#0A0A0A] border border-zinc-800/80 hover:text-white hover:border-rose-500/40 transition-colors"
+                href={partner.href}
+                className="group relative flex flex-col items-center justify-center p-5 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 min-h-[110px] shadow-sm hover:shadow-[0_4px_24px_rgba(225,29,72,0.18)] hover:-translate-y-1"
               >
-                🏢 {company}
-              </span>
+                <div className="h-10 w-full flex items-center justify-center mb-2.5">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-h-8 max-w-[100px] w-auto object-contain filter group-hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+                <span className="text-xs font-mono font-semibold text-zinc-400 group-hover:text-rose-400 transition-colors text-center truncate w-full">
+                  {partner.name}
+                </span>
+              </Link>
             ))}
           </div>
 
