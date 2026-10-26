@@ -869,25 +869,76 @@ export default function OpenSourcePage() {
       </section>
 
       {/* 13. PARTNER COMMUNITIES (Logo Wall) */}
-      <section className="py-20 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
+      <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
+        {/* Subtle Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
+        />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
-          <div className="text-center space-y-2">
-            <span className="text-xs font-bold tracking-[0.3em] uppercase text-zinc-400 block">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
               ECOSYSTEM FOUNDATIONS & COLLABORATORS
             </span>
-            <h3 className="text-xl font-bold text-white">Partner Communities & Standards</h3>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+              Partner Communities & Standards
+            </h3>
+            <p className="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed">
+              Aligning our open-source architectures, security frameworks, and cloud-native blueprints with leading global standards bodies.
+            </p>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-6 text-zinc-400 font-bold text-xs md:text-sm font-mono">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-5">
             {[
-              "GitHub", "Microsoft", "CNCF", "Linux Foundation", "HashiCorp",
-              "Docker", "Kubernetes", "Red Hat", "OpenSSF", "Apache Foundation"
-            ].map((partner, idx) => (
-              <span key={idx} className="px-4 py-2.5 rounded-xl bg-[#0A0A0A] border border-zinc-800/80 hover:text-white hover:border-rose-500/40 transition-colors">
-                ⚡ {partner}
-              </span>
-            ))}
+              { name: "GitHub", logo: "/assets/Tech_logos/GitHub.svg", href: "https://github.com/Devopstrio", external: true },
+              { name: "Microsoft", logo: "/assets/Tech_logos/Microsoft-Azure.svg", href: "/ecosystem/partnerships/microsoft", external: false },
+              { name: "CNCF", logo: "/assets/Tech_logos/cncf.svg", href: "https://www.cncf.io/", external: true },
+              { name: "Linux Foundation", logo: "/assets/Tech_logos/linux-foundation.svg", href: "https://www.linuxfoundation.org/", external: true },
+              { name: "HashiCorp", logo: "/assets/Tech_logos/HashiCorp.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "Docker", logo: "/assets/Tech_logos/Docker.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "Kubernetes", logo: "/assets/Tech_logos/Kubernetes.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "Red Hat", logo: "/assets/Tech_logos/red_hat.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "OpenSSF", logo: "/assets/Tech_logos/openssf.svg", href: "https://openssf.org/", external: true },
+              { name: "Apache Foundation", logo: "/assets/Tech_logos/apache.svg", href: "https://www.apache.org/", external: true }
+            ].map((partner, idx) => {
+              const CardContent = (
+                <>
+                  <div className="h-10 w-full flex items-center justify-center mb-2.5">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-h-8 max-w-[110px] w-auto object-contain filter group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="text-xs font-mono font-semibold text-zinc-400 group-hover:text-rose-400 transition-colors text-center truncate w-full">
+                    {partner.name}
+                  </span>
+                </>
+              );
+
+              return partner.external ? (
+                <a
+                  key={idx}
+                  href={partner.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex flex-col items-center justify-center p-5 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 min-h-[110px] shadow-sm hover:shadow-[0_4px_24px_rgba(225,29,72,0.18)] hover:-translate-y-1 cursor-pointer"
+                >
+                  {CardContent}
+                </a>
+              ) : (
+                <Link
+                  key={idx}
+                  href={partner.href}
+                  className="group relative flex flex-col items-center justify-center p-5 rounded-2xl bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 hover:bg-zinc-900/60 transition-all duration-300 min-h-[110px] shadow-sm hover:shadow-[0_4px_24px_rgba(225,29,72,0.18)] hover:-translate-y-1 cursor-pointer"
+                >
+                  {CardContent}
+                </Link>
+              );
+            })}
           </div>
 
         </div>
@@ -962,6 +1013,166 @@ export default function OpenSourcePage() {
         ctaBtnText="EXPLORE GITHUB REPOSITORIES"
         backLink="/ecosystem/community-talent-network"
       />
+
+      {/* CONTRIBUTOR APPLICATION MODAL */}
+      {contributorModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-[#0A0A0A] border border-rose-500/30 rounded-[28px] max-w-lg w-full p-7 space-y-6 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+            <button
+              onClick={() => {
+                setContributorModalOpen(false);
+                setContributorSubmitted(false);
+              }}
+              className="absolute top-5 right-5 p-2 rounded-full bg-zinc-900 text-zinc-400 hover:text-white cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {contributorSubmitted ? (
+              <div className="py-8 text-center space-y-4">
+                <div className="w-16 h-16 bg-rose-600/20 text-rose-500 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-9 h-9" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Application Received!</h3>
+                <p className="text-sm text-zinc-300 max-w-sm mx-auto font-normal leading-relaxed">
+                  Welcome to the Devopstrio Open Source Collective! Check your inbox for our contributor guidelines, repository invitations, and community Discord links.
+                </p>
+                <button
+                  onClick={() => {
+                    setContributorModalOpen(false);
+                    setContributorSubmitted(false);
+                  }}
+                  className="px-7 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold uppercase tracking-wider cursor-pointer"
+                >
+                  Close Window
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const formData = new FormData(form);
+                  const name = formData.get("name") as string;
+                  const email = formData.get("email") as string;
+                  const github = formData.get("github") as string;
+                  const focusArea = formData.get("focusArea") as string;
+                  const expertise = formData.get("expertise") as string;
+                  const note = formData.get("note") as string;
+
+                  try {
+                    await fetch("/api/contact", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({
+                        name,
+                        email,
+                        company: github || "Open Source Contributor",
+                        selectedServices: ["OPEN_SOURCE_CONTRIBUTOR"],
+                        message: `[Open Source Contributor Application]\nGitHub: ${github}\nFocus Area: ${focusArea}\nExpertise: ${expertise}\nNote: ${note || "None"}`
+                      })
+                    });
+                  } catch {
+                    // Fail silently to ensure UX flow continues
+                  }
+
+                  setContributorSubmitted(true);
+                }}
+                className="space-y-4"
+              >
+                <div>
+                  <h3 className="text-xl font-bold text-white flex items-center gap-2.5">
+                    <GitPullRequest className="w-5 h-5 text-rose-500" />
+                    Join as an Open Source Contributor
+                  </h3>
+                  <p className="text-xs text-zinc-400 mt-1 font-normal">
+                    Contribute to production Terraform modules, Kubernetes controllers, and AI workflows with mentorship from senior maintainers.
+                  </p>
+                </div>
+
+                <div className="space-y-3.5 text-xs sm:text-sm">
+                  <div>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Full Name *</label>
+                    <input
+                      name="name"
+                      type="text"
+                      required
+                      placeholder="e.g. Alex Chen"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Email Address *</label>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="alex@example.com"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">GitHub Profile or Username *</label>
+                    <input
+                      name="github"
+                      type="text"
+                      required
+                      placeholder="e.g. github.com/alexchen or @alexchen"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Primary Focus Area *</label>
+                    <select
+                      name="focusArea"
+                      required
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none"
+                    >
+                      <option value="Infrastructure as Code (Terraform / Bicep / Helm)">Infrastructure as Code (Terraform / Bicep / Helm)</option>
+                      <option value="Kubernetes Operators & Cloud Native Tooling">Kubernetes Operators & Cloud Native Tooling</option>
+                      <option value="Enterprise AI, RAG & Agentic Workflows">Enterprise AI, RAG & Agentic Workflows</option>
+                      <option value="Security Policy & Hardening Guardrails">Security Policy & Hardening Guardrails</option>
+                      <option value="Documentation, Guides & Architecture Blueprints">Documentation, Guides & Architecture Blueprints</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Primary Languages / Skills</label>
+                    <input
+                      name="expertise"
+                      type="text"
+                      placeholder="e.g. Go, Python, TypeScript, Docker, Kubernetes"
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-white focus:border-rose-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-zinc-300 font-semibold mb-1.5">Why would you like to contribute? (Optional)</label>
+                    <textarea
+                      name="note"
+                      rows={2}
+                      placeholder="Tell us about your interests or projects you'd like to work on..."
+                      className="w-full bg-black border border-zinc-800 rounded-xl px-4 py-2.5 text-white focus:border-rose-500 focus:outline-none resize-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="w-full py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-lg cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    Submit Contributor Application <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }
