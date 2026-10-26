@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,6 +11,7 @@ const industryTabs = [
     id: "banking",
     name: "Banking & Finance",
     title: "Banking & Finance",
+    href: "/industries/banking-finance",
     description: "Achieve your business goals faster with secure custom solutions, from mobile banking apps and payment systems to fraud detection tools. Serve customers better and meet strict regulatory requirements.",
     image: "/webp/assets/Industries-page/slider/Bank-and-finance.webp",
     mobileImage: "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
@@ -18,6 +20,7 @@ const industryTabs = [
     id: "healthcare",
     name: "Healthcare & Life Sciences",
     title: "Healthcare & Life Sciences",
+    href: "/industries/healthcare-life-sciences",
     description: "Enable high-performance clinical data pipeline processing, secure HIPAA-compliant telehealth applications, and multi-cloud collaboration spaces.",
     image: "/webp/assets/Industries-page/slider/Healthcare-and-Life-Sciences.webp",
     mobileImage: "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
@@ -26,6 +29,7 @@ const industryTabs = [
     id: "retail",
     name: "Retail & E-Commerce",
     title: "Retail & E-Commerce",
+    href: "/industries/retail-ecommerce",
     description: "Deploy omnichannel commerce recommendation engines, high-speed product checkout paths, and dynamic warehouse inventory syncs.",
     image: "/webp/assets/Industries-page/slider/Retail-and-E-Commerce.webp",
     mobileImage: "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
@@ -34,6 +38,7 @@ const industryTabs = [
     id: "manufacturing",
     name: "Manufacturing",
     title: "Manufacturing & Industry 4.0",
+    href: "/industries/manufacturing",
     description: "Connect factory-floor IoT sensory networks, orchestrate predictive maintenance logs, and establish cloud-first supply chain monitoring.",
     image: "/webp/assets/Industries-page/slider/Manufacturing.webp",
     mobileImage: "/webp/assets/Industries-page/industries/Manufacturing.webp"
@@ -42,6 +47,7 @@ const industryTabs = [
     id: "telecom",
     name: "Telecommunications",
     title: "Telecommunications",
+    href: "/industries/telecommunications",
     description: "Orchestrate high-density OSS/BSS platforms, scalable 5G network integration nodes, and real-time telecom analytics clusters.",
     image: "/webp/assets/Industries-page/slider/Telecommunication.webp",
     mobileImage: "/webp/assets/Industries-page/industries/Telecommunications.webp"
@@ -50,6 +56,7 @@ const industryTabs = [
     id: "media",
     name: "Media & Entertainment",
     title: "Media & Entertainment",
+    href: "/industries/media-entertainment",
     description: "Deliver high-bandwidth VOD streaming architectures, intelligent asset distribution pipelines, and real-time digital rendering lobbies.",
     image: "/webp/assets/Industries-page/slider/Media-and-Entertainment.webp",
     mobileImage: "/webp/assets/Industries-page/industries/Media-and-Entertainment.webp"
@@ -58,6 +65,7 @@ const industryTabs = [
     id: "education",
     name: "Education",
     title: "Education & EdTech",
+    href: "/industries/education",
     description: "Deploy collaborative learning management ecosystems, remote interactive classrooms, and secure academic credential validation nodes.",
     image: "/webp/assets/Industries-page/slider/Education.webp",
     mobileImage: "/webp/assets/Industries-page/industries/Education.webp"
@@ -66,6 +74,7 @@ const industryTabs = [
     id: "government",
     name: "Government & Public Sector",
     title: "Government & Public Sector",
+    href: "/industries/government-public-sector",
     description: "Modernize national security portals, establish cloud migration frameworks, and meet strict federal regulatory and database security compliance.",
     image: "/webp/assets/Industries-page/slider/Government-and-Public-Sector.webp",
     mobileImage: "/webp/assets/Industries-page/industries/Government-and-Public-Sector.webp"
@@ -101,42 +110,38 @@ export function IndustryExpertise() {
           </Reveal>
         </div>
 
-        {/* Horizontal Navigation Tabs */}
-        <div className="w-full border-b border-zinc-800/60 mb-10 overflow-x-auto scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <div className="flex gap-8 min-w-max pb-3">
+        {/* Dynamic Category Tabs */}
+        <Reveal delay={0.1}>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 md:mb-12">
             {industryTabs.map((tab) => {
-              const isActive = activeTab === tab.id;
+              const isActive = tab.id === activeTab;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`text-sm md:text-[15px] font-semibold transition-all duration-300 relative pb-3 cursor-pointer shrink-0 ${
-                    isActive ? "text-rose-500 font-bold" : "text-zinc-400 hover:text-white"
+                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                    isActive
+                      ? "bg-rose-600 text-white shadow-[0_0_20px_rgba(225,29,72,0.4)] border border-rose-500 scale-105"
+                      : "bg-zinc-900/80 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800/80"
                   }`}
                 >
                   {tab.name}
-                  {isActive && (
-                    <motion.div 
-                      layoutId="activeTabUnderline"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-rose-500"
-                    />
-                  )}
                 </button>
               );
             })}
           </div>
-        </div>
+        </Reveal>
 
-        {/* Showcase Banner Display area */}
-        <Reveal>
-          {/* Mobile View: Clean Rectangular Stacked Card Layout (< md) */}
-          <div className="block md:hidden relative w-full rounded-3xl bg-zinc-950 border border-zinc-900 shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden mb-16">
-            {/* Mobile Rectangular Banner Image Container */}
-            <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-900">
+        {/* Dynamic Showcase Container */}
+        <Reveal delay={0.2}>
+          {/* Mobile View: Vertical Stacked Banner (< md) */}
+          <div className="md:hidden flex flex-col rounded-3xl overflow-hidden bg-zinc-950 border border-zinc-800/80 shadow-[0_15px_35px_rgba(0,0,0,0.8)] mb-12">
+            {/* Mobile Image */}
+            <div className="relative w-full h-[240px] sm:h-[300px] overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeData.id}
-                  src={activeData.mobileImage || activeData.image}
+                  src={activeData.mobileImage}
                   alt={activeData.name}
                   initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -159,13 +164,13 @@ export function IndustryExpertise() {
               </div>
               
               <div className="pt-4">
-                <a 
-                  href="/industries" 
+                <Link 
+                  href={activeData.href} 
                   className="text-xs font-bold text-white hover:text-rose-100 uppercase tracking-wider inline-flex items-center gap-2 group/btn w-fit relative z-30"
                 >
                   <span>Learn more</span>
                   <ArrowUpRight size={16} className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 transition-transform text-white" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -204,13 +209,13 @@ export function IndustryExpertise() {
               </div>
               
               <div>
-                <a 
-                  href="/industries" 
+                <Link 
+                  href={activeData.href} 
                   className="text-xs font-bold text-white hover:text-rose-100 uppercase tracking-wider flex items-center gap-1.5 mt-8 group/btn w-fit relative z-30"
                 >
                   <span>Learn more</span>
                   <ArrowUpRight size={14} className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5 transition-transform text-white" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
