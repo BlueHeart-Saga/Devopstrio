@@ -271,12 +271,12 @@ export default function EngineeringCommunityPage() {
               </div>
 
               <div className="pt-4">
-                <button
-                  onClick={() => setJoinModalOpen(true)}
+                <Link
+                  href="/careers"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-lg cursor-pointer"
                 >
-                  Join The Story <ArrowRight className="w-4 h-4" />
-                </button>
+                  Join Our Team <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
 
@@ -635,7 +635,7 @@ export default function EngineeringCommunityPage() {
             </div>
           </Reveal>
 
-          <div className="relative border-l-2 border-zinc-800 ml-4 md:ml-32 space-y-10 pl-6 md:pl-10">
+          <div className="relative border-l-2 border-zinc-800 ml-6 md:ml-52 space-y-10 pl-6 md:pl-10">
             {[
               { month: "January", title: "Global Cloud Summit", desc: "Keynote talks on multi-cloud Landing Zone design and zero-trust perimeter security." },
               { month: "March", title: "DevOps & K8s Meetup", desc: "Live cluster scaling demonstrations, Cilium eBPF networking, and ArgoCD GitOps pipelines." },
@@ -645,16 +645,18 @@ export default function EngineeringCommunityPage() {
               { month: "November", title: "Community Connect & MVP Awards", desc: "Annual celebration recognizing top open source contributors, mentors, and community speakers." }
             ].map((evt, idx) => (
               <div key={idx} className="relative group">
-                {/* Timeline Dot */}
-                <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-[#030303] border-2 border-rose-500 group-hover:bg-rose-500 transition-colors" />
+                {/* Timeline Dot with Outer Glow */}
+                <div className="absolute -left-[33px] md:-left-[49px] top-1.5 w-4 h-4 rounded-full bg-[#030303] border-2 border-rose-500 group-hover:bg-rose-500 group-hover:scale-125 transition-all duration-300 shadow-[0_0_10px_rgba(244,63,94,0.4)]" />
 
-                {/* Month Pill on left for desktop */}
-                <span className="hidden md:block absolute -left-32 top-1 text-xs font-mono font-bold text-rose-400 uppercase tracking-widest text-right w-24">
-                  {evt.month}
-                </span>
+                {/* Month on left for desktop: clearly positioned to the left of the dot with safe gap */}
+                <div className="hidden md:flex absolute -left-48 top-1 w-36 justify-end items-center pr-4">
+                  <span className="text-xs font-mono font-bold tracking-wider uppercase text-rose-400 bg-rose-500/10 border border-rose-500/20 px-3 py-1 rounded-full whitespace-nowrap">
+                    {evt.month}
+                  </span>
+                </div>
 
                 <div className="p-6 rounded-[20px] bg-[#0A0A0A] border border-zinc-800/80 hover:border-rose-500/50 transition-colors space-y-2">
-                  <span className="md:hidden text-xs font-mono font-bold text-rose-400 uppercase block">{evt.month}</span>
+                  <span className="md:hidden text-xs font-mono font-bold text-rose-400 uppercase tracking-wider bg-rose-500/10 border border-rose-500/20 px-2.5 py-0.5 rounded-full w-fit block mb-1">{evt.month}</span>
                   <h4 className="text-lg font-bold text-white">{evt.title}</h4>
                   <p className="text-sm text-zinc-400 leading-relaxed font-normal">{evt.desc}</p>
                 </div>
