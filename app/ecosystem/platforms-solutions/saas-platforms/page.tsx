@@ -367,7 +367,7 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-12 bg-[#030303] border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="text-center max-w-2xl mx-auto mb-8">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               SYSTEM ORCHESTRATION
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
@@ -399,7 +399,7 @@ export default function SaaSPlatformsPage() {
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 xl:px-12 relative z-10">
 
           <div className="max-w-3xl mb-12">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               RECOMMENDED SAAS PORTFOLIO
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
@@ -644,7 +644,7 @@ export default function SaaSPlatformsPage() {
       <section className="w-full py-12 bg-black border-b border-zinc-900/60">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <div className="max-w-3xl mb-8">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               PLATFORM INDEX
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">
@@ -932,7 +932,7 @@ export default function SaaSPlatformsPage() {
       <section id="lead-form" className="w-full py-12 bg-[#030303]">
         <div className="max-w-4xl mx-auto px-12 xl:px-8">
           <div className="text-center mb-8">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               CONNECT WITH US
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4">

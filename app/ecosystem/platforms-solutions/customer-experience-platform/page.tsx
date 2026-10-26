@@ -35,7 +35,7 @@ const CustomerExperienceOverview = () => {
 
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">EXCEPTIONAL EXPERIENCES</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">EXCEPTIONAL EXPERIENCES</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4 uppercase">
               Deliver Exceptional Customer Experiences Everywhere
             </h2>
@@ -90,7 +90,7 @@ const CustomerChallenges = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">BOTTLENECKS</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">BOTTLENECKS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
               Solving Modern Customer Experience Challenges
             </h2>
@@ -144,7 +144,7 @@ const CustomerCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM ENGINE</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM ENGINE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Customer Experience Capabilities</h2>
           </div>
         </Reveal>
@@ -189,7 +189,7 @@ const CustomerArchitecture = () => {
     <section className="py-24 bg-black text-white relative overflow-hidden border-b border-zinc-900/60">
       <div className="max-w-4xl mx-auto px-6 xl:px-8 relative z-10 text-center">
         <Reveal>
-          <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+          <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
             REFERENCE ARCHITECTURE
           </span>
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase mb-16">
@@ -239,7 +239,7 @@ const CustomerModules = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM MODULES</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Core Platform Modules</h2>
           </div>
         </Reveal>
@@ -283,7 +283,7 @@ const CustomerJourney = () => {
       <div className="max-w-7xl mx-auto px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">LIFECYCLE</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">LIFECYCLE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Customer Journey Lifecycle</h2>
           </div>
         </Reveal>
@@ -325,7 +325,7 @@ const PlatformFeatures = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURE GRID</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM FEATURE GRID</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Complete Platform Features</h2>
           </div>
         </Reveal>
@@ -356,7 +356,7 @@ const AIPersonalization = () => {
         {/* Left Side */}
         <div className="lg:col-span-5 text-left">
           <Reveal>
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               COGNITIVE EXPERIENCES
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">
@@ -407,7 +407,7 @@ const OmnichannelEngagement = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">OMNICHANNEL</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">OMNICHANNEL</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">Meet Customers Wherever They Are</h2>
           </div>
         </Reveal>
@@ -451,7 +451,7 @@ const TechnologyStack = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">INTEGRATED STACK</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">INTEGRATED STACK</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Supported Technologies</h2>
           </div>
         </Reveal>
@@ -498,7 +498,7 @@ const BusinessOutcomes = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">BUSINESS VALUE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Business Outcomes</h2>
           </div>
         </Reveal>
@@ -540,7 +540,7 @@ const IndustryUseCases = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">SECTOR DEPLOYMENTS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
               Industry Use Cases
             </h2>
@@ -588,7 +588,7 @@ const WhyChooseCustomerPlatform = () => {
     <section className="py-24 bg-[#030303] text-white relative overflow-hidden border-b border-zinc-900/60">
       <div className="max-w-7xl mx-auto px-6 xl:px-8 relative z-10 text-center">
         <Reveal>
-          <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+          <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
             OUR ADVANTAGE
           </span>
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase mb-16">
@@ -635,7 +635,7 @@ const RelatedSolutions = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">ECOSYSTEM LINKS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Related Solutions</h2>
           </div>
         </Reveal>

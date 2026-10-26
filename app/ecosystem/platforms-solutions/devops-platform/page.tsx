@@ -286,7 +286,7 @@ export default function DevOpsPlatformPage() {
 
           <div className="text-center max-w-3xl mx-auto mb-20">
             <Reveal>
-              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PIPELINE RUNNERS</span>
+              <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PIPELINE RUNNERS</span>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
                 CI/CD <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-rose-500">Pipelines</span>
               </h2>
@@ -468,7 +468,7 @@ export default function DevOpsPlatformPage() {
 
           <div className="text-center max-w-3xl mx-auto mb-20">
             <Reveal>
-              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM ECOSYSTEM</span>
+              <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM ECOSYSTEM</span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Enterprise DevOps Platform</h2>
             </Reveal>
           </div>
@@ -667,7 +667,7 @@ export default function DevOpsPlatformPage() {
 
             <div className="lg:col-span-5 relative z-20">
               <Reveal>
-                <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">GOVERNANCE & SEC</span>
+                <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">GOVERNANCE & SEC</span>
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Security & Compliance</h2>
 
                 <div className="mt-10 flex items-center gap-4">
@@ -737,7 +737,7 @@ export default function DevOpsPlatformPage() {
 
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
           <Reveal className="mb-24 text-center flex flex-col items-center">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ARCHITECTURE BLUEPRINT</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">ARCHITECTURE BLUEPRINT</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Platform Architecture</h2>
           </Reveal>
 

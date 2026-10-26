@@ -104,7 +104,7 @@ function Head({
   return (
     <div className={center ? "mx-auto max-w-[820px] text-center" : "max-w-[820px]"}>
       {subtitle && (
-        <span className="text-[12px] sm:text-[13px] font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
+        <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
           {subtitle}
         </span>
       )}

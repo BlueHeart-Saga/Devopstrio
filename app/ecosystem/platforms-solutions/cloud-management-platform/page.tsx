@@ -294,7 +294,7 @@ const CloudPartners = () => {
     <section className="w-full py-24 bg-[#050505] border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 mb-16 text-center relative z-10">
         <Reveal>
-          <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ECOSYSTEM</span>
+          <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">ECOSYSTEM</span>
           <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white">
             Integrated Technologies & Trusted Partners
           </h2>
@@ -473,7 +473,7 @@ export default function CloudManagementPlatformPage() {
           {/* Centered Header */}
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+              <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
                 OPS CONTROL
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
@@ -573,7 +573,7 @@ export default function CloudManagementPlatformPage() {
 
           <div className="text-center max-w-3xl mx-auto mb-20">
             <Reveal>
-              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">UNIFIED GOVERNANCE</span>
+              <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">UNIFIED GOVERNANCE</span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6">Cloud Management Platform</h2>
             </Reveal>
           </div>
@@ -663,7 +663,7 @@ export default function CloudManagementPlatformPage() {
         <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 relative z-10">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+              <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
                 COMPLIANCE HUB
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
@@ -683,7 +683,7 @@ export default function CloudManagementPlatformPage() {
         <div className="w-full relative z-10">
           <Reveal>
             <div className="max-w-7xl mx-auto w-full px-6 xl:px-8 text-center max-w-3xl mb-4">
-              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">SECURITY CHECKS</span>
+              <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">SECURITY CHECKS</span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Cloud Security</h2>
             </div>
           </Reveal>
@@ -697,7 +697,7 @@ export default function CloudManagementPlatformPage() {
       <section className="w-full py-28 bg-[#030303] border-b border-zinc-900/60 relative">
         <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
           <Reveal className="mb-16 text-center">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">TOPOLOGY MAP</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">TOPOLOGY MAP</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-6">Multi-Cloud Management</h2>
           </Reveal>
 
@@ -731,7 +731,7 @@ export default function CloudManagementPlatformPage() {
 
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+              <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
                 CAPACITY AUDIT
               </span>
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight mb-5 text-white">

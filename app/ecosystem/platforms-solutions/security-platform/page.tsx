@@ -33,7 +33,7 @@ const SecurityOverview = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM OVERVIEW</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM OVERVIEW</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               One Platform for Complete Enterprise Protection
             </h2>
@@ -81,7 +81,7 @@ const SecurityChallenges = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">THE RISK LANDSCAPE</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">THE RISK LANDSCAPE</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Modern Security Challenges</h2>
           </div>
         </Reveal>
@@ -124,7 +124,7 @@ const SecurityCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">CORE CAPABILITIES</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">CORE CAPABILITIES</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Enterprise Security Capabilities</h2>
           </div>
         </Reveal>
@@ -173,7 +173,7 @@ const SecurityArchitecture = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ARCHITECTURE</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">ARCHITECTURE</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">
               Enterprise Security Reference Architecture
             </h2>
@@ -242,7 +242,7 @@ const SecurityModules = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM MODULES</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Core Security Modules</h2>
           </div>
         </Reveal>
@@ -299,7 +299,7 @@ const ThreatWorkflow = () => {
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               PLAYBOOK SEC
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
@@ -372,7 +372,7 @@ const SecurityFeatures = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURES</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM FEATURES</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Platform Features</h2>
           </div>
         </Reveal>
@@ -412,7 +412,7 @@ const ComplianceSection = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">AUDIT READY</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">AUDIT READY</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-6">Built for Regulatory Compliance</h2>
           </div>
         </Reveal>
@@ -470,7 +470,7 @@ const TechnologyStack = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">INTEGRATIONS</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">INTEGRATIONS</span>
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-6">Supported Technologies</h2>
           </div>
         </Reveal>
@@ -554,7 +554,7 @@ const AISecurity = () => {
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <Reveal>
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               MACHINE LEARNING
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
@@ -641,7 +641,7 @@ const BusinessOutcomes = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">IMPACT SUMMARY</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">IMPACT SUMMARY</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6">Business Outcomes</h2>
           </div>
         </Reveal>
@@ -683,7 +683,7 @@ const IndustryUseCases = () => {
         {/* Header */}
         <Reveal>
           <div className="max-w-3xl mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">SECTOR DEPLOYMENTS</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-4">
               Comprehensive security built to protect your business
             </h2>
@@ -786,7 +786,7 @@ const WhyChoosePlatform = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">WHY DEVOPSTRIO</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">WHY DEVOPSTRIO</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6">Why Devopstrio Security Platform</h2>
           </div>
         </Reveal>
@@ -826,7 +826,7 @@ const RelatedSolutions = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">ECOSYSTEM LINKS</span>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight text-white mb-6">Related Solutions</h2>
           </div>
         </Reveal>

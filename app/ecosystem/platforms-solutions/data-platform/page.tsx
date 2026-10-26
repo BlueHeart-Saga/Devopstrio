@@ -46,7 +46,7 @@ const DataPlatformOverview = () => {
         <Reveal>
           <div className="w-full bg-zinc-950/80 border border-zinc-900 rounded-[2.5rem] p-8 md:p-12 mb-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 hover:border-zinc-800 transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
             <div className="lg:w-1/2 flex flex-col items-start text-left">
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-rose-500 mb-4 block">FRONTIER TRANSFORMATION</span>
+              <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">FRONTIER TRANSFORMATION</span>
               <h3 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 leading-snug">
                 Turn enterprise data into your core business engine
               </h3>
@@ -73,7 +73,7 @@ const DataPlatformOverview = () => {
         {/* Section Heading & Explore Button */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">GET INSIGHTS</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">GET INSIGHTS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-4 uppercase">
               Advance your Data Transformation
             </h2>
@@ -141,7 +141,7 @@ const DataCapabilities = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM ENGINE</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM ENGINE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Core Data Platform Capabilities</h2>
           </div>
         </Reveal>
@@ -272,7 +272,7 @@ const DataArchitecture = () => {
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <Reveal>
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               REFERENCE ARCHITECTURE
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
@@ -361,7 +361,7 @@ const DataModules = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM MODULES</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM MODULES</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Core Platform Modules</h2>
           </div>
         </Reveal>
@@ -411,7 +411,7 @@ const DataPipelineWorkflow = () => {
         {/* Header Section */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               PIPELINE LIFECYCLE
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white uppercase">
@@ -484,7 +484,7 @@ const PlatformFeatures = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">PLATFORM FEATURE GRID</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">PLATFORM FEATURE GRID</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Complete Data Platform Features</h2>
           </div>
         </Reveal>
@@ -559,7 +559,7 @@ const DataGovernance = () => {
         {/* Header */}
         <Reveal>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">GOVERNANCE & TRUST</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">GOVERNANCE & TRUST</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">
               Trusted Data Starts with Governance
             </h2>
@@ -638,7 +638,7 @@ const AIAnalyticsIntegration = () => {
         {/* Left Side */}
         <div className="lg:col-span-5 text-left">
           <Reveal>
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               DATA PIPELINE FLOW
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">
@@ -722,7 +722,7 @@ const TechnologyStack = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">INTEGRATED STACK</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">INTEGRATED STACK</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Supported Technologies</h2>
           </div>
         </Reveal>
@@ -769,7 +769,7 @@ const BusinessOutcomes = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">BUSINESS VALUE</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">BUSINESS VALUE</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Business Outcomes</h2>
           </div>
         </Reveal>
@@ -813,7 +813,7 @@ const IndustryUseCases = () => {
         {/* Header */}
         <Reveal>
           <div className="max-w-3xl mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">SECTOR DEPLOYMENTS</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">SECTOR DEPLOYMENTS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-4 uppercase">
               Tailored Sector Solutions
             </h2>
@@ -992,7 +992,7 @@ const WhyChooseDataPlatform = () => {
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <Reveal>
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-3 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               OUR ADVANTAGE
             </span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white uppercase">
@@ -1066,7 +1066,7 @@ const RelatedSolutions = () => {
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">ECOSYSTEM LINKS</span>
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">ECOSYSTEM LINKS</span>
             <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight text-white mb-6 uppercase">Related Solutions</h2>
           </div>
         </Reveal>
