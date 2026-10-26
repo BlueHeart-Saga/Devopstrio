@@ -458,8 +458,8 @@ export default function SaaSPlatformsPage() {
                 </div>
               </div>
 
-              {/* Right Image Half - Clean Platform Mockup Frame */}
-              <div className="w-full lg:w-1/2 relative min-h-[460px] sm:min-h-[540px] lg:min-h-[640px] bg-gradient-to-br from-zinc-950 via-[#0d0d10] to-black border-t lg:border-t-0 lg:border-l border-zinc-800/80 p-5 sm:p-7 lg:p-9 flex items-center justify-center">
+              {/* Right Image Half */}
+              <div className="w-full lg:w-1/2 relative min-h-[380px] sm:min-h-[460px] lg:min-h-[540px] bg-gradient-to-br from-zinc-950/80 to-black border-t lg:border-t-0 lg:border-l border-zinc-800/80 p-5 sm:p-7 lg:p-9 flex items-center justify-center overflow-hidden">
                 {/* Subtle Ambient Red/Rose Radial Glow */}
                 <div
                   aria-hidden
@@ -469,48 +469,13 @@ export default function SaaSPlatformsPage() {
                   }}
                 />
 
-                {/* Browser / Application Window Frame */}
-                <div className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[500px] rounded-2xl overflow-hidden border border-zinc-700/60 bg-[#141418] shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(225,29,72,0.15)] flex flex-col group">
-                  {/* Browser Chrome Header Bar */}
-                  <div className="px-4 py-3 bg-[#18181c] border-b border-zinc-800/90 flex items-center justify-between select-none">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                    </div>
-
-                    {/* URL Pill */}
-                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 border border-zinc-800 text-[11px] font-mono text-zinc-400">
-                      <Shield className="w-2.5 h-2.5 text-emerald-400" />
-                      <span className="truncate max-w-[180px] sm:max-w-[240px]">
-                        {activeProduct.url ? activeProduct.url.replace(/^https?:\/\//, '').replace(/\/$/, '') : `${activeProduct.slug}.devopstrio.co.uk`}
-                      </span>
-                    </div>
-
-                    {/* Live Indicator */}
-                    <div className="flex items-center gap-1.5">
-                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                      </span>
-                      <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-emerald-400 hidden sm:inline">
-                        Live
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Window Viewport with Dashboard Image */}
-                  <div className="relative w-full aspect-[1805/2183] bg-black/95 overflow-hidden flex items-center justify-center">
-                    <img
-                      src={activeProduct.image || `/webp/assets/Home-page/our-products/${activeProduct.slug}.webp`}
-                      alt={`${activeProduct.name} Interface Dashboard`}
-                      className="w-full h-full object-cover object-center filter contrast-[1.03] brightness-95 group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                      loading="lazy"
-                    />
-                    {/* Inner border ring for depth */}
-                    <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none rounded-b-2xl" />
-                  </div>
-                </div>
+                {/* Cover Image directly fitted */}
+                <img
+                  src={activeProduct.image || `/webp/assets/Home-page/our-products/${activeProduct.slug}.webp`}
+                  alt={`${activeProduct.name} Cover`}
+                  className="w-full max-w-[480px] h-auto aspect-[1805/2183] object-cover rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-500 relative z-10"
+                  loading="lazy"
+                />
               </div>
             </div>
           ))}
