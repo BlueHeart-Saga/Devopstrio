@@ -106,7 +106,7 @@ export default function SaaSPlatformsPage() {
       desc: "Coordinate scheduling, automate lease contract triggers, and aggregate regional rental telemetry for property portfolios.",
       features: ["Lease Workflows", "Asset Telemetry", "Contract Automation", "Regional Analytics"],
       logo: "/webp/assets/Home-page/our-products/logo/homela.webp",
-      image: "/webp/assets/Home-page/homela/hero/Hero.webp",
+      image: "/webp/assets/ecosystem/saas-covers/homela.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Request Demo",
       url: "https://homela.devopstrio.co.uk/"
@@ -120,7 +120,7 @@ export default function SaaSPlatformsPage() {
       desc: "Centralize clinical workflows, verify patient credentials, manage appointments, and streamline healthcare operations.",
       features: ["Patient Records", "Appointments Scheduler", "Clinical Billing", "Actionable Reports"],
       logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp",
-      image: "/webp/assets/Home-page/caresuite/hero/HERO CARESUITE.webp",
+      image: "/webp/assets/ecosystem/saas-covers/caresuite.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Book Demo",
       url: "https://caresuite.devopstrio.co.uk/"
@@ -148,7 +148,7 @@ export default function SaaSPlatformsPage() {
       desc: "Track cross-channel spending, automate analytics collection, and split traffic dynamically for optimal campaign conversions.",
       features: ["Traffic Splitting", "Spend Auditing", "Analytics Aggregator", "Channel Attribution"],
       logo: "/webp/assets/Home-page/our-products/logo/Campix.webp",
-      image: "/webp/assets/landingpage-campix/hero.webp",
+      image: "/webp/assets/ecosystem/saas-covers/campix.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Request Demo",
       url: "https://campix.devopstrio.co.uk/"
@@ -162,7 +162,7 @@ export default function SaaSPlatformsPage() {
       desc: "Empower schools and training centers with course modules, student logs, task sheets, and grade records.",
       features: ["Course Modules", "Student Logs", "Task Sheets", "Performance Reports"],
       logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp",
-      image: "/webp/assets/Home-page/prestivo/hero/prestivo hero.webp",
+      image: "/webp/assets/ecosystem/saas-covers/prestivo.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Learn More",
       url: "https://prestivo.devopstrio.co.uk/"
@@ -176,7 +176,7 @@ export default function SaaSPlatformsPage() {
       desc: "Produce brand assets, write copy, and manage creative media using automated neural generative tools.",
       features: ["AI Copywriter & Editor", "Design Asset Generation", "Campaign Coordination", "Media Asset Lake"],
       logo: "/webp/assets/Home-page/our-products/logo/brio.webp",
-      image: "/webp/assets/Home-page/brio/hero/brio hero.webp",
+      image: "/webp/assets/ecosystem/saas-covers/brio.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Watch Demo",
       url: "https://brio.devopstrio.co.uk/"
@@ -190,7 +190,7 @@ export default function SaaSPlatformsPage() {
       desc: "Accelerate signature loops securely. Fully compliant with European eIDAS and US ESIGN Acts, featuring audit logs.",
       features: ["Compliant eSignatures", "Document Workflows", "Detailed Audit Logs", "Secure Lockers"],
       logo: "/webp/assets/Home-page/our-products/logo/safesign.webp",
-      image: "/webp/assets/Home-page/esigniva/hero/hero (1).webp",
+      image: "/webp/assets/ecosystem/saas-covers/esigniva.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Start Free",
       url: "https://esigniva.com/"
@@ -204,7 +204,7 @@ export default function SaaSPlatformsPage() {
       desc: "Automate contract reviews, track billing metrics, organize case documentation, and streamline intake channels.",
       features: ["Legal Case Management", "Document Summarization", "Legal Research Assistant", "Time Tracking & Billing"],
       logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp",
-      image: "/webp/assets/Home-page/justivon/hero/hero (2).webp",
+      image: "/webp/assets/ecosystem/saas-covers/justivon.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Book Demo",
       url: "https://justivon.devopstrio.co.uk/"
@@ -459,7 +459,7 @@ export default function SaaSPlatformsPage() {
               </div>
 
               {/* Right Image Half - Clean Platform Mockup Frame */}
-              <div className="w-full lg:w-1/2 relative min-h-[380px] sm:min-h-[460px] lg:min-h-[580px] bg-gradient-to-br from-zinc-950 via-[#0d0d10] to-black border-t lg:border-t-0 lg:border-l border-zinc-800/80 p-5 sm:p-7 lg:p-9 flex items-center justify-center">
+              <div className="w-full lg:w-1/2 relative min-h-[460px] sm:min-h-[540px] lg:min-h-[640px] bg-gradient-to-br from-zinc-950 via-[#0d0d10] to-black border-t lg:border-t-0 lg:border-l border-zinc-800/80 p-5 sm:p-7 lg:p-9 flex items-center justify-center">
                 {/* Subtle Ambient Red/Rose Radial Glow */}
                 <div
                   aria-hidden
@@ -470,7 +470,7 @@ export default function SaaSPlatformsPage() {
                 />
 
                 {/* Browser / Application Window Frame */}
-                <div className="relative w-full max-w-[560px] rounded-2xl overflow-hidden border border-zinc-700/60 bg-[#141418] shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(225,29,72,0.15)] flex flex-col group">
+                <div className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[500px] rounded-2xl overflow-hidden border border-zinc-700/60 bg-[#141418] shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(225,29,72,0.15)] flex flex-col group">
                   {/* Browser Chrome Header Bar */}
                   <div className="px-4 py-3 bg-[#18181c] border-b border-zinc-800/90 flex items-center justify-between select-none">
                     <div className="flex items-center gap-2">
@@ -500,11 +500,11 @@ export default function SaaSPlatformsPage() {
                   </div>
 
                   {/* Window Viewport with Dashboard Image */}
-                  <div className="relative w-full aspect-[16/10] bg-black/95 overflow-hidden flex items-center justify-center">
+                  <div className="relative w-full aspect-[1805/2183] bg-black/95 overflow-hidden flex items-center justify-center">
                     <img
                       src={activeProduct.image || `/webp/assets/Home-page/our-products/${activeProduct.slug}.webp`}
                       alt={`${activeProduct.name} Interface Dashboard`}
-                      className="w-full h-full object-cover object-top filter contrast-[1.03] brightness-95 group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                      className="w-full h-full object-cover object-center filter contrast-[1.03] brightness-95 group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                       loading="lazy"
                     />
                     {/* Inner border ring for depth */}
