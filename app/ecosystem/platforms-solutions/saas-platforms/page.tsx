@@ -134,7 +134,7 @@ export default function SaaSPlatformsPage() {
       desc: "Simplify recruitment, onboarding, attendance, payroll, and employee management from one intelligent platform.",
       features: ["Recruitment Automation", "Leave Management", "Dynamic Payroll Engine", "Attendance Tracking"],
       logo: "/webp/assets/Home-page/our-products/logo/humanex.webp",
-      image: "/webp/assets/Home-page/humanex/hero/HERO HUMANUX.webp",
+      image: "/webp/assets/ecosystem/saas-covers/humanex.webp",
       ctaPrimary: "View Platform",
       ctaSecondary: "Start Trial",
       url: "https://humanex.devopstrio.co.uk/"
