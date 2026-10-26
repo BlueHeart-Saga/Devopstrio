@@ -484,8 +484,34 @@ export default function DataAnalyticsInnovationLabPage() {
         </div>
       </Hero>
 
+      {/* Sticky Section Nav */}
+      <div className="sticky top-16 md:top-20 z-40 border-b border-zinc-900/80 bg-black/85 backdrop-blur-xl">
+        <nav aria-label="On this page" className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-6 py-3 sm:px-8 lg:px-12 scrollbar-none">
+          {[
+            { id: "overview", label: "Overview" },
+            { id: "capabilities", label: "Capabilities" },
+            { id: "framework", label: "Framework" },
+            { id: "deliverables", label: "Deliverables" },
+            { id: "architecture", label: "Architecture" },
+            { id: "scenarios", label: "Scenarios" },
+            { id: "outcomes", label: "Outcomes" },
+            { id: "differentiators", label: "Why Us" },
+            { id: "ecosystem", label: "Other Labs" },
+          ].map((n) => (
+            <a
+              key={n.id}
+              href={`#${n.id}`}
+              className="shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 hover:text-white hover:bg-zinc-900/70 border border-transparent hover:border-zinc-800 transition-colors"
+            >
+              {n.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+
       {/* 2. OVERVIEW / MISSION SECTION */}
-      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden scroll-mt-20" id="overview">
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -494,13 +520,13 @@ export default function DataAnalyticsInnovationLabPage() {
         />
         
 
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
           {/* Top Heading */}
           <Reveal className="mb-10 max-w-3xl">
-            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               Mission Overview
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-5 text-white">
               Building the Data Backbone <br />
               <span className="text-rose-500">of Modern Digital Enterprises</span>
             </h2>
@@ -528,7 +554,7 @@ export default function DataAnalyticsInnovationLabPage() {
       </section>
 
       {/* 3. CORE INNOVATION AREAS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden scroll-mt-20" id="capabilities">
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -536,12 +562,12 @@ export default function DataAnalyticsInnovationLabPage() {
           style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
         />
         
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
           <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               Capabilities
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-5 text-white">
               Core Areas of <span className="text-rose-500">Data & Analytics Innovation</span>
             </h2>
             
@@ -571,7 +597,7 @@ export default function DataAnalyticsInnovationLabPage() {
       </section>
 
       {/* 4. LIFECYCLE / OPERATING MODEL */}
-      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden scroll-mt-20" id="framework">
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -579,13 +605,13 @@ export default function DataAnalyticsInnovationLabPage() {
           style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
         />
         
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
           
           <Reveal className="mb-14 text-left max-w-3xl">
-            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               Operating Framework
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-5 text-white">
               How the Data & Analytics Lab Builds <span className="text-rose-500">Insight-Driven Platforms</span>
             </h2>
             
@@ -627,7 +653,7 @@ export default function DataAnalyticsInnovationLabPage() {
       </section>
 
       {/* 5. SOLUTIONS BUILT IN THE LAB */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden scroll-mt-20" id="deliverables">
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -635,12 +661,12 @@ export default function DataAnalyticsInnovationLabPage() {
           style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
         />
         
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
           <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               Deliverables
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-5 text-white">
               Data & Analytics Solutions Built <span className="text-rose-500">Inside the Lab</span>
             </h2>
             
@@ -683,7 +709,7 @@ export default function DataAnalyticsInnovationLabPage() {
       </section>
 
       {/* 6. REFERENCE ARCHITECTURE */}
-      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden scroll-mt-20" id="architecture">
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -698,10 +724,10 @@ export default function DataAnalyticsInnovationLabPage() {
             {/* Left: Heading, Chips & Blueprint Image */}
             <div className="lg:w-1/2 sticky top-16 lg:top-20">
               <Reveal>
-                <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-rose-500 mb-2 block">
+                <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
                   Reference Blueprint
                 </span>
-                <h2 className="text-xl md:text-2xl xl:text-4xl font-bold tracking-tight leading-tight text-white mb-3">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
                   Our Data & Analytics Innovation <span className="text-rose-500">Reference Architecture</span>
                 </h2>
 
@@ -768,7 +794,7 @@ export default function DataAnalyticsInnovationLabPage() {
       </section>
 
       {/* 7. USE CASES / SCENARIOS */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden scroll-mt-20" id="scenarios">
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -776,13 +802,13 @@ export default function DataAnalyticsInnovationLabPage() {
           style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
         />
         
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
           
           <Reveal className="mb-14 text-center max-w-3xl mx-auto">
-            <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
               Scenarios
             </span>
-            <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-5 text-white">
               Data & Analytics Use Cases We Engineer <span className="text-rose-500">Across the Enterprise</span>
             </h2>
             
@@ -911,17 +937,17 @@ export default function DataAnalyticsInnovationLabPage() {
           style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
         />
         
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Header */}
             <div className="lg:col-span-5">
               <Reveal>
-                <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+                <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
                   Innovation Impact
                 </span>
-                <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight mb-5 text-white">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight mb-5 text-white">
                   Outcomes the Data & Analytics Lab <br />
                   <span className="text-rose-500">Helps Deliver</span>
                 </h2>
@@ -1048,12 +1074,12 @@ export default function DataAnalyticsInnovationLabPage() {
           style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
         />
         
-        <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-12 relative z-10">
           
           {/* Related Labs Grid */}
           <div className="mb-24">
             <Reveal className="mb-14 text-left">
-              <span className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-rose-500 mb-4 block">
+              <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
                 Ecosystem
               </span>
               <h2 className="text-xl md:text-2xl xl:text-3xl font-bold tracking-tight leading-tight text-white mb-5">
