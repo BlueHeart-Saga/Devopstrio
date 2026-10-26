@@ -245,7 +245,7 @@ const CICDPipeline = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">DELIVERY</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Automated Software Delivery</h2>
           </div>
@@ -284,7 +284,7 @@ const ToolchainCapabilities = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = 380;
+      const scrollAmount = 310;
       scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
     }
   };
@@ -304,7 +304,7 @@ const ToolchainCapabilities = () => {
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ENGINEERING SUITE</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Core Toolchain Capabilities</h2>
           </div>
@@ -312,21 +312,21 @@ const ToolchainCapabilities = () => {
 
         <div ref={scrollRef} className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {capabilities.map((item, idx) => (
-            <Reveal key={idx} delay={idx * 0.05} className="min-w-[300px] md:min-w-[360px] flex-shrink-0 snap-start">
-              <div className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden hover:border-rose-500/50 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col h-full min-h-[420px] group">
-                <div className="w-full h-48 relative bg-zinc-900 overflow-hidden border-b border-zinc-800">
+            <Reveal key={idx} delay={idx * 0.05} className="min-w-[260px] sm:min-w-[280px] md:min-w-[290px] max-w-[300px] flex-shrink-0 snap-start">
+              <div className="bg-zinc-950 border border-zinc-800/80 rounded-2xl overflow-hidden hover:border-rose-500/40 hover:shadow-[0_8px_30px_rgba(225,29,72,0.12)] transition-all duration-300 flex flex-col h-full min-h-[330px] group">
+                <div className="w-full h-32 relative bg-zinc-900 overflow-hidden border-b border-zinc-800/80">
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" unoptimized />
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-4 sm:p-5 flex flex-col flex-grow">
                   <span className="text-xs font-semibold tracking-[0.2em] text-rose-400 font-mono uppercase mb-2 block">{item.tag}</span>
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal mb-4 line-clamp-2 flex-grow">{item.desc}</p>
                   <Link 
                     href={item.href}
                     className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
                   >
                     <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
-                      <ChevronRight size={14} />
+                      <ChevronRight size={12} />
                     </div>
                     Explore {item.title}
                   </Link>
@@ -373,7 +373,7 @@ const InfrastructureAsCode = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">INFRASTRUCTURE</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Automated Infrastructure Provisioning</h2>
           </div>
@@ -402,7 +402,7 @@ const PlatformEngineering = () => {
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">PLATFORM</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Empowering Development Teams</h2>
           </div>
@@ -431,7 +431,7 @@ const ObservabilitySection = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">OBSERVABILITY</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Complete Operational Visibility</h2>
           </div>
@@ -463,7 +463,7 @@ const DevSecOpsSection = () => {
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">SECURITY</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Security Throughout the Delivery Lifecycle</h2>
           </div>
@@ -504,7 +504,7 @@ const TechnologyStack = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-6xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ECOSYSTEM</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Technology Stack</h2>
           </div>
@@ -564,7 +564,7 @@ const DeliveryLifecycle = () => {
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ROADMAP</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Software Delivery Lifecycle</h2>
           </div>
@@ -606,7 +606,7 @@ const BusinessOutcomes = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">IMPACT</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Business Outcomes</h2>
           </div>
@@ -636,7 +636,7 @@ const IndustryUseCases = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = 380;
+      const scrollAmount = 310;
       scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
     }
   };
@@ -656,7 +656,7 @@ const IndustryUseCases = () => {
     <section className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">SOLUTIONS</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               Industry Use Cases
@@ -666,21 +666,21 @@ const IndustryUseCases = () => {
 
         <div ref={scrollRef} className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {useCases.map((item, idx) => (
-            <Reveal key={idx} delay={idx * 0.05} className="min-w-[300px] md:min-w-[360px] flex-shrink-0 snap-start">
-              <div className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden hover:border-rose-500/50 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col h-full min-h-[420px] group">
-                <div className="w-full h-40 relative bg-zinc-900 overflow-hidden border-b border-zinc-800">
+            <Reveal key={idx} delay={idx * 0.05} className="min-w-[260px] sm:min-w-[280px] md:min-w-[290px] max-w-[300px] flex-shrink-0 snap-start">
+              <div className="bg-zinc-950 border border-zinc-800/80 rounded-2xl overflow-hidden hover:border-rose-500/40 hover:shadow-[0_8px_30px_rgba(225,29,72,0.12)] transition-all duration-300 flex flex-col h-full min-h-[330px] group">
+                <div className="w-full h-32 relative bg-zinc-900 overflow-hidden border-b border-zinc-800/80">
                   <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" unoptimized />
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-4 sm:p-5 flex flex-col flex-grow">
                   <span className="text-xs font-semibold tracking-[0.2em] text-rose-400 font-mono uppercase mb-2 block">{item.tag}</span>
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal mb-4 line-clamp-2 flex-grow">{item.desc}</p>
                   <Link 
                     href={item.href}
                     className="mt-auto flex items-center gap-2 text-rose-500 text-xs font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
                   >
                     <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
-                      <ChevronRight size={14} />
+                      <ChevronRight size={12} />
                     </div>
                     Learn More
                   </Link>
@@ -730,7 +730,7 @@ const WhyChooseDevOps = () => {
     <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">WHY DEVOPSTRIO</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">Why Devopstrio DevOps</h2>
           </div>

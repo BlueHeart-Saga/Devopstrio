@@ -56,9 +56,6 @@ const AIOverview = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
               Enterprise AI for Modern Digital Ecosystems
             </h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed font-normal max-w-2xl">
-              We architect, deploy, and scale production-grade AI platforms that convert enterprise knowledge into autonomous, deterministic business outcomes.
-            </p>
           </div>
         </Reveal>
 
@@ -175,9 +172,6 @@ const AIArchitecture = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
               Enterprise AI Reference Architecture
             </h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-              A layered, secure blueprint connecting client interfaces and edge devices to orchestrators, vector stores, and foundation models.
-            </p>
           </div>
         </Reveal>
 
@@ -307,7 +301,7 @@ const AICapabilities = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = 380;
+      const scrollAmount = 310;
       scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
     }
   };
@@ -326,20 +320,17 @@ const AICapabilities = () => {
     <section id="capabilities" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ENGINEERING SUITE</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">Our Core AI Capabilities</h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              Explore specialized engineering sub-capabilities backed by live benchmarks, production telemetry, and verified code patterns.
-            </p>
           </div>
         </Reveal>
 
         <div ref={scrollRef} className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {capabilities.map((item, idx) => (
-            <Reveal key={idx} delay={idx * 0.05} className="min-w-[300px] md:min-w-[360px] flex-shrink-0 snap-start">
-              <div className="bg-[#0D0E12] border border-zinc-800/80 rounded-3xl overflow-hidden hover:border-rose-500/50 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col h-full min-h-[440px] group">
-                <div className="w-full h-48 relative bg-zinc-900 overflow-hidden border-b border-zinc-800">
+            <Reveal key={idx} delay={idx * 0.05} className="min-w-[260px] sm:min-w-[280px] md:min-w-[290px] max-w-[300px] flex-shrink-0 snap-start">
+              <div className="bg-[#0D0E12] border border-zinc-800/80 rounded-2xl overflow-hidden hover:border-rose-500/40 hover:shadow-[0_8px_30px_rgba(225,29,72,0.12)] transition-all duration-300 flex flex-col h-full min-h-[330px] group">
+                <div className="w-full h-32 relative bg-zinc-900 overflow-hidden border-b border-zinc-800/80">
                   <Image 
                     src={item.image} 
                     alt={item.title} 
@@ -347,24 +338,24 @@ const AICapabilities = () => {
                     className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                     unoptimized
                   />
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-[10px] font-mono uppercase tracking-wider text-rose-400 font-semibold">
+                  <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-black/85 backdrop-blur-md border border-white/10 text-[9px] font-mono uppercase tracking-wider text-rose-400 font-semibold">
                     {item.tag}
                   </div>
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 leading-tight tracking-tight group-hover:text-rose-400 transition-colors">
+                <div className="p-4 sm:p-5 flex flex-col flex-grow">
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-1.5 leading-snug group-hover:text-rose-400 transition-colors line-clamp-1">
                     {item.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal mb-4 line-clamp-2 flex-grow">
                     {item.desc}
                   </p>
                   
                   <Link 
                     href={item.href}
-                    className="mt-auto inline-flex items-center gap-2 text-rose-500 text-xs md:text-sm font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
+                    className="mt-auto inline-flex items-center gap-1.5 text-rose-500 text-xs font-semibold hover:text-rose-400 transition-colors cursor-pointer w-fit group/btn"
                   >
-                    <div className="w-7 h-7 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
-                      <ChevronRight size={14} />
+                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
+                      <ChevronRight size={12} />
                     </div>
                     <span>Explore Capability</span>
                   </Link>
@@ -418,12 +409,9 @@ const AIModels = () => {
     <section id="models" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-5xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">ECOSYSTEM</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">Models &amp; Frameworks We Architect With</h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              Vendor-neutral engineering across leading commercial frontier models and self-hosted open-weights.
-            </p>
           </div>
         </Reveal>
 
@@ -475,12 +463,9 @@ const AIDevelopmentLifecycle = () => {
     <section id="lifecycle" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">LIFECYCLE</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">Enterprise AI Development Lifecycle</h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              A continuous, audited pipeline taking proof-of-concept models to production workloads.
-            </p>
           </div>
         </Reveal>
 
@@ -523,12 +508,9 @@ const AIInfrastructure = () => {
     <section id="scale" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">SCALE &amp; PERFORMANCE</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">Engineered for Enterprise Scale</h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              Hardened infrastructure designed for ultra-low latency, multi-tenant isolation, and budget predictability.
-            </p>
           </div>
         </Reveal>
 
@@ -557,7 +539,7 @@ const AIUseCases = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = 380;
+      const scrollAmount = 310;
       scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
     }
   };
@@ -575,20 +557,17 @@ const AIUseCases = () => {
     <section id="use-cases" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">INDUSTRY DEPLOYMENTS</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">Enterprise AI in Action</h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              Explore how leading vertical industries deploy our AI architectures for tangible operational ROI.
-            </p>
           </div>
         </Reveal>
 
         <div ref={scrollRef} className="flex overflow-x-auto gap-6 pb-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {useCases.map((item, idx) => (
-            <Reveal key={idx} delay={idx * 0.05} className="min-w-[300px] md:min-w-[360px] flex-shrink-0 snap-start">
-              <div className="bg-[#0D0E12] border border-zinc-800/80 rounded-3xl overflow-hidden hover:border-rose-500/50 hover:shadow-[0_12px_40px_rgba(225,29,72,0.15)] transition-all duration-300 flex flex-col h-full min-h-[420px] group">
-                <div className="w-full h-40 relative bg-zinc-900 overflow-hidden border-b border-zinc-800">
+            <Reveal key={idx} delay={idx * 0.05} className="min-w-[260px] sm:min-w-[280px] md:min-w-[290px] max-w-[300px] flex-shrink-0 snap-start">
+              <div className="bg-[#0D0E12] border border-zinc-800/80 rounded-2xl overflow-hidden hover:border-rose-500/40 hover:shadow-[0_8px_30px_rgba(225,29,72,0.12)] transition-all duration-300 flex flex-col h-full min-h-[330px] group">
+                <div className="w-full h-32 relative bg-zinc-900 overflow-hidden border-b border-zinc-800/80">
                   <Image 
                     src={item.image} 
                     alt={item.title} 
@@ -596,19 +575,19 @@ const AIUseCases = () => {
                     className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
                     unoptimized 
                   />
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-[10px] font-mono uppercase tracking-wider text-rose-400 font-semibold">
+                  <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-black/85 backdrop-blur-md border border-white/10 text-[9px] font-mono uppercase tracking-wider text-rose-400 font-semibold">
                     {item.tag}
                   </div>
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 leading-tight tracking-tight group-hover:text-rose-400 transition-colors">{item.title}</h3>
-                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal mb-6 flex-grow">{item.desc}</p>
+                <div className="p-4 sm:p-5 flex flex-col flex-grow">
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-1.5 leading-snug group-hover:text-rose-400 transition-colors line-clamp-1">{item.title}</h3>
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal mb-4 line-clamp-2 flex-grow">{item.desc}</p>
                   <Link 
                     href={item.href}
-                    className="mt-auto inline-flex items-center gap-2 text-rose-500 text-xs md:text-sm font-bold hover:text-white transition-colors cursor-pointer w-fit group/btn"
+                    className="mt-auto inline-flex items-center gap-1.5 text-rose-500 text-xs font-semibold hover:text-rose-400 transition-colors cursor-pointer w-fit group/btn"
                   >
-                    <div className="w-7 h-7 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
-                      <ChevronRight size={14} />
+                    <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center group-hover/btn:bg-rose-500 group-hover/btn:text-white transition-colors">
+                      <ChevronRight size={12} />
                     </div>
                     <span>Explore Industry Case</span>
                   </Link>
@@ -698,9 +677,6 @@ const AICaseStudies = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2">
               Featured AI <span className="text-rose-500 font-semibold">Case Studies</span>
             </h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              Tangible enterprise outcomes delivered through production-hardened AI deployments.
-            </p>
           </Reveal>
 
           <Reveal className="flex items-center gap-3">
@@ -777,12 +753,9 @@ const ResponsibleAI = () => {
     <section id="governance" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">TRUST &amp; SAFETY</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">Responsible &amp; Secure AI Governance</h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              Hardened controls ensuring compliance with GDPR, HIPAA, SOC-2 Type II, and the EU AI Act.
-            </p>
           </div>
         </Reveal>
 
@@ -818,12 +791,9 @@ const BusinessOutcomes = () => {
     <section id="outcomes" className="w-full py-24 bg-[#030303] border-b border-zinc-900/60 relative">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">BUSINESS VALUE</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">Measurable Engineering Outcomes</h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              Direct return on investment delivered across latency, cost efficiency, and operational accuracy.
-            </p>
           </div>
         </Reveal>
 
@@ -858,12 +828,9 @@ const WhyChooseAI = () => {
     <section id="why-devopstrio" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6 xl:px-8">
         <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-rose-500 font-mono mb-4 block">WHY DEVOPSTRIO</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">Why Choose Devopstrio AI</h2>
-            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
-              Proven architecture patterns engineered by practitioners who deploy mission-critical systems daily.
-            </p>
           </div>
         </Reveal>
 
