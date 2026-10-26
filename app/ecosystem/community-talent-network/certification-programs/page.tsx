@@ -569,25 +569,78 @@ export default function CertificationProgramsPage() {
       </section>
 
       {/* 9. INDUSTRY RECOGNITION (Logo Wall) */}
-      <section className="py-20 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
+      <section className="py-20 md:py-24 bg-[#030303] border-b border-zinc-900/80 relative overflow-hidden">
+        {/* Subtle Ambient Background Glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] rounded-full blur-[140px] opacity-[0.06]"
+          style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.2) 45%, transparent 80%)" }}
+        />
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-10">
 
-          <div className="text-center space-y-2">
-            <span className="text-xs font-bold tracking-[0.3em] uppercase text-zinc-400 block">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs md:text-sm font-bold tracking-[0.25em] uppercase text-rose-500 block">
               VENDOR ALIGNMENT
             </span>
-            <h3 className="text-xl font-bold text-white">Industry Recognition & Vendors</h3>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+              Industry Recognition & Vendors
+            </h3>
+            <p className="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed">
+              Aligning our certification pathways, hands-on labs, and production blueprints with industry-standard global technology leaders.
+            </p>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-6 text-zinc-400 font-bold text-xs md:text-sm font-mono">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5">
             {[
-              "Microsoft", "AWS", "Google Cloud", "Oracle", "GitHub",
-              "Docker", "Kubernetes", "HashiCorp", "Cisco", "Red Hat", "Power BI", "OpenAI"
-            ].map((vendor, idx) => (
-              <span key={idx} className="px-4 py-2.5 rounded-xl bg-[#0A0A0A] border border-zinc-800/80 hover:text-white hover:border-rose-500/40 transition-colors">
-                ⚡ {vendor}
-              </span>
-            ))}
+              { name: "Microsoft", logo: "/assets/Tech_logos/Microsoft-Azure.svg", href: "/ecosystem/partnerships/microsoft", external: false },
+              { name: "AWS", logo: "/assets/Tech_logos/AWS.svg", href: "/ecosystem/partnerships/aws", external: false },
+              { name: "Google Cloud", logo: "/assets/Tech_logos/Google_Cloud.svg", href: "/ecosystem/partnerships/google-cloud", external: false },
+              { name: "Oracle", logo: "/assets/Tech_logos/Oracle_Cloud.svg", href: "/ecosystem/partnerships/oracle", external: false },
+              { name: "GitHub", logo: "/assets/Tech_logos/GitHub.svg", href: "https://github.com/Devopstrio", external: true },
+              { name: "Docker", logo: "/assets/Tech_logos/Docker.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "Kubernetes", logo: "/assets/Tech_logos/Kubernetes.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "HashiCorp", logo: "/assets/Tech_logos/HashiCorp.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "Cisco", logo: "/assets/Tech_logos/cisco.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "Red Hat", logo: "/assets/Tech_logos/red_hat.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "Power BI", logo: "/assets/Tech_logos/powerbi.svg", href: "/ecosystem/technology-stack", external: false },
+              { name: "OpenAI", logo: "/assets/Tech_logos/openai.svg", href: "/ecosystem/technology-stack", external: false }
+            ].map((vendor, idx) => {
+              const CardContent = (
+                <>
+                  <div className="h-10 w-full flex items-center justify-center mb-2.5">
+                    <img
+                      src={vendor.logo}
+                      alt={vendor.name}
+                      className="max-h-8 max-w-[110px] w-auto object-contain filter group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span className="text-xs font-mono font-semibold text-zinc-400 group-hover:text-rose-400 transition-colors tracking-tight">
+                    {vendor.name}
+                  </span>
+                </>
+              );
+
+              return vendor.external ? (
+                <a
+                  key={idx}
+                  href={vendor.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-5 rounded-2xl bg-[#0A0A0A]/90 border border-zinc-800/80 flex flex-col items-center justify-center text-center group hover:border-rose-500/50 hover:bg-zinc-900/40 transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(225,29,72,0.15)] cursor-pointer"
+                >
+                  {CardContent}
+                </a>
+              ) : (
+                <Link
+                  key={idx}
+                  href={vendor.href}
+                  className="p-5 rounded-2xl bg-[#0A0A0A]/90 border border-zinc-800/80 flex flex-col items-center justify-center text-center group hover:border-rose-500/50 hover:bg-zinc-900/40 transition-all duration-300 shadow-sm hover:shadow-[0_0_20px_rgba(225,29,72,0.15)] cursor-pointer"
+                >
+                  {CardContent}
+                </Link>
+              );
+            })}
           </div>
 
         </div>
