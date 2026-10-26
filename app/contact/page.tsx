@@ -17,7 +17,6 @@ const GlobalPresence = dynamic(() => import("@/sections/contact/GlobalPresence")
 const WhyContactUs = dynamic(() => import("@/sections/contact/WhyContactUs").then((mod) => mod.WhyContactUs));
 const TrustSignal = dynamic(() => import("@/sections/contact/TrustSignal").then((mod) => mod.TrustSignal));
 const FAQ = dynamic(() => import("@/sections/contact/FAQ").then((mod) => mod.FAQ));
-const ContactCTA = dynamic(() => import("@/sections/contact/ContactCTA").then((mod) => mod.ContactCTA));
 const TalkToExpert = dynamic(() => import("@/sections/contact/TalkToExpert").then((mod) => mod.TalkToExpert));
 
 const contactSections = [
@@ -159,7 +158,6 @@ export default function ContactPage() {
 
           {/* <SvgWaveLine variant="liquid" /> */}
           
-          <ContactCTA />
         </div>
       </div>
     </main>
