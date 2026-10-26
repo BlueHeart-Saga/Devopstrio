@@ -46,7 +46,7 @@ export function InsightsLibrary({ posts, loading }: InsightsLibraryProps) {
   });
 
   return (
-    <section className="py-16 md:py-24 bg-black">
+    <section id="insights-library" className="py-16 md:py-24 bg-black scroll-mt-20">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8">
         
         {/* Header Section */}

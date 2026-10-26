@@ -48,7 +48,7 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
   };
 
   return (
-    <section className="py-24 bg-[#030303] border-b border-zinc-900/60 overflow-hidden">
+    <section id="featured-highlights" className="py-24 bg-[#030303] border-b border-zinc-900/60 overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto w-full px-12 xl:px-8 text-center mb-12">
         <Reveal>
           {/* <span className="text-[11px] font-bold tracking-[0.3em] text-rose-500 uppercase block mb-3">
@@ -111,7 +111,7 @@ export function FeaturedHighlights({ posts }: FeaturedHighlightsProps) {
         {/* View All Button */}
         <div className="flex justify-center mt-4">
           <Link
-            href="/insights"
+            href="#insights-library"
             className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800 transition-colors hover:border-rose-500/50"
           >
             Explore all insights <div className="w-5 h-5 rounded-full bg-rose-600 flex items-center justify-center"><ArrowRight size={12} className="text-white" /></div>

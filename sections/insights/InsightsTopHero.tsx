@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { RibbonGraphic } from "@/components/ui/RibbonGraphic";
 
@@ -40,22 +39,24 @@ export function InsightsTopHero() {
                 </p>
               </Reveal>
 
-              {/* Split Action Button (Hovered Red BG State) */}
+              {/* Scroll Down Indicator */}
               <Reveal delay={0.25}>
-                <Link
-                  href="#insights-library"
-                  className="inline-flex items-center bg-zinc-950 hover:bg-rose-600 border border-zinc-700/90 hover:border-rose-500 rounded-md overflow-hidden transition-all duration-300 group cursor-pointer shadow-2xl hover:shadow-[0_0_30px_rgba(225,29,72,0.4)]"
+                <a
+                  href="#featured-highlights"
+                  className="inline-flex items-center gap-3.5 text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-all group cursor-pointer pt-2 select-none"
                 >
-                  {/* Left Text */}
-                  <span className="px-7 py-4 text-sm md:text-base font-semibold text-white tracking-wide border-r border-zinc-800 group-hover:border-rose-500/60 transition-colors">
-                    Explore Publications
-                  </span>
-                  
-                  {/* Right Arrow Box */}
-                  <span className="px-4 py-4 text-white bg-zinc-900 group-hover:bg-rose-700 transition-colors flex items-center justify-center">
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                </Link>
+                  <div className="w-10 h-10 rounded-full border border-zinc-700/80 bg-zinc-900/90 flex items-center justify-center text-rose-500 group-hover:border-rose-500 group-hover:bg-rose-500/10 group-hover:scale-110 transition-all duration-300 shadow-[0_0_20px_rgba(244,63,94,0.25)]">
+                    <ArrowDown size={17} className="animate-bounce" />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="text-xs sm:text-sm font-bold text-zinc-200 group-hover:text-rose-400 transition-colors">
+                      Explore Publications
+                    </span>
+                    <span className="text-[10px] sm:text-[11px] text-zinc-500 tracking-wider uppercase font-medium">
+                      Scroll to discover insights ↓
+                    </span>
+                  </div>
+                </a>
               </Reveal>
             </div>
 
