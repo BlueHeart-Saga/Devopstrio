@@ -721,86 +721,86 @@ export default function CybersecurityInnovationLabPage() {
       </section>
 
       {/* 6. REFERENCE ARCHITECTURE */}
-      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden scroll-mt-20" id="architecture">
+            {/* 6. REFERENCE ARCHITECTURE */}
+      <section id="architecture" className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden scroll-mt-20">
         {/* Ambient Background Glow */}
         <div
           aria-hidden
           className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] rounded-full blur-[100px] opacity-25"
           style={{ background: "radial-gradient(circle, #E11D48 0%, rgba(225,29,72,0.4) 35%, transparent 70%)" }}
         />
-        
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
-            
-            {/* Left: Heading, Chips & Blueprint Image */}
-            <div className="lg:w-1/2 sticky top-16 lg:top-20">
-              <Reveal>
-                <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
-                  Reference Blueprint
-                </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-4">
-                  Our Cybersecurity Innovation <span className="text-rose-500">Reference Architecture</span>
-                </h2>
-
-                <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-6">
-                  {techChips.map((tech, idx) => (
-                    <motion.span
-                      key={idx}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 + (idx * 0.05) }}
-                      className="px-3.5 py-1.5 rounded-full bg-zinc-950 border border-zinc-800 text-zinc-300 text-xs font-medium hover:border-rose-500/50 hover:text-rose-400 transition-colors cursor-default"
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-
-                {/* Blueprint Visual */}
-                <div className="w-full rounded-2xl overflow-hidden border border-zinc-800/80 bg-zinc-950/60 shadow-2xl relative group">
-                  <img
-                    src="/webp/assets/ecosystem/cybersecurity-lab/reference-blueprint.webp"
-                    alt="Cybersecurity Innovation Reference Architecture"
-                    className="w-full h-64 sm:h-72 md:h-80 xl:h-[350px] object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                </div>
-              </Reveal>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <Reveal className="mb-14 text-center max-w-3xl mx-auto">
+            <span className="text-sm sm:text-base font-bold tracking-[0.25em] uppercase text-rose-500 mb-3.5 block">
+              Reference Blueprint
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white mb-5">
+              Our Cybersecurity Innovation <span className="text-rose-500">Reference Architecture</span>
+            </h2>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5 mt-5">
+              {techChips.map((tech, idx) => (
+                <motion.span
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + (idx * 0.05) }}
+                  className="px-3.5 py-1.5 rounded-full bg-zinc-950 border border-zinc-800 text-zinc-300 text-xs font-medium hover:border-rose-500/50 hover:text-rose-400 transition-colors cursor-default"
+                >
+                  {tech}
+                </motion.span>
+              ))}
             </div>
+          </Reveal>
 
-            {/* Right: Architecture Steps */}
-            <div className="lg:w-1/2 w-full mt-10 lg:mt-0">
-              <div className="space-y-6 relative">
-                {/* Vertical Connector Line */}
-                <div className="absolute left-[27px] top-4 bottom-4 w-[2px] bg-zinc-900/80" />
-                
-                {archLayers.map((layer, idx) => {
-                  const stepNumber = (idx + 1).toString().padStart(2, "0");
-                  return (
-                    <motion.div
-                      key={layer.num}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      className="flex gap-6 relative group"
-                    >
-                      <div className="w-14 h-14 rounded-full bg-black border-2 border-zinc-800 flex items-center justify-center text-zinc-500 font-bold shrink-0 relative z-10 group-hover:border-rose-500/50 group-hover:text-rose-400 transition-colors shadow-lg">
-                        {stepNumber}
-                      </div>
-                      <div className="pt-3 pb-8">
-                        <h3 className="text-lg md:text-xl font-bold text-white mb-2">{layer.name}</h3>
-                        <p className="text-zinc-400 text-sm md:text-base font-medium leading-relaxed">{layer.desc}</p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
+          <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+            {/* Left: Full Column Visual Preview */}
+            <div className="relative overflow-hidden rounded-3xl border border-zinc-800 lg:sticky lg:top-28 shadow-2xl group">
+              <img
+                src="/webp/assets/ecosystem/cybersecurity-lab/reference-blueprint.webp"
+                alt="Cybersecurity Innovation Reference Architecture"
+                className="aspect-[4/5] w-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                loading="lazy"
+              />
+              <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 pointer-events-none">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-rose-400">Blueprint Preview</span>
+                <p className="mt-2 text-sm text-zinc-300 leading-relaxed font-medium">
+                  Zero-trust layered defense topology from identity perimeter to continuous autonomous SOC.
+                </p>
               </div>
             </div>
 
+            {/* Right: Architecture Steps */}
+            <div className="space-y-6 relative">
+              {/* Vertical Connector Line */}
+              <div className="absolute left-[27px] top-4 bottom-4 w-[2px] bg-zinc-900/80" />
+              
+              {archLayers.map((layer, idx) => {
+                const stepNumber = (idx + 1).toString().padStart(2, "0");
+                return (
+                  <motion.div
+                    key={layer.num}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    className="flex gap-6 relative group"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-black border-2 border-zinc-800 flex items-center justify-center text-zinc-500 font-bold shrink-0 relative z-10 group-hover:border-rose-500/50 group-hover:text-rose-400 transition-colors shadow-lg">
+                      {stepNumber}
+                    </div>
+                    <div className="pt-3 pb-8">
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">{layer.name}</h3>
+                      <p className="text-sm text-zinc-400 leading-relaxed font-normal">
+                        {layer.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
