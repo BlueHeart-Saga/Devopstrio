@@ -3,424 +3,221 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./GlobalEarthHero.module.css";
 
-// Sun direction in WORLD space.
-const SUN_DIR: [number, number, number] = [1.0, 0.3, 0.75];
-const EARTH_R = 8.6;
-const AXIAL_TILT = -0.41; // ~23.4 degrees
-
-// ---------- Earth surface ----------
-const earthVert = /* glsl */ `
-  varying vec2 vUv;
-  varying vec3 vN;
-  varying vec3 vP;
-
-  void main() {
-    vUv = uv;
-    vec4 wp = modelMatrix * vec4(position, 1.0);
-    vP = wp.xyz;
-    vN = normalize(mat3(modelMatrix) * normal);
-    gl_Position = projectionMatrix * viewMatrix * wp;
-  }
-`;
-
-const earthFrag = /* glsl */ `
-  uniform sampler2D uDay;
-  uniform sampler2D uSpec;
-  uniform sampler2D uNight;
-  uniform sampler2D uClouds;
-  uniform vec3 uSunDir;
-  uniform vec3 uCamPos;
-
-  varying vec2 vUv;
-  varying vec3 vN;
-  varying vec3 vP;
-
-  void main() {
-    vec3 N = normalize(vN);
-    vec3 L = normalize(uSunDir);
-    vec3 V = normalize(uCamPos - vP);
-    float ndl = dot(N, L);
-
-    // Textures
-    vec3 albedo = texture2D(uDay, vUv).rgb;
-    float water = texture2D(uSpec, vUv).r;
-    float cloudTex = texture2D(uClouds, vUv).r;
-
-    // Cloud Shadows (Fake, but effective)
-    float cloudShadow = smoothstep(0.2, 0.8, cloudTex) * 0.25;
-
-    // Lighting (Smoother Terminator)
-    float terminator = smoothstep(-0.15, 0.15, ndl);
-    
-    // Day Side
-    vec3 dayColor = albedo * max(ndl, 0.0) * 1.3;
-    dayColor = dayColor * (1.0 - cloudShadow); 
-    dayColor += vec3(0.015, 0.015, 0.025); // Subtle ambient light
-
-    // Ocean Glint (Wider and softer)
-    vec3 H = normalize(L + V);
-    float glint = pow(max(dot(N, H), 0.0), 32.0) * water * step(0.0, ndl);
-    dayColor += vec3(1.0, 0.96, 0.9) * glint * 0.8;
-
-    // Night Side City Lights
-    vec3 city = texture2D(uNight, vUv).rgb * vec3(1.0, 0.85, 0.6) * 2.5;
-    city = pow(city, vec3(1.2)); // Higher contrast for bright cities
-    vec3 nightColor = city;
-
-    // Mix Day and Night
-    vec3 finalColor = mix(nightColor, dayColor, terminator);
-
-    // Atmospheric Scattering (Blue glow on the lit edge)
-    float rim = pow(1.0 - max(dot(N, V), 0.0), 3.0);
-    finalColor += vec3(0.25, 0.5, 1.0) * rim * (0.1 + 0.9 * terminator) * 0.7;
-
-    // Output with Gamma Correction
-    gl_FragColor = vec4(pow(finalColor, vec3(1.0 / 2.2)), 1.0);
-  }
-`;
-
-// ---------- Clouds ----------
-const cloudFrag = /* glsl */ `
-  uniform sampler2D uClouds;
-  uniform vec3 uSunDir;
-
-  varying vec2 vUv;
-  varying vec3 vN;
-
-  void main() {
-    vec3 N = normalize(vN);
-    float ndl = dot(N, normalize(uSunDir));
-
-    // Cloud Mask (Using red channel)
-    float c = texture2D(uClouds, vUv).r;
-    c = smoothstep(0.1, 0.7, c);
-
-    // Lighting
-    float lit = max(ndl, 0.0);
-    vec3 col = vec3(1.0, 0.98, 0.95) * (0.05 + 1.1 * lit);
-
-    // Fade out on night side
-    float terminator = smoothstep(-0.2, 0.2, ndl);
-    col *= terminator;
-
-    gl_FragColor = vec4(pow(col, vec3(1.0 / 2.2)), c * 0.85);
-  }
-`;
-
-// ---------- Atmosphere halo ----------
-const haloVert = /* glsl */ `
-  varying vec3 vN;
-  varying vec3 vWN;
-
-  void main() {
-    vN = normalize(normalMatrix * normal);
-    vWN = normalize(mat3(modelMatrix) * normal);
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-  }
-`;
-
-const haloFrag = /* glsl */ `
-  uniform vec3 uColor;
-  uniform vec3 uSunDir;
-  uniform float uC;
-  uniform float uP;
-  uniform float uStrength;
-
-  varying vec3 vN;
-  varying vec3 vWN;
-
-  void main() {
-    // Rim light effect
-    float f = pow(max(0.0, uC - dot(vN, vec3(0.0, 0.0, 1.0))), uP);
-
-    // Brighter on sunlit side
-    float sunSide = smoothstep(-0.5, 0.5, dot(vWN, normalize(uSunDir)));
-    float a = clamp(f * uStrength * (0.1 + 0.9 * sunSide), 0.0, 1.0);
-
-    gl_FragColor = vec4(uColor, a);
-  }
-`;
-
-// ---------- Component ----------
+/** Drop-in replacement. Does not change the existing DeliveryHero import. */
 export default function GlobalEarthHero() {
-  const mountRef = useRef<HTMLDivElement>(null);
-  const [ready, setReady] = useState(false);
-  const [failed, setFailed] = useState(false);
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const mount = mountRef.current;
-    if (!mount) return;
+    const host = hostRef.current;
+    if (!host) return;
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return; // Accessible static fallback on reduced-motion devices.
 
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const lowPower =
-      window.matchMedia("(max-width: 640px)").matches ||
-      (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2);
-    if (reduce && lowPower) return;
-
-    let disposed = false;
-    let cleanup: (() => void) | undefined;
+    let cancelled = false;
+    let teardown = () => {};
 
     (async () => {
+      const THREE = await import("three");
+      if (cancelled) return;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(33, 1, 0.1, 120);
+      camera.position.set(0, 0, 20);
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
+      renderer.setPixelRatio(Math.min(devicePixelRatio || 1, window.innerWidth < 768 ? 1.35 : 1.75));
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.02;
+      renderer.setClearColor(0x000000, 0);
+      renderer.domElement.setAttribute("aria-hidden", "true");
+      host.appendChild(renderer.domElement);
+
+      const loader = new THREE.TextureLoader();
+      const loadTexture = (url: string) => new Promise<import("three").Texture>((resolve, reject) => loader.load(url, resolve, undefined, reject));
+      let maps: import("three").Texture[];
       try {
-        const THREE = await import("three");
-        if (disposed) return;
-
-        const sunDir = new THREE.Vector3(...SUN_DIR).normalize();
-
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 200);
-        camera.position.set(0, 0, 18);
-
-        const renderer = new THREE.WebGLRenderer({
-          alpha: true,
-          antialias: true,
-          powerPreference: "high-performance",
-        });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-        renderer.setClearColor(0x000000, 0);
-        renderer.domElement.setAttribute("aria-hidden", "true");
-        renderer.domElement.style.width = "100%";
-        renderer.domElement.style.height = "100%";
-        mount.appendChild(renderer.domElement);
-
-        const maxAniso = renderer.capabilities.getMaxAnisotropy();
-
-        const loader = new THREE.TextureLoader();
-        const load = (url: string) =>
-          new Promise<InstanceType<typeof THREE.Texture>>((resolve, reject) => {
-            loader.load(url, resolve, undefined, reject);
-          });
-
-        // IMPORTANT: Ensure these files exist in your \`public/textures/\` folder!
-        const [day, spec, night, clouds] = await Promise.all([
-          load("/textures/earth_atmos_2048.jpg"),
-          load("/textures/earth_specular_2048.jpg"),
-          load("/textures/earth_lights_2048.png"),
-          load("/textures/earth_clouds_1024.png"),
+        maps = await Promise.all([
+          loadTexture("/earth-final/day.jpg"),
+          loadTexture("/earth-final/night.jpg"),
+          loadTexture("/earth-final/clouds.jpg"),
         ]);
-
-        const allTextures = [day, spec, night, clouds];
-
-        if (disposed) {
-          renderer.dispose();
-          allTextures.forEach((t) => t.dispose());
-          return;
-        }
-
-        // Color management
-        day.colorSpace = THREE.SRGBColorSpace;
-        night.colorSpace = THREE.SRGBColorSpace;
-        allTextures.forEach((t) => {
-          t.anisotropy = Math.min(maxAniso, 8);
-        });
-
-        const world = new THREE.Group();
-        world.position.y = -8.7;
-        scene.add(world);
-
-        const globe = new THREE.Group();
-        globe.rotation.z = AXIAL_TILT;
-        world.add(globe);
-
-        // 1. Earth surface
-        const surfaceGeo = new THREE.SphereGeometry(EARTH_R, 192, 144);
-        const earthMat = new THREE.ShaderMaterial({
-          uniforms: {
-            uDay: { value: day },
-            uSpec: { value: spec },
-            uNight: { value: night },
-            uClouds: { value: clouds },
-            uSunDir: { value: sunDir },
-            uCamPos: { value: camera.position },
-          },
-          vertexShader: earthVert,
-          fragmentShader: earthFrag,
-        });
-        const surface = new THREE.Mesh(surfaceGeo, earthMat);
-        globe.add(surface);
-
-        // 2. Clouds
-        const cloudGeo = new THREE.SphereGeometry(EARTH_R * 1.008, 160, 120);
-        const cloudMat = new THREE.ShaderMaterial({
-          uniforms: {
-            uClouds: { value: clouds },
-            uSunDir: { value: sunDir },
-          },
-          vertexShader: earthVert,
-          fragmentShader: cloudFrag,
-          transparent: true,
-          depthWrite: false,
-        });
-        const cloudSphere = new THREE.Mesh(cloudGeo, cloudMat);
-        globe.add(cloudSphere);
-
-        // 3. Atmosphere halos
-        const makeHalo = (scale: number, color: number, c: number, p: number, strength: number) => {
-          const geo = new THREE.SphereGeometry(EARTH_R * scale, 128, 96);
-          const mat = new THREE.ShaderMaterial({
-            uniforms: {
-              uColor: { value: new THREE.Color(color) },
-              uSunDir: { value: sunDir },
-              uC: { value: c },
-              uP: { value: p },
-              uStrength: { value: strength },
-            },
-            vertexShader: haloVert,
-            fragmentShader: haloFrag,
-            side: THREE.FrontSide,
-            transparent: true,
-            depthWrite: false,
-          });
-          const mesh = new THREE.Mesh(geo, mat);
-          globe.add(mesh);
-          return { geo, mat };
-        };
-
-        const innerHalo = makeHalo(1.02, 0x6ec6ff, 0.65, 4.0, 1.5);
-        const outerHalo = makeHalo(1.12, 0x2a7fff, 0.55, 2.0, 0.8);
-
-        // 4. Starfield
-        const starGeo = new THREE.BufferGeometry();
-        const starCount = 600;
-        const starPos = new Float32Array(starCount * 3);
-        for (let i = 0; i < starCount; i++) {
-          const theta = Math.random() * Math.PI * 2;
-          const phi = Math.acos(Math.random() * 0.9 + 0.1);
-          const r = 40 + Math.random() * 20;
-          starPos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-          starPos[i * 3 + 1] = r * Math.cos(phi);
-          starPos[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta) - 10;
-        }
-        starGeo.setAttribute("position", new THREE.BufferAttribute(starPos, 3));
-        const starMat = new THREE.PointsMaterial({
-          size: 0.15,
-          color: 0xbfd8ff,
-          transparent: true,
-          opacity: 0.8,
-        });
-        const starfield = new THREE.Points(starGeo, starMat);
-        scene.add(starfield);
-
-        // Resize
-        const onResize = () => {
-          const w = mount.clientWidth;
-          const h = mount.clientHeight;
-          if (w === 0 || h === 0) return;
-          camera.aspect = w / h;
-          camera.updateProjectionMatrix();
-          renderer.setSize(w, h, false);
-        };
-        const observer = new ResizeObserver(onResize);
-        observer.observe(mount);
-        onResize();
-
-        // Mouse Parallax
-        let targetX = 0;
-        let targetY = 0;
-        const onMouseMove = (e: MouseEvent) => {
-          targetX = ((e.clientX / window.innerWidth) * 2 - 1) * 0.45;
-          targetY = ((e.clientY / window.innerHeight) * 2 - 1) * 0.25;
-        };
-        window.addEventListener("mousemove", onMouseMove, { passive: true });
-
-        // Animation Loop
-        const clock = new THREE.Clock();
-        let frame = 0;
-        let inView = true;
-        const intersection = new IntersectionObserver(([entry]) => {
-          inView = entry.isIntersecting;
-        });
-        intersection.observe(mount);
-
-        const tick = () => {
-          if (disposed) return;
-          frame = requestAnimationFrame(tick);
-
-          if (!inView || document.hidden) {
-            clock.getDelta();
-            return;
-          }
-
-          const dt = Math.min(clock.getDelta(), 0.05);
-
-          // Rotations
-          surface.rotation.y += dt * 0.015;
-          cloudSphere.rotation.y += dt * 0.022; // Clouds move slightly faster
-          starfield.rotation.y += dt * 0.002; // Subtle star movement
-
-          // Camera Parallax
-          camera.position.x += (targetX - camera.position.x) * 0.04;
-          camera.position.y += (-targetY - camera.position.y) * 0.04;
-          camera.lookAt(0, -0.6, 0);
-
-          renderer.render(scene, camera);
-        };
-
-        tick();
-        setReady(true);
-
-        cleanup = () => {
-          cancelAnimationFrame(frame);
-          window.removeEventListener("mousemove", onMouseMove);
-          observer.disconnect();
-          intersection.disconnect();
-
-          scene.remove(world, starfield);
-
-          surfaceGeo.dispose();
-          earthMat.dispose();
-          cloudGeo.dispose();
-          cloudMat.dispose();
-          innerHalo.geo.dispose();
-          innerHalo.mat.dispose();
-          outerHalo.geo.dispose();
-          outerHalo.mat.dispose();
-          starGeo.dispose();
-          starMat.dispose();
-          allTextures.forEach((t) => t.dispose());
-
-          renderer.dispose();
-          renderer.forceContextLoss();
-          if (renderer.domElement.parentNode === mount) {
-            mount.removeChild(renderer.domElement);
-          }
-        };
-      } catch (e) {
-        if (!disposed) {
-          console.error("Earth hero WebGL error:", e);
-          setFailed(true);
-        }
+      } catch (error) {
+        console.warn("Earth textures were not loaded; using the photographic fallback.", error);
+        renderer.dispose();
+        renderer.domElement.remove();
+        return;
       }
-    })();
+      if (cancelled) {
+        maps.forEach(t => t.dispose()); renderer.dispose(); renderer.domElement.remove(); return;
+      }
+      const [day, night, clouds] = maps;
+      day.colorSpace = THREE.SRGBColorSpace;
+      night.colorSpace = THREE.SRGBColorSpace;
+      const aniso = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+      maps.forEach(t => { t.anisotropy = aniso; t.wrapS = THREE.RepeatWrapping; });
 
-    return () => {
-      disposed = true;
-      cleanup?.();
-    };
-  }, []);
+      // Camera looks across the limb. Keep this centered beneath the HTML headline.
+      const radius = 8.5;
+      const earth = new THREE.Group();
+      earth.position.set(0, -10.45, -2.0);
+      scene.add(earth);
+      const tilt = new THREE.Group();
+      tilt.rotation.z = -0.18;
+      earth.add(tilt);
+      const sunDirection = new THREE.Vector3(0.22, 0.64, 0.74).normalize();
+      const sphere = new THREE.SphereGeometry(radius, 192, 128);
+      const surfaceMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+          dayMap: { value: day },
+          nightMap: { value: night },
+          sunDirection: { value: sunDirection },
+          cameraWorld: { value: camera.position },
+        },
+        vertexShader: `
+          varying vec2 uvCoord;
+          varying vec3 normalWorld;
+          varying vec3 positionWorld;
+          void main() {
+            uvCoord = uv;
+            vec4 p = modelMatrix * vec4(position,1.0);
+            positionWorld = p.xyz;
+            normalWorld = normalize(mat3(modelMatrix) * normal);
+            gl_Position = projectionMatrix * viewMatrix * p;
+          }
+        `,
+        fragmentShader: `
+          uniform sampler2D dayMap;
+          uniform sampler2D nightMap;
+          uniform vec3 sunDirection;
+          uniform vec3 cameraWorld;
+          varying vec2 uvCoord;
+          varying vec3 normalWorld;
+          varying vec3 positionWorld;
+          void main() {
+            vec3 N = normalize(normalWorld);
+            vec3 L = normalize(sunDirection);
+            vec3 V = normalize(cameraWorld - positionWorld);
+            float ndl = dot(N, L);
+            float dayFactor = smoothstep(-0.20, 0.19, ndl);
+            vec3 albedo = texture2D(dayMap, uvCoord).rgb;
+            vec3 nightLight = texture2D(nightMap, uvCoord).rgb;
+            // Broad realistic diffuse illumination, rather than flat self-lit color.
+            float exposure = 0.075 + pow(max(ndl, 0.0), 0.65) * 1.06;
+            vec3 lit = albedo * exposure;
+            vec3 dark = albedo * 0.012 + nightLight * vec3(1.0, 0.82, 0.60) * 1.40;
+            vec3 color = mix(dark, lit, dayFactor);
+            // Small restrained atmospheric edge within the surface.
+            float rim = pow(1.0 - clamp(dot(N,V),0.0,1.0), 7.0);
+            color += vec3(0.032, 0.14, 0.34) * rim * dayFactor * 0.22;
+            gl_FragColor = vec4(color, 1.0);
+          }
+        `,
+      });
+      const surface = new THREE.Mesh(sphere, surfaceMaterial);
+      surface.rotation.y = 0.64; // Begin with richly detailed visible continents.
+      tilt.add(surface);
 
-  return (
-    <section className={styles.hero} aria-labelledby="global-earth-title">
-      <div className={styles.stars} aria-hidden="true" />
-      <div
-        className={styles.earthFallback}
-        aria-hidden="true"
-        style={{ opacity: ready && !failed ? 0 : 1 }}
-      />
-      <div ref={mountRef} className={styles.webgl} aria-hidden="true" />
-      <div className={styles.vignette} aria-hidden="true" />
+      // Separate, subtly drifting semi-transparent clouds.
+      const cloudGeometry = new THREE.SphereGeometry(radius*1.012, 160, 112);
+      const cloudMaterial = new THREE.ShaderMaterial({
+        uniforms: { cloudMap:{value:clouds}, sunDirection:{value:sunDirection} },
+        vertexShader: `
+          varying vec2 uvCoord;
+          varying vec3 normalWorld;
+          void main(){uvCoord=uv;normalWorld=normalize(mat3(modelMatrix)*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}
+        `,
+        fragmentShader: `
+          uniform sampler2D cloudMap;uniform vec3 sunDirection;
+          varying vec2 uvCoord;varying vec3 normalWorld;
+          void main(){
+            float cloud=texture2D(cloudMap,uvCoord).r;
+            float alpha=smoothstep(0.30,0.76,cloud);
+            float light=smoothstep(-0.16,0.38,dot(normalize(normalWorld),normalize(sunDirection)));
+            vec3 col=vec3(0.92,0.955,0.99)*(0.22+0.78*light);
+            gl_FragColor=vec4(col,alpha*(0.08+0.72*light));
+          }
+        `,
+        transparent:true, depthWrite:false,
+      });
+      const cloudLayer = new THREE.Mesh(cloudGeometry,cloudMaterial);
+      cloudLayer.rotation.y=0.64;
+      tilt.add(cloudLayer);
 
-      <div className={styles.content}>
-        <p className={styles.eyebrow}>
-          <span /> DEVOPSTRIO <i /> GLOBAL TECHNOLOGY SOLUTIONS
-        </p>
-        <h1 id="global-earth-title" className={styles.title}>
-          <span>Global Delivery.</span>
-          <span className={styles.accent}>Local Expertise.</span>
-        </h1>
-      </div>
+      // Thin scattering shell, lit from top. This is intentionally subtle.
+      const atmosphereGeometry = new THREE.SphereGeometry(radius*1.018,160,112);
+      const atmosphereMaterial = new THREE.ShaderMaterial({
+        uniforms:{ sunDirection:{value:sunDirection}, cameraWorld:{value:camera.position}},
+        vertexShader:`
+          varying vec3 nWorld;varying vec3 posWorld;
+          void main(){vec4 p=modelMatrix*vec4(position,1.0);posWorld=p.xyz;nWorld=normalize(mat3(modelMatrix)*normal);gl_Position=projectionMatrix*viewMatrix*p;}
+        `,
+        fragmentShader:`
+          uniform vec3 sunDirection;uniform vec3 cameraWorld;
+          varying vec3 nWorld;varying vec3 posWorld;
+          void main(){vec3 N=normalize(nWorld);vec3 V=normalize(cameraWorld-posWorld);
+            float limb=pow(1.0-clamp(dot(N,V),0.0,1.0),12.0);
+            float illumination=smoothstep(-0.12,0.45,dot(N,normalize(sunDirection)));
+            float alpha=limb*(0.06+0.94*illumination)*0.29;
+            gl_FragColor=vec4(vec3(0.26,0.61,0.98),alpha);
+          }
+        `,
+        transparent:true, depthWrite:false, blending:THREE.AdditiveBlending,
+      });
+      const atmosphere = new THREE.Mesh(atmosphereGeometry,atmosphereMaterial);
+      earth.add(atmosphere);
 
-      <div className={styles.bottomGlow} aria-hidden="true" />
-    </section>
-  );
+      const resize = () => {
+        const w=host.clientWidth,h=host.clientHeight;
+        if (!w || !h) return;
+        camera.aspect=w/h;
+        // Keep the same horizon height across layouts without stretching the planet.
+        camera.fov = w < 600 ? 43 : w < 900 ? 39 : 33;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w,h,false);
+      };
+      const resizeObs=new ResizeObserver(resize);
+      resizeObs.observe(host);resize();
+      let visible=true;
+      const intersection=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;},{threshold:0});
+      intersection.observe(host);
+      const onContextLoss=(e:Event)=>{e.preventDefault();visible=false;setLoaded(false);};
+      renderer.domElement.addEventListener("webglcontextlost",onContextLoss);
+      let raf=0,last=performance.now();
+      const frame=(now:number)=>{
+        raf=requestAnimationFrame(frame);
+        const dt=Math.min((now-last)/1000,0.05);last=now;
+        if (!visible || document.hidden) return;
+        surface.rotation.y += dt * 0.006;
+        cloudLayer.rotation.y += dt * 0.0075;
+        renderer.render(scene,camera);
+      };
+      renderer.render(scene,camera);
+      setLoaded(true);
+      raf=requestAnimationFrame(frame);
+      teardown=()=>{
+        cancelAnimationFrame(raf);resizeObs.disconnect();intersection.disconnect();
+        renderer.domElement.removeEventListener("webglcontextlost",onContextLoss);
+        sphere.dispose();surfaceMaterial.dispose();cloudGeometry.dispose();cloudMaterial.dispose();
+        atmosphereGeometry.dispose();atmosphereMaterial.dispose();
+        maps.forEach(t=>t.dispose());renderer.dispose();renderer.forceContextLoss();
+        if(renderer.domElement.parentNode===host)host.removeChild(renderer.domElement);
+      };
+    })().catch(e=>console.warn("Earth hero WebGL unavailable; using image fallback.",e));
+
+    return () => {cancelled=true;teardown();};
+  },[]);
+
+  return <section className={styles.hero} aria-labelledby="global-earth-title">
+    <div className={styles.photo} aria-hidden="true" />
+    <div ref={hostRef} className={`${styles.canvas} ${loaded ? styles.loaded : ""}`} aria-hidden="true" />
+    <div className={styles.stars} aria-hidden="true" />
+    <div className={styles.shade} aria-hidden="true" />
+    <div className={styles.copy}>
+      <p className={styles.eyebrow}><span className={styles.dot} /> DEVOPSTRIO <span className={styles.separator}>•</span> GLOBAL TECHNOLOGY SOLUTIONS</p>
+      <h1 id="global-earth-title" className={styles.title}><span>Global Delivery.</span><span className={styles.highlight}>Local Expertise.</span></h1>
+    </div>
+  </section>;
 }
