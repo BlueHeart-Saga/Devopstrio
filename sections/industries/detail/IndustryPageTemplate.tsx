@@ -125,7 +125,7 @@ export function IndustryPageTemplate({
     { id: "challenges", label: "Challenges" },
     { id: "solutions", label: "Solutions" },
     { id: "capabilities", label: "Capabilities" },
-    { id: "use-cases", label: "Use Cases" },
+    { id: "use-cases", label: "Capabilities in Action" },
     { id: "tech-stack", label: "Technology" },
     { id: "outcomes", label: "Outcomes" },
     { id: "success-stories", label: "Success Stories" },
@@ -282,7 +282,7 @@ export function IndustryPageTemplate({
               </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight leading-snug">
-              Proven <span className="font-semibold text-rose-500">use case portfolio</span>
+              Domain <span className="font-semibold text-rose-500">capabilities in action</span>
             </h2>
           </Reveal>
 

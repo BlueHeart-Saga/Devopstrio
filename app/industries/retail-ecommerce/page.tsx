@@ -27,7 +27,7 @@ const subSections = [
   { id: "challenges", label: "Challenges" },
   { id: "solutions", label: "Solutions" },
   { id: "capabilities", label: "Capabilities" },
-  { id: "use-cases", label: "Use Cases" },
+  { id: "use-cases", label: "Capabilities in Action" },
   // { id: "tech-stack", label: "Tech Stack" },
   // { id: "outcomes", label: "Outcomes" },
   { id: "case-study", label: "Case Study" },
