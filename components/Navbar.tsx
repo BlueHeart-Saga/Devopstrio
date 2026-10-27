@@ -1377,10 +1377,11 @@ export function Navbar() {
                     <div className="col-span-full border-t border-zinc-900/60 pt-4 mt-1 flex flex-row justify-between items-center">
                       <div className="flex items-center gap-4 text-base sm:text-lg font-semibold text-zinc-300">
                         <Link
-                          href="/insights/industry-events"
+                          href="/marketing"
+                          onClick={() => setActiveMenu(null)}
                           className="hover:text-rose-500 transition-colors flex items-center gap-1.5 font-semibold"
                         >
-                          <span>Events</span>
+                          <span>Marketing</span>
                         </Link>
                         <span className="text-zinc-800">|</span>
                         <ChatNowSection />
@@ -1647,6 +1648,13 @@ export function Navbar() {
                       {item.name}
                     </Link>
                   ))}
+                  <Link
+                    href="/marketing"
+                    onClick={() => setMobileOpen(false)}
+                    className="text-sm sm:text-base text-zinc-200 hover:text-rose-400 font-normal transition-all py-0.5 leading-snug"
+                  >
+                    Marketing
+                  </Link>
                 </div>
               </div>
 
