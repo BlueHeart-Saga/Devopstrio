@@ -1,5 +1,6 @@
 "use client";
 import { FAQ } from "@/components/ecosystem/FAQ";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
@@ -123,6 +124,19 @@ const dataLabFaqs = [
     "q": "How does the lab transition existing legacy ETL/DW systems to modern Lakehouses?",
     "a": "We provide automated migration scripts, schema translation tools, and dual-run reconciliation frameworks that ensure zero downtime and 100% data fidelity when migrating from legacy Teradata, Oracle, or SSIS to cloud Lakehouses."
   }
+];
+
+
+const labSections = [
+  { id: "overview", label: "Overview" },
+  { id: "capabilities", label: "Capabilities" },
+  { id: "framework", label: "Framework" },
+  { id: "deliverables", label: "Deliverables" },
+  { id: "architecture", label: "Architecture" },
+  { id: "scenarios", label: "Scenarios" },
+  { id: "outcomes", label: "Outcomes" },
+  { id: "differentiators", label: "Why Us" },
+  { id: "ecosystem", label: "Other Labs" },
 ];
 
 export default function DataAnalyticsInnovationLabPage() {
@@ -484,30 +498,8 @@ export default function DataAnalyticsInnovationLabPage() {
         </div>
       </Hero>
 
-      {/* Sticky Section Nav */}
-      <div className="sticky top-16 md:top-20 z-40 border-b border-zinc-900/80 bg-black/85 backdrop-blur-xl">
-        <nav aria-label="On this page" className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-6 py-3 sm:px-8 lg:px-12 scrollbar-none">
-          {[
-            { id: "overview", label: "Overview" },
-            { id: "capabilities", label: "Capabilities" },
-            { id: "framework", label: "Framework" },
-            { id: "deliverables", label: "Deliverables" },
-            { id: "architecture", label: "Architecture" },
-            { id: "scenarios", label: "Scenarios" },
-            { id: "outcomes", label: "Outcomes" },
-            { id: "differentiators", label: "Why Us" },
-            { id: "ecosystem", label: "Other Labs" },
-          ].map((n) => (
-            <a
-              key={n.id}
-              href={`#${n.id}`}
-              className="shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 hover:text-white hover:bg-zinc-900/70 border border-transparent hover:border-zinc-800 transition-colors"
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+      {/* Sticky Section Navbar */}
+      <SectionNavbar sections={labSections} />
 
 
       {/* 2. OVERVIEW / MISSION SECTION */}
@@ -929,7 +921,7 @@ export default function DataAnalyticsInnovationLabPage() {
       </section>
 
       {/* 8. INNOVATION OUTCOMES / IMPACT */}
-      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+      <section id="outcomes" className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden" scroll-mt-20>
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -995,8 +987,8 @@ export default function DataAnalyticsInnovationLabPage() {
         </div>
       </section>
 
-      {/* 9. WHY DEVOPSTRIO DATA & ANALYTICS LAB */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+      {/* 9. WHY DEVOPSTRIO */}
+      <section id="differentiators" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden" scroll-mt-20>
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -1066,7 +1058,7 @@ export default function DataAnalyticsInnovationLabPage() {
       </section>
 
       {/* 10. RELATED LABS / CTA */}
-      <section className="w-full py-24 bg-[#020202] relative overflow-hidden">
+      <section id="ecosystem" className="w-full py-24 bg-[#020202] relative overflow-hidden" scroll-mt-20>
         {/* Ambient Background Glow */}
         <div
           aria-hidden

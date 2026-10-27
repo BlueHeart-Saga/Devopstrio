@@ -1,6 +1,7 @@
 "use client";
 
 import { FAQ } from "@/components/ecosystem/FAQ";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
@@ -85,6 +86,19 @@ interface RelatedLab {
   desc: string;
   href: string;
 }
+
+
+const labSections = [
+  { id: "overview", label: "Overview" },
+  { id: "capabilities", label: "Capabilities" },
+  { id: "framework", label: "Framework" },
+  { id: "deliverables", label: "Deliverables" },
+  { id: "architecture", label: "Architecture" },
+  { id: "scenarios", label: "Scenarios" },
+  { id: "outcomes", label: "Outcomes" },
+  { id: "differentiators", label: "Why Us" },
+  { id: "ecosystem", label: "Other Labs" },
+];
 
 export default function AIInnovationLabPage() {
   const [activeTab, setActiveTab] = useState<string>("Enterprise Knowledge Retrieval");
@@ -487,30 +501,8 @@ export default function AIInnovationLabPage() {
         </div>
       </Hero>
 
-      {/* Sticky Section Nav */}
-      <div className="sticky top-16 md:top-20 z-40 border-b border-zinc-900/80 bg-black/85 backdrop-blur-xl">
-        <nav aria-label="On this page" className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-6 py-3 sm:px-8 lg:px-12 scrollbar-none">
-          {[
-            { id: "overview", label: "Overview" },
-            { id: "capabilities", label: "Capabilities" },
-            { id: "framework", label: "Framework" },
-            { id: "deliverables", label: "Deliverables" },
-            { id: "architecture", label: "Architecture" },
-            { id: "scenarios", label: "Scenarios" },
-            { id: "outcomes", label: "Outcomes" },
-            { id: "differentiators", label: "Why Us" },
-            { id: "ecosystem", label: "Other Labs" },
-          ].map((n) => (
-            <a
-              key={n.id}
-              href={`#${n.id}`}
-              className="shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 hover:text-white hover:bg-zinc-900/70 border border-transparent hover:border-zinc-800 transition-colors"
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+      {/* Sticky Section Navbar */}
+      <SectionNavbar sections={labSections} />
 
 
       {/* 2. OVERVIEW / MISSION SECTION */}

@@ -1,5 +1,6 @@
 "use client";
 import { FAQ } from "@/components/ecosystem/FAQ";
+import { SectionNavbar } from "@/components/ui/SectionNavbar";
 import { CTA } from "@/components/ecosystem/CTA";
 
 import React, { useState } from "react";
@@ -127,6 +128,19 @@ const securityLabFaqs = [
     "q": "How quickly can the Cybersecurity Lab deploy an emergency remediation blueprint?",
     "a": "For critical zero-day vulnerabilities (e.g., Log4j, OpenSSL exploits), our team produces verified detection rules, virtual patching WAF configurations, and automated remediation scripts within 24 to 48 hours."
   }
+];
+
+
+const labSections = [
+  { id: "overview", label: "Overview" },
+  { id: "capabilities", label: "Capabilities" },
+  { id: "framework", label: "Framework" },
+  { id: "deliverables", label: "Deliverables" },
+  { id: "architecture", label: "Architecture" },
+  { id: "scenarios", label: "Scenarios" },
+  { id: "outcomes", label: "Outcomes" },
+  { id: "differentiators", label: "Why Us" },
+  { id: "ecosystem", label: "Other Labs" },
 ];
 
 export default function CybersecurityInnovationLabPage() {
@@ -496,30 +510,8 @@ export default function CybersecurityInnovationLabPage() {
         </div>
       </Hero>
 
-      {/* Sticky Section Nav */}
-      <div className="sticky top-16 md:top-20 z-40 border-b border-zinc-900/80 bg-black/85 backdrop-blur-xl">
-        <nav aria-label="On this page" className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-6 py-3 sm:px-8 lg:px-12 scrollbar-none">
-          {[
-            { id: "overview", label: "Overview" },
-            { id: "capabilities", label: "Capabilities" },
-            { id: "framework", label: "Framework" },
-            { id: "deliverables", label: "Deliverables" },
-            { id: "architecture", label: "Architecture" },
-            { id: "scenarios", label: "Scenarios" },
-            { id: "outcomes", label: "Outcomes" },
-            { id: "differentiators", label: "Why Us" },
-            { id: "ecosystem", label: "Other Labs" },
-          ].map((n) => (
-            <a
-              key={n.id}
-              href={`#${n.id}`}
-              className="shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-400 hover:text-white hover:bg-zinc-900/70 border border-transparent hover:border-zinc-800 transition-colors"
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+      {/* Sticky Section Navbar */}
+      <SectionNavbar sections={labSections} />
 
 
       {/* 2. OVERVIEW / MISSION SECTION */}
@@ -941,7 +933,7 @@ export default function CybersecurityInnovationLabPage() {
       </section>
 
       {/* 8. INNOVATION OUTCOMES / IMPACT */}
-      <section className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden">
+      <section id="outcomes" className="w-full py-24 bg-[#020202] border-b border-zinc-900/60 relative overflow-hidden" scroll-mt-20>
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -1007,8 +999,8 @@ export default function CybersecurityInnovationLabPage() {
         </div>
       </section>
 
-      {/* 9. WHY DEVOPSTRIO CYBERSECURITY LAB */}
-      <section className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
+      {/* 9. WHY DEVOPSTRIO */}
+      <section id="differentiators" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden" scroll-mt-20>
         {/* Ambient Background Glow */}
         <div
           aria-hidden
@@ -1078,7 +1070,7 @@ export default function CybersecurityInnovationLabPage() {
       </section>
 
       {/* 10. RELATED LABS / CTA */}
-      <section className="w-full py-24 bg-[#020202] relative overflow-hidden">
+      <section id="ecosystem" className="w-full py-24 bg-[#020202] relative overflow-hidden" scroll-mt-20>
         {/* Ambient Background Glow */}
         <div
           aria-hidden
