@@ -34,23 +34,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-const commonImages = [
-  "/webp/assets/common/09ff7846bc8c9998745688779c09f88d-1.webp",
-  "/webp/assets/common/1b065043b6959827c05a0073c93a4a53-1.webp",
-  "/webp/assets/common/260b761ad40c3ad2acba2c6666894539-1.webp",
-  "/webp/assets/common/2fe7f9184c515b0c515ce38bc8a25efa-1.webp",
-  "/webp/assets/common/315e4fdc6263bfd240f36297e376576e-1.webp",
-  "/webp/assets/common/37b9b888cc479ea7b74d2d9a05c37597-1.webp",
-  "/webp/assets/common/45ea830d170d382ade235db479060da7-1.webp",
-  "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp",
-];
-
 const esignivaConfig = {
   name: "Esigniva",
   category: "Security & eSign",
   tagline: "Enterprise Zero-Trust eSignature & Document Lifecycle",
   description: "AI-powered identity verification, zero-trust cryptographic signature verification, multi-party signing workflows, and tamper-evident audit trails for modern regulated enterprises.",
-  image: commonImages[0],
+  logo: "/webp/assets/Home-page/our-products/logo/esigniva.webp",
+  cover: "/webp/assets/ecosystem/saas-covers/esigniva.webp",
   features: [
     "Cryptographic SHA-256 tamper-evident audit trails",
     "Multi-party sequential & parallel signing workflows",
@@ -70,7 +60,8 @@ const productsData: Record<string, any> = {
     category: "HRTech & People Ops",
     tagline: "Next-Gen HR & Workforce Intelligence Platform",
     description: "Complete employee lifecycle management with automated talent acquisition, digital onboarding pipelines, performance reviews, and predictive workforce analytics.",
-    image: commonImages[1],
+    logo: "/webp/assets/Home-page/our-products/logo/humanex.webp",
+    cover: "/webp/assets/ecosystem/saas-covers/humanex.webp",
     features: [
       "Automated recruitment pipeline with AI applicant matching",
       "One-click multi-region compliance & payroll synchronization",
@@ -86,7 +77,8 @@ const productsData: Record<string, any> = {
     category: "HealthTech & Clinical",
     tagline: "HIPAA-Compliant Healthcare Management Platform",
     description: "Secure clinical workflow and telehealth platform connecting patients, physicians, and medical labs with real-time EHR integration, e-prescriptions, and video triage.",
-    image: commonImages[2],
+    logo: "/webp/assets/Home-page/our-products/logo/Caresuite.webp",
+    cover: "/webp/assets/ecosystem/saas-covers/caresuite.webp",
     features: [
       "HIPAA, HITECH & GDPR certified data encryption layer",
       "High-definition encrypted WebRTC clinical video consultations",
@@ -102,7 +94,8 @@ const productsData: Record<string, any> = {
     category: "EdTech & University Ops",
     tagline: "Digital Campus & Academic Operations Ecosystem",
     description: "Comprehensive university operations platform combining adaptive learning management, student information systems, virtual classroom sync, and campus administration.",
-    image: commonImages[3],
+    logo: "/webp/assets/Home-page/our-products/logo/Campix.webp",
+    cover: "/webp/assets/ecosystem/saas-covers/campix.webp",
     features: [
       "Unified LMS supporting 25,000+ concurrent live classrooms",
       "Automated grading, plagiarism detection, and progress tracking",
@@ -118,7 +111,8 @@ const productsData: Record<string, any> = {
     category: "PropTech & Real Estate",
     tagline: "AI-Powered PropTech & Property Operations SaaS",
     description: "Smart property management platform connecting landlords, tenants, and property managers with automated lease tracking, maintenance triage, and rent reconciliation.",
-    image: commonImages[4],
+    logo: "/webp/assets/Home-page/our-products/logo/homela.webp",
+    cover: "/webp/assets/ecosystem/saas-covers/homela.webp",
     features: [
       "Automated lease generation with digital signature signing",
       "Direct ACH, credit card, and Open Banking rent processing",
@@ -134,7 +128,8 @@ const productsData: Record<string, any> = {
     category: "EdTech & Learning",
     tagline: "Adaptive AI Learning & Corporate Training Management",
     description: "Personalized education experiences powered by machine learning content recommendations, real-time competency benchmarks, and skill matrix tracking.",
-    image: commonImages[5],
+    logo: "/webp/assets/Home-page/our-products/logo/Prestivo.webp",
+    cover: "/webp/assets/ecosystem/saas-covers/prestivo.webp",
     features: [
       "Adaptive learning pathways based on real-time quiz performance",
       "Interactive skill matrices & automated credential certification",
@@ -150,7 +145,8 @@ const productsData: Record<string, any> = {
     category: "FinTech & Payments",
     tagline: "High-Volume Multi-Gateway Payment Orchestration",
     description: "Next-generation FinTech payment orchestration platform enabling businesses to process, intelligently route, and reconcile millions of transactions across global gateways.",
-    image: commonImages[6],
+    logo: "/webp/assets/Home-page/our-products/logo/brio.webp",
+    cover: "/webp/assets/ecosystem/saas-covers/brio.webp",
     features: [
       "Dynamic smart-routing reducing transaction drop-offs by 28%",
       "Instant multi-currency conversion supporting 135+ world currencies",
@@ -166,7 +162,8 @@ const productsData: Record<string, any> = {
     category: "LegalTech & Case Mgmt",
     tagline: "End-to-End Legal Case & Matter Management SaaS",
     description: "Enterprise legal operations platform for law firms and corporate legal departments — covering matter intake, e-discovery, billing automation, and court filings.",
-    image: commonImages[7],
+    logo: "/webp/assets/Home-page/our-products/logo/Justivon.webp",
+    cover: "/webp/assets/ecosystem/saas-covers/justivon.webp",
     features: [
       "Centralized matter timeline with automated conflict checks",
       "Secure client portal for document sharing & status updates",
@@ -191,7 +188,8 @@ export default async function ProductMarketingPage({ params }: { params: Promise
     category: "Enterprise Platform",
     tagline: "Enterprise Solution",
     description: "Advanced platform designed for modern enterprise workflows.",
-    image: commonImages[0],
+    logo: "/webp/assets/Home-page/our-products/logo/esigniva.webp",
+    cover: "/webp/assets/ecosystem/saas-covers/esigniva.webp",
     features: [
       "Reduces operational overhead by up to 40%",
       "Enterprise-grade compliance (SOC-2, HIPAA, GDPR)",
@@ -204,10 +202,10 @@ export default async function ProductMarketingPage({ params }: { params: Promise
   };
 
   const assets = [
-    { name: "Executive Product Brochure", type: "PDF - 2.4 MB", image: commonImages[4], primary: true },
-    { name: "Technical Architecture Deck", type: "PPTX - 15 MB", image: commonImages[5], primary: false },
-    { name: "Enterprise Pricing & Tiers", type: "PDF - 1.1 MB", image: commonImages[6], primary: false },
-    { name: "Implementation & API Spec", type: "PDF - 3.5 MB", image: commonImages[7], primary: false },
+    { name: "Executive Product Brochure", type: "PDF - 2.4 MB", primary: true },
+    { name: "Technical Architecture Deck", type: "PPTX - 15 MB", primary: false },
+    { name: "Enterprise Pricing & Tiers", type: "PDF - 1.1 MB", primary: false },
+    { name: "Implementation & API Spec", type: "PDF - 3.5 MB", primary: false },
   ];
 
   return (
@@ -230,14 +228,15 @@ export default async function ProductMarketingPage({ params }: { params: Promise
           {/* Hero Header */}
           <div className="mt-8 flex flex-col md:flex-row md:items-start justify-between gap-6 pb-8 border-b border-white/10">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-zinc-950 border ${product.classes.border} overflow-hidden relative shrink-0 shadow-xl`}>
-                <Image 
-                  src={product.image} 
-                  alt={product.name} 
-                  fill 
-                  className="object-cover"
+              {/* Product Logo Container */}
+              <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-[#0e0e12] border ${product.classes.border} p-3.5 overflow-hidden relative shrink-0 shadow-2xl flex items-center justify-center backdrop-blur-md`}>
+                <img 
+                  src={product.logo} 
+                  alt={`${product.name} logo`} 
+                  className="w-full h-full object-contain filter brightness-110 drop-shadow-sm select-none"
                 />
               </div>
+
               <div className="space-y-1.5">
                 <div className="flex items-center gap-3">
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-sans">
@@ -310,14 +309,14 @@ export default async function ProductMarketingPage({ params }: { params: Promise
               </div>
             </div>
 
-            {/* Interactive Video / Showcase Card */}
+            {/* Product Platform Walkthrough Banner */}
             <div className="bg-[#0b0b0e] border border-white/10 rounded-2xl p-6 overflow-hidden relative group">
               <div className="relative w-full aspect-video sm:h-72 rounded-xl overflow-hidden bg-zinc-950 border border-white/5">
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
-                  alt="Dashboard Preview" 
-                  className="w-full h-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-700 select-none"
-                  loading="lazy" 
+                <Image 
+                  src={product.cover || "/webp/assets/ecosystem/saas-covers/esigniva.webp"} 
+                  alt={`${product.name} Platform Preview`} 
+                  fill
+                  className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 select-none"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
                 
