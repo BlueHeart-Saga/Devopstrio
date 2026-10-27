@@ -170,8 +170,8 @@ export default function CapabilityPage({ params }: PageProps) {
     // { id: "tech-stack", label: "Technology" },
     { id: "benefits", label: "Benefits" },
     { id: "industries", label: "Industries" },
-    { id: "faq", label: "FAQ" },
-    { id: "related-services", label: "Related Services" }
+    { id: "related-services", label: "Related Services" },
+    { id: "faq", label: "FAQ" }
   ];
 
   return (
