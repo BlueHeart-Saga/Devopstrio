@@ -137,9 +137,9 @@ export function LegalPageLayout({
           </Reveal>
         </div>
 
-        {/* Legal Policies Navigation Strip */}
+        {/* Legal Policies Navigation Strip - Clean Without Outer Box Frame */}
         <div className="mb-12 overflow-x-auto pb-2 scrollbar-none">
-          <div className="flex items-center gap-2 min-w-max p-1 bg-zinc-950/60 border border-zinc-850 rounded-2xl backdrop-blur-md">
+          <div className="flex items-center gap-2 min-w-max py-1">
             {LEGAL_NAV_ITEMS.map((item) => {
               const isCurrent = title.toLowerCase().includes(item.name.toLowerCase()) || 
                 (item.href === "/gdpr" && title.toLowerCase().includes("gdpr"));
@@ -163,62 +163,55 @@ export function LegalPageLayout({
         {/* Content Layout with STICKY left rail and NATURAL open right content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start relative">
           
-          {/* Table of Contents - Left Column (Sticky Rail) */}
+          {/* Table of Contents - Left Column (Sticky Rail styled seamlessly like Explore Categories) */}
           <aside className="lg:col-span-4 xl:col-span-3 hidden lg:block sticky top-28 self-start z-20">
-            <div className="space-y-5 max-h-[calc(100vh-8.5rem)] overflow-y-auto pr-1.5 custom-scrollbar">
+            <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-4 max-h-[calc(100vh-8.5rem)] overflow-y-auto custom-scrollbar">
               
-              {/* Sections Card */}
-              <div className="bg-zinc-950/70 border border-zinc-850 rounded-2xl p-5 backdrop-blur-md shadow-xl">
-                <div className="flex items-center justify-between pb-3.5 mb-3 border-b border-zinc-800/80">
-                  <span className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                    <ShieldCheck size={14} className="text-rose-500" />
-                    Sections
-                  </span>
-                  <span className="text-[11px] text-zinc-500 font-mono">On This Page</span>
-                </div>
-                
-                <nav className="flex flex-col gap-1.5">
-                  {sections.map((section, idx) => {
-                    const isActive = activeSection === section.id;
-                    return (
-                      <button
-                        key={section.id}
-                        onClick={() => scrollToSection(section.id)}
-                        className={`group w-full text-left text-[14px] sm:text-[14.5px] py-2.5 px-3 rounded-xl transition-all duration-200 flex items-center justify-between gap-3 cursor-pointer ${
-                          isActive
-                            ? "bg-rose-500/15 text-rose-400 font-semibold border border-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.1)]"
-                            : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60 border border-transparent"
-                        }`}
-                      >
-                        <span className="leading-snug">{section.title}</span>
-                        <span className={`text-[11px] font-mono px-2 py-0.5 rounded flex-shrink-0 transition-colors ${
-                          isActive
-                            ? "bg-rose-500/25 text-rose-300 font-bold"
-                            : "text-zinc-600 group-hover:text-zinc-400 bg-zinc-900/40"
-                        }`}>
-                          {String(idx + 1).padStart(2, "0")}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </nav>
+              <div className="text-[11px] font-bold tracking-widest text-zinc-500 mb-3 uppercase px-3 flex items-center justify-between">
+                <span>Sections</span>
+                <span className="text-[10px] font-mono text-zinc-600 font-normal">On This Page</span>
               </div>
+              
+              <nav className="flex flex-col gap-1">
+                {sections.map((section, idx) => {
+                  const isActive = activeSection === section.id;
+                  return (
+                    <button
+                      key={section.id}
+                      onClick={() => scrollToSection(section.id)}
+                      className={`w-full flex items-center justify-between text-left py-2.5 px-3 rounded-lg text-xs sm:text-[13px] font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
+                        isActive
+                          ? "bg-rose-950/20 text-rose-500 border-l-2 border-rose-500 pl-4 font-bold"
+                          : "text-zinc-400 hover:text-white hover:bg-zinc-900/40 border-l-2 border-transparent"
+                      }`}
+                    >
+                      <span className="leading-snug pr-2">{section.title}</span>
+                      <span className={`text-[10px] font-mono px-2 py-0.5 rounded flex-shrink-0 ${
+                        isActive
+                          ? "bg-rose-950/40 text-rose-400 font-bold"
+                          : "bg-zinc-900 text-zinc-500"
+                      }`}>
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                    </button>
+                  );
+                })}
+              </nav>
 
-              {/* Legal Assistance Box */}
-              <div className="bg-gradient-to-br from-zinc-900/50 via-zinc-950/70 to-zinc-950/50 border border-zinc-850 rounded-2xl p-5 shadow-lg relative overflow-hidden backdrop-blur-md">
-                <div className="flex items-center gap-2 text-rose-400 text-xs font-semibold uppercase tracking-wider mb-2 font-mono">
-                  <Mail size={14} />
+              {/* Legal Assistance Note - Seamless without separate frame */}
+              <div className="mt-6 pt-4 border-t border-zinc-900 px-3">
+                <div className="flex items-center gap-1.5 text-rose-500 text-[11px] font-bold uppercase tracking-wider mb-1.5 font-mono">
+                  <Mail size={12} />
                   <span>Legal Assistance</span>
                 </div>
-                <p className="text-sm text-zinc-300 leading-relaxed mb-3 font-normal">
-                  For specific regulatory filings, audit certifications, or customized enterprise terms, contact our Trust & Risk office.
+                <p className="text-xs text-zinc-400 leading-relaxed mb-2 font-normal">
+                  For regulatory filings or questions, reach out to our Trust team.
                 </p>
                 <a
                   href={`mailto:${process.env.NEXT_PUBLIC_TRUST_EMAIL || "info@devopstrioglobal.com"}`}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-rose-400 hover:text-rose-300 transition-colors break-all"
+                  className="text-xs font-semibold text-rose-400 hover:text-rose-300 transition-colors break-all"
                 >
-                  <span>{process.env.NEXT_PUBLIC_TRUST_EMAIL || "info@devopstrioglobal.com"}</span>
-                  <ChevronRight size={13} className="flex-shrink-0" />
+                  {process.env.NEXT_PUBLIC_TRUST_EMAIL || "info@devopstrioglobal.com"}
                 </a>
               </div>
 
