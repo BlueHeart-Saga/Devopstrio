@@ -28,7 +28,7 @@ const commonImages = [
 ];
 
 const products = [
-  { slug: "safesign", name: "SafeSign", type: "Security", image: commonImages[0], hoverColor: "group-hover:text-rose-400", gradient: "from-rose-500/5" },
+  { slug: "esigniva", name: "Esigniva", type: "Security & eSign", image: commonImages[0], hoverColor: "group-hover:text-rose-400", gradient: "from-rose-500/5" },
   { slug: "humanex", name: "Humanex", type: "HR & Workforce", image: commonImages[1], hoverColor: "group-hover:text-blue-400", gradient: "from-blue-500/5" },
   { slug: "caresuite", name: "CareSuite", type: "Healthcare", image: commonImages[2], hoverColor: "group-hover:text-emerald-400", gradient: "from-emerald-500/5" },
   { slug: "campix", name: "Campix", type: "Education", image: commonImages[3], hoverColor: "group-hover:text-orange-400", gradient: "from-orange-500/5" },

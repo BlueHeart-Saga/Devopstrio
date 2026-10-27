@@ -418,7 +418,7 @@ This document provides a comprehensive, structured directory of all pages across
 * **Route**: `/marketing/products`
 * **SEO Title**: `Product Data Sheets | SaaS Product Specifications`
 * **H1 Heading**: `SaaS Product Collateral & Specification Sheets`
-* **Meta Description**: `Explore technical architecture data sheets and feature specs for SafeSign, Brio, Campix, CareSuite, HomeLa, HumanEx, Justivon, and Prestivo.`
+* **Meta Description**: `Explore technical architecture data sheets and feature specs for Esigniva, Brio, Campix, CareSuite, HomeLa, HumanEx, Justivon, and Prestivo.`
 
 ### 5.6 Services Marketing Summaries
 * **Routes**: `/marketing/services`, `/marketing/services/*`

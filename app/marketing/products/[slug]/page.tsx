@@ -12,11 +12,15 @@ import {
 import { ContactForm } from "@/sections/contact/ContactForm";
 import { generatePageMetadata } from "@/lib/seo-utils";
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-  const productName = slug.charAt(0).toUpperCase() + slug.slice(1);
+  if (slug === "safesign") {
+    redirect("/marketing/products/esigniva");
+  }
+  const productName = (slug.toLowerCase() === "esigniva" || slug.toLowerCase() === "safesign") ? "Esigniva" : (slug.charAt(0).toUpperCase() + slug.slice(1));
   return generatePageMetadata({
     title: `${productName} SaaS Platform Collateral & Datasheets`,
     description: `Download official architectural datasheets, pitch decks, and feature specifications for ${productName} platform by Devopstrio.`,
@@ -35,16 +39,19 @@ const commonImages = [
   "/webp/assets/common/464d8932bca4d6bb552ff2dcf2f3c5ca-1.webp",
 ];
 
-const productsData = {
-  "safesign": {
-    name: "SafeSign",
-    tagline: "Enterprise Security & Authentication Platform",
-    description: "AI-powered identity verification and zero-trust security architecture for modern enterprises.",
-    image: commonImages[0],
-    classes: {
-      bg: "bg-rose-500/10", border: "border-rose-500/20", text: "text-rose-400", button: "bg-rose-600 hover:bg-rose-500", primaryAssetBg: "bg-rose-500/10 border-rose-500/30"
-    }
-  },
+const esignivaConfig = {
+  name: "Esigniva",
+  tagline: "Enterprise Security & eSignature Platform",
+  description: "AI-powered identity verification, zero-trust cryptographic signature verification, and multi-party workflows for modern enterprises.",
+  image: commonImages[0],
+  classes: {
+    bg: "bg-rose-500/10", border: "border-rose-500/20", text: "text-rose-400", button: "bg-rose-600 hover:bg-rose-500", primaryAssetBg: "bg-rose-500/10 border-rose-500/30"
+  }
+};
+
+const productsData: Record<string, any> = {
+  "esigniva": esignivaConfig,
+  "safesign": esignivaConfig,
   "humanex": {
     name: "Humanex",
     tagline: "Next-Gen HR & Workforce Management",
@@ -77,6 +84,9 @@ const productsData = {
 export default async function ProductMarketingPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
+  if (slug === "safesign") {
+    redirect("/marketing/products/esigniva");
+  }
   // @ts-ignore
   const product = productsData[slug] || {
     name: slug.charAt(0).toUpperCase() + slug.slice(1),

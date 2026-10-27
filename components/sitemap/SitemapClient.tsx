@@ -124,7 +124,7 @@ const sitemapData: SitemapCategory[] = [
       { name: "Corporate Presentation", href: "/marketing/company/corporate-presentation", desc: "45-Slide Pitch Deck" },
       { name: "Company Fact Sheet", href: "/marketing/company/company-profile", desc: "Executive Summary PDF" },
       { name: "Brand Guidelines", href: "/marketing/company/brand-guidelines", desc: "Logos, Colors & Typography" },
-      { name: "SaaS Product Specs", href: "/marketing/products", desc: "SafeSign & Brio Specs" },
+      { name: "SaaS Product Specs", href: "/marketing/products", desc: "Esigniva & Brio Specs" },
       { name: "Insights Research Hub", href: "/insights", desc: "Deep-Dives & Benchmarks" },
       { name: "Engineering Blogs", href: "/insights/blogs", desc: "DevOps & Kubernetes Guides" },
       { name: "Case Studies", href: "/insights/case-studies", desc: "Real-World Enterprise ROI" },
