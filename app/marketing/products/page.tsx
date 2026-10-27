@@ -124,7 +124,7 @@ export default function ProductsDirectoryPage() {
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                 SaaS Platform Collateral & Specs
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-sans">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight font-sans">
                 SaaS Product Datasheets & Collateral
               </h1>
               <p className="text-base sm:text-lg text-zinc-400 max-w-2xl font-normal leading-relaxed">
@@ -187,7 +187,7 @@ export default function ProductsDirectoryPage() {
                           className="w-full h-full object-contain filter brightness-110 select-none"
                         />
                       </div>
-                      <h3 className={`text-xl sm:text-2xl font-bold text-white transition-colors duration-300 ${product.hoverColor} font-sans tracking-tight`}>
+                      <h3 className={`text-lg sm:text-xl font-semibold text-white transition-colors duration-300 ${product.hoverColor} font-sans tracking-tight`}>
                         {product.name}
                       </h3>
                     </div>

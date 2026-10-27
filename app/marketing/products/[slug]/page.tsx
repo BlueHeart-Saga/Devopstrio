@@ -239,7 +239,7 @@ export default async function ProductMarketingPage({ params }: { params: Promise
 
               <div className="space-y-1.5">
                 <div className="flex items-center gap-3">
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-sans">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight font-sans">
                     {product.name}
                   </h1>
                   <span className="text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-300">
