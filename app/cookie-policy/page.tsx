@@ -2,6 +2,7 @@ import React from "react";
 import { LegalPageLayout } from "@/components/LegalPageLayout";
 import { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
 
 export const metadata: Metadata = {
   title: "Cookie Policy & Data Privacy Standards | Devopstrio",
@@ -10,8 +11,6 @@ export const metadata: Metadata = {
     canonical: "/cookie-policy"
   }
 };
-
-import { BreadcrumbSchema, FAQSchema } from "@/components/seo/Schemas";
 
 const cookieFaqs = [
   {
@@ -51,7 +50,7 @@ export default function CookiePolicyPage() {
           <p>
             Cookies can be either “persistent” cookies or “session” cookies:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li><strong className="text-white font-semibold">Persistent Cookies:</strong> Stored by your web browser and remain valid until their set expiry date, unless deleted by the user before the expiry date.</li>
             <li><strong className="text-white font-semibold">Session Cookies:</strong> Temporary files that expire at the end of the user session, when the web browser is closed.</li>
           </ul>
@@ -69,7 +68,7 @@ export default function CookiePolicyPage() {
           <p>
             We use cookies to:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li>Identify you when you visit our Site and help you navigate between pages efficiently.</li>
             <li>Store information about your preferences, allowing us to customize the layout, language settings, and interface theme.</li>
             <li>Manage secure logins under our <Link href="/services/cybersecurity" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cybersecurity services</Link> and protect user accounts from fraudulent access or CSRF vulnerability attacks.</li>
@@ -82,36 +81,36 @@ export default function CookiePolicyPage() {
       id: "categories",
       title: "Categories of Cookies We Set",
       content: (
-        <div className="space-y-6">
+        <div className="space-y-5">
           <p>
             The cookies used on our website are classified into four main categories based on their function and purpose:
           </p>
           
-          <div className="space-y-4">
-            <div className="border border-zinc-900 bg-zinc-950/40 rounded-xl p-5">
-              <span className="block text-white font-bold text-xs uppercase tracking-wider mb-2 text-rose-500">1. Strictly Necessary Cookies</span>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+          <div className="space-y-6 pt-1">
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">1. Strictly Necessary Cookies</h3>
+              <p>
                 These cookies are essential for the website to function properly and cannot be switched off in our systems. They are usually set in response to actions made by you, such as setting your privacy preferences, logging in, or filling out contact forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not work.
               </p>
             </div>
             
-            <div className="border border-zinc-900 bg-zinc-950/40 rounded-xl p-5">
-              <span className="block text-white font-bold text-xs uppercase tracking-wider mb-2 text-rose-500">2. Performance & Analytics Cookies</span>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">2. Performance & Analytics Cookies</h3>
+              <p>
                 These cookies collect information about how visitors use our website—for instance, which pages visitors go to most often, and if they get error messages. They help us measure and improve the performance of our site. All information these cookies collect is aggregated and anonymous.
               </p>
             </div>
             
-            <div className="border border-zinc-900 bg-zinc-950/40 rounded-xl p-5">
-              <span className="block text-white font-bold text-xs uppercase tracking-wider mb-2 text-rose-500">3. Functional Cookies</span>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">3. Functional Cookies</h3>
+              <p>
                 These cookies enable the website to provide enhanced functionality and personalization, such as remembering your region, preferred language, or custom dashboard configurations. They may be set by us or by third-party providers whose services we have added to our pages.
               </p>
             </div>
             
-            <div className="border border-zinc-900 bg-zinc-950/40 rounded-xl p-5">
-              <span className="block text-white font-bold text-xs uppercase tracking-wider mb-2 text-rose-500">4. Targeting & Marketing Cookies</span>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">4. Targeting & Marketing Cookies</h3>
+              <p>
                 These cookies may be set through our site by our marketing partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They do not store directly personal information but are based on uniquely identifying your browser and internet device.
               </p>
             </div>
@@ -127,7 +126,7 @@ export default function CookiePolicyPage() {
           <p>
             In addition to our first-party cookies, we partner with third-party service providers who may place cookies on your device when you access our site. These third parties include:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li><strong className="text-white font-semibold">Google Analytics:</strong> We use Google Analytics to parse site traffic, page flows, and user demographics. Google Analytics uses cookies to generate statistical reports. Google's privacy statement is accessible at: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">Google Privacy Policy</a>.</li>
             <li><strong className="text-white font-semibold">Hotjar:</strong> We use Hotjar to collect visual click maps and scrolling telemetry to improve interface accessibility. Hotjar stores cookies to recognize recurring visitor sessions.</li>
           </ul>
@@ -145,7 +144,7 @@ export default function CookiePolicyPage() {
           <p>
             To adjust your cookie preferences directly in your browser:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li>In <strong className="text-white font-semibold">Chrome:</strong> Go to Settings &gt; Privacy and Security &gt; Cookies and other site data.</li>
             <li>In <strong className="text-white font-semibold">Firefox:</strong> Go to Preferences &gt; Privacy & Security &gt; Cookies and Site Data.</li>
             <li>In <strong className="text-white font-semibold">Safari:</strong> Go to Preferences &gt; Privacy &gt; Block all cookies.</li>
@@ -186,7 +185,6 @@ export default function CookiePolicyPage() {
       <FAQSchema faqs={cookieFaqs} />
       <LegalPageLayout
         title="Cookie Policy"
-        subtitle="How Devopstrio uses cookies and tracking technologies to optimize website navigation, secure sessions, and analyze usage statistics."
         lastUpdated="June 16, 2026"
         sections={sections}
       />

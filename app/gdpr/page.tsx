@@ -35,7 +35,7 @@ export default function GDPRPage() {
           <p>
             All personal data processing activities conducted by Devopstrio adhere strictly to the fundamental principles set forth in Article 5 of the GDPR:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li><strong className="text-white font-semibold">Lawfulness, Fairness, and Transparency:</strong> We process data lawfully and fair, explaining all data collection operations clearly.</li>
             <li><strong className="text-white font-semibold">Purpose Limitation:</strong> Personal data is collected only for specified, explicit, and legitimate business purposes, and is not processed in a manner incompatible with those intentions.</li>
             <li><strong className="text-white font-semibold">Data Minimization:</strong> We limit personal data collection to what is strictly necessary in relation to the purposes for which they are processed.</li>
@@ -50,26 +50,26 @@ export default function GDPRPage() {
       id: "data-subject-rights",
       title: "Your Data Subject Rights",
       content: (
-        <div className="space-y-4">
+        <div className="space-y-5">
           <p>
             Under the GDPR, individuals residing in the European Economic Area (EEA) have specific enforceable rights regarding their personal data:
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-            <div className="bg-zinc-950/60 border border-zinc-900 rounded-xl p-4">
-              <span className="block text-white font-bold text-xs uppercase tracking-wider mb-1 text-rose-500">Right of Access</span>
-              <p className="text-xs text-zinc-450">You can request confirmation as to whether your personal data is being processed, and request a structured copy of that data.</p>
+          <div className="space-y-6 pt-1">
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Right of Access</h3>
+              <p>You can request confirmation as to whether your personal data is being processed, and request a structured copy of that data.</p>
             </div>
-            <div className="bg-zinc-950/60 border border-zinc-900 rounded-xl p-4">
-              <span className="block text-white font-bold text-xs uppercase tracking-wider mb-1 text-rose-500">Right to Rectification</span>
-              <p className="text-xs text-zinc-450">You have the right to request that we correct any inaccurate or incomplete personal data about you.</p>
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Right to Rectification</h3>
+              <p>You have the right to request that we correct any inaccurate or incomplete personal data about you.</p>
             </div>
-            <div className="bg-zinc-950/60 border border-zinc-900 rounded-xl p-4">
-              <span className="block text-white font-bold text-xs uppercase tracking-wider mb-1 text-rose-500">Right to Erasure</span>
-              <p className="text-xs text-zinc-450">Also known as the “Right to be Forgotten,” you can request that we delete your personal data under certain legal grounds.</p>
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Right to Erasure</h3>
+              <p>Also known as the “Right to be Forgotten,” you can request that we delete your personal data under certain legal grounds.</p>
             </div>
-            <div className="bg-zinc-950/60 border border-zinc-900 rounded-xl p-4">
-              <span className="block text-white font-bold text-xs uppercase tracking-wider mb-1 text-rose-500">Right to Portability</span>
-              <p className="text-xs text-zinc-450">You have the right to receive your personal data in a structured, commonly used, machine-readable format to transfer to another entity.</p>
+            <div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Right to Portability</h3>
+              <p>You have the right to receive your personal data in a structured, commonly used, machine-readable format to transfer to another entity.</p>
             </div>
           </div>
           <p className="pt-2">
@@ -86,7 +86,7 @@ export default function GDPRPage() {
           <p>
             Depending on how we interact with your data, Devopstrio operates under two legal statuses:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li><strong className="text-white font-semibold">As a Data Controller:</strong> We act as a controller for the personal data of our website visitors, newsletter subscribers, job applicants, and client account managers. In these cases, we determine the purposes and means of processing.</li>
             <li><strong className="text-white font-semibold">As a Data Processor:</strong> We act as a processor when rendering engineering, <Link href="/services/devops-automation" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">DevOps solutions</Link>, and <Link href="/services/cloud-services" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cloud services</Link> for our enterprise clients. In this capacity, we process personal data strictly in accordance with the client's documented instructions and the executed Data Processing Agreement (DPA).</li>
           </ul>
@@ -104,7 +104,7 @@ export default function GDPRPage() {
           <p>
             To ensure all personal data receives an adequate level of protection when transferred outside the EEA, we implement:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li><strong className="text-white font-semibold">Standard Contractual Clauses (SCCs):</strong> We use the EU-approved Standard Contractual Clauses for transfers of personal data to controllers and processors established in third countries.</li>
             <li><strong className="text-white font-semibold">Supplementary Measures:</strong> We apply supplementary security measures, such as encryption before transmission, to shield the data from unauthorized access in transit.</li>
           </ul>
@@ -119,7 +119,7 @@ export default function GDPRPage() {
           <p>
             To comply with Article 32 of the GDPR, we have implemented state-of-the-art technical and organizational measures to ensure a level of security appropriate to the risks of data processing:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li><strong className="text-white font-semibold">Data Encryption:</strong> Encryption of all personal data in transit using TLS 1.3 and at rest using AES-256.</li>
             <li><strong className="text-white font-semibold">Access Control:</strong> Implementing strictly enforced multi-factor authentication (MFA) and Least-Privilege access profiles.</li>
             <li><strong className="text-white font-semibold">Security Auditing:</strong> Regular vulnerability scanning, internal network pen-testing, and SOC 2 Type II audit alignments under our <Link href="/services/cybersecurity" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cybersecurity services</Link> framework.</li>
@@ -141,42 +141,27 @@ export default function GDPRPage() {
       id: "subprocessors",
       title: "Authorized Sub-Processors",
       content: (
-        <div className="space-y-4">
+        <div className="space-y-5">
           <p>
-            Devopstrio works with third-party service providers (sub-processors) to deliver cloud hosting, CRM services, and website analytics. All sub-processors are vetted for security and are required to enter into DPAs that match our GDPR commitments.
+            Devopstrio works with trusted third-party service providers (sub-processors) to deliver cloud hosting, CRM services, and website analytics. All sub-processors are vetted for security and are required to enter into DPAs that match our GDPR commitments.
           </p>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs border-collapse">
-              <thead>
-                <tr className="border-b border-zinc-900 text-zinc-400 font-mono">
-                  <th className="py-2.5">Entity Name</th>
-                  <th className="py-2.5">Service Provided</th>
-                  <th className="py-2.5">Location</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-zinc-900 text-zinc-300">
-                <tr>
-                  <td className="py-3 font-semibold">Amazon Web Services (AWS)</td>
-                  <td className="py-3">Cloud Infrastructure Hosting</td>
-                  <td className="py-3">USA / EU (Ireland)</td>
-                </tr>
-                <tr>
-                  <td className="py-3 font-semibold">Google Cloud Platform (GCP)</td>
-                  <td className="py-3">Data Analytics & Staging</td>
-                  <td className="py-3">USA / EU (Frankfurt)</td>
-                </tr>
-                <tr>
-                  <td className="py-3 font-semibold">Microsoft Azure</td>
-                  <td className="py-3">Enterprise Dev Environments</td>
-                  <td className="py-3">USA / EU (Netherlands)</td>
-                </tr>
-                <tr>
-                  <td className="py-3 font-semibold">HubSpot</td>
-                  <td className="py-3">Client Relationship Management (CRM)</td>
-                  <td className="py-3">USA</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="space-y-4 pt-1">
+            <div className="pb-3 border-b border-zinc-900/60">
+              <h4 className="text-white font-semibold text-lg">Amazon Web Services (AWS)</h4>
+              <p className="text-zinc-300 text-base mt-1">Cloud Infrastructure Hosting &bull; Location: USA / EU (Ireland)</p>
+            </div>
+            <div className="pb-3 border-b border-zinc-900/60">
+              <h4 className="text-white font-semibold text-lg">Google Cloud Platform (GCP)</h4>
+              <p className="text-zinc-300 text-base mt-1">Data Analytics & Staging &bull; Location: USA / EU (Frankfurt)</p>
+            </div>
+            <div className="pb-3 border-b border-zinc-900/60">
+              <h4 className="text-white font-semibold text-lg">Microsoft Azure</h4>
+              <p className="text-zinc-300 text-base mt-1">Enterprise Dev Environments &bull; Location: USA / EU (Netherlands)</p>
+            </div>
+            <div className="pb-3">
+              <h4 className="text-white font-semibold text-lg">HubSpot</h4>
+              <p className="text-zinc-300 text-base mt-1">Client Relationship Management (CRM) &bull; Location: USA</p>
+            </div>
           </div>
         </div>
       )
@@ -189,11 +174,16 @@ export default function GDPRPage() {
           <p>
             Devopstrio has appointed a dedicated Data Protection Officer to supervise compliance with data protection laws and serve as a direct point of contact for regulatory bodies and data subjects.
           </p>
-          <div className="bg-zinc-950/60 border border-zinc-900 rounded-2xl p-6 text-xs space-y-1.5">
-            <p className="font-bold text-white text-sm">Devopstrio Data Protection Officer</p>
-            <p className="text-zinc-400">Attention: Legal & Trust Department</p>
-            <p className="text-zinc-400">Email: <a href={`mailto:${process.env.NEXT_PUBLIC_DPO_EMAIL}`} className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">{process.env.NEXT_PUBLIC_DPO_EMAIL}</a></p>
-            <p className="text-zinc-400">Address: Devopstrio Limited, One World Trade Center, Floor 85, New York, NY 10007, USA</p>
+          <div className="space-y-2 pt-2">
+            <p className="font-semibold text-white text-lg">Devopstrio Data Protection Officer</p>
+            <p className="text-zinc-300 text-base">Attention: Legal & Trust Department</p>
+            <p className="text-zinc-300 text-base">
+              Email:{" "}
+              <a href={`mailto:${process.env.NEXT_PUBLIC_DPO_EMAIL}`} className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">
+                {process.env.NEXT_PUBLIC_DPO_EMAIL}
+              </a>
+            </p>
+            <p className="text-zinc-300 text-base">Address: Devopstrio Limited, One World Trade Center, Floor 85, New York, NY 10007, USA</p>
           </div>
         </div>
       )
@@ -203,7 +193,6 @@ export default function GDPRPage() {
   return (
     <LegalPageLayout
       title="GDPR Compliance"
-      subtitle="How Devopstrio adheres to European data protection standards, safeguarding rights, implementing DPAs, and establishing secure technical boundaries."
       lastUpdated="June 16, 2026"
       sections={sections}
     />

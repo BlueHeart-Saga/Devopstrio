@@ -38,7 +38,7 @@ export default function TermsOfServicePage() {
           <p>
             Devopstrio provides high-performance <Link href="/services/it-consulting" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">professional consulting</Link>, <Link href="/services/software-development" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">software development</Link>, <Link href="/services/cloud-services" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cloud infrastructure planning</Link>, and co-engineering services. Our core practices include:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li><strong className="text-white font-semibold">AI & Data Innovation:</strong> Planning, training, and deploying large language models, reinforcement learning networks, and automated data pipelines.</li>
             <li><strong className="text-white font-semibold">Cloud & Infrastructure:</strong> Modernizing application runtimes, deploying Kubernetes clusters, and setting up hybrid multi-cloud systems.</li>
             <li><strong className="text-white font-semibold">DevOps & CI/CD Pipelines:</strong> Optimizing deployment cycles, creating infrastructure-as-code (IaC), and automated vulnerability testing.</li>
@@ -58,7 +58,7 @@ export default function TermsOfServicePage() {
           <p>
             To enable Devopstrio to perform the services outlined in an SOW, the Client agrees to:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li>Provide timely, secure access to target code repositories, staging servers, and cloud infrastructure subscriptions.</li>
             <li>Designate a qualified technical lead or product owner to act as the primary contact for deliverables approvals.</li>
             <li>Verify all prerequisites, data schemas, and API documentation shared with Devopstrio are accurate and fully compliant with applicable third-party terms.</li>
@@ -75,7 +75,7 @@ export default function TermsOfServicePage() {
           <p>
             Unless otherwise agreed in a separate written contract, the division of intellectual property (IP) is governed by the following rules:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li><strong className="text-white font-semibold">Client Deliverables:</strong> Upon full and final payment of all outstanding invoices, all custom code, custom documentation, and bespoke software scripts created specifically for the Client under an SOW will be owned by the Client as “work made for hire.”</li>
             <li><strong className="text-white font-semibold">Devopstrio Background IP:</strong> Devopstrio retains exclusive ownership of all generic tools, proprietary libraries, standard templates, and pre-existing software structures used to accelerate service delivery. We grant the Client a perpetual, royalty-free, non-exclusive license to use any Background IP embedded within the deliverables.</li>
           </ul>
@@ -90,7 +90,7 @@ export default function TermsOfServicePage() {
           <p>
             Clients agree to pay all fees associated with chosen service plans or specific SOW deliverables.
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li><strong className="text-white font-semibold">Invoicing Cycle:</strong> Invoices are issued based on agreed milestones or monthly time-and-materials schedules. Standard payment terms are Net 30 days unless stated otherwise.</li>
             <li><strong className="text-white font-semibold">Late Payments:</strong> Late payments will accrue interest at the rate of 1.5% per month or the highest rate permitted by law, whichever is lower, on the outstanding balance.</li>
             <li><strong className="text-white font-semibold">Taxes:</strong> All fees are exclusive of local, state, federal, or international taxes (including VAT, sales tax, or withholding tax), which are the sole responsibility of the Client.</li>
@@ -106,7 +106,7 @@ export default function TermsOfServicePage() {
           <p>
             You may not access or use the Site or our service sandboxes for any purpose other than that for which we make them available. Prohibited activities include:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li>Attempting to bypass security barriers, run unauthorized vulnerability scans, or disrupt server performance.</li>
             <li>Using automated crawlers, scrapers, or indexing tools to systematically copy site pages, designs, or proprietary resource guides.</li>
             <li>Impersonating Devopstrio representatives, fabricating contact identities, or submitting fraudulent project applications.</li>
@@ -134,8 +134,8 @@ export default function TermsOfServicePage() {
       title: "Warranties Disclaimer",
       content: (
         <div className="space-y-4">
-          <p className="uppercase font-bold text-zinc-200 text-xs tracking-wider">
-            EXCEPT AS EXPRESSLY WRITTEN IN A SIGNED STATEMENT OF WORK, ALL SERVICES, PLATFORMS, CODE SAMPLES, AND SITE CONTENT ARE PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS.
+          <p className="font-semibold text-zinc-200 text-base">
+            Except as expressly written in a signed Statement of Work, all services, platforms, code samples, and site content are provided on an “as is” and “as available” basis.
           </p>
           <p>
             Devopstrio makes no warranties of any kind, whether express, implied, statutory, or otherwise, regarding the performance, merchantability, or fitness for a particular purpose of our deliverables. We do not warrant that our co-engineered products will be entirely error-free, uninterrupted, or immune to emerging cybersecurity threat vectors.
@@ -148,8 +148,8 @@ export default function TermsOfServicePage() {
       title: "Limitation of Liability",
       content: (
         <div className="space-y-4">
-          <p className="uppercase font-bold text-zinc-200 text-xs tracking-wider">
-            TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, DEVOPSTRIO'S AGGREGATE LIABILITY FOR ALL CLAIMS ARISING OUT OF THESE TERMS WILL BE LIMITED TO THE TOTAL AMOUNT PAID BY THE CLIENT TO DEVOPSTRIO IN THE SIX (6) MONTHS PRECEDING THE CLAIM EVENT.
+          <p className="font-semibold text-zinc-200 text-base">
+            To the maximum extent permitted by applicable law, Devopstrio&apos;s aggregate liability for all claims arising out of these terms will be limited to the total amount paid by the client to Devopstrio in the six (6) months preceding the claim event.
           </p>
           <p>
             In no event shall Devopstrio, its directors, employees, or partners, be liable to you or any third party for any indirect, consequential, exemplary, incidental, special, or punitive damages—including lost profits, lost data, business interruptions, or procurement of substitute services—even if we have been advised of the possibility of such damages.
@@ -165,7 +165,7 @@ export default function TermsOfServicePage() {
           <p>
             Either party may terminate these Terms or an active Statement of Work:
           </p>
-          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+          <ul className="list-disc pl-6 space-y-3 text-zinc-300 marker:text-rose-500">
             <li>For convenience, by providing thirty (30) days prior written notice to the other party, subject to payment for all work performed up to the termination date.</li>
             <li>Immediately for cause, if the other party breaches any material term of these Terms or an active SOW and fails to cure such breach within fifteen (15) days of receiving written notice thereof.</li>
           </ul>
@@ -208,7 +208,6 @@ export default function TermsOfServicePage() {
   return (
     <LegalPageLayout
       title="Terms of Service"
-      subtitle="Standard terms and conditions governing the utilization of Devopstrio co-engineering practices, advisory services, and digital platform access."
       lastUpdated="June 16, 2026"
       sections={sections}
     />

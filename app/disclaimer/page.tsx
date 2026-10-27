@@ -130,10 +130,15 @@ export default function DisclaimerPage() {
           <p>
             If you have questions, feedback, or concerns regarding any details within this Disclaimer, please contact our Legal department:
           </p>
-          <div className="bg-zinc-950/60 border border-zinc-900 rounded-2xl p-6 text-xs space-y-1.5">
-            <p className="font-bold text-white text-sm">Devopstrio Legal Department</p>
-            <p className="text-zinc-400">Email: <a href={`mailto:${process.env.NEXT_PUBLIC_LEGAL_EMAIL}`} className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">{process.env.NEXT_PUBLIC_LEGAL_EMAIL}</a></p>
-            <p className="text-zinc-400">Address: Devopstrio Limited, One World Trade Center, Floor 85, New York, NY 10007, USA</p>
+          <div className="space-y-2 pt-2">
+            <p className="font-semibold text-white text-lg">Devopstrio Legal Department</p>
+            <p className="text-zinc-300 text-base">
+              Email:{" "}
+              <a href={`mailto:${process.env.NEXT_PUBLIC_LEGAL_EMAIL}`} className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">
+                {process.env.NEXT_PUBLIC_LEGAL_EMAIL}
+              </a>
+            </p>
+            <p className="text-zinc-300 text-base">Address: Devopstrio Limited, One World Trade Center, Floor 85, New York, NY 10007, USA</p>
           </div>
         </div>
       )
@@ -143,7 +148,6 @@ export default function DisclaimerPage() {
   return (
     <LegalPageLayout
       title="Disclaimer"
-      subtitle="Legal guidelines and disclaimer notices concerning information accuracy, professional liability exclusions, external website links, and service uptime."
       lastUpdated="June 16, 2026"
       sections={sections}
     />

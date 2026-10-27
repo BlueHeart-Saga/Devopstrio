@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ChevronRight, Calendar, ArrowUp, Printer, Mail, Scale, ShieldCheck } from "lucide-react";
+import { ChevronRight, Calendar, ArrowUp, Printer, Mail, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { RepresentativeCTA } from "@/components/ui/RepresentativeCTA";
@@ -15,7 +15,7 @@ interface Section {
 
 interface LegalPageLayoutProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   lastUpdated: string;
   sections: Section[];
 }
@@ -30,7 +30,6 @@ const LEGAL_NAV_ITEMS = [
 
 export function LegalPageLayout({
   title,
-  subtitle,
   lastUpdated,
   sections
 }: LegalPageLayoutProps) {
@@ -110,21 +109,14 @@ export function LegalPageLayout({
           <span className="text-rose-500 uppercase font-semibold">{title}</span>
         </nav>
 
-        {/* Hero Banner Header */}
-        <div className="border-b border-zinc-900 pb-10 mb-12 sm:mb-16 relative">
+        {/* Hero Banner Header: Clean & Direct Without Unnecessary Subtitle or Upper Badges */}
+        <div className="border-b border-zinc-900 pb-8 mb-10 relative">
           <Reveal>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 text-rose-500 text-xs font-semibold font-mono tracking-wider uppercase mb-4 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20">
-                  <Scale size={14} className="text-rose-500" />
-                  Devopstrio Governance & Trust
-                </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-4 text-white">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
                   {title}
                 </h1>
-                <p className="text-base sm:text-lg text-zinc-400 font-normal max-w-2xl leading-relaxed">
-                  {subtitle}
-                </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
@@ -146,7 +138,7 @@ export function LegalPageLayout({
         </div>
 
         {/* Legal Policies Navigation Strip */}
-        <div className="mb-10 overflow-x-auto pb-2 scrollbar-none">
+        <div className="mb-12 overflow-x-auto pb-2 scrollbar-none">
           <div className="flex items-center gap-2 min-w-max p-1 bg-zinc-950/60 border border-zinc-850 rounded-2xl backdrop-blur-md">
             {LEGAL_NAV_ITEMS.map((item) => {
               const isCurrent = title.toLowerCase().includes(item.name.toLowerCase()) || 
@@ -155,7 +147,7 @@ export function LegalPageLayout({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-xs font-medium px-4 py-2 rounded-xl transition-all duration-200 ${
+                  className={`text-sm font-medium px-4 py-2 rounded-xl transition-all duration-200 ${
                     isCurrent
                       ? "bg-rose-500/15 text-rose-400 border border-rose-500/30 font-semibold shadow-sm"
                       : "text-zinc-400 hover:text-white hover:bg-zinc-900/50"
@@ -168,10 +160,10 @@ export function LegalPageLayout({
           </div>
         </div>
 
-        {/* Content Layout with STICKY left rail and SCROLLING right content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative">
+        {/* Content Layout with STICKY left rail and NATURAL open right content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start relative">
           
-          {/* Table of Contents - Left Column (Strictly Sticky) */}
+          {/* Table of Contents - Left Column (Sticky Rail) */}
           <aside className="lg:col-span-4 xl:col-span-3 hidden lg:block sticky top-28 self-start z-20">
             <div className="space-y-5 max-h-[calc(100vh-8.5rem)] overflow-y-auto pr-1.5 custom-scrollbar">
               
@@ -185,21 +177,21 @@ export function LegalPageLayout({
                   <span className="text-[11px] text-zinc-500 font-mono">On This Page</span>
                 </div>
                 
-                <nav className="flex flex-col gap-1">
+                <nav className="flex flex-col gap-1.5">
                   {sections.map((section, idx) => {
                     const isActive = activeSection === section.id;
                     return (
                       <button
                         key={section.id}
                         onClick={() => scrollToSection(section.id)}
-                        className={`group w-full text-left text-[13px] py-2 px-3 rounded-xl transition-all duration-200 flex items-center justify-between gap-2.5 cursor-pointer ${
+                        className={`group w-full text-left text-[14px] sm:text-[14.5px] py-2.5 px-3 rounded-xl transition-all duration-200 flex items-center justify-between gap-3 cursor-pointer ${
                           isActive
                             ? "bg-rose-500/15 text-rose-400 font-semibold border border-rose-500/30 shadow-[0_0_15px_rgba(244,63,94,0.1)]"
-                            : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/60 border border-transparent"
+                            : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60 border border-transparent"
                         }`}
                       >
-                        <span className="truncate leading-snug">{section.title}</span>
-                        <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded flex-shrink-0 transition-colors ${
+                        <span className="leading-snug">{section.title}</span>
+                        <span className={`text-[11px] font-mono px-2 py-0.5 rounded flex-shrink-0 transition-colors ${
                           isActive
                             ? "bg-rose-500/25 text-rose-300 font-bold"
                             : "text-zinc-600 group-hover:text-zinc-400 bg-zinc-900/40"
@@ -218,46 +210,42 @@ export function LegalPageLayout({
                   <Mail size={14} />
                   <span>Legal Assistance</span>
                 </div>
-                <p className="text-xs text-zinc-400 leading-relaxed mb-3 font-normal">
+                <p className="text-sm text-zinc-300 leading-relaxed mb-3 font-normal">
                   For specific regulatory filings, audit certifications, or customized enterprise terms, contact our Trust & Risk office.
                 </p>
                 <a
                   href={`mailto:${process.env.NEXT_PUBLIC_TRUST_EMAIL || "info@devopstrioglobal.com"}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-400 hover:text-rose-300 transition-colors break-all"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-rose-400 hover:text-rose-300 transition-colors break-all"
                 >
                   <span>{process.env.NEXT_PUBLIC_TRUST_EMAIL || "info@devopstrioglobal.com"}</span>
-                  <ChevronRight size={12} className="flex-shrink-0" />
+                  <ChevronRight size={13} className="flex-shrink-0" />
                 </a>
               </div>
 
             </div>
           </aside>
 
-          {/* Main Legal Content - Right Column */}
-          <main className="lg:col-span-8 xl:col-span-9 space-y-12">
-            <div className="bg-zinc-950/40 border border-zinc-850/80 rounded-3xl p-6 sm:p-10 lg:p-12 relative backdrop-blur-sm shadow-2xl">
-              <div className="space-y-12 sm:space-y-16">
-                {sections.map((section, idx) => (
-                  <section
-                    key={section.id}
-                    id={section.id}
-                    className="scroll-mt-32 border-b border-zinc-900/80 last:border-b-0 pb-12 sm:pb-16 last:pb-0"
-                  >
-                    <Reveal delay={0.03 * idx}>
-                      <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight mb-5 flex items-center gap-3">
-                        <span className="text-xs font-mono font-bold text-rose-400 w-7 h-7 rounded-lg bg-rose-500/10 border border-rose-500/25 flex items-center justify-center flex-shrink-0 shadow-sm">
-                          {String(idx + 1).padStart(2, "0")}
-                        </span>
-                        <span>{section.title}</span>
-                      </h2>
-                      <div className="text-zinc-300 text-[15px] sm:text-base leading-7 font-normal space-y-4">
-                        {section.content}
-                      </div>
-                    </Reveal>
-                  </section>
-                ))}
-              </div>
-            </div>
+          {/* Main Legal Content - Right Column (Open Flow Without Enclosing Box Frame) */}
+          <main className="lg:col-span-8 xl:col-span-9 space-y-14 sm:space-y-18">
+            {sections.map((section, idx) => (
+              <section
+                key={section.id}
+                id={section.id}
+                className="scroll-mt-32 border-b border-zinc-900/80 last:border-b-0 pb-12 sm:pb-16 last:pb-0"
+              >
+                <Reveal delay={0.02 * idx}>
+                  <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight mb-6 flex items-center gap-3.5">
+                    <span className="text-xs font-mono font-bold text-rose-400 w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/25 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <span>{section.title}</span>
+                  </h2>
+                  <div className="text-zinc-300 text-base sm:text-[17px] leading-8 font-normal space-y-5">
+                    {section.content}
+                  </div>
+                </Reveal>
+              </section>
+            ))}
           </main>
 
         </div>
