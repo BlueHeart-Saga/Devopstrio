@@ -84,7 +84,7 @@ export function ExpertiseBanner() {
             </div>
 
             {/* Bottom Row: Compliance Logos Only (No boxes, no text, clean & larger images) */}
-            <div className="pt-6 border-t border-zinc-800/80 relative z-10 w-full">
+            <div className="pt-8 sm:pt-10 border-t border-zinc-800/80 relative z-10 w-full">
               <Reveal delay={0.15}>
                 <div className="flex flex-wrap items-center justify-between sm:justify-around gap-6 sm:gap-10">
                   {complianceLogos.map((item, idx) => (
@@ -95,7 +95,7 @@ export function ExpertiseBanner() {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="h-10 sm:h-12 md:h-14 w-auto object-contain filter brightness-110 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)] transition-all duration-300"
+                        className="h-14 sm:h-16 md:h-20 lg:h-[84px] w-auto max-w-[120px] sm:max-w-[150px] md:max-w-[180px] object-contain filter brightness-110 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)] transition-all duration-300"
                         loading="lazy"
                       />
                     </div>
