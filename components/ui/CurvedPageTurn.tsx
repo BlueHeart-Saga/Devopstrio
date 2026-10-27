@@ -74,6 +74,8 @@ export function CurvedPageTurn({ direction, front, back, width, height, onFinish
       canvas.style.cssText = "position:absolute;inset:0;width:100%;height:100%;display:block";
       const ctx = canvas.getContext("2d", { alpha: false });
       if (ctx) {
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = "high";
         const sx = Math.floor(slice * sourceSlice);
         const sw = Math.max(1, Math.min(source.width - sx, Math.ceil(sourceSlice) + 1));
         ctx.drawImage(source, sx, 0, sw, source.height, 0, 0, canvas.width, canvas.height);

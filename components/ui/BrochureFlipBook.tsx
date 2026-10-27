@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   BookOpen, Download,
-  FileText, Loader2, Maximize2, Minimize2, RotateCcw, X,
+  FileText, Loader2, RotateCcw, X,
   ZoomIn, ZoomOut, Share2, Check,
 } from "lucide-react";
 import type { PDFDocumentProxy } from "pdfjs-dist";
@@ -25,13 +25,13 @@ type Asset = { canvas: HTMLCanvasElement; width: number; height: number; resolut
 type Dimensions = { width: number; height: number };
 const TURN_MS = 900;
 // Bound total canvas memory, while allowing crisp high-DPI output
-const MAX_CACHED_PAGES = 60;
+const MAX_CACHED_PAGES = 50;
 const MAX_RENDER_EDGE = 4096;
-const MAX_CACHE_BYTES = 320 * 1024 * 1024;
+const MAX_CACHE_BYTES = 512 * 1024 * 1024;
 function renderPixelBudget() {
-  if (typeof window === "undefined") return 4_000_000;
+  if (typeof window === "undefined") return 8_000_000;
   const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 4;
-  return window.innerWidth < 768 || memory <= 2 ? 3_000_000 : memory >= 8 ? 10_000_000 : 6_000_000;
+  return window.innerWidth < 768 || memory <= 2 ? 6_000_000 : memory >= 8 ? 16_000_000 : 12_000_000;
 }
 
 /** Reuses a prerendered canvas without encoding its pixels to JPEG/data URL. */
@@ -46,7 +46,12 @@ function PageFace({ asset, label, onClick }: {
     if (!element || !asset) return;
     element.width = asset.canvas.width;
     element.height = asset.canvas.height;
-    element.getContext("2d", { alpha: false })?.drawImage(asset.canvas, 0, 0);
+    const ctx = element.getContext("2d", { alpha: false });
+    if (ctx) {
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(asset.canvas, 0, 0);
+    }
   }, [asset]);
 
   return (
@@ -55,7 +60,7 @@ function PageFace({ asset, label, onClick }: {
       onClick={onClick}
       className={`relative h-full w-full overflow-hidden bg-white ${onClick ? "cursor-pointer" : ""}`}
     >
-      <canvas ref={canvasRef} className="block h-full w-full" aria-hidden="true" />
+      <canvas ref={canvasRef} className="block h-full w-full" aria-hidden="true" style={{ imageRendering: "auto", transform: "translateZ(0)", backfaceVisibility: "hidden" }} />
       {!asset && (
         <div className="absolute inset-0 flex items-center justify-center bg-zinc-100 text-zinc-500">
           <Loader2 className="h-5 w-5 animate-spin" />
@@ -208,6 +213,32 @@ export function BrochureFlipBook({
     return () => document.removeEventListener("fullscreenchange", update);
   }, []);
 
+  // Request native fullscreen automatically when opening
+  useEffect(() => {
+    const enterFs = async () => {
+      try {
+        if (!document.fullscreenElement && rootRef.current?.requestFullscreen) {
+          await rootRef.current.requestFullscreen();
+        }
+      } catch {
+        // Silently catch if browser user-gesture policy prevents auto-fullscreen
+      }
+    };
+    void enterFs();
+    return () => {
+      if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      }
+    };
+  }, []);
+
+  const handleClose = useCallback(() => {
+    if (document.fullscreenElement && document.exitFullscreen) {
+      document.exitFullscreen().catch(() => {});
+    }
+    onClose?.();
+  }, [onClose]);
+
   const single = size.width < 700;
   // Physical brochure pagination: cover 1, interior 2–3, 4–5, ...,
   // back cover N. For odd-sized documents, the penultimate page is
@@ -266,7 +297,7 @@ export function BrochureFlipBook({
   const basePageWidth = refDims.width || 595;
   const basePageHeight = refDims.height || 842;
   const fullBookWidth = single ? basePageWidth : basePageWidth * 2;
-  const margin = 56; // Comfortable paper margins like the reference brochure
+  const margin = size.width < 768 ? 8 : 20; // Full screen maximized display
   const fitScale = Math.min(
     (size.width - margin * 2) / fullBookWidth,
     (size.height - margin * 2) / basePageHeight
@@ -277,8 +308,14 @@ export function BrochureFlipBook({
     const pdfDoc = pdfRef.current;
     if (!pdfDoc || n < 1 || n > pdfDoc.numPages) return;
     const existing = cacheRef.current.get(n);
+    const dpr = typeof window !== "undefined" ? (window.devicePixelRatio || 1) : 1;
+    // Ultra-crisp rendering matching upload quality: minimum 2.5x - 3.2x resolution
+    const targetResolution = Math.min(
+      Math.max(2.5, targetScale * Math.max(dpr, 1.5) * 1.8),
+      3.5
+    );
     // Avoid repeating work unless new zoom/display size needs materially more detail.
-    if (existing && existing.resolution >= Math.min(targetScale * Math.min(window.devicePixelRatio || 1, 2), 2.5) * 0.85) {
+    if (existing && existing.resolution >= targetResolution * 0.9) {
       cacheRef.current.delete(n);
       cacheRef.current.set(n, existing);
       return;
@@ -291,18 +328,19 @@ export function BrochureFlipBook({
       const pdfPage = await pdfDoc.getPage(n);
       const raw = pdfPage.getViewport({ scale: 1 });
       metaRef.current.set(n, { width: raw.width, height: raw.height });
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      // Render near display resolution, bounded for large files / mobile memory.
-      let resolution = Math.max(0.3, targetScale * dpr);
+      let resolution = targetResolution;
       resolution = Math.min(resolution, MAX_RENDER_EDGE / Math.max(raw.width, raw.height));
       resolution = Math.min(resolution, Math.sqrt(renderPixelBudget() / (raw.width * raw.height)));
+      resolution = Math.max(resolution, 1.8);
       const viewport = pdfPage.getViewport({ scale: resolution });
       const canvas = document.createElement("canvas");
       canvas.width = Math.max(1, Math.round(viewport.width));
       canvas.height = Math.max(1, Math.round(viewport.height));
       const ctx = canvas.getContext("2d", { alpha: false });
       if (!ctx) throw new Error("Unable to create canvas");
-      await (pdfPage.render as any)({ canvas, canvasContext: ctx, viewport }).promise;
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      await (pdfPage.render as any)({ canvasContext: ctx, viewport, intent: "display" }).promise;
       if (pdfRef.current !== pdfDoc || generationRef.current !== generation) return;
       cacheRef.current.set(n, { canvas, width: raw.width, height: raw.height, resolution });
       // Account for RGBA canvas storage, not just number of pages.
@@ -477,8 +515,7 @@ export function BrochureFlipBook({
             {copied ? <Check size={16} /> : <Share2 size={16} />}
           </button>
           <a href={secureDownloadUrl} download={cleanDocName} aria-label="Download original document" title="Download document" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white"><Download size={16}/></a>
-          <button type="button" onClick={toggleFullscreen} aria-label="Toggle fullscreen" title="Toggle fullscreen" className="rounded-lg bg-zinc-900 p-2.5 text-zinc-300 hover:text-white">{fullscreen ? <Minimize2 size={16}/> : <Maximize2 size={16}/>}</button>
-          {onClose && <button type="button" onClick={onClose} aria-label="Close document" title="Close" className="rounded-lg bg-rose-600 p-2.5 text-white hover:bg-rose-500"><X size={16}/></button>}
+          {onClose && <button type="button" onClick={handleClose} aria-label="Close document" title="Close" className="rounded-lg bg-rose-600 p-2.5 text-white hover:bg-rose-500"><X size={16}/></button>}
         </div>
       </header>
 
