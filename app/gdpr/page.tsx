@@ -22,7 +22,7 @@ export default function GDPRPage() {
             The General Data Protection Regulation (GDPR) is a comprehensive data privacy law in the European Union (EU) that regulates how personal data is collected, handled, and protected.
           </p>
           <p>
-            At Devopstrio, we prioritize the trust, security, and privacy of our global client network. We are fully aligned with the requirements of the GDPR. We ensure that all personal data belonging to EU citizens and residents processed by our <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">co-engineering pipelines</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud orchestration platforms</Link>, and consulting teams is handled with the highest standards of confidentiality, integrity, and safety.
+            At Devopstrio, we prioritize the trust, security, and privacy of our global client network. We are fully aligned with the requirements of the GDPR. We ensure that all personal data belonging to EU citizens and residents processed by our <Link href="/services/software-development" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">co-engineering pipelines</Link>, <Link href="/services/cloud-services" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cloud orchestration platforms</Link>, and consulting teams is handled with the highest standards of confidentiality, integrity, and safety.
           </p>
         </div>
       )
@@ -35,13 +35,13 @@ export default function GDPRPage() {
           <p>
             All personal data processing activities conducted by Devopstrio adhere strictly to the fundamental principles set forth in Article 5 of the GDPR:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-zinc-400">
-            <li><strong className="text-zinc-300">Lawfulness, Fairness, and Transparency:</strong> We process data lawfully and fair, explaining all data collection operations clearly.</li>
-            <li><strong className="text-zinc-300">Purpose Limitation:</strong> Personal data is collected only for specified, explicit, and legitimate business purposes, and is not processed in a manner incompatible with those intentions.</li>
-            <li><strong className="text-zinc-300">Data Minimization:</strong> We limit personal data collection to what is strictly necessary in relation to the purposes for which they are processed.</li>
-            <li><strong className="text-zinc-350 font-bold">Accuracy:</strong> We take every reasonable step to ensure inaccurate personal data is erased or corrected without delay.</li>
-            <li><strong className="text-zinc-300">Storage Limitation:</strong> Data is kept in a form which permits identification of data subjects for no longer than is necessary.</li>
-            <li><strong className="text-zinc-300">Integrity and Confidentiality:</strong> We handle data using appropriate technical and organizational security measures to prevent accidental loss, damage, or unauthorized access.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Lawfulness, Fairness, and Transparency:</strong> We process data lawfully and fair, explaining all data collection operations clearly.</li>
+            <li><strong className="text-white font-semibold">Purpose Limitation:</strong> Personal data is collected only for specified, explicit, and legitimate business purposes, and is not processed in a manner incompatible with those intentions.</li>
+            <li><strong className="text-white font-semibold">Data Minimization:</strong> We limit personal data collection to what is strictly necessary in relation to the purposes for which they are processed.</li>
+            <li><strong className="text-white font-semibold">Accuracy:</strong> We take every reasonable step to ensure inaccurate personal data is erased or corrected without delay.</li>
+            <li><strong className="text-white font-semibold">Storage Limitation:</strong> Data is kept in a form which permits identification of data subjects for no longer than is necessary.</li>
+            <li><strong className="text-white font-semibold">Integrity and Confidentiality:</strong> We handle data using appropriate technical and organizational security measures to prevent accidental loss, damage, or unauthorized access.</li>
           </ul>
         </div>
       )
@@ -73,7 +73,7 @@ export default function GDPRPage() {
             </div>
           </div>
           <p className="pt-2">
-            To submit a Data Subject Access Request (DSAR), please contact our DPO at <a href={`mailto:${process.env.NEXT_PUBLIC_DPO_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_DPO_EMAIL}</a>. We will respond to your request within 30 days.
+            To submit a Data Subject Access Request (DSAR), please contact our DPO at <a href={`mailto:${process.env.NEXT_PUBLIC_DPO_EMAIL}`} className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">{process.env.NEXT_PUBLIC_DPO_EMAIL}</a>. We will respond to your request within 30 days.
           </p>
         </div>
       )
@@ -86,9 +86,9 @@ export default function GDPRPage() {
           <p>
             Depending on how we interact with your data, Devopstrio operates under two legal statuses:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-zinc-400">
-            <li><strong className="text-zinc-300">As a Data Controller:</strong> We act as a controller for the personal data of our website visitors, newsletter subscribers, job applicants, and client account managers. In these cases, we determine the purposes and means of processing.</li>
-            <li><strong className="text-zinc-300">As a Data Processor:</strong> We act as a processor when rendering engineering, <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps solutions</Link>, and <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud services</Link> for our enterprise clients. In this capacity, we process personal data strictly in accordance with the client's documented instructions and the executed Data Processing Agreement (DPA).</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">As a Data Controller:</strong> We act as a controller for the personal data of our website visitors, newsletter subscribers, job applicants, and client account managers. In these cases, we determine the purposes and means of processing.</li>
+            <li><strong className="text-white font-semibold">As a Data Processor:</strong> We act as a processor when rendering engineering, <Link href="/services/devops-automation" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">DevOps solutions</Link>, and <Link href="/services/cloud-services" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cloud services</Link> for our enterprise clients. In this capacity, we process personal data strictly in accordance with the client's documented instructions and the executed Data Processing Agreement (DPA).</li>
           </ul>
         </div>
       )
@@ -104,9 +104,9 @@ export default function GDPRPage() {
           <p>
             To ensure all personal data receives an adequate level of protection when transferred outside the EEA, we implement:
           </p>
-          <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
-            <li><strong className="text-zinc-300">Standard Contractual Clauses (SCCs):</strong> We use the EU-approved Standard Contractual Clauses for transfers of personal data to controllers and processors established in third countries.</li>
-            <li><strong className="text-zinc-300">Supplementary Measures:</strong> We apply supplementary security measures, such as encryption before transmission, to shield the data from unauthorized access in transit.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Standard Contractual Clauses (SCCs):</strong> We use the EU-approved Standard Contractual Clauses for transfers of personal data to controllers and processors established in third countries.</li>
+            <li><strong className="text-white font-semibold">Supplementary Measures:</strong> We apply supplementary security measures, such as encryption before transmission, to shield the data from unauthorized access in transit.</li>
           </ul>
         </div>
       )
@@ -119,11 +119,11 @@ export default function GDPRPage() {
           <p>
             To comply with Article 32 of the GDPR, we have implemented state-of-the-art technical and organizational measures to ensure a level of security appropriate to the risks of data processing:
           </p>
-          <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
-            <li><strong className="text-zinc-300">Data Encryption:</strong> Encryption of all personal data in transit using TLS 1.3 and at rest using AES-256.</li>
-            <li><strong className="text-zinc-300">Access Control:</strong> Implementing strictly enforced multi-factor authentication (MFA) and Least-Privilege access profiles.</li>
-            <li><strong className="text-zinc-300">Security Auditing:</strong> Regular vulnerability scanning, internal network pen-testing, and SOC 2 Type II audit alignments under our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity services</Link> framework.</li>
-            <li><strong className="text-zinc-300">Employee Training:</strong> Mandatory annual security and privacy compliance training for all Devopstrio developers and engineers.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Data Encryption:</strong> Encryption of all personal data in transit using TLS 1.3 and at rest using AES-256.</li>
+            <li><strong className="text-white font-semibold">Access Control:</strong> Implementing strictly enforced multi-factor authentication (MFA) and Least-Privilege access profiles.</li>
+            <li><strong className="text-white font-semibold">Security Auditing:</strong> Regular vulnerability scanning, internal network pen-testing, and SOC 2 Type II audit alignments under our <Link href="/services/cybersecurity" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cybersecurity services</Link> framework.</li>
+            <li><strong className="text-white font-semibold">Employee Training:</strong> Mandatory annual security and privacy compliance training for all Devopstrio developers and engineers.</li>
           </ul>
         </div>
       )
@@ -192,7 +192,7 @@ export default function GDPRPage() {
           <div className="bg-zinc-950/60 border border-zinc-900 rounded-2xl p-6 text-xs space-y-1.5">
             <p className="font-bold text-white text-sm">Devopstrio Data Protection Officer</p>
             <p className="text-zinc-400">Attention: Legal & Trust Department</p>
-            <p className="text-zinc-400">Email: <a href={`mailto:${process.env.NEXT_PUBLIC_DPO_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_DPO_EMAIL}</a></p>
+            <p className="text-zinc-400">Email: <a href={`mailto:${process.env.NEXT_PUBLIC_DPO_EMAIL}`} className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">{process.env.NEXT_PUBLIC_DPO_EMAIL}</a></p>
             <p className="text-zinc-400">Address: Devopstrio Limited, One World Trade Center, Floor 85, New York, NY 10007, USA</p>
           </div>
         </div>

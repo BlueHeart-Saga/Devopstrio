@@ -36,13 +36,13 @@ export default function TermsOfServicePage() {
       content: (
         <div className="space-y-4">
           <p>
-            Devopstrio provides high-performance <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">professional consulting</Link>, <Link href="/services/software-development" className="text-rose-500 hover:underline font-bold">software development</Link>, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud infrastructure planning</Link>, and co-engineering services. Our core practices include:
+            Devopstrio provides high-performance <Link href="/services/it-consulting" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">professional consulting</Link>, <Link href="/services/software-development" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">software development</Link>, <Link href="/services/cloud-services" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cloud infrastructure planning</Link>, and co-engineering services. Our core practices include:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-zinc-400">
-            <li><strong className="text-zinc-300">AI & Data Innovation:</strong> Planning, training, and deploying large language models, reinforcement learning networks, and automated data pipelines.</li>
-            <li><strong className="text-zinc-300">Cloud & Infrastructure:</strong> Modernizing application runtimes, deploying Kubernetes clusters, and setting up hybrid multi-cloud systems.</li>
-            <li><strong className="text-zinc-300">DevOps & CI/CD Pipelines:</strong> Optimizing deployment cycles, creating infrastructure-as-code (IaC), and automated vulnerability testing.</li>
-            <li><strong className="text-zinc-300">Cybersecurity Architecture:</strong> Threat modeling, vulnerability checking, regulatory compliance alignment, and identity access control setup.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">AI & Data Innovation:</strong> Planning, training, and deploying large language models, reinforcement learning networks, and automated data pipelines.</li>
+            <li><strong className="text-white font-semibold">Cloud & Infrastructure:</strong> Modernizing application runtimes, deploying Kubernetes clusters, and setting up hybrid multi-cloud systems.</li>
+            <li><strong className="text-white font-semibold">DevOps & CI/CD Pipelines:</strong> Optimizing deployment cycles, creating infrastructure-as-code (IaC), and automated vulnerability testing.</li>
+            <li><strong className="text-white font-semibold">Cybersecurity Architecture:</strong> Threat modeling, vulnerability checking, regulatory compliance alignment, and identity access control setup.</li>
           </ul>
           <p>
             Specific deliverables, timelines, milestones, and technical parameters will be detailed in individual Statements of Work executed between the Client and Devopstrio.
@@ -58,7 +58,7 @@ export default function TermsOfServicePage() {
           <p>
             To enable Devopstrio to perform the services outlined in an SOW, the Client agrees to:
           </p>
-          <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
             <li>Provide timely, secure access to target code repositories, staging servers, and cloud infrastructure subscriptions.</li>
             <li>Designate a qualified technical lead or product owner to act as the primary contact for deliverables approvals.</li>
             <li>Verify all prerequisites, data schemas, and API documentation shared with Devopstrio are accurate and fully compliant with applicable third-party terms.</li>
@@ -75,9 +75,9 @@ export default function TermsOfServicePage() {
           <p>
             Unless otherwise agreed in a separate written contract, the division of intellectual property (IP) is governed by the following rules:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-zinc-400">
-            <li><strong className="text-zinc-300">Client Deliverables:</strong> Upon full and final payment of all outstanding invoices, all custom code, custom documentation, and bespoke software scripts created specifically for the Client under an SOW will be owned by the Client as “work made for hire.”</li>
-            <li><strong className="text-zinc-300">Devopstrio Background IP:</strong> Devopstrio retains exclusive ownership of all generic tools, proprietary libraries, standard templates, and pre-existing software structures used to accelerate service delivery. We grant the Client a perpetual, royalty-free, non-exclusive license to use any Background IP embedded within the deliverables.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Client Deliverables:</strong> Upon full and final payment of all outstanding invoices, all custom code, custom documentation, and bespoke software scripts created specifically for the Client under an SOW will be owned by the Client as “work made for hire.”</li>
+            <li><strong className="text-white font-semibold">Devopstrio Background IP:</strong> Devopstrio retains exclusive ownership of all generic tools, proprietary libraries, standard templates, and pre-existing software structures used to accelerate service delivery. We grant the Client a perpetual, royalty-free, non-exclusive license to use any Background IP embedded within the deliverables.</li>
           </ul>
         </div>
       )
@@ -90,10 +90,10 @@ export default function TermsOfServicePage() {
           <p>
             Clients agree to pay all fees associated with chosen service plans or specific SOW deliverables.
           </p>
-          <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
-            <li><strong className="text-zinc-300">Invoicing Cycle:</strong> Invoices are issued based on agreed milestones or monthly time-and-materials schedules. Standard payment terms are Net 30 days unless stated otherwise.</li>
-            <li><strong className="text-zinc-300">Late Payments:</strong> Late payments will accrue interest at the rate of 1.5% per month or the highest rate permitted by law, whichever is lower, on the outstanding balance.</li>
-            <li><strong className="text-zinc-300">Taxes:</strong> All fees are exclusive of local, state, federal, or international taxes (including VAT, sales tax, or withholding tax), which are the sole responsibility of the Client.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Invoicing Cycle:</strong> Invoices are issued based on agreed milestones or monthly time-and-materials schedules. Standard payment terms are Net 30 days unless stated otherwise.</li>
+            <li><strong className="text-white font-semibold">Late Payments:</strong> Late payments will accrue interest at the rate of 1.5% per month or the highest rate permitted by law, whichever is lower, on the outstanding balance.</li>
+            <li><strong className="text-white font-semibold">Taxes:</strong> All fees are exclusive of local, state, federal, or international taxes (including VAT, sales tax, or withholding tax), which are the sole responsibility of the Client.</li>
           </ul>
         </div>
       )
@@ -106,11 +106,11 @@ export default function TermsOfServicePage() {
           <p>
             You may not access or use the Site or our service sandboxes for any purpose other than that for which we make them available. Prohibited activities include:
           </p>
-          <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
             <li>Attempting to bypass security barriers, run unauthorized vulnerability scans, or disrupt server performance.</li>
             <li>Using automated crawlers, scrapers, or indexing tools to systematically copy site pages, designs, or proprietary resource guides.</li>
             <li>Impersonating Devopstrio representatives, fabricating contact identities, or submitting fraudulent project applications.</li>
-            <li>Using our delivered systems or code from our <Link href="/ecosystem/platforms-solutions" className="text-rose-500 hover:underline font-bold">platforms and solutions</Link> for illegal practices, malware distribution, or in violation of international trade embargoes.</li>
+            <li>Using our delivered systems or code from our <Link href="/ecosystem/platforms-solutions" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">platforms and solutions</Link> for illegal practices, malware distribution, or in violation of international trade embargoes.</li>
           </ul>
         </div>
       )
@@ -165,7 +165,7 @@ export default function TermsOfServicePage() {
           <p>
             Either party may terminate these Terms or an active Statement of Work:
           </p>
-          <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
             <li>For convenience, by providing thirty (30) days prior written notice to the other party, subject to payment for all work performed up to the termination date.</li>
             <li>Immediately for cause, if the other party breaches any material term of these Terms or an active SOW and fails to cure such breach within fifteen (15) days of receiving written notice thereof.</li>
           </ul>

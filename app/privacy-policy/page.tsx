@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
       content: (
         <div className="space-y-4">
           <p>
-            Welcome to Devopstrio (“we,” “us,” or “our”). Devopstrio is a global <Link href="/services/it-consulting" className="text-rose-500 hover:underline font-bold">technology consulting</Link> and co-engineering partner specializing in building compliant, <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">cloud-native enterprise runtimes</Link>, <Link href="/services/ai-data-innovation" className="text-rose-500 hover:underline font-bold">artificial intelligence platforms</Link>, and secure digital products. We are deeply committed to protecting your privacy and securing any personal data you share with us.
+            Welcome to Devopstrio (“we,” “us,” or “our”). Devopstrio is a global <Link href="/services/it-consulting" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">technology consulting</Link> and co-engineering partner specializing in building compliant, <Link href="/services/cloud-services" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cloud-native enterprise runtimes</Link>, <Link href="/services/ai-data-innovation" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">artificial intelligence platforms</Link>, and secure digital products. We are deeply committed to protecting your privacy and securing any personal data you share with us.
           </p>
           <p>
             This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (www.devopstrio.com), engage with our marketing programs, or utilize our consulting and technical engineering services. It also details your rights regarding your personal data under global data protection regulations, including the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA).
@@ -53,23 +53,23 @@ export default function PrivacyPolicyPage() {
           </p>
           
           <div>
-            <h4 className="text-white font-bold mb-2 text-sm">A. Personal Identifiable Information (PII) Provided Voluntarily</h4>
+            <h4 className="text-white font-semibold mb-2.5 text-base">A. Personal Identifiable Information (PII) Provided Voluntarily</h4>
             <p className="mb-2">We collect contact and professional information when you fill out contact forms, subscribe to our newsletter, download resources, apply for a job, or initiate a service request. This includes:</p>
-            <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
-              <li><strong className="text-zinc-300">Identity Data:</strong> First name, last name, title, and job role.</li>
-              <li><strong className="text-zinc-300">Contact Data:</strong> Corporate email address, telephone number, physical office address, and country.</li>
-              <li><strong className="text-zinc-300">Professional Data:</strong> Company name, department, industry category, current infrastructure configurations, and technology stack parameters.</li>
-              <li><strong className="text-zinc-300">Employment Application Data:</strong> Resumes, CVs, portfolios, educational history, and LinkedIn profile URLs.</li>
+            <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+              <li><strong className="text-white font-semibold">Identity Data:</strong> First name, last name, title, and job role.</li>
+              <li><strong className="text-white font-semibold">Contact Data:</strong> Corporate email address, telephone number, physical office address, and country.</li>
+              <li><strong className="text-white font-semibold">Professional Data:</strong> Company name, department, industry category, current infrastructure configurations, and technology stack parameters.</li>
+              <li><strong className="text-white font-semibold">Employment Application Data:</strong> Resumes, CVs, portfolios, educational history, and LinkedIn profile URLs.</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-2 text-sm">B. Automatically Collected Technical & Usage Data</h4>
+            <h4 className="text-white font-semibold mb-2.5 text-base">B. Automatically Collected Technical & Usage Data</h4>
             <p className="mb-2">When you navigate our website, we automatically log metadata about your device and network interactions, including:</p>
-            <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
-              <li><strong className="text-zinc-300">Device Details:</strong> IP address, browser type, operating system version, screen resolution, and hardware properties.</li>
-              <li><strong className="text-zinc-300">Usage Information:</strong> Specific pages visited, duration of stay, referring URLs, click patterns, and interactions with embedded tools or case studies.</li>
-              <li><strong className="text-zinc-300">Geolocation:</strong> General geographic location parsed from your IP address (country, region, or city level).</li>
+            <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+              <li><strong className="text-white font-semibold">Device Details:</strong> IP address, browser type, operating system version, screen resolution, and hardware properties.</li>
+              <li><strong className="text-white font-semibold">Usage Information:</strong> Specific pages visited, duration of stay, referring URLs, click patterns, and interactions with embedded tools or case studies.</li>
+              <li><strong className="text-white font-semibold">Geolocation:</strong> General geographic location parsed from your IP address (country, region, or city level).</li>
             </ul>
           </div>
         </div>
@@ -83,12 +83,12 @@ export default function PrivacyPolicyPage() {
           <p>
             We process your personal information only for legitimate business purposes. Specifically, we use your data to:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-zinc-400">
-            <li><strong className="text-zinc-300">Deliver Services:</strong> Execute consulting statements of work, establish secure dev/prod environments, manage cloud migrations via our <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">DevOps workflows</Link>, and provide engineering support.</li>
-            <li><strong className="text-zinc-300">Optimize Website Performance:</strong> Analyze usage trends to refine navigation, improve load times, and enhance user experience.</li>
-            <li><strong className="text-zinc-300">Marketing & Communication:</strong> Share insights, newsletters, and announcements tailored to your technology preferences (subject to your opt-out rights).</li>
-            <li><strong className="text-zinc-300">Enhance Cybersecurity:</strong> Identify and block unauthorized site access, prevent malware distributions, and monitor system health under our <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">cybersecurity services</Link>.</li>
-            <li><strong className="text-zinc-300">Recruitment:</strong> Review and process career applications, contact references, and schedule technical evaluations.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Deliver Services:</strong> Execute consulting statements of work, establish secure dev/prod environments, manage cloud migrations via our <Link href="/services/devops-automation" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">DevOps workflows</Link>, and provide engineering support.</li>
+            <li><strong className="text-white font-semibold">Optimize Website Performance:</strong> Analyze usage trends to refine navigation, improve load times, and enhance user experience.</li>
+            <li><strong className="text-white font-semibold">Marketing & Communication:</strong> Share insights, newsletters, and announcements tailored to your technology preferences (subject to your opt-out rights).</li>
+            <li><strong className="text-white font-semibold">Enhance Cybersecurity:</strong> Identify and block unauthorized site access, prevent malware distributions, and monitor system health under our <Link href="/services/cybersecurity" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">cybersecurity services</Link>.</li>
+            <li><strong className="text-white font-semibold">Recruitment:</strong> Review and process career applications, contact references, and schedule technical evaluations.</li>
           </ul>
         </div>
       )
@@ -133,10 +133,10 @@ export default function PrivacyPolicyPage() {
           <p>
             We may disclose information to trusted partners who assist us in operating our site and rendering services, provided they contractually pledge to keep your information confidential. Shared data categories are limited to:
           </p>
-          <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
-            <li><strong className="text-zinc-300">Infrastructure Providers:</strong> Secure hosting environments powered by AWS, Microsoft Azure, or Google Cloud Platform.</li>
-            <li><strong className="text-zinc-300">Analytics Providers:</strong> Performance monitoring tools (e.g., Google Analytics, Hotjar) configured to anonymize user addresses.</li>
-            <li><strong className="text-zinc-300">Compliance & Legal Bodies:</strong> In instances where disclosure is legally mandated by subpoena, court order, or national security regulation.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Infrastructure Providers:</strong> Secure hosting environments powered by AWS, Microsoft Azure, or Google Cloud Platform.</li>
+            <li><strong className="text-white font-semibold">Analytics Providers:</strong> Performance monitoring tools (e.g., Google Analytics, Hotjar) configured to anonymize user addresses.</li>
+            <li><strong className="text-white font-semibold">Compliance & Legal Bodies:</strong> In instances where disclosure is legally mandated by subpoena, court order, or national security regulation.</li>
           </ul>
         </div>
       )
@@ -152,9 +152,9 @@ export default function PrivacyPolicyPage() {
           <p>
             To guarantee these transfers possess equivalent privacy protection, Devopstrio relies on recognized legal frameworks:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-zinc-400">
-            <li><strong className="text-zinc-300">Standard Contractual Clauses (SCCs):</strong> We enter into European Commission-approved SCC agreements with our global subsidiaries and sub-processors.</li>
-            <li><strong className="text-zinc-300">Data Processing Agreements (DPAs):</strong> Rigorous service-level DPAs are established with all enterprise clients before cross-border infrastructure work begins.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Standard Contractual Clauses (SCCs):</strong> We enter into European Commission-approved SCC agreements with our global subsidiaries and sub-processors.</li>
+            <li><strong className="text-white font-semibold">Data Processing Agreements (DPAs):</strong> Rigorous service-level DPAs are established with all enterprise clients before cross-border infrastructure work begins.</li>
           </ul>
         </div>
       )
@@ -167,10 +167,10 @@ export default function PrivacyPolicyPage() {
           <p>
             Protecting your data is built into the architecture of our organization. We utilize a range of technical, physical, and administrative measures to mitigate unauthorized access, disclosure, alteration, or destruction.
           </p>
-          <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
-            <li><strong className="text-zinc-300">Encryption:</strong> All data in transit is encrypted using TLS 1.3, and databases are encrypted at rest using AES-256 standards.</li>
-            <li><strong className="text-zinc-300">Access Control:</strong> Standardized Role-Based Access Controls (RBAC) ensure only authorized engineers, under active non-disclosure agreements, can touch infrastructure.</li>
-            <li><strong className="text-zinc-300">Vulnerability Testing:</strong> We run automated security audits, threat monitoring, and penetration testing on our services and applications regularly.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Encryption:</strong> All data in transit is encrypted using TLS 1.3, and databases are encrypted at rest using AES-256 standards.</li>
+            <li><strong className="text-white font-semibold">Access Control:</strong> Standardized Role-Based Access Controls (RBAC) ensure only authorized engineers, under active non-disclosure agreements, can touch infrastructure.</li>
+            <li><strong className="text-white font-semibold">Vulnerability Testing:</strong> We run automated security audits, threat monitoring, and penetration testing on our services and applications regularly.</li>
           </ul>
         </div>
       )
@@ -195,17 +195,17 @@ export default function PrivacyPolicyPage() {
       content: (
         <div className="space-y-4">
           <p>
-            Depending on your local regulations (such as <Link href="/gdpr" className="text-rose-500 hover:underline font-bold">GDPR in Europe</Link> or CCPA/CPRA in California), you possess the following rights regarding your personal data:
+            Depending on your local regulations (such as <Link href="/gdpr" className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">GDPR in Europe</Link> or CCPA/CPRA in California), you possess the following rights regarding your personal data:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-zinc-400">
-            <li><strong className="text-zinc-300">Right to Access (DSAR):</strong> Request copies of the personal data we hold about you.</li>
-            <li><strong className="text-zinc-300">Right to Rectification:</strong> Request correction of inaccurate, incomplete, or out-of-date information.</li>
-            <li><strong className="text-zinc-300">Right to Erasure (“Right to be Forgotten”):</strong> Request the permanent deletion of your personal data under certain conditions.</li>
-            <li><strong className="text-zinc-300">Right to Object / Restrict:</strong> Object to processing based on legitimate interests or request restrictions on data manipulation.</li>
-            <li><strong className="text-zinc-300">Right to Data Portability:</strong> Request that your data be provided in a structured, machine-readable format for transfer to another service provider.</li>
+          <ul className="list-disc pl-6 space-y-2.5 text-zinc-300 marker:text-rose-500">
+            <li><strong className="text-white font-semibold">Right to Access (DSAR):</strong> Request copies of the personal data we hold about you.</li>
+            <li><strong className="text-white font-semibold">Right to Rectification:</strong> Request correction of inaccurate, incomplete, or out-of-date information.</li>
+            <li><strong className="text-white font-semibold">Right to Erasure (“Right to be Forgotten”):</strong> Request the permanent deletion of your personal data under certain conditions.</li>
+            <li><strong className="text-white font-semibold">Right to Object / Restrict:</strong> Object to processing based on legitimate interests or request restrictions on data manipulation.</li>
+            <li><strong className="text-white font-semibold">Right to Data Portability:</strong> Request that your data be provided in a structured, machine-readable format for transfer to another service provider.</li>
           </ul>
           <p className="pt-2">
-            To exercise any of these rights, please send an email request to our Data Protection Officer at <a href={`mailto:${process.env.NEXT_PUBLIC_PRIVACY_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_PRIVACY_EMAIL}</a>.
+            To exercise any of these rights, please send an email request to our Data Protection Officer at <a href={`mailto:${process.env.NEXT_PUBLIC_PRIVACY_EMAIL}`} className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">{process.env.NEXT_PUBLIC_PRIVACY_EMAIL}</a>.
           </p>
         </div>
       )
@@ -238,7 +238,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <div className="bg-zinc-950/60 border border-zinc-900 rounded-2xl p-6 text-xs space-y-2">
             <p className="font-bold text-white text-sm">Devopstrio Trust, Risk, & Compliance Department</p>
-            <p className="text-zinc-400">Email: <a href={`mailto:${process.env.NEXT_PUBLIC_TRUST_EMAIL}`} className="text-rose-500 hover:underline">{process.env.NEXT_PUBLIC_TRUST_EMAIL}</a></p>
+            <p className="text-zinc-400">Email: <a href={`mailto:${process.env.NEXT_PUBLIC_TRUST_EMAIL}`} className="text-rose-400 hover:text-rose-300 hover:underline font-medium transition-colors">{process.env.NEXT_PUBLIC_TRUST_EMAIL}</a></p>
             <p className="text-zinc-400">Address: Devopstrio Limited, One World Trade Center, Floor 85, New York, NY 10007, USA</p>
           </div>
         </div>
