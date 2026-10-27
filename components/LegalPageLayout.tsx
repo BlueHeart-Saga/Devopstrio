@@ -165,30 +165,30 @@ export function LegalPageLayout({
           
           {/* Table of Contents - Left Column (Sticky Rail styled seamlessly like Explore Categories) */}
           <aside className="lg:col-span-4 xl:col-span-3 hidden lg:block sticky top-28 self-start z-20">
-            <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-4 max-h-[calc(100vh-8.5rem)] overflow-y-auto custom-scrollbar">
+            <div className="bg-zinc-950/40 border border-zinc-900 rounded-2xl p-4 sm:p-5 max-h-[calc(100vh-8.5rem)] overflow-y-auto custom-scrollbar">
               
-              <div className="text-[11px] font-bold tracking-widest text-zinc-500 mb-3 uppercase px-3 flex items-center justify-between">
+              <div className="text-xs font-bold tracking-wider text-zinc-400 mb-3.5 uppercase px-3 flex items-center justify-between">
                 <span>Sections</span>
-                <span className="text-[10px] font-mono text-zinc-600 font-normal">On This Page</span>
+                <span className="text-xs font-mono text-zinc-500 font-normal">On This Page</span>
               </div>
               
-              <nav className="flex flex-col gap-1">
+              <nav className="flex flex-col gap-1.5">
                 {sections.map((section, idx) => {
                   const isActive = activeSection === section.id;
                   return (
                     <button
                       key={section.id}
                       onClick={() => scrollToSection(section.id)}
-                      className={`w-full flex items-center justify-between text-left py-2.5 px-3 rounded-lg text-xs sm:text-[13px] font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
+                      className={`w-full flex items-center justify-between text-left py-2.5 sm:py-3 px-3.5 rounded-xl text-[14.5px] sm:text-[15px] tracking-wide transition-all duration-200 cursor-pointer ${
                         isActive
-                          ? "bg-rose-950/20 text-rose-500 border-l-2 border-rose-500 pl-4 font-bold"
-                          : "text-zinc-400 hover:text-white hover:bg-zinc-900/40 border-l-2 border-transparent"
+                          ? "bg-rose-950/20 text-rose-400 border-l-2 border-rose-500 pl-4 font-semibold"
+                          : "text-zinc-400 hover:text-white hover:bg-zinc-900/40 border-l-2 border-transparent font-medium"
                       }`}
                     >
-                      <span className="leading-snug pr-2">{section.title}</span>
-                      <span className={`text-[10px] font-mono px-2 py-0.5 rounded flex-shrink-0 ${
+                      <span className="leading-snug pr-2.5">{section.title}</span>
+                      <span className={`text-xs font-mono px-2.5 py-0.5 rounded-md flex-shrink-0 ${
                         isActive
-                          ? "bg-rose-950/40 text-rose-400 font-bold"
+                          ? "bg-rose-950/40 text-rose-300 font-bold"
                           : "bg-zinc-900 text-zinc-500"
                       }`}>
                         {String(idx + 1).padStart(2, "0")}
@@ -199,17 +199,17 @@ export function LegalPageLayout({
               </nav>
 
               {/* Legal Assistance Note - Seamless without separate frame */}
-              <div className="mt-6 pt-4 border-t border-zinc-900 px-3">
-                <div className="flex items-center gap-1.5 text-rose-500 text-[11px] font-bold uppercase tracking-wider mb-1.5 font-mono">
-                  <Mail size={12} />
+              <div className="mt-6 pt-5 border-t border-zinc-900/80 px-3">
+                <div className="flex items-center gap-1.5 text-rose-500 text-xs font-bold uppercase tracking-wider mb-2 font-mono">
+                  <Mail size={13} />
                   <span>Legal Assistance</span>
                 </div>
-                <p className="text-xs text-zinc-400 leading-relaxed mb-2 font-normal">
+                <p className="text-[13.5px] text-zinc-300 leading-relaxed mb-2.5 font-normal">
                   For regulatory filings or questions, reach out to our Trust team.
                 </p>
                 <a
                   href={`mailto:${process.env.NEXT_PUBLIC_TRUST_EMAIL || "info@devopstrioglobal.com"}`}
-                  className="text-xs font-semibold text-rose-400 hover:text-rose-300 transition-colors break-all"
+                  className="text-sm font-semibold text-rose-400 hover:text-rose-300 transition-colors break-all inline-block"
                 >
                   {process.env.NEXT_PUBLIC_TRUST_EMAIL || "info@devopstrioglobal.com"}
                 </a>
