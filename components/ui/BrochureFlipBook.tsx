@@ -217,7 +217,7 @@ export function BrochureFlipBook({
   useEffect(() => {
     const enterFs = async () => {
       try {
-        if (!document.fullscreenElement && rootRef.current?.requestFullscreen) {
+        if (typeof document !== "undefined" && !document.fullscreenElement && rootRef.current?.requestFullscreen) {
           await rootRef.current.requestFullscreen();
         }
       } catch {
@@ -226,14 +226,14 @@ export function BrochureFlipBook({
     };
     void enterFs();
     return () => {
-      if (document.fullscreenElement && document.exitFullscreen) {
+      if (typeof document !== "undefined" && document.fullscreenElement && document.exitFullscreen) {
         document.exitFullscreen().catch(() => {});
       }
     };
   }, []);
 
   const handleClose = useCallback(() => {
-    if (document.fullscreenElement && document.exitFullscreen) {
+    if (typeof document !== "undefined" && document.fullscreenElement && document.exitFullscreen) {
       document.exitFullscreen().catch(() => {});
     }
     onClose?.();
