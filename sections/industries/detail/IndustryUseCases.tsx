@@ -9,6 +9,8 @@ interface UseCaseItem {
   title: string;
   result: React.ReactNode;
   image?: string;
+  link?: string;
+  href?: string;
 }
 
 interface IndustryUseCasesProps {
@@ -57,57 +59,90 @@ const getUseCaseImage = (title: string, index: number): string => {
   return allUseCaseImages[index % allUseCaseImages.length];
 };
 
-
-const getUseCaseLink = (title: string, customLink?: string): string => {
+export const getUseCaseLink = (title: string, customLink?: string): string => {
   if (customLink) return customLink;
   const cleanTitle = title.toLowerCase().trim();
 
-  // AI & Machine Learning
+  // 1. AI & Machine Learning
   if (cleanTitle.includes("credit") || cleanTitle.includes("score") || cleanTitle.includes("scoring") || cleanTitle.includes("fraud")) {
     return "/services/ai-data-innovation/machine-learning-engineering";
+  }
+  if (cleanTitle.includes("agent") || cleanTitle.includes("autonomous")) {
+    return "/services/ai-data-innovation/ai-agents-automation";
+  }
+  if (cleanTitle.includes("generative") || cleanTitle.includes("llm")) {
+    return "/services/ai-data-innovation/generative-ai-solutions";
   }
   if (cleanTitle.includes("analytics") || cleanTitle.includes("insight") || cleanTitle.includes("prediction") || cleanTitle.includes("ai")) {
     return "/services/ai-data-innovation";
   }
 
-  // Data Engineering & Telemetry
-  if (cleanTitle.includes("cdr") || cleanTitle.includes("telemetry") || cleanTitle.includes("wearable") || cleanTitle.includes("ingest") || cleanTitle.includes("database shift")) {
-    return "/services/data-engineering/data-pipeline-engineering";
+  // 2. Data Engineering & Telemetry
+  if (cleanTitle.includes("cdr") || cleanTitle.includes("big-data") || cleanTitle.includes("high-volume")) {
+    return "/services/data-engineering/big-data-engineering";
+  }
+  if (cleanTitle.includes("telemetry") || cleanTitle.includes("streaming") || cleanTitle.includes("sensor") || cleanTitle.includes("real-time") || cleanTitle.includes("wearable") || cleanTitle.includes("ingest") || cleanTitle.includes("logging")) {
+    return "/services/data-engineering/real-time-data-processing";
+  }
+  if (cleanTitle.includes("pipeline") || cleanTitle.includes("etl") || cleanTitle.includes("elt")) {
+    return "/services/data-engineering/etl-elt-pipelines";
+  }
+  if (cleanTitle.includes("warehouse") || cleanTitle.includes("lakehouse") || cleanTitle.includes("database shift")) {
+    return "/services/data-engineering/data-warehousing";
   }
 
-  // Cybersecurity & Zero-Trust
-  if (cleanTitle.includes("zero-trust") || cleanTitle.includes("access isolation") || cleanTitle.includes("masker") || cleanTitle.includes("security") || cleanTitle.includes("audit")) {
-    return "/services/cybersecurity/cloud-security-compliance";
+  // 3. Cybersecurity & Zero-Trust
+  if (cleanTitle.includes("zero-trust") || cleanTitle.includes("access isolation") || cleanTitle.includes("isolation")) {
+    return "/services/cybersecurity/zero-trust-architecture";
+  }
+  if (cleanTitle.includes("pii") || cleanTitle.includes("masker") || cleanTitle.includes("compliance") || cleanTitle.includes("audit") || cleanTitle.includes("trial") || cleanTitle.includes("governance")) {
+    return "/services/cybersecurity/compliance-governance";
+  }
+  if (cleanTitle.includes("security") || cleanTitle.includes("vulnerability") || cleanTitle.includes("threat") || cleanTitle.includes("pentest")) {
+    return "/services/cybersecurity/security-assessment";
   }
 
-  // DevOps & Cloud Infrastructure
-  if (cleanTitle.includes("gitops") || cleanTitle.includes("continuous deployment")) {
-    return "/services/devops-automation/cloud-infrastructure-automation";
+  // 4. QA & Performance Testing
+  if (cleanTitle.includes("exam") || cleanTitle.includes("load") || cleanTitle.includes("verification") || cleanTitle.includes("peak") || cleanTitle.includes("testing")) {
+    return "/services/qa-testing/performance-testing";
   }
-  if (cleanTitle.includes("infrastructure-as-code") || cleanTitle.includes("baseline") || cleanTitle.includes("drift")) {
+
+  // 5. DevOps & Cloud Infrastructure
+  if (cleanTitle.includes("gitops") || cleanTitle.includes("continuous deployment") || cleanTitle.includes("cicd") || cleanTitle.includes("ingress") || cleanTitle.includes("release")) {
+    return "/services/devops-automation/cicd-implementation";
+  }
+  if (cleanTitle.includes("infrastructure-as-code") || cleanTitle.includes("iac") || cleanTitle.includes("baseline") || cleanTitle.includes("drift")) {
+    return "/services/devops-automation/infrastructure-as-code";
+  }
+  if (cleanTitle.includes("platform") || cleanTitle.includes("kubernetes") || cleanTitle.includes("cluster")) {
     return "/services/devops-automation/platform-engineering";
   }
-  if (cleanTitle.includes("sre") || cleanTitle.includes("automation integration") || cleanTitle.includes("monitoring") || cleanTitle.includes("assembly line") || cleanTitle.includes("flash sale")) {
+  if (cleanTitle.includes("sre") || cleanTitle.includes("automation integration") || cleanTitle.includes("monitoring") || cleanTitle.includes("flash sale") || cleanTitle.includes("concurrency") || cleanTitle.includes("incident")) {
     return "/services/devops-automation/site-reliability-engineering";
   }
   if (cleanTitle.includes("devops") || cleanTitle.includes("automation")) {
     return "/services/devops-automation";
   }
 
-  // Software & Product Engineering
-  if (cleanTitle.includes("ledger") || cleanTitle.includes("invoicing") || cleanTitle.includes("drawing") || cleanTitle.includes("auto parts")) {
+  // 6. Software & Product Engineering
+  if (cleanTitle.includes("ledger") || cleanTitle.includes("invoicing") || cleanTitle.includes("drawing") || cleanTitle.includes("cad") || cleanTitle.includes("product")) {
     return "/services/software-development/product-engineering";
   }
-
-  // Cloud Services
-  if (cleanTitle.includes("lms") || cleanTitle.includes("load") || cleanTitle.includes("verification") || cleanTitle.includes("transcoding") || cleanTitle.includes("streaming") || cleanTitle.includes("5g") || cleanTitle.includes("catalog")) {
-    return "/services/cloud-services/cloud-native-development";
+  if (cleanTitle.includes("catalog") || cleanTitle.includes("parts") || cleanTitle.includes("storefront") || cleanTitle.includes("auto parts") || cleanTitle.includes("enterprise app")) {
+    return "/services/software-development/enterprise-application-development";
   }
-  if (cleanTitle.includes("modernization") || cleanTitle.includes("record") || cleanTitle.includes("county")) {
+
+  // 7. Cloud Services
+  if (cleanTitle.includes("modernization") || cleanTitle.includes("migration") || cleanTitle.includes("record") || cleanTitle.includes("county")) {
     return "/services/cloud-services/cloud-migration";
   }
-  if (cleanTitle.includes("citizen") || cleanTitle.includes("application ingress") || cleanTitle.includes("gateway")) {
-    return "/services/digital-transformation";
+  if (cleanTitle.includes("cloud") || cleanTitle.includes("transcoding") || cleanTitle.includes("media") || cleanTitle.includes("4k") || cleanTitle.includes("5g") || cleanTitle.includes("lms") || cleanTitle.includes("streaming")) {
+    return "/services/cloud-services/cloud-architecture";
+  }
+
+  // 8. Digital Transformation
+  if (cleanTitle.includes("citizen") || cleanTitle.includes("application ingress") || cleanTitle.includes("gateway") || cleanTitle.includes("transformation")) {
+    return "/services/digital-transformation/enterprise-modernization";
   }
 
   return "/services";
@@ -116,27 +151,33 @@ const getUseCaseLink = (title: string, customLink?: string): string => {
 const defaultExtraUseCases: UseCaseItem[] = [
   {
     title: "Multi-Cloud GitOps Ingress",
-    result: <>Unified <Link href="/services/devops-automation" className="text-rose-500 hover:underline">continuous deployment</Link> gates across Azure and AWS, cutting release times by 84%.</>
+    link: "/services/devops-automation/cicd-implementation",
+    result: <>Unified <span className="text-rose-500 font-medium">continuous deployment</span> gates across Azure and AWS, cutting release times by 84%.</>
   },
   {
     title: "Infrastructure-as-Code Baseline",
-    result: <>99.98% drop in environment configuration <Link href="/services/devops-automation/platform-engineering" className="text-rose-500 hover:underline">drift</Link> via Terraform standardization audits.</>
+    link: "/services/devops-automation/infrastructure-as-code",
+    result: <>99.98% drop in environment configuration <span className="text-rose-500 font-medium">drift</span> via Terraform standardization audits.</>
   },
   {
     title: "Zero-Trust Access Isolation",
-    result: <>Secured credential flows and database access paths under <Link href="/services/cybersecurity" className="text-rose-500 hover:underline">SOC-2 compliance</Link> parameters.</>
+    link: "/services/cybersecurity/zero-trust-architecture",
+    result: <>Secured credential flows and database access paths under <span className="text-rose-500 font-medium">SOC-2 compliance</span> parameters.</>
   },
   {
     title: "SRE Automation Integration",
-    result: <>Automated alert resolution rules that resolved 92% of server-load incidents under <Link href="/services/devops-automation/site-reliability-engineering" className="text-rose-500 hover:underline">SRE automation</Link> parameters.</>
+    link: "/services/devops-automation/site-reliability-engineering",
+    result: <>Automated alert resolution rules that resolved 92% of server-load incidents under <span className="text-rose-500 font-medium">SRE automation</span> parameters.</>
   },
   {
     title: "Distributed Telemetry Logging",
-    result: <>Gathered 4TB of daily <Link href="/services/devops-automation" className="text-rose-500 hover:underline">application logs</Link> into unified ElasticSearch systems under 15ms indexing latency.</>
+    link: "/services/data-engineering/real-time-data-processing",
+    result: <>Gathered 4TB of daily <span className="text-rose-500 font-medium">application logs</span> into unified ElasticSearch systems under 15ms indexing latency.</>
   },
   {
     title: "High-Throughput Load Verification",
-    result: <>Simulated 500,000 requests per second under <Link href="/services/cloud-services" className="text-rose-500 hover:underline">peak-period models</Link> to discover database lock bugs.</>
+    link: "/services/qa-testing/performance-testing",
+    result: <>Simulated 500,000 requests per second under <span className="text-rose-500 font-medium">peak-period models</span> to discover database lock bugs.</>
   }
 ];
 
@@ -201,7 +242,7 @@ export function IndustryUseCases({ useCases }: IndustryUseCasesProps) {
           >
             {mergedUseCases.map((uc, idx) => {
               const displayImage = uc.image || getUseCaseImage(uc.title, idx);
-              const targetLink = getUseCaseLink(uc.title);
+              const targetLink = uc.link || uc.href || getUseCaseLink(uc.title);
 
               return (
                 <Link
