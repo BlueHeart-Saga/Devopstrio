@@ -89,7 +89,7 @@ export function FeedbackWidget() {
     const handleHashChange = () => {
       if (window.location.hash === '#contact') { setIsOpen(true); setActiveTab('contact'); }
       if (window.location.hash === '#feedback') { setIsOpen(true); setActiveTab('feedback'); }
-      if (window.location.hash === '#schedule-call') { setIsOpen(true); setActiveTab('schedule'); }
+      // Note: #schedule-call is handled exclusively by CalendlyModal when clicked from top navbar
     };
     
     handleHashChange();
@@ -101,7 +101,7 @@ export function FeedbackWidget() {
     setIsOpen(false);
     setNameTouched(false);
     setEmailTouched(false);
-    if (['#contact', '#feedback', '#schedule-call'].includes(window.location.hash)) {
+    if (['#contact', '#feedback'].includes(window.location.hash)) {
       history.pushState("", document.title, window.location.pathname + window.location.search);
     }
   };

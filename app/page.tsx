@@ -85,7 +85,7 @@ export default function Home() {
       <ImperativesBanner />
 
       {/* 11. Trustpilot Verified Reviews Section */}
-      <TrustpilotHomeSection />
+      {/* <TrustpilotHomeSection /> */}
 
       {/* Commented-out sections */}
       

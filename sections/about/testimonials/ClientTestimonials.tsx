@@ -166,10 +166,6 @@ export const ClientTestimonials = () => {
             <span className="text-zinc-300 font-semibold text-base">Independent Enterprise Verification</span>
           </div>
 
-          {/* Trustpilot Review Collector TrustBox */}
-          <div className="mt-8 max-w-xl mx-auto rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-4 backdrop-blur-sm shadow-xl">
-            <TrustpilotReviewCollector />
-          </div>
         </div>
 
         {/* Marquee Row */}

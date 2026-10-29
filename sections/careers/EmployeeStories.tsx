@@ -113,7 +113,7 @@ export function EmployeeStories() {
   };
 
   return (
-    <section className="py-24 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
+    <section className="pt-24 pb-14 bg-[#030303] border-b border-zinc-900/60 relative overflow-hidden">
       {/* Background ambient glows */}
       <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03),transparent_70%)] pointer-events-none" />
       <div className="absolute bottom-[10%] right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.02),transparent_70%)] pointer-events-none" />
@@ -180,86 +180,138 @@ export function EmployeeStories() {
         </div>
 
         {/* ── BLOCK 2: What Our Team Is Saying (Reviews) ─────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.5fr] gap-10 lg:gap-14 items-start mb-32 border-t border-zinc-900/60 pt-24">
+        <div className="border-t border-zinc-900/60 pt-20 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2.5fr] gap-10 lg:gap-14 items-start">
 
-          {/* Left Column: Heading and slider buttons */}
-          <div className="flex flex-col text-left">
-            <Reveal>
-              {/* Giant quote mark */}
-              <span className="text-6xl font-serif text-rose-500 leading-none select-none block mb-4">
-                “ “
-              </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-8 font-sans">
-                What Our Team<br />Is Saying
-              </h2>
+            {/* Left Column: Heading and slider buttons */}
+            <div className="flex flex-col text-left">
+              <Reveal>
+                {/* Giant quote mark */}
+                <span className="text-6xl font-serif text-rose-500 leading-none select-none block mb-4">
+                  “ “
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-tight mb-8 font-sans">
+                  What Our Team<br />Is Saying
+                </h2>
 
-              {/* Pagination controls */}
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={handlePrev}
-                  className="w-11 h-11 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
-                >
-                  <ArrowLeft size={18} />
-                </button>
-                {/* Progress line */}
-                <div className="w-24 h-[2px] bg-zinc-800 rounded-full overflow-hidden relative">
-                  <div
-                    className="absolute top-0 left-0 h-full bg-rose-500 rounded-full transition-all duration-500"
-                    style={{ width: `${progressPercent}%` }}
-                  />
-                </div>
-                <button
-                  onClick={handleNext}
-                  className="w-11 h-11 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
-                >
-                  <ArrowRight size={18} />
-                </button>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Right Column: Testimonial Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {visibleTestimonials.map((t, idx) => (
-              <Reveal key={currentIndex + idx} delay={idx * 0.05}>
-                <div className="flex flex-col gap-6 text-left group">
-                  {/* Quote bubble card */}
-                  <div className="relative bg-[#0d0d0d] border border-white/[0.06] hover:border-rose-500/20 p-6 md:p-8 rounded-[24px] shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[170px] group-hover:-translate-y-1">
-                    <p className="text-zinc-100 text-base md:text-lg font-semibold italic leading-relaxed mb-6">
-                      "{t.quote}"
-                    </p>
-
-                    {/* Star rating */}
-                    <div className="flex gap-1 text-amber-500">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} size={14} fill="currentColor" />
-                      ))}
-                    </div>
+                {/* Pagination controls */}
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={handlePrev}
+                    className="w-11 h-11 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
+                    aria-label="Previous employee quote"
+                  >
+                    <ArrowLeft size={18} />
+                  </button>
+                  {/* Progress line */}
+                  <div className="w-24 h-[2px] bg-zinc-800 rounded-full overflow-hidden relative">
+                    <div
+                      className="absolute top-0 left-0 h-full bg-rose-500 rounded-full transition-all duration-500"
+                      style={{ width: `${progressPercent}%` }}
+                    />
                   </div>
-
-                  {/* Profile details under the card */}
-                  <div className="flex items-center gap-3.5 px-2">
-                    <div className={`w-11 h-11 rounded-full bg-gradient-to-tr ${t.color} flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-lg ring-1 ring-white/10 overflow-hidden`}>
-                      {t.image ? (
-                        <img src={t.image} alt={t.name} className="w-full h-full object-cover" loading="lazy" />
-                      ) : (
-                        t.initials
-                      )}
-                    </div>
-                    <div>
-                      <span className="text-base sm:text-lg font-bold text-white block">
-                        {t.name}
-                      </span>
-                      <span className="text-sm text-zinc-300 font-semibold block mt-0.5">
-                        {t.role}
-                      </span>
-                    </div>
-                  </div>
+                  <button
+                    onClick={handleNext}
+                    className="w-11 h-11 rounded-full border border-white/10 hover:border-rose-500/40 flex items-center justify-center text-white hover:text-rose-400 bg-zinc-950/40 hover:bg-rose-950/10 transition-all duration-300 cursor-pointer"
+                    aria-label="Next employee quote"
+                  >
+                    <ArrowRight size={18} />
+                  </button>
                 </div>
               </Reveal>
-            ))}
+            </div>
+
+            {/* Right Column: Testimonial Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {visibleTestimonials.map((t, idx) => (
+                <Reveal key={currentIndex + idx} delay={idx * 0.05}>
+                  <div className="flex flex-col gap-6 text-left group">
+                    {/* Quote bubble card */}
+                    <div className="relative bg-[#0d0d0d] border border-white/[0.06] hover:border-rose-500/20 p-6 md:p-8 rounded-[24px] shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[170px] group-hover:-translate-y-1">
+                      <p className="text-zinc-100 text-base md:text-lg font-semibold italic leading-relaxed mb-6">
+                        "{t.quote}"
+                      </p>
+
+                      {/* Star rating */}
+                      <div className="flex gap-1 text-amber-500">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star key={i} size={14} fill="currentColor" />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Profile details under the card */}
+                    <div className="flex items-center gap-3.5 px-2">
+                      <div className={`w-11 h-11 rounded-full bg-gradient-to-tr ${t.color} flex items-center justify-center text-xs font-bold text-white shrink-0 shadow-lg ring-1 ring-white/10 overflow-hidden`}>
+                        {t.image ? (
+                          <img src={t.image} alt={t.name} className="w-full h-full object-cover" loading="lazy" />
+                        ) : (
+                          t.initials
+                        )}
+                      </div>
+                      <div>
+                        <span className="text-base sm:text-lg font-bold text-white block">
+                          {t.name}
+                        </span>
+                        <span className="text-sm text-zinc-300 font-semibold block mt-0.5">
+                          {t.role}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
           </div>
 
+          {/* Centered Ratings & Reviews in One Single Line with Reduced Empty Space */}
+          <div className="mt-12 pt-8 border-t border-zinc-900/60 flex flex-col items-center justify-center gap-3.5 text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-400 font-sans flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
+              Verified Workplace &amp; Employer Ratings
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-8">
+              {/* AmbitionBox Detailed Ratings Badge - Expanded Width to Fill Frame Edge-to-Edge */}
+              <a
+                href="https://www.ambitionbox.com/overview/devopstrio-overview?utm_source=employer-dashboard&utm_campaign=devopstrio&utm_medium=badges"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-2xl transition-all duration-300 hover:scale-[1.03] hover:shadow-lg overflow-hidden shadow-md border border-zinc-200 bg-white"
+                title="View Devopstrio on AmbitionBox"
+              >
+                <img
+                  src="https://employer.ambitionbox.com/api/next/badge/2218424?badge-type=ratings-detailed"
+                  alt="Devopstrio AmbitionBox Reviews & Ratings"
+                  className="w-[245px] sm:w-[275px] md:w-[290px] h-auto object-contain block"
+                  loading="lazy"
+                />
+              </a>
+
+              {/* Trustpilot Review Pill Badge - Matched Height & Star Metrics */}
+              <a
+                href="https://www.trustpilot.com/review/devopstrio.co.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-[84px] sm:h-[92px] px-7 sm:px-8 rounded-2xl bg-white hover:bg-zinc-50 text-black shadow-md border border-zinc-200 flex flex-col items-center justify-center gap-1 transition-all duration-300 hover:scale-[1.03] hover:shadow-lg group"
+                title="Review Devopstrio on Trustpilot"
+              >
+                <span className="text-[11px] sm:text-xs text-zinc-500 font-medium">Review us on</span>
+                <div className="flex items-center gap-2">
+                  <Star size={18} className="fill-emerald-500 text-emerald-500 inline-block" />
+                  <span className="font-bold text-black tracking-tight text-lg sm:text-xl">Trustpilot</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="w-3.5 h-3.5 bg-emerald-500 flex items-center justify-center rounded-[2px]">
+                      <Star size={9} className="fill-white text-white" />
+                    </div>
+                  ))}
+                  <span className="text-[11px] font-semibold text-zinc-600 ml-1">4.9 / 5</span>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* ── BLOCK 3: Feel-Good Words Masonry Wall (Commented Out) ─── */}

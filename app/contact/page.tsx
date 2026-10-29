@@ -10,6 +10,7 @@ import { SectionNavbar } from "@/components/ui/SectionNavbar";
 
 // Dynamic Imports for Heavy Below-The-Fold Sections to Reduce Initial JS Payload
 const DepartmentContacts = dynamic(() => import("@/sections/contact/DepartmentContacts").then((mod) => mod.DepartmentContacts));
+const BookConsultation = dynamic(() => import("@/sections/contact/BookConsultation").then((mod) => mod.BookConsultation));
 const WriteMessageForm = dynamic(() => import("@/sections/contact/WriteMessageForm").then((mod) => mod.WriteMessageForm));
 const OurLocations = dynamic(() => import("@/sections/contact/OurLocations").then((mod) => mod.OurLocations));
 const TransformMetricsSection = dynamic(() => import("@/sections/contact/TransformMetricsSection").then((mod) => mod.TransformMetricsSection));
@@ -21,6 +22,7 @@ const TalkToExpert = dynamic(() => import("@/sections/contact/TalkToExpert").the
 
 const contactSections = [
   { id: "form", label: "Start a Conversation" },
+  { id: "schedule", label: "Schedule 1:1" },
   { id: "presence", label: "Global Presence" },
   // { id: "experts", label: "Talk to Expert" },
   // { id: "why-us", label: "Why Contact Us" },
@@ -105,6 +107,12 @@ export default function ContactPage() {
 
         <div id="departments" className="relative z-10 bg-black">
           <DepartmentContacts />
+        </div>
+
+        {/* 1:1 Consultation & Live Demo Scheduler */}
+        <div id="schedule" className="relative z-10 bg-black scroll-mt-24">
+          <span id="schedule-call" className="block -mt-24 pt-24 pointer-events-none" />
+          <BookConsultation />
         </div>
 
         {/* Layer 1: Global Presence */}

@@ -713,6 +713,7 @@ export function Navbar() {
       categories: [
         { slug: "blogs", name: "Blogs", desc: "Corporate technology logs & engineering updates" },
         { slug: "case-studies", name: "Case Studies", desc: "Real-world scaling and migration case logs" },
+        { slug: "marketing", name: "Marketing", desc: "Digital growth and brand marketing campaigns" },
         { slug: "testimonials", name: "Testimonials", desc: "Client success validations and reviews" }
       ]
     },
@@ -765,8 +766,27 @@ export function Navbar() {
           );
           const validStructure = fullStructure.filter(s => s.categories && s.categories.length > 0);
           if (validStructure && validStructure.length > 0) {
-            setInsightsSections(validStructure);
-            setActiveInsightsSection(validStructure[0].slug);
+            const enhancedStructure = validStructure.map((sec: any) => {
+              const hasCaseStudies = sec.categories.some((c: any) => c.slug === "case-studies");
+              const hasMarketing = sec.categories.some((c: any) => c.slug === "marketing");
+              if (hasCaseStudies && !hasMarketing) {
+                const newCategories: any[] = [];
+                sec.categories.forEach((cat: any) => {
+                  newCategories.push(cat);
+                  if (cat.slug === "case-studies") {
+                    newCategories.push({
+                      slug: "marketing",
+                      name: "Marketing",
+                      desc: "Digital growth, brand strategy and marketing campaigns"
+                    });
+                  }
+                });
+                return { ...sec, categories: newCategories };
+              }
+              return sec;
+            });
+            setInsightsSections(enhancedStructure);
+            setActiveInsightsSection(enhancedStructure[0].slug);
           }
         }
       } catch (err) {
@@ -1360,7 +1380,7 @@ export function Navbar() {
                           {insightsSections.find((s: InsightsSection) => s.slug === activeInsightsSection)?.categories.map((cat: SectionCategory) => (
                             <Link
                               key={cat.slug}
-                              href={`/insights/${cat.slug}`}
+                              href={cat.slug === "marketing" ? "/marketing" : `/insights/${cat.slug}`}
                               onClick={() => setActiveMenu(null)}
                               className="group/subitem block py-1.5 px-2.5 rounded-lg hover:bg-zinc-900/30 transition-colors"
                             >
@@ -1547,11 +1567,16 @@ export function Navbar() {
 
                     <div className="h-[1px] bg-zinc-900/80 my-1 mx-2" />
 
-                    <button
+                    <Link
+                      href="/contact#schedule"
                       onClick={() => {
                         setActiveMenu(null);
-                        window.location.hash = "schedule-call";
-                        setTimeout(() => window.dispatchEvent(new HashChangeEvent("hashchange")), 50);
+                        if (window.location.pathname === "/contact") {
+                          const el = document.getElementById("schedule") || document.getElementById("book-consultation");
+                          if (el) {
+                            el.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }
                       }}
                       className="group flex flex-col p-3 rounded-xl hover:bg-zinc-900 transition-colors w-full text-left"
                     >
@@ -1559,7 +1584,7 @@ export function Navbar() {
                         Schedule a Call <ArrowUpRight size={15} className="text-zinc-500 group-hover:text-rose-500 transition-colors" />
                       </span>
                       <span className="text-[11px] text-zinc-400 font-medium">Book a meeting instantly</span>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               )}
