@@ -54,6 +54,8 @@ const officeLocations = [
     tel: "+91 80 4123 4567",
     email: "info@devopstrioglobal.com",
     mapQuery: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
+    mapUrl: "https://maps.app.goo.gl/vdAe8XAb242GweER9",
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3207553683833!2d77.64387847559166!3d12.951315387362154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae152b54eca867%3A0x980925bb507a328c!2sDevopstrio%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1793250546683!5m2!1sen!2sin",
   },
   {
     id: "london-support",
@@ -76,6 +78,8 @@ const officeLocations = [
     tel: "+91 44 6123 4567",
     email: "info@devopstrioglobal.com",
     mapQuery: "Primus Building, Door No. SP - 7A, Guindy Industrial Estate, Chennai 600032, India",
+    mapUrl: "https://maps.app.goo.gl/8pytBuRQstcSHqtR7",
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.4102547639977!2d80.20635177559258!3d13.009526387309348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267f2a761f2c5%3A0x795e4dac8df70296!2sDevopstrio%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1793250520470!5m2!1sen!2sin",
   },
   {
     id: "thoothukudi-office",
@@ -87,6 +91,8 @@ const officeLocations = [
     tel: "+91 461 234 5678",
     email: "info@devopstrioglobal.com",
     mapQuery: "Pasuvanthanai, Tamilnadu, India",
+    mapUrl: "https://maps.app.goo.gl/gsrJPp7h2zbzQTPP9",
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.654408808943!2d77.9576016755411!3d9.003912291056443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b01557677b55437%3A0xdccfaa15cbbc87ca!2sDevopstrio!5e0!3m2!1sen!2sin!4v1793250567463!5m2!1sen!2sin",
   }
 ];
 
@@ -171,7 +177,7 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
 
           <div className="border-t border-zinc-900 pt-6 mt-8">
             <a
-              href={`https://maps.google.com/?q=${encodeURIComponent(currentOffice.mapQuery)}`}
+              href={(currentOffice as any).mapUrl || `https://maps.google.com/?q=${encodeURIComponent(currentOffice.mapQuery)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-rose-500 hover:text-white transition-colors"
@@ -184,7 +190,7 @@ export function HubSpotlight({ locations }: HubSpotlightProps) {
         {/* Right: Iframe Map */}
         <div className="lg:col-span-7 rounded-2xl border border-zinc-900 overflow-hidden bg-zinc-950 relative min-h-[350px] lg:min-h-full">
           <iframe
-            src={`https://maps.google.com/maps?q=${encodeURIComponent(currentOffice.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+            src={(currentOffice as any).embedUrl || `https://maps.google.com/maps?q=${encodeURIComponent(currentOffice.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
             className="w-full h-full min-h-[400px] border-0 filter invert-[90%] hue-rotate-[180deg] contrast-[100%]"
             allowFullScreen={false}
             loading="lazy"

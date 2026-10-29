@@ -79,7 +79,7 @@ const locations = [
     top: 51.1,
     left: 68.35,
     tag: "Corporate",
-    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@11.2597005,71.6100439,6.11z/data=!4m10!1m2!2m1!1sDevopstrio+Pbangalore!3m6!1s0x3bae152b54eca867:0x980925bb507a328c!8m2!3d12.9513154!4d77.6464534!15sChVEZXZvcHN0cmlvIFBiYW5nYWxvcmVaFyIVZGV2b3BzdHJpbyBwYmFuZ2Fsb3JlkgEdY29tcHV0ZXJfc3VwcG9ydF9hbmRfc2VydmljZXPgAQA!16s%2Fg%2F11mdtl382s"
+    mapUrl: "https://maps.app.goo.gl/vdAe8XAb242GweER9"
   },
   {
     name: "Chennai",
@@ -91,7 +91,7 @@ const locations = [
     top: 50.9,
     left: 69.1,
     tag: "Ops",
-    mapUrl: "https://www.google.com/maps/place/Devopstrio+Pvt+Ltd/@13.0095316,80.2063518,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5267f2a761f2c5:0x795e4dac8df70296!8m2!3d13.0095264!4d80.2089267!16s%2Fg%2F11nq0wrf8p"
+    mapUrl: "https://maps.app.goo.gl/8pytBuRQstcSHqtR7"
   },
   {
     name: "Thoothukudi",
@@ -103,7 +103,7 @@ const locations = [
     top: 52.99,
     left: 68.53,
     tag: "Innovation",
-    mapUrl: "https://www.google.com/maps/place/Devopstrio/@9.0039123,77.9576017,17z/data=!3m1!4b1!4m6!3m5!1s0x3b01557677b55437:0xdccfaa15cbbc87ca!8m2!3d9.0039123!4d77.9601766!16s%2Fg%2F11xw9tzf_k"
+    mapUrl: "https://maps.app.goo.gl/gsrJPp7h2zbzQTPP9"
   },
 ];
 

@@ -14,6 +14,8 @@ interface OfficeDetail {
   address: string;
   talentBase: string;
   mapQuery: string;
+  mapUrl?: string;
+  embedUrl?: string;
 }
 
 const locations: OfficeDetail[] = [
@@ -55,7 +57,9 @@ const locations: OfficeDetail[] = [
     role: "R&D and Software Development",
     address: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
     talentBase: "AI & Data Engineering, LLM Tuning, RAG Architectures",
-    mapQuery: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India"
+    mapQuery: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
+    mapUrl: "https://maps.app.goo.gl/vdAe8XAb242GweER9",
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3207553683833!2d77.64387847559166!3d12.951315387362154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae152b54eca867%3A0x980925bb507a328c!2sDevopstrio%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1793250546683!5m2!1sen!2sin"
   },
   {
     id: "chennai-hub",
@@ -65,7 +69,9 @@ const locations: OfficeDetail[] = [
     role: "Cloud operations & Security",
     address: "Primus Building, Door No. SP – 7A, Guindy Industrial Estate, Chennai 600032",
     talentBase: "SecOps Monitoring, Multi-Cloud Governance, Secure Gateways",
-    mapQuery: "Primus Building, Door No. SP - 7A, Guindy Industrial Estate, Chennai 600032, India"
+    mapQuery: "Primus Building, Door No. SP - 7A, Guindy Industrial Estate, Chennai 600032, India",
+    mapUrl: "https://maps.app.goo.gl/8pytBuRQstcSHqtR7",
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.4102547639977!2d80.20635177559258!3d13.009526387309348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267f2a761f2c5%3A0x795e4dac8df70296!2sDevopstrio%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1793250520470!5m2!1sen!2sin"
   },
   {
     id: "thoothukudi-center",
@@ -75,7 +81,9 @@ const locations: OfficeDetail[] = [
     role: "CI/CD & Platform Engineering",
     address: "4/367, Rajeev Colony, Pasuvanthanai, 628718 Thoothukudi, Tamilnadu, IN",
     talentBase: "Infrastructure as Code, Kubernetes Deployments, GitOps Loops",
-    mapQuery: "Pasuvanthanai, Tamilnadu, India"
+    mapQuery: "Pasuvanthanai, Tamilnadu, India",
+    mapUrl: "https://maps.app.goo.gl/gsrJPp7h2zbzQTPP9",
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.654408808943!2d77.9576016755411!3d9.003912291056443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b01557677b55437%3A0xdccfaa15cbbc87ca!2sDevopstrio!5e0!3m2!1sen!2sin!4v1793250567463!5m2!1sen!2sin"
   }
 ];
 
@@ -183,7 +191,7 @@ export function GlobalTalentReach() {
 
             <div className="border-t border-zinc-900 pt-6 mt-8">
               <a
-                href={`https://maps.google.com/?q=${encodeURIComponent(currentOffice.mapQuery)}`}
+                href={currentOffice.mapUrl || `https://maps.google.com/?q=${encodeURIComponent(currentOffice.mapQuery)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-500 hover:text-white transition-colors"
@@ -205,7 +213,7 @@ export function GlobalTalentReach() {
                 className="w-full h-full"
               >
                 <iframe
-                  src={`https://maps.google.com/maps?q=${encodeURIComponent(currentOffice.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                  src={currentOffice.embedUrl || `https://maps.google.com/maps?q=${encodeURIComponent(currentOffice.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
                   className="w-full h-full min-h-[400px] border-0 filter invert-[90%] hue-rotate-[180deg] contrast-[100%]"
                   allowFullScreen={false}
                   loading="lazy"

@@ -33,7 +33,7 @@ const offices: Office[] = [
     details: "Embassy Golf Links Business Park,\nBengaluru, Karnataka-560071, India",
     image: "/webp/assets/locations/Bengaluru.webp",
     gradient: "from-zinc-400 to-zinc-200",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Embassy+Golf+Links+Business+Park,+Bengaluru,+Karnataka-560071,+India"
+    mapUrl: "https://maps.app.goo.gl/vdAe8XAb242GweER9"
   },
   { 
     city: "London", 
@@ -49,7 +49,7 @@ const offices: Office[] = [
     details: "Ground Floor, Primus Building, Door No.\nSP – 7A, Guindy Industrial Estate, SIDCO\nIndustrial Estate, Chennai 600032",
     image: "/webp/assets/locations/chennai.webp",
     gradient: "from-orange-600 to-amber-500",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Primus+Building,+Guindy+Industrial+Estate,+Chennai+600032"
+    mapUrl: "https://maps.app.goo.gl/8pytBuRQstcSHqtR7"
   },
   { 
     city: "Thoothukudi", 
@@ -57,7 +57,7 @@ const offices: Office[] = [
     details: "4/ 367, Rajeev Colony, Pasuvanthanai\n628718 Thoothukudi, Tamilnadu, IN",
     image: "/webp/assets/locations/Thoothukudi.webp",
     gradient: "from-red-600 to-orange-500",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rajeev+Colony,+Pasuvanthanai+628718+Thoothukudi"
+    mapUrl: "https://maps.app.goo.gl/gsrJPp7h2zbzQTPP9"
   }
 ];
 

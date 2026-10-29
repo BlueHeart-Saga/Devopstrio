@@ -28,7 +28,7 @@ const locations = [
     role: "Corporate Office",
     address: "Embassy Golf Links Business Park, Bengaluru, Karnataka-560071, India",
     image: "/webp/assets/About-page/leadership/Locations/3d1cb911d53ef536d25a1c799841964f-1.webp",
-    mapUrl: "https://maps.google.com/maps?q=12.946300,77.648300&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3207553683833!2d77.64387847559166!3d12.951315387362154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae152b54eca867%3A0x980925bb507a328c!2sDevopstrio%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1793250546683!5m2!1sen!2sin"
   },
   {
     flag: "🇬🇧",
@@ -46,7 +46,7 @@ const locations = [
     role: "Operations Center",
     address: "Ground Floor, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Chennai 600032",
     image: "/webp/assets/About-page/leadership/Locations/a3522af23a2079d9fdfe727c0fe88cca-1.webp",
-    mapUrl: "https://maps.google.com/maps?q=13.018900,80.207800&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.4102547639977!2d80.20635177559258!3d13.009526387309348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267f2a761f2c5%3A0x795e4dac8df70296!2sDevopstrio%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1793250520470!5m2!1sen!2sin"
   },
   {
     flag: "🇮🇳",
@@ -55,7 +55,7 @@ const locations = [
     role: "Operations Center",
     address: "4/ 367, Rajeev Colony, Pasuvanthanai, 628718 Thoothukudi, Tamilnadu, IN",
     image: "/webp/assets/About-page/leadership/Locations/ab86228d389fff2381da37b76b0cb6c3-1.webp",
-    mapUrl: "https://maps.google.com/maps?q=8.948200,78.016300&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.654408808943!2d77.9576016755411!3d9.003912291056443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b01557677b55437%3A0xdccfaa15cbbc87ca!2sDevopstrio!5e0!3m2!1sen!2sin!4v1793250567463!5m2!1sen!2sin"
   }
 ];
 
