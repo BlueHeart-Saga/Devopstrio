@@ -95,10 +95,18 @@ export function Footer() {
           {/* Col 1: Brand Intro */}
           <div className="flex flex-col items-center text-center gap-0">
             <Link href="/" className="flex flex-col items-center gap-3 group inline-flex mb-4">
-              <img src="/webp/assets/logo/logo.webp"
-                alt="Devopstrio logo"
-                className="w-16 h-16 object-contain transition-all duration-500 group-hover:scale-105 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
-              loading="lazy" />
+              <div className="relative inline-block">
+                <img src="/webp/assets/logo/logo.webp"
+                  alt="Devopstrio logo"
+                  className="w-16 h-16 object-contain transition-all duration-500 group-hover:scale-105 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                loading="lazy" />
+                <img
+                  src="/webp/assets/logo/registered-trademark-white.png"
+                  alt="Registered Trademark"
+                  className="absolute -top-1 -right-2.5 w-4 h-4 object-contain opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                  loading="lazy"
+                />
+              </div>
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl font-semibold text-white tracking-tight leading-none">
                   Devopstrio
