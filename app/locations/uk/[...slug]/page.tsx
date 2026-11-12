@@ -2,7 +2,6 @@ import React from "react";
 import { notFound, permanentRedirect } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, Building2, ExternalLink } from "lucide-react";
 import {
   resolveLocationRoute,
   getBreadcrumbsForResolvedPath,
@@ -272,24 +271,16 @@ export default async function LocationCatchAllPage({ params }: PageProps) {
           <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <Reveal>
-                <div className="space-y-5">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-rose-500/10 text-rose-400 text-xs font-semibold uppercase tracking-wider">
+                    Regional Delivery Hub • {loc.displayName}
+                  </div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
                     Engineering Resilient Digital Systems in {loc.displayName}
                   </h2>
                   <p className="text-zinc-300 text-base md:text-lg leading-relaxed">
                     {loc.economicProfile?.techHubDescription || loc.shortDescription}
                   </p>
-
-                  {loc.deliveryHighlights && (
-                    <div className="space-y-2.5 pt-2">
-                      {loc.deliveryHighlights.map((dh, i) => (
-                        <div key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-zinc-300">
-                          <CheckCircle2 size={16} className="text-rose-500 shrink-0 mt-1" />
-                          <span>{normalizeDisplayText(dh)}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </Reveal>
 
@@ -303,60 +294,11 @@ export default async function LocationCatchAllPage({ params }: PageProps) {
                   glowIntensity={1.0}
                   coneSpread={30}
                   colors={["#f43f5e", "#fb7185", "#38bdf8"]}
-                  className="p-6 sm:p-8 space-y-6"
+                  className="p-8 sm:p-10 flex flex-col justify-center"
                 >
-                  {isLondonHQ && loc.verifiedAddress ? (
-                    <div className="p-4 sm:p-5 rounded-2xl bg-zinc-900/40 space-y-2">
-                      <div className="flex items-center gap-2 text-rose-400 font-semibold text-sm">
-                        <Building2 size={16} />
-                        <span>Global Headquarters and Principal Engineering Centre</span>
-                      </div>
-                      <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                        {loc.verifiedAddress.streetAddress}, {loc.verifiedAddress.locality}, {loc.verifiedAddress.postalCode}
-                      </p>
-                      {loc.verifiedAddress.googleMapsUrl && (
-                        <a
-                          href={loc.verifiedAddress.googleMapsUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-400 hover:text-white pt-1"
-                        >
-                          <span>View on Google Maps</span>
-                          <ExternalLink size={12} />
-                        </a>
-                      )}
-                    </div>
-                  ) : null}
-
-                  {loc.economicProfile?.dominantIndustries && (
-                    <div>
-                      <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2.5">
-                        Dominant Sectors in {loc.displayName}:
-                      </span>
-                      <div className="flex flex-wrap gap-2">
-                        {loc.economicProfile.dominantIndustries.map((ind, i) => (
-                          <span key={i} className="px-3.5 py-1.5 rounded-xl bg-zinc-900/60 text-xs sm:text-sm font-medium text-zinc-200">
-                            {normalizeDisplayText(ind)}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {loc.economicProfile?.keyClusters && (
-                    <div>
-                      <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block mb-2.5">
-                        Key Tech Clusters:
-                      </span>
-                      <div className="flex flex-wrap gap-2">
-                        {loc.economicProfile.keyClusters.map((kc, i) => (
-                          <span key={i} className="px-3.5 py-1.5 rounded-xl bg-zinc-900/40 text-xs sm:text-sm text-rose-400 font-semibold">
-                            {normalizeDisplayText(kc)}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  <blockquote className="text-base sm:text-lg md:text-xl text-zinc-100 font-medium leading-relaxed italic border-l-2 border-rose-500 pl-4 sm:pl-5 py-1">
+                    &ldquo;Accelerating digital transformation and production reliability for {loc.displayName} organizations with principal-led cloud migrations, GitOps pipelines, and 24/7 sovereign SRE operations.&rdquo;
+                  </blockquote>
                 </BorderGlow>
               </Reveal>
             </div>
