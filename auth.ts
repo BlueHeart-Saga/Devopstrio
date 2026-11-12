@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import argon2 from "argon2";
 import { z } from "zod";
 import { connectToDatabase } from "@/lib/mongodb";
 import { checkLoginRateLimit, resetLoginRateLimit } from "@/lib/admin/login-rate-limit";
@@ -144,6 +143,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         let isPasswordValid = false;
         try {
           if (user.passwordHash) {
+            const argon2 = await import("argon2");
             isPasswordValid = await argon2.verify(user.passwordHash, rawPassword);
           }
         } catch (err) {

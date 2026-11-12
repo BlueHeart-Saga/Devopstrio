@@ -3,6 +3,18 @@ import { servicesData } from "@/data/services";
 import { capabilityRegistry } from "@/data/services/dynamic-capabilities";
 import { insightsApi } from "@/lib/insightsApi";
 import { ecosystemSubpages } from "@/data/ecosystem";
+import { ukNations, ukRegions, ukLocations } from "@/data/locations/uk-locations";
+import { getPublishedCities, getPublishedCityServices } from "@/lib/location-content";
+import {
+  getPublishedIndiaStates,
+  getPublishedIndiaCities,
+  getPublishedUSStates,
+  getPublishedUSCities
+} from "@/lib/location-content-global";
+import { indiaStates, indiaLocations } from "@/data/locations/india-locations";
+import { usStates, usLocations } from "@/data/locations/us-locations";
+import { getPublishedIndiaCityServices } from "@/data/locations/india-service-matrix";
+import { getPublishedUSCityServices } from "@/data/locations/us-service-matrix";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devopstrio.co.uk";
@@ -178,12 +190,162 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Failed to generate dynamic post URLs for sitemap:", e);
   }
 
+  // 7. Approved & Published Global Location Pages
+  const locationPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/locations`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8
+    },
+    {
+      url: `${baseUrl}/locations/uk`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8
+    }
+  ];
+
+  // UK Nations
+  Object.keys(ukNations).forEach((nSlug) => {
+    locationPages.push({
+      url: `${baseUrl}/locations/uk/${nSlug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7
+    });
+  });
+
+  // UK Regions
+  Object.values(ukRegions).forEach((reg) => {
+    locationPages.push({
+      url: `${baseUrl}/locations/uk/${reg.nation}/${reg.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7
+    });
+  });
+
+  // UK Published Cities (Clean Hierarchy: Country -> Nation -> City)
+  const publishedCities = getPublishedCities();
+  publishedCities.forEach((city) => {
+    const nat = ukNations[city.nation];
+    if (nat) {
+      locationPages.push({
+        url: `${baseUrl}/locations/uk/${nat.slug}/${city.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.7
+      });
+    }
+  });
+
+  // UK Published City + Service Combinations: Preferred Pattern /locations/uk/[location]-[service]
+  const publishedServices = getPublishedCityServices();
+  publishedServices.forEach((mapping) => {
+    locationPages.push({
+      url: `${baseUrl}/locations/uk/${mapping.citySlug}-${mapping.serviceSlug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7
+    });
+  });
+
+  // INDIA LOCATIONS
+  locationPages.push({
+    url: `${baseUrl}/locations/india`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.8
+  });
+
+  // India Published States
+  const publishedIndiaStates = getPublishedIndiaStates();
+  publishedIndiaStates.forEach((st) => {
+    locationPages.push({
+      url: `${baseUrl}/locations/india/${st.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7
+    });
+  });
+
+  // India Published Cities
+  const publishedIndiaCities = getPublishedIndiaCities();
+  publishedIndiaCities.forEach((city) => {
+    const st = indiaStates[city.stateOrRegionId];
+    if (st) {
+      locationPages.push({
+        url: `${baseUrl}/locations/india/${st.slug}/${city.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.7
+      });
+    }
+  });
+
+  // India Published City + Service Combinations: Preferred Pattern /locations/india/[location]-[service]
+  const publishedIndiaServices = getPublishedIndiaCityServices();
+  publishedIndiaServices.forEach((mapping) => {
+    locationPages.push({
+      url: `${baseUrl}/locations/india/${mapping.citySlug}-${mapping.serviceSlug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7
+    });
+  });
+
+  // USA LOCATIONS
+  locationPages.push({
+    url: `${baseUrl}/locations/us`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.8
+  });
+
+  // US Published States
+  const publishedUSStates = getPublishedUSStates();
+  publishedUSStates.forEach((st) => {
+    locationPages.push({
+      url: `${baseUrl}/locations/us/${st.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7
+    });
+  });
+
+  // US Published Cities
+  const publishedUSCities = getPublishedUSCities();
+  publishedUSCities.forEach((city) => {
+    const st = usStates[city.stateOrRegionId];
+    if (st) {
+      locationPages.push({
+        url: `${baseUrl}/locations/us/${st.slug}/${city.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.7
+      });
+    }
+  });
+
+  // US Published City + Service Combinations: Preferred Pattern /locations/us/[location]-[service]
+  const publishedUSServices = getPublishedUSCityServices();
+  publishedUSServices.forEach((mapping) => {
+    locationPages.push({
+      url: `${baseUrl}/locations/us/${mapping.citySlug}-${mapping.serviceSlug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7
+    });
+  });
+
   return [
     ...staticPages,
     ...servicePages,
     ...industryPages,
     ...ecosystemPages,
     ...insightsPages,
-    ...dynamicPostPages
+    ...dynamicPostPages,
+    ...locationPages
   ];
 }

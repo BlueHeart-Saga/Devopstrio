@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { LayoutNavbarWrapper } from "@/components/providers/LayoutNavbarWrapper";
-import { OrganizationSchema, ReviewSchema, ProfessionalServiceSchema, LocalBusinessSchema } from "@/components/seo/Schemas";
+import { OrganizationSchema, ReviewSchema, ProfessionalServiceSchema } from "@/components/seo/Schemas";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devopstrio.co.uk";
 
@@ -118,9 +118,9 @@ export default function RootLayout({
         </Script>
 
         <OrganizationSchema />
-        <ReviewSchema />
-        <ProfessionalServiceSchema />
-        <LocalBusinessSchema />
+
+
+
         <LayoutNavbarWrapper>{children}</LayoutNavbarWrapper>
       </body>
     </html>

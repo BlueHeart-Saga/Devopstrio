@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-const ClickSpark = dynamic(() => import("@/components/ui/ClickSpark"), { ssr: false });
+import ClickSpark from "@/components/ui/ClickSpark";
 const FloatingChatbot = dynamic(() => import("@/components/FloatingChatbot").then((m) => m.FloatingChatbot), { ssr: false });
 const FeedbackWidget = dynamic(() => import("@/components/FeedbackWidget").then((m) => m.FeedbackWidget), { ssr: false });
 const StickyContactWidget = dynamic(() => import("@/components/StickyContactWidget").then((m) => m.StickyContactWidget), { ssr: false });

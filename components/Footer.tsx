@@ -237,6 +237,10 @@ export function Footer() {
               <li><Link href="/about/our-culture-people" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Our Culture & People</Link></li>
               <li><Link href="/about/global-internship" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Internship</Link></li>
               <li><Link href="/about/global-presence" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Presence</Link></li>
+              <li><Link href="/locations" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Locations Hub</Link></li>
+              <li><Link href="/locations/uk" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">UK Regional Delivery</Link></li>
+              <li><Link href="/locations/india" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">India Delivery Hubs</Link></li>
+              <li><Link href="/locations/us" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">US Delivery Centers</Link></li>
               <li><Link href="/about/partnerships-certifications" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Partnerships & Certifications</Link></li>
               <li><Link href="/about/awards-recognition" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Awards & Recognition</Link></li>
               <li><Link href="/about/sustainability-csr" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Sustainability & CSR</Link></li>
@@ -264,6 +268,14 @@ export function Footer() {
             <a href="/gdpr" className="hover:text-white transition-colors duration-300">GDPR Compliance</a>
             <span className="text-zinc-800">•</span>
             <a href="/sitemap" className="hover:text-white transition-colors duration-300">Sitemap</a>
+            <span className="text-zinc-800">•</span>
+            <Link href="/locations" className="hover:text-white transition-colors duration-300">Global Locations</Link>
+            <span className="text-zinc-800">•</span>
+            <Link href="/locations/uk" className="hover:text-white transition-colors duration-300">UK</Link>
+            <span className="text-zinc-800">•</span>
+            <Link href="/locations/india" className="hover:text-white transition-colors duration-300">India</Link>
+            <span className="text-zinc-800">•</span>
+            <Link href="/locations/us" className="hover:text-white transition-colors duration-300">USA</Link>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 items-center">

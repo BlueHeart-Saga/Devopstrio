@@ -24,6 +24,9 @@ export function generatePageMetadata({
   // Cleanly replace any embedded "Devopstrio" or brand suffixes to avoid duplicate brand names
   let baseTitle = title
     .replace(/\bDevopstrio\b/gi, "")
+    .replace(/\s+&\s+/g, " and ")
+    .replace(/&amp;/gi, "and")
+    .replace(/([a-zA-Z0-9])&([a-zA-Z0-9])/g, "$1 and $2")
     .replace(/[\s|:-]+$/, "")
     .replace(/^[\s|:-]+/, "")
     .replace(/\s+/g, " ")
@@ -32,7 +35,7 @@ export function generatePageMetadata({
   // If base title is too short (producing total length < 35 chars), enhance with keyword context
   if (baseTitle.length + " | Devopstrio".length < 35) {
     if (!/services|cloud|devops|ai|consulting|solutions|engineering|platform|privacy|terms|industry|marketing/i.test(baseTitle)) {
-      baseTitle = `${baseTitle} — Enterprise Cloud & AI`;
+      baseTitle = `${baseTitle} — Enterprise Cloud and AI`;
     } else {
       baseTitle = `${baseTitle} Solutions`;
     }
@@ -54,8 +57,11 @@ export function generatePageMetadata({
     displayTitle = `${baseTitle}${brand}`;
   }
 
-  // Ensure description is cleanly within 120-155 characters
-  let cleanDesc = description;
+  // Ensure description is cleanly within 120-155 characters and free of ampersands
+  let cleanDesc = description
+    .replace(/\s+&\s+/g, " and ")
+    .replace(/&amp;/gi, "and")
+    .replace(/([a-zA-Z0-9])&([a-zA-Z0-9])/g, "$1 and $2");
   if (cleanDesc.length > 155) {
     cleanDesc = cleanDesc.substring(0, 152).trim().replace(/[\s,.-]+$/, "") + "...";
   }

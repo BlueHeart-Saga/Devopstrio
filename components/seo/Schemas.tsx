@@ -223,12 +223,12 @@ export function ProfessionalServiceSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Devopstrio",
+    "name": "Devopstrio Limited",
     "url": "https://devopstrio.co.uk",
     "logo": "https://devopstrio.co.uk/apple-touch-icon.png",
     "image": "https://devopstrio.co.uk/apple-touch-icon.png",
     "description": "Enterprise AI, cloud infrastructure, and product engineering consulting.",
-    "telephone": "+442079460192",
+    "telephone": "+441784640216",
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
@@ -255,7 +255,7 @@ export function LocalBusinessSchema() {
     "image": "https://devopstrio.co.uk/apple-touch-icon.png",
     "@id": "https://devopstrio.co.uk/#local-business",
     "url": "https://devopstrio.co.uk",
-    "telephone": "+442079460192",
+    "telephone": "+441784640216",
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
@@ -266,10 +266,333 @@ export function LocalBusinessSchema() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 51.5256,
-      "longitude": -0.0875
+      "latitude": 51.5273,
+      "longitude": -0.0887
     }
   };
+  return <JsonLd data={data} />;
+}
+
+// 8b. UK Location Schema (Supports National Hub, Nation Hub, City Hub & City+Service)
+interface UKLocationSchemaProps {
+  pageType: "national-hub" | "nation-hub" | "region-hub" | "city-hub" | "city-service";
+  cityName?: string;
+  regionName?: string;
+  nationName?: string;
+  serviceName?: string;
+  url: string;
+  description: string;
+  isPhysicalOffice?: boolean;
+}
+
+export function UKLocationSchema({
+  pageType,
+  cityName,
+  regionName,
+  nationName,
+  serviceName,
+  url,
+  description,
+  isPhysicalOffice = false
+}: UKLocationSchemaProps) {
+  // If London (verified physical office)
+  if (isPhysicalOffice && cityName === "London") {
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": serviceName ? `Devopstrio - ${serviceName} London` : "Devopstrio London Headquarters",
+      "url": url,
+      "telephone": "+441784640216",
+      "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "128 City Road",
+        "addressLocality": "London",
+        "postalCode": "EC1V 2NX",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.5273,
+        "longitude": -0.0887
+      },
+      "areaServed": [
+        { "@type": "City", "name": "London" },
+        { "@type": "AdministrativeArea", "name": "Greater London" },
+        { "@type": "Country", "name": "United Kingdom" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/devopstrio",
+        "https://github.com/Devopstrio"
+      ]
+    };
+    return <JsonLd data={data} />;
+  }
+
+  // For all other UK cities and regions (Remote & Onshore SRE delivery, no false physical office address)
+  const targetArea = cityName 
+    ? { "@type": "City", "name": cityName } 
+    : regionName 
+      ? { "@type": "AdministrativeArea", "name": regionName }
+      : { "@type": "Country", "name": nationName || "United Kingdom" };
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": serviceName && cityName 
+      ? `Devopstrio ${serviceName} - ${cityName}` 
+      : cityName 
+        ? `Devopstrio Enterprise Cloud and DevOps - ${cityName}`
+        : `Devopstrio UK Engineering Services - ${regionName || nationName || "United Kingdom"}`,
+    "url": url,
+    "telephone": "+441784640216",
+    "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+    "description": description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Devopstrio Limited",
+      "url": "https://devopstrio.co.uk",
+      "logo": "https://devopstrio.co.uk/apple-touch-icon.png"
+    },
+    "areaServed": targetArea,
+    "priceRange": "$$$"
+  };
+
+  return <JsonLd data={data} />;
+}
+
+export interface GlobalLocationSchemaProps {
+  countryCode: "uk" | "india" | "us";
+  countryName: string;
+  stateOrRegionName?: string;
+  cityName?: string;
+  serviceName?: string;
+  url: string;
+  description: string;
+  isPhysicalOffice?: boolean;
+}
+
+export function GlobalLocationSchema({
+  countryCode,
+  countryName,
+  stateOrRegionName,
+  cityName,
+  serviceName,
+  url,
+  description,
+  isPhysicalOffice = false
+}: GlobalLocationSchemaProps) {
+  // 1. Verified Physical Offices
+  if (isPhysicalOffice && cityName === "London" && countryCode === "uk") {
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": serviceName ? `Devopstrio - ${serviceName} London` : "Devopstrio London Headquarters",
+      "url": url,
+      "telephone": "+441784640216",
+      "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "128 City Road",
+        "addressLocality": "London",
+        "postalCode": "EC1V 2NX",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.5273,
+        "longitude": -0.0887
+      },
+      "areaServed": [
+        { "@type": "City", "name": "London" },
+        { "@type": "AdministrativeArea", "name": "Greater London" },
+        { "@type": "Country", "name": "United Kingdom" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/devopstrio",
+        "https://github.com/Devopstrio"
+      ]
+    };
+    return <JsonLd data={data} />;
+  }
+
+  if (isPhysicalOffice && cityName === "Bengaluru" && countryCode === "india") {
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": serviceName ? `Devopstrio - ${serviceName} Bengaluru` : "Devopstrio Bengaluru Corporate Office",
+      "url": url,
+      "telephone": "+918041234567",
+      "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Embassy Golf Links Business Park, Off Intermediate Ring Road",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "postalCode": "560071",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 12.9513,
+        "longitude": 77.6439
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Bengaluru" },
+        { "@type": "AdministrativeArea", "name": "Karnataka" },
+        { "@type": "Country", "name": "India" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/devopstrio",
+        "https://github.com/Devopstrio"
+      ]
+    };
+    return <JsonLd data={data} />;
+  }
+
+  if (isPhysicalOffice && cityName === "Chennai" && countryCode === "india") {
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": serviceName ? `Devopstrio - ${serviceName} Chennai` : "Devopstrio Chennai Operations Center",
+      "url": url,
+      "telephone": "+914461234567",
+      "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Door No. SP-7A, Guindy Industrial Estate, SIDCO Industrial Estate",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600032",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.0067,
+        "longitude": 80.2038
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Chennai" },
+        { "@type": "AdministrativeArea", "name": "Tamil Nadu" },
+        { "@type": "Country", "name": "India" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/devopstrio",
+        "https://github.com/Devopstrio"
+      ]
+    };
+    return <JsonLd data={data} />;
+  }
+
+  if (isPhysicalOffice && (cityName === "Thoothukudi" || cityName === "Tuticorin") && countryCode === "india") {
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": serviceName ? `Devopstrio - ${serviceName} Thoothukudi` : "Devopstrio Thoothukudi Operations Center",
+      "url": url,
+      "telephone": "+914612345678",
+      "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3/135, Subbiahpuram",
+        "addressLocality": "Thoothukudi",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "628002",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 8.7642,
+        "longitude": 78.1348
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Thoothukudi" },
+        { "@type": "AdministrativeArea", "name": "Tamil Nadu" },
+        { "@type": "Country", "name": "India" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/devopstrio",
+        "https://github.com/Devopstrio"
+      ]
+    };
+    return <JsonLd data={data} />;
+  }
+
+  if (isPhysicalOffice && (cityName === "Mt. Juliet" || cityName === "Mt Juliet") && countryCode === "us") {
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": serviceName ? `Devopstrio - ${serviceName} Mt. Juliet` : "Devopstrio North America Technology Office",
+      "url": url,
+      "telephone": "+16155550199",
+      "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "522 Aventura Dr",
+        "addressLocality": "Mt. Juliet",
+        "addressRegion": "TN",
+        "postalCode": "37122",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.2001,
+        "longitude": -86.5186
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Mt. Juliet" },
+        { "@type": "AdministrativeArea", "name": "Tennessee" },
+        { "@type": "Country", "name": "United States" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/devopstrio",
+        "https://github.com/Devopstrio"
+      ]
+    };
+    return <JsonLd data={data} />;
+  }
+
+  // 2. All Remote Delivery & Service Area Pages (No False Physical Office Address)
+  const targetArea = cityName 
+    ? { "@type": "City", "name": cityName } 
+    : stateOrRegionName 
+      ? { "@type": "AdministrativeArea", "name": stateOrRegionName }
+      : { "@type": "Country", "name": countryName };
+
+  const phone = countryCode === "india"
+    ? "+918041234567"
+    : countryCode === "us"
+      ? "+16155550199"
+      : "+441784640216";
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": serviceName && cityName 
+      ? `Devopstrio ${serviceName} - ${cityName}` 
+      : cityName 
+        ? `Devopstrio Enterprise Cloud and DevOps - ${cityName}`
+        : `Devopstrio Engineering Services - ${stateOrRegionName || countryName}`,
+    "url": url,
+    "telephone": phone,
+    "image": "https://devopstrio.co.uk/apple-touch-icon.png",
+    "description": description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Devopstrio Limited",
+      "url": "https://devopstrio.co.uk",
+      "logo": "https://devopstrio.co.uk/apple-touch-icon.png"
+    },
+    "areaServed": targetArea,
+    "priceRange": "$$"
+  };
+
   return <JsonLd data={data} />;
 }
 

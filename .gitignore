@@ -38,3 +38,7 @@ next-env.d.ts
 /public/uploads/
 /data/local-marketing-db.json
 
+# scratch
+scratch/
+
+
