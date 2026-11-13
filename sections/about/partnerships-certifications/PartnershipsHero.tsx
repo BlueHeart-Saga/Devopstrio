@@ -41,18 +41,7 @@ export function PartnershipsHero() {
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 lg:px-12 relative z-10 flex flex-col justify-center text-left py-8 sm:py-12">
         <div className="max-w-2xl lg:max-w-3xl">
           
-          {/* Eyebrow Label - Subtle & Clean */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-3 mb-5 sm:mb-6"
-          >
-            <div className="w-8 h-[2px] bg-rose-600/70 rounded-full" />
-            <span className="text-xs sm:text-[13px] font-mono font-medium tracking-[0.2em] text-zinc-400 uppercase">
-              PARTNERSHIPS &amp; ENTERPRISE CERTIFICATIONS
-            </span>
-          </motion.div>
+          
 
           {/* Main Hero Headline - Elegant & Calm */}
           <motion.h1

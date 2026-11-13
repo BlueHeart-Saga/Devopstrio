@@ -112,7 +112,7 @@ export const consultingService: ServiceCategory = {
   industries: [
     "Finance: Transaction database architecture plans",
     "Healthcare: Patient data privacy subnet layouts",
-    "Logistics: Supply chain tracking systems advice"
+    "Retail & E-Commerce: Omni-channel retail architecture and catalog scalability"
   ],
   techStack: [
     { name: "Lucidchart / Draw.io", desc: "Enterprise architecture diagram utilities." },

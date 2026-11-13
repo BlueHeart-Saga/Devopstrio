@@ -9,17 +9,17 @@ const pillars = [
   {
     id: "credibility",
     title: "Credibility",
-    subtitle: "Recognized Standards & Client Trust",
+    subtitle: "Recognized Standards and Client Trust",
     description:
       "We align with leading hyperscalers and certified delivery frameworks that instill enterprise client confidence across every engagement.",
-    mainLink: "/about/partnerships-certifications#all-business-partners",
+    mainLink: "/about/awards-recognition",
     services: [
-      { name: "Platform Aligned Delivery", href: "/about/partnerships-certifications#strategic-partners" },
-      { name: "Certified Engineering Audits", href: "/about/partnerships-certifications#all-certifications" },
-      { name: "Enterprise Governance Standards", href: "/about/partnerships-certifications#all-certifications" },
-      { name: "Proven Client Security Alignment", href: "/about/partnerships-certifications#all-certifications" }
+      { name: "Platform Aligned Delivery", href: "/ecosystem/partnerships" },
+      { name: "Certified Engineering Audits", href: "/services/cybersecurity/security-assessment" },
+      { name: "Enterprise Governance Standards", href: "/services/cybersecurity/compliance-governance" },
+      { name: "Proven Client Security Alignment", href: "/services/cybersecurity" }
     ],
-    ctaHref: "/about/partnerships-certifications#strategic-partners"
+    ctaHref: "/ecosystem/partnerships"
   },
   {
     id: "capability",
@@ -27,29 +27,29 @@ const pillars = [
     subtitle: "Expanded Ecosystem Knowledge",
     description:
       "Our strategic technology alliances expand access to cutting-edge tools, cloud sandboxes, and modern integration architectures.",
-    mainLink: "/about/partnerships-certifications#all-tech-partners",
+    mainLink: "/ecosystem/technology-stack",
     services: [
-      { name: "Hyperscaler Cloud Tooling", href: "/about/partnerships-certifications#all-tech-partners" },
-      { name: "Advanced Automation Integrations", href: "/about/partnerships-certifications#all-tech-partners" },
-      { name: "Continuous Skill Specialization", href: "/about/partnerships-certifications#all-certifications" },
-      { name: "Next-Gen AI & Platform Stack", href: "/about/partnerships-certifications#all-tech-partners" }
+      { name: "Hyperscaler Cloud Tooling", href: "/services/cloud-services" },
+      { name: "Advanced Automation Integrations", href: "/services/devops-automation" },
+      { name: "Continuous Skill Specialization", href: "/ecosystem/community-talent-network/certification-programs" },
+      { name: "Next-Gen AI and Platform Stack", href: "/services/ai-data-innovation" }
     ],
-    ctaHref: "/about/partnerships-certifications#all-tech-partners"
+    ctaHref: "/ecosystem/technology-stack"
   },
   {
     id: "consistency",
     title: "Consistency",
-    subtitle: "Repeatable Quality & Execution",
+    subtitle: "Repeatable Quality and Execution",
     description:
       "Certification-led engineering standards and structured release frameworks support reliable, predictable project outcomes.",
-    mainLink: "/about/partnerships-certifications#all-certifications",
+    mainLink: "/ecosystem/engineering-excellence",
     services: [
-      { name: "Structured DevOps Pipelines", href: "/services/devops-automation" },
-      { name: "ISO & Security Readiness", href: "/about/partnerships-certifications#all-certifications" },
-      { name: "Disciplined QA & Release Standards", href: "/services/qa-testing" },
+      { name: "Structured DevOps Pipelines", href: "/services/devops-automation/cicd-implementation" },
+      { name: "ISO and Security Readiness", href: "/about/awards-recognition" },
+      { name: "Disciplined QA and Release Standards", href: "/services/qa-testing" },
       { name: "Long-Term Operational Support", href: "/services/managed-services" }
     ],
-    ctaHref: "/about/partnerships-certifications#all-certifications"
+    ctaHref: "/ecosystem/engineering-excellence"
   }
 ];
 

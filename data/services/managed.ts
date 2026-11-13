@@ -123,7 +123,7 @@ export const managedService: ServiceCategory = {
   industries: [
     "Healthcare: Patient portal hosting and HIPAA audit compliance",
     "Finance: Transaction database monitoring and security",
-    "Logistics: Fleet coordinate server uptime"
+    "Retail & E-Commerce: High-traffic storefront uptime and SRE monitoring"
   ],
   techStack: [
     { name: "Prometheus / Datadog", desc: "Telemetry monitoring and alert systems." },

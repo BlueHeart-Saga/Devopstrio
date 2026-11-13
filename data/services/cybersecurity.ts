@@ -112,7 +112,7 @@ export const cybersecurityService: ServiceCategory = {
   industries: [
     "Finance: Transaction ledger tokenization and payment security",
     "Healthcare: Patient clinical record HIPAA subnets",
-    "SaaS: Cloud identity federation and MFA protection"
+    "Retail & E-Commerce: Secure checkout cryptography and customer account protections"
   ],
   techStack: [
     { name: "Wiz / Prisma Cloud", desc: "Cloud security posture managers." },

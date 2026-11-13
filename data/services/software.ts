@@ -110,9 +110,9 @@ export const softwareService: ServiceCategory = {
     "Declarative API integration matching client system specs"
   ],
   industries: [
-    "E-commerce: Headless cart frontends and checkout APIs",
-    "Logistics: Real-time map routes and cargo tracking",
-    "EdTech: Collaborative class portals and grade logs"
+    "Retail & E-Commerce: Headless storefronts, cart engines, and checkout APIs",
+    "Banking & Finance: Secure web applications, payment gateways, and banking portals",
+    "Healthcare & Life Sciences: Telemedicine portals, clinician dashboards, and EHR integrations"
   ],
   techStack: [
     { name: "Next.js / TypeScript", desc: "Fast React framework for web apps." },

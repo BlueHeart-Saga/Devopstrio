@@ -111,7 +111,7 @@ export default function ContactPage() {
 
         {/* 1:1 Consultation & Live Demo Scheduler */}
         <div id="schedule" className="relative z-10 bg-black scroll-mt-24">
-          <span id="schedule-call" className="block -mt-24 pt-24 pointer-events-none" />
+          <div id="schedule-call" className="scroll-mt-24" />
           <BookConsultation />
         </div>
 

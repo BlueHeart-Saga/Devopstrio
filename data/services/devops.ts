@@ -110,9 +110,9 @@ export const devopsService: ServiceCategory = {
     "Instant developer workspace creation via self-service APIs"
   ],
   industries: [
-    "Software: Multi-tenant SaaS hosting and release automation",
-    "Logistics: Real-time container routing and server scaling",
-    "Healthcare: Patient data anonymization pipeline checks"
+    "Banking & Finance: Automated compliance pipelines and PCI-DSS deployment controls",
+    "Retail & E-Commerce: Peak-traffic auto-scaling and zero-downtime release pipelines",
+    "Healthcare & Life Sciences: HIPAA-compliant automated delivery pipelines and data security checks"
   ],
   techStack: [
     { name: "GitLab / GitHub Actions", desc: "Core code integration engines." },

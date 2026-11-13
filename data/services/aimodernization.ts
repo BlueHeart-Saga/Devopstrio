@@ -110,9 +110,9 @@ export const aiModernizationService: ServiceCategory = {
     "Up to 60% reduction in legacy maintenance technical debt"
   ],
   industries: [
-    "Insurance: AI-automated claims processing & document ingestion",
-    "Banking: Core banking modernization with intelligent fraud agents",
-    "Supply Chain: Predictive logistics & automated inventory management"
+    "Banking & Finance: Core banking modernization with intelligent fraud agents",
+    "Healthcare & Life Sciences: Patient clinical record automation and predictive diagnostics",
+    "Retail & E-Commerce: Predictive logistics, dynamic pricing, and automated inventory management"
   ],
   techStack: [
     { name: "FastAPI / Node.js", desc: "High-performance AI API middleware." },

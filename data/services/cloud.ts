@@ -85,7 +85,7 @@ export const cloudService: ServiceCategory = {
     "100% adherence to cloud security posture benchmarks"
   ],
   industries: [
-    "Logistics: Global fleet tracking databases and container routers",
+    "Retail & E-Commerce: Peak-traffic auto-scaling, distributed catalog cache, and high-availability storefronts",
     "Finance: High-frequency ledger hosting inside private subnets",
     "Government: GovCloud migrations and secure Row-Level Security PostgreSQL"
   ],

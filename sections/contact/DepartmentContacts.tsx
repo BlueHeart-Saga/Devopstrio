@@ -21,7 +21,7 @@ export function DepartmentContacts() {
   };
 
   return (
-    <section id="department-contacts" className="w-full py-12 md:py-16 bg-[#030303] text-white relative overflow-hidden font-sans">
+    <section id="department-contacts" className="w-full pt-12 md:pt-16 pb-16 md:pb-24 bg-[#030303] text-white relative overflow-hidden font-sans">
       
       {/* Ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-rose-950/10 rounded-full blur-[140px] pointer-events-none" />

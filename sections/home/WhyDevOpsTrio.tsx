@@ -14,12 +14,12 @@ const corePoints = [
     desc: "Access world-class engineering expertise locally with global delivery teams designed to scale seamlessly under flexible engagement models.",
     gradient: "from-rose-950/40 via-purple-950/30 to-zinc-950/80",
     image: "/webp/assets/Home-page/whychoose/globalpresence.webp",
-    href: "/about"
+    href: "/about/global-presence"
   },
   {
     num: "02",
-    tabName: "Cloud, Data & AI Excellence",
-    title: "Cloud, Data & AI Excellence",
+    tabName: "Cloud, Data and AI Excellence",
+    title: "Cloud, Data and AI Excellence",
     desc: "Leverage intelligence-driven automation, GenAI, and cloud platforms (Azure, AWS, GCP) to unlock next-generation product engineering.",
     gradient: "from-blue-950/40 via-indigo-950/30 to-zinc-950/80",
     image: "/webp/assets/Home-page/whychoose/cloudai.webp",
@@ -32,7 +32,7 @@ const corePoints = [
     desc: "We align every project outcome with direct business value, performance milestones, cost-efficiency metrics, and operational goals.",
     gradient: "from-teal-950/40 via-emerald-950/30 to-zinc-950/80",
     image: "/webp/assets/Home-page/whychoose/outcome.webp",
-    href: "/about"
+    href: "/services/digital-transformation"
   },
   {
     num: "04",
@@ -41,7 +41,7 @@ const corePoints = [
     desc: "From conceptualization, design, architecture, implementation to managed operations and continuous delivery—all managed under one strategic partner.",
     gradient: "from-emerald-950/40 via-zinc-900/30 to-zinc-950/80",
     image: "/webp/assets/Home-page/whychoose/technology.webp",
-    href: "/ecosystem/global-delivery"
+    href: "/services/software-development"
   },
   {
     num: "05",
@@ -54,8 +54,8 @@ const corePoints = [
   },
   {
     num: "06",
-    tabName: "Enterprise-Grade Security & Reliability",
-    title: "Enterprise-Grade Security & Reliability",
+    tabName: "Enterprise-Grade Security and Reliability",
+    title: "Enterprise-Grade Security and Reliability",
     desc: "Zero-trust environments, compliance guardrails, automated threat-detection, and highly reliable Site Reliability Engineering built into every delivery.",
     gradient: "from-violet-950/40 via-fuchsia-950/30 to-zinc-950/80",
     image: "/webp/assets/Home-page/whychoose/gradesecurity.webp",
@@ -77,12 +77,12 @@ const corePoints = [
     desc: "We focus on long-term relationships, strategic consulting, knowledge-sharing, and continuous value creation beyond transactional contracts.",
     gradient: "from-rose-950/40 via-orange-950/30 to-zinc-950/80",
     image: "/webp/assets/Home-page/whychoose/partnership.webp",
-    href: "/about"
+    href: "/about/partnerships-certifications"
   }
 ];
 
 const checklist = [
-  "AI & Cloud Specialists",
+  "AI and Cloud Specialists",
   "Enterprise-Grade Security",
   "Infrastructure Automation Experts",
   "Modern Software Engineering",

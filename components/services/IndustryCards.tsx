@@ -12,19 +12,19 @@ export interface IndustryCardsProps {
 function getOfficialIndustryInfo(title: string) {
   const lower = title.toLowerCase();
   
-  if (lower.includes("bank") || lower.includes("financ")) {
+  if (lower.includes("bank") || lower.includes("financ") || lower.includes("insur")) {
     return {
       slug: "banking-finance",
       name: "Banking & Finance"
     };
   }
-  if (lower.includes("retail") || lower.includes("commerce") || lower.includes("logistics")) {
+  if (lower.includes("retail") || lower.includes("commerce") || lower.includes("store")) {
     return {
       slug: "retail-ecommerce",
       name: "Retail & E-Commerce"
     };
   }
-  if (lower.includes("health") || lower.includes("life") || lower.includes("med")) {
+  if (lower.includes("health") || lower.includes("life") || lower.includes("med") || lower.includes("clinic")) {
     return {
       slug: "healthcare-life-sciences",
       name: "Healthcare & Life Sciences"
@@ -36,7 +36,7 @@ function getOfficialIndustryInfo(title: string) {
       name: "Manufacturing"
     };
   }
-  if (lower.includes("media") || lower.includes("entertain")) {
+  if (lower.includes("media") || lower.includes("entertain") || lower.includes("broadcast")) {
     return {
       slug: "media-entertainment",
       name: "Media & Entertainment"
@@ -48,10 +48,22 @@ function getOfficialIndustryInfo(title: string) {
       name: "Telecommunications"
     };
   }
-  if (lower.includes("educat")) {
+  if (lower.includes("educat") || lower.includes("edtech") || lower.includes("learn") || lower.includes("school")) {
     return {
       slug: "education",
       name: "Education"
+    };
+  }
+  if (lower.includes("govern") || lower.includes("public")) {
+    return {
+      slug: "government-public-sector",
+      name: "Government & Public Sector"
+    };
+  }
+  if (lower.includes("logistics")) {
+    return {
+      slug: "retail-ecommerce",
+      name: "Retail & E-Commerce"
     };
   }
   
@@ -62,6 +74,38 @@ function getOfficialIndustryInfo(title: string) {
 }
 
 export function IndustryCards({ industries }: IndustryCardsProps) {
+  // Deduplicate industries by official slug and ensure exactly 3 distinct cards
+  const seenSlugs = new Set<string>();
+  const uniqueList: Array<{ slug: string; name: string }> = [];
+
+  (industries || []).forEach((item) => {
+    const parts = item.split(":");
+    const rawTitle = parts[0] || "Sector Specialization";
+    const info = getOfficialIndustryInfo(rawTitle);
+    if (!seenSlugs.has(info.slug)) {
+      seenSlugs.add(info.slug);
+      uniqueList.push(info);
+    }
+  });
+
+  const fallbackPool = [
+    { slug: "banking-finance", name: "Banking & Finance" },
+    { slug: "healthcare-life-sciences", name: "Healthcare & Life Sciences" },
+    { slug: "retail-ecommerce", name: "Retail & E-Commerce" },
+    { slug: "manufacturing", name: "Manufacturing" },
+    { slug: "education", name: "Education" },
+    { slug: "government-public-sector", name: "Government & Public Sector" }
+  ];
+
+  for (const fallback of fallbackPool) {
+    if (uniqueList.length >= 3) break;
+    if (!seenSlugs.has(fallback.slug)) {
+      seenSlugs.add(fallback.slug);
+      uniqueList.push(fallback);
+    }
+  }
+
+  const displayIndustries = uniqueList.slice(0, 3);
   const getIcon = (slug: string) => {
     let src = "/webp/assets/Home-page/industries-icon/Finacial.webp";
 
@@ -107,14 +151,9 @@ export function IndustryCards({ industries }: IndustryCardsProps) {
 
         {/* Cards Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {industries.map((item, idx) => {
-            const parts = item.split(":");
-            const rawTitle = parts[0] || "Sector Specialization";
-            const desc = parts.slice(1).join(":") || "";
-            const { slug, name } = getOfficialIndustryInfo(rawTitle);
-
+          {displayIndustries.map(({ slug, name }, idx) => {
             return (
-              <Reveal key={idx} delay={idx * 0.03} className="h-full">
+              <Reveal key={slug} delay={idx * 0.03} className="h-full">
                 <Link
                   href={`/industries/${slug}`}
                   className="group flex flex-col justify-between h-full bg-zinc-950/40 border border-white/5 rounded-3xl p-8 hover:border-rose-500/35 hover:bg-zinc-950/60 transition-all duration-300 hover:scale-[1.01] text-center relative overflow-hidden cursor-pointer backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
