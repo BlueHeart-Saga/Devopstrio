@@ -12,23 +12,23 @@ export function LocationDeliveryModel({ locationName = "the UK" }: LocationDeliv
   const pillars = [
     {
       icon: ShieldCheck,
-      title: "UK Sovereign Data and Hosting",
-      desc: "All client workloads, transactional records, and telemetry are provisioned inside UK sovereign cloud data centers (AWS London, Azure UK South, GCP europe-west2) with zero unauthorized cross-border data transfer."
+      title: "Sovereign In-Region Data Hosting",
+      desc: "Client workloads, databases, and operational logs are provisioned inside regional sovereign cloud availability zones (AWS, Microsoft Azure, and GCP) in full alignment with local data residency mandates."
     },
     {
       icon: Clock,
       title: "24/7 Follow-the-Sun SRE Support",
-      desc: "London-led architecture and governance combined with follow-the-sun engineering delivery centers providing uninterrupted 24/7 cluster monitoring, automated patching, and proactive incident response."
+      desc: "Senior solutions architects lead governance and technical scoping, supported by follow-the-sun engineering delivery centers providing continuous cluster monitoring, automated maintenance, and incident escalation."
     },
     {
       icon: Lock,
-      title: "UK Regulatory and Security Alignment",
-      desc: "Our engineering practices satisfy Cyber Essentials Plus, ISO 27001, SOC-2 Type II, and UK GDPR data protection standards, with specialized readiness frameworks for NHS DTAC and FCA operational resilience."
+      title: "Enterprise Regulatory Alignment",
+      desc: "Our architectures are designed to align with ISO 27001, SOC-2 Type II, Cyber Essentials Plus, and local privacy frameworks, including UK GDPR, the Indian DPDP Act, and US HIPAA standards."
     },
     {
       icon: Server,
-      title: "Guaranteed SLA Incident Desks",
-      desc: "Direct access to senior cloud architects and SREs with strict contract-backed response targets: P1 critical outage triage under 15 minutes and 99.99% infrastructure uptime guarantees."
+      title: "Contractual Enterprise SLA Desks",
+      desc: "Direct access to senior cloud architects and SREs with contract-backed response targets, prioritizing rapid critical outage triage and reliable high-availability uptime commitments."
     }
   ];
 

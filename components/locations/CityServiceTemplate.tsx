@@ -24,7 +24,7 @@ import { LocationCTA } from "./LocationCTA";
 import { Reveal } from "@/components/ui/Reveal";
 import BorderGlow from "@/components/ui/BorderGlow";
 import { getEnrichedCityServiceFaqs, getExactServiceKeyword } from "@/lib/location-content";
-import { normalizeDisplayText } from "@/lib/text-utils";
+import { normalizeDisplayText, getCityServiceHeroDescription } from "@/lib/text-utils";
 
 export interface RelatedServiceItem {
   slug: string;
@@ -104,8 +104,8 @@ export function CityServiceTemplate({
     },
     {
       title: "24/7 SRE and Incident Governance",
-      description: `Follow-the-sun site reliability engineering with guaranteed sub-15-minute response times for critical production outages.`,
-      items: ["Contractual P1 SLAs (<15m)", "Proactive synthetic monitoring", "Automated self-healing scripts"]
+      description: `Follow-the-sun site reliability engineering with contractual SLA response targets for critical production incidents.`,
+      items: ["Contractual Rapid P1 SLAs", "Proactive synthetic monitoring", "Automated self-healing scripts"]
     },
     {
       title: "Regulatory Compliance and Security",
@@ -130,27 +130,30 @@ export function CityServiceTemplate({
   // Ensure minimum 8-10 FAQs
   const displayFaqs = getEnrichedCityServiceFaqs(sm, service, cityName, countryCode, countryName);
 
-  // Generate simple, high-impact SEO sentence for hero title using the exact 10 user-specified keywords
+  // Generate simple, high-impact SEO sentence for hero title using the single exact service keyword
+  const serviceHeadingKeyword = normalizeDisplayText(getExactServiceKeyword(sm.serviceSlug, service?.title));
+
   const formatHeroTitle = () => {
-    const rawKeyword = getExactServiceKeyword(sm.serviceSlug, service?.title || sm.h1Title);
-    const keyword = normalizeDisplayText(rawKeyword);
     return (
       <>
-        {keyword} Near Me in <span className="text-rose-500">{cityName}</span>
+        {serviceHeadingKeyword} Near Me in <span className="text-rose-500">{cityName}</span>
       </>
     );
   };
 
-  const serviceHeadingKeyword = normalizeDisplayText(getExactServiceKeyword(sm.serviceSlug, service?.title || sm.h1Title));
+  const heroSubtitle = getCityServiceHeroDescription(sm.serviceSlug, cityName);
   const serviceTitleClean = normalizeDisplayText(service?.title || sm.h1Title);
 
   return (
     <main className="min-h-screen bg-black text-white font-sans">
       {/* =========================================================================
-          SECTION 1 & 2: BREADCRUMBS & PREMIUM SEO HERO WITH ONE H1
+          SECTION 1 AND 2: BREADCRUMBS AND PREMIUM SEO HERO WITH ONE H1
           ========================================================================= */}
       <LocationHero
         title={formatHeroTitle()}
+        subtitle={heroSubtitle}
+        locationName={cityName}
+        countryCode={countryCode}
         breadcrumbs={breadcrumbs}
         officeStatus={officeStatus}
         verifiedAddress={addressString}
@@ -180,7 +183,7 @@ export function CityServiceTemplate({
               <div className="space-y-2.5 pt-1">
                 <div className="flex items-center gap-2.5 text-sm text-zinc-300">
                   <CheckCircle2 size={16} className="text-rose-500 shrink-0" />
-                  <span>Sub-15-minute P1 incident triage with 24/7 follow-the-sun SRE operations</span>
+                  <span>Contractual P1 incident response with 24/7 follow-the-sun SRE operations</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-sm text-zinc-300">
                   <CheckCircle2 size={16} className="text-rose-500 shrink-0" />
@@ -493,7 +496,7 @@ export function CityServiceTemplate({
                       Enterprise Regional Service Area
                     </div>
                     <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                      Delivered through dedicated senior engineering pods with 24/7 continuous operations, sub-15-minute P1 incident response, and sovereign cloud architecture.
+                      Delivered through dedicated senior engineering pods with 24/7 continuous operations, contract-backed P1 incident response, and sovereign cloud architecture.
                     </p>
                   </>
                 )}

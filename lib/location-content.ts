@@ -128,11 +128,14 @@ export function resolveLocationRoute(segments: string[]): ResolvedLocationPath |
     }
 
     if (regionDirect && regionDirect.nation === nation.id) {
+      const isRedundantNationRegion = regionDirect.nation === regionDirect.slug;
       return {
-        type: "region-hub",
+        type: isRedundantNationRegion ? "nation-hub" : "region-hub",
         nation,
         region: regionDirect,
-        canonicalPath: `/locations/uk/${nationSlug}/${regionDirect.slug}`
+        canonicalPath: isRedundantNationRegion
+          ? `/locations/uk/${nationSlug}`
+          : `/locations/uk/${nationSlug}/${regionDirect.slug}`
       };
     }
 
@@ -245,10 +248,35 @@ export function getPublishedCityServices(): LocationServiceMapping[] {
 }
 
 export function getNearbyLocations(location: UKLocation): UKLocation[] {
-  return (location.nearbyLocationIds || [])
+  const publishedCities = Object.values(ukLocations).filter(
+    loc => loc.publicationStatus === "published" && loc.slug !== location.slug
+  );
+
+  // 1. Gather explicitly mapped nearby locations that are published
+  const explicitPublished = (location.nearbyLocationIds || [])
     .map(id => ukLocations[id])
-    .filter(Boolean)
-    .slice(0, 6);
+    .filter((loc): loc is UKLocation => Boolean(loc && loc.publicationStatus === "published"));
+
+  if (explicitPublished.length >= 4) {
+    return explicitPublished.slice(0, 6);
+  }
+
+  // 2. Supplement with published cities in the same region
+  const sameRegion = publishedCities.filter(
+    loc => loc.region === location.region && !explicitPublished.some(e => e.id === loc.id)
+  );
+
+  // 3. Supplement with published cities in the same nation
+  const sameNation = publishedCities.filter(
+    loc => loc.nation === location.nation && !explicitPublished.some(e => e.id === loc.id) && !sameRegion.some(r => r.id === loc.id)
+  );
+
+  // 4. Fallback to other published UK cities
+  const others = publishedCities.filter(
+    loc => !explicitPublished.some(e => e.id === loc.id) && !sameRegion.some(r => r.id === loc.id) && !sameNation.some(n => n.id === loc.id)
+  );
+
+  return [...explicitPublished, ...sameRegion, ...sameNation, ...others].slice(0, 6);
 }
 
 export function getBreadcrumbsForResolvedPath(resolved: ResolvedLocationPath): { label: string; href?: string }[] {
@@ -419,8 +447,8 @@ export function getEnrichedCityServiceFaqs(
       a: `We provide certified architecture and continuous delivery across AWS, Microsoft Azure, and Google Cloud Platform (GCP). Our engineers automate infrastructure as code using Terraform and OpenTofu, configure GitOps pipelines, and implement containerized workloads with Kubernetes.`
     },
     {
-      q: `What incident response and uptime SLAs do you guarantee for ${serviceTitle} in ${cityName}?`,
-      a: `All enterprise contracts feature guaranteed sub-15-minute response times for critical P1 outages, 99.99% infrastructure availability SLAs, and continuous telemetry monitoring by our 24/7/365 follow-the-sun SRE operations.`
+      q: `What incident response and uptime SLAs are available for ${serviceTitle} in ${cityName}?`,
+      a: `All enterprise contracts can be backed by formal Service Level Agreements (SLAs) featuring contractual rapid response targets for critical P1 incidents, robust high-availability infrastructure uptime commitments, and proactive continuous telemetry monitoring by our follow-the-sun SRE operations.`
     },
     {
       q: `How does Devopstrio ensure data residency and compliance for ${serviceTitle} in ${cityName}?`,

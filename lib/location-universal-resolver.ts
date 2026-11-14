@@ -113,7 +113,7 @@ export function resolveUniversalLocationSlug(slug: string): ResolvedUniversalSer
           const exactKeyword = getExactServiceKeyword(m.serviceSlug, s?.title || m.h1Title);
           return {
             slug: m.serviceSlug,
-            title: normalizeDisplayText(`${exactKeyword} Near Me in ${indiaCity.displayName}`),
+            title: normalizeDisplayText(`${exactKeyword} in ${indiaCity.displayName}`),
             subtitle: normalizeDisplayText(s?.subtitle || m.metaDescription),
             href: getLocationServiceUrl("india", indiaCity.slug, m.serviceSlug)
           };
@@ -167,7 +167,7 @@ export function resolveUniversalLocationSlug(slug: string): ResolvedUniversalSer
           const exactKeyword = getExactServiceKeyword(m.serviceSlug, s?.title || m.h1Title);
           return {
             slug: m.serviceSlug,
-            title: normalizeDisplayText(`${exactKeyword} Near Me in ${ukCity.displayName}`),
+            title: normalizeDisplayText(`${exactKeyword} in ${ukCity.displayName}`),
             subtitle: normalizeDisplayText(s?.subtitle || m.metaDescription),
             href: getLocationServiceUrl("uk", ukCity.slug, m.serviceSlug)
           };
@@ -221,7 +221,7 @@ export function resolveUniversalLocationSlug(slug: string): ResolvedUniversalSer
           const exactKeyword = getExactServiceKeyword(m.serviceSlug, s?.title || m.h1Title);
           return {
             slug: m.serviceSlug,
-            title: normalizeDisplayText(`${exactKeyword} Near Me in ${usCity.displayName}`),
+            title: normalizeDisplayText(`${exactKeyword} in ${usCity.displayName}`),
             subtitle: normalizeDisplayText(s?.subtitle || m.metaDescription),
             href: getLocationServiceUrl("us", usCity.slug, m.serviceSlug)
           };

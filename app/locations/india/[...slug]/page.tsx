@@ -28,7 +28,13 @@ import { LocationDeliveryModel } from "@/components/locations/LocationDeliveryMo
 import { LocationFAQ } from "@/components/locations/LocationFAQ";
 import { LocationCTA } from "@/components/locations/LocationCTA";
 import { getLocationServiceUrl } from "@/lib/location-urls";
-import { normalizeDisplayText } from "@/lib/text-utils";
+import {
+  normalizeDisplayText,
+  getCityHubHeadingPrefix,
+  getCityHubHeroDescription,
+  getStateHubPrimaryService,
+  getStateHubHeroDescription
+} from "@/lib/text-utils";
 import { Reveal } from "@/components/ui/Reveal";
 import BorderGlow from "@/components/ui/BorderGlow";
 
@@ -94,8 +100,15 @@ export default async function IndiaLocationCatchAllPage({ params }: PageProps) {
         <FAQSchema faqs={stateFaqs} />
 
         <LocationHero
-          locationName={normalizeDisplayText(state.name)}
-          nearMeConnector="Near Me in"
+          title={
+            <>
+              {getStateHubPrimaryService(state.name, "india")} Near Me in{" "}
+              <span className="text-rose-500">{normalizeDisplayText(state.name)}</span>
+            </>
+          }
+          subtitle={getStateHubHeroDescription(state.name, "india")}
+          locationName={state.name}
+          countryCode="india"
           breadcrumbs={breadcrumbs}
         />
 
@@ -139,7 +152,7 @@ export default async function IndiaLocationCatchAllPage({ params }: PageProps) {
                       Corporate and Operations Delivery Centers
                     </h3>
                     <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                      Supported directly by Devopstrio&apos;s verified corporate center in Bengaluru and 24/7 operations center in Thoothukudi, ensuring sub-15-minute P1 incident response SLAs.
+                      Supported directly by Devopstrio&apos;s verified corporate center in Bengaluru and 24/7 operations center in Thoothukudi, ensuring rapid P1 incident triage and reliable high-availability uptime commitments.
                     </p>
                   </div>
 
@@ -212,8 +225,15 @@ export default async function IndiaLocationCatchAllPage({ params }: PageProps) {
         <FAQSchema faqs={cityFaqs} />
 
         <LocationHero
-          locationName={normalizeDisplayText(loc.displayName)}
-          nearMeConnector="Near Me in"
+          title={
+            <>
+              {getCityHubHeadingPrefix(loc.displayName, "india")} in{" "}
+              <span className="text-rose-500">{normalizeDisplayText(loc.displayName)}</span>
+            </>
+          }
+          subtitle={getCityHubHeroDescription(loc.displayName, "india")}
+          locationName={loc.displayName}
+          countryCode="india"
           breadcrumbs={breadcrumbs}
           officeStatus={loc.officeStatus}
           verifiedAddress={loc.verifiedAddress?.streetAddress ? `${loc.verifiedAddress.streetAddress}, ${loc.verifiedAddress.locality}` : undefined}
@@ -305,7 +325,7 @@ export default async function IndiaLocationCatchAllPage({ params }: PageProps) {
       const exactKeyword = getExactServiceKeyword(m.serviceSlug, s?.title || m.h1Title);
       return {
         slug: m.serviceSlug,
-        title: normalizeDisplayText(`${exactKeyword} Near Me in ${loc.displayName}`),
+        title: normalizeDisplayText(`${exactKeyword} in ${loc.displayName}`),
         subtitle: normalizeDisplayText(s?.subtitle || m.metaDescription),
         href: getLocationServiceUrl("india", loc.slug, m.serviceSlug)
       };

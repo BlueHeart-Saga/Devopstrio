@@ -257,7 +257,7 @@ export const indiaLocations: Record<string, GlobalLocation> = {
     deliveryHighlights: [
       "Physical Corporate Office in Embassy Golf Links Business Park, Bengaluru",
       "Direct certified partner engineering across Azure, AWS, and GCP Indian sovereign regions",
-      "Follow-the-sun 24/7 SRE monitoring with guaranteed <15m P1 critical triage",
+      "Follow-the-sun 24/7 SRE monitoring with contractual P1 critical triage SLAs",
       "SOC-2 Type II, ISO 27001, and Indian Digital Personal Data Protection (DPDP) aligned"
     ]
   },
@@ -360,7 +360,7 @@ export const indiaLocations: Record<string, GlobalLocation> = {
     },
     deliveryHighlights: [
       "Rigorous compliance with Reserve Bank of India (RBI) and SEBI cloud security mandates",
-      "Sub-15-minute P1 incident response backed by 24/7 follow-the-sun SRE operations",
+      "Rapid P1 incident response backed by 24/7 follow-the-sun SRE operations",
       "CREST-aligned penetration testing and Zero-Trust identity federation",
       "Financial data isolation within Mumbai AWS (ap-south-1) and Azure Central India"
     ]
@@ -424,7 +424,7 @@ export const indiaLocations: Record<string, GlobalLocation> = {
       "Cross-state multi-cloud landing zones with sovereign Delhi-area data residency",
       "Zero-Trust cybersecurity architecture aligned with Indian CERT-In guidelines",
       "Production-ready Generative AI agents deployed within private enterprise VPCs",
-      "24/7 follow-the-sun incident desks with sub-15-minute SLA commitments"
+      "24/7 follow-the-sun incident desks with contractual SLA commitments"
     ]
   },
 

@@ -1,16 +1,23 @@
 import { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo-utils";
 import { ResolvedGlobalLocationPath } from "@/lib/location-content-global";
-import { normalizeDisplayText } from "@/lib/text-utils";
+import {
+  normalizeDisplayText,
+  getCityHubPrimaryService,
+  getStateHubPrimaryService,
+  getCityServiceHeroDescription
+} from "@/lib/text-utils";
+import { getExactServiceKeyword } from "@/lib/keyword-utils";
 
 export function generateGlobalLocationMetadata(resolved: ResolvedGlobalLocationPath): Metadata {
   switch (resolved.type) {
     case "global-hub":
       return generatePageMetadata({
-        title: "Global Enterprise Technology and Cloud Delivery Hubs | Devopstrio",
-        description: "Devopstrio delivers 24/7 enterprise cloud engineering, automated DevOps, and Generative AI across the United Kingdom, India, and the United States.",
+        title: "Managed Cloud Services Worldwide | Devopstrio",
+        description: "Explore Devopstrio's worldwide cloud-native engineering, 24/7 managed SRE, and AI innovation directory across the United Kingdom, India, and the United States.",
         path: "/locations",
         keywords: [
+          "Managed Cloud Services Worldwide",
           "Global DevOps Consulting",
           "Enterprise Cloud Management",
           "Devopstrio Locations",
@@ -22,26 +29,33 @@ export function generateGlobalLocationMetadata(resolved: ResolvedGlobalLocationP
 
     case "country-hub":
       if (!resolved.country) break;
+      const isIndia = resolved.country.slug === "india";
+      const svc = isIndia ? "Managed Cloud Services" : "Cloud Services";
       return generatePageMetadata({
-        title: normalizeDisplayText(resolved.country.metaTitle),
-        description: normalizeDisplayText(resolved.country.metaDescription),
+        title: `${svc} ${normalizeDisplayText(resolved.country.name)} | Devopstrio`,
+        description: `Explore ${svc.toLowerCase()} for businesses in ${normalizeDisplayText(resolved.country.name)}, including AWS, Azure, monitoring, cloud migration and DevOps engineering.`,
         path: resolved.canonicalPath,
         keywords: [
+          `${svc} ${resolved.country.name}`,
           `Enterprise Cloud ${resolved.country.name}`,
           `DevOps Consulting ${resolved.country.name}`,
           `Managed SRE ${resolved.country.name}`,
-          `AI Solutions ${resolved.country.name}`,
           `Devopstrio ${resolved.country.name}`
         ]
       });
 
     case "state-hub":
       if (!resolved.stateOrRegion) break;
+      const stateSvc = getStateHubPrimaryService(
+        resolved.stateOrRegion.name,
+        resolved.country?.slug as any
+      );
       return generatePageMetadata({
-        title: normalizeDisplayText(resolved.stateOrRegion.metaTitle),
-        description: normalizeDisplayText(resolved.stateOrRegion.metaDescription),
+        title: `${stateSvc} ${normalizeDisplayText(resolved.stateOrRegion.name)} | Devopstrio`,
+        description: `Explore ${stateSvc.toLowerCase()} for businesses across ${normalizeDisplayText(resolved.stateOrRegion.name)}, including cloud migration, architecture, security and 24/7 managed IT solutions.`,
         path: resolved.canonicalPath,
         keywords: [
+          `${stateSvc} ${resolved.stateOrRegion.name}`,
           `Cloud Services ${resolved.stateOrRegion.name}`,
           `DevOps ${resolved.stateOrRegion.name}`,
           `Managed IT ${resolved.stateOrRegion.name}`,
@@ -51,34 +65,40 @@ export function generateGlobalLocationMetadata(resolved: ResolvedGlobalLocationP
 
     case "city-hub":
       if (!resolved.location) break;
+      const citySvc = getCityHubPrimaryService(
+        resolved.location.displayName,
+        resolved.country?.slug as any
+      );
       return generatePageMetadata({
-        title: normalizeDisplayText(
-          resolved.location.metaTitle || `${resolved.location.displayName} Cloud, DevOps and AI Services | Devopstrio`
-        ),
-        description: normalizeDisplayText(
-          resolved.location.metaDescription || resolved.location.shortDescription
-        ),
+        title: `${citySvc} ${normalizeDisplayText(resolved.location.displayName)} | Devopstrio`,
+        description: `Explore ${citySvc.toLowerCase()} for ${normalizeDisplayText(resolved.location.displayName)} businesses, covering cloud infrastructure, migration, monitoring and enterprise security solutions.`,
         path: resolved.canonicalPath,
         keywords: [
+          `${citySvc} ${resolved.location.displayName}`,
           `DevOps ${resolved.location.displayName}`,
           `Cloud Services ${resolved.location.displayName}`,
           `Managed IT ${resolved.location.displayName}`,
-          `AI Services ${resolved.location.displayName}`,
           ...(resolved.location.economicProfile?.dominantIndustries || []).map(d => normalizeDisplayText(d))
         ]
       });
 
     case "city-service":
       if (!resolved.serviceMapping || !resolved.location) break;
+      const exactService = normalizeDisplayText(
+        getExactServiceKeyword(resolved.serviceMapping.serviceSlug, resolved.service?.title)
+      );
       return generatePageMetadata({
-        title: normalizeDisplayText(resolved.serviceMapping.metaTitle),
-        description: normalizeDisplayText(resolved.serviceMapping.metaDescription),
+        title: `${exactService} ${normalizeDisplayText(resolved.location.displayName)} | Devopstrio`,
+        description: getCityServiceHeroDescription(
+          resolved.serviceMapping.serviceSlug,
+          resolved.location.displayName
+        ),
         path: resolved.canonicalPath,
         keywords: [
-          normalizeDisplayText(resolved.serviceMapping.commercialIntentQuery),
-          `${normalizeDisplayText(resolved.service?.title || "Cloud")} in ${resolved.location.displayName}`,
-          `${normalizeDisplayText(resolved.service?.title || "DevOps")} ${resolved.location.displayName}`,
-          `Enterprise ${normalizeDisplayText(resolved.service?.title || "IT")} ${resolved.location.displayName}`
+          `${exactService} ${resolved.location.displayName}`,
+          `${exactService} near me in ${resolved.location.displayName}`,
+          `Enterprise ${exactService} ${resolved.location.displayName}`,
+          `Cloud Consulting ${resolved.location.displayName}`
         ]
       });
   }

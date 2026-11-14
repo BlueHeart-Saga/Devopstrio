@@ -132,7 +132,7 @@ export function RegionNavigation({
           </Reveal>
         )}
 
-        {/* 2. Structured Regional Tech Clusters Cards (Accessible & Semantic) */}
+        {/* 2. Structured Regional Tech Clusters Cards (Accessible and Semantic) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {nationRegions.map((region) => {
             const isCurrentRegion = currentRegionId === region.id;

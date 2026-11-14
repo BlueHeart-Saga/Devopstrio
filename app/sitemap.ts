@@ -48,6 +48,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/gdpr",
     "/services/explore",
     "/ecosystem/landing-zone",
+    "/ecosystem/accelerators-frameworks/landing-zone",
+    "/ecosystem/engineering-excellence/engineering-operations",
+    "/ecosystem/engineering-excellence/solution-architecture",
+    "/ecosystem/global-delivery/global-delivery-model",
+    "/ecosystem/global-delivery/united-states-operations",
+    "/ecosystem/technology-stack/artificial-intelligence/generative-ai-pipelines",
     "/marketing",
     "/marketing/products",
     "/marketing/services",
@@ -59,6 +65,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/marketing/industries/healthcare",
     "/marketing/case-studies",
     "/marketing/whitepapers",
+    "/marketing/presentations",
+    "/marketing/videos",
     "/marketing/company",
     "/marketing/company/company-profile",
     "/marketing/company/corporate-presentation",
@@ -216,15 +224,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  // UK Regions
-  Object.values(ukRegions).forEach((reg) => {
-    locationPages.push({
-      url: `${baseUrl}/locations/uk/${reg.nation}/${reg.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7
+  // UK Regions (English regions only; Scotland, Wales, and Northern Ireland are consolidated under UK Nations)
+  Object.values(ukRegions)
+    .filter((reg) => reg.nation !== reg.slug)
+    .forEach((reg) => {
+      locationPages.push({
+        url: `${baseUrl}/locations/uk/${reg.nation}/${reg.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.7
+      });
     });
-  });
 
   // UK Published Cities (Clean Hierarchy: Country -> Nation -> City)
   const publishedCities = getPublishedCities();

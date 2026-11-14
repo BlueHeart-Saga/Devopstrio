@@ -28,7 +28,13 @@ import { LocationDeliveryModel } from "@/components/locations/LocationDeliveryMo
 import { LocationFAQ } from "@/components/locations/LocationFAQ";
 import { LocationCTA } from "@/components/locations/LocationCTA";
 import { getLocationServiceUrl } from "@/lib/location-urls";
-import { normalizeDisplayText } from "@/lib/text-utils";
+import {
+  normalizeDisplayText,
+  getCityHubHeadingPrefix,
+  getCityHubHeroDescription,
+  getStateHubPrimaryService,
+  getStateHubHeroDescription
+} from "@/lib/text-utils";
 import { Reveal } from "@/components/ui/Reveal";
 import BorderGlow from "@/components/ui/BorderGlow";
 
@@ -94,8 +100,15 @@ export default async function USLocationCatchAllPage({ params }: PageProps) {
         <FAQSchema faqs={stateFaqs} />
 
         <LocationHero
-          locationName={normalizeDisplayText(state.name)}
-          nearMeConnector="Near Me in"
+          title={
+            <>
+              {getStateHubPrimaryService(state.name, "us")} Near Me in{" "}
+              <span className="text-rose-500">{normalizeDisplayText(state.name)}</span>
+            </>
+          }
+          subtitle={getStateHubHeroDescription(state.name, "us")}
+          locationName={state.name}
+          countryCode="us"
           breadcrumbs={breadcrumbs}
         />
 
@@ -221,8 +234,15 @@ export default async function USLocationCatchAllPage({ params }: PageProps) {
         <FAQSchema faqs={cityFaqs} />
 
         <LocationHero
-          locationName={normalizeDisplayText(loc.displayName)}
-          nearMeConnector="Near Me in"
+          title={
+            <>
+              {getCityHubHeadingPrefix(loc.displayName, "us")} in{" "}
+              <span className="text-rose-500">{normalizeDisplayText(loc.displayName)}</span>
+            </>
+          }
+          subtitle={getCityHubHeroDescription(loc.displayName, "us")}
+          locationName={loc.displayName}
+          countryCode="us"
           breadcrumbs={breadcrumbs}
           officeStatus={loc.officeStatus}
           verifiedAddress={loc.verifiedAddress?.streetAddress ? `${loc.verifiedAddress.streetAddress}, ${loc.verifiedAddress.locality}` : undefined}
@@ -337,7 +357,7 @@ export default async function USLocationCatchAllPage({ params }: PageProps) {
       const exactKeyword = getExactServiceKeyword(m.serviceSlug, s?.title || m.h1Title);
       return {
         slug: m.serviceSlug,
-        title: normalizeDisplayText(`${exactKeyword} Near Me in ${loc.displayName}`),
+        title: normalizeDisplayText(`${exactKeyword} in ${loc.displayName}`),
         subtitle: normalizeDisplayText(s?.subtitle || m.metaDescription),
         href: getLocationServiceUrl("us", loc.slug, m.serviceSlug)
       };

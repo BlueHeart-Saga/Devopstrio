@@ -41,7 +41,7 @@ const indiaFaqs = [
   },
   {
     q: "What incident response SLAs do you guarantee for Indian enterprises?",
-    a: "Our enterprise contracts feature guaranteed P1 critical incident response times under 15 minutes, 99.99% infrastructure uptime SLAs, and 24/7/365 active monitoring."
+    a: "Our enterprise contracts feature formal SLA commitments with rapid critical incident response, robust high-availability targets, and continuous active monitoring."
   },
   {
     q: "How does Devopstrio accelerate Global Capability Centers (GCCs) in India?",
@@ -97,9 +97,10 @@ export default function IndiaNationalHubPage() {
 
       {/* 1. Hero Block */}
       <LocationHero
+        title={<>Managed Cloud Services Near Me in <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">India</span></>}
+        subtitle="Devopstrio provides managed cloud infrastructure support for businesses across India, covering Azure, AWS, monitoring, migration and security services across our national practice directory."
         locationName="India"
-        locationHighlightClass="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent"
-        nearMeConnector="Near Me in"
+        countryCode="india"
         breadcrumbs={breadcrumbs}
         officeStatus="corporate-office"
         verifiedAddress="Embassy Golf Links Business Park, Bengaluru and Guindy Industrial Estate, Chennai"
@@ -156,8 +157,8 @@ export default function IndiaNationalHubPage() {
                   colors={["#f43f5e", "#fb7185", "#38bdf8"]}
                   className="p-6 transition-transform hover:-translate-y-1 duration-300"
                 >
-                  <span className="text-3xl font-bold text-rose-500 block mb-1">&lt;15m</span>
-                  <span className="text-base font-semibold text-white block mb-1">Guaranteed SLA</span>
+                  <span className="text-3xl font-bold text-rose-500 block mb-1">Rapid</span>
+                  <span className="text-base font-semibold text-white block mb-1">Response SLA</span>
                   <span className="text-xs text-zinc-400 leading-relaxed">Rapid response for P1 production incidents.</span>
                 </BorderGlow>
 
@@ -172,7 +173,7 @@ export default function IndiaNationalHubPage() {
                   colors={["#f43f5e", "#fb7185", "#38bdf8"]}
                   className="p-6 transition-transform hover:-translate-y-1 duration-300"
                 >
-                  <span className="text-3xl font-bold text-rose-500 block mb-1">100%</span>
+                  <span className="text-3xl font-bold text-rose-500 block mb-1">Sovereign</span>
                   <span className="text-base font-semibold text-white block mb-1">Data Residency</span>
                   <span className="text-xs text-zinc-400 leading-relaxed">DPDP Act, RBI guidelines, and CERT-In compliance.</span>
                 </BorderGlow>

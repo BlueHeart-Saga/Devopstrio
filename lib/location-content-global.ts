@@ -383,8 +383,32 @@ export function getGlobalBreadcrumbs(resolved: ResolvedGlobalLocationPath): { la
 }
 
 export function getNearbyGlobalLocations(location: GlobalLocation): GlobalLocation[] {
-  const pool = location.countryCode === "india" ? indiaLocations : usLocations;
-  return location.nearbyLocationIds.map(id => pool[id]).filter(Boolean);
+  const isIndia = location.countryCode === "india";
+  const pool = isIndia ? indiaLocations : usLocations;
+  const publishedInCountry = Object.values(pool).filter(
+    loc => loc.publicationStatus === "published" && loc.slug !== location.slug
+  );
+
+  // 1. Gather explicitly mapped nearby locations that are published
+  const explicitPublished = (location.nearbyLocationIds || [])
+    .map(id => pool[id])
+    .filter((loc): loc is GlobalLocation => Boolean(loc && loc.publicationStatus === "published"));
+
+  if (explicitPublished.length >= 4) {
+    return explicitPublished.slice(0, 6);
+  }
+
+  // 2. Supplement with published cities in the same state
+  const sameState = publishedInCountry.filter(
+    loc => loc.stateOrRegionId === location.stateOrRegionId && !explicitPublished.some(e => e.id === loc.id)
+  );
+
+  // 3. Fallback to other published cities in this country
+  const others = publishedInCountry.filter(
+    loc => !explicitPublished.some(e => e.id === loc.id) && !sameState.some(s => s.id === loc.id)
+  );
+
+  return [...explicitPublished, ...sameState, ...others].slice(0, 6);
 }
 
 export function getGlobalStateFAQs(state: GlobalRegionOrState, countryCode: "india" | "us"): { q: string; a: string }[] {
@@ -509,8 +533,8 @@ export function getGlobalCityFAQs(location: GlobalLocation, state: GlobalRegionO
         a: `We provide certified multi-cloud engineering across Amazon Web Services (AWS Mumbai ap-south-1 and Hyderabad ap-south-2), Microsoft Azure (Central India and South India), and Google Cloud (asia-south1 and asia-south2).`
       },
       {
-        q: `What incident response SLAs do you guarantee for enterprises in ${cityName}?`,
-        a: "We contractually commit to a sub-15-minute response time for P1 critical outages, backed by a 99.99% infrastructure availability guarantee and 24/7/365 active monitoring."
+        q: `What incident response SLAs are available for enterprises in ${cityName}?`,
+        a: "We contractually commit to rapid response times for critical P1 incidents, backed by robust high-availability targets and continuous active monitoring."
       },
       {
         q: `How do you support ${cityName}'s dominant industry sectors and regulatory demands?`,
@@ -558,8 +582,8 @@ export function getGlobalCityFAQs(location: GlobalLocation, state: GlobalRegionO
         a: `We engineer enterprise architectures across Amazon Web Services (AWS us-east-1, us-east-2, us-west-2), Microsoft Azure (East US, Central US, West US), and Google Cloud (us-central1).`
       },
       {
-        q: `What incident response SLAs are guaranteed for ${cityName} clients?`,
-        a: "We guarantee a P1 critical incident response time of under 15 minutes, 99.99% infrastructure availability SLAs, and 24/7/365 active monitoring backed by strict contractual commitments."
+        q: `What incident response SLAs are available for ${cityName} clients?`,
+        a: "We provide contractual P1 critical incident response targets, high-availability infrastructure uptime commitments, and continuous telemetry monitoring backed by formal enterprise agreements."
       },
       {
         q: `How do you support ${cityName}'s key industry sectors and regulatory demands?`,

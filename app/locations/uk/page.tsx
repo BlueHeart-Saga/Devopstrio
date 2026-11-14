@@ -38,7 +38,7 @@ const nationalFaqs = [
   },
   {
     q: "What SLA response times do you guarantee for UK businesses?",
-    a: "Our enterprise contracts feature guaranteed P1 critical incident response times under 15 minutes, 99.99% infrastructure uptime SLAs, and 24/7/365 active monitoring."
+    a: "Our enterprise contracts feature formal SLA commitments with rapid critical incident response, robust high-availability targets, and continuous active monitoring."
   },
   {
     q: "How does Devopstrio support UK Financial Services and FCA compliance?",
@@ -94,9 +94,10 @@ export default function UKNationalHubPage() {
 
       {/* 1. Hero Block */}
       <LocationHero
-        locationName="the United Kingdom"
-        locationHighlightClass="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent"
-        nearMeConnector="Near Me in"
+        title={<>Cloud Services Near Me in <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">the United Kingdom</span></>}
+        subtitle="Explore cloud services for UK businesses, including Azure, AWS, cloud migration, infrastructure management and security solutions across our complete national practice directory."
+        locationName="United Kingdom"
+        countryCode="uk"
         breadcrumbs={breadcrumbs}
         officeStatus="headquarters"
         verifiedAddress="128 City Road, London, EC1V 2NX"
@@ -120,7 +121,7 @@ export default function UKNationalHubPage() {
                 Headquartered at 128 City Road in London, Devopstrio delivers sovereign cloud architecture, automated platform engineering, and 24/7 SRE operations for UK enterprises.
               </p>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Our certified principal engineers deploy scalable, secure, and compliant systems with zero unauthorized cross-border transfer.
+                Our certified principal engineers deploy scalable, secure, and compliant systems in full alignment with UK GDPR data residency principles.
               </p>
             </Reveal>
 
@@ -153,8 +154,8 @@ export default function UKNationalHubPage() {
                   colors={["#f43f5e", "#fb7185", "#38bdf8"]}
                   className="p-6 transition-transform hover:-translate-y-1 duration-300"
                 >
-                  <span className="text-3xl font-bold text-rose-500 block mb-1">&lt;15m</span>
-                  <span className="text-base font-semibold text-white block mb-1">Guaranteed SLA</span>
+                  <span className="text-3xl font-bold text-rose-500 block mb-1">Rapid</span>
+                  <span className="text-base font-semibold text-white block mb-1">Response SLA</span>
                   <span className="text-xs text-zinc-400 leading-relaxed">Rapid response for P1 production incidents.</span>
                 </BorderGlow>
 
@@ -169,8 +170,8 @@ export default function UKNationalHubPage() {
                   colors={["#f43f5e", "#fb7185", "#38bdf8"]}
                   className="p-6 transition-transform hover:-translate-y-1 duration-300"
                 >
-                  <span className="text-3xl font-bold text-rose-500 block mb-1">100%</span>
-                  <span className="text-base font-semibold text-white block mb-1">UK Sovereign Data</span>
+                  <span className="text-3xl font-bold text-rose-500 block mb-1">Sovereign</span>
+                  <span className="text-base font-semibold text-white block mb-1">UK Cloud Data</span>
                   <span className="text-xs text-zinc-400 leading-relaxed">Hosted in UK cloud regions under UK GDPR and ISO 27001.</span>
                 </BorderGlow>
 

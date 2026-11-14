@@ -162,7 +162,7 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Devopstrio", "Cloud Engineering", "DevOps Consulting", "Generative AI", "SRE Automation"]
   },
   "/sitemap": {
-    title: "Site Index & Architecture Directory",
+    title: "Site Index and Architecture Directory",
     description: "Navigate Devopstrio's complete site directory covering enterprise cloud services, AI innovation, ecosystem alliances, and technical publications.",
     keywords: ["Sitemap", "Site Directory", "Devopstrio Navigation", "Engineering Index"]
   },

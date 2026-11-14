@@ -2,6 +2,7 @@ import { LocationServiceMapping, GlobalLocation } from "./types";
 import { indiaLocations } from "./india-locations";
 import { getAdaptedServiceBySlug } from "./service-adapter";
 import { TARGET_SERVICE_SLUGS, getExactServiceKeyword } from "@/lib/keyword-utils";
+import { getServiceProfile } from "./service-profiles";
 
 export const pilotIndiaLocationServices: LocationServiceMapping[] = [
   // 1. Bengaluru + Cloud Managed Services
@@ -12,7 +13,7 @@ export const pilotIndiaLocationServices: LocationServiceMapping[] = [
     publicationStatus: "published",
     h1Title: "Cloud Managed Services Bengaluru | 24/7 Enterprise SRE",
     metaTitle: "Cloud Managed Services Bengaluru | 24/7 SRE Support | Devopstrio",
-    metaDescription: "Devopstrio delivers 24/7 managed cloud services from Embassy Golf Links, Bengaluru. Supporting AWS, Azure and GCP with <15m P1 incident SLAs and FinOps governance.",
+    metaDescription: "Devopstrio delivers 24/7 managed cloud services from Embassy Golf Links, Bengaluru. Supporting AWS, Azure and GCP with rapid P1 incident SLAs and FinOps governance.",
     commercialIntentQuery: "Azure Managed Services Bangalore",
     localChallenge: {
       title: "Operating Hyperscale Cloud Infrastructure in Bengaluru's Tech Corridor",
@@ -26,7 +27,7 @@ export const pilotIndiaLocationServices: LocationServiceMapping[] = [
       title: "Enterprise SRE and Managed Cloud Delivery from Embassy Golf Links",
       description: "Devopstrio embeds certified cloud architects and follow-the-sun SREs directly from our Bengaluru Corporate Office. We monitor, patch, and optimize multi-cloud environments 24/7/365.",
       deliverables: [
-        "24/7/365 active SRE cluster monitoring with contractual sub-15-minute P1 incident triage",
+        "24/7 active SRE cluster monitoring with contractual P1 incident triage SLAs",
         "Automated FinOps cost governance targeting 25-40% reduction in unallocated cloud spend",
         "Self-healing Kubernetes clusters with automated pod scaling and zero-downtime rolling upgrades",
         "Quarterly disaster recovery simulations and automated cross-region database failover"
@@ -48,7 +49,7 @@ export const pilotIndiaLocationServices: LocationServiceMapping[] = [
       },
       {
         q: "How does Devopstrio guarantee uptime and incident response?",
-        a: "All enterprise contracts are backed by formal Service Level Agreements (SLAs) guaranteeing a sub-15-minute response for P1 critical outages and 99.99% infrastructure availability."
+        a: "All enterprise contracts are backed by formal Service Level Agreements (SLAs) featuring contractual rapid response for P1 critical outages and robust infrastructure availability targets."
       }
     ]
   },
@@ -409,7 +410,7 @@ export const pilotIndiaLocationServices: LocationServiceMapping[] = [
     },
     localSolution: {
       title: "24/7 Follow-the-Sun SRE Monitoring and Cloud Infrastructure Care",
-      description: "Devopstrio provides dedicated, certified SRE teams who continuously monitor, tune, and safeguard your cloud environments, guaranteeing sub-15-minute response for P1 critical events.",
+      description: "Devopstrio provides dedicated, certified SRE teams who continuously monitor, tune, and safeguard your cloud environments, providing contractual rapid response for P1 critical events.",
       deliverables: [
         "24/7/365 active operations center monitoring with proactive health telemetry",
         "Automated multi-region disaster recovery and continuous automated backups",
@@ -425,7 +426,7 @@ export const pilotIndiaLocationServices: LocationServiceMapping[] = [
     faqs: [
       {
         q: "What incident response SLAs does Devopstrio provide in Kochi?",
-        a: "We contractually commit to a sub-15-minute response time for P1 critical incidents and a 99.99% infrastructure availability guarantee."
+        a: "We contractually commit to rapid response times for P1 critical incidents and enterprise high-availability infrastructure targets."
       }
     ]
   }
@@ -435,6 +436,7 @@ export function createDynamicIndiaMapping(city: GlobalLocation, serviceSlug: str
   const s = getAdaptedServiceBySlug(serviceSlug);
   const keyword = getExactServiceKeyword(serviceSlug, s?.title);
   const cityName = city.displayName;
+  const profile = getServiceProfile(serviceSlug, cityName, "india");
 
   return {
     countryCode: "india",
@@ -442,51 +444,24 @@ export function createDynamicIndiaMapping(city: GlobalLocation, serviceSlug: str
     serviceSlug: serviceSlug,
     publicationStatus: "published",
     h1Title: `${keyword} Near Me in ${cityName}`,
-    metaTitle: `${keyword} Near Me in ${cityName} | Devopstrio`,
-    metaDescription: `Enterprise ${keyword.toLowerCase()} in ${cityName}, India. Devopstrio delivers 24/7 SRE monitoring, sovereign cloud architecture, and certified engineering teams for ${cityName} enterprises.`,
-    commercialIntentQuery: `${keyword.toLowerCase()} in ${cityName}`,
+    metaTitle: `${keyword} ${cityName} | Devopstrio`,
+    metaDescription: `Explore ${keyword.toLowerCase()} for ${cityName} businesses, including Azure, AWS, cloud migration, infrastructure management and security solutions.`,
+    commercialIntentQuery: `${keyword.toLowerCase()} near me in ${cityName}`,
     localChallenge: {
-      title: `Addressing Scalability and Digital Infrastructure in ${cityName}`,
-      points: [
-        `Enterprises and scale-ups across ${cityName} face expanding digital workloads requiring high availability and low latency.`,
-        `Adhering to sovereign cloud data residency, Digital Personal Data Protection (DPDP) Act compliance, and RBI cybersecurity mandates.`,
-        `Bridging critical engineering skill gaps with certified 24/7 SRE and DevOps automation pods.`
-      ]
+      title: profile.challengeTitle,
+      points: profile.challengePoints
     },
     localSolution: {
-      title: `Certified ${keyword} Delivery for ${cityName} Enterprises`,
-      description: `Devopstrio provides principal-led ${keyword.toLowerCase()} with 24/7 continuous operations, automated FinOps cost controls, and rapid release velocity for ${cityName} engineering teams.`,
-      deliverables: [
-        `Contractually binding <15-minute P1 incident response SLAs`,
-        `Continuous compliance with ISO 27001, SOC-2 Type II, and DPDP frameworks`,
-        `Direct architectural consultation and sprint planning reviews`,
-        `Resilient multi-cloud engineering across sovereign cloud regions (AWS ap-south-1/2, Azure Central/South India)`
-      ]
+      title: profile.solutionTitle,
+      description: profile.solutionDesc,
+      deliverables: profile.deliverables
     },
     industryContext: {
       industryTitle: `${cityName} Regional Commercial Ecosystem`,
       description: `Tailored engineering delivery supporting ${cityName}'s technology corridors, enterprise hubs, and digital scaleups.`
     },
-    complianceHighlights: [
-      "ISO 27001 Certified Practice",
-      "Digital Personal Data Protection (DPDP) Act",
-      "SOC-2 Type II Aligned",
-      "Sovereign Indian Cloud Regions"
-    ],
-    faqs: [
-      {
-        q: `Does Devopstrio provide ${keyword.toLowerCase()} in ${cityName}?`,
-        a: `Yes. Devopstrio provides comprehensive ${keyword.toLowerCase()} across ${cityName}, supported by our Bengaluru Corporate Office, Chennai Operations Center, and 24/7 follow-the-sun SRE pods.`
-      },
-      {
-        q: `What incident response SLAs are provided for businesses in ${cityName}?`,
-        a: `We provide guaranteed sub-15-minute response times for critical P1 incidents with 24/7/365 active monitoring and dedicated engineering pods.`
-      },
-      {
-        q: `How do you ensure Indian regulatory and DPDP compliance for ${cityName} organizations?`,
-        a: `All infrastructure, data stores, and monitoring telemetry are hosted within sovereign Indian cloud regions in compliance with the DPDP Act, RBI cybersecurity mandates, and ISO 27001.`
-      }
-    ]
+    complianceHighlights: profile.complianceHighlights,
+    faqs: profile.faqs
   };
 }
 

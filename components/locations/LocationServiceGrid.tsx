@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle } from "lucide-react";
@@ -61,10 +59,10 @@ export function LocationServiceGrid({
         {/* 12 Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allServices.map((service, idx) => {
-            const hasDedicatedCityPage = Boolean(citySlug);
+            const hasDedicatedCityPage = Boolean(citySlug && publishedServiceSlugs.has(service.slug));
             let dedicatedUrl: string | null = null;
 
-            if (citySlug) {
+            if (hasDedicatedCityPage && citySlug) {
               dedicatedUrl = getLocationServiceUrl(countryCode, citySlug, service.slug);
             }
 
@@ -110,7 +108,7 @@ export function LocationServiceGrid({
                         href={dedicatedUrl}
                         className="text-rose-400 hover:text-white transition-colors inline-flex items-center gap-1 font-semibold"
                       >
-                        <span className="line-clamp-1">{normalizeDisplayText(getExactServiceKeyword(service.slug, service.title))} Near Me in {cityName}</span>
+                        <span className="line-clamp-1">{normalizeDisplayText(getExactServiceKeyword(service.slug, service.title))} in {cityName}</span>
                         <ArrowUpRight size={13} className="shrink-0" />
                       </Link>
                     ) : (

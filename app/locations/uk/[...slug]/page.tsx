@@ -29,7 +29,7 @@ import { getPublishedMappingsForCity } from "@/data/locations/location-service-m
 import { servicesData } from "@/data/services";
 import { getAdaptedServiceBySlug } from "@/data/locations/service-adapter";
 import { getLocationServiceUrl } from "@/lib/location-urls";
-import { normalizeDisplayText } from "@/lib/text-utils";
+import { normalizeDisplayText, getCityHubHeadingPrefix, getCityHubHeroDescription } from "@/lib/text-utils";
 import { Reveal } from "@/components/ui/Reveal";
 import BorderGlow from "@/components/ui/BorderGlow";
 
@@ -60,6 +60,15 @@ export default async function LocationCatchAllPage({ params }: PageProps) {
   // Canonical permanent 301/308 redirect for legacy multi-segment service paths
   if (resolved.type === "city-service" && slug.length > 1) {
     permanentRedirect(resolved.canonicalPath);
+  }
+
+  // Canonical permanent 301/308 redirect for redundant nation-region routes (e.g. /locations/uk/scotland/scotland -> /locations/uk/scotland)
+  if (
+    slug.length === 2 &&
+    slug[0] === slug[1] &&
+    (slug[0] === "scotland" || slug[0] === "wales" || slug[0] === "northern-ireland")
+  ) {
+    permanentRedirect(`/locations/uk/${slug[0]}`);
   }
 
   const breadcrumbs = getBreadcrumbsForResolvedPath(resolved);
@@ -93,8 +102,10 @@ export default async function LocationCatchAllPage({ params }: PageProps) {
         <FAQSchema faqs={nationFaqs} />
 
         <LocationHero
-          locationName={normalizeDisplayText(nation.name)}
-          nearMeConnector="Near Me in"
+          title={<>Cloud Services Near Me in <span className="text-rose-500">{normalizeDisplayText(nation.name)}</span></>}
+          subtitle={`Devopstrio delivers enterprise cloud and technology infrastructure services for organizations across ${nation.name}, backed by certified architects and 24/7 engineering support.`}
+          locationName={nation.name}
+          countryCode="uk"
           breadcrumbs={breadcrumbs}
         />
 
@@ -151,8 +162,10 @@ export default async function LocationCatchAllPage({ params }: PageProps) {
         <FAQSchema faqs={regionFaqs} />
 
         <LocationHero
-          locationName={normalizeDisplayText(region.name)}
-          nearMeConnector="Near Me in"
+          title={<>Cloud Services Near Me in <span className="text-rose-500">{normalizeDisplayText(region.name)}</span></>}
+          subtitle={`Devopstrio delivers enterprise cloud services and technology solutions across ${region.name}, supporting digital transformation, cloud architecture and managed infrastructure.`}
+          locationName={region.name}
+          countryCode="uk"
           breadcrumbs={breadcrumbs}
         />
 
@@ -257,8 +270,15 @@ export default async function LocationCatchAllPage({ params }: PageProps) {
         <FAQSchema faqs={cityFaqs} />
 
         <LocationHero
-          locationName={normalizeDisplayText(loc.displayName)}
-          nearMeConnector="Near Me in"
+          title={
+            <>
+              {getCityHubHeadingPrefix(loc.displayName, "uk")} in{" "}
+              <span className="text-rose-500">{normalizeDisplayText(loc.displayName)}</span>
+            </>
+          }
+          subtitle={getCityHubHeroDescription(loc.displayName, "uk")}
+          locationName={loc.displayName}
+          countryCode="uk"
           breadcrumbs={breadcrumbs}
           officeStatus={loc.officeStatus}
           verifiedAddress={loc.verifiedAddress?.streetAddress ? `${loc.verifiedAddress.streetAddress}, ${loc.verifiedAddress.locality}, ${loc.verifiedAddress.postalCode}` : undefined}
@@ -351,7 +371,7 @@ export default async function LocationCatchAllPage({ params }: PageProps) {
       const exactKeyword = getExactServiceKeyword(m.serviceSlug, s?.title || m.h1Title);
       return {
         slug: m.serviceSlug,
-        title: normalizeDisplayText(`${exactKeyword} Near Me in ${loc.displayName}`),
+        title: normalizeDisplayText(`${exactKeyword} in ${loc.displayName}`),
         subtitle: normalizeDisplayText(s?.subtitle || m.metaDescription),
         href: getLocationServiceUrl("uk", loc.slug, m.serviceSlug)
       };
@@ -424,10 +444,12 @@ export async function generateStaticParams() {
     paramsList.push({ slug: [`${mapping.citySlug}-${mapping.serviceSlug}`] });
   });
 
-  // 4. Backward Compatibility: All 12 Regions
-  Object.values(ukRegions).forEach(reg => {
-    paramsList.push({ slug: [reg.nation, reg.slug] });
-  });
+  // 4. Backward Compatibility: English Regions (Scotland, Wales, and Northern Ireland handled as Nations)
+  Object.values(ukRegions)
+    .filter((reg) => reg.nation !== reg.slug)
+    .forEach(reg => {
+      paramsList.push({ slug: [reg.nation, reg.slug] });
+    });
 
   return paramsList;
 }

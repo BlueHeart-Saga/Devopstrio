@@ -143,7 +143,7 @@ export function CountryNavigation({
           </Reveal>
         )}
 
-        {/* 2. Selected State & Cities Display Card */}
+        {/* 2. Selected State and Cities Display Card */}
         {activeState && (
           <Reveal>
             <div className="p-6 sm:p-8 rounded-2xl bg-zinc-950/60 hover:bg-zinc-900/40 border border-zinc-900/60 transition-all duration-300">

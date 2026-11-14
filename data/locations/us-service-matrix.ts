@@ -2,6 +2,7 @@ import { LocationServiceMapping, GlobalLocation } from "./types";
 import { usLocations } from "./us-locations";
 import { getAdaptedServiceBySlug } from "./service-adapter";
 import { TARGET_SERVICE_SLUGS, getExactServiceKeyword } from "@/lib/keyword-utils";
+import { getServiceProfile } from "./service-profiles";
 
 export const pilotUSLocationServices: LocationServiceMapping[] = [
   // 1. Nashville + Cloud Managed Services
@@ -24,9 +25,9 @@ export const pilotUSLocationServices: LocationServiceMapping[] = [
     },
     localSolution: {
       title: "24/7 Follow-the-Sun SRE Supported by Local Mt. Juliet Leadership",
-      description: "Devopstrio combines on-site technical governance from our nearby Mt. Juliet technology office with 24/7 global SRE operations, guaranteeing sub-15-minute response for critical P1 events.",
+      description: "Devopstrio combines on-site technical governance from our nearby Mt. Juliet technology office with 24/7 global SRE operations, featuring rapid contractual response for critical P1 events.",
       deliverables: [
-        "24/7/365 active cloud monitoring with contractual sub-15-minute P1 critical triage",
+        "24/7 active cloud monitoring with contractual P1 critical triage SLAs",
         "HIPAA-compliant AWS and Azure landing zones with automated BAA alignment",
         "Automated self-healing Kubernetes clusters with zero-downtime rolling deployments",
         "Comprehensive quarterly disaster recovery drills and immutable cloud backups"
@@ -34,7 +35,7 @@ export const pilotUSLocationServices: LocationServiceMapping[] = [
     },
     industryContext: {
       industryTitle: "Healthcare Systems and Digital Entertainment in Nashville",
-      description: "Supporting Nashville's premier hospital management conglomerates, healthtech scaleups, and digital content distribution platforms requiring 99.99% uptime."
+      description: "Supporting Nashville's premier hospital management conglomerates, healthtech scaleups, and digital content distribution platforms requiring high-availability cloud architecture."
     },
     complianceHighlights: ["HIPAA and HITECH Compliant", "SOC-2 Type II", "ISO 27001", "24/7 SRE SLAs"],
     faqs: [
@@ -195,7 +196,7 @@ export const pilotUSLocationServices: LocationServiceMapping[] = [
       description: "Our certified Azure solutions architects enforce landing zone governance, automate monitoring with Azure Monitor and Sentinel, and provide 24/7/365 active cluster support.",
       deliverables: [
         "Azure Landing Zone governance with automated policy enforcement and RBAC controls",
-        "24/7/365 active SRE monitoring backed by contractual sub-15-minute P1 incident SLAs",
+        "24/7 active SRE monitoring backed by contractual P1 incident triage SLAs",
         "Database optimization across Azure SQL, Managed Instances, and Cosmos DB",
         "Zero Trust identity federation and network microsegmentation"
       ]
@@ -204,11 +205,11 @@ export const pilotUSLocationServices: LocationServiceMapping[] = [
       industryTitle: "Fortune 500 Corporate HQs and Telecom in Dallas-Fort Worth",
       description: "Providing high-assurance cloud operations for enterprise headquarters in Legacy West Plano, Richardson Telecom Corridor, and Downtown Dallas."
     },
-    complianceHighlights: ["Microsoft Solutions Partner", "SOC-2 Type II", "ISO 27001", "99.99% Uptime SLA"],
+    complianceHighlights: ["Microsoft Solutions Partner", "SOC-2 Type II", "ISO 27001", "Enterprise High-Availability SLAs"],
     faqs: [
       {
-        q: "What incident response SLAs does Devopstrio guarantee in Dallas?",
-        a: "We guarantee a sub-15-minute response time for critical P1 outages, supported by our round-the-clock follow-the-sun SRE team and 99.99% infrastructure uptime commitment."
+        q: "What incident response SLAs does Devopstrio provide in Dallas?",
+        a: "We provide contractual rapid response targets for critical P1 incidents, supported by our round-the-clock follow-the-sun SRE team and high-availability infrastructure uptime commitments."
       }
     ]
   },
@@ -423,6 +424,7 @@ export function createDynamicUSMapping(city: GlobalLocation, serviceSlug: string
   const s = getAdaptedServiceBySlug(serviceSlug);
   const keyword = getExactServiceKeyword(serviceSlug, s?.title);
   const cityName = city.displayName;
+  const profile = getServiceProfile(serviceSlug, cityName, "us");
 
   return {
     countryCode: "us",
@@ -430,51 +432,24 @@ export function createDynamicUSMapping(city: GlobalLocation, serviceSlug: string
     serviceSlug: serviceSlug,
     publicationStatus: "published",
     h1Title: `${keyword} Near Me in ${cityName}`,
-    metaTitle: `${keyword} Near Me in ${cityName} | Devopstrio`,
-    metaDescription: `Enterprise ${keyword.toLowerCase()} in ${cityName}, United States. Devopstrio delivers 24/7 SRE monitoring, sovereign cloud architecture, and certified engineering teams for ${cityName} enterprises.`,
-    commercialIntentQuery: `${keyword.toLowerCase()} in ${cityName}`,
+    metaTitle: `${keyword} ${cityName} | Devopstrio`,
+    metaDescription: `Explore ${keyword.toLowerCase()} for ${cityName} businesses, including Azure, AWS, cloud migration, infrastructure management and security solutions.`,
+    commercialIntentQuery: `${keyword.toLowerCase()} near me in ${cityName}`,
     localChallenge: {
-      title: `Addressing Scalability and Digital Infrastructure in ${cityName}`,
-      points: [
-        `Organizations across ${cityName} face expanding digital workloads requiring high availability, low latency, and zero downtime.`,
-        `Adhering to strict US regulatory compliance standards including SOC-2 Type II, HIPAA/HITECH, NYDFS Part 500, and CCPA.`,
-        `Overcoming senior engineering talent scarcity with certified 24/7 SRE and DevOps automation pods.`
-      ]
+      title: profile.challengeTitle,
+      points: profile.challengePoints
     },
     localSolution: {
-      title: `Certified ${keyword} Delivery for ${cityName} Enterprises`,
-      description: `Devopstrio provides principal-led ${keyword.toLowerCase()} with 24/7 continuous operations, automated FinOps cost controls, and rapid release velocity for ${cityName} engineering teams.`,
-      deliverables: [
-        `Contractually binding <15-minute P1 incident response SLAs`,
-        `Continuous compliance with ISO 27001, SOC-2 Type II, and HIPAA readiness frameworks`,
-        `Direct architectural consultation and sprint planning reviews`,
-        `Resilient multi-cloud engineering across US sovereign cloud regions (AWS us-east/west, Azure US East/Central/West)`
-      ]
+      title: profile.solutionTitle,
+      description: profile.solutionDesc,
+      deliverables: profile.deliverables
     },
     industryContext: {
       industryTitle: `${cityName} Regional Commercial Ecosystem`,
       description: `Tailored engineering delivery supporting ${cityName}'s technology corridors, enterprise hubs, and digital scaleups.`
     },
-    complianceHighlights: [
-      "SOC-2 Type II Aligned",
-      "HIPAA / HITECH Readiness",
-      "ISO 27001 Certified Practice",
-      "NIST AI Risk Management Framework"
-    ],
-    faqs: [
-      {
-        q: `Does Devopstrio provide ${keyword.toLowerCase()} in ${cityName}?`,
-        a: `Yes. Devopstrio provides comprehensive ${keyword.toLowerCase()} across ${cityName}, supported by our North America sub-regional office in Greater Nashville (Mt. Juliet, TN) and 24/7 follow-the-sun SRE operations.`
-      },
-      {
-        q: `What incident response SLAs are provided for enterprises in ${cityName}?`,
-        a: `We provide guaranteed sub-15-minute response times for critical P1 incidents with 24/7/365 active monitoring and dedicated engineering pods.`
-      },
-      {
-        q: `How do you ensure US regulatory and compliance standards for ${cityName} organizations?`,
-        a: `All infrastructure, data stores, and monitoring telemetry are hosted within sovereign US cloud regions in compliance with SOC-2 Type II, HIPAA/HITECH, and ISO 27001.`
-      }
-    ]
+    complianceHighlights: profile.complianceHighlights,
+    faqs: profile.faqs
   };
 }
 

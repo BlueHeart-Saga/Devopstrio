@@ -42,7 +42,7 @@ export function NearbyLocations({
       return {
         image: getLocationImage(item.name),
         title: item.name,
-        description: item.description || `Adjacent technology corridor (${item.distance || "Regional connectivity"}).`,
+        description: item.description || "Adjacent regional technology corridor.",
         link: item.href
       };
     }
@@ -50,25 +50,29 @@ export function NearbyLocations({
     // Case 2: UK Location
     if ("nation" in item && "region" in item) {
       const loc = item as UKLocation;
+      if (loc.publicationStatus !== "published") return null;
       const locNation = ukNations[loc.nation];
       const locRegion = ukRegions[loc.region];
+      if (!locNation || !locRegion) return null;
       return {
         image: getLocationImage(loc.slug, loc.nation),
         title: loc.displayName,
-        description: loc.shortDescription || `${locRegion?.name || "UK"} Technology Innovation Corridor.`,
-        link: `/locations/uk/${locNation?.slug || "england"}/${loc.slug}`
+        description: loc.shortDescription || `${locRegion.name || "UK"} Technology Innovation Corridor.`,
+        link: `/locations/uk/${locNation.slug}/${loc.slug}`
       };
     }
 
     // Case 3: Global Location (India or US)
     if ("countryCode" in item && "stateOrRegionId" in item) {
       const loc = item as GlobalLocation;
+      if (loc.publicationStatus !== "published") return null;
       let stateSlug = loc.stateOrRegionId;
       if (loc.countryCode === "india") {
         stateSlug = indiaStates[loc.stateOrRegionId]?.slug || loc.stateOrRegionId;
       } else if (loc.countryCode === "us") {
         stateSlug = usStates[loc.stateOrRegionId]?.slug || loc.stateOrRegionId;
       }
+      if (!stateSlug) return null;
       return {
         image: getLocationImage(loc.slug, loc.countryCode),
         title: loc.displayName,

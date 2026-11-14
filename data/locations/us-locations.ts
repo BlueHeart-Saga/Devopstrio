@@ -276,7 +276,7 @@ export const usLocations: Record<string, GlobalLocation> = {
     deliveryHighlights: [
       "Supported locally by our North American sub-regional office in neighboring Mt. Juliet, TN",
       "Specialized HIPAA and HITECH healthcare cloud landing zones on AWS and Azure",
-      "Contractual sub-15-minute P1 critical outage triage with 24/7 follow-the-sun SRE coverage",
+      "Contractual rapid P1 critical outage triage with 24/7 follow-the-sun SRE coverage",
       "SOC-2 Type II, ISO 27001, and NIST CSF verified delivery frameworks"
     ]
   },
@@ -350,7 +350,7 @@ export const usLocations: Record<string, GlobalLocation> = {
       "Principal cloud architects certified across AWS, Azure, and Google Cloud Platform",
       "Production-grade Generative AI agents deployed securely in private VPC environments",
       "Automated infrastructure as code (Terraform) and GitOps delivery pipelines",
-      "24/7 follow-the-sun SRE operations backed by guaranteed sub-15-minute response SLAs"
+      "24/7 follow-the-sun SRE operations backed by contractual rapid response SLAs"
     ]
   },
 
@@ -381,7 +381,7 @@ export const usLocations: Record<string, GlobalLocation> = {
       "Enterprise Microsoft Azure solutions partner architecture and migrations",
       "Legacy Windows Server and SQL Server modernizations to Azure SQL and Cosmos DB",
       "Zero Trust identity federation and network microsegmentation",
-      "24/7/365 active monitoring with contractual 99.99% infrastructure uptime guarantees"
+      "24/7/365 active monitoring with contractual high-availability infrastructure uptime commitments"
     ]
   },
 
@@ -473,7 +473,7 @@ export const usLocations: Record<string, GlobalLocation> = {
     deliveryHighlights: [
       "Enterprise AWS Control Tower and Azure Landing Zone well-architected designs",
       "Petabyte-scale modern lakehouse pipelines on Snowflake, Databricks, and AWS Glue",
-      "24/7/365 active monitoring with sub-15-minute response for critical P1 events",
+      "24/7/365 active monitoring with rapid response targets for critical P1 events",
       "SOC-2 Type II, ISO 27001, and CCPA data privacy compliance"
     ]
   },
@@ -504,7 +504,7 @@ export const usLocations: Record<string, GlobalLocation> = {
     deliveryHighlights: [
       "PCI-DSS v4.0 validated payment architecture and high-availability transaction engines",
       "Strategic enterprise AI consulting, model governance, and ethical AI policy frameworks",
-      "24/7 follow-the-sun SRE operations guaranteeing 99.99% infrastructure availability",
+      "24/7 follow-the-sun SRE operations supporting enterprise high-availability infrastructure",
       "Dedicated solutions architects providing ongoing technical governance and cloud reviews"
     ]
   },

@@ -41,7 +41,7 @@ const usFaqs = [
   },
   {
     q: "What SLA response times do you guarantee for US enterprises?",
-    a: "Our enterprise contracts feature guaranteed P1 critical incident response times under 15 minutes, 99.99% infrastructure uptime SLAs, and 24/7/365 active monitoring."
+    a: "Our enterprise contracts feature contractual P1 incident triage targets, targeted high-availability infrastructure SLAs, and continuous telemetry monitoring."
   },
   {
     q: "How does Devopstrio engineer HIPAA-compliant cloud architectures for US health tech?",
@@ -97,9 +97,10 @@ export default function USNationalHubPage() {
 
       {/* 1. Hero Block */}
       <LocationHero
+        title={<>Cloud Services Near Me in <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">the United States</span></>}
+        subtitle="Explore cloud services for US enterprises, including multi-cloud architecture, cloud migration, security and managed infrastructure solutions across our complete practice directory."
         locationName="United States"
-        locationHighlightClass="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent"
-        nearMeConnector="Near Me in"
+        countryCode="us"
         breadcrumbs={breadcrumbs}
         officeStatus="sub-regional-office"
         verifiedAddress="522 Aventura Dr, Mt. Juliet, TN 37122"
@@ -156,8 +157,8 @@ export default function USNationalHubPage() {
                   colors={["#f43f5e", "#fb7185", "#38bdf8"]}
                   className="p-6 transition-transform hover:-translate-y-1 duration-300"
                 >
-                  <span className="text-3xl font-bold text-rose-500 block mb-1">&lt;15m</span>
-                  <span className="text-base font-semibold text-white block mb-1">Guaranteed SLA</span>
+                  <span className="text-3xl font-bold text-rose-500 block mb-1">Rapid</span>
+                  <span className="text-base font-semibold text-white block mb-1">Response SLA</span>
                   <span className="text-xs text-zinc-400 leading-relaxed">Rapid response for P1 production incidents.</span>
                 </BorderGlow>
 
@@ -172,8 +173,8 @@ export default function USNationalHubPage() {
                   colors={["#f43f5e", "#fb7185", "#38bdf8"]}
                   className="p-6 transition-transform hover:-translate-y-1 duration-300"
                 >
-                  <span className="text-3xl font-bold text-rose-500 block mb-1">100%</span>
-                  <span className="text-base font-semibold text-white block mb-1">US Sovereign Data</span>
+                  <span className="text-3xl font-bold text-rose-500 block mb-1">Sovereign</span>
+                  <span className="text-base font-semibold text-white block mb-1">US Cloud Data</span>
                   <span className="text-xs text-zinc-400 leading-relaxed">Hosted in US cloud availability zones with SOC-2 governance.</span>
                 </BorderGlow>
 

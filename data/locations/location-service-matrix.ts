@@ -2,6 +2,7 @@ import { LocationServiceMapping, UKLocation } from "./types";
 import { ukLocations } from "./uk-locations";
 import { getAdaptedServiceBySlug } from "./service-adapter";
 import { TARGET_SERVICE_SLUGS, getExactServiceKeyword } from "@/lib/keyword-utils";
+import { getServiceProfile } from "./service-profiles";
 
 export const pilotLocationServices: LocationServiceMapping[] = [
   // =========================================================================
@@ -27,8 +28,8 @@ export const pilotLocationServices: LocationServiceMapping[] = [
       title: "Onshore London SRE and Multi-Cloud Infrastructure Management",
       description: "From our registered headquarters at 128 City Road, Devopstrio provides principal-led 24/7 SRE management, proactive threat containment, and automated FinOps budget controls.",
       deliverables: [
-        "Guaranteed <15-minute P1 incident response backed by strict SLAs",
-        "Automated continuous compliance reporting matching ISO 27001 and SOC-2 Type II",
+        "Contractual P1 incident response backed by strict enterprise SLAs",
+        "Continuous compliance reporting aligned with ISO 27001 and SOC-2 Type II",
         "Direct face-to-face architectural consultation at our London offices",
         "Active-active multi-region failover across UK sovereign cloud zones"
       ]
@@ -37,7 +38,7 @@ export const pilotLocationServices: LocationServiceMapping[] = [
       industryTitle: "FinTech, Asset Management and Corporate Banking",
       description: "Devopstrio manages mission-critical workloads for London-based investment brokers, open banking platforms, and fintech institutions requiring zero downtime."
     },
-    complianceHighlights: ["FCA Operational Resilience", "PRA Outsourcing Rules", "Cyber Essentials Plus", "ISO 27001"],
+    complianceHighlights: ["FCA Operational Resilience", "PRA Outsourcing Rules", "Cyber Essentials Aligned", "ISO 27001 Aligned"],
     faqs: [
       {
         q: "Where is Devopstrio's London office located?",
@@ -801,57 +802,31 @@ export function createDynamicUKMapping(city: UKLocation, serviceSlug: string): L
   const s = getAdaptedServiceBySlug(serviceSlug);
   const keyword = getExactServiceKeyword(serviceSlug, s?.title);
   const cityName = city.displayName;
+  const profile = getServiceProfile(serviceSlug, cityName, "uk");
 
   return {
     citySlug: city.slug,
     serviceSlug: serviceSlug,
     publicationStatus: "published",
     h1Title: `${keyword} Near Me in ${cityName}`,
-    metaTitle: `${keyword} Near Me in ${cityName} | Devopstrio`,
-    metaDescription: `Enterprise ${keyword.toLowerCase()} in ${cityName}. Devopstrio delivers 24/7 SRE monitoring, sovereign cloud architecture, and certified engineering teams for ${cityName} businesses.`,
-    commercialIntentQuery: `${keyword.toLowerCase()} in ${cityName}`,
+    metaTitle: `${keyword} ${cityName} | Devopstrio`,
+    metaDescription: `Explore ${keyword.toLowerCase()} for ${cityName} businesses, including Azure, AWS, cloud migration, infrastructure management and security solutions.`,
+    commercialIntentQuery: `${keyword.toLowerCase()} near me in ${cityName}`,
     localChallenge: {
-      title: `Addressing Scalability and Technology Infrastructure in ${cityName}`,
-      points: [
-        `Organizations across ${cityName} face expanding digital workloads requiring high availability and low latency.`,
-        `Navigating sovereign cloud data residency, UK GDPR compliance, and strict industry regulations.`,
-        `Bridging engineering skill gaps with certified 24/7 SRE and DevOps automation pods.`
-      ]
+      title: profile.challengeTitle,
+      points: profile.challengePoints
     },
     localSolution: {
-      title: `Certified ${keyword} Delivery for ${cityName} Enterprises`,
-      description: `Devopstrio provides principal-led ${keyword.toLowerCase()} with 24/7 continuous operations, automated cost controls, and rapid release velocity for ${cityName} teams.`,
-      deliverables: [
-        `Contractually binding <15-minute P1 incident response SLAs`,
-        `Continuous compliance with ISO 27001, SOC-2, and UK Cyber Essentials Plus`,
-        `Direct architectural consultation and sprint planning reviews`,
-        `Resilient multi-cloud engineering across sovereign cloud regions`
-      ]
+      title: profile.solutionTitle,
+      description: profile.solutionDesc,
+      deliverables: profile.deliverables
     },
     industryContext: {
       industryTitle: `${cityName} Regional Commercial Ecosystem`,
       description: `Tailored engineering delivery supporting ${cityName}'s dominant industries, digital scaleups, and enterprise businesses.`
     },
-    complianceHighlights: [
-      "ISO 27001 Certified Practice",
-      "UK Cyber Essentials Plus",
-      "UK GDPR and Sovereign Cloud",
-      "SOC-2 Type II Aligned"
-    ],
-    faqs: [
-      {
-        q: `Does Devopstrio provide ${keyword.toLowerCase()} across ${cityName}?`,
-        a: `Yes. Devopstrio provides comprehensive ${keyword.toLowerCase()} across ${cityName}, backed by our London Global Headquarters and 24/7 distributed SRE operations.`
-      },
-      {
-        q: `What incident response SLAs are provided for businesses in ${cityName}?`,
-        a: `We provide guaranteed sub-15-minute response times for critical P1 incidents with 24/7/365 active monitoring and dedicated engineering pods.`
-      },
-      {
-        q: `How do you ensure UK regulatory compliance for ${cityName} organizations?`,
-        a: `All infrastructure, data stores, and monitoring telemetry are hosted within sovereign UK cloud regions in compliance with UK GDPR, Data Protection Act 2018, and ISO 27001.`
-      }
-    ]
+    complianceHighlights: profile.complianceHighlights,
+    faqs: profile.faqs
   };
 }
 

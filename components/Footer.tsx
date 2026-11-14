@@ -32,7 +32,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#030303] text-zinc-550 pt-20 sm:pt-24 pb-4 relative font-sans mt-32 sm:mt-40 md:mt-44">
+    <footer className="w-full bg-[#030303] text-zinc-550 pt-20 sm:pt-24 pb-4 relative font-sans mt-32 sm:mt-40 md:mt-44" suppressHydrationWarning>
       {/* Premium Dual-Line White Top Border */}
       <div className="absolute top-0 inset-x-0 flex flex-col items-center z-10 pointer-events-none">
         <div className="relative w-full flex justify-center opacity-90">
@@ -112,7 +112,7 @@ export function Footer() {
                   Devopstrio
                 </span>
                 {/* <span className="text-[9px] font-bold text-zinc-500 tracking-[0.2em] uppercase mt-2">
-                  Enterprise AI Solutions & Services
+                  Enterprise AI Solutions and Services
                 </span> */}
               </div>
             </Link>
@@ -172,10 +172,10 @@ export function Footer() {
           {/* Col 2: Services / Practice Areas */}
           <div>
             <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Core Expertise</h4>
-            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
-              <li><Link href="/services/ai-data-innovation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">AI & Data Innovation</Link></li>
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide" suppressHydrationWarning>
+              <li><Link href="/services/ai-data-innovation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">AI and Data Innovation</Link></li>
               <li><Link href="/services/cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cloud Services</Link></li>
-              <li><Link href="/services/devops-automation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">DevOps & Automation</Link></li>
+              <li><Link href="/services/devops-automation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">DevOps and Automation</Link></li>
               <li><Link href="/services/cybersecurity" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cybersecurity</Link></li>
               <li><Link href="/services/software-development" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Software Development</Link></li>
               <li><Link href="/services/digital-transformation" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Digital Transformation</Link></li>
@@ -187,41 +187,41 @@ export function Footer() {
           {/* Col 3: Industries */}
           <div>
             <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Industries</h4>
-            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
-              <li><Link href="/industries/banking-finance" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Banking & Finance</Link></li>
-              <li><Link href="/industries/healthcare-life-sciences" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Healthcare & Life Sciences</Link></li>
-              <li><Link href="/industries/retail-ecommerce" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Retail & E-Commerce</Link></li>
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide" suppressHydrationWarning>
+              <li><Link href="/industries/banking-finance" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Banking and Finance</Link></li>
+              <li><Link href="/industries/healthcare-life-sciences" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Healthcare</Link></li>
+              <li><Link href="/industries/retail-ecommerce" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Retail and E-Commerce</Link></li>
               <li><Link href="/industries/manufacturing" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Manufacturing</Link></li>
               <li><Link href="/industries/telecommunications" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Telecommunications</Link></li>
-              <li><Link href="/industries/media-entertainment" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Media & Entertainment</Link></li>
+              <li><Link href="/industries/media-entertainment" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Media and Entertainment</Link></li>
               <li><Link href="/industries/education" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Education</Link></li>
-              <li><Link href="/industries/government-public-sector" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Government & Public Sector</Link></li>
+              <li><Link href="/industries/government-public-sector" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Government and Public Sector</Link></li>
             </ul>
           </div>
 
           {/* Col 4: Ecosystem */}
           <div>
             <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Ecosystem</h4>
-            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide" suppressHydrationWarning>
               <li><Link href="/ecosystem/partnerships" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Strategic Partnerships</Link></li>
-              <li><Link href="/ecosystem/innovation-labs" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">R&D Innovation Labs</Link></li>
-              <li><Link href="/ecosystem/platforms-solutions" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Platforms & Solutions</Link></li>
+              <li><Link href="/ecosystem/innovation-labs" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">R and D Innovation Labs</Link></li>
+              <li><Link href="/ecosystem/platforms-solutions" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Platforms and Solutions</Link></li>
               <li><Link href="/ecosystem/technology-stack" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Technology Stack</Link></li>
               <li><Link href="/ecosystem/global-delivery" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Delivery</Link></li>
               <li><Link href="/ecosystem/engineering-excellence" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Engineering Excellence</Link></li>
-              <li><Link href="/ecosystem/accelerators-frameworks" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Accelerators & Frameworks</Link></li>
+              <li><Link href="/ecosystem/accelerators-frameworks" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Accelerators and Frameworks</Link></li>
               <li><Link href="/ecosystem/landing-zone" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Landing Zone</Link></li>
             </ul>
           </div>
 
-          {/* Col 5: Insights & Events */}
+          {/* Col 5: Insights and Events */}
           <div>
-            <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Insights & Events</h4>
-            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
+            <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Insights</h4>
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide" suppressHydrationWarning>
               <li><Link href="/insights/blogs" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Blogs</Link></li>
               <li><Link href="/insights/case-studies" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Case Studies</Link></li>
               <li><Link href="/insights/white-paper" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">White Paper</Link></li>
-              <li><Link href="/insights/awards-milestones" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Awards & Milestones</Link></li>
+              <li><Link href="/insights/awards-milestones" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Awards and Milestones</Link></li>
               <li><Link href="/insights/industry-events" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Industry Events</Link></li>
               <li><Link href="/insights/celebrations" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Celebrations</Link></li>
               <li><Link href="/insights/team-culture" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Team Culture</Link></li>
@@ -232,14 +232,14 @@ export function Footer() {
           {/* Col 6: Company */}
           <div>
             <h4 className="text-base md:text-lg font-semibold text-white mb-5 tracking-wider uppercase font-sans">Company</h4>
-            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
+            <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide" suppressHydrationWarning>
               <li><Link href="/about/company-overview" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Company Overview</Link></li>
-              <li><Link href="/about/our-culture-people" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Our Culture & People</Link></li>
+              <li><Link href="/about/our-culture-people" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Our Culture and People</Link></li>
               <li><Link href="/about/global-internship" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Internship</Link></li>
               <li><Link href="/about/global-presence" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Global Presence</Link></li>
-              <li><Link href="/about/partnerships-certifications" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Partnerships & Certifications</Link></li>
-              <li><Link href="/about/awards-recognition" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Awards & Recognition</Link></li>
-              <li><Link href="/about/sustainability-csr" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Sustainability & CSR</Link></li>
+              <li><Link href="/about/partnerships-certifications" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Partnerships and Certifications</Link></li>
+              <li><Link href="/about/awards-recognition" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Awards and Recognition</Link></li>
+              <li><Link href="/about/sustainability-csr" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Sustainability and CSR</Link></li>
               <li><Link href="/contact#contact-form" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Contact Us</Link></li>
             </ul>
           </div>
@@ -248,7 +248,7 @@ export function Footer() {
 
 
 
-        {/* Row 2: Real Published Location Pages (6-Column Grid: Col 1 Empty under Logo, 3 Cols UK, 1 Col India, 1 Col US) */}
+        {/* Row 2: Real Published City-Service Landing Pages (6-Column Grid: Col 1 Empty under Logo, 3 Cols UK, 1 Col India, 1 Col US) */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-12 mb-20">
 
           {/* Col 1: Empty under Brand Logo */}
@@ -256,77 +256,82 @@ export function Footer() {
 
           {/* Col 2: UK Key Delivery Hubs - England Metros (under Core Expertise) */}
           <div>
+
             <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
-              <li><Link href="/locations/uk/england/london" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">London</Link></li>
-              <li><Link href="/locations/uk/england/manchester" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Manchester</Link></li>
-              <li><Link href="/locations/uk/england/birmingham" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Birmingham</Link></li>
-              <li><Link href="/locations/uk/england/cambridge" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cambridge</Link></li>
-              <li><Link href="/locations/uk/england/oxford" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Oxford</Link></li>
-              <li><Link href="/locations/uk/england/leeds" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Leeds</Link></li>
-              <li><Link href="/locations/uk/england/bristol" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Bristol</Link></li>
-              <li><Link href="/locations/uk/england/reading" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Reading</Link></li>
+              <li><Link href="/locations/uk/london-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">London</Link></li>
+              <li><Link href="/locations/uk/manchester-cybersecurity" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Manchester</Link></li>
+              <li><Link href="/locations/uk/birmingham-cloud-managed-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Birmingham</Link></li>
+              <li><Link href="/locations/uk/cambridge-cloud-migration" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cambridge</Link></li>
+              <li><Link href="/locations/uk/oxford-ai-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Oxford</Link></li>
+              <li><Link href="/locations/uk/leeds-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Leeds</Link></li>
+              <li><Link href="/locations/uk/bristol-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Bristol</Link></li>
+              <li><Link href="/locations/uk/reading-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Reading</Link></li>
             </ul>
           </div>
 
           {/* Col 3: UK Regional Centers - England Tech Clusters (under Industries) */}
           <div>
+            
             <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
-              <li><Link href="/locations/uk/england/newcastle" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Newcastle</Link></li>
-              <li><Link href="/locations/uk/england/sheffield" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Sheffield</Link></li>
-              <li><Link href="/locations/uk/england/liverpool" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Liverpool</Link></li>
-              <li><Link href="/locations/uk/england/nottingham" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Nottingham</Link></li>
-              <li><Link href="/locations/uk/england/southampton" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Southampton</Link></li>
-              <li><Link href="/locations/uk/england/brighton" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Brighton</Link></li>
-              <li><Link href="/locations/uk/england/leicester" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Leicester</Link></li>
-              <li><Link href="/locations/uk/england/york" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">York</Link></li>
+              <li><Link href="/locations/uk/newcastle-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Newcastle</Link></li>
+              <li><Link href="/locations/uk/sheffield-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Sheffield</Link></li>
+              <li><Link href="/locations/uk/liverpool-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Liverpool</Link></li>
+              <li><Link href="/locations/uk/nottingham-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Nottingham</Link></li>
+              <li><Link href="/locations/uk/southampton-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Southampton</Link></li>
+              <li><Link href="/locations/uk/brighton-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Brighton</Link></li>
+              <li><Link href="/locations/uk/leicester-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Leicester</Link></li>
+              <li><Link href="/locations/uk/york-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">York</Link></li>
             </ul>
           </div>
 
           {/* Col 4: UK Devolved Nations - Scotland, Wales and Northern Ireland (under Ecosystem) */}
           <div>
+           
             <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
-              <li><Link href="/locations/uk/scotland/edinburgh" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Edinburgh</Link></li>
-              <li><Link href="/locations/uk/scotland/glasgow" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Glasgow</Link></li>
-              <li><Link href="/locations/uk/scotland/aberdeen" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Aberdeen</Link></li>
-              <li><Link href="/locations/uk/wales/cardiff" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cardiff</Link></li>
-              <li><Link href="/locations/uk/wales/swansea" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Swansea</Link></li>
-              <li><Link href="/locations/uk/wales/newport" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Newport</Link></li>
-              <li><Link href="/locations/uk/northern-ireland/belfast" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Belfast</Link></li>
-              <li><Link href="/locations/uk/northern-ireland/derry" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Derry</Link></li>
+              <li><Link href="/locations/uk/edinburgh-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Edinburgh</Link></li>
+              <li><Link href="/locations/uk/glasgow-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Glasgow</Link></li>
+              <li><Link href="/locations/uk/aberdeen-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Aberdeen</Link></li>
+              <li><Link href="/locations/uk/cardiff-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Cardiff</Link></li>
+              <li><Link href="/locations/uk/swansea-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Swansea</Link></li>
+              <li><Link href="/locations/uk/newport-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Newport</Link></li>
+              <li><Link href="/locations/uk/belfast-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Belfast</Link></li>
+              <li><Link href="/locations/uk/derry-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Derry</Link></li>
             </ul>
           </div>
 
-          {/* Col 5: India Delivery Centers (under Insights & Events) */}
+          {/* Col 5: India Delivery Centers (under Insights and Events) */}
           <div>
+            
             <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
-              <li><Link href="/locations/india/karnataka/bengaluru" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Bengaluru</Link></li>
-              <li><Link href="/locations/india/tamil-nadu/chennai" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Chennai</Link></li>
-              <li><Link href="/locations/india/telangana/hyderabad" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Hyderabad</Link></li>
-              <li><Link href="/locations/india/maharashtra/mumbai" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Mumbai</Link></li>
-              <li><Link href="/locations/india/maharashtra/pune" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Pune</Link></li>
-              <li><Link href="/locations/india/tamil-nadu/coimbatore" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Coimbatore</Link></li>
-              <li><Link href="/locations/india/kerala/kochi" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Kochi</Link></li>
-              <li><Link href="/locations/india/tamil-nadu/thoothukudi" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Thoothukudi</Link></li>
+              <li><Link href="/locations/india/bengaluru-cloud-managed-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Bengaluru</Link></li>
+              <li><Link href="/locations/india/chennai-software-development" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Chennai</Link></li>
+              <li><Link href="/locations/india/hyderabad-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Hyderabad</Link></li>
+              <li><Link href="/locations/india/mumbai-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Mumbai</Link></li>
+              <li><Link href="/locations/india/pune-software-development" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Pune</Link></li>
+              <li><Link href="/locations/india/coimbatore-software-development" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Coimbatore</Link></li>
+              <li><Link href="/locations/india/kochi-cloud-managed-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Kochi</Link></li>
+              <li><Link href="/locations/india/thoothukudi-cloud-managed-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Thoothukudi</Link></li>
             </ul>
           </div>
 
           {/* Col 6: United States Technology Hubs (under Company) */}
           <div>
+            
             <ul className="flex flex-col gap-3.5 text-base text-zinc-300 font-normal tracking-wide">
-              <li><Link href="/locations/us/tennessee/nashville" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Nashville</Link></li>
-              <li><Link href="/locations/us/tennessee/mt-juliet" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Mt. Juliet</Link></li>
-              <li><Link href="/locations/us/texas/austin" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Austin</Link></li>
-              <li><Link href="/locations/us/texas/dallas" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Dallas</Link></li>
-              <li><Link href="/locations/us/new-york/new-york-city" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">New York City</Link></li>
-              <li><Link href="/locations/us/california/san-francisco" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">San Francisco</Link></li>
-              <li><Link href="/locations/us/washington/seattle" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Seattle</Link></li>
-              <li><Link href="/locations/us/georgia/atlanta" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Atlanta</Link></li>
+              <li><Link href="/locations/us/nashville-kubernetes-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Nashville</Link></li>
+              <li><Link href="/locations/us/mt-juliet-cloud-managed-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Mt. Juliet</Link></li>
+              <li><Link href="/locations/us/austin-cloud-migration" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Austin</Link></li>
+              <li><Link href="/locations/us/dallas-cloud-managed-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Dallas</Link></li>
+              <li><Link href="/locations/us/new-york-city-cybersecurity" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">New York</Link></li>
+              <li><Link href="/locations/us/san-francisco-kubernetes-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">San Francisco</Link></li>
+              <li><Link href="/locations/us/seattle-cloud-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Seattle</Link></li>
+              <li><Link href="/locations/us/atlanta-ai-services" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Atlanta</Link></li>
             </ul>
           </div>
 
         </div>
 
-        {/* BOTTOM ROW: Socials & Legal */}
+        {/* BOTTOM ROW: Socials and Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-6 w-full">
 
           {/* Legal Links */}
@@ -410,7 +415,7 @@ export function Footer() {
           </span>
         </div>
 
-        {/* Collapsible HTML Directory Index for Search Bots & Users (Technical SEO Link Index) - Hidden from UI */}
+        {/* Collapsible HTML Directory Index for Search Bots and Users (Technical SEO Link Index) - Hidden from UI */}
         <details className="hidden mt-8 group border border-zinc-900 rounded-xl bg-zinc-950/20 text-left">
           <summary className="list-none flex items-center justify-between px-6 py-4 cursor-pointer text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-rose-500 transition-colors select-none">
             <span>Explore Site Directory (HTML Index)</span>
@@ -418,22 +423,22 @@ export function Footer() {
           </summary>
           <div className="px-6 pb-6 pt-4 border-t border-zinc-900/60 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-[11px] text-zinc-400 font-medium">
             <div>
-              <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">AI & Data Innovation</h5>
+              <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">AI and Data Innovation</h5>
               <ul className="flex flex-col gap-1.5">
                 <li><Link href="/services/ai-data-innovation/generative-ai-solutions" className="hover:text-white transition-colors">Generative AI Solutions</Link></li>
-                <li><Link href="/services/ai-data-innovation/ai-agents-automation" className="hover:text-white transition-colors">AI Agents & Automation</Link></li>
+                <li><Link href="/services/ai-data-innovation/ai-agents-automation" className="hover:text-white transition-colors">AI Agents and Automation</Link></li>
                 <li><Link href="/services/ai-data-innovation/machine-learning-engineering" className="hover:text-white transition-colors">Machine Learning Engineering</Link></li>
                 <li><Link href="/services/ai-data-innovation/data-engineering" className="hover:text-white transition-colors">Data Engineering</Link></li>
-                <li><Link href="/services/ai-data-innovation/business-intelligence-analytics" className="hover:text-white transition-colors">BI & Analytics</Link></li>
+                <li><Link href="/services/ai-data-innovation/business-intelligence-analytics" className="hover:text-white transition-colors">BI and Analytics</Link></li>
                 <li><Link href="/services/ai-data-innovation/predictive-analytics" className="hover:text-white transition-colors">Predictive Analytics</Link></li>
                 <li><Link href="/services/ai-data-innovation/data-governance" className="hover:text-white transition-colors">Data Governance</Link></li>
-                <li><Link href="/services/ai-data-innovation/mlops-ai-operations" className="hover:text-white transition-colors">MLOps & AI Operations</Link></li>
+                <li><Link href="/services/ai-data-innovation/mlops-ai-operations" className="hover:text-white transition-colors">MLOps and AI Operations</Link></li>
               </ul>
             </div>
             <div>
               <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">Cloud Services</h5>
               <ul className="flex flex-col gap-1.5">
-                <li><Link href="/services/cloud-services/cloud-strategy-consulting" className="hover:text-white transition-colors">Cloud Strategy & Consulting</Link></li>
+                <li><Link href="/services/cloud-services/cloud-strategy-consulting" className="hover:text-white transition-colors">Cloud Strategy and Consulting</Link></li>
                 <li><Link href="/services/cloud-services/cloud-migration" className="hover:text-white transition-colors">Cloud Migration</Link></li>
                 <li><Link href="/services/cloud-services/cloud-architecture" className="hover:text-white transition-colors">Cloud Architecture</Link></li>
                 <li><Link href="/services/cloud-services/azure-services" className="hover:text-white transition-colors">Azure Services</Link></li>
@@ -441,11 +446,11 @@ export function Footer() {
                 <li><Link href="/services/cloud-services/google-cloud-services" className="hover:text-white transition-colors">Google Cloud Services</Link></li>
                 <li><Link href="/services/cloud-services/cloud-security" className="hover:text-white transition-colors">Cloud Security</Link></li>
                 <li><Link href="/services/cloud-services/cloud-managed-services" className="hover:text-white transition-colors">Cloud Managed Services</Link></li>
-                <li><Link href="/services/cloud-services/finops-cost-optimization" className="hover:text-white transition-colors">FinOps & Cost Optimization</Link></li>
+                <li><Link href="/services/cloud-services/finops-cost-optimization" className="hover:text-white transition-colors">FinOps and Cost Optimization</Link></li>
               </ul>
             </div>
             <div>
-              <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">DevOps & Automation</h5>
+              <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">DevOps and Automation</h5>
               <ul className="flex flex-col gap-1.5">
                 <li><Link href="/services/devops-automation/cicd-implementation" className="hover:text-white transition-colors">CI/CD Implementation</Link></li>
                 <li><Link href="/services/devops-automation/platform-engineering" className="hover:text-white transition-colors">Platform Engineering</Link></li>
@@ -454,7 +459,7 @@ export function Footer() {
                 <li><Link href="/services/devops-automation/devsecops" className="hover:text-white transition-colors">DevSecOps</Link></li>
                 <li><Link href="/services/devops-automation/site-reliability-engineering" className="hover:text-white transition-colors">SRE</Link></li>
                 <li><Link href="/services/devops-automation/release-automation" className="hover:text-white transition-colors">Release Automation</Link></li>
-                <li><Link href="/services/devops-automation/monitoring-observability" className="hover:text-white transition-colors">Monitoring & Observability</Link></li>
+                <li><Link href="/services/devops-automation/monitoring-observability" className="hover:text-white transition-colors">Monitoring and Observability</Link></li>
               </ul>
             </div>
             <div>
@@ -464,9 +469,9 @@ export function Footer() {
                 <li><Link href="/services/cybersecurity/vulnerability-management" className="hover:text-white transition-colors">Vulnerability Management</Link></li>
                 <li><Link href="/services/cybersecurity/penetration-testing" className="hover:text-white transition-colors">Penetration Testing</Link></li>
                 <li><Link href="/services/cybersecurity/security-operations-center" className="hover:text-white transition-colors">Security Operations Center</Link></li>
-                <li><Link href="/services/cybersecurity/identity-access-management" className="hover:text-white transition-colors">Identity & Access</Link></li>
+                <li><Link href="/services/cybersecurity/identity-access-management" className="hover:text-white transition-colors">Identity and Access</Link></li>
                 <li><Link href="/services/cybersecurity/cloud-security" className="hover:text-white transition-colors">Cloud Security</Link></li>
-                <li><Link href="/services/cybersecurity/compliance-governance" className="hover:text-white transition-colors">Compliance & Governance</Link></li>
+                <li><Link href="/services/cybersecurity/compliance-governance" className="hover:text-white transition-colors">Compliance and Governance</Link></li>
                 <li><Link href="/services/cybersecurity/zero-trust-architecture" className="hover:text-white transition-colors">Zero Trust Architecture</Link></li>
               </ul>
             </div>
@@ -477,7 +482,7 @@ export function Footer() {
                 <li><Link href="/services/software-development/web-application-development" className="hover:text-white transition-colors">Web Application Dev</Link></li>
                 <li><Link href="/services/software-development/mobile-application-development" className="hover:text-white transition-colors">Mobile Application Dev</Link></li>
                 <li><Link href="/services/software-development/saas-product-development" className="hover:text-white transition-colors">SaaS Product Dev</Link></li>
-                <li><Link href="/services/software-development/api-development-integration" className="hover:text-white transition-colors">API Dev & Integration</Link></li>
+                <li><Link href="/services/software-development/api-development-integration" className="hover:text-white transition-colors">API Dev and Integration</Link></li>
                 <li><Link href="/services/software-development/microservices-architecture" className="hover:text-white transition-colors">Microservices Architecture</Link></li>
                 <li><Link href="/services/software-development/product-engineering" className="hover:text-white transition-colors">Product Engineering</Link></li>
                 <li><Link href="/services/software-development/application-modernization" className="hover:text-white transition-colors">Application Modernization</Link></li>
@@ -490,10 +495,10 @@ export function Footer() {
                 <li><Link href="/locations/uk" className="hover:text-white transition-colors">UK Regional Delivery</Link></li>
                 <li><Link href="/locations/india" className="hover:text-white transition-colors">India Delivery Hubs</Link></li>
                 <li><Link href="/locations/us" className="hover:text-white transition-colors">US Delivery Centers</Link></li>
-                <li><Link href="/locations/uk/england/london" className="hover:text-white transition-colors">London Headquarters</Link></li>
-                <li><Link href="/locations/india/karnataka/bengaluru" className="hover:text-white transition-colors">Bengaluru Office</Link></li>
-                <li><Link href="/locations/india/tamil-nadu/chennai" className="hover:text-white transition-colors">Chennai Center</Link></li>
-                <li><Link href="/locations/us/tennessee/nashville" className="hover:text-white transition-colors">Nashville Office</Link></li>
+                <li><Link href="/locations/uk/london-cloud-services" className="hover:text-white transition-colors">London Headquarters</Link></li>
+                <li><Link href="/locations/india/bengaluru-cloud-managed-services" className="hover:text-white transition-colors">Bengaluru Office</Link></li>
+                <li><Link href="/locations/india/chennai-software-development" className="hover:text-white transition-colors">Chennai Center</Link></li>
+                <li><Link href="/locations/us/nashville-kubernetes-services" className="hover:text-white transition-colors">Nashville Office</Link></li>
               </ul>
             </div>
           </div>

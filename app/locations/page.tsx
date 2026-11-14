@@ -38,7 +38,7 @@ const globalFaqs = [
   },
   {
     q: "What incident response SLAs do you provide for enterprise clients?",
-    a: "All enterprise contracts are backed by formal Service Level Agreements (SLAs) guaranteeing a sub-15-minute response for critical P1 outages, 99.99% infrastructure availability, and continuous automated health telemetry."
+    a: "All enterprise contracts are backed by formal Service Level Agreements (SLAs) featuring contractual rapid response for critical P1 outages, targeted high-availability infrastructure commitments, and continuous automated health telemetry."
   },
   {
     q: "What major cloud platforms does Devopstrio engineer and manage?",
@@ -181,9 +181,9 @@ export default function GlobalLocationsHubPage() {
 
       {/* 1. Hero Block */}
       <LocationHero
+        title={<>Managed Cloud Services <span className="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent">Worldwide</span></>}
+        subtitle="Explore Devopstrio's worldwide cloud-native engineering, 24/7 managed SRE, and AI innovation directory across the United Kingdom, India, and the United States."
         locationName="Worldwide"
-        locationHighlightClass="bg-gradient-to-r from-red-600 via-rose-600 to-rose-500 bg-clip-text text-transparent"
-        nearMeConnector="Near Me"
         breadcrumbs={breadcrumbs}
       />
 
@@ -238,9 +238,9 @@ export default function GlobalLocationsHubPage() {
                   colors={["#f43f5e", "#fb7185", "#38bdf8"]}
                   className="p-6 transition-transform hover:-translate-y-1 duration-300"
                 >
-                  <span className="text-3xl font-bold text-rose-500 block mb-1">&lt;15m</span>
-                  <span className="text-base font-semibold text-white block mb-1">Guaranteed SLA</span>
-                  <span className="text-xs text-zinc-400 leading-relaxed">Rapid response for mission-critical systems.</span>
+                  <span className="text-3xl font-bold text-rose-500 block mb-1">Rapid</span>
+                  <span className="text-base font-semibold text-white block mb-1">Response SLA</span>
+                  <span className="text-xs text-zinc-400 leading-relaxed">Fast-response triage for mission-critical systems.</span>
                 </BorderGlow>
 
                 <BorderGlow
@@ -254,8 +254,8 @@ export default function GlobalLocationsHubPage() {
                   colors={["#f43f5e", "#fb7185", "#38bdf8"]}
                   className="p-6 transition-transform hover:-translate-y-1 duration-300"
                 >
-                  <span className="text-3xl font-bold text-rose-500 block mb-1">100%</span>
-                  <span className="text-base font-semibold text-white block mb-1">Sovereign Data</span>
+                  <span className="text-3xl font-bold text-rose-500 block mb-1">Sovereign</span>
+                  <span className="text-base font-semibold text-white block mb-1">Cloud Hosting</span>
                   <span className="text-xs text-zinc-400 leading-relaxed">Hosted in sovereign UK, India, and US regions.</span>
                 </BorderGlow>
 
