@@ -255,7 +255,7 @@ export function CapabilityUseCases({
                       <span className="text-xs sm:text-sm font-mono tracking-widest text-rose-500 uppercase font-semibold block mb-2">
                         Focus Areas
                       </span>
-                      {bullets.slice(0, 3).map((bullet, bIdx) => (
+                      {(bullets as string[]).slice(0, 3).map((bullet: string, bIdx: number) => (
                         <div key={bIdx} className="flex items-start gap-2.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2 flex-shrink-0" />
                           <span className="text-sm sm:text-base text-zinc-100 font-semibold leading-relaxed group-hover:text-white transition-colors">
