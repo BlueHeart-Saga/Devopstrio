@@ -401,6 +401,7 @@ export default function CapabilityPage({ params }: PageProps) {
       {/* 4. Solutions, Benefits & Outcomes Section */}
       <CapabilityOutcomes
         serviceSlug={service}
+        capabilitySlug={capability}
         capabilityTitle={data.title}
         overrideTitle={overrides?.outcomesTitle}
         overrideDesc={overrides?.outcomesDesc}
@@ -408,7 +409,8 @@ export default function CapabilityPage({ params }: PageProps) {
 
       {/* 3. Use Cases (Key Deliverables) Section */}
       <CapabilityUseCases 
-        serviceSlug={service}
+        serviceSlug={service} 
+        capabilitySlug={capability}
         capabilityTitle={data.title}
         overrideTitle={overrides?.useCasesTitle}
         overrideSubtitle={overrides?.useCasesSubtitle}
@@ -416,7 +418,8 @@ export default function CapabilityPage({ params }: PageProps) {
 
       {/* 5. Architecture Section */}
       <CapabilityArchitecture 
-        serviceSlug={service}
+        serviceSlug={service} 
+        capabilitySlug={capability}
         capabilityTitle={data.title}
         overrideTitle={overrides?.architectureTitle}
         overrideSubtitle={overrides?.architectureSubtitle}
@@ -434,6 +437,8 @@ export default function CapabilityPage({ params }: PageProps) {
 
       {/* 7. Benefits Section */}
       <CapabilityBenefits 
+        serviceSlug={service} 
+        capabilitySlug={capability} 
         benefits={overrides?.benefitsItems || data.benefits} 
         overrideTitle={overrides?.benefitsTitle}
         overrideSubtitle={overrides?.benefitsSubtitle}

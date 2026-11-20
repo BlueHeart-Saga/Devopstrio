@@ -1,11 +1,14 @@
 "use client";
 
+import { getSubpageContent } from "@/data/services/subpage-content-registry";
+
 import React, { useRef } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface CapabilityUseCasesProps {
+  capabilitySlug?: string;
   serviceSlug: string;
   capabilityTitle: string;
   overrideTitle?: string;
@@ -27,6 +30,7 @@ const industryList: IndustryUseCase[] = [
     image: "/webp/assets/Industries-page/industries/Banking-and-Finance.webp",
     desc: "Secure, regulatory-compliant solutions for banking, investing, and digital payments.",
     bulletsMap: {
+      "ai-modernization": ["Legacy Core Banking Refactoring", "Microservices Boundary Extraction", "Automated Transaction Regression Testing"],
       "ai-data-innovation": ["AI Fraud Detection", "AI Credit Scoring", "Conversational Portfolio Assistants"],
       "cloud-services": ["PCI-DSS Compliant Hosting", "Low-Latency Trading Infrastructure", "Multi-Region Ledger Backups"],
       "devops-automation": ["GitOps Compliance Enforcement", "Automated Security Gate Validation", "Canary Deployment Controls"],
@@ -41,6 +45,7 @@ const industryList: IndustryUseCase[] = [
     image: "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp",
     desc: "HIPAA-compliant telehealth apps, EHR platforms, and research databases.",
     bulletsMap: {
+      "ai-modernization": ["EHR Monolith Decoupling", "FHIR/HL7 Data Pipeline Migration", "HIPAA-Compliant Code Hardening"],
       "ai-data-innovation": ["Clinical Scribes & Summaries", "Genomic Research Accelerations", "Intelligent Patient Ingest Routing"],
       "cloud-services": ["HIPAA-Secure Cloud Vaults", "High-Performance Lab Compute", "High-Availability Clinic Portals"],
       "devops-automation": ["Zero-Downtime Telehealth Updates", "Standardized Host Configurations", "HIPAA Validation Sandboxes"],
@@ -55,6 +60,7 @@ const industryList: IndustryUseCase[] = [
     image: "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp",
     desc: "Omni-channel engines, high-speed checkouts, and real-time inventory systems.",
     bulletsMap: {
+      "ai-modernization": ["Checkout Service Modernisation", "Stateless Inventory Micro-Modules", "Elastic API Gateway Modernisation"],
       "ai-data-innovation": ["Personalized Shopping Feeds", "AI Chat Support Assistants", "Seasonal Demand Forecasts"],
       "cloud-services": ["Peak-Traffic Auto-Scaling", "Distributed Catalog Cache", "Multi-Channel Stock Databases"],
       "devops-automation": ["Checkout Security Testing Gates", "GitOps Promo Page Releases", "API Integration Safety Loops"],
@@ -69,6 +75,7 @@ const industryList: IndustryUseCase[] = [
     image: "/webp/assets/Industries-page/industries/Manufacturing.webp",
     desc: "Industrial IoT integrations, predictive maintenance logs, and smart supply chains.",
     bulletsMap: {
+      "ai-modernization": ["SCADA Telemetry Decoupling", "Industrial IoT Protocol Upgrades", "Concurrent Event Streaming Workers"],
       "ai-data-innovation": ["Predictive Machinery Failures", "Defect Detection Vision Networks", "Supply Chain Ingestion Forecasts"],
       "cloud-services": ["IoT Telemetry Cloud Hubs", "Edge Device Control Nodes", "High-Availability Factory Networks"],
       "devops-automation": ["Firmware Deployment Pipelines", "Automated Device Config Checks", "Site Build Automation Tools"],
@@ -83,6 +90,7 @@ const industryList: IndustryUseCase[] = [
     image: "/webp/assets/Industries-page/industries/Telecommunications.webp",
     desc: "Scalable OSS/BSS infrastructures, 5G cloud services, and telecom analytics.",
     bulletsMap: {
+      "ai-modernization": ["OSS/BSS Subsystem Refactoring", "Low-Latency Core Routing Upgrades", "Automated Pipeline Compliance"],
       "ai-data-innovation": ["Network Congestion Predictors", "Telecom Customer Churn Analytics", "AI Voice Support Routers"],
       "cloud-services": ["5G Edge Core Compute", "High-Volume Packet Ingest", "OSS/BSS Server Migrations"],
       "devops-automation": ["Network Function Virtualization CD", "Automated Router Config Verification", "Scale Test Automation Labs"],
@@ -97,6 +105,7 @@ const industryList: IndustryUseCase[] = [
     image: "/webp/assets/Industries-page/industries/Media-and-Entertainment.webp",
     desc: "High-bandwidth VOD platforms, live broadcasting, and digital assets.",
     bulletsMap: {
+      "ai-modernization": ["Video Ingestion Engine Refactoring", "Cloud-Native Asset Modernisation", "Stateless Streaming Microservices"],
       "ai-data-innovation": ["Automatic Video Tagging", "User Content Recommendation", "AI Subtitle Generation"],
       "cloud-services": ["High-Bandwidth Video Pipelines", "Global Edge CDN Clusters", "Dynamic Transcoding Servers"],
       "devops-automation": ["VOD Pipeline Integrations", "Media Server Health Audits", "Autoscaling Test Runs"],
@@ -140,10 +149,12 @@ const defaultBullets = ["Regulatory Compliance Checks", "Secure Data Governance"
 export function CapabilityUseCases({ 
   serviceSlug, 
   capabilityTitle,
+  capabilitySlug,
   overrideTitle,
   overrideSubtitle
 }: CapabilityUseCasesProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const subpage = capabilitySlug ? getSubpageContent(serviceSlug, capabilitySlug) : undefined;
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -194,9 +205,15 @@ export function CapabilityUseCases({
               scrollbarWidth: "none"
             }}
           >
-            {industryList.map((industry, idx) => {
-              const bullets = industry.bulletsMap[serviceSlug] || defaultBullets;
-              const href = `/industries/${industry.slug}`;
+            {(subpage?.useCases || industryList).map((item: any, idx: number) => {
+              const isCustom = 'focusAreas' in item;
+              const industryName = isCustom ? item.industry : item.name;
+              const scenarioTitle = isCustom ? item.scenario : item.name;
+              const desc = item.desc;
+              const bullets = isCustom ? item.focusAreas : (item.bulletsMap[serviceSlug] || defaultBullets);
+              const image = item.image;
+              const practicalVal = isCustom ? item.practicalValue : undefined;
+              const href = isCustom ? `/industries/${item.industry.toLowerCase().replace(/[^a-z0-9]+/g, '-')}` : `/industries/${item.slug}`;
 
               return (
                 <div
@@ -206,8 +223,8 @@ export function CapabilityUseCases({
                   {/* Padded image layout */}
                   <div className="p-3 pb-0">
                     <div className="relative w-full aspect-[16/10] overflow-hidden bg-zinc-900 rounded-[16px] border border-white/5">
-                      <img src={industry.image}
-                        alt={industry.name}
+                      <img src={image}
+                        alt={industryName}
                         className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 pointer-events-none select-none"
                       loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
@@ -216,16 +233,25 @@ export function CapabilityUseCases({
 
                   {/* Card Content */}
                   <div className="p-6 flex flex-col flex-grow text-left">
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1 leading-snug group-hover:text-rose-500 transition-colors">
-                      {industry.name}
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-rose-500">
+                        {industryName}
+                      </span>
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
+                      {scenarioTitle}
                     </h3>
 
                     {/* <p className="text-xs text-white leading-relaxed font-semibold mb-6">
-                      {industry.desc}
+                      {desc}
                     </p> */}
 
                     {/* Bullet Focus Areas - Reveal on Hover Only */}
-                    <div className="overflow-hidden transition-all duration-300 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 group-hover:mt-4 space-y-2.5">
+                    {/* Full-sized Card - Content Always Visible (No hover hide) */}
+                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal mb-4">
+                      {desc}
+                    </p>
+                    <div className="space-y-2.5 pt-3 border-t border-white/5">
                       <span className="text-xs sm:text-sm font-mono tracking-widest text-rose-500 uppercase font-semibold block mb-2">
                         Focus Areas
                       </span>
@@ -240,7 +266,12 @@ export function CapabilityUseCases({
                     </div>
                   </div>
 
-                  {/* Card Actions Footer */}
+                  {practicalVal && (
+                      <div className="mt-4 pt-3 border-t border-white/5 text-xs text-zinc-400">
+                        <strong className="text-zinc-200">Value:</strong> {practicalVal}
+                      </div>
+                    )}
+                    {/* Card Actions Footer */}
                   <div className="px-6 pb-6 pt-3 mt-auto border-t border-white/5 flex items-center justify-between">
                     <Link
                       href={href}

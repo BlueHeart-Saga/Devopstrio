@@ -128,6 +128,7 @@ export const capabilityRegistry: Record<string, Record<string, RegistryItem>> = 
     "ai-consulting": { title: "AI Consulting", desc: "Generative AI workshops, feasibility checkouts, and alignment policies." },
     "cybersecurity-consulting": { title: "Cybersecurity Consulting", desc: "Incident response plan drafts and risk register configuration." },
     "digital-transformation-consulting": { title: "Digital Transformation Consulting", desc: "Digital transformation roadmaps, design thinking sprints." },
+    "it-strategy-roadmap": { title: "IT Strategy & Roadmap Planning", desc: "Strategic technology roadmaps, executive investment frameworks, and portfolio modernization." },
     "technology-assessment": { title: "Technology Assessment", desc: "Scalability audits, query bottlenecks tracking, and code checks." },
     "cloud-ai-transformation-advisory": { title: "Cloud & AI Transformation Advisory", desc: "Strategic technology advisory, enterprise architecture planning, cloud strategy, AI roadmap design, and digital transformation consulting." }
   },

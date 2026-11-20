@@ -1,10 +1,13 @@
 "use client";
 
+import { getSubpageContent } from "@/data/services/subpage-content-registry";
+
 import React from "react";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface CapabilityOutcomesProps {
+  capabilitySlug?: string;
   serviceSlug: string;
   capabilityTitle: string;
   overrideTitle?: React.ReactNode;
@@ -18,6 +21,38 @@ interface SolutionItem {
 }
 
 const solutionsRegistry: Record<string, SolutionItem[]> = {
+  "ai-modernization": [
+    {
+      title: "Legacy Code Assessment",
+      desc: "Comprehensive AST parsing, cyclic dependency graphing, and static risk cataloguing across legacy codebases to define prioritised refactoring roadmaps.",
+      previewSteps: ["AST Parser", "Dependency Graph", "Risk Matrix"]
+    },
+    {
+      title: "AI-Assisted Code Refactoring",
+      desc: "Context-aware syntax tree transformation modernising procedural code into typed, modular architectures with strict human-in-the-loop validation.",
+      previewSteps: ["Syntax Analysis", "Transformation Engine", "PR Review"]
+    },
+    {
+      title: "Automated Testing & Quality Gates",
+      desc: "Synthesizing unit and regression test harnesses from legacy execution telemetry before refactoring, enforced via automated CI/CD gates.",
+      previewSteps: ["Regression Suite", "SAST Security Gate", "Canary Deployment"]
+    },
+    {
+      title: "Monolith Decoupling & Seams",
+      desc: "Extracting tightly bound legacy components into independent, domain-driven microservices using the proven Strangler Fig pattern.",
+      previewSteps: ["Seam Identification", "Service Boundary", "gRPC Adapter"]
+    },
+    {
+      title: "Framework & Runtime Migration",
+      desc: "Systematic upgrade of obsolete runtimes, end-of-life frameworks, and deprecated library dependencies with zero breaking API changes.",
+      previewSteps: ["Dependency Audit", "Compatibility Layer", "Target Runtime"]
+    },
+    {
+      title: "Continuous Quality Telemetry",
+      desc: "Continuous static analysis tracking cyclomatic complexity, code churn, and architectural compliance to prevent regression erosion.",
+      previewSteps: ["SonarQube / CodeQL", "Complexity Monitor", "Quality Gate"]
+    }
+  ],
   "ai-data-innovation": [
     {
       title: "Autonomous AI Agents",
@@ -343,10 +378,12 @@ const solutionsRegistry: Record<string, SolutionItem[]> = {
 export function CapabilityOutcomes({ 
   serviceSlug, 
   capabilityTitle,
+  capabilitySlug,
   overrideTitle,
   overrideDesc
 }: CapabilityOutcomesProps) {
-  const solutions = solutionsRegistry[serviceSlug] || solutionsRegistry["ai-data-innovation"];
+  const subpage = capabilitySlug ? getSubpageContent(serviceSlug, capabilitySlug) : undefined;
+  const solutions = subpage?.solutions || solutionsRegistry[serviceSlug] || solutionsRegistry["ai-data-innovation"];
 
   return (
     <section id="solutions-outcomes" className="w-full py-24 bg-black border-b border-zinc-900/60 relative">
@@ -357,41 +394,29 @@ export function CapabilityOutcomes({
           </h2>
         </Reveal>
 
-        {/* Recommended 3-Column Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Clean Enterprise Card Grid (Matches Reference Design) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {solutions.map((item, idx) => (
             <Reveal key={idx} delay={idx * 0.05} className="h-full">
-              <div className="group h-full bg-zinc-950/40 border border-white/10 hover:border-rose-500/40 rounded-2xl p-6 hover:scale-[1.02] hover:bg-zinc-900/30 hover:shadow-[0_0_30px_rgba(244,63,94,0.15)] transition-all duration-300 flex flex-col justify-between backdrop-blur-sm">
-                <div>
-                  {/* <span className="block text-[9px] font-mono tracking-widest text-rose-500 uppercase font-bold mb-3">
-                    SOLUTION 0{idx + 1}
-                  </span> */}
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-2 leading-snug group-hover:text-rose-500 transition-colors">
-                    {item.title}
-                  </h3>
-                  {/* <p className="text-xs text-white leading-relaxed font-semibold">
-                    {item.desc}
-                  </p> */}
-                </div>
+              <div className="group h-full bg-[#0d0d0f] border border-zinc-800/80 hover:border-zinc-700/90 rounded-2xl p-7 sm:p-8 transition-colors duration-200 flex flex-col justify-start text-left">
+                <h3 className="text-xl sm:text-[22px] font-bold text-white mb-3.5 leading-snug tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-[14px] sm:text-[15px] text-zinc-400 leading-[1.65] font-normal">
+                  {item.desc}
+                </p>
 
-                {/* Vertical Diagram Steps (Top to Bottom) */}
-                <div className="mt-6 border-t border-zinc-900/80 pt-4 group-hover:border-rose-500/20 transition-colors duration-300">
+                {/* PREVIOUS DIAGRAM STEPS (Commented out for clean reference design):
+                <div className="mt-6 border-t border-zinc-900/80 pt-4">
                   <div className="flex flex-col gap-1.5">
                     {item.previewSteps.map((step, sIdx) => (
-                      <React.Fragment key={sIdx}>
-                        <div className="w-full px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold tracking-wide border border-zinc-800/90 bg-zinc-950/80 hover:bg-zinc-900/90 hover:border-rose-500/40 text-zinc-200 hover:text-white transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.4)] hover:shadow-[0_0_15px_rgba(244,63,94,0.15)] flex items-center justify-between">
-                          <span>{step}</span>
-                        </div>
-
-                        {sIdx < item.previewSteps.length - 1 && (
-                          <div className="flex justify-center py-0.5">
-                            <ChevronDown size={14} strokeWidth={2.5} className="text-zinc-600 group-hover:text-rose-500/60 transition-colors" />
-                          </div>
-                        )}
-                      </React.Fragment>
+                      <div key={sIdx} className="w-full px-4 py-2.5 rounded-xl text-xs font-semibold border border-zinc-800 bg-zinc-950 text-zinc-200">
+                        {step}
+                      </div>
                     ))}
                   </div>
                 </div>
+                */}
               </div>
             </Reveal>
           ))}

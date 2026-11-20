@@ -15,6 +15,7 @@ const TimelineProcess = dynamic(() => import("@/components/services/TimelineProc
 // const TechnologyStack = dynamic(() => import("@/components/services/TechnologyStack").then((mod) => mod.TechnologyStack));
 const IndustryCards = dynamic(() => import("@/components/services/IndustryCards").then((mod) => mod.IndustryCards));
 const WhyDevopstrio = dynamic(() => import("@/sections/home/WhyDevOpsTrio").then((mod) => mod.WhyDevopstrio));
+const AiEditorialSection = dynamic(() => import("@/components/services/AiEditorialSection").then((mod) => mod.AiEditorialSection));
 const ServiceMetrics = dynamic(() => import("@/sections/services/category/ServiceMetrics").then((mod) => mod.ServiceMetrics));
 const ServiceRelated = dynamic(() => import("@/sections/services/category/ServiceRelated").then((mod) => mod.ServiceRelated));
 const FAQ = dynamic(() => import("@/components/services/FAQ").then((mod) => mod.FAQ));
@@ -57,8 +58,9 @@ export default async function ServiceCategoryPage() {
     { id: "challenges", label: "Challenges" },
     { id: "process", label: "Process" },
     // { id: "technology", label: "Technology" },
-    { id: "industries", label: "Industries" },
     { id: "why-devopstrio", label: "Why Us" },
+    { id: "editorial", label: "Editorial" },
+    { id: "industries", label: "Industries" },
     { id: "metrics", label: "Metrics" },
     { id: "related-services", label: "Related Services" },
     { id: "faq", label: "FAQ" }
@@ -123,17 +125,20 @@ export default async function ServiceCategoryPage() {
         <TechnologyStack techs={data.techStack} />
       </div> */}
 
-      {/* 7. Industries Served */}
-      <div id="industries">
-        <IndustryCards industries={data.industries} />
-      </div>
-
-      {/* 8. Why Devopstrio Showcase */}
+      {/* 6. Why Devopstrio Showcase (Why Choose Us) */}
       <div id="why-devopstrio">
         <WhyDevopstrio 
           badge="WHY CHOOSE US"
           title="Smart Engineering. Real Results. Growth You Can Measure."
         />
+      </div>
+
+      {/* 7. Distinctive Editorial Feature Section */}
+      <AiEditorialSection />
+
+      {/* 8. Target Sector Applications (Industries Served) */}
+      <div id="industries">
+        <IndustryCards industries={data.industries} />
       </div>
 
       {/* 9. Metrics Section */}

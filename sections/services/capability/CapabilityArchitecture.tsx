@@ -1,10 +1,13 @@
 "use client";
 
+import { getSubpageContent } from "@/data/services/subpage-content-registry";
+
 import React from "react";
 import { Check, ArrowDown } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface CapabilityArchitectureProps {
+  capabilitySlug?: string;
   serviceSlug: string;
   capabilityTitle: string;
   overrideTitle?: React.ReactNode;
@@ -21,6 +24,16 @@ interface ArchitectureFlow {
 }
 
 const architectureRegistry: Record<string, ArchitectureFlow> = {
+  "ai-modernization": {
+    title: "Code Modernisation & Refactoring Architecture",
+    layers: [
+      { label: "Layer 01: Codebase Discovery", node: "Static Code Analysis & AST Dependency Graphing" },
+      { label: "Layer 02: Architectural Seams", node: "Service Decoupling & Strangler Fig Boundary Mapping" },
+      { label: "Layer 03: AI-Assisted Transformation", node: "Syntax Modernisation & Automated Code Restructuring" },
+      { label: "Layer 04: Verification & Testing", node: "Automated Regression Synthesis & SAST Security Gates" },
+      { label: "Layer 05: Canary Deployment", node: "API Gateway Traffic Splitting & Zero-Downtime Rollout" }
+    ]
+  },
   "ai-data-innovation": {
     title: "Generative AI Architecture Flow",
     layers: [
@@ -135,11 +148,20 @@ const benefitsList = [
 export function CapabilityArchitecture({ 
   serviceSlug, 
   capabilityTitle,
+  capabilitySlug,
   overrideTitle,
   overrideSubtitle,
   overrideTopologyTitle
 }: CapabilityArchitectureProps) {
-  const flow = architectureRegistry[serviceSlug] || architectureRegistry["ai-data-innovation"];
+  const subpage = capabilitySlug ? getSubpageContent(serviceSlug, capabilitySlug) : undefined;
+  const flow = subpage?.architecture ? {
+    title: subpage.architecture.title,
+    layers: subpage.architecture.layers
+  } : (architectureRegistry[serviceSlug] || architectureRegistry["ai-data-innovation"]);
+  const activeImage = subpage?.architecture?.imageSrc || "/webp/assets/About-page/tech_architecture.webp";
+  const activeParagraph1 = subpage?.architecture?.editorialParagraph1 || "{activeParagraph1}";
+  const activeParagraph2 = subpage?.architecture?.editorialParagraph2 || "{activeParagraph2}";
+  const activeCaption = subpage?.architecture?.imageCaption || "{activeCaption}";
 
   return (
     <section id="architecture" className="w-full py-24 bg-black border-b border-zinc-900/60 relative overflow-hidden">
@@ -213,9 +235,12 @@ export function CapabilityArchitecture({
                             {numOnly}
                           </span>
                         </div>
-                        <h4 className="text-sm font-semibold text-white leading-snug group-hover:text-rose-500 transition-colors uppercase tracking-wider">
+                        <h4 className="text-sm font-semibold text-white leading-snug group-hover:text-rose-500 transition-colors uppercase tracking-wider mb-1">
                           {layerTitle}
                         </h4>
+                        <p className="text-[11px] sm:text-xs text-zinc-400 font-normal leading-relaxed">
+                          {layer.node}
+                        </p>
                       </div>
                     </Reveal>
                   </div>
@@ -232,28 +257,36 @@ export function CapabilityArchitecture({
               </h2>
             </Reveal>
 
-            {/* Benefits Matrix (6 Cards) */}
+            {/* Editorial Overview & Landscape Visual (Replaces previous 6-card matrix) */}
+            {/* PREVIOUS 6-CARD CODE COMMENTED OUT:
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {benefitsList.map((benefit, idx) => (
-                <Reveal key={idx} delay={idx * 0.04}>
-                  <div className="group bg-zinc-950/20 border border-white/5 rounded-2xl p-5 hover:border-rose-500/25 hover:bg-zinc-900/5 transition-all duration-300 h-full flex flex-col justify-start text-left">
-                    <div className="flex items-center gap-2 mb-1">
-                      <div className="w-5 h-5 rounded-md bg-rose-950/20 border border-rose-900/30 flex items-center justify-center text-rose-500 flex-shrink-0 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300">
-                        <Check size={10} strokeWidth={3} />
-                      </div>
-                      <h4 className="text-base font-semibold text-white group-hover:text-rose-500 transition-colors">
-                        {benefit.title}
-                      </h4>
-                    </div>
-                    {/* <p className="text-xs text-white leading-relaxed font-bold">
-                      {benefit.desc}
-                    </p> */}
-                  </div>
-                </Reveal>
+                <div key={idx} className="group bg-zinc-950/20 border border-white/5 rounded-2xl p-5">
+                  <h4>{benefit.title}</h4>
+                </div>
               ))}
             </div>
-          </div>
+            */}
 
+            <div className="flex flex-col gap-6 text-left">
+              <p className="text-base sm:text-[17px] text-zinc-300 leading-relaxed font-normal">
+                {activeParagraph1}
+              </p>
+              <p className="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal">
+                {activeParagraph2}
+              </p>
+
+              {/* Landscape Architecture Visual */}
+              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-zinc-800/80 bg-zinc-950 shadow-2xl mt-2">
+                <img
+                  src={activeImage}
+                  alt={overrideTopologyTitle || flow.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>

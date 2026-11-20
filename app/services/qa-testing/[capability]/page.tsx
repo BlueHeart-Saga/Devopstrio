@@ -128,18 +128,21 @@ export default function CapabilityPage({ params }: PageProps) {
       <CapabilityOutcomes
         serviceSlug={service}
         capabilityTitle={data.title}
+        capabilitySlug={capability}
       />
 
       {/* 3. Use Cases (Key Deliverables) Section */}
       <CapabilityUseCases 
         serviceSlug={service}
         capabilityTitle={data.title}
+        capabilitySlug={capability}
       />
 
       {/* 5. Architecture Section */}
       <CapabilityArchitecture 
         serviceSlug={service}
         capabilityTitle={data.title}
+        capabilitySlug={capability}
       />
 
       {/* 6. Technology Stack Section */}
@@ -148,7 +151,11 @@ export default function CapabilityPage({ params }: PageProps) {
       </div> */}
 
       {/* 7. Benefits Section */}
-      <CapabilityBenefits benefits={data.benefits} />
+      <CapabilityBenefits
+        benefits={data.benefits}
+        serviceSlug={service}
+        capabilitySlug={capability}
+      />
 
       {/* 8. Industries Section */}
       <CapabilityIndustries industries={serviceData.industries} />

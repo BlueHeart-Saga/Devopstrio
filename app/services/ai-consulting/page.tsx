@@ -14,7 +14,8 @@ const Challenges = dynamic(() => import("@/components/services/Challenges").then
 const TimelineProcess = dynamic(() => import("@/components/services/TimelineProcess").then((mod) => mod.TimelineProcess));
 // const TechnologyStack = dynamic(() => import("@/components/services/TechnologyStack").then((mod) => mod.TechnologyStack));
 const IndustryCards = dynamic(() => import("@/components/services/IndustryCards").then((mod) => mod.IndustryCards));
-const WhyDevopstrio = dynamic(() => import("@/sections/home/WhyDevOpsTrio").then((mod) => mod.WhyDevopstrio));
+import { WhyDevopstrio } from "@/sections/home/WhyDevOpsTrio";
+import { ServiceEditorialSection } from "@/components/services/ServiceEditorialSection";
 const ServiceMetrics = dynamic(() => import("@/sections/services/category/ServiceMetrics").then((mod) => mod.ServiceMetrics));
 const ServiceRelated = dynamic(() => import("@/sections/services/category/ServiceRelated").then((mod) => mod.ServiceRelated));
 const FAQ = dynamic(() => import("@/components/services/FAQ").then((mod) => mod.FAQ));
@@ -54,6 +55,7 @@ export default async function ServiceCategoryPage() {
     // { id: "technology", label: "Technology" },
     { id: "industries", label: "Industries" },
     { id: "why-devopstrio", label: "Why Us" },
+    { id: "editorial", label: "Editorial" },
     { id: "metrics", label: "Metrics" },
     { id: "related-services", label: "Related Services" },
     { id: "faq", label: "FAQ" }
@@ -111,6 +113,8 @@ export default async function ServiceCategoryPage() {
       <div id="why-devopstrio">
         <WhyDevopstrio />
       </div>
+
+      <ServiceEditorialSection slug={service} />
 
       <ServiceMetrics stats={data.stats || []} />
 
