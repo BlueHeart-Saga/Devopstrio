@@ -8,6 +8,9 @@ import { FAQ } from "@/components/ecosystem/FAQ";
 import { AcceleratorsHero } from "@/sections/ecosystem/accelerators/AcceleratorsHero";
 import { WhyAcceleratorsMatter } from "@/sections/ecosystem/accelerators/WhyAcceleratorsMatter";
 import { AcceleratorsEcosystem } from "@/sections/ecosystem/accelerators/AcceleratorsEcosystem";
+import { EnterpriseAcceleratorsCatalogue } from "@/sections/ecosystem/accelerators/EnterpriseAcceleratorsCatalogue";
+import "@/styles/offering-refresh.css";
+
 import { AcceleratorsShowcase } from "@/sections/ecosystem/accelerators/AcceleratorsShowcase";
 import { GitHubAcceleratorsPortal } from "@/sections/ecosystem/accelerators/GitHubAcceleratorsPortal";
 import { DeliveryImpact } from "@/sections/ecosystem/accelerators/DeliveryImpact";
@@ -26,6 +29,7 @@ export default function AcceleratorsFrameworksPage() {
 
   const subSections = [
     { id: "overview", label: "Accelerators" },
+    { id: "catalogue", label: "Catalogue" },
     { id: "why-accelerators", label: "Value Model" },
     // { id: "showcase", label: "Showcase" },
     { id: "github-portal", label: "Repositories & Services" },
@@ -49,6 +53,9 @@ export default function AcceleratorsFrameworksPage() {
       <div id="overview" className="scroll-mt-20">
         <AcceleratorsEcosystem />
       </div>
+
+      {/* 02b. Enterprise Accelerators Catalogue */}
+      <EnterpriseAcceleratorsCatalogue />
 
       {/* 03. Why Accelerators Matter */}
       <div id="why-accelerators" className="scroll-mt-20">

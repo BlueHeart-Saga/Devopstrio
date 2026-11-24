@@ -1,3 +1,4 @@
+import { getPublishedOfferings } from "@/data/accelerators/accelerators-registry";
 import { MetadataRoute } from "next";
 import { servicesData } from "@/data/services";
 import { capabilityRegistry } from "@/data/services/dynamic-capabilities";
@@ -349,7 +350,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
+  // Published Enterprise Accelerators
+  const acceleratorPages: MetadataRoute.Sitemap = getPublishedOfferings().map((offering) => ({
+    url: `${baseUrl}/ecosystem/accelerators-frameworks/${offering.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.8
+  }));
+
   return [
+    ...acceleratorPages,
     ...staticPages,
     ...servicePages,
     ...industryPages,
