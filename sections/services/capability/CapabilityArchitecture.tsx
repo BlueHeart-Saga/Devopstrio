@@ -13,6 +13,8 @@ interface CapabilityArchitectureProps {
   overrideTitle?: React.ReactNode;
   overrideSubtitle?: string;
   overrideTopologyTitle?: string;
+  overrideParagraph1?: string;
+  overrideParagraph2?: string;
 }
 
 interface ArchitectureFlow {
@@ -151,7 +153,9 @@ export function CapabilityArchitecture({
   capabilitySlug,
   overrideTitle,
   overrideSubtitle,
-  overrideTopologyTitle
+  overrideTopologyTitle,
+  overrideParagraph1,
+  overrideParagraph2
 }: CapabilityArchitectureProps) {
   const subpage = capabilitySlug ? getSubpageContent(serviceSlug, capabilitySlug) : undefined;
   const flow = subpage?.architecture ? {
@@ -159,8 +163,8 @@ export function CapabilityArchitecture({
     layers: subpage.architecture.layers
   } : (architectureRegistry[serviceSlug] || architectureRegistry["ai-data-innovation"]);
   const activeImage = subpage?.architecture?.imageSrc || "/webp/assets/About-page/tech_architecture.webp";
-  const activeParagraph1 = subpage?.architecture?.editorialParagraph1 || "{activeParagraph1}";
-  const activeParagraph2 = subpage?.architecture?.editorialParagraph2 || "{activeParagraph2}";
+  const activeParagraph1 = overrideParagraph1 || subpage?.architecture?.editorialParagraph1 || "{activeParagraph1}";
+  const activeParagraph2 = overrideParagraph2 || subpage?.architecture?.editorialParagraph2 || "{activeParagraph2}";
   const activeCaption = subpage?.architecture?.imageCaption || "{activeCaption}";
 
   return (

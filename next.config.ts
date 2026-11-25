@@ -134,6 +134,21 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/services/cybersecurity/security-assessment",
+        destination: "/services/cybersecurity/security-assessment-services-uk",
+        permanent: true,
+      },
+      {
+        source: "/services/cybersecurity/cloud-security",
+        destination: "/services/cybersecurity/cloud-security-services-in-uk",
+        permanent: true,
+      },
+      {
+        source: "/services/cybersecurity/vulnerability-management",
+        destination: "/services/cybersecurity/vulnerability-management-services-uk",
+        permanent: true,
+      },
       // SEO & Legacy URL Permanent Redirects
       {
         source: "/industry-knowledge",

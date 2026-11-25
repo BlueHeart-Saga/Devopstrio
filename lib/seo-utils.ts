@@ -254,9 +254,9 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["AI Service UK", "AI Solutions", "Business Automation", "AI Consulting UK", "Enterprise AI Development"]
   },
   "/services/ai-data-innovation/generative-ai-solutions": {
-    title: "Gen AI Services UK | Generative AI Services & Consulting",
-    description: "Transform business processes with Gen AI services UK. Get generative AI services, consulting and custom AI solutions for business growth.",
-    keywords: ["Gen AI Services UK", "Generative AI Services", "Generative AI Consulting", "Custom AI Solutions", "Enterprise Gen AI"]
+    title: "Generative AI Consulting UK | Turn AI Ideas into Business Results",
+    description: "Discover how Generative AI Consulting UK can improve business operations, automate tasks.",
+    keywords: ["Generative AI Consulting UK", "Generative AI Consulting", "Gen AI Services UK", "AI Business Operations", "Automate Tasks with AI"]
   },
   "/services/ai-data-innovation/ai-agents-automation": {
     title: "AI Agents UK | AI Automation & Agent Development",
@@ -279,13 +279,13 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["MLOps Services UK", "AI Deployment", "AI Model Monitoring", "MLOps Consulting", "Machine Learning Deployment"]
   },
   "/services/cloud-services": {
-    title: "Cloud Services & Architecture | AWS, Azure & GCP",
-    description: "Accelerate cloud migration, build multi-account landing zones, and reduce cloud spend by 35%+ with expert FinOps.",
+    title: "Cloud Services UK | Turn Cloud Technology into Business Value",
+    description: "Unlock better IT performance with Cloud Services UK. Simplify cloud migration, strengthen infrastructure and optimise operations with solutions built for business needs.",
     keywords: ["Cloud Services", "AWS Migration", "Azure Architecture", "GCP Consulting", "FinOps"]
   },
   "/services/cloud-services/cloud-migration": {
-    title: "Cloud Migration Services UK | Devopstrio",
-    description: "Explore cloud migration services in UK for secure workload transitions, modern infrastructure, hybrid cloud adoption and smoother operations.",
+    title: "Cloud Migration Services UK | Move to the Cloud with Confidence",
+    description: "Make your cloud transition seamless with Cloud Migration Services UK. Move workloads securely, modernise infrastructure and minimise disruption to business operations.",
     keywords: ["Cloud Migration Services UK", "UK Cloud Migration", "Cloud Migration Specialists UK", "Workload Transition", "Hybrid Cloud Adoption"]
   },
   "/services/cloud-services/cloud-architecture": {
@@ -294,8 +294,8 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Cloud Architecture Services in UK", "Cloud Architecture UK", "Enterprise Cloud Architecture", "Cloud Infrastructure Design"]
   },
   "/services/cloud-services/aws-services": {
-    title: "AWS Cloud Services UK | Devopstrio",
-    description: "AWS services in UK give businesses access to cloud computing, storage, databases, networking, and security capabilities for modern infrastructure.",
+    title: "AWS Services UK | Unlock More Power from Your Cloud",
+    description: "Get more from AWS with expert AWS Services UK. Strengthen cloud security, optimise infrastructure and improve performance with solutions tailored to your business needs.",
     keywords: ["AWS Services UK", "AWS Cloud Services UK", "AWS Consulting UK", "Amazon Web Services UK"]
   },
   "/services/cloud-services/cloud-security": {
@@ -303,10 +303,20 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     description: "Cloud security services UK to protect cloud infrastructure, data, workloads and access while addressing vulnerabilities, compliance risks and security threats.",
     keywords: ["Cloud Security Services UK", "Secure Cloud Operations", "Cloud Workload Protection", "Cloud Compliance UK"]
   },
+  "/services/cybersecurity/security-assessment-services-uk": {
+    title: "Security Assessment Services UK | Devopstrio",
+    description: "Security assessment services UK to identify vulnerabilities, review security controls, and address compliance risks across applications, networks, and cloud environments.",
+    keywords: ["Security Assessment Services UK", "Security Assessment UK", "Vulnerability Review", "Compliance Risk Assessment"]
+  },
   "/services/cybersecurity/security-assessment": {
     title: "Security Assessment Services UK | Devopstrio",
     description: "Security assessment services UK to identify vulnerabilities, review security controls, and address compliance risks across applications, networks, and cloud environments.",
     keywords: ["Security Assessment Services UK", "Security Assessment UK", "Vulnerability Review", "Compliance Risk Assessment"]
+  },
+  "/services/cybersecurity/vulnerability-management-services-uk": {
+    title: "Vulnerability Management Services UK | Risk & Threat Protection",
+    description: "Vulnerability management services UK help identify, assess and remediate security weaknesses across networks, endpoints, applications and cloud environments.",
+    keywords: ["Vulnerability Management Services UK", "Risk & Threat Protection", "Vulnerability Remediation", "Threat Visibility"]
   },
   "/services/cybersecurity/vulnerability-management": {
     title: "Vulnerability Management Services UK | Risk & Threat Protection",
@@ -479,8 +489,8 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Data Governance", "Regulatory Compliance", "Data Lineage", "GDPR CCPA"]
   },
   "/services/cloud-services/azure-services": {
-    title: "Microsoft Azure Cloud Services & Migration Solutions",
-    description: "Architect secure Azure cloud environments, AKS Kubernetes clusters, Azure AI services, and enterprise landing zones.",
+    title: "Azure Services UK | Make Your Cloud Work Smarter",
+    description: "Get more value from Microsoft Azure with expert Azure Services UK. Simplify cloud operations, improve security and optimise infrastructure for business success.",
     keywords: ["Azure Services", "AKS Migration", "Azure Landing Zone", "Microsoft Cloud"]
   },
   "/services/it-consulting/cloud-consulting": {
@@ -575,9 +585,9 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Cloud Strategy & Consulting", "Cloud Strategy & Consulting UK", "Devopstrio Services"]
   },
   "/services/cloud-services/google-cloud-services": {
-    title: "Google Cloud Services Services | Devopstrio",
-    description: "GKE autopilot setups, BigQuery data platforms, and Vertex AI integrations on GCP.",
-    keywords: ["Google Cloud Services", "Google Cloud Services UK", "Devopstrio Services"]
+    title: "Google Cloud Services UK | Google Cloud Platform Consulting",
+    description: "Google Cloud Services UK help businesses manage data, applications and workloads through secure, flexible cloud infrastructure.",
+    keywords: ["Google Cloud Services UK", "Google Cloud Services", "GCP Consulting UK", "Google Cloud Platform"]
   },
   "/services/cloud-services/cloud-managed-services": {
     title: "Cloud Managed Services Services | Devopstrio",
@@ -650,9 +660,14 @@ const ROUTE_SEO_MAP: Record<string, { title: string; description: string; keywor
     keywords: ["Security Operations Center (SOC)", "Security Operations Center (SOC) UK", "Devopstrio Services"]
   },
   "/services/cybersecurity/identity-access-management": {
-    title: "Identity & Access Management Services | Devopstrio",
-    description: "Okta single sign-on (SSO), adaptive MFA, and PAM tools.",
+    title: "Identity and Access Management Services | UK",
+    description: "Secure your business with Identity and Access Management Services. Implement Zero Trust, passwordless authentication and access controls to protect enterprise identities.",
     keywords: ["Identity & Access Management", "Identity & Access Management UK", "Devopstrio Services"]
+  },
+  "/services/cybersecurity/cloud-security-services-in-uk": {
+    title: "Cloud Security Services in UK | Enterprise Cloud Protection",
+    description: "Secure workloads and strengthen compliance with our Cloud Security Services in UK, designed to protect modern cloud environments.",
+    keywords: ["Cloud Security Services UK", "Enterprise Cloud Protection", "Cloud Security Services in UK"]
   },
   "/services/cybersecurity/cloud-security": {
     title: "Cloud Security Services | Devopstrio",

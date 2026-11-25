@@ -187,25 +187,28 @@ export const aiDataService: ServiceCategory = {
 export const aiDataCapabilities: Record<string, CapabilityDetail> = {
   "generative-ai-solutions": {
     slug: "generative-ai-solutions",
-    title: "Gen AI Services UK",
-    heroSubtitle: "Transform business processes with Gen AI services UK. Get generative AI services, consulting and custom AI solutions for business growth.",
-    challenge: "Off-the-shelf AI models regularly suffer from hallucinations, limited domain knowledge, and security risks when sensitive customer data is processed through public AI platforms.",
-    solution: "We provide Gen AI services UK that build private RAG solutions, connect enterprise data, understand user queries through semantic search, and deliver context-aware responses through secure AI environments.",
+    title: "Generative AI Consulting UK",
+    heroSubtitle: "Discover how Generative AI Consulting UK can improve business operations, automate tasks.",
+    challenge: "Separate AI models that struggle to connect with existing business applications, slow AI processing affecting customer experience, and limited AI monitoring resulting in outdated and less accurate results.",
+    solution: "Generative AI Consulting UK helps businesses choose suitable AI models, build secure RAG architectures, improve response accuracy, and manage growing workloads to support long-term business performance.",
     challengeLabel: "Common Gen AI Challenges",
     bottleneckLabel: "Business Bottleneck",
-    solutionLabel: "Our Gen AI Services UK Approach",
-    deliverablesLabel: "What Our Gen AI Solutions Include",
-    outcomesLabel: "Benefits of Gen AI Services UK",
+    solutionLabel: "Our Generative AI Consulting UK Approach",
+    deliverablesLabel: "What Our Generative AI Solutions Include",
+    outcomesLabel: "Benefits of Generative AI Consulting UK",
     outcomeBottomLabel: "Resolved Outcome",
     features: [
-      "Semantic chunking and embedding generation for generative AI solutions UK",
-      "Retrieval pipelines using vector databases with intelligent semantic search",
-      "Private AI endpoints through AWS Bedrock and Azure OpenAI with security"
+      "Foundation Model Selection: Choose suitable AI models based on business needs and goals",
+      "RAG Architecture Strategy: Retrieve relevant information for accurate responses",
+      "Fine-Tuning and RAG: Adapt models using fine-tuning and relevant data sources",
+      "AI Accuracy and Security: Reduce errors with validation methods and content controls",
+      "AI Cost Optimisation: Manage AI usage and reduce unnecessary API costs",
+      "Enterprise Data Protection: Protect business information with secure cloud environments"
     ],
     benefits: [
-      "99% accuracy through secure Gen AI solutions UK",
-      "Fully-audited infrastructure aligned with SOC-2 and regulatory frameworks",
-      "Fast responses through caching and semantic search optimisation"
+      "Flexible AI Model Selection: Avoid dependence on a single AI provider by choosing models that suit changing business needs.",
+      "More Accurate AI Responses: Improve response accuracy by connecting AI models with trusted business data and relevant information.",
+      "Reduced AI Operating Costs: Control ongoing AI expenses through efficient data retrieval, prompt optimisation and smarter resource usage."
     ],
     deliveryApproach: [
       "Discovery & Data Audit: Standardizing source file schemas and cleaning raw texts.",

@@ -71,8 +71,11 @@ export default function CapabilityPage({ params }: PageProps) {
     notFound();
   }
 
-  const isSecAssessment = capability === "security-assessment";
-  const isVulnMgmt = capability === "vulnerability-management";
+  const isSecAssessment = capability === "security-assessment" || capability === "security-assessment-services-uk";
+  const isVulnMgmt = capability === "vulnerability-management" || capability === "vulnerability-management-services-uk";
+  const isCloudSec = capability === "cloud-security" || capability === "cloud-security-services-in-uk";
+  const isSoc = capability === "security-operations-center";
+  const isIam = capability === "identity-access-management";
 
   const overrides = isSecAssessment ? {
     overviewHeading: "Securing Your Business with Security Assessment Services uk",
@@ -114,6 +117,8 @@ export default function CapabilityPage({ params }: PageProps) {
     
     architectureTitle: "Security Assessment Approach",
     architectureSubtitle: "Our structured security assessment framework combines network penetration testing, IAM role analysis, and automated compliance auditing.",
+    architectureParagraph1: "Our security reviews provide an independent, attacker-focused view of digital risk. Our Security Assessment Services UK team conducts detailed, evidence-led audits beyond basic automated scans to identify architectural weaknesses attackers can exploit.",
+    architectureParagraph2: "We examine external attack surfaces, review identity structures through graph analysis, and test data segmentation controls across multi-cloud and on-premises environments. Findings become clear, prioritised executive remediation plans that reduce risk and strengthen security across interconnected enterprise-wide technology environments.",
     
     benefitsTitle: "Key Outcomes of Security Assessment Services",
     benefitsSubtitle: "Discovery of hidden security vulnerabilities, removal of excessive database permissions, and detailed security assessment findings for engineering teams."
@@ -147,11 +152,25 @@ export default function CapabilityPage({ params }: PageProps) {
     useCasesTitle: "How Organizations Use Vulnerability Management uk",
     useCasesSubtitle: "Discover how UK enterprises discover weaknesses, prioritize critical patches, and maintain continuous threat visibility.",
     
-    architectureTitle: "Vulnerability Management Framework",
+    architectureTitle: "Proactive Vulnerability Management",
     architectureSubtitle: "Our vulnerability management framework covers 01 Asset Discovery, 02 Vulnerability Scanning, 03 Risk Assessment, 04 Remediation, and 05 Continuous Monitoring.",
+    architectureParagraph1: "Traditional cybersecurity assessments can leave engineers facing extensive inventories of issues despite priorities. Our Vulnerability Management Services UK framework evaluates exposure, threat activity and business impact, helping teams concentrate on vulnerabilities requiring attention.",
+    architectureParagraph2: "We coordinate each stage, from asset discovery and risk-based review to remediation recommendations, task monitoring and validation scans. This structured approach helps minimise exposure, strengthen security controls and maintain compliance across your infrastructure.",
     
     benefitsTitle: "Key Outcomes from Vulnerability Management Services UK",
     benefitsSubtitle: "Reduced exposure across critical assets, continuous visibility across networks and cloud environments, and stronger compliance with industry standards."
+  } : isCloudSec ? {
+    architectureTitle: "Cloud Security for Scale and Resilience",
+    architectureParagraph1: "Cloud environments change rapidly as containers, microservices and serverless workloads scale. Traditional perimeter controls can miss runtime threats, exposed settings and excessive access permissions, leaving resources open to attack.",
+    architectureParagraph2: "Our Cloud Security Services in the UK protect workloads across the cloud lifecycle. We embed checks into infrastructure code and deployment pipelines, monitor runtime activity, review identities and detect configuration drift. Assessments and remediation help keep multi-cloud environments secure, compliant and reliable for operations.",
+  } : isSoc ? {
+    architectureTitle: "Built for Continuous Monitoring, Security & Protection",
+    architectureParagraph1: "Cyber threats can emerge at any hour, including weekends and overnight periods when internal teams are unavailable. Our Security Operations Center Services UK provides continuous threat detection and coordinated incident response.",
+    architectureParagraph2: "British facilities, analysts inspect alerts across endpoints, identities and cloud platforms using SIEM and SOAR systems. When suspicious activities appear, response workflows support investigation, escalation and containment, helping organisations reduce disruption and maintain visibility across company systems.",
+  } : isIam ? {
+    architectureTitle: "Built for Identity, Access & Protection",
+    architectureParagraph1: "Digital identity defines the security boundary for organisations, making access controls essential to protecting systems. Compromised credentials and hijacked sessions expose data and create entry points for attackers. Our Identity and Access Management Services apply Zero Trust principles, verifying every user, device and request.",
+    architectureParagraph2: "We deploy phishing-resistant authentication, adaptive access policies and time-limited privileged permissions to reduce robust risks. Automated provisioning ensures employees receive appropriate access when joining and lose permissions soon when roles change or employment ends each day.",
   } : undefined;
 
   const breadcrumbs = [
@@ -245,6 +264,8 @@ export default function CapabilityPage({ params }: PageProps) {
         capabilityTitle={data.title}
         overrideTitle={overrides?.architectureTitle}
         overrideSubtitle={overrides?.architectureSubtitle}
+        overrideParagraph1={(overrides as any)?.architectureParagraph1}
+        overrideParagraph2={(overrides as any)?.architectureParagraph2}
       />
 
       {/* 6. Technology Stack Section */}

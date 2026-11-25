@@ -465,12 +465,12 @@ export function Footer() {
             <div>
               <h5 className="font-bold text-white mb-2 uppercase text-[9px] tracking-wider text-rose-500/80">Cybersecurity</h5>
               <ul className="flex flex-col gap-1.5">
-                <li><Link href="/services/cybersecurity/security-assessment" className="hover:text-white transition-colors">Security Assessment</Link></li>
-                <li><Link href="/services/cybersecurity/vulnerability-management" className="hover:text-white transition-colors">Vulnerability Management</Link></li>
+                <li><Link href="/services/cybersecurity/security-assessment-services-uk" className="hover:text-white transition-colors">Security Assessment</Link></li>
+                <li><Link href="/services/cybersecurity/vulnerability-management-services-uk" className="hover:text-white transition-colors">Vulnerability Management</Link></li>
                 <li><Link href="/services/cybersecurity/penetration-testing" className="hover:text-white transition-colors">Penetration Testing</Link></li>
                 <li><Link href="/services/cybersecurity/security-operations-center" className="hover:text-white transition-colors">Security Operations Center</Link></li>
                 <li><Link href="/services/cybersecurity/identity-access-management" className="hover:text-white transition-colors">Identity and Access</Link></li>
-                <li><Link href="/services/cybersecurity/cloud-security" className="hover:text-white transition-colors">Cloud Security</Link></li>
+                <li><Link href="/services/cybersecurity/cloud-security-services-in-uk" className="hover:text-white transition-colors">Cloud Security</Link></li>
                 <li><Link href="/services/cybersecurity/compliance-governance" className="hover:text-white transition-colors">Compliance and Governance</Link></li>
                 <li><Link href="/services/cybersecurity/zero-trust-architecture" className="hover:text-white transition-colors">Zero Trust Architecture</Link></li>
               </ul>

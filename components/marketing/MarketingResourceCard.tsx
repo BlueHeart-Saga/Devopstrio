@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Download, Eye, Sparkles, Play } from "lucide-react";
+import { Download, Eye, Play } from "lucide-react";
 
 export interface MarketingResourceItem {
   id: string;
@@ -71,8 +71,7 @@ export const MarketingResourceCard: React.FC<MarketingResourceCardProps> = ({
             {item.title}
           </h3>
           {item.badge ? (
-            <span className="shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-[0_0_12px_rgba(244,63,94,0.35)]">
-              <Sparkles className="w-2.5 h-2.5 text-rose-400" />
+            <span className="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-[0_0_12px_rgba(244,63,94,0.35)]">
               {item.badge}
             </span>
           ) : null}
@@ -96,14 +95,6 @@ export const MarketingResourceCard: React.FC<MarketingResourceCardProps> = ({
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/80 backdrop-blur-md border border-rose-500/50 text-white text-xs font-semibold shadow-2xl shadow-black transition-transform duration-200 group-hover/img:scale-105">
               {isVideo ? <Play className="w-3.5 h-3.5 fill-current text-rose-400" /> : <Eye className="w-3.5 h-3.5 text-rose-400" />}
               {isVideo ? "Watch Video" : "Open Flipbook"}
-            </span>
-          </div>
-
-          {/* Format Badge with Glowing Neon Micro-Dot on Image */}
-          <div className="absolute top-2.5 left-2.5 z-10">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-md border border-zinc-700/80 text-white shadow-md">
-              <span className={`h-1.5 w-1.5 rounded-full ${dotColor}`} aria-hidden />
-              {item.type || "PDF"}
             </span>
           </div>
 

@@ -77,7 +77,7 @@ export default function CapabilityPage({ params }: PageProps) {
   const overrides = isGenAI ? {
     overviewHeading: (
       <span>
-        Turning Ideas into Intelligent Solutions with <span className="text-rose-500 font-semibold">Gen AI Services UK</span>
+        Make Your Business Smarter with <span className="text-rose-500 font-semibold">Generative AI</span>
       </span>
     ),
     overviewParagraph1: undefined,
@@ -85,28 +85,28 @@ export default function CapabilityPage({ params }: PageProps) {
     
     deepDiveHeading: (
       <span>
-        What is <span className="text-rose-500 font-semibold">Gen AI Services UK</span>?
+        What Is <span className="text-rose-500 font-semibold">Generative AI Consulting</span>?
       </span>
     ),
-    deepDiveParagraph1: "Gen AI Service UK helps businesses get more done by putting generative AI to practical use writing, answering questions, working with data, and taking repetitive tasks off your plate. Rather than following a fixed set of rules like older software, it picks up on context and produces new content itself, whether that's text, code, or images.",
+    deepDiveParagraph1: "Generative AI Consulting UK helps businesses use advanced AI tools to create content, analyse large datasets and automate complex tasks. It simplifies daily operations, saves time, improves productivity, and supports better business decisions.",
     deepDiveParagraph2: undefined,
     
     problemTitle: undefined,
     problemFullTitle: (
       <span>
-        Solving the <span className="text-rose-500 font-semibold">Key Challenges of Gen AI Services UK</span>
+        Generative AI Consulting <span className="text-rose-500 font-semibold">Challenges</span>
       </span>
     ),
     problemSubtitle: undefined,
     problemPoints: [
-      "You don’t have to replace the software your team uses every day. This makes the move to Gen AI simpler, smoother, and easier for your team to adopt.",
-      "Users expect quick answers, even when demand is high. A well-planned setup helps keep performance steady without unnecessary expense.",
-      "Launching an AI system is only the beginning. Ongoing monitoring and improvements help keep results useful, reliable, and consistent over time."
+      "Separate AI models that struggle to connect with existing business applications.",
+      "Slow AI processing that affects system performance and customer experience.",
+      "Limited AI monitoring, resulting in outdated information and less accurate results."
     ],
     
     outcomesTitle: (
       <span>
-        Enterprise-Grade <span className="text-rose-500 font-semibold">Gen AI Services for UK Organisations</span>
+        Enterprise-Ready <span className="text-rose-500 font-semibold">Generative AI Consulting</span>
       </span>
     ),
     outcomesDesc: undefined,
@@ -114,7 +114,11 @@ export default function CapabilityPage({ params }: PageProps) {
     useCasesTitle: "How Gen AI Is Transforming the Way Organisations Work",
     useCasesSubtitle: undefined,
     
-    architectureTitle: "Scalable, Secure & High-Performance Generative AI Services",
+    architectureTitle: (
+      <span>
+        Generative AI Consulting for <span className="text-rose-500 font-semibold">Business Growth</span>
+      </span>
+    ),
     architectureSubtitle: "Our Generative AI Services architecture combines advanced AI models, cloud-native infrastructure, enterprise-grade security controls, and intelligent automation frameworks to deliver scalable, reliable, and high-performing AI solutions.",
     architectureTopologyTitle: undefined,
 
@@ -123,14 +127,14 @@ export default function CapabilityPage({ params }: PageProps) {
     
     benefitsTitle: (
       <span>
-        Key Outcomes &amp; Benefits of <span className="text-rose-500 font-semibold">Gen AI Services UK</span>
+        Key Benefits of <span className="text-rose-500 font-semibold">Generative AI Consulting</span>
       </span>
     ),
     benefitsSubtitle: undefined,
     benefitsItems: [
-      "This can save time and help people get the information they need without a long search.",
-      "Your information should always be handled with care.",
-      "Fast answers can make a big difference to the user experience."
+      "Avoid dependence on a single AI provider by choosing models that suit changing business needs.",
+      "Improve response accuracy by connecting AI models with trusted business data and relevant information.",
+      "Control ongoing AI expenses through efficient data retrieval, prompt optimisation and smarter resource usage."
     ],
     faqTitle: "Technical",
     faqHighlight: "Insights"
@@ -320,7 +324,7 @@ export default function CapabilityPage({ params }: PageProps) {
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: serviceData.title, href: `/services/${service}` },
-    { label: isGenAI ? "Gen AI Services UK" : isAgents ? "AI Agents UK" : isML ? "Machine Learning Engineering Services UK" : isMLOps ? "MLOps Services UK" : data.title }
+    { label: isGenAI ? "Generative AI Consulting UK" : isAgents ? "AI Agents UK" : isML ? "Machine Learning Engineering Services UK" : isMLOps ? "MLOps Services UK" : data.title }
   ];
 
   const subSections = [
@@ -336,10 +340,10 @@ export default function CapabilityPage({ params }: PageProps) {
     { id: "faq", label: "FAQ" }
   ];
 
-  const pageTitle = isGenAI ? "Gen AI Services UK" : isAgents ? "AI Agents UK" : isML ? "Machine Learning Engineering Services UK" : isMLOps ? "MLOps Services UK" : data.title;
-  const pageSchemaName = isGenAI ? "Gen AI Services UK" : isAgents ? "AI Agents UK" : isML ? "Machine Learning Engineering Services UK" : isMLOps ? "MLOps Services UK" : data.title;
+  const pageTitle = isGenAI ? "Generative AI Consulting UK" : isAgents ? "AI Agents UK" : isML ? "Machine Learning Engineering Services UK" : isMLOps ? "MLOps Services UK" : data.title;
+  const pageSchemaName = isGenAI ? "Generative AI Consulting UK" : isAgents ? "AI Agents UK" : isML ? "Machine Learning Engineering Services UK" : isMLOps ? "MLOps Services UK" : data.title;
   const pageSchemaDesc = isGenAI 
-    ? "Transform business processes with Gen AI services UK. Get generative AI services, consulting and custom AI solutions for business growth." 
+    ? "Discover how Generative AI Consulting UK can improve business operations, automate tasks." 
     : isAgents
       ? "Build smarter workflows with AI agents UK. Get AI automation services, intelligent automation and custom AI agent development for your business."
       : isML 

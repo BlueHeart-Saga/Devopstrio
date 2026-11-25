@@ -335,60 +335,66 @@ export default function CapabilityPage({ params }: PageProps) {
     benefitsTitle: "Business Outcomes with Microsoft Azure services in UK",
     benefitsSubtitle: "We measure our success by the stability, security, and cost efficiency we deliver. Through automated pipelines, continuous optimization, and strict SOC-2 compliance, our capabilities translate directly into measurable business value."
   } : isGcp ? {
-    overviewHeading: "Accelerating outcomes with Google Cloud Consulting in UK",
-    overviewParagraph1: "GKE Autopilot deployments, BigQuery analytics platforms, and Vertex AI solutions through Google Cloud Consulting services.",
-    overviewParagraph2: (
+    overviewHeading: (
       <span>
-        We deliver automated environments, comprehensive telemetry monitoring, and secure VPC network configurations to meet industry regulatory requirements. Explore our{" "}
-        <Link href="/services/cybersecurity" className="text-rose-500 hover:underline font-bold">
-          security policy frameworks
-        </Link>{" "}
-        for cloud governance.
+        Make Your Business More Efficient with <span className="text-rose-500 font-semibold">Google Cloud</span>
       </span>
     ),
+    overviewParagraph1: undefined,
+    overviewParagraph2: undefined,
     
-    deepDiveHeading: "What is Google Cloud Consulting?",
-    deepDiveParagraph1: (
+    deepDiveHeading: (
       <span>
-        Google Cloud Consulting provides the strategic alignment of computing resources, storage, and networking within highly available virtualized environments. It enables enterprises to scale workloads dynamically and secure sensitive workloads. Compare this with our{" "}
-        <Link href="/services/cloud-services" className="text-rose-500 hover:underline font-bold">
-          main cloud capabilities catalog
-        </Link>{" "}
-        to choose the right partner.
+        How Google Cloud Services Support <span className="text-rose-500 font-semibold">Your Business</span>?
       </span>
     ),
-    deepDiveParagraph2: (
-      <span>
-        Whether establishing multi-region GKE container environments, optimizing database performance, or automating cost tracking through FinOps practices, Google Cloud Consulting helps ensure your infrastructure remains highly secure. Discover how our{" "}
-        <Link href="/services/devops-automation" className="text-rose-500 hover:underline font-bold">
-          Kubernetes orchestration pipelines
-        </Link>{" "}
-        are built to support GKE.
-      </span>
-    ),
+    deepDiveParagraph1: "Google Cloud Services UK help businesses manage data, applications and workloads through secure, flexible cloud infrastructure. Improve performance, simplify operations and scale resources as your business needs evolve.",
+    deepDiveParagraph2: undefined,
     
-    problemTitle: "Reducing Cloud Waste with Google Cloud Consulting",
-    problemSubtitle: "How inefficient cloud architectures and monolithic configurations impact business performance and operational costs.",
+    problemTitle: "Get More Value from Google Cloud Services",
+    problemFullTitle: (
+      <span>
+        Get More Value from <span className="text-rose-500 font-semibold">Google Cloud Services</span>
+      </span>
+    ),
+    problemSubtitle: undefined,
     problemPoints: [
-      "Over-allocated virtual infrastructure driving unnecessary cloud spending and billing inefficiencies.",
-      "Lack of geo-redundant configurations increasing the risk of critical system downtime.",
-      "Slow, manual response processes during traffic spikes, leading to platform performance issues and service disruptions."
+      "Excess cloud resources increase spending and create unnecessary costs.",
+      "Poor backup and redundancy planning can lead to unexpected downtime.",
+      "Manual scaling slows performance during traffic spikes and increases service disruptions."
     ],
     
-    outcomesTitle: "Expert Google Cloud Consulting for Modern Businesses",
-    outcomesDesc: "We design, build, deploy, and optimize custom Google Cloud Consulting solutions that transform operations, improve productivity, and create measurable business value.",
+    outcomesTitle: (
+      <span>
+        Google Cloud Services for <span className="text-rose-500 font-semibold">Modern Businesses</span>
+      </span>
+    ),
+    outcomesDesc: undefined,
     
-    useCasesTitle: "How Businesses Benefit from Google Cloud Consulting",
-    useCasesSubtitle: "See how organizations use Google Cloud Consulting across industries to streamline operations, strengthen critical infrastructure, and achieve measurable business growth.",
+    useCasesTitle: "How Businesses Benefit from Google Cloud Services",
+    useCasesSubtitle: "See how organizations use Google Cloud Services across industries to streamline operations, strengthen critical infrastructure, and achieve measurable business growth.",
     
-    architectureTitle: "Google Cloud Consulting Built for Growth & Security",
-    architectureSubtitle: "Our architecture combines modern cloud platforms, AI technologies, secure policy controls, and automation frameworks to deliver enterprise-grade solutions.",
+    architectureTitle: (
+      <span>
+        Google Cloud Solutions for <span className="text-rose-500 font-semibold">Business Growth and Security</span>
+      </span>
+    ),
+    architectureSubtitle: undefined,
     
-    techStackTitle: "Technology Stack for Google Cloud Consulting",
-    techStackSubtitle: "We integrate high-performance tools, libraries, and microservice platforms designed to support large transaction volumes and low-latency application workloads.",
+    techStackTitle: "Technology Stack for Google Cloud Services",
+    techStackSubtitle: undefined,
     
-    benefitsTitle: "Business Benefits of Google Cloud Consulting",
-    benefitsSubtitle: "We measure our success by the stability, security, and cost efficiency we deliver. Through automated pipelines, continuous optimization, and strict SOC-2 compliance, our solutions translate directly into measurable business value."
+    benefitsTitle: (
+      <span>
+        Business Benefits of <span className="text-rose-500 font-semibold">Google Cloud Services</span>
+      </span>
+    ),
+    benefitsSubtitle: undefined,
+    benefitsItems: [
+      "Analyse large volumes of business data quickly without managing complex infrastructure or database systems.",
+      "Deploy, manage, and scale containerised applications with built-in security and automated infrastructure management.",
+      "Improve network performance with Google's global infrastructure, supporting faster data transfer and reliable cloud connectivity."
+    ]
   } : undefined;
 
   const breadcrumbs = [
@@ -486,7 +492,7 @@ export default function CapabilityPage({ params }: PageProps) {
         serviceSlug={service} 
         capabilityTitle={data.title}
         overrideTitle={overrides?.problemTitle}
-        overrideFullTitle={overrides?.problemTitle}
+        overrideFullTitle={overrides?.problemFullTitle || overrides?.problemTitle}
         overrideSubtitle={overrides?.problemSubtitle}
         overridePoints={overrides?.problemPoints}
       />
@@ -531,7 +537,7 @@ export default function CapabilityPage({ params }: PageProps) {
       <CapabilityBenefits 
         serviceSlug={service} 
         capabilitySlug={capability} 
-        benefits={data.benefits} 
+        benefits={overrides?.benefitsItems || data.benefits} 
         overrideTitle={overrides?.benefitsTitle}
         overrideSubtitle={overrides?.benefitsSubtitle}
       />

@@ -202,12 +202,12 @@ const serviceCategories = [
     name: "Cybersecurity",
     href: "/services/cybersecurity",
     items: [
-      { name: "Security Assessment", desc: "Threat modeling, network configuration audits, and risk assessments.", href: "/services/cybersecurity/security-assessment" },
-      { name: "Vulnerability Management", desc: "Continuous Nessus and Qualys scans, risk patching schedules.", href: "/services/cybersecurity/vulnerability-management" },
+      { name: "Security Assessment", desc: "Threat modeling, network configuration audits, and risk assessments.", href: "/services/cybersecurity/security-assessment-services-uk" },
+      { name: "Vulnerability Management", desc: "Continuous Nessus and Qualys scans, risk patching schedules.", href: "/services/cybersecurity/vulnerability-management-services-uk" },
       { name: "Penetration Testing", desc: "Ethical hacking, API authorization checks, and exploit reports.", href: "/services/cybersecurity/penetration-testing" },
       { name: "Security Operations Center (SOC)", desc: "24/7 SIEM monitoring, threat hunts, and SOAR event actions.", href: "/services/cybersecurity/security-operations-center" },
       { name: "Identity & Access Management", desc: "Okta single sign-on (SSO), adaptive MFA, and PAM tools.", href: "/services/cybersecurity/identity-access-management" },
-      { name: "Cloud Security", desc: "Prisma Cloud audits, micro-segmentation, and least-privilege rules.", href: "/services/cybersecurity/cloud-security" },
+      { name: "Cloud Security", desc: "Prisma Cloud audits, micro-segmentation, and least-privilege rules.", href: "/services/cybersecurity/cloud-security-services-in-uk" },
       { name: "Compliance & Governance", desc: "Audit readiness for SOC2, ISO27001, HIPAA, and policy planning.", href: "/services/cybersecurity/compliance-governance" },
       { name: "Zero Trust Architecture", desc: "Endpoint checks, SDP setups, and SASE security perimeters.", href: "/services/cybersecurity/zero-trust-architecture" }
     ]
@@ -648,8 +648,8 @@ const serviceDetailsMap: Record<string, {
     href: "/services/cybersecurity",
     desc: "24/7 SOC monitoring, penetration testing, Okta IAM, Zero Trust, and SOC2 compliance.",
     capabilities: [
-      { name: "Security Assessment", href: "/services/cybersecurity/security-assessment" },
-      { name: "Vulnerability Management", href: "/services/cybersecurity/vulnerability-management" },
+      { name: "Security Assessment", href: "/services/cybersecurity/security-assessment-services-uk" },
+      { name: "Vulnerability Management", href: "/services/cybersecurity/vulnerability-management-services-uk" },
       { name: "Penetration Testing", href: "/services/cybersecurity/penetration-testing" },
       { name: "SOC Operations", href: "/services/cybersecurity/security-operations-center" },
       { name: "Identity & Access Management", href: "/services/cybersecurity/identity-access-management" },

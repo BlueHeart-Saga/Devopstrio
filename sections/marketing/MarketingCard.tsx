@@ -2,7 +2,7 @@
 
 import React, { memo } from "react";
 import Image from "next/image";
-import { Download, Eye, Sparkles, Play, FileText } from "lucide-react";
+import { Download, Eye, Play, FileText } from "lucide-react";
 import { MarketingResourceItem } from "./config";
 import { isVideo } from "./utils";
 
@@ -71,8 +71,7 @@ export const MarketingCard = memo(function MarketingCard({
             {item.title}
           </h3>
           {item.badge ? (
-            <span className="shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-500/15 text-rose-300 border border-rose-500/30 shadow-[0_0_10px_rgba(244,63,94,0.25)]">
-              <Sparkles className="w-2.5 h-2.5 text-rose-400" />
+            <span className="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-500/15 text-rose-300 border border-rose-500/30 shadow-[0_0_10px_rgba(244,63,94,0.25)]">
               {item.badge}
             </span>
           ) : null}
@@ -117,14 +116,6 @@ export const MarketingCard = memo(function MarketingCard({
               </span>
             </div>
           )}
-
-          {/* Format Badge with Glowing Neon Micro-Dot on Image */}
-          <div className="absolute top-2.5 left-2.5 z-10">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-black/80 backdrop-blur-md border border-zinc-700/80 text-white shadow-md">
-              <span className={`h-1.5 w-1.5 rounded-full ${dotColor}`} aria-hidden />
-              {item.type || "PDF"}
-            </span>
-          </div>
 
           {/* File Size Badge on Image */}
           {item.fileSize && (

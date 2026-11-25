@@ -1065,28 +1065,28 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
     "title": "Generative AI Solutions",
     "solutions": [
       {
-        "title": "Enterprise Copilots & Work Assistants",
-        "desc": "Custom virtual copilots embedded directly into internal enterprise workflows, grounded in private corporate documentation and knowledge bases."
+        "title": "Foundation Model Selection",
+        "desc": "Choose suitable AI models based on business needs, project goals and performance requirements."
       },
       {
-        "title": "Deterministic RAG & Dense Retrieval",
-        "desc": "Production-grade Retrieval-Augmented Generation architectures utilizing hybrid dense-sparse vector indexing with strict citation guardrails."
+        "title": "RAG Architecture Strategy",
+        "desc": "Build AI systems that retrieve relevant information to provide more accurate and useful responses."
       },
       {
-        "title": "Multi-Modal Reasoning Systems",
-        "desc": "Integrated pipelines processing technical blueprints, charts, unstructured audio transcripts, and complex PDFs alongside natural language."
+        "title": "Fine-Tuning and RAG Solutions",
+        "desc": "Adapt AI models to business requirements using fine-tuning and relevant data sources."
       },
       {
-        "title": "Domain-Specific Model Fine-Tuning",
-        "desc": "Supervised fine-tuning (SFT) and Direct Preference Optimization (DPO) adapting open-weight foundation models to proprietary industry jargon."
+        "title": "AI Accuracy and Security",
+        "desc": "Reduce incorrect AI responses with validation methods, content controls and reliable data sources."
       },
       {
-        "title": "Low-Latency Semantic Caching",
-        "desc": "High-speed Redis vector caching intercepting repetitive queries to deliver sub-50ms responses while slashing recurring inference costs."
+        "title": "AI Cost Optimisation",
+        "desc": "Manage AI usage and reduce unnecessary API costs through efficient prompts and resource management."
       },
       {
-        "title": "Enterprise Guardrails & Privacy Walls",
-        "desc": "Automated semantic firewalls blocking prompt injection attacks, PII leaks, and factual hallucinations before responses reach users."
+        "title": "Enterprise Data Protection",
+        "desc": "Protect business information with secure cloud environments, privacy controls and restricted data access."
       }
     ],
     "useCases": [
@@ -1163,26 +1163,26 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
           "node": "Automated Hallucination Scoring, Latency & Token Logs"
         }
       ],
-      "editorialParagraph1": "Building production generative AI solutions requires moving far beyond basic API wrappers. We engineer robust, enterprise-grade architectures that combine dense vector retrieval, multi-modal ingestion, and automated hallucination barriers to deliver dependable business intelligence.",
-      "editorialParagraph2": "Our systems integrate seamlessly with existing enterprise data lakes and identity providers. By deploying low-latency semantic caching and strict privacy walls, we ensure your generative applications scale cost-effectively without exposing confidential IP.",
+      "editorialParagraph1": "Choose the right AI models and build secure, reliable systems that support everyday business needs. Our Generative AI Consulting UK services help businesses improve workflows, protect sensitive data and get more value from AI technologies.",
+      "editorialParagraph2": "We also focus on reducing AI costs, improving response accuracy and managing growing workloads to support long-term business performance.",
       "imageSrc": "/webp/assets/architecture/arch-visual-9.jpg",
       "imageCaption": "Enterprise Generative AI & RAG Orchestration Lifecycle"
     },
     "benefits": [
       {
         "id": "01",
-        "title": "Guaranteed Factual Grounding",
-        "desc": "Enforces strict retrieval-augmented citation standards, ensuring every generated output is anchored in verified internal corporate records."
+        "title": "Flexible AI Model Selection",
+        "desc": "Avoid dependence on a single AI provider by choosing models that suit changing business needs."
       },
       {
         "id": "02",
-        "title": "Bulletproof Data Privacy",
-        "desc": "Operates entirely within your private cloud tenant with zero data retention policies, guaranteeing proprietary intelligence remains secure."
+        "title": "More Accurate AI Responses",
+        "desc": "Improve response accuracy by connecting AI models with trusted business data and relevant information."
       },
       {
         "id": "03",
-        "title": "Sub-Second Response Latency",
-        "desc": "Combines semantic vector caching and prompt optimization to deliver rapid, responsive user experiences while controlling model token spend."
+        "title": "Reduced AI Operating Costs",
+        "desc": "Control ongoing AI expenses through efficient data retrieval, prompt optimisation and smarter resource usage."
       }
     ]
   },
@@ -4358,28 +4358,28 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
   "title": "Google Cloud Platform (GCP) Solutions",
   "solutions": [
     {
-      "title": "Google Kubernetes Engine (GKE) Enterprise",
-      "desc": "Deploying production GKE Autopilot and standard clusters with Cilium eBPF network policies, Workload Identity, and automated release channels."
+      "title": "Google Kubernetes Engine (GKE)",
+      "desc": "Deploy and manage containerised applications with flexible scaling and improved workload performance."
     },
     {
-      "title": "BigQuery Enterprise Data Lakehouse Architecture",
-      "desc": "Architecting petabyte-scale analytical data warehouses with serverless BigQuery, partitioned schemas, and automated cost controls."
+      "title": "BigQuery Data Analytics",
+      "desc": "Analyse large datasets, simplify reporting and gain valuable insights for better business decisions."
     },
     {
-      "title": "GCP VPC Service Controls & Zero-Trust Perimeter",
-      "desc": "Establishing cryptographically isolated security perimeters preventing unauthorized data exfiltration across Google Cloud APIs."
+      "title": "Google Cloud Security",
+      "desc": "Protect cloud infrastructure with secure access controls, data protection and advanced security policies."
     },
     {
-      "title": "Cloud Spanner Global Relational Persistence",
-      "desc": "Deploying strongly consistent, globally distributed relational databases combining SQL semantics with planetary horizontal scale."
+      "title": "Cloud Spanner Database",
+      "desc": "Manage business-critical data with consistent performance and scalable database infrastructure."
     },
     {
-      "title": "Vertex AI & Cloud Run Serverless Workloads",
-      "desc": "Running containerized microservices and AI inference pipelines on Google Cloud Run with instantaneous scale-to-zero economics."
+      "title": "Vertex AI & Cloud Run",
+      "desc": "Build, deploy and manage AI applications and serverless workloads with flexible cloud resources."
     },
     {
-      "title": "Cloud Interconnect & Global Network Topology",
-      "desc": "Leveraging Google's dedicated private fiber-optic backbone for ultra-low latency hybrid connectivity and global load balancing."
+      "title": "Cloud Interconnect & Networking",
+      "desc": "Connect cloud environments securely with reliable networking and improved data communication."
     }
   ],
   "useCases": [
@@ -4456,25 +4456,25 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "Security Command Center Premium, Cloud Audit Logs, Managed Prometheus"
       }
     ],
-    "editorialParagraph1": "Our Google Cloud engineering practice unlocks the immense analytical and compute power of Google's global fiber infrastructure. By establishing secure Organization hierarchies and configuring strict VPC Service Controls, we ensure that enterprise workloads and data stores remain immune to unauthorized exfiltration.",
-    "editorialParagraph2": "We build modern application stacks on Google Kubernetes Engine (GKE) and Cloud Run, providing industry-leading autoscaling and container security. Integrated with BigQuery and Vertex AI, our solutions turn operational telemetry into high-velocity business insights.",
+    "editorialParagraph1": "Move your business forward with secure and flexible cloud solutions.",
+    "editorialParagraph2": "Our Google Cloud Services UK help manage infrastructure, protect business data, run applications smoothly and make better use of cloud resources with tools like GKE, BigQuery, and Vertex AI.",
     "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
   },
   "benefits": [
     {
       "id": "01",
-      "title": "Unmatched Analytical Power with BigQuery",
-      "desc": "Serverless SQL analytics processes petabytes of enterprise data in seconds without cluster provisioning or database tuning overhead."
+      "title": "Faster Data Analysis with BigQuery",
+      "desc": "Analyse large volumes of business data quickly without managing complex infrastructure or database systems."
     },
     {
       "id": "02",
-      "title": "World-Class Container Orchestration on GKE",
-      "desc": "Google Kubernetes Engine provides the most mature, security-hardened container platform with native Autopilot fleet management."
+      "title": "Simplified Application Management with GKE",
+      "desc": "Deploy, manage, and scale containerised applications with built-in security and automated infrastructure management."
     },
     {
       "id": "03",
-      "title": "Google Global Private Network Backbone",
-      "desc": "Workloads benefit from Google's dedicated private fiber infrastructure, guaranteeing minimal latency and high network throughput."
+      "title": "Reliable Connectivity with Google Cloud Networking",
+      "desc": "Improve network performance with Google's global infrastructure, supporting faster data transfer and reliable cloud connectivity."
     }
   ]
 },
@@ -4484,28 +4484,28 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
   "title": "Google Cloud Platform (GCP) Solutions",
   "solutions": [
     {
-      "title": "Google Kubernetes Engine (GKE) Enterprise",
-      "desc": "Deploying production GKE Autopilot and standard clusters with Cilium eBPF network policies, Workload Identity, and automated release channels."
+      "title": "Google Kubernetes Engine (GKE)",
+      "desc": "Deploy and manage containerised applications with flexible scaling and improved workload performance."
     },
     {
-      "title": "BigQuery Enterprise Data Lakehouse Architecture",
-      "desc": "Architecting petabyte-scale analytical data warehouses with serverless BigQuery, partitioned schemas, and automated cost controls."
+      "title": "BigQuery Data Analytics",
+      "desc": "Analyse large datasets, simplify reporting and gain valuable insights for better business decisions."
     },
     {
-      "title": "GCP VPC Service Controls & Zero-Trust Perimeter",
-      "desc": "Establishing cryptographically isolated security perimeters preventing unauthorized data exfiltration across Google Cloud APIs."
+      "title": "Google Cloud Security",
+      "desc": "Protect cloud infrastructure with secure access controls, data protection and advanced security policies."
     },
     {
-      "title": "Cloud Spanner Global Relational Persistence",
-      "desc": "Deploying strongly consistent, globally distributed relational databases combining SQL semantics with planetary horizontal scale."
+      "title": "Cloud Spanner Database",
+      "desc": "Manage business-critical data with consistent performance and scalable database infrastructure."
     },
     {
-      "title": "Vertex AI & Cloud Run Serverless Workloads",
-      "desc": "Running containerized microservices and AI inference pipelines on Google Cloud Run with instantaneous scale-to-zero economics."
+      "title": "Vertex AI & Cloud Run",
+      "desc": "Build, deploy and manage AI applications and serverless workloads with flexible cloud resources."
     },
     {
-      "title": "Cloud Interconnect & Global Network Topology",
-      "desc": "Leveraging Google's dedicated private fiber-optic backbone for ultra-low latency hybrid connectivity and global load balancing."
+      "title": "Cloud Interconnect & Networking",
+      "desc": "Connect cloud environments securely with reliable networking and improved data communication."
     }
   ],
   "useCases": [
@@ -4582,25 +4582,25 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "Security Command Center Premium, Cloud Audit Logs, Managed Prometheus"
       }
     ],
-    "editorialParagraph1": "Our Google Cloud engineering practice unlocks the immense analytical and compute power of Google's global fiber infrastructure. By establishing secure Organization hierarchies and configuring strict VPC Service Controls, we ensure that enterprise workloads and data stores remain immune to unauthorized exfiltration.",
-    "editorialParagraph2": "We build modern application stacks on Google Kubernetes Engine (GKE) and Cloud Run, providing industry-leading autoscaling and container security. Integrated with BigQuery and Vertex AI, our solutions turn operational telemetry into high-velocity business insights.",
+    "editorialParagraph1": "Move your business forward with secure and flexible cloud solutions.",
+    "editorialParagraph2": "Our Google Cloud Services UK help manage infrastructure, protect business data, run applications smoothly and make better use of cloud resources with tools like GKE, BigQuery, and Vertex AI.",
     "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
   },
   "benefits": [
     {
       "id": "01",
-      "title": "Unmatched Analytical Power with BigQuery",
-      "desc": "Serverless SQL analytics processes petabytes of enterprise data in seconds without cluster provisioning or database tuning overhead."
+      "title": "Faster Data Analysis with BigQuery",
+      "desc": "Analyse large volumes of business data quickly without managing complex infrastructure or database systems."
     },
     {
       "id": "02",
-      "title": "World-Class Container Orchestration on GKE",
-      "desc": "Google Kubernetes Engine provides the most mature, security-hardened container platform with native Autopilot fleet management."
+      "title": "Simplified Application Management with GKE",
+      "desc": "Deploy, manage, and scale containerised applications with built-in security and automated infrastructure management."
     },
     {
       "id": "03",
-      "title": "Google Global Private Network Backbone",
-      "desc": "Workloads benefit from Google's dedicated private fiber infrastructure, guaranteeing minimal latency and high network throughput."
+      "title": "Reliable Connectivity with Google Cloud Networking",
+      "desc": "Improve network performance with Google's global infrastructure, supporting faster data transfer and reliable cloud connectivity."
     }
   ]
 },
@@ -7376,6 +7376,132 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
     }
   ]
 },
+  "cybersecurity/security-assessment-services-uk": {
+  "slug": "security-assessment-services-uk",
+  "serviceSlug": "cybersecurity",
+  "title": "Enterprise Security Assessment & Posture Audits",
+  "solutions": [
+    {
+      "title": "Comprehensive Architecture Risk Assessment",
+      "desc": "Thorough auditing of multi-cloud network topologies, IAM permission boundaries, identity federation, and exposed perimeter surfaces."
+    },
+    {
+      "title": "Threat Modeling & Attack Surface Mapping",
+      "desc": "Structured threat modeling (STRIDE, PASTA) identifying high-risk attack vectors, privilege escalation paths, and lateral movement risks."
+    },
+    {
+      "title": "Active Directory & Entra ID Security Auditing",
+      "desc": "Deep inspection of hybrid Active Directory hierarchies, Kerberoasting exposures, dormant domain admin accounts, and shadow admins."
+    },
+    {
+      "title": "Cloud Configuration & CIS Benchmark Auditing",
+      "desc": "Automated scanning of AWS, Azure, and GCP environments against CIS Cloud Benchmarks to isolate misconfigurations."
+    },
+    {
+      "title": "Third-Party & Supply Chain Vendor Audits",
+      "desc": "Evaluating the cybersecurity hygiene, data handling policies, and software integrity of critical SaaS and hardware suppliers."
+    },
+    {
+      "title": "Executive Board Risk & Remediation Roadmaps",
+      "desc": "Translating granular technical vulnerabilities into prioritized, defensible business risk scorecards with budgeted remediation steps."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "FCA-Aligned Hybrid Banking Security Audit",
+      "desc": "Conducting an end-to-end security assessment across core banking databases, payment gateways, and branch VPN interconnects.",
+      "practicalValue": "Identified and remediated 14 critical access boundary exposures prior to regulatory supervisory audit.",
+      "focusAreas": [
+        "CIS Benchmark Validation",
+        "Privilege Escalation Mapping",
+        "Regulatory Evidence Package"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "NHS DSPT & HIPAA Clinical Security Audit",
+      "desc": "Evaluating patient record encryption, laboratory diagnostic endpoints, and medical IoT network isolation.",
+      "practicalValue": "Achieved 100% compliance across all 10 National Data Guardian standards within NHS clinical networks.",
+      "focusAreas": [
+        "NHS Data Security Standards",
+        "Medical Device VLAN Audit",
+        "Cryptographic Key Storage"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Omnichannel E-Commerce Posture Assessment",
+      "desc": "Auditing point-of-sale terminal software, cloud checkout APIs, and employee mobile devices for retail chains.",
+      "practicalValue": "Eliminated unencrypted legacy data transmission paths and secured cardholder data environments.",
+      "focusAreas": [
+        "PCI-DSS Boundary Review",
+        "POS Network Segmentation",
+        "API Exposure Audits"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Operational Technology (OT) / ICS Security Audit",
+      "desc": "Assessing Purdue model network segmentation between plant floor SCADA industrial controllers and corporate ERP networks.",
+      "practicalValue": "Isolated critical plant machinery from potential corporate ransomware propagation vectors.",
+      "focusAreas": [
+        "Purdue Model Architecture",
+        "SCADA Firewall Rules",
+        "Air-Gap Network Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Cybersecurity Assessment & Risk Modeling Framework",
+    "layers": [
+      {
+        "label": "Layer 01: External Attack Surface & Perimeter Scan",
+        "node": "Shodan / Censys Ingress Mapping, Subdomain Discovery, SSL/TLS Audit"
+      },
+      {
+        "label": "Layer 02: Cloud & Infrastructure Configuration Audit",
+        "node": "CIS Benchmark Scans, AWS/Azure Policy Checks, Kubernetes RBAC Audits"
+      },
+      {
+        "label": "Layer 03: Identity & Access Privilege Inspection",
+        "node": "BloodHound AD Graphs, Entra ID PIM Audits, Service Account Scrutiny"
+      },
+      {
+        "label": "Layer 04: Data Classification & Encryption Audit",
+        "node": "DLP Exposure Checks, Customer-Managed KMS Keys, Backup Immutability"
+      },
+      {
+        "label": "Layer 05: Executive Threat Modeling & Remediation Matrix",
+        "node": "STRIDE Vulnerability Scoring, CVSS v3 Matrix, Board Roadmap Report"
+      }
+    ],
+    "editorialParagraph1": "Our security reviews provide an independent, attacker-focused view of digital risk. Our Security Assessment Services UK team conducts detailed, evidence-led audits beyond basic automated scans to identify architectural weaknesses attackers can exploit.",
+    "editorialParagraph2": "We examine external attack surfaces, review identity structures through graph analysis, and test data segmentation controls across multi-cloud and on-premises environments. Findings become clear, prioritised executive remediation plans that reduce risk and strengthen security across interconnected enterprise-wide technology environments.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Complete Visibility Over Hidden Attack Surfaces",
+      "desc": "Uncovers forgotten legacy servers, shadow IT cloud subscriptions, and overly permissive firewall rules before threat actors find them."
+    },
+    {
+      "id": "02",
+      "title": "Defensible Executive Risk Quantification",
+      "desc": "Provides clear, board-ready business impact assessments that justify cybersecurity investment and align with regulatory expectations."
+    },
+    {
+      "id": "03",
+      "title": "Prioritized Pragmatic Remediation Playbooks",
+      "desc": "Eliminates vulnerability overwhelm by ranking risks by real-world exploitability, guiding your engineers to fix what matters first."
+    }
+  ]
+},
   "cybersecurity/security-assessment": {
   "slug": "security-assessment",
   "serviceSlug": "cybersecurity",
@@ -7480,8 +7606,8 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "STRIDE Vulnerability Scoring, CVSS v3 Matrix, Board Roadmap Report"
       }
     ],
-    "editorialParagraph1": "Effective enterprise security requires an objective, adversarial perspective on digital risk. Our security assessment practice conducts rigorous, evidence-driven audits that look beyond superficial automated checklist scans to uncover the complex architectural flaws attackers actually exploit.",
-    "editorialParagraph2": "We map external attack surfaces, audit internal identity hierarchies using graph analytics, and stress-test data segmentation boundaries across multi-cloud and on-premises estates. Technical findings are distilled into clear, prioritized executive remediation roadmaps that de-risk the enterprise.",
+    "editorialParagraph1": "Our security reviews provide an independent, attacker-focused view of digital risk. Our Security Assessment Services UK team conducts detailed, evidence-led audits beyond basic automated scans to identify architectural weaknesses attackers can exploit.",
+    "editorialParagraph2": "We examine external attack surfaces, review identity structures through graph analysis, and test data segmentation controls across multi-cloud and on-premises environments. Findings become clear, prioritised executive remediation plans that reduce risk and strengthen security across interconnected enterprise-wide technology environments.",
     "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
   },
   "benefits": [
@@ -7606,8 +7732,8 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "STRIDE Vulnerability Scoring, CVSS v3 Matrix, Board Roadmap Report"
       }
     ],
-    "editorialParagraph1": "Effective enterprise security requires an objective, adversarial perspective on digital risk. Our security assessment practice conducts rigorous, evidence-driven audits that look beyond superficial automated checklist scans to uncover the complex architectural flaws attackers actually exploit.",
-    "editorialParagraph2": "We map external attack surfaces, audit internal identity hierarchies using graph analytics, and stress-test data segmentation boundaries across multi-cloud and on-premises estates. Technical findings are distilled into clear, prioritized executive remediation roadmaps that de-risk the enterprise.",
+    "editorialParagraph1": "Our security reviews provide an independent, attacker-focused view of digital risk. Our Security Assessment Services UK team conducts detailed, evidence-led audits beyond basic automated scans to identify architectural weaknesses attackers can exploit.",
+    "editorialParagraph2": "We examine external attack surfaces, review identity structures through graph analysis, and test data segmentation controls across multi-cloud and on-premises environments. Findings become clear, prioritised executive remediation plans that reduce risk and strengthen security across interconnected enterprise-wide technology environments.",
     "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
   },
   "benefits": [
@@ -7625,6 +7751,132 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
       "id": "03",
       "title": "Prioritized Pragmatic Remediation Playbooks",
       "desc": "Eliminates vulnerability overwhelm by ranking risks by real-world exploitability, guiding your engineers to fix what matters first."
+    }
+  ]
+},
+  "cybersecurity/vulnerability-management-services-uk": {
+  "slug": "vulnerability-management-services-uk",
+  "serviceSlug": "cybersecurity",
+  "title": "Continuous Vulnerability Management & Patch Orchestration",
+  "solutions": [
+    {
+      "title": "Continuous Automated Vulnerability Scanning",
+      "desc": "Deploying enterprise scanners (Tenable, Qualys, Rapid7) across cloud instances, container fleets, network appliances, and workstations."
+    },
+    {
+      "title": "Risk-Based Vulnerability Prioritization (RBVM)",
+      "desc": "Correlating CVSS severity with real-time threat intelligence (EPSS, CISA KEV) to prioritize actively exploited zero-days over theoretical flaws."
+    },
+    {
+      "title": "Automated Patch Orchestration & Validation",
+      "desc": "Automating operating system and third-party software patching using Ansible, Microsoft Intune, and AWS Systems Manager with smoke testing."
+    },
+    {
+      "title": "Container & Kubernetes CVE Lifecycle Management",
+      "desc": "Automating base image rebuilding, CVE alerting, and image admission blocking across development and production registries."
+    },
+    {
+      "title": "Compensating Controls & Virtual Patching",
+      "desc": "Deploying cloud WAF and runtime eBPF mitigation rules to shield unpatchable legacy systems from active exploit payloads."
+    },
+    {
+      "title": "SLA-Backed Remediation Tracking & Dashboards",
+      "desc": "Establishing strict remediation timelines (e.g. Critical < 48 hours) with automated ticketing sync to Jira and ServiceNow."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated PCI-DSS Remediation Lifecycle",
+      "desc": "Automating continuous vulnerability scanning and patch verification across 2,400 financial transaction servers.",
+      "practicalValue": "Maintained a 100% clean quarterly external ASV scan record across all payment environments.",
+      "focusAreas": [
+        "Tenable ASV Scanning",
+        "Automated Kernel Livepatching",
+        "ServiceNow Vulnerability Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Medical Device CVE Threat Prioritization",
+      "desc": "Scanning diagnostic laboratory hardware and prioritizing patches based on active CISA Known Exploited Vulnerabilities.",
+      "practicalValue": "Prevented operational downtime by patching only verified exploitable flaws during clinical maintenance windows.",
+      "focusAreas": [
+        "EPSS Threat Scoring",
+        "CISA KEV Integration",
+        "Scheduled Maintenance Gates"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Zero-Downtime E-Commerce Kernel Patching",
+      "desc": "Executing automated rolling OS kernel updates and OpenSSL patch rollouts across auto-scaling checkout instances.",
+      "practicalValue": "Closed critical OpenSSL vulnerabilities in under 6 hours with zero shopping cart disruption.",
+      "focusAreas": [
+        "AWS Systems Manager Patch",
+        "Canary Node Rotation",
+        "Automated Smoke Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Factory SCADA Virtual Patching Protection",
+      "desc": "Deploying virtual WAF and network IPS filtering rules to protect industrial programmable logic controllers that cannot reboot.",
+      "practicalValue": "Shielded 85 production assembly lines from active zero-day exploits without requiring machinery restarts.",
+      "focusAreas": [
+        "Virtual WAF Patching",
+        "Snort / Suricata IPS Rules",
+        "Deep Packet Inspection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Risk-Based Vulnerability Management & Patch Orchestration Lifecycle",
+    "layers": [
+      {
+        "label": "Layer 01: Continuous Asset Discovery & Scanning",
+        "node": "Tenable/Qualys Cloud Agents, Network Probes, Container Registry Hooks"
+      },
+      {
+        "label": "Layer 02: Threat Intelligence & EPSS Correlation",
+        "node": "CISA KEV Feeds, Exploit Prediction Scoring System, In-the-Wild Context"
+      },
+      {
+        "label": "Layer 03: Automated Ticketing & Engineer Assignment",
+        "node": "Jira / ServiceNow Integration, SLA Timers, Remediation Code Playbooks"
+      },
+      {
+        "label": "Layer 04: Patch Orchestration & Virtual Patching",
+        "node": "Ansible Playbooks, AWS Systems Manager, WAF Rule Enforcement"
+      },
+      {
+        "label": "Layer 05: Verification Scanning & Compliance Telemetry",
+        "node": "Automated Re-Scans, Executive SLA Dashboards, Audit Attestations"
+      }
+    ],
+    "editorialParagraph1": "Proactive Vulnerability Management\nTraditional cybersecurity assessments can leave engineers facing extensive inventories of issues despite priorities. Our Vulnerability Management Services UK framework evaluates exposure, threat activity and business impact, helping teams concentrate on vulnerabilities requiring attention.",
+    "editorialParagraph2": "We coordinate each stage, from asset discovery and risk-based review to remediation recommendations, task monitoring and validation scans. This structured approach helps minimise exposure, strengthen security controls and maintain compliance across your infrastructure.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Focus on Real Threats, Not Theoretical CVEs",
+      "desc": "EPSS and threat intelligence integration ensures engineers patch actively targeted vulnerabilities rather than wasting time on harmless warnings."
+    },
+    {
+      "id": "02",
+      "title": "Dramatically Reduced Exposure Windows",
+      "desc": "Automated patch orchestration and virtual WAF filtering close critical zero-day windows within hours instead of months."
+    },
+    {
+      "id": "03",
+      "title": "Auditable Remediation SLA Tracking",
+      "desc": "Automated Jira and ServiceNow sync enforces corporate remediation timelines and provides irrefutable evidence for compliance audits."
     }
   ]
 },
@@ -7732,8 +7984,8 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "Automated Re-Scans, Executive SLA Dashboards, Audit Attestations"
       }
     ],
-    "editorialParagraph1": "Traditional vulnerability scanners generate overwhelming lists of theoretical flaws that paralyze engineering teams. We implement modern Risk-Based Vulnerability Management (RBVM) that filters out the noise by correlating severity scores with real-world exploit intelligence.",
-    "editorialParagraph2": "Our platform automates the end-to-end remediation lifecycle—from asset discovery and patch testing through to automated ticket assignment and verification re-scanning. Critical vulnerabilities are neutralized in hours, keeping your infrastructure continuously compliant and resilient.",
+    "editorialParagraph1": "Proactive Vulnerability Management\nTraditional cybersecurity assessments can leave engineers facing extensive inventories of issues despite priorities. Our Vulnerability Management Services UK framework evaluates exposure, threat activity and business impact, helping teams concentrate on vulnerabilities requiring attention.",
+    "editorialParagraph2": "We coordinate each stage, from asset discovery and risk-based review to remediation recommendations, task monitoring and validation scans. This structured approach helps minimise exposure, strengthen security controls and maintain compliance across your infrastructure.",
     "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
   },
   "benefits": [
@@ -7858,8 +8110,8 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "Automated Re-Scans, Executive SLA Dashboards, Audit Attestations"
       }
     ],
-    "editorialParagraph1": "Traditional vulnerability scanners generate overwhelming lists of theoretical flaws that paralyze engineering teams. We implement modern Risk-Based Vulnerability Management (RBVM) that filters out the noise by correlating severity scores with real-world exploit intelligence.",
-    "editorialParagraph2": "Our platform automates the end-to-end remediation lifecycle—from asset discovery and patch testing through to automated ticket assignment and verification re-scanning. Critical vulnerabilities are neutralized in hours, keeping your infrastructure continuously compliant and resilient.",
+    "editorialParagraph1": "Proactive Vulnerability Management\nTraditional cybersecurity assessments can leave engineers facing extensive inventories of issues despite priorities. Our Vulnerability Management Services UK framework evaluates exposure, threat activity and business impact, helping teams concentrate on vulnerabilities requiring attention.",
+    "editorialParagraph2": "We coordinate each stage, from asset discovery and risk-based review to remediation recommendations, task monitoring and validation scans. This structured approach helps minimise exposure, strengthen security controls and maintain compliance across your infrastructure.",
     "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
   },
   "benefits": [
@@ -8236,8 +8488,8 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "Threat Containment, Root-Cause Analysis, ICO Regulatory Breach Documentation"
       }
     ],
-    "editorialParagraph1": "Modern cyberattacks unfold in minutes, frequently occurring during holiday weekends or overnight hours when in-house teams are offline. Our 24/7 Security Operations Centre provides continuous enterprise threat monitoring and rapid incident containment.",
-    "editorialParagraph2": "Operating from UK facilities, our accredited security analysts correlate telemetry across endpoints, identity providers, and cloud environments using AI-accelerated SIEM and SOAR platforms. When threats are detected, automated playbooks and senior analysts isolate compromised hosts within minutes.",
+    "editorialParagraph1": "Cyber threats can emerge at any hour, including weekends and overnight periods when internal teams are unavailable. Our Security Operations Center Services UK provides continuous threat detection and coordinated incident response.",
+    "editorialParagraph2": "British facilities, analysts inspect alerts across endpoints, identities and cloud platforms using SIEM and SOAR systems. When suspicious activities appear, response workflows support investigation, escalation and containment, helping organisations reduce disruption and maintain visibility across company systems.",
     "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
   },
   "benefits": [
@@ -8362,8 +8614,8 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "Threat Containment, Root-Cause Analysis, ICO Regulatory Breach Documentation"
       }
     ],
-    "editorialParagraph1": "Modern cyberattacks unfold in minutes, frequently occurring during holiday weekends or overnight hours when in-house teams are offline. Our 24/7 Security Operations Centre provides continuous enterprise threat monitoring and rapid incident containment.",
-    "editorialParagraph2": "Operating from UK facilities, our accredited security analysts correlate telemetry across endpoints, identity providers, and cloud environments using AI-accelerated SIEM and SOAR platforms. When threats are detected, automated playbooks and senior analysts isolate compromised hosts within minutes.",
+    "editorialParagraph1": "Cyber threats can emerge at any hour, including weekends and overnight periods when internal teams are unavailable. Our Security Operations Center Services UK provides continuous threat detection and coordinated incident response.",
+    "editorialParagraph2": "British facilities, analysts inspect alerts across endpoints, identities and cloud platforms using SIEM and SOAR systems. When suspicious activities appear, response workflows support investigation, escalation and containment, helping organisations reduce disruption and maintain visibility across company systems.",
     "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
   },
   "benefits": [
@@ -8488,8 +8740,8 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "Least-Privilege Audits, Dormant Key Pruning, Access Certification Reviews"
       }
     ],
-    "editorialParagraph1": "Identity has replaced the physical network perimeter as the primary battleground of enterprise security. Stolen passwords and session cookie hijacking represent the initial vector in over 80% of modern breaches. We architect Zero-Trust IAM frameworks that assume breach and verify every access request.",
-    "editorialParagraph2": "By deploying phishing-resistant FIDO2 passwordless authentication, dynamic Conditional Access policies, and Just-In-Time Privileged Identity Management, we eradicate static credential risks. Automated SCIM provisioning guarantees that access is granted accurately on day one and revoked instantaneously upon departure.",
+    "editorialParagraph1": "Digital identity defines the security boundary for organisations, making access controls essential to protecting systems. Compromised credentials and hijacked sessions expose data and create entry points for attackers. Our Identity and Access Management Services apply Zero Trust principles, verifying every user, device and request.",
+    "editorialParagraph2": "We deploy phishing-resistant authentication, adaptive access policies and time-limited privileged permissions to reduce robust risks. Automated provisioning ensures employees receive appropriate access when joining and lose permissions soon when roles change or employment ends each day.",
     "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
   },
   "benefits": [
@@ -8636,7 +8888,13112 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
     }
   ]
 },
-  "cybersecurity/cloud-security": {
+  "cybersecurity/cloud-security-services-in-uk": {
+  "slug": "cloud-security-services-in-uk",
+  "serviceSlug": "cybersecurity",
+  "title": "Cloud Workload Protection & CSPM Defense",
+  "solutions": [
+    {
+      "title": "Cloud Security Posture Management (CSPM)",
+      "desc": "Continuous multi-cloud scanning across AWS, Azure, and Google Cloud detecting policy drift, insecure storage, and exposed management ports."
+    },
+    {
+      "title": "Cloud Workload Protection Platform (CWPP)",
+      "desc": "Kernel-level eBPF monitoring (Falco, Aqua) inspecting runtime container processes, file integrity changes, and reverse shells."
+    },
+    {
+      "title": "Cloud Infrastructure Entitlement Management (CIEM)",
+      "desc": "Mapping identity permissions across AWS IAM, Azure RBAC, and GCP IAM to strip unused privileges and enforce least privilege."
+    },
+    {
+      "title": "Shift-Left Infrastructure-as-Code Security",
+      "desc": "Enforcing pre-commit and CI/CD security scanning on Terraform, Bicep, and CloudFormation to intercept flaws before cloud provisioning."
+    },
+    {
+      "title": "Multi-Cloud Key Management & HSM Encryption",
+      "desc": "Designing customer-managed encryption key (CMEK) architectures utilizing cloud hardware security modules (HSM) with strict rotation."
+    },
+    {
+      "title": "Cloud Perimeter Defense & API Protection",
+      "desc": "Deploying automated cloud-native WAFs, DDoS mitigation, and API security gateways to inspect and filter all inbound traffic."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Multi-Cloud FinTech Guardrails",
+      "desc": "Deploying automated CSPM drift detection that automatically isolates any S3 bucket or storage container inadvertently set to public.",
+      "practicalValue": "Zero data leakage incidents and continuous validation of banking compliance frameworks.",
+      "focusAreas": [
+        "Automated Remediation Lambda",
+        "KMS Customer Keys",
+        "Private Link Isolation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Container Workload Protection",
+      "desc": "Deploying eBPF runtime threat detection across Kubernetes clusters running sensitive medical diagnostic models.",
+      "practicalValue": "Blocked unauthorized cryptomining container execution within 2 seconds of malicious pod injection.",
+      "focusAreas": [
+        "Falco Runtime Rules",
+        "Pod Security Standards",
+        "Cilium Network Policy"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Black Friday Cloud WAF & API Shielding",
+      "desc": "Deploying distributed Cloud WAF rules protecting checkout REST and GraphQL APIs from scraping bots and credential stuffing.",
+      "practicalValue": "Sustained 100% legitimate customer checkout uptime while repelling 24M malicious scraping queries.",
+      "focusAreas": [
+        "WAF Bot Control",
+        "GraphQL Rate Limiting",
+        "mTLS Backend Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Supply Chain Container Image Integrity",
+      "desc": "Enforcing cryptographic Cosign signature checks before any software container is permitted to run in plant production clusters.",
+      "practicalValue": "Guaranteed 100% of deployed software binaries originated from vetted internal corporate build pipelines.",
+      "focusAreas": [
+        "Cosign Image Verification",
+        "Admission Controller Gates",
+        "Trivy Registry Scans"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Cloud-Native Workload Protection & Posture Governance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: IaC & Build Pipeline Security Shield",
+        "node": "Checkov / Trivy Static Scanning, Secret Scrapers, Cosign Image Attestation"
+      },
+      {
+        "label": "Layer 02: Cloud Perimeter & Edge Ingress Gateways",
+        "node": "Cloud WAF, DDoS Protection, Private Link Endpoints, TLS 1.3"
+      },
+      {
+        "label": "Layer 03: Identity & Cloud Entitlement Governance (CIEM)",
+        "node": "Least Privilege IAM, PIM Just-In-Time Elevation, Zero-Trust MFA"
+      },
+      {
+        "label": "Layer 04: Runtime Workload Protection (CWPP)",
+        "node": "eBPF Kernel Probes (Falco), File Integrity Monitoring, Pod Security Admission"
+      },
+      {
+        "label": "Layer 05: Continuous Posture & Compliance Audits (CSPM)",
+        "node": "Automated Drift Remediation, Compliance Dashboards, Multi-Cloud SIEM"
+      }
+    ],
+    "editorialParagraph1": "Cloud environments change rapidly as containers, microservices and serverless workloads scale. Traditional perimeter controls can miss runtime threats, exposed settings and excessive access permissions, leaving resources open to attack.",
+    "editorialParagraph2": "Our Cloud Security Services in the UK protect workloads across the cloud lifecycle. We embed checks into infrastructure code and deployment pipelines, monitor runtime activity, review identities and detect configuration drift. Assessments and remediation help keep multi-cloud environments secure, compliant and reliable for operations.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Real-Time Interception of Cloud Misconfigurations",
+      "desc": "Continuous CSPM scanning detects and automatically remediates exposed storage buckets, insecure security groups, and unencrypted disks."
+    },
+    {
+      "id": "02",
+      "title": "Kernel-Level eBPF Runtime Threat Defense",
+      "desc": "Detects anomalous container system calls, reverse shells, and privilege escalation in real-time without sluggish agent overhead."
+    },
+    {
+      "id": "03",
+      "title": "Zero Insecure Code Reaching Cloud Production",
+      "desc": "Automated shift-left validation gates ensure that flawed Terraform templates and vulnerable container images are rejected before deployment."
+    }
+  ]
+},
+  "cybersecurity__cloud-security": {
+  "slug": "cloud-security-services-in-uk",
+  "serviceSlug": "cybersecurity",
+  "title": "Cloud Workload Protection & CSPM Defense",
+  "solutions": [
+    {
+      "title": "Cloud Security Posture Management (CSPM)",
+      "desc": "Continuous multi-cloud scanning across AWS, Azure, and Google Cloud detecting policy drift, insecure storage, and exposed management ports."
+    },
+    {
+      "title": "Cloud Workload Protection Platform (CWPP)",
+      "desc": "Kernel-level eBPF monitoring (Falco, Aqua) inspecting runtime container processes, file integrity changes, and reverse shells."
+    },
+    {
+      "title": "Cloud Infrastructure Entitlement Management (CIEM)",
+      "desc": "Mapping identity permissions across AWS IAM, Azure RBAC, and GCP IAM to strip unused privileges and enforce least privilege."
+    },
+    {
+      "title": "Shift-Left Infrastructure-as-Code Security",
+      "desc": "Enforcing pre-commit and CI/CD security scanning on Terraform, Bicep, and CloudFormation to intercept flaws before cloud provisioning."
+    },
+    {
+      "title": "Multi-Cloud Key Management & HSM Encryption",
+      "desc": "Designing customer-managed encryption key (CMEK) architectures utilizing cloud hardware security modules (HSM) with strict rotation."
+    },
+    {
+      "title": "Cloud Perimeter Defense & API Protection",
+      "desc": "Deploying automated cloud-native WAFs, DDoS mitigation, and API security gateways to inspect and filter all inbound traffic."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Multi-Cloud FinTech Guardrails",
+      "desc": "Deploying automated CSPM drift detection that automatically isolates any S3 bucket or storage container inadvertently set to public.",
+      "practicalValue": "Zero data leakage incidents and continuous validation of banking compliance frameworks.",
+      "focusAreas": [
+        "Automated Remediation Lambda",
+        "KMS Customer Keys",
+        "Private Link Isolation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Container Workload Protection",
+      "desc": "Deploying eBPF runtime threat detection across Kubernetes clusters running sensitive medical diagnostic models.",
+      "practicalValue": "Blocked unauthorized cryptomining container execution within 2 seconds of malicious pod injection.",
+      "focusAreas": [
+        "Falco Runtime Rules",
+        "Pod Security Standards",
+        "Cilium Network Policy"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Black Friday Cloud WAF & API Shielding",
+      "desc": "Deploying distributed Cloud WAF rules protecting checkout REST and GraphQL APIs from scraping bots and credential stuffing.",
+      "practicalValue": "Sustained 100% legitimate customer checkout uptime while repelling 24M malicious scraping queries.",
+      "focusAreas": [
+        "WAF Bot Control",
+        "GraphQL Rate Limiting",
+        "mTLS Backend Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Supply Chain Container Image Integrity",
+      "desc": "Enforcing cryptographic Cosign signature checks before any software container is permitted to run in plant production clusters.",
+      "practicalValue": "Guaranteed 100% of deployed software binaries originated from vetted internal corporate build pipelines.",
+      "focusAreas": [
+        "Cosign Image Verification",
+        "Admission Controller Gates",
+        "Trivy Registry Scans"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Cloud-Native Workload Protection & Posture Governance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: IaC & Build Pipeline Security Shield",
+        "node": "Checkov / Trivy Static Scanning, Secret Scrapers, Cosign Image Attestation"
+      },
+      {
+        "label": "Layer 02: Cloud Perimeter & Edge Ingress Gateways",
+        "node": "Cloud WAF, DDoS Protection, Private Link Endpoints, TLS 1.3"
+      },
+      {
+        "label": "Layer 03: Identity & Cloud Entitlement Governance (CIEM)",
+        "node": "Least Privilege IAM, PIM Just-In-Time Elevation, Zero-Trust MFA"
+      },
+      {
+        "label": "Layer 04: Runtime Workload Protection (CWPP)",
+        "node": "eBPF Kernel Probes (Falco), File Integrity Monitoring, Pod Security Admission"
+      },
+      {
+        "label": "Layer 05: Continuous Posture & Compliance Audits (CSPM)",
+        "node": "Automated Drift Remediation, Compliance Dashboards, Multi-Cloud SIEM"
+      }
+    ],
+    "editorialParagraph1": "Cloud environments change rapidly as containers, microservices and serverless workloads scale. Traditional perimeter controls can miss runtime threats, exposed settings and excessive access permissions, leaving resources open to attack.",
+    "editorialParagraph2": "Our Cloud Security Services in the UK protect workloads across the cloud lifecycle. We embed checks into infrastructure code and deployment pipelines, monitor runtime activity, review identities and detect configuration drift. Assessments and remediation help keep multi-cloud environments secure, compliant and reliable for operations.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Real-Time Interception of Cloud Misconfigurations",
+      "desc": "Continuous CSPM scanning detects and automatically remediates exposed storage buckets, insecure security groups, and unencrypted disks."
+    },
+    {
+      "id": "02",
+      "title": "Kernel-Level eBPF Runtime Threat Defense",
+      "desc": "Detects anomalous container system calls, reverse shells, and privilege escalation in real-time without sluggish agent overhead."
+    },
+    {
+      "id": "03",
+      "title": "Zero Insecure Code Reaching Cloud Production",
+      "desc": "Automated shift-left validation gates ensure that flawed Terraform templates and vulnerable container images are rejected before deployment."
+    }
+  ]
+},
+  "cybersecurity/compliance-governance": {
+  "slug": "compliance-governance",
+  "serviceSlug": "cybersecurity",
+  "title": "Security Governance, Risk & Regulatory Compliance",
+  "solutions": [
+    {
+      "title": "ISO 27001:2022 Certification Readiness",
+      "desc": "Establishing an Information Security Management System (ISMS), formal risk treatment plans, and internal audit evidence packages."
+    },
+    {
+      "title": "SOC 2 Type I & Type II Attestation Automation",
+      "desc": "Implementing automated compliance platforms (Vanta, Drata) continuously collecting telemetry evidence across infrastructure and SaaS."
+    },
+    {
+      "title": "PCI-DSS 4.0 Assessment & Remediation",
+      "desc": "Segmenting cardholder data environments (CDE), verifying cryptographic controls, and validating merchant compliance requirements."
+    },
+    {
+      "title": "Cyber Essentials & Cyber Essentials Plus",
+      "desc": "Auditing and certifying UK enterprise systems against National Cyber Security Centre (NCSC) technical controls."
+    },
+    {
+      "title": "GDPR, DPA 2018 & Data Privacy Engineering",
+      "desc": "Conducting Data Protection Impact Assessments (DPIAs), mapping data flows, and implementing automated Data Subject Access Request (DSAR) workflows."
+    },
+    {
+      "title": "Third-Party Vendor Risk Management (TPRM)",
+      "desc": "Structuring vendor security assessment questionnaires, SOC report reviews, and automated ongoing supplier risk monitoring."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated SOC 2 Type II Financial Compliance",
+      "desc": "Deploying automated evidence collectors across AWS and GitHub to maintain continuous SOC 2 Type II audit readiness for enterprise fintechs.",
+      "practicalValue": "Achieved clean SOC 2 Type II attestation with zero auditor exceptions in under 90 days.",
+      "focusAreas": [
+        "Automated Evidence Collection",
+        "Policy Management Portals",
+        "Access Review Automation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "NHS DSPT & HIPAA Regulatory Certification",
+      "desc": "Guiding a digital healthcare provider through mandatory NHS Data Security & Protection Toolkit validation and HIPAA audit compliance.",
+      "practicalValue": "Secured NHS commercial deployment authorization and eliminated manual audit preparation overhead.",
+      "focusAreas": [
+        "NHS Caldicott Principles",
+        "DPIA Risk Assessments",
+        "Encryption Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "PCI-DSS 4.0 Scope Reduction & Certification",
+      "desc": "Architecting network tokenization and hosted checkout fields to dramatically reduce cardholder data environment scope.",
+      "practicalValue": "Reduced PCI-DSS audit scope by 85%, saving £140,000 in annual compliance testing fees.",
+      "focusAreas": [
+        "CDE Scope Reduction",
+        "Tokenization Architecture",
+        "ASV Quarterly Scanning"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Cyber Essentials Plus UK Defence Supplier Audit",
+      "desc": "Hardening enterprise endpoints, firewalls, and patch management to achieve Cyber Essentials Plus for government supply contracts.",
+      "practicalValue": "Passed rigorous hands-on technical audit, unlocking £12M in public sector procurement opportunities.",
+      "focusAreas": [
+        "NCSC Five Technical Controls",
+        "MFA Enforcement",
+        "Software Vulnerability Mitigation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Continuous Automated Compliance & Governance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Policy Framework & Governance Catalog",
+        "node": "ISMS Information Security Policies, Risk Register, Board Directives"
+      },
+      {
+        "label": "Layer 02: Automated Evidence Collection Engines",
+        "node": "Vanta / Drata API Integrations with AWS, Azure, GitHub, Okta"
+      },
+      {
+        "label": "Layer 03: Continuous Technical Controls Validation",
+        "node": "MFA Enforcement Checks, Hard Disk Encryption Audits, Patch Verification"
+      },
+      {
+        "label": "Layer 04: Third-Party & Vendor Risk Monitoring",
+        "node": "Vendor Questionnaires, SecurityScorecard Telemetry, Contract Reviews"
+      },
+      {
+        "label": "Layer 05: Auditor Portal & Certified Attestation",
+        "node": "Real-Time Evidence Vaults, CPA Auditor Access, ISO 27001 Certification"
+      }
+    ],
+    "editorialParagraph1": "Regulatory compliance should never be an agonizing annual fire drill involving hundreds of frantic manual screenshots. We build automated governance frameworks that turn compliance into an effortless, continuous operational byproduct of your daily engineering practices.",
+    "editorialParagraph2": "By integrating automated compliance engines (Vanta, Drata) directly with your cloud accounts, identity providers, and code repositories, evidence is gathered cryptographically in real-time. Whether pursuing ISO 27001, SOC 2, or Cyber Essentials Plus, our advisory guarantees rapid certification with zero auditor friction.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Continuous Automated Audit Readiness",
+      "desc": "Automated API integrations collect compliance evidence 24/7, eliminating months of chaotic pre-audit screenshot gathering."
+    },
+    {
+      "id": "02",
+      "title": "Accelerated Enterprise Sales Cycles",
+      "desc": "Clean SOC 2 Type II and ISO 27001 certifications provide instant credibility, speeding up enterprise customer security reviews."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Surprise Regulatory Governance",
+      "desc": "Continuous monitoring dashboards immediately alert leadership if an employee disables disk encryption or skips mandatory training."
+    }
+  ]
+},
+  "compliance-governance": {
+  "slug": "compliance-governance",
+  "serviceSlug": "cybersecurity",
+  "title": "Security Governance, Risk & Regulatory Compliance",
+  "solutions": [
+    {
+      "title": "ISO 27001:2022 Certification Readiness",
+      "desc": "Establishing an Information Security Management System (ISMS), formal risk treatment plans, and internal audit evidence packages."
+    },
+    {
+      "title": "SOC 2 Type I & Type II Attestation Automation",
+      "desc": "Implementing automated compliance platforms (Vanta, Drata) continuously collecting telemetry evidence across infrastructure and SaaS."
+    },
+    {
+      "title": "PCI-DSS 4.0 Assessment & Remediation",
+      "desc": "Segmenting cardholder data environments (CDE), verifying cryptographic controls, and validating merchant compliance requirements."
+    },
+    {
+      "title": "Cyber Essentials & Cyber Essentials Plus",
+      "desc": "Auditing and certifying UK enterprise systems against National Cyber Security Centre (NCSC) technical controls."
+    },
+    {
+      "title": "GDPR, DPA 2018 & Data Privacy Engineering",
+      "desc": "Conducting Data Protection Impact Assessments (DPIAs), mapping data flows, and implementing automated Data Subject Access Request (DSAR) workflows."
+    },
+    {
+      "title": "Third-Party Vendor Risk Management (TPRM)",
+      "desc": "Structuring vendor security assessment questionnaires, SOC report reviews, and automated ongoing supplier risk monitoring."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated SOC 2 Type II Financial Compliance",
+      "desc": "Deploying automated evidence collectors across AWS and GitHub to maintain continuous SOC 2 Type II audit readiness for enterprise fintechs.",
+      "practicalValue": "Achieved clean SOC 2 Type II attestation with zero auditor exceptions in under 90 days.",
+      "focusAreas": [
+        "Automated Evidence Collection",
+        "Policy Management Portals",
+        "Access Review Automation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "NHS DSPT & HIPAA Regulatory Certification",
+      "desc": "Guiding a digital healthcare provider through mandatory NHS Data Security & Protection Toolkit validation and HIPAA audit compliance.",
+      "practicalValue": "Secured NHS commercial deployment authorization and eliminated manual audit preparation overhead.",
+      "focusAreas": [
+        "NHS Caldicott Principles",
+        "DPIA Risk Assessments",
+        "Encryption Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "PCI-DSS 4.0 Scope Reduction & Certification",
+      "desc": "Architecting network tokenization and hosted checkout fields to dramatically reduce cardholder data environment scope.",
+      "practicalValue": "Reduced PCI-DSS audit scope by 85%, saving £140,000 in annual compliance testing fees.",
+      "focusAreas": [
+        "CDE Scope Reduction",
+        "Tokenization Architecture",
+        "ASV Quarterly Scanning"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Cyber Essentials Plus UK Defence Supplier Audit",
+      "desc": "Hardening enterprise endpoints, firewalls, and patch management to achieve Cyber Essentials Plus for government supply contracts.",
+      "practicalValue": "Passed rigorous hands-on technical audit, unlocking £12M in public sector procurement opportunities.",
+      "focusAreas": [
+        "NCSC Five Technical Controls",
+        "MFA Enforcement",
+        "Software Vulnerability Mitigation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Continuous Automated Compliance & Governance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Policy Framework & Governance Catalog",
+        "node": "ISMS Information Security Policies, Risk Register, Board Directives"
+      },
+      {
+        "label": "Layer 02: Automated Evidence Collection Engines",
+        "node": "Vanta / Drata API Integrations with AWS, Azure, GitHub, Okta"
+      },
+      {
+        "label": "Layer 03: Continuous Technical Controls Validation",
+        "node": "MFA Enforcement Checks, Hard Disk Encryption Audits, Patch Verification"
+      },
+      {
+        "label": "Layer 04: Third-Party & Vendor Risk Monitoring",
+        "node": "Vendor Questionnaires, SecurityScorecard Telemetry, Contract Reviews"
+      },
+      {
+        "label": "Layer 05: Auditor Portal & Certified Attestation",
+        "node": "Real-Time Evidence Vaults, CPA Auditor Access, ISO 27001 Certification"
+      }
+    ],
+    "editorialParagraph1": "Regulatory compliance should never be an agonizing annual fire drill involving hundreds of frantic manual screenshots. We build automated governance frameworks that turn compliance into an effortless, continuous operational byproduct of your daily engineering practices.",
+    "editorialParagraph2": "By integrating automated compliance engines (Vanta, Drata) directly with your cloud accounts, identity providers, and code repositories, evidence is gathered cryptographically in real-time. Whether pursuing ISO 27001, SOC 2, or Cyber Essentials Plus, our advisory guarantees rapid certification with zero auditor friction.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Continuous Automated Audit Readiness",
+      "desc": "Automated API integrations collect compliance evidence 24/7, eliminating months of chaotic pre-audit screenshot gathering."
+    },
+    {
+      "id": "02",
+      "title": "Accelerated Enterprise Sales Cycles",
+      "desc": "Clean SOC 2 Type II and ISO 27001 certifications provide instant credibility, speeding up enterprise customer security reviews."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Surprise Regulatory Governance",
+      "desc": "Continuous monitoring dashboards immediately alert leadership if an employee disables disk encryption or skips mandatory training."
+    }
+  ]
+},
+  "cybersecurity/zero-trust-architecture": {
+  "slug": "zero-trust-architecture",
+  "serviceSlug": "cybersecurity",
+  "title": "Zero Trust Network Access (ZTNA) & Microsegmentation",
+  "solutions": [
+    {
+      "title": "Zero Trust Network Access (ZTNA 2.0)",
+      "desc": "Replacing legacy vulnerable VPN concentrators with identity-aware, least-privilege application access proxies (Cloudflare Access, Zscaler)."
+    },
+    {
+      "title": "Software-Defined Perimeter & Microsegmentation",
+      "desc": "Implementing host-based microsegmentation (Illumio, Cilium) to prevent lateral movement between workloads across hybrid datacenters."
+    },
+    {
+      "title": "Continuous Identity & Device Posture Verification",
+      "desc": "Evaluating endpoint compliance health (EDR status, OS patch level, disk encryption) before granting application access."
+    },
+    {
+      "title": "Mutual TLS (mTLS) Service-to-Service Encryption",
+      "desc": "Enforcing cryptographic identity and mutual TLS encryption for all inter-service communications using Envoy and service meshes."
+    },
+    {
+      "title": "Privileged Remote Access for Engineers (Zero-Bastion)",
+      "desc": "Deploying cryptographic ephemeral SSH and RDP access tools (Teleport, Boundary) eliminating exposed bastion hosts and shared keys."
+    },
+    {
+      "title": "Continuous Session Evaluation & Revocation",
+      "desc": "Terminating active access sessions immediately if an endpoint's risk score elevates or suspicious data transfer is detected."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Replacing Legacy Corporate VPN with ZTNA",
+      "desc": "Migrating 6,000 hybrid banking workers from traditional Cisco AnyConnect VPN to identity-driven Cloudflare Zero Trust.",
+      "practicalValue": "Eliminated network-level exposure to internal core banking subnets; cut remote access latency by 45%.",
+      "focusAreas": [
+        "Identity-Aware Access Proxies",
+        "Device Health Validation",
+        "Zero Lateral Traversal"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Hospital Workstation Microsegmentation",
+      "desc": "Implementing host-based microsegmentation across medical devices and clinical workstations to halt lateral malware propagation.",
+      "practicalValue": "Confined simulated ransomware outbreak to a single isolated device, protecting patient monitoring networks.",
+      "focusAreas": [
+        "Host-Based Firewalls",
+        "VLAN Microsegmentation",
+        "Strict Ingress White-Listing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Zero-Bastion Infrastructure Access for Engineers",
+      "desc": "Deploying Teleport cryptographic access proxies for 120 remote developers accessing production Kubernetes and database nodes.",
+      "practicalValue": "Eliminated all static SSH keys and public bastion hosts; every command is fully recorded and audited.",
+      "focusAreas": [
+        "Teleport Ephemeral Certificates",
+        "Session Recording",
+        "Zero Public Bastion Ports"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Secure Third-Party Contractor Plant Access",
+      "desc": "Granting external automation vendors secure, browser-isolated access to specific plant diagnostic dashboards without full VPN entry.",
+      "practicalValue": "Prevented third-party supply chain compromise while streamlining contractor support operations.",
+      "focusAreas": [
+        "Browser Isolation",
+        "Granular URL Authorization",
+        "Time-Bound Access Passes"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Zero Trust Architecture & Continuous Verification Model",
+    "layers": [
+      {
+        "label": "Layer 01: User & Device Identity Trust Evaluation",
+        "node": "FIDO2 Passwordless, EDR Health Check, Device Compliance State"
+      },
+      {
+        "label": "Layer 02: Zero Trust Network Access (ZTNA) Edge Proxy",
+        "node": "Cloudflare Access / Zscaler Private Access, Geo-Distributed PoPs"
+      },
+      {
+        "label": "Layer 03: Cryptographic Ephemeral Gateway (Zero-Bastion)",
+        "node": "Teleport / HashiCorp Boundary, Short-Lived SSH/DB Certificates"
+      },
+      {
+        "label": "Layer 04: Workload Microsegmentation & mTLS Mesh",
+        "node": "Cilium eBPF Host Policies, Illumio Micro-Perimeter, Mutual TLS"
+      },
+      {
+        "label": "Layer 05: Continuous Behavior Analytics & Instant Revocation",
+        "node": "Real-Time Risk Scoring, Anomaly Detection, Automated Session Termination"
+      }
+    ],
+    "editorialParagraph1": "The foundational principle of Zero Trust is unambiguous: Never trust, always verify. Legacy perimeter security models that trust any user or device once inside the corporate VPN provide threat actors and ransomware with wide-open lateral movement.",
+    "editorialParagraph2": "We architect Zero Trust Network Access (ZTNA) and host-level microsegmentation frameworks that treat internal networks as hostile as the public internet. Every user, device, and microservice must continuously authenticate and authorize on a per-request basis with granular least-privilege controls.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Complete Elimination of Lateral Threat Movement",
+      "desc": "Workload microsegmentation ensures that if a single laptop or server is compromised, attackers cannot traverse to adjacent systems."
+    },
+    {
+      "id": "02",
+      "title": "Retirement of Vulnerable Legacy VPNs",
+      "desc": "Identity-aware access proxies provide faster, seamless remote connections without exposing internal IP subnets to external risk."
+    },
+    {
+      "id": "03",
+      "title": "Total Elimination of Static SSH Credentials",
+      "desc": "Short-lived, cryptographically signed certificates replace dangerous permanent SSH keys and eliminate exposed bastion servers."
+    }
+  ]
+},
+  "zero-trust-architecture": {
+  "slug": "zero-trust-architecture",
+  "serviceSlug": "cybersecurity",
+  "title": "Zero Trust Network Access (ZTNA) & Microsegmentation",
+  "solutions": [
+    {
+      "title": "Zero Trust Network Access (ZTNA 2.0)",
+      "desc": "Replacing legacy vulnerable VPN concentrators with identity-aware, least-privilege application access proxies (Cloudflare Access, Zscaler)."
+    },
+    {
+      "title": "Software-Defined Perimeter & Microsegmentation",
+      "desc": "Implementing host-based microsegmentation (Illumio, Cilium) to prevent lateral movement between workloads across hybrid datacenters."
+    },
+    {
+      "title": "Continuous Identity & Device Posture Verification",
+      "desc": "Evaluating endpoint compliance health (EDR status, OS patch level, disk encryption) before granting application access."
+    },
+    {
+      "title": "Mutual TLS (mTLS) Service-to-Service Encryption",
+      "desc": "Enforcing cryptographic identity and mutual TLS encryption for all inter-service communications using Envoy and service meshes."
+    },
+    {
+      "title": "Privileged Remote Access for Engineers (Zero-Bastion)",
+      "desc": "Deploying cryptographic ephemeral SSH and RDP access tools (Teleport, Boundary) eliminating exposed bastion hosts and shared keys."
+    },
+    {
+      "title": "Continuous Session Evaluation & Revocation",
+      "desc": "Terminating active access sessions immediately if an endpoint's risk score elevates or suspicious data transfer is detected."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Replacing Legacy Corporate VPN with ZTNA",
+      "desc": "Migrating 6,000 hybrid banking workers from traditional Cisco AnyConnect VPN to identity-driven Cloudflare Zero Trust.",
+      "practicalValue": "Eliminated network-level exposure to internal core banking subnets; cut remote access latency by 45%.",
+      "focusAreas": [
+        "Identity-Aware Access Proxies",
+        "Device Health Validation",
+        "Zero Lateral Traversal"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Hospital Workstation Microsegmentation",
+      "desc": "Implementing host-based microsegmentation across medical devices and clinical workstations to halt lateral malware propagation.",
+      "practicalValue": "Confined simulated ransomware outbreak to a single isolated device, protecting patient monitoring networks.",
+      "focusAreas": [
+        "Host-Based Firewalls",
+        "VLAN Microsegmentation",
+        "Strict Ingress White-Listing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Zero-Bastion Infrastructure Access for Engineers",
+      "desc": "Deploying Teleport cryptographic access proxies for 120 remote developers accessing production Kubernetes and database nodes.",
+      "practicalValue": "Eliminated all static SSH keys and public bastion hosts; every command is fully recorded and audited.",
+      "focusAreas": [
+        "Teleport Ephemeral Certificates",
+        "Session Recording",
+        "Zero Public Bastion Ports"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Secure Third-Party Contractor Plant Access",
+      "desc": "Granting external automation vendors secure, browser-isolated access to specific plant diagnostic dashboards without full VPN entry.",
+      "practicalValue": "Prevented third-party supply chain compromise while streamlining contractor support operations.",
+      "focusAreas": [
+        "Browser Isolation",
+        "Granular URL Authorization",
+        "Time-Bound Access Passes"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Zero Trust Architecture & Continuous Verification Model",
+    "layers": [
+      {
+        "label": "Layer 01: User & Device Identity Trust Evaluation",
+        "node": "FIDO2 Passwordless, EDR Health Check, Device Compliance State"
+      },
+      {
+        "label": "Layer 02: Zero Trust Network Access (ZTNA) Edge Proxy",
+        "node": "Cloudflare Access / Zscaler Private Access, Geo-Distributed PoPs"
+      },
+      {
+        "label": "Layer 03: Cryptographic Ephemeral Gateway (Zero-Bastion)",
+        "node": "Teleport / HashiCorp Boundary, Short-Lived SSH/DB Certificates"
+      },
+      {
+        "label": "Layer 04: Workload Microsegmentation & mTLS Mesh",
+        "node": "Cilium eBPF Host Policies, Illumio Micro-Perimeter, Mutual TLS"
+      },
+      {
+        "label": "Layer 05: Continuous Behavior Analytics & Instant Revocation",
+        "node": "Real-Time Risk Scoring, Anomaly Detection, Automated Session Termination"
+      }
+    ],
+    "editorialParagraph1": "The foundational principle of Zero Trust is unambiguous: Never trust, always verify. Legacy perimeter security models that trust any user or device once inside the corporate VPN provide threat actors and ransomware with wide-open lateral movement.",
+    "editorialParagraph2": "We architect Zero Trust Network Access (ZTNA) and host-level microsegmentation frameworks that treat internal networks as hostile as the public internet. Every user, device, and microservice must continuously authenticate and authorize on a per-request basis with granular least-privilege controls.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Complete Elimination of Lateral Threat Movement",
+      "desc": "Workload microsegmentation ensures that if a single laptop or server is compromised, attackers cannot traverse to adjacent systems."
+    },
+    {
+      "id": "02",
+      "title": "Retirement of Vulnerable Legacy VPNs",
+      "desc": "Identity-aware access proxies provide faster, seamless remote connections without exposing internal IP subnets to external risk."
+    },
+    {
+      "id": "03",
+      "title": "Total Elimination of Static SSH Credentials",
+      "desc": "Short-lived, cryptographically signed certificates replace dangerous permanent SSH keys and eliminate exposed bastion servers."
+    }
+  ]
+},
+
+  "software-development/enterprise-application-development": {
+  "slug": "enterprise-application-development",
+  "serviceSlug": "software-development",
+  "title": "Enterprise Application Development & Engineering",
+  "solutions": [
+    {
+      "title": "Domain-Driven Enterprise Architecture (DDD)",
+      "desc": "Designing bounded contexts, aggregate roots, and ubiquitous language models that align large-scale software systems with complex business domains."
+    },
+    {
+      "title": "High-Throughput Distributed Microservices",
+      "desc": "Building resilient microservices using Go, Rust, Java Quarkus, and Node.js with gRPC, Apache Kafka, and circuit breaker patterns."
+    },
+    {
+      "title": "Event-Sourcing & CQRS Data Patterns",
+      "desc": "Decoupling read and write models with Command Query Responsibility Segregation (CQRS) and immutable event sourcing for financial-grade audit trails."
+    },
+    {
+      "title": "Enterprise Cloud-Native Portals & Workspaces",
+      "desc": "Developing mission-critical internal and partner portals using Next.js, React Server Components, and zero-trust authentication."
+    },
+    {
+      "title": "Resilient API Gateways & Service Meshes",
+      "desc": "Implementing Envoy, Kong, and Istio API gateways with automated rate limiting, mutual TLS encryption, and distributed request tracing."
+    },
+    {
+      "title": "Legacy Core Encapsulation (Strangler Fig)",
+      "desc": "Progressively migrating mission-critical legacy mainframe and ERP functions into modular cloud services with zero operational downtime."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Wealth Management & Trading Platform",
+      "desc": "Engineering an enterprise wealth management engine processing 25,000 real-time asset allocations per second with strict auditability.",
+      "practicalValue": "Sub-50ms order execution latency with 100% regulatory audit compliance under PRA and FCA guidelines.",
+      "focusAreas": [
+        "Event Sourcing CQRS",
+        "gRPC Distributed Core",
+        "Immutable Audit Ledger"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Distributed Clinical Trial Research Portal",
+      "desc": "Building an enterprise clinical trial coordination application synchronizing patient cohort records across 60 international medical sites.",
+      "practicalValue": "Unified global research telemetry with verified HIPAA and NHS Caldicott compliance.",
+      "focusAreas": [
+        "FHIR Data Integration",
+        "Role-Based Access Control",
+        "End-to-End Encryption"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Omnichannel Enterprise Order Management (OMS)",
+      "desc": "Architecting a unified order fulfillment and inventory routing engine handling 4.5 million global retail SKUs in real time.",
+      "practicalValue": "Eliminated inventory sync race conditions and lowered cart abandonment due to out-of-stock errors by 34%.",
+      "focusAreas": [
+        "Distributed Stock Locking",
+        "Kafka Event Streams",
+        "Multi-Region Read Replicas"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Supply Chain Planning & ERP Orchestration",
+      "desc": "Developing a custom enterprise resource planning engine computing complex multi-tier supply chain routes across 85 manufacturing facilities.",
+      "practicalValue": "Cut weekly production scheduling recalculation from 14 hours to 8 minutes.",
+      "focusAreas": [
+        "High-Concurrency Go Engine",
+        "Linear Programming Solver",
+        "ERP REST/GraphQL Adapters"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Application Core Architecture & Event Mesh",
+    "layers": [
+      {
+        "label": "Layer 01: Client Interaction & Edge Gateway",
+        "node": "Next.js RSC, GraphQL Ingress, Kong Gateway, mTLS Termination"
+      },
+      {
+        "label": "Layer 02: CQRS Command & Domain Core Plane",
+        "node": "Go / Quarkus Microservices, Bounded Contexts, Domain Event Emitters"
+      },
+      {
+        "label": "Layer 03: Event Brokerage & Streaming Backbone",
+        "node": "Apache Kafka Clusters, Schema Registry, Dead-Letter Processing"
+      },
+      {
+        "label": "Layer 04: Polyglot Persistence & Materialized Views",
+        "node": "PostgreSQL (Write Store), Redis (Cache), Elasticsearch (Read Model)"
+      },
+      {
+        "label": "Layer 05: Telemetry, Observability & Security Shield",
+        "node": "OpenTelemetry Tracing, Prometheus Metrics, HashiCorp Vault Secrets"
+      }
+    ],
+    "editorialParagraph1": "Enterprise application engineering requires architecting systems that scale gracefully across organizational boundaries, high transaction volumes, and evolving regulatory mandates. We build robust, domain-driven software applications that eliminate monolithic entanglements.",
+    "editorialParagraph2": "By separating read and write workloads through CQRS patterns and decoupling services with high-throughput event streams, our applications achieve exceptional fault tolerance and sub-second response times. Continuous automated testing and strict architectural guardrails ensure codebases remain maintainable over decades.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Clean Domain Decoupling & Maintainability",
+      "desc": "Domain-Driven Design establishes clear service boundaries and aggregate roots, enabling parallel squad delivery without merge conflicts."
+    },
+    {
+      "id": "02",
+      "title": "Financial-Grade Reliability & Auditability",
+      "desc": "Event-sourced persistence guarantees an immutable chronological record of every system state change for regulatory auditability."
+    },
+    {
+      "id": "03",
+      "title": "Sub-Second Distributed Throughput",
+      "desc": "High-performance compiled runtimes (Go/Rust/Quarkus) and async messaging deliver millisecond response times under peak transaction load."
+    }
+  ]
+},
+  "enterprise-application-development": {
+  "slug": "enterprise-application-development",
+  "serviceSlug": "software-development",
+  "title": "Enterprise Application Development & Engineering",
+  "solutions": [
+    {
+      "title": "Domain-Driven Enterprise Architecture (DDD)",
+      "desc": "Designing bounded contexts, aggregate roots, and ubiquitous language models that align large-scale software systems with complex business domains."
+    },
+    {
+      "title": "High-Throughput Distributed Microservices",
+      "desc": "Building resilient microservices using Go, Rust, Java Quarkus, and Node.js with gRPC, Apache Kafka, and circuit breaker patterns."
+    },
+    {
+      "title": "Event-Sourcing & CQRS Data Patterns",
+      "desc": "Decoupling read and write models with Command Query Responsibility Segregation (CQRS) and immutable event sourcing for financial-grade audit trails."
+    },
+    {
+      "title": "Enterprise Cloud-Native Portals & Workspaces",
+      "desc": "Developing mission-critical internal and partner portals using Next.js, React Server Components, and zero-trust authentication."
+    },
+    {
+      "title": "Resilient API Gateways & Service Meshes",
+      "desc": "Implementing Envoy, Kong, and Istio API gateways with automated rate limiting, mutual TLS encryption, and distributed request tracing."
+    },
+    {
+      "title": "Legacy Core Encapsulation (Strangler Fig)",
+      "desc": "Progressively migrating mission-critical legacy mainframe and ERP functions into modular cloud services with zero operational downtime."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Wealth Management & Trading Platform",
+      "desc": "Engineering an enterprise wealth management engine processing 25,000 real-time asset allocations per second with strict auditability.",
+      "practicalValue": "Sub-50ms order execution latency with 100% regulatory audit compliance under PRA and FCA guidelines.",
+      "focusAreas": [
+        "Event Sourcing CQRS",
+        "gRPC Distributed Core",
+        "Immutable Audit Ledger"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Distributed Clinical Trial Research Portal",
+      "desc": "Building an enterprise clinical trial coordination application synchronizing patient cohort records across 60 international medical sites.",
+      "practicalValue": "Unified global research telemetry with verified HIPAA and NHS Caldicott compliance.",
+      "focusAreas": [
+        "FHIR Data Integration",
+        "Role-Based Access Control",
+        "End-to-End Encryption"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Omnichannel Enterprise Order Management (OMS)",
+      "desc": "Architecting a unified order fulfillment and inventory routing engine handling 4.5 million global retail SKUs in real time.",
+      "practicalValue": "Eliminated inventory sync race conditions and lowered cart abandonment due to out-of-stock errors by 34%.",
+      "focusAreas": [
+        "Distributed Stock Locking",
+        "Kafka Event Streams",
+        "Multi-Region Read Replicas"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Supply Chain Planning & ERP Orchestration",
+      "desc": "Developing a custom enterprise resource planning engine computing complex multi-tier supply chain routes across 85 manufacturing facilities.",
+      "practicalValue": "Cut weekly production scheduling recalculation from 14 hours to 8 minutes.",
+      "focusAreas": [
+        "High-Concurrency Go Engine",
+        "Linear Programming Solver",
+        "ERP REST/GraphQL Adapters"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Application Core Architecture & Event Mesh",
+    "layers": [
+      {
+        "label": "Layer 01: Client Interaction & Edge Gateway",
+        "node": "Next.js RSC, GraphQL Ingress, Kong Gateway, mTLS Termination"
+      },
+      {
+        "label": "Layer 02: CQRS Command & Domain Core Plane",
+        "node": "Go / Quarkus Microservices, Bounded Contexts, Domain Event Emitters"
+      },
+      {
+        "label": "Layer 03: Event Brokerage & Streaming Backbone",
+        "node": "Apache Kafka Clusters, Schema Registry, Dead-Letter Processing"
+      },
+      {
+        "label": "Layer 04: Polyglot Persistence & Materialized Views",
+        "node": "PostgreSQL (Write Store), Redis (Cache), Elasticsearch (Read Model)"
+      },
+      {
+        "label": "Layer 05: Telemetry, Observability & Security Shield",
+        "node": "OpenTelemetry Tracing, Prometheus Metrics, HashiCorp Vault Secrets"
+      }
+    ],
+    "editorialParagraph1": "Enterprise application engineering requires architecting systems that scale gracefully across organizational boundaries, high transaction volumes, and evolving regulatory mandates. We build robust, domain-driven software applications that eliminate monolithic entanglements.",
+    "editorialParagraph2": "By separating read and write workloads through CQRS patterns and decoupling services with high-throughput event streams, our applications achieve exceptional fault tolerance and sub-second response times. Continuous automated testing and strict architectural guardrails ensure codebases remain maintainable over decades.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Clean Domain Decoupling & Maintainability",
+      "desc": "Domain-Driven Design establishes clear service boundaries and aggregate roots, enabling parallel squad delivery without merge conflicts."
+    },
+    {
+      "id": "02",
+      "title": "Financial-Grade Reliability & Auditability",
+      "desc": "Event-sourced persistence guarantees an immutable chronological record of every system state change for regulatory auditability."
+    },
+    {
+      "id": "03",
+      "title": "Sub-Second Distributed Throughput",
+      "desc": "High-performance compiled runtimes (Go/Rust/Quarkus) and async messaging deliver millisecond response times under peak transaction load."
+    }
+  ]
+},
+  "software-development/web-application-development": {
+  "slug": "web-application-development",
+  "serviceSlug": "software-development",
+  "title": "Modern Web Application Engineering & PWAs",
+  "solutions": [
+    {
+      "title": "Next.js & React Server Components (RSC)",
+      "desc": "Architecting lightning-fast modern web applications using React Server Components, server actions, and incremental static regeneration (ISR)."
+    },
+    {
+      "title": "Progressive Web Apps (PWAs) & Offline Engines",
+      "desc": "Engineering offline-capable web applications with service workers, background sync, IndexedDB caching, and native device hardware access."
+    },
+    {
+      "title": "High-Performance State Management & Streaming UI",
+      "desc": "Utilizing lightweight reactive stores (Zustand) and HTTP streaming to render responsive dashboards with zero layout shift (CLS < 0.05)."
+    },
+    {
+      "title": "Edge Compute & Dynamic Caching Layers",
+      "desc": "Deploying Edge Middleware (Cloudflare Workers, Vercel Edge) to execute personalization, geo-routing, and A/B variants in sub-10ms."
+    },
+    {
+      "title": "Enterprise Web Accessibility (WCAG 2.2 AA)",
+      "desc": "Building accessible semantic web interfaces with full keyboard navigation, ARIA live regions, and automated axe-core regression testing."
+    },
+    {
+      "title": "Micro-Frontend Federation & Modular Layouts",
+      "desc": "Implementing Module Federation and Webpack/Vite plugins to allow distributed squads to deploy independent web verticals safely."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Interactive Commercial Banking Web Dashboard",
+      "desc": "Building a high-frequency treasury management web portal streaming live foreign exchange rates and cash liquidity forecasts.",
+      "practicalValue": "Processed 500,000 daily commercial transactions with sub-100ms UI interaction latency.",
+      "focusAreas": [
+        "WebSocket Data Streams",
+        "Canvas Financial Charting",
+        "Strict FIDO2 WebAuthn"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Patient Portal & Telemedicine Webapp",
+      "desc": "Engineering a secure video consultation and prescription management web application conforming to WCAG 2.2 AA accessibility.",
+      "practicalValue": "99.8% patient satisfaction and verified compliance across assistive screen-reader technologies.",
+      "focusAreas": [
+        "WebRTC Peer Video",
+        "WCAG 2.2 AA Accessibility",
+        "Automated NHS OAuth"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Sub-Second Headless E-Commerce Webapp",
+      "desc": "Developing a Next.js headless storefront for a global luxury brand delivering 98+ Google Lighthouse performance scores.",
+      "practicalValue": "28% increase in organic mobile checkout conversions driven by 0.8s First Contentful Paint times.",
+      "focusAreas": [
+        "Incremental Static Revalidation",
+        "Edge Image Optimization",
+        "Optimistic Cart Mutations"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Offline-Capable Warehouse Floor PWA",
+      "desc": "Deploying a Progressive Web App for warehouse operators functioning seamlessly during intermittent cellular connectivity.",
+      "practicalValue": "Zero inventory scanning downtime in remote metal storage warehouses with automated background sync.",
+      "focusAreas": [
+        "Service Worker Background Sync",
+        "IndexedDB Offline Cache",
+        "Barcode Scanner Web APIs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Edge-Accelerated Modern Web Application Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Global Edge & CDN Ingress",
+        "node": "Cloudflare Edge Workers, Anycast Routing, DDoS & WAF Inspection"
+      },
+      {
+        "label": "Layer 02: Next.js Hybrid Rendering & Streaming UI",
+        "node": "React Server Components, ISR Cache, Suspense Streaming Boundaries"
+      },
+      {
+        "label": "Layer 03: Client Runtime & Offline State Engine",
+        "node": "Zustand State, Service Workers, IndexedDB, Optimistic UI Updates"
+      },
+      {
+        "label": "Layer 04: Backend API Integration & GraphQL Gateway",
+        "node": "REST / GraphQL Adapters, Schema Stitching, Resilient HTTP Pools"
+      },
+      {
+        "label": "Layer 05: Frontend Telemetry & Web Vitals Monitoring",
+        "node": "OpenTelemetry Browser SDK, Core Web Vitals RUM, Sentry Error Tracking"
+      }
+    ],
+    "editorialParagraph1": "Modern web applications must feel as responsive, tactile, and reliable as native desktop software. We engineer edge-accelerated web applications using Next.js and React Server Components that stream UI updates progressively while eliminating bloated JavaScript client bundles.",
+    "editorialParagraph2": "Our web platforms adhere strictly to Core Web Vitals performance benchmarks and WCAG 2.2 AA accessibility standards. With resilient service worker caching and offline-first data stores, our webapps deliver continuous user experiences even in degraded connectivity environments.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Flawless Core Web Vitals & Sub-Second Loads",
+      "desc": "Server-side streaming and aggressive edge caching achieve 95+ Lighthouse scores and instantaneous page interactions."
+    },
+    {
+      "id": "02",
+      "title": "Offline-First Operational Continuity",
+      "desc": "Progressive Web App service workers and IndexedDB storage keep critical workflows functional without continuous network access."
+    },
+    {
+      "id": "03",
+      "title": "Universal Enterprise Accessibility (WCAG 2.2 AA)",
+      "desc": "Semantic HTML foundations and keyboard navigation ensure your applications are compliant and accessible to all users."
+    }
+  ]
+},
+  "web-application-development": {
+  "slug": "web-application-development",
+  "serviceSlug": "software-development",
+  "title": "Modern Web Application Engineering & PWAs",
+  "solutions": [
+    {
+      "title": "Next.js & React Server Components (RSC)",
+      "desc": "Architecting lightning-fast modern web applications using React Server Components, server actions, and incremental static regeneration (ISR)."
+    },
+    {
+      "title": "Progressive Web Apps (PWAs) & Offline Engines",
+      "desc": "Engineering offline-capable web applications with service workers, background sync, IndexedDB caching, and native device hardware access."
+    },
+    {
+      "title": "High-Performance State Management & Streaming UI",
+      "desc": "Utilizing lightweight reactive stores (Zustand) and HTTP streaming to render responsive dashboards with zero layout shift (CLS < 0.05)."
+    },
+    {
+      "title": "Edge Compute & Dynamic Caching Layers",
+      "desc": "Deploying Edge Middleware (Cloudflare Workers, Vercel Edge) to execute personalization, geo-routing, and A/B variants in sub-10ms."
+    },
+    {
+      "title": "Enterprise Web Accessibility (WCAG 2.2 AA)",
+      "desc": "Building accessible semantic web interfaces with full keyboard navigation, ARIA live regions, and automated axe-core regression testing."
+    },
+    {
+      "title": "Micro-Frontend Federation & Modular Layouts",
+      "desc": "Implementing Module Federation and Webpack/Vite plugins to allow distributed squads to deploy independent web verticals safely."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Interactive Commercial Banking Web Dashboard",
+      "desc": "Building a high-frequency treasury management web portal streaming live foreign exchange rates and cash liquidity forecasts.",
+      "practicalValue": "Processed 500,000 daily commercial transactions with sub-100ms UI interaction latency.",
+      "focusAreas": [
+        "WebSocket Data Streams",
+        "Canvas Financial Charting",
+        "Strict FIDO2 WebAuthn"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Patient Portal & Telemedicine Webapp",
+      "desc": "Engineering a secure video consultation and prescription management web application conforming to WCAG 2.2 AA accessibility.",
+      "practicalValue": "99.8% patient satisfaction and verified compliance across assistive screen-reader technologies.",
+      "focusAreas": [
+        "WebRTC Peer Video",
+        "WCAG 2.2 AA Accessibility",
+        "Automated NHS OAuth"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Sub-Second Headless E-Commerce Webapp",
+      "desc": "Developing a Next.js headless storefront for a global luxury brand delivering 98+ Google Lighthouse performance scores.",
+      "practicalValue": "28% increase in organic mobile checkout conversions driven by 0.8s First Contentful Paint times.",
+      "focusAreas": [
+        "Incremental Static Revalidation",
+        "Edge Image Optimization",
+        "Optimistic Cart Mutations"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Offline-Capable Warehouse Floor PWA",
+      "desc": "Deploying a Progressive Web App for warehouse operators functioning seamlessly during intermittent cellular connectivity.",
+      "practicalValue": "Zero inventory scanning downtime in remote metal storage warehouses with automated background sync.",
+      "focusAreas": [
+        "Service Worker Background Sync",
+        "IndexedDB Offline Cache",
+        "Barcode Scanner Web APIs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Edge-Accelerated Modern Web Application Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Global Edge & CDN Ingress",
+        "node": "Cloudflare Edge Workers, Anycast Routing, DDoS & WAF Inspection"
+      },
+      {
+        "label": "Layer 02: Next.js Hybrid Rendering & Streaming UI",
+        "node": "React Server Components, ISR Cache, Suspense Streaming Boundaries"
+      },
+      {
+        "label": "Layer 03: Client Runtime & Offline State Engine",
+        "node": "Zustand State, Service Workers, IndexedDB, Optimistic UI Updates"
+      },
+      {
+        "label": "Layer 04: Backend API Integration & GraphQL Gateway",
+        "node": "REST / GraphQL Adapters, Schema Stitching, Resilient HTTP Pools"
+      },
+      {
+        "label": "Layer 05: Frontend Telemetry & Web Vitals Monitoring",
+        "node": "OpenTelemetry Browser SDK, Core Web Vitals RUM, Sentry Error Tracking"
+      }
+    ],
+    "editorialParagraph1": "Modern web applications must feel as responsive, tactile, and reliable as native desktop software. We engineer edge-accelerated web applications using Next.js and React Server Components that stream UI updates progressively while eliminating bloated JavaScript client bundles.",
+    "editorialParagraph2": "Our web platforms adhere strictly to Core Web Vitals performance benchmarks and WCAG 2.2 AA accessibility standards. With resilient service worker caching and offline-first data stores, our webapps deliver continuous user experiences even in degraded connectivity environments.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Flawless Core Web Vitals & Sub-Second Loads",
+      "desc": "Server-side streaming and aggressive edge caching achieve 95+ Lighthouse scores and instantaneous page interactions."
+    },
+    {
+      "id": "02",
+      "title": "Offline-First Operational Continuity",
+      "desc": "Progressive Web App service workers and IndexedDB storage keep critical workflows functional without continuous network access."
+    },
+    {
+      "id": "03",
+      "title": "Universal Enterprise Accessibility (WCAG 2.2 AA)",
+      "desc": "Semantic HTML foundations and keyboard navigation ensure your applications are compliant and accessible to all users."
+    }
+  ]
+},
+  "software-development/mobile-application-development": {
+  "slug": "mobile-application-development",
+  "serviceSlug": "software-development",
+  "title": "Native & Cross-Platform Mobile Engineering",
+  "solutions": [
+    {
+      "title": "High-Performance Flutter & React Native Apps",
+      "desc": "Building native-speed cross-platform iOS and Android applications with single-codebase efficiency and 60 FPS animations."
+    },
+    {
+      "title": "Native Swift & Kotlin Platform Engineering",
+      "desc": "Developing specialized native iOS (Swift/SwiftUI) and Android (Kotlin/Jetpack Compose) modules for hardware-intensive requirements."
+    },
+    {
+      "title": "Offline-First Mobile Synchronization",
+      "desc": "Architecting local encrypted databases (WatermelonDB, SQLite) with conflict-free replicated data types (CRDTs) and background sync."
+    },
+    {
+      "title": "Hardware Integration & Biometric Security",
+      "desc": "Direct integration with FaceID, TouchID, Secure Enclave, NFC reader chips, Bluetooth Low Energy (BLE), and camera sensors."
+    },
+    {
+      "title": "Automated Mobile CI/CD & App Store Delivery",
+      "desc": "Automating mobile builds, cryptographic code signing, and phased rollout deployments using Fastlane and GitHub Actions."
+    },
+    {
+      "title": "Mobile App Performance & Battery Profiling",
+      "desc": "Rigorous memory leak auditing, CPU throttling minimization, and battery consumption profiling to guarantee smooth user experiences."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Biometric Secure Mobile Banking App",
+      "desc": "Engineering a consumer mobile banking application with hardware Secure Enclave key storage and dynamic transaction signing.",
+      "practicalValue": "Processed £2B+ in annual mobile transfers with zero credential compromise or MitM vulnerabilities.",
+      "focusAreas": [
+        "Secure Enclave Cryptography",
+        "Certificate Pinning",
+        "Biometric Quick-Pay"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Connected Medical Device Companion App",
+      "desc": "Developing a BLE-connected mobile app pairing with continuous glucose monitors to display real-time blood sugar trends.",
+      "practicalValue": "Certified medical companion app operating across 80,000 diabetic patients in the UK and Europe.",
+      "focusAreas": [
+        "BLE Background Ingestion",
+        "Local Encrypted SQLite",
+        "Emergency Push Notification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Omnichannel In-Store Shopping Companion",
+      "desc": "Building a retail loyalty mobile app featuring in-aisle barcode scanning, Apple Pay one-tap checkout, and indoor wayfinding.",
+      "practicalValue": "42% faster in-store customer checkout and a 3.2x uplift in loyalty club engagement.",
+      "focusAreas": [
+        "Apple Pay / Google Wallet",
+        "Camera Barcode SDK",
+        "Geofence Beacon Alerts"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Field Technician Inspection App",
+      "desc": "Creating an offline-first rugged mobile tablet application for offshore wind turbine inspection engineers.",
+      "practicalValue": "Enabled complete digital work orders in remote oceanic locations with automated cloud sync on docking.",
+      "focusAreas": [
+        "CRDT Conflict Sync",
+        "High-Resolution Image Annotation",
+        "Rugged Device Optimization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Cross-Platform Mobile Application Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Client Presentation & Native Bridges",
+        "node": "Flutter / React Native, Native Kotlin/Swift Plugins, 60fps Gesture Engine"
+      },
+      {
+        "label": "Layer 02: Hardware Security & Biometric Vault",
+        "node": "iOS Keychain / Android Keystore, Secure Enclave, FIDO2 Biometrics"
+      },
+      {
+        "label": "Layer 03: Offline Persistence & CRDT Sync Engine",
+        "node": "Encrypted SQLite / WatermelonDB, Conflict-Free Sync, Delta Compression"
+      },
+      {
+        "label": "Layer 04: Secure Transport & API Gateway Bridge",
+        "node": "Mutual TLS Certificate Pinning, GraphQL Mobile Ingress, Rate Limit Shield"
+      },
+      {
+        "label": "Layer 05: Mobile Telemetry & Fastlane CI/CD Fleet",
+        "node": "Firebase Crashlytics, Datadog Mobile RUM, Fastlane App Store Automation"
+      }
+    ],
+    "editorialParagraph1": "Mobile users expect instantaneous responses, fluid gestures, and continuous offline functionality. We build enterprise mobile applications that combine cross-platform development efficiency with the uncompromised speed and security of native device hardware.",
+    "editorialParagraph2": "Our mobile architectures enforce strict security standards, storing sensitive encryption keys inside native hardware security chips and pinning API transport certificates. Automated Fastlane CI/CD pipelines streamline app store certification and phased canary rollouts.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Single Codebase Across iOS and Android",
+      "desc": "Modern cross-platform frameworks deliver native 60 FPS performance while slashing ongoing development and maintenance overhead by 40%."
+    },
+    {
+      "id": "02",
+      "title": "Hardware-Backed Security Foundations",
+      "desc": "Storing tokens and private keys inside the device's Secure Enclave guarantees immunity from filesystem extraction attacks."
+    },
+    {
+      "id": "03",
+      "title": "Automated App Store Release Pipelines",
+      "desc": "Fastlane and automated testing pipelines remove release friction, delivering rapid over-the-air patches and store updates."
+    }
+  ]
+},
+  "mobile-application-development": {
+  "slug": "mobile-application-development",
+  "serviceSlug": "software-development",
+  "title": "Native & Cross-Platform Mobile Engineering",
+  "solutions": [
+    {
+      "title": "High-Performance Flutter & React Native Apps",
+      "desc": "Building native-speed cross-platform iOS and Android applications with single-codebase efficiency and 60 FPS animations."
+    },
+    {
+      "title": "Native Swift & Kotlin Platform Engineering",
+      "desc": "Developing specialized native iOS (Swift/SwiftUI) and Android (Kotlin/Jetpack Compose) modules for hardware-intensive requirements."
+    },
+    {
+      "title": "Offline-First Mobile Synchronization",
+      "desc": "Architecting local encrypted databases (WatermelonDB, SQLite) with conflict-free replicated data types (CRDTs) and background sync."
+    },
+    {
+      "title": "Hardware Integration & Biometric Security",
+      "desc": "Direct integration with FaceID, TouchID, Secure Enclave, NFC reader chips, Bluetooth Low Energy (BLE), and camera sensors."
+    },
+    {
+      "title": "Automated Mobile CI/CD & App Store Delivery",
+      "desc": "Automating mobile builds, cryptographic code signing, and phased rollout deployments using Fastlane and GitHub Actions."
+    },
+    {
+      "title": "Mobile App Performance & Battery Profiling",
+      "desc": "Rigorous memory leak auditing, CPU throttling minimization, and battery consumption profiling to guarantee smooth user experiences."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Biometric Secure Mobile Banking App",
+      "desc": "Engineering a consumer mobile banking application with hardware Secure Enclave key storage and dynamic transaction signing.",
+      "practicalValue": "Processed £2B+ in annual mobile transfers with zero credential compromise or MitM vulnerabilities.",
+      "focusAreas": [
+        "Secure Enclave Cryptography",
+        "Certificate Pinning",
+        "Biometric Quick-Pay"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Connected Medical Device Companion App",
+      "desc": "Developing a BLE-connected mobile app pairing with continuous glucose monitors to display real-time blood sugar trends.",
+      "practicalValue": "Certified medical companion app operating across 80,000 diabetic patients in the UK and Europe.",
+      "focusAreas": [
+        "BLE Background Ingestion",
+        "Local Encrypted SQLite",
+        "Emergency Push Notification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Omnichannel In-Store Shopping Companion",
+      "desc": "Building a retail loyalty mobile app featuring in-aisle barcode scanning, Apple Pay one-tap checkout, and indoor wayfinding.",
+      "practicalValue": "42% faster in-store customer checkout and a 3.2x uplift in loyalty club engagement.",
+      "focusAreas": [
+        "Apple Pay / Google Wallet",
+        "Camera Barcode SDK",
+        "Geofence Beacon Alerts"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Field Technician Inspection App",
+      "desc": "Creating an offline-first rugged mobile tablet application for offshore wind turbine inspection engineers.",
+      "practicalValue": "Enabled complete digital work orders in remote oceanic locations with automated cloud sync on docking.",
+      "focusAreas": [
+        "CRDT Conflict Sync",
+        "High-Resolution Image Annotation",
+        "Rugged Device Optimization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Cross-Platform Mobile Application Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Client Presentation & Native Bridges",
+        "node": "Flutter / React Native, Native Kotlin/Swift Plugins, 60fps Gesture Engine"
+      },
+      {
+        "label": "Layer 02: Hardware Security & Biometric Vault",
+        "node": "iOS Keychain / Android Keystore, Secure Enclave, FIDO2 Biometrics"
+      },
+      {
+        "label": "Layer 03: Offline Persistence & CRDT Sync Engine",
+        "node": "Encrypted SQLite / WatermelonDB, Conflict-Free Sync, Delta Compression"
+      },
+      {
+        "label": "Layer 04: Secure Transport & API Gateway Bridge",
+        "node": "Mutual TLS Certificate Pinning, GraphQL Mobile Ingress, Rate Limit Shield"
+      },
+      {
+        "label": "Layer 05: Mobile Telemetry & Fastlane CI/CD Fleet",
+        "node": "Firebase Crashlytics, Datadog Mobile RUM, Fastlane App Store Automation"
+      }
+    ],
+    "editorialParagraph1": "Mobile users expect instantaneous responses, fluid gestures, and continuous offline functionality. We build enterprise mobile applications that combine cross-platform development efficiency with the uncompromised speed and security of native device hardware.",
+    "editorialParagraph2": "Our mobile architectures enforce strict security standards, storing sensitive encryption keys inside native hardware security chips and pinning API transport certificates. Automated Fastlane CI/CD pipelines streamline app store certification and phased canary rollouts.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Single Codebase Across iOS and Android",
+      "desc": "Modern cross-platform frameworks deliver native 60 FPS performance while slashing ongoing development and maintenance overhead by 40%."
+    },
+    {
+      "id": "02",
+      "title": "Hardware-Backed Security Foundations",
+      "desc": "Storing tokens and private keys inside the device's Secure Enclave guarantees immunity from filesystem extraction attacks."
+    },
+    {
+      "id": "03",
+      "title": "Automated App Store Release Pipelines",
+      "desc": "Fastlane and automated testing pipelines remove release friction, delivering rapid over-the-air patches and store updates."
+    }
+  ]
+},
+  "software-development/saas-product-development": {
+  "slug": "saas-product-development",
+  "serviceSlug": "software-development",
+  "title": "SaaS Product Engineering & Multi-Tenant Architecture",
+  "solutions": [
+    {
+      "title": "Multi-Tenant Architecture & Data Isolation",
+      "desc": "Designing scalable multi-tenant architectures utilizing schema-per-tenant, row-level security (RLS), and database-per-tenant isolation."
+    },
+    {
+      "title": "Subscription Billing & Metered Usage Engines",
+      "desc": "Integrating Stripe Billing, Paddle, and custom usage meters for subscription tiers, seat licensing, and consumption-based billing models."
+    },
+    {
+      "title": "Enterprise SSO & Automated SCIM Provisioning",
+      "desc": "Enabling B2B enterprise sales with turn-key SAML 2.0 / OIDC single sign-on (Okta, Azure AD) and automated employee lifecycle sync."
+    },
+    {
+      "title": "Role-Based Access Control (RBAC) & Custom Permissions",
+      "desc": "Implementing granular role-based and attribute-based access controls (ABAC) with delegated team workspaces and tenant administration."
+    },
+    {
+      "title": "Tenant-Isolated Background Job Queues",
+      "desc": "Deploying fair-share queue orchestration (BullMQ, Temporal) preventing noisy neighbors from starving other customer workloads."
+    },
+    {
+      "title": "SaaS Analytics & Product Telemetry Hubs",
+      "desc": "Capturing customer product usage telemetry (PostHog, Segment) to track activation metrics, feature adoption, and churn risk."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "B2B Regulatory Compliance SaaS Platform",
+      "desc": "Architecting a multi-tenant compliance reporting platform with strict tenant database encryption for 80 financial institutions.",
+      "practicalValue": "Attained SOC 2 Type II and ISO 27001 certification, unlocking enterprise contracts worth £6.8M.",
+      "focusAreas": [
+        "Database-Per-Tenant",
+        "Customer-Managed KMS",
+        "Automated Audit Logs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Practice Management SaaS",
+      "desc": "Developing a cloud-native clinic management platform supporting 1,200 private healthcare clinics across the UK.",
+      "practicalValue": "Guaranteed 100% tenant data separation under NHS Data Security & Protection standards.",
+      "focusAreas": [
+        "Postgres Row-Level Security",
+        "Tenant KMS Keys",
+        "HIPAA Access Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Usage-Based Inventory Optimization SaaS",
+      "desc": "Building a high-volume stock prediction SaaS charging customers based on daily SKU forecasting volume processed.",
+      "practicalValue": "Processed 180M daily predictions with sub-second metering updates and automated Stripe billing.",
+      "focusAreas": [
+        "Stripe Metered Billing",
+        "Redis Quota Throttling",
+        "Tenant Fair-Share Queues"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Fleet Telematics B2B SaaS Platform",
+      "desc": "Deploying a multi-tenant logistics platform ingesting 15,000 commercial vehicle telematics streams across 40 carrier enterprises.",
+      "practicalValue": "99.99% multi-tenant availability with zero noisy-neighbor degradation during shift-start traffic peaks.",
+      "focusAreas": [
+        "Tenant Sharded Ingestion",
+        "Temporal Workflow Engine",
+        "Multi-Org Administration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Multi-Tenant SaaS Product Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Tenant Ingress & Custom Domain Routing",
+        "node": "Cloudflare Custom Hostnames, SSL Termination, Tenant Resolution Middleware"
+      },
+      {
+        "label": "Layer 02: Enterprise Identity & WorkOS / Auth0 Core",
+        "node": "SAML 2.0 / OIDC SSO, SCIM User Provisioning, RBAC Authorization"
+      },
+      {
+        "label": "Layer 03: Multi-Tenant Application Core & Metering",
+        "node": "Next.js / Node.js Microservices, Usage Metering, Stripe Webhooks"
+      },
+      {
+        "label": "Layer 04: Fair-Share Queue & Background Worker Mesh",
+        "node": "BullMQ / Temporal Orchestration, Tenant Priority Throttling, Dead-Letter Recovery"
+      },
+      {
+        "label": "Layer 05: Isolated Multi-Tenant Persistence & Vault",
+        "node": "PostgreSQL with RLS, KMS Customer Keys, Encrypted Tenant S3 Buckets"
+      }
+    ],
+    "editorialParagraph1": "Building enterprise-ready SaaS products requires solving the complex operational challenges that make B2B buyers say yes: bulletproof tenant data isolation, enterprise SSO, granular role permissions, and auditable security compliance.",
+    "editorialParagraph2": "We design multi-tenant cloud platforms that scale smoothly from initial self-serve signups to Fortune 500 enterprise deployments. By building on proven isolation patterns and automated metered billing engines, our architectures allow SaaS businesses to scale without architectural rewrites.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Enterprise-Ready B2B Sales Enablement",
+      "desc": "Built-in SAML SSO, automated SCIM provisioning, and granular RBAC allow your sales team to pass enterprise procurement security reviews."
+    },
+    {
+      "id": "02",
+      "title": "Zero Noisy-Neighbor Performance Impact",
+      "desc": "Fair-share asynchronous task queues and tenant resource quotas prevent single heavy accounts from degrading other customers."
+    },
+    {
+      "id": "03",
+      "title": "Flexible Subscription & Metered Monetization",
+      "desc": "Robust billing architecture supports seat-based, flat-tier, and real-time consumption-based pricing models effortlessly."
+    }
+  ]
+},
+  "saas-product-development": {
+  "slug": "saas-product-development",
+  "serviceSlug": "software-development",
+  "title": "SaaS Product Engineering & Multi-Tenant Architecture",
+  "solutions": [
+    {
+      "title": "Multi-Tenant Architecture & Data Isolation",
+      "desc": "Designing scalable multi-tenant architectures utilizing schema-per-tenant, row-level security (RLS), and database-per-tenant isolation."
+    },
+    {
+      "title": "Subscription Billing & Metered Usage Engines",
+      "desc": "Integrating Stripe Billing, Paddle, and custom usage meters for subscription tiers, seat licensing, and consumption-based billing models."
+    },
+    {
+      "title": "Enterprise SSO & Automated SCIM Provisioning",
+      "desc": "Enabling B2B enterprise sales with turn-key SAML 2.0 / OIDC single sign-on (Okta, Azure AD) and automated employee lifecycle sync."
+    },
+    {
+      "title": "Role-Based Access Control (RBAC) & Custom Permissions",
+      "desc": "Implementing granular role-based and attribute-based access controls (ABAC) with delegated team workspaces and tenant administration."
+    },
+    {
+      "title": "Tenant-Isolated Background Job Queues",
+      "desc": "Deploying fair-share queue orchestration (BullMQ, Temporal) preventing noisy neighbors from starving other customer workloads."
+    },
+    {
+      "title": "SaaS Analytics & Product Telemetry Hubs",
+      "desc": "Capturing customer product usage telemetry (PostHog, Segment) to track activation metrics, feature adoption, and churn risk."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "B2B Regulatory Compliance SaaS Platform",
+      "desc": "Architecting a multi-tenant compliance reporting platform with strict tenant database encryption for 80 financial institutions.",
+      "practicalValue": "Attained SOC 2 Type II and ISO 27001 certification, unlocking enterprise contracts worth £6.8M.",
+      "focusAreas": [
+        "Database-Per-Tenant",
+        "Customer-Managed KMS",
+        "Automated Audit Logs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Practice Management SaaS",
+      "desc": "Developing a cloud-native clinic management platform supporting 1,200 private healthcare clinics across the UK.",
+      "practicalValue": "Guaranteed 100% tenant data separation under NHS Data Security & Protection standards.",
+      "focusAreas": [
+        "Postgres Row-Level Security",
+        "Tenant KMS Keys",
+        "HIPAA Access Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Usage-Based Inventory Optimization SaaS",
+      "desc": "Building a high-volume stock prediction SaaS charging customers based on daily SKU forecasting volume processed.",
+      "practicalValue": "Processed 180M daily predictions with sub-second metering updates and automated Stripe billing.",
+      "focusAreas": [
+        "Stripe Metered Billing",
+        "Redis Quota Throttling",
+        "Tenant Fair-Share Queues"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Fleet Telematics B2B SaaS Platform",
+      "desc": "Deploying a multi-tenant logistics platform ingesting 15,000 commercial vehicle telematics streams across 40 carrier enterprises.",
+      "practicalValue": "99.99% multi-tenant availability with zero noisy-neighbor degradation during shift-start traffic peaks.",
+      "focusAreas": [
+        "Tenant Sharded Ingestion",
+        "Temporal Workflow Engine",
+        "Multi-Org Administration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Multi-Tenant SaaS Product Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Tenant Ingress & Custom Domain Routing",
+        "node": "Cloudflare Custom Hostnames, SSL Termination, Tenant Resolution Middleware"
+      },
+      {
+        "label": "Layer 02: Enterprise Identity & WorkOS / Auth0 Core",
+        "node": "SAML 2.0 / OIDC SSO, SCIM User Provisioning, RBAC Authorization"
+      },
+      {
+        "label": "Layer 03: Multi-Tenant Application Core & Metering",
+        "node": "Next.js / Node.js Microservices, Usage Metering, Stripe Webhooks"
+      },
+      {
+        "label": "Layer 04: Fair-Share Queue & Background Worker Mesh",
+        "node": "BullMQ / Temporal Orchestration, Tenant Priority Throttling, Dead-Letter Recovery"
+      },
+      {
+        "label": "Layer 05: Isolated Multi-Tenant Persistence & Vault",
+        "node": "PostgreSQL with RLS, KMS Customer Keys, Encrypted Tenant S3 Buckets"
+      }
+    ],
+    "editorialParagraph1": "Building enterprise-ready SaaS products requires solving the complex operational challenges that make B2B buyers say yes: bulletproof tenant data isolation, enterprise SSO, granular role permissions, and auditable security compliance.",
+    "editorialParagraph2": "We design multi-tenant cloud platforms that scale smoothly from initial self-serve signups to Fortune 500 enterprise deployments. By building on proven isolation patterns and automated metered billing engines, our architectures allow SaaS businesses to scale without architectural rewrites.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Enterprise-Ready B2B Sales Enablement",
+      "desc": "Built-in SAML SSO, automated SCIM provisioning, and granular RBAC allow your sales team to pass enterprise procurement security reviews."
+    },
+    {
+      "id": "02",
+      "title": "Zero Noisy-Neighbor Performance Impact",
+      "desc": "Fair-share asynchronous task queues and tenant resource quotas prevent single heavy accounts from degrading other customers."
+    },
+    {
+      "id": "03",
+      "title": "Flexible Subscription & Metered Monetization",
+      "desc": "Robust billing architecture supports seat-based, flat-tier, and real-time consumption-based pricing models effortlessly."
+    }
+  ]
+},
+  "software-development/api-development-integration": {
+  "slug": "api-development-integration",
+  "serviceSlug": "software-development",
+  "title": "Enterprise API Development & Systems Integration",
+  "solutions": [
+    {
+      "title": "REST, GraphQL & gRPC Multi-Protocol APIs",
+      "desc": "Designing high-performance APIs leveraging RESTful OpenAPI standards, GraphQL federated graphs, and low-latency gRPC binary protocols."
+    },
+    {
+      "title": "Enterprise API Gateway Architecture",
+      "desc": "Deploying enterprise gateways (Kong, Apigee, AWS API Gateway) with token validation, rate-limiting tiers, and automated request transformations."
+    },
+    {
+      "title": "Event-Driven Webhook & Notification Engines",
+      "desc": "Building reliable webhook delivery infrastructures (Svix, custom workers) with exponential backoff retries and cryptographic signature signing."
+    },
+    {
+      "title": "Legacy Enterprise System Adapters (ESB Replacement)",
+      "desc": "Modernizing clunky enterprise service bus (ESB) layers into decoupled, lightweight event adapters connecting SAP, Oracle, and Salesforce."
+    },
+    {
+      "title": "Automated Contract Testing & Spec Generation",
+      "desc": "Enforcing consumer-driven contract testing (Pact) and automated OpenAPI spec generation to guarantee zero breaking API changes."
+    },
+    {
+      "title": "Developer Portal & Interactive API Sandboxes",
+      "desc": "Building self-service developer documentation portals with live interactive request sandboxes and automated API key provisioning."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Open Banking PSD2 Compliant API Gateway",
+      "desc": "Developing Open Banking compliant APIs enabling third-party fintechs to securely initiate payments and query account balances.",
+      "practicalValue": "Processed 12M monthly Open Banking requests with sub-40ms response latency and 100% regulatory uptime.",
+      "focusAreas": [
+        "Open Banking UK Standards",
+        "mTLS Client Certificates",
+        "OAuth2 Token Introspection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Interoperable FHIR / HL7 Healthcare API Bridge",
+      "desc": "Creating an enterprise healthcare integration gateway translating legacy HL7 v2 messages into modern JSON-based FHIR REST endpoints.",
+      "practicalValue": "Seamless clinical data interoperability across 18 hospital trust electronic health record systems.",
+      "focusAreas": [
+        "HL7 to FHIR Translation",
+        "Strict Patient Identity Verification",
+        "HIPAA Audit Logging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Global Marketplace Partner API Integration",
+      "desc": "Unifying inventory and order feeds across Amazon, eBay, and Shopify into a single high-throughput asynchronous API gateway.",
+      "practicalValue": "Eliminated inventory sync lag, preventing overselling across 14 international retail sales channels.",
+      "focusAreas": [
+        "Webhook Delivery Engine",
+        "Distributed Redis Rate Limiter",
+        "Idempotency Keys"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "SAP ERP Cloud Integration Adapter Mesh",
+      "desc": "Building low-latency event adapters streaming real-time factory purchase orders from SAP ERP into modern cloud logistics microservices.",
+      "practicalValue": "Replaced 6-hour overnight batch transfers with instantaneous sub-second order dispatch notifications.",
+      "focusAreas": [
+        "SAP RFC/OData Connectors",
+        "Kafka Event Streaming",
+        "Automatic Error Quarantine"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise High-Performance API Gateway & Integration Mesh",
+    "layers": [
+      {
+        "label": "Layer 01: Client Consumer & Partner Integration Plane",
+        "node": "OpenAPI Documentation, Developer Sandbox, SDK Generation"
+      },
+      {
+        "label": "Layer 02: Enterprise API Gateway & Security Shield",
+        "node": "Kong / Apigee Gateway, OAuth2 / mTLS Token Check, Rate Limiter"
+      },
+      {
+        "label": "Layer 03: Protocol Routing & Transformation Mesh",
+        "node": "GraphQL Federation, gRPC Multiplexer, REST-to-Event Translators"
+      },
+      {
+        "label": "Layer 04: Legacy Systems & Enterprise Adapters",
+        "node": "SAP / Salesforce Connectors, ESB Modernization Adapters, Kafka CDC"
+      },
+      {
+        "label": "Layer 05: Telemetry, Observability & Webhook Dispatch",
+        "node": "OpenTelemetry Ingest, Svix Webhook Delivery Engine, Dead-Letter Replay"
+      }
+    ],
+    "editorialParagraph1": "APIs are the digital nervous system of the modern enterprise. We build clean, high-performance API gateways and systems integration meshes that connect legacy backend engines with modern cloud applications, partners, and mobile clients.",
+    "editorialParagraph2": "By establishing automated contract testing and spec-first OpenAPI workflows, we eliminate breaking changes and reduce partner onboarding from months to days. Built-in rate limiting, mutual TLS authentication, and resilient webhook dispatchers guarantee enterprise security and delivery reliability.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Zero Breaking Changes via Contract Testing",
+      "desc": "Pact contract verification in CI/CD ensures that backend API modifications never inadvertently break downstream consumers."
+    },
+    {
+      "id": "02",
+      "title": "Ultra-Fast Partner & Developer Onboarding",
+      "desc": "Interactive developer documentation, auto-generated SDKs, and sandboxed mock environments get external developers building in hours."
+    },
+    {
+      "id": "03",
+      "title": "Guaranteed Webhook Delivery at Scale",
+      "desc": "Cryptographically signed webhooks with exponential retry queues guarantee third-party partners receive event notifications without data loss."
+    }
+  ]
+},
+  "api-development-integration": {
+  "slug": "api-development-integration",
+  "serviceSlug": "software-development",
+  "title": "Enterprise API Development & Systems Integration",
+  "solutions": [
+    {
+      "title": "REST, GraphQL & gRPC Multi-Protocol APIs",
+      "desc": "Designing high-performance APIs leveraging RESTful OpenAPI standards, GraphQL federated graphs, and low-latency gRPC binary protocols."
+    },
+    {
+      "title": "Enterprise API Gateway Architecture",
+      "desc": "Deploying enterprise gateways (Kong, Apigee, AWS API Gateway) with token validation, rate-limiting tiers, and automated request transformations."
+    },
+    {
+      "title": "Event-Driven Webhook & Notification Engines",
+      "desc": "Building reliable webhook delivery infrastructures (Svix, custom workers) with exponential backoff retries and cryptographic signature signing."
+    },
+    {
+      "title": "Legacy Enterprise System Adapters (ESB Replacement)",
+      "desc": "Modernizing clunky enterprise service bus (ESB) layers into decoupled, lightweight event adapters connecting SAP, Oracle, and Salesforce."
+    },
+    {
+      "title": "Automated Contract Testing & Spec Generation",
+      "desc": "Enforcing consumer-driven contract testing (Pact) and automated OpenAPI spec generation to guarantee zero breaking API changes."
+    },
+    {
+      "title": "Developer Portal & Interactive API Sandboxes",
+      "desc": "Building self-service developer documentation portals with live interactive request sandboxes and automated API key provisioning."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Open Banking PSD2 Compliant API Gateway",
+      "desc": "Developing Open Banking compliant APIs enabling third-party fintechs to securely initiate payments and query account balances.",
+      "practicalValue": "Processed 12M monthly Open Banking requests with sub-40ms response latency and 100% regulatory uptime.",
+      "focusAreas": [
+        "Open Banking UK Standards",
+        "mTLS Client Certificates",
+        "OAuth2 Token Introspection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Interoperable FHIR / HL7 Healthcare API Bridge",
+      "desc": "Creating an enterprise healthcare integration gateway translating legacy HL7 v2 messages into modern JSON-based FHIR REST endpoints.",
+      "practicalValue": "Seamless clinical data interoperability across 18 hospital trust electronic health record systems.",
+      "focusAreas": [
+        "HL7 to FHIR Translation",
+        "Strict Patient Identity Verification",
+        "HIPAA Audit Logging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Global Marketplace Partner API Integration",
+      "desc": "Unifying inventory and order feeds across Amazon, eBay, and Shopify into a single high-throughput asynchronous API gateway.",
+      "practicalValue": "Eliminated inventory sync lag, preventing overselling across 14 international retail sales channels.",
+      "focusAreas": [
+        "Webhook Delivery Engine",
+        "Distributed Redis Rate Limiter",
+        "Idempotency Keys"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "SAP ERP Cloud Integration Adapter Mesh",
+      "desc": "Building low-latency event adapters streaming real-time factory purchase orders from SAP ERP into modern cloud logistics microservices.",
+      "practicalValue": "Replaced 6-hour overnight batch transfers with instantaneous sub-second order dispatch notifications.",
+      "focusAreas": [
+        "SAP RFC/OData Connectors",
+        "Kafka Event Streaming",
+        "Automatic Error Quarantine"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise High-Performance API Gateway & Integration Mesh",
+    "layers": [
+      {
+        "label": "Layer 01: Client Consumer & Partner Integration Plane",
+        "node": "OpenAPI Documentation, Developer Sandbox, SDK Generation"
+      },
+      {
+        "label": "Layer 02: Enterprise API Gateway & Security Shield",
+        "node": "Kong / Apigee Gateway, OAuth2 / mTLS Token Check, Rate Limiter"
+      },
+      {
+        "label": "Layer 03: Protocol Routing & Transformation Mesh",
+        "node": "GraphQL Federation, gRPC Multiplexer, REST-to-Event Translators"
+      },
+      {
+        "label": "Layer 04: Legacy Systems & Enterprise Adapters",
+        "node": "SAP / Salesforce Connectors, ESB Modernization Adapters, Kafka CDC"
+      },
+      {
+        "label": "Layer 05: Telemetry, Observability & Webhook Dispatch",
+        "node": "OpenTelemetry Ingest, Svix Webhook Delivery Engine, Dead-Letter Replay"
+      }
+    ],
+    "editorialParagraph1": "APIs are the digital nervous system of the modern enterprise. We build clean, high-performance API gateways and systems integration meshes that connect legacy backend engines with modern cloud applications, partners, and mobile clients.",
+    "editorialParagraph2": "By establishing automated contract testing and spec-first OpenAPI workflows, we eliminate breaking changes and reduce partner onboarding from months to days. Built-in rate limiting, mutual TLS authentication, and resilient webhook dispatchers guarantee enterprise security and delivery reliability.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Zero Breaking Changes via Contract Testing",
+      "desc": "Pact contract verification in CI/CD ensures that backend API modifications never inadvertently break downstream consumers."
+    },
+    {
+      "id": "02",
+      "title": "Ultra-Fast Partner & Developer Onboarding",
+      "desc": "Interactive developer documentation, auto-generated SDKs, and sandboxed mock environments get external developers building in hours."
+    },
+    {
+      "id": "03",
+      "title": "Guaranteed Webhook Delivery at Scale",
+      "desc": "Cryptographically signed webhooks with exponential retry queues guarantee third-party partners receive event notifications without data loss."
+    }
+  ]
+},
+  "software-development/microservices-architecture": {
+  "slug": "microservices-architecture",
+  "serviceSlug": "software-development",
+  "title": "Microservices Architecture & Distributed Systems",
+  "solutions": [
+    {
+      "title": "Domain-Driven Service Decomposition",
+      "desc": "Decomposing bloated monolithic applications along clean business capability boundaries using the Strangler Fig pattern."
+    },
+    {
+      "title": "Inter-Service Communication with gRPC & mTLS",
+      "desc": "Deploying high-speed binary RPC protocols (gRPC, Protobuf) with mutual TLS encryption across service-to-service communication paths."
+    },
+    {
+      "title": "Distributed Transaction Management (Saga Pattern)",
+      "desc": "Orchestrating complex multi-service business transactions using asynchronous Saga orchestrators (Temporal) and compensating actions."
+    },
+    {
+      "title": "Service Mesh Mesh Architecture (Istio, Linkerd)",
+      "desc": "Deploying zero-trust service meshes providing automatic mTLS, traffic management, canary routing, and distributed telemetry."
+    },
+    {
+      "title": "Distributed Database & CQRS Strategy",
+      "desc": "Establishing database-per-service isolation with change-data-capture (Debezium) and event streams to prevent shared database coupling."
+    },
+    {
+      "title": "Resilience Patterns (Circuit Breakers & Timeouts)",
+      "desc": "Hardening distributed calls with resilience patterns (resilience4j, Polly) to prevent transient network issues from cascading into outages."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Banking Monolith Decoupling",
+      "desc": "Extracting customer accounts, loan originations, and payment settlement into independent microservices governed by Saga orchestrators.",
+      "practicalValue": "Decoupled 14 business capabilities with zero transaction downtime, increasing release frequency by 8x.",
+      "focusAreas": [
+        "Temporal Saga Orchestration",
+        "Debezium Change Data Capture",
+        "Database-Per-Service"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Resilient Medical Scheduling Microservices",
+      "desc": "Decomposing hospital appointment booking, clinician rostering, and patient notifications into decoupled microservices.",
+      "practicalValue": "Isolated patient notification spikes during peak hours without impacting real-time surgery scheduling.",
+      "focusAreas": [
+        "Kafka Event Topics",
+        "Circuit Breaker Fallbacks",
+        "Istio Traffic Shaping"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Checkout & Catalog Microservice Architecture",
+      "desc": "Partitioning retail systems into independent catalog search, pricing rules, cart persistence, and payment microservices.",
+      "practicalValue": "Catalog search updates deployed 15 times daily without touching or risking checkout payment services.",
+      "focusAreas": [
+        "Envoy Service Mesh",
+        "gRPC Binary Protocol",
+        "Redis Query Materialization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Autonomous Plant Logistics Microservices",
+      "desc": "Structuring plant operations into decoupled warehouse inventory, robotic dispatch, and quality control microservices.",
+      "practicalValue": "Factory conveyor systems remain fully operational even during corporate ERP network disconnects.",
+      "focusAreas": [
+        "Autonomous Edge Services",
+        "Local State Persistence",
+        "Async Message Queues"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Distributed Microservices Architecture Mesh",
+    "layers": [
+      {
+        "label": "Layer 01: Ingress Edge Gateway & Traffic Router",
+        "node": "Envoy Gateway Ingress, Path Routing, JWT Authorization Check"
+      },
+      {
+        "label": "Layer 02: Service Mesh & Inter-Service Security",
+        "node": "Istio / Linkerd Mesh, Automatic Mutual TLS, Canary Traffic Split"
+      },
+      {
+        "label": "Layer 03: Domain Microservice Execution Nodes",
+        "node": "Containerized Microservices (Go, Java, Node.js), gRPC Endpoints"
+      },
+      {
+        "label": "Layer 04: Distributed Sagas & Event Streaming",
+        "node": "Temporal Workflow Orchestrator, Apache Kafka Event Backbone"
+      },
+      {
+        "label": "Layer 05: Dedicated Per-Service Persistence",
+        "node": "Postgres / Mongo / Redis Per Service, Debezium CDC Stream Engine"
+      }
+    ],
+    "editorialParagraph1": "Microservices promise team independence, elastic scalability, and rapid feature velocity, but without disciplined architectural standards, they quickly devolve into an unmanageable distributed monolith. We design clean, domain-driven microservices architectures.",
+    "editorialParagraph2": "By enforcing strict database-per-service isolation, using high-performance gRPC for inter-service communication, and managing distributed transactions with proven Saga orchestrators, our systems eliminate cascading failures and deliver resilient enterprise scalability.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Autonomous Team Velocity & Rapid Delivery",
+      "desc": "Decoupled bounded contexts allow engineering squads to build, test, and deploy services independently without cross-team blockers."
+    },
+    {
+      "id": "02",
+      "title": "Zero Cascading Failures & Outage Isolation",
+      "desc": "Circuit breakers, timeouts, and asynchronous messaging isolate failures, preventing a degraded dependency from downing the system."
+    },
+    {
+      "id": "03",
+      "title": "Targeted Infrastructure Cost Scaling",
+      "desc": "Scale only the specific microservices experiencing heavy load rather than over-provisioning entire monolithic application servers."
+    }
+  ]
+},
+  "microservices-architecture": {
+  "slug": "microservices-architecture",
+  "serviceSlug": "software-development",
+  "title": "Microservices Architecture & Distributed Systems",
+  "solutions": [
+    {
+      "title": "Domain-Driven Service Decomposition",
+      "desc": "Decomposing bloated monolithic applications along clean business capability boundaries using the Strangler Fig pattern."
+    },
+    {
+      "title": "Inter-Service Communication with gRPC & mTLS",
+      "desc": "Deploying high-speed binary RPC protocols (gRPC, Protobuf) with mutual TLS encryption across service-to-service communication paths."
+    },
+    {
+      "title": "Distributed Transaction Management (Saga Pattern)",
+      "desc": "Orchestrating complex multi-service business transactions using asynchronous Saga orchestrators (Temporal) and compensating actions."
+    },
+    {
+      "title": "Service Mesh Mesh Architecture (Istio, Linkerd)",
+      "desc": "Deploying zero-trust service meshes providing automatic mTLS, traffic management, canary routing, and distributed telemetry."
+    },
+    {
+      "title": "Distributed Database & CQRS Strategy",
+      "desc": "Establishing database-per-service isolation with change-data-capture (Debezium) and event streams to prevent shared database coupling."
+    },
+    {
+      "title": "Resilience Patterns (Circuit Breakers & Timeouts)",
+      "desc": "Hardening distributed calls with resilience patterns (resilience4j, Polly) to prevent transient network issues from cascading into outages."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Banking Monolith Decoupling",
+      "desc": "Extracting customer accounts, loan originations, and payment settlement into independent microservices governed by Saga orchestrators.",
+      "practicalValue": "Decoupled 14 business capabilities with zero transaction downtime, increasing release frequency by 8x.",
+      "focusAreas": [
+        "Temporal Saga Orchestration",
+        "Debezium Change Data Capture",
+        "Database-Per-Service"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Resilient Medical Scheduling Microservices",
+      "desc": "Decomposing hospital appointment booking, clinician rostering, and patient notifications into decoupled microservices.",
+      "practicalValue": "Isolated patient notification spikes during peak hours without impacting real-time surgery scheduling.",
+      "focusAreas": [
+        "Kafka Event Topics",
+        "Circuit Breaker Fallbacks",
+        "Istio Traffic Shaping"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Checkout & Catalog Microservice Architecture",
+      "desc": "Partitioning retail systems into independent catalog search, pricing rules, cart persistence, and payment microservices.",
+      "practicalValue": "Catalog search updates deployed 15 times daily without touching or risking checkout payment services.",
+      "focusAreas": [
+        "Envoy Service Mesh",
+        "gRPC Binary Protocol",
+        "Redis Query Materialization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Autonomous Plant Logistics Microservices",
+      "desc": "Structuring plant operations into decoupled warehouse inventory, robotic dispatch, and quality control microservices.",
+      "practicalValue": "Factory conveyor systems remain fully operational even during corporate ERP network disconnects.",
+      "focusAreas": [
+        "Autonomous Edge Services",
+        "Local State Persistence",
+        "Async Message Queues"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Distributed Microservices Architecture Mesh",
+    "layers": [
+      {
+        "label": "Layer 01: Ingress Edge Gateway & Traffic Router",
+        "node": "Envoy Gateway Ingress, Path Routing, JWT Authorization Check"
+      },
+      {
+        "label": "Layer 02: Service Mesh & Inter-Service Security",
+        "node": "Istio / Linkerd Mesh, Automatic Mutual TLS, Canary Traffic Split"
+      },
+      {
+        "label": "Layer 03: Domain Microservice Execution Nodes",
+        "node": "Containerized Microservices (Go, Java, Node.js), gRPC Endpoints"
+      },
+      {
+        "label": "Layer 04: Distributed Sagas & Event Streaming",
+        "node": "Temporal Workflow Orchestrator, Apache Kafka Event Backbone"
+      },
+      {
+        "label": "Layer 05: Dedicated Per-Service Persistence",
+        "node": "Postgres / Mongo / Redis Per Service, Debezium CDC Stream Engine"
+      }
+    ],
+    "editorialParagraph1": "Microservices promise team independence, elastic scalability, and rapid feature velocity, but without disciplined architectural standards, they quickly devolve into an unmanageable distributed monolith. We design clean, domain-driven microservices architectures.",
+    "editorialParagraph2": "By enforcing strict database-per-service isolation, using high-performance gRPC for inter-service communication, and managing distributed transactions with proven Saga orchestrators, our systems eliminate cascading failures and deliver resilient enterprise scalability.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Autonomous Team Velocity & Rapid Delivery",
+      "desc": "Decoupled bounded contexts allow engineering squads to build, test, and deploy services independently without cross-team blockers."
+    },
+    {
+      "id": "02",
+      "title": "Zero Cascading Failures & Outage Isolation",
+      "desc": "Circuit breakers, timeouts, and asynchronous messaging isolate failures, preventing a degraded dependency from downing the system."
+    },
+    {
+      "id": "03",
+      "title": "Targeted Infrastructure Cost Scaling",
+      "desc": "Scale only the specific microservices experiencing heavy load rather than over-provisioning entire monolithic application servers."
+    }
+  ]
+},
+  "software-development/product-engineering": {
+  "slug": "product-engineering",
+  "serviceSlug": "software-development",
+  "title": "Digital Product Engineering & Rapid Prototyping",
+  "solutions": [
+    {
+      "title": "Rapid MVP Architecture & Prototype Sprints",
+      "desc": "Transforming product concepts into validated, working cloud software prototypes in 4 to 6-week engineering sprints."
+    },
+    {
+      "title": "Modern Component Design Systems (Figma to Code)",
+      "desc": "Bridging the gap between design and engineering with production-ready React component libraries (Tailwind, Radix UI, Storybook)."
+    },
+    {
+      "title": "Product Analytics & Feature Experimentation",
+      "desc": "Instrumenting event tracking, user funnels, and dynamic A/B experimentation engines to make data-driven product iterations."
+    },
+    {
+      "title": "Continuous User Feedback Loops & Session Replay",
+      "desc": "Integrating session replay (PostHog, FullStory) and targeted user sentiment triggers to diagnose UX friction points."
+    },
+    {
+      "title": "Scalable Architecture from Day One",
+      "desc": "Building prototypes on clean, modular foundations that can scale to millions of users without requiring complete rewrites."
+    },
+    {
+      "title": "Product Operations & Automated Release Cadence",
+      "desc": "Establishing streamlined agile product delivery practices with continuous deployment and automated release notes."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Digital SME Lending Portal Rapid Prototype",
+      "desc": "Engineering and validating an automated digital loan origination application for small commercial businesses in 6 weeks.",
+      "practicalValue": "Reduced loan approval cycle from 14 business days to 8 minutes; acquired 1,200 commercial borrowers in 90 days.",
+      "focusAreas": [
+        "Open Banking Data Ingest",
+        "Credit Rule Engine",
+        "Next.js Clean UX"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Digital Health Remote Therapy Prototype",
+      "desc": "Building a specialized cognitive behavioral therapy prototype with patient diary check-ins and clinician review panels.",
+      "practicalValue": "Validated clinical efficacy with 500 pilot patients, securing £3.5M in Series A venture funding.",
+      "focusAreas": [
+        "HIPAA-Compliant MVP",
+        "Patient Engagement Metrics",
+        "Interactive Assessment UI"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Social Commerce & Live Shopping Product",
+      "desc": "Developing an interactive live video shopping web application allowing stream viewers to purchase featured items in one tap.",
+      "practicalValue": "Achieved 3.8x higher checkout conversion than traditional static catalog pages during launch pilots.",
+      "focusAreas": [
+        "Live Video Stream Sync",
+        "Instant Mobile Checkout",
+        "Real-Time Chat Broker"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Automated Carbon Footprint Tracking MVP",
+      "desc": "Prototyping an industrial supply chain carbon calculation application ingesting shipping manifests and computing Scope 3 emissions.",
+      "practicalValue": "Signed 12 enterprise pilot manufacturing clients within 60 days of MVP release.",
+      "focusAreas": [
+        "Manifest CSV/API Ingest",
+        "Emissions Calculation Engine",
+        "Interactive Reporting Charts"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Agile Digital Product Engineering & Experimentation Flow",
+    "layers": [
+      {
+        "label": "Layer 01: Product Discovery & Figma Design Tokens",
+        "node": "Storybook UI Library, Tailwind CSS System, Radix Accessible Primitives"
+      },
+      {
+        "label": "Layer 02: Next.js Full-Stack Application Scaffold",
+        "node": "Server Actions, TypeScript Strict Typing, Modular Component Hierarchy"
+      },
+      {
+        "label": "Layer 03: Feature Experimentation & A/B Engine",
+        "node": "LaunchDarkly / PostHog Feature Flags, Dynamic Edge Routing"
+      },
+      {
+        "label": "Layer 04: Product Telemetry & Behavioral Analytics",
+        "node": "User Event Stream, Funnel Analysis, Session Replay Diagnostics"
+      },
+      {
+        "label": "Layer 05: Scalable Cloud Persistence & API Layer",
+        "node": "PostgreSQL Prisma/Drizzle ORM, Supabase/Firebase Auth, Redis Cache"
+      }
+    ],
+    "editorialParagraph1": "Digital product success requires closing the gap between strategic vision and working software as rapidly as possible. We partner with product leaders to take bold ideas from whiteboard concepts to production-grade web and mobile applications in focused engineering sprints.",
+    "editorialParagraph2": "We bridge the divide between design and engineering using reusable, accessible component systems. By instrumenting deep product analytics and feature experimentation from day one, we help teams make evidence-based decisions that accelerate product-market fit.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "From Concept to Production in Weeks",
+      "desc": "Focused engineering sprints and pre-built enterprise scaffolds deliver validated, working software prototypes in 4 to 6 weeks."
+    },
+    {
+      "id": "02",
+      "title": "Built to Scale, Not to Throw Away",
+      "desc": "Unlike fragile throwaway prototypes, our software is engineered on modern cloud standards designed to scale seamlessly into production."
+    },
+    {
+      "id": "03",
+      "title": "Data-Driven Feature Experimentation",
+      "desc": "Integrated product analytics and A/B feature toggles provide real user evidence to optimize conversion funnels and product adoption."
+    }
+  ]
+},
+  "product-engineering": {
+  "slug": "product-engineering",
+  "serviceSlug": "software-development",
+  "title": "Digital Product Engineering & Rapid Prototyping",
+  "solutions": [
+    {
+      "title": "Rapid MVP Architecture & Prototype Sprints",
+      "desc": "Transforming product concepts into validated, working cloud software prototypes in 4 to 6-week engineering sprints."
+    },
+    {
+      "title": "Modern Component Design Systems (Figma to Code)",
+      "desc": "Bridging the gap between design and engineering with production-ready React component libraries (Tailwind, Radix UI, Storybook)."
+    },
+    {
+      "title": "Product Analytics & Feature Experimentation",
+      "desc": "Instrumenting event tracking, user funnels, and dynamic A/B experimentation engines to make data-driven product iterations."
+    },
+    {
+      "title": "Continuous User Feedback Loops & Session Replay",
+      "desc": "Integrating session replay (PostHog, FullStory) and targeted user sentiment triggers to diagnose UX friction points."
+    },
+    {
+      "title": "Scalable Architecture from Day One",
+      "desc": "Building prototypes on clean, modular foundations that can scale to millions of users without requiring complete rewrites."
+    },
+    {
+      "title": "Product Operations & Automated Release Cadence",
+      "desc": "Establishing streamlined agile product delivery practices with continuous deployment and automated release notes."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Digital SME Lending Portal Rapid Prototype",
+      "desc": "Engineering and validating an automated digital loan origination application for small commercial businesses in 6 weeks.",
+      "practicalValue": "Reduced loan approval cycle from 14 business days to 8 minutes; acquired 1,200 commercial borrowers in 90 days.",
+      "focusAreas": [
+        "Open Banking Data Ingest",
+        "Credit Rule Engine",
+        "Next.js Clean UX"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Digital Health Remote Therapy Prototype",
+      "desc": "Building a specialized cognitive behavioral therapy prototype with patient diary check-ins and clinician review panels.",
+      "practicalValue": "Validated clinical efficacy with 500 pilot patients, securing £3.5M in Series A venture funding.",
+      "focusAreas": [
+        "HIPAA-Compliant MVP",
+        "Patient Engagement Metrics",
+        "Interactive Assessment UI"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Social Commerce & Live Shopping Product",
+      "desc": "Developing an interactive live video shopping web application allowing stream viewers to purchase featured items in one tap.",
+      "practicalValue": "Achieved 3.8x higher checkout conversion than traditional static catalog pages during launch pilots.",
+      "focusAreas": [
+        "Live Video Stream Sync",
+        "Instant Mobile Checkout",
+        "Real-Time Chat Broker"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Automated Carbon Footprint Tracking MVP",
+      "desc": "Prototyping an industrial supply chain carbon calculation application ingesting shipping manifests and computing Scope 3 emissions.",
+      "practicalValue": "Signed 12 enterprise pilot manufacturing clients within 60 days of MVP release.",
+      "focusAreas": [
+        "Manifest CSV/API Ingest",
+        "Emissions Calculation Engine",
+        "Interactive Reporting Charts"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Agile Digital Product Engineering & Experimentation Flow",
+    "layers": [
+      {
+        "label": "Layer 01: Product Discovery & Figma Design Tokens",
+        "node": "Storybook UI Library, Tailwind CSS System, Radix Accessible Primitives"
+      },
+      {
+        "label": "Layer 02: Next.js Full-Stack Application Scaffold",
+        "node": "Server Actions, TypeScript Strict Typing, Modular Component Hierarchy"
+      },
+      {
+        "label": "Layer 03: Feature Experimentation & A/B Engine",
+        "node": "LaunchDarkly / PostHog Feature Flags, Dynamic Edge Routing"
+      },
+      {
+        "label": "Layer 04: Product Telemetry & Behavioral Analytics",
+        "node": "User Event Stream, Funnel Analysis, Session Replay Diagnostics"
+      },
+      {
+        "label": "Layer 05: Scalable Cloud Persistence & API Layer",
+        "node": "PostgreSQL Prisma/Drizzle ORM, Supabase/Firebase Auth, Redis Cache"
+      }
+    ],
+    "editorialParagraph1": "Digital product success requires closing the gap between strategic vision and working software as rapidly as possible. We partner with product leaders to take bold ideas from whiteboard concepts to production-grade web and mobile applications in focused engineering sprints.",
+    "editorialParagraph2": "We bridge the divide between design and engineering using reusable, accessible component systems. By instrumenting deep product analytics and feature experimentation from day one, we help teams make evidence-based decisions that accelerate product-market fit.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "From Concept to Production in Weeks",
+      "desc": "Focused engineering sprints and pre-built enterprise scaffolds deliver validated, working software prototypes in 4 to 6 weeks."
+    },
+    {
+      "id": "02",
+      "title": "Built to Scale, Not to Throw Away",
+      "desc": "Unlike fragile throwaway prototypes, our software is engineered on modern cloud standards designed to scale seamlessly into production."
+    },
+    {
+      "id": "03",
+      "title": "Data-Driven Feature Experimentation",
+      "desc": "Integrated product analytics and A/B feature toggles provide real user evidence to optimize conversion funnels and product adoption."
+    }
+  ]
+},
+  "software-development/application-modernization": {
+  "slug": "application-modernization",
+  "serviceSlug": "software-development",
+  "title": "Application Modernization & Cloud Refactoring",
+  "solutions": [
+    {
+      "title": "Monolithic Codebase Assessment & AST Graphing",
+      "desc": "Scanning legacy codebases using Abstract Syntax Tree (AST) parsers to map tangled dependencies, dead paths, and refactoring seams."
+    },
+    {
+      "title": "Strangler Fig Pattern Migration Delivery",
+      "desc": "Gradually strangling legacy core applications by deploying an intelligent facade routing traffic to newly modernized cloud microservices."
+    },
+    {
+      "title": "Legacy Runtime & Framework Upgrades",
+      "desc": "Modernizing end-of-life runtimes (Java 8 -> 21, .NET Framework -> .NET 8, Node.js 14 -> 22) with zero breaking functional regressions."
+    },
+    {
+      "title": "Containerization & Cloud-Native Packaging",
+      "desc": "Transforming legacy bare-metal and VM applications into multi-stage container images orchestrated via Kubernetes."
+    },
+    {
+      "title": "Automated Regression Test Harness Synthesis",
+      "desc": "Synthesizing comprehensive automated unit and integration regression suites from legacy production traffic logs prior to refactoring."
+    },
+    {
+      "title": "Database Refactoring & Schema Decoupling",
+      "desc": "Splitting monolithic relational databases into decoupled domain schemas with continuous change-data-capture synchronization."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Mainframe Core Payment Bridge Modernization",
+      "desc": "Modernizing legacy COBOL payment routines into cloud-native Go microservices using the Strangler Fig pattern.",
+      "practicalValue": "Migrated 85% of payment volume with zero processing downtime and 70% lower mainframe licensing costs.",
+      "focusAreas": [
+        "Strangler Fig Facade",
+        "Go Microservices",
+        "Mainframe CDC Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Monolithic EHR Cloud Transformation",
+      "desc": "Refactoring a 12-year-old on-premise Electronic Health Record monolith into secure containerized services on Azure AKS.",
+      "practicalValue": "Slashed feature release cycles from 6 months to 2 weeks while maintaining full HIPAA compliance.",
+      "focusAreas": [
+        "Azure AKS Migration",
+        "FHIR Data Models",
+        "Automated Regression Suite"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Legacy ERP Checkout Decoupling",
+      "desc": "Extracting checkout and promotion calculations from an aging ERP database into stateless cloud microservices.",
+      "practicalValue": "Handled 10x Black Friday traffic surges smoothly without overloading the underlying legacy ERP database.",
+      "focusAreas": [
+        "Redis Cache Layer",
+        "Stateless Service Extraction",
+        "Circuit Breaker Protection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Factory Floor SCADA Socket Modernization",
+      "desc": "Refactoring single-threaded C++ plant communication daemons into concurrent event-driven streaming workers.",
+      "practicalValue": "Eliminated factory telemetry packet loss and reduced server hardware requirements by 60%.",
+      "focusAreas": [
+        "C++ to Go Modernization",
+        "MQTT Event Streaming",
+        "Containerized Edge Deployment"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Application Modernization & Strangler Fig Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Intelligent Routing Facade & Ingress",
+        "node": "Kong / Cloudflare API Facade, Dynamic Traffic Splitter, Path Mapping"
+      },
+      {
+        "label": "Layer 02: Modernized Cloud-Native Microservices",
+        "node": "Go / .NET 8 / Java 21 Containers, EKS/AKS Clusters, gRPC APIs"
+      },
+      {
+        "label": "Layer 03: Automated Regression & Parity Harness",
+        "node": "Shadow Traffic Duplication, Response Comparison Verifier, CI/CD Gates"
+      },
+      {
+        "label": "Layer 04: Legacy Monolithic Core (Draining)",
+        "node": "Strangled Legacy Monolith, Deprecated Runtimes, Monolithic DB"
+      },
+      {
+        "label": "Layer 05: Data Decoupling & Continuous CDC Sync",
+        "node": "Debezium Change Data Capture, Kafka Streaming, Modern Domain DBs"
+      }
+    ],
+    "editorialParagraph1": "Rewriting entire mission-critical legacy applications from scratch in a high-risk 'big bang' project almost always leads to budget overruns, missed deadlines, and business disruption. We apply the proven Strangler Fig modernization pattern.",
+    "editorialParagraph2": "By deploying an intelligent API routing facade in front of legacy systems, we incrementally extract functionality into modern, containerized cloud microservices. Automated shadow traffic testing guarantees 100% functional parity before live cutover, ensuring risk-free modernization.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Zero-Risk Incremental Modernization",
+      "desc": "The Strangler Fig pattern allows legacy systems to be modernized piece-by-piece in production with zero downtime or business disruption."
+    },
+    {
+      "id": "02",
+      "title": "Verified Functional Parity via Shadow Traffic",
+      "desc": "Automated regression harnesses duplicate live production requests to both legacy and new systems to verify exact algorithmic parity."
+    },
+    {
+      "id": "03",
+      "title": "Substantial Reduction in Technical Debt",
+      "desc": "Upgrading end-of-life runtimes and containerizing workloads eliminates crippling maintenance costs and opens up developer velocity."
+    }
+  ]
+},
+  "application-modernization": {
+  "slug": "application-modernization",
+  "serviceSlug": "software-development",
+  "title": "Application Modernization & Cloud Refactoring",
+  "solutions": [
+    {
+      "title": "Monolithic Codebase Assessment & AST Graphing",
+      "desc": "Scanning legacy codebases using Abstract Syntax Tree (AST) parsers to map tangled dependencies, dead paths, and refactoring seams."
+    },
+    {
+      "title": "Strangler Fig Pattern Migration Delivery",
+      "desc": "Gradually strangling legacy core applications by deploying an intelligent facade routing traffic to newly modernized cloud microservices."
+    },
+    {
+      "title": "Legacy Runtime & Framework Upgrades",
+      "desc": "Modernizing end-of-life runtimes (Java 8 -> 21, .NET Framework -> .NET 8, Node.js 14 -> 22) with zero breaking functional regressions."
+    },
+    {
+      "title": "Containerization & Cloud-Native Packaging",
+      "desc": "Transforming legacy bare-metal and VM applications into multi-stage container images orchestrated via Kubernetes."
+    },
+    {
+      "title": "Automated Regression Test Harness Synthesis",
+      "desc": "Synthesizing comprehensive automated unit and integration regression suites from legacy production traffic logs prior to refactoring."
+    },
+    {
+      "title": "Database Refactoring & Schema Decoupling",
+      "desc": "Splitting monolithic relational databases into decoupled domain schemas with continuous change-data-capture synchronization."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Mainframe Core Payment Bridge Modernization",
+      "desc": "Modernizing legacy COBOL payment routines into cloud-native Go microservices using the Strangler Fig pattern.",
+      "practicalValue": "Migrated 85% of payment volume with zero processing downtime and 70% lower mainframe licensing costs.",
+      "focusAreas": [
+        "Strangler Fig Facade",
+        "Go Microservices",
+        "Mainframe CDC Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Monolithic EHR Cloud Transformation",
+      "desc": "Refactoring a 12-year-old on-premise Electronic Health Record monolith into secure containerized services on Azure AKS.",
+      "practicalValue": "Slashed feature release cycles from 6 months to 2 weeks while maintaining full HIPAA compliance.",
+      "focusAreas": [
+        "Azure AKS Migration",
+        "FHIR Data Models",
+        "Automated Regression Suite"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Legacy ERP Checkout Decoupling",
+      "desc": "Extracting checkout and promotion calculations from an aging ERP database into stateless cloud microservices.",
+      "practicalValue": "Handled 10x Black Friday traffic surges smoothly without overloading the underlying legacy ERP database.",
+      "focusAreas": [
+        "Redis Cache Layer",
+        "Stateless Service Extraction",
+        "Circuit Breaker Protection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Factory Floor SCADA Socket Modernization",
+      "desc": "Refactoring single-threaded C++ plant communication daemons into concurrent event-driven streaming workers.",
+      "practicalValue": "Eliminated factory telemetry packet loss and reduced server hardware requirements by 60%.",
+      "focusAreas": [
+        "C++ to Go Modernization",
+        "MQTT Event Streaming",
+        "Containerized Edge Deployment"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Application Modernization & Strangler Fig Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Intelligent Routing Facade & Ingress",
+        "node": "Kong / Cloudflare API Facade, Dynamic Traffic Splitter, Path Mapping"
+      },
+      {
+        "label": "Layer 02: Modernized Cloud-Native Microservices",
+        "node": "Go / .NET 8 / Java 21 Containers, EKS/AKS Clusters, gRPC APIs"
+      },
+      {
+        "label": "Layer 03: Automated Regression & Parity Harness",
+        "node": "Shadow Traffic Duplication, Response Comparison Verifier, CI/CD Gates"
+      },
+      {
+        "label": "Layer 04: Legacy Monolithic Core (Draining)",
+        "node": "Strangled Legacy Monolith, Deprecated Runtimes, Monolithic DB"
+      },
+      {
+        "label": "Layer 05: Data Decoupling & Continuous CDC Sync",
+        "node": "Debezium Change Data Capture, Kafka Streaming, Modern Domain DBs"
+      }
+    ],
+    "editorialParagraph1": "Rewriting entire mission-critical legacy applications from scratch in a high-risk 'big bang' project almost always leads to budget overruns, missed deadlines, and business disruption. We apply the proven Strangler Fig modernization pattern.",
+    "editorialParagraph2": "By deploying an intelligent API routing facade in front of legacy systems, we incrementally extract functionality into modern, containerized cloud microservices. Automated shadow traffic testing guarantees 100% functional parity before live cutover, ensuring risk-free modernization.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Zero-Risk Incremental Modernization",
+      "desc": "The Strangler Fig pattern allows legacy systems to be modernized piece-by-piece in production with zero downtime or business disruption."
+    },
+    {
+      "id": "02",
+      "title": "Verified Functional Parity via Shadow Traffic",
+      "desc": "Automated regression harnesses duplicate live production requests to both legacy and new systems to verify exact algorithmic parity."
+    },
+    {
+      "id": "03",
+      "title": "Substantial Reduction in Technical Debt",
+      "desc": "Upgrading end-of-life runtimes and containerizing workloads eliminates crippling maintenance costs and opens up developer velocity."
+    }
+  ]
+},
+  "digital-transformation/digital-strategy": {
+  "slug": "digital-strategy",
+  "serviceSlug": "digital-transformation",
+  "title": "Digital Strategy & Technology Advisory",
+  "solutions": [
+    {
+      "title": "Digital Capability Maturity Auditing",
+      "desc": "Assessing organizational software delivery velocity, cloud maturity, data capabilities, and architectural bottlenecks against industry leaders."
+    },
+    {
+      "title": "Target Operating Model (TOM) Design",
+      "desc": "Designing cross-functional digital product squads, agile governance frameworks, and automated release policies that eliminate departmental silos."
+    },
+    {
+      "title": "Technology Rationalisation & Portfolio Optimization",
+      "desc": "Evaluating enterprise software portfolios to eliminate duplicate SaaS licenses, retired legacy applications, and technical debt accumulation."
+    },
+    {
+      "title": "Executive Business Case & Value Realisation",
+      "desc": "Building board-level financial models, ROI projections, and milestone-gated transformation roadmaps tied directly to revenue growth."
+    },
+    {
+      "title": "Cloud & AI Innovation Advisory",
+      "desc": "Identifying pragmatic, high-value opportunities to embed modern cloud infrastructure, automation, and AI models into core operational workflows."
+    },
+    {
+      "title": "Digital Vendor & Ecosystem Selection",
+      "desc": "Independent technical due diligence and evaluation of enterprise software platforms, cloud providers, and systems integration partners."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Retail Banking Digital Transformation Roadmap",
+      "desc": "Formulating a comprehensive 3-year digital banking modernization strategy replacing branch-bound workflows with mobile self-service.",
+      "practicalValue": "Shifted 68% of standard banking transactions to mobile channels while reducing branch overhead by £14M annually.",
+      "focusAreas": [
+        "Mobile-First Strategy",
+        "Target Operating Model",
+        "FCA Regulatory Alignment"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "NHS Trust Digital Health Strategy",
+      "desc": "Structuring a unified digital patient journey roadmap integrating appointments, laboratory diagnostics, and remote patient monitoring.",
+      "practicalValue": "Unified patient data visibility across 14 hospital departments, reducing duplicate diagnostic tests by 28%.",
+      "focusAreas": [
+        "Digital Patient Experience",
+        "Interoperability Standards",
+        "Data Governance Framework"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Omnichannel Digital Commerce Strategy",
+      "desc": "Designing a unified digital strategy bridging physical store point-of-sale terminals with online e-commerce loyalty systems.",
+      "practicalValue": "Delivered 22% increase in customer lifetime value (LTV) through unified personalized promotions.",
+      "focusAreas": [
+        "Omnichannel Architecture",
+        "Customer 360 Strategy",
+        "Cloud POS Modernization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industry 4.0 Digital Factory Roadmap",
+      "desc": "Crafting a multi-plant digital transformation blueprint connecting IoT sensor telemetry with executive enterprise planning systems.",
+      "practicalValue": "Projected £8.5M in annual supply chain savings and accelerated new factory onboarding by 65%.",
+      "focusAreas": [
+        "Industry 4.0 Architecture",
+        "Operational Technology Integration",
+        "Value Realization Matrix"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Digital Strategy & Enterprise Transformation Roadmap",
+    "layers": [
+      {
+        "label": "Layer 01: Enterprise Discovery & Maturity Baseline",
+        "node": "Operational Value Stream Mapping, Architecture Audit, Tech Stack Inventory"
+      },
+      {
+        "label": "Layer 02: Target Operating Model & Squad Topology",
+        "node": "Team Topologies, Agile Product Squads, Cloud Enablement Governance"
+      },
+      {
+        "label": "Layer 03: Technology Modernization Architecture",
+        "node": "Composable Enterprise Mesh, Cloud-First Landing Zones, API Modernization"
+      },
+      {
+        "label": "Layer 04: Data & Automation Enablement Engine",
+        "node": "Unified Customer Data Platform, RPA / Intelligent Workflow Bridges"
+      },
+      {
+        "label": "Layer 05: Value Realisation & Executive Steering",
+        "node": "DORA Metric Dashboards, OKR Progress Tracking, Financial ROI Reviews"
+      }
+    ],
+    "editorialParagraph1": "Digital transformation is not merely about adopting new technology—it is about fundamentally reimagining how an organization delivers value to its customers in an era of rapid digital disruption. We partner with executive leaders to craft pragmatic, actionable digital strategies.",
+    "editorialParagraph2": "Rather than producing abstract slide decks that gather dust, we design Target Operating Models that align technology architecture directly with organizational capabilities and financial objectives. Measurable OKRs and automated value tracking ensure transformation initiatives deliver tangible enterprise ROI.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Actionable Roadmaps, Not Abstract Slides",
+      "desc": "Our strategies deliver concrete, phased execution milestones with clear engineering architectures and budgeted financial business cases."
+    },
+    {
+      "id": "02",
+      "title": "Elimination of Siloed Departmental Bottlenecks",
+      "desc": "Modern Target Operating Models align business, design, and engineering teams into autonomous product squads delivering continuous customer value."
+    },
+    {
+      "id": "03",
+      "title": "Maximized Technology ROI & Waste Elimination",
+      "desc": "Portfolio rationalisation eliminates redundant software licenses, obsolete platforms, and low-yield IT capital expenditures."
+    }
+  ]
+},
+  "digital-strategy": {
+  "slug": "digital-strategy",
+  "serviceSlug": "digital-transformation",
+  "title": "Digital Strategy & Technology Advisory",
+  "solutions": [
+    {
+      "title": "Digital Capability Maturity Auditing",
+      "desc": "Assessing organizational software delivery velocity, cloud maturity, data capabilities, and architectural bottlenecks against industry leaders."
+    },
+    {
+      "title": "Target Operating Model (TOM) Design",
+      "desc": "Designing cross-functional digital product squads, agile governance frameworks, and automated release policies that eliminate departmental silos."
+    },
+    {
+      "title": "Technology Rationalisation & Portfolio Optimization",
+      "desc": "Evaluating enterprise software portfolios to eliminate duplicate SaaS licenses, retired legacy applications, and technical debt accumulation."
+    },
+    {
+      "title": "Executive Business Case & Value Realisation",
+      "desc": "Building board-level financial models, ROI projections, and milestone-gated transformation roadmaps tied directly to revenue growth."
+    },
+    {
+      "title": "Cloud & AI Innovation Advisory",
+      "desc": "Identifying pragmatic, high-value opportunities to embed modern cloud infrastructure, automation, and AI models into core operational workflows."
+    },
+    {
+      "title": "Digital Vendor & Ecosystem Selection",
+      "desc": "Independent technical due diligence and evaluation of enterprise software platforms, cloud providers, and systems integration partners."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Retail Banking Digital Transformation Roadmap",
+      "desc": "Formulating a comprehensive 3-year digital banking modernization strategy replacing branch-bound workflows with mobile self-service.",
+      "practicalValue": "Shifted 68% of standard banking transactions to mobile channels while reducing branch overhead by £14M annually.",
+      "focusAreas": [
+        "Mobile-First Strategy",
+        "Target Operating Model",
+        "FCA Regulatory Alignment"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "NHS Trust Digital Health Strategy",
+      "desc": "Structuring a unified digital patient journey roadmap integrating appointments, laboratory diagnostics, and remote patient monitoring.",
+      "practicalValue": "Unified patient data visibility across 14 hospital departments, reducing duplicate diagnostic tests by 28%.",
+      "focusAreas": [
+        "Digital Patient Experience",
+        "Interoperability Standards",
+        "Data Governance Framework"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Omnichannel Digital Commerce Strategy",
+      "desc": "Designing a unified digital strategy bridging physical store point-of-sale terminals with online e-commerce loyalty systems.",
+      "practicalValue": "Delivered 22% increase in customer lifetime value (LTV) through unified personalized promotions.",
+      "focusAreas": [
+        "Omnichannel Architecture",
+        "Customer 360 Strategy",
+        "Cloud POS Modernization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industry 4.0 Digital Factory Roadmap",
+      "desc": "Crafting a multi-plant digital transformation blueprint connecting IoT sensor telemetry with executive enterprise planning systems.",
+      "practicalValue": "Projected £8.5M in annual supply chain savings and accelerated new factory onboarding by 65%.",
+      "focusAreas": [
+        "Industry 4.0 Architecture",
+        "Operational Technology Integration",
+        "Value Realization Matrix"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Digital Strategy & Enterprise Transformation Roadmap",
+    "layers": [
+      {
+        "label": "Layer 01: Enterprise Discovery & Maturity Baseline",
+        "node": "Operational Value Stream Mapping, Architecture Audit, Tech Stack Inventory"
+      },
+      {
+        "label": "Layer 02: Target Operating Model & Squad Topology",
+        "node": "Team Topologies, Agile Product Squads, Cloud Enablement Governance"
+      },
+      {
+        "label": "Layer 03: Technology Modernization Architecture",
+        "node": "Composable Enterprise Mesh, Cloud-First Landing Zones, API Modernization"
+      },
+      {
+        "label": "Layer 04: Data & Automation Enablement Engine",
+        "node": "Unified Customer Data Platform, RPA / Intelligent Workflow Bridges"
+      },
+      {
+        "label": "Layer 05: Value Realisation & Executive Steering",
+        "node": "DORA Metric Dashboards, OKR Progress Tracking, Financial ROI Reviews"
+      }
+    ],
+    "editorialParagraph1": "Digital transformation is not merely about adopting new technology—it is about fundamentally reimagining how an organization delivers value to its customers in an era of rapid digital disruption. We partner with executive leaders to craft pragmatic, actionable digital strategies.",
+    "editorialParagraph2": "Rather than producing abstract slide decks that gather dust, we design Target Operating Models that align technology architecture directly with organizational capabilities and financial objectives. Measurable OKRs and automated value tracking ensure transformation initiatives deliver tangible enterprise ROI.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Actionable Roadmaps, Not Abstract Slides",
+      "desc": "Our strategies deliver concrete, phased execution milestones with clear engineering architectures and budgeted financial business cases."
+    },
+    {
+      "id": "02",
+      "title": "Elimination of Siloed Departmental Bottlenecks",
+      "desc": "Modern Target Operating Models align business, design, and engineering teams into autonomous product squads delivering continuous customer value."
+    },
+    {
+      "id": "03",
+      "title": "Maximized Technology ROI & Waste Elimination",
+      "desc": "Portfolio rationalisation eliminates redundant software licenses, obsolete platforms, and low-yield IT capital expenditures."
+    }
+  ]
+},
+  "digital-transformation/enterprise-modernization": {
+  "slug": "enterprise-modernization",
+  "serviceSlug": "digital-transformation",
+  "title": "Enterprise Modernization & Digital Re-Platforming",
+  "solutions": [
+    {
+      "title": "Legacy Monolith to Composable Architecture",
+      "desc": "Deconstructing brittle legacy ERPs, CRMs, and core systems into composable, API-first micro-capabilities orchestrated in the cloud."
+    },
+    {
+      "title": "Cloud-Native Infrastructure Re-Platforming",
+      "desc": "Transitioning on-premises enterprise data center footprints onto scalable multi-cloud Kubernetes foundations with automated scaling."
+    },
+    {
+      "title": "Data Silo Unification & Event Streaming",
+      "desc": "Connecting disconnected legacy databases into real-time event streaming backbones (Apache Kafka) for synchronized enterprise state."
+    },
+    {
+      "title": "Automated Enterprise Process Modernization",
+      "desc": "Replacing paper-based, spreadsheet, and manual email approval chains with automated digital workflows and modern web portals."
+    },
+    {
+      "title": "Zero-Trust Enterprise Security Re-Engineering",
+      "desc": "Replacing vulnerable perimeter VPNs and shared service accounts with modern identity-centric Zero Trust Network Access (ZTNA)."
+    },
+    {
+      "title": "Modern Engineering Culture & CI/CD Enablement",
+      "desc": "Instilling modern DevOps, automated testing, and Trunk-Based Development practices into traditional enterprise engineering departments."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Mortgage Origination Digital Re-Platforming",
+      "desc": "Modernizing a 15-year-old on-premise mortgage evaluation system into a cloud-native automated digital workflow.",
+      "practicalValue": "Reduced mortgage application turnaround time from 21 days to 48 hours while cutting processing costs by 52%.",
+      "focusAreas": [
+        "Cloud-Native Lending Engine",
+        "Automated Credit Scoring API",
+        "Document Digital Ingest"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Enterprise Clinical Records Re-Platforming",
+      "desc": "Consolidating 8 disparate regional patient database servers into a unified, secure cloud repository on Microsoft Azure.",
+      "practicalValue": "Eliminated overnight data synchronisation delays, providing doctors with instant comprehensive patient medical histories.",
+      "focusAreas": [
+        "Azure Cloud Consolidation",
+        "FHIR Standards Alignment",
+        "Zero-Downtime Data Migration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Enterprise Store Operations Modernization",
+      "desc": "Replacing green-screen legacy store inventory terminals with cloud-synchronized modern mobile tablet applications across 320 stores.",
+      "practicalValue": "Saved 2.5 hours per store manager daily in manual inventory stock counting and paper reconciliation.",
+      "focusAreas": [
+        "Modern Tablet UI",
+        "Real-Time Cloud Inventory",
+        "Offline Sync Engine"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Logistics Re-Platforming",
+      "desc": "Migrating legacy custom mainframe dispatch systems to an event-driven microservices architecture on AWS EKS.",
+      "practicalValue": "Enabled real-time GPS fleet tracking across 4,000 carrier vehicles with automated dispatch routing.",
+      "focusAreas": [
+        "AWS EKS Containerization",
+        "Kafka Event Mesh",
+        "Automated Fleet Telemetry"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Digital Re-Platforming & Modernization Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Modern Omnichannel Digital Touchpoints",
+        "node": "Next.js Web Portals, Mobile Companion Apps, Modern Partner APIs"
+      },
+      {
+        "label": "Layer 02: API Gateway & Intelligent Routing Layer",
+        "node": "Kong Gateway Ingress, OAuth2 Token Exchange, Traffic Strangler Facade"
+      },
+      {
+        "label": "Layer 03: Composable Business Capabilities Plane",
+        "node": "Containerized Microservices, Domain Event Emitters, Automated CI/CD"
+      },
+      {
+        "label": "Layer 04: Real-Time Event & Data Streaming Mesh",
+        "node": "Apache Kafka Event Hub, Schema Validation, Change Data Capture"
+      },
+      {
+        "label": "Layer 05: Modern Multi-Cloud Persistence & Vaults",
+        "node": "Managed PostgreSQL, Redis Cache, Multi-Region Object Buckets"
+      }
+    ],
+    "editorialParagraph1": "Enterprise modernization is the disciplined process of unlocking trapped business value from legacy software investments without introducing operational paralysis. We replace aging, fragile IT architectures with modern, composable digital platforms.",
+    "editorialParagraph2": "By migrating workloads to cloud-native container platforms and establishing event-driven data streaming layers, we transform sluggish quarterly deployment schedules into daily release capabilities. Integrated zero-trust security ensures the newly modernized enterprise estate is hardened against evolving cyber threats.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Dramatically Accelerated Feature Velocity",
+      "desc": "Composable architectures and automated CI/CD pipelines reduce release cycles from stressful semi-annual events to routine daily deployments."
+    },
+    {
+      "id": "02",
+      "title": "Substantial Operational Cost Reduction",
+      "desc": "Decommissioning mainframe leases, proprietary database licensing, and physical datacenter overhead generates major recurring savings."
+    },
+    {
+      "id": "03",
+      "title": "Resilient Real-Time Enterprise Operations",
+      "desc": "Event-driven data synchronization provides executive leadership and operational teams with immediate visibility across all enterprise units."
+    }
+  ]
+},
+  "enterprise-modernization": {
+  "slug": "enterprise-modernization",
+  "serviceSlug": "digital-transformation",
+  "title": "Enterprise Modernization & Digital Re-Platforming",
+  "solutions": [
+    {
+      "title": "Legacy Monolith to Composable Architecture",
+      "desc": "Deconstructing brittle legacy ERPs, CRMs, and core systems into composable, API-first micro-capabilities orchestrated in the cloud."
+    },
+    {
+      "title": "Cloud-Native Infrastructure Re-Platforming",
+      "desc": "Transitioning on-premises enterprise data center footprints onto scalable multi-cloud Kubernetes foundations with automated scaling."
+    },
+    {
+      "title": "Data Silo Unification & Event Streaming",
+      "desc": "Connecting disconnected legacy databases into real-time event streaming backbones (Apache Kafka) for synchronized enterprise state."
+    },
+    {
+      "title": "Automated Enterprise Process Modernization",
+      "desc": "Replacing paper-based, spreadsheet, and manual email approval chains with automated digital workflows and modern web portals."
+    },
+    {
+      "title": "Zero-Trust Enterprise Security Re-Engineering",
+      "desc": "Replacing vulnerable perimeter VPNs and shared service accounts with modern identity-centric Zero Trust Network Access (ZTNA)."
+    },
+    {
+      "title": "Modern Engineering Culture & CI/CD Enablement",
+      "desc": "Instilling modern DevOps, automated testing, and Trunk-Based Development practices into traditional enterprise engineering departments."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Mortgage Origination Digital Re-Platforming",
+      "desc": "Modernizing a 15-year-old on-premise mortgage evaluation system into a cloud-native automated digital workflow.",
+      "practicalValue": "Reduced mortgage application turnaround time from 21 days to 48 hours while cutting processing costs by 52%.",
+      "focusAreas": [
+        "Cloud-Native Lending Engine",
+        "Automated Credit Scoring API",
+        "Document Digital Ingest"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Enterprise Clinical Records Re-Platforming",
+      "desc": "Consolidating 8 disparate regional patient database servers into a unified, secure cloud repository on Microsoft Azure.",
+      "practicalValue": "Eliminated overnight data synchronisation delays, providing doctors with instant comprehensive patient medical histories.",
+      "focusAreas": [
+        "Azure Cloud Consolidation",
+        "FHIR Standards Alignment",
+        "Zero-Downtime Data Migration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Enterprise Store Operations Modernization",
+      "desc": "Replacing green-screen legacy store inventory terminals with cloud-synchronized modern mobile tablet applications across 320 stores.",
+      "practicalValue": "Saved 2.5 hours per store manager daily in manual inventory stock counting and paper reconciliation.",
+      "focusAreas": [
+        "Modern Tablet UI",
+        "Real-Time Cloud Inventory",
+        "Offline Sync Engine"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Logistics Re-Platforming",
+      "desc": "Migrating legacy custom mainframe dispatch systems to an event-driven microservices architecture on AWS EKS.",
+      "practicalValue": "Enabled real-time GPS fleet tracking across 4,000 carrier vehicles with automated dispatch routing.",
+      "focusAreas": [
+        "AWS EKS Containerization",
+        "Kafka Event Mesh",
+        "Automated Fleet Telemetry"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Digital Re-Platforming & Modernization Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Modern Omnichannel Digital Touchpoints",
+        "node": "Next.js Web Portals, Mobile Companion Apps, Modern Partner APIs"
+      },
+      {
+        "label": "Layer 02: API Gateway & Intelligent Routing Layer",
+        "node": "Kong Gateway Ingress, OAuth2 Token Exchange, Traffic Strangler Facade"
+      },
+      {
+        "label": "Layer 03: Composable Business Capabilities Plane",
+        "node": "Containerized Microservices, Domain Event Emitters, Automated CI/CD"
+      },
+      {
+        "label": "Layer 04: Real-Time Event & Data Streaming Mesh",
+        "node": "Apache Kafka Event Hub, Schema Validation, Change Data Capture"
+      },
+      {
+        "label": "Layer 05: Modern Multi-Cloud Persistence & Vaults",
+        "node": "Managed PostgreSQL, Redis Cache, Multi-Region Object Buckets"
+      }
+    ],
+    "editorialParagraph1": "Enterprise modernization is the disciplined process of unlocking trapped business value from legacy software investments without introducing operational paralysis. We replace aging, fragile IT architectures with modern, composable digital platforms.",
+    "editorialParagraph2": "By migrating workloads to cloud-native container platforms and establishing event-driven data streaming layers, we transform sluggish quarterly deployment schedules into daily release capabilities. Integrated zero-trust security ensures the newly modernized enterprise estate is hardened against evolving cyber threats.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Dramatically Accelerated Feature Velocity",
+      "desc": "Composable architectures and automated CI/CD pipelines reduce release cycles from stressful semi-annual events to routine daily deployments."
+    },
+    {
+      "id": "02",
+      "title": "Substantial Operational Cost Reduction",
+      "desc": "Decommissioning mainframe leases, proprietary database licensing, and physical datacenter overhead generates major recurring savings."
+    },
+    {
+      "id": "03",
+      "title": "Resilient Real-Time Enterprise Operations",
+      "desc": "Event-driven data synchronization provides executive leadership and operational teams with immediate visibility across all enterprise units."
+    }
+  ]
+},
+  "digital-transformation/process-automation": {
+  "slug": "process-automation",
+  "serviceSlug": "digital-transformation",
+  "title": "Intelligent Process Automation & RPA Solutions",
+  "solutions": [
+    {
+      "title": "End-to-End Business Process Discovery & Mining",
+      "desc": "Utilizing process mining tools (Celonis, UiPath Discovery) to analyze digital event logs and identify high-friction bottlenecks and manual delays."
+    },
+    {
+      "title": "Robotic Process Automation (RPA) Architecture",
+      "desc": "Deploying resilient unattended software robots (UiPath, Power Automate, Robocorp) to automate repetitive data entry and system reconciliation."
+    },
+    {
+      "title": "Intelligent Document Processing (IDP)",
+      "desc": "Combining optical character recognition (OCR) with deep learning to extract, classify, and validate unstructured data from invoices, forms, and contracts."
+    },
+    {
+      "title": "Human-in-the-Loop (HITL) Exception Management",
+      "desc": "Building intuitive review queues for operational staff to review and approve low-confidence automated document extractions."
+    },
+    {
+      "title": "API-First Workflow Automation (iPaaS)",
+      "desc": "Replacing fragile screen-scraping bots with high-speed, direct API orchestrations connecting ERP, CRM, and financial accounting systems."
+    },
+    {
+      "title": "Automation Governance & Center of Excellence (CoE)",
+      "desc": "Establishing organizational automation frameworks, bot security credentials, and continuous ROI monitoring dashboards."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Commercial Loan Document Ingestion",
+      "desc": "Deploying intelligent document processing to ingest, parse, and verify complex balance sheets and tax returns for loan underwriting.",
+      "practicalValue": "Reduced loan application intake processing from 4 hours to 90 seconds with 99.4% extraction accuracy.",
+      "focusAreas": [
+        "IDP Table Extraction",
+        "OCR Financial Verification",
+        "Human-in-the-Loop Review"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Automated Patient Referral Intake",
+      "desc": "Automating the ingestion of incoming faxed and emailed clinical patient referrals into electronic patient record systems.",
+      "practicalValue": "Processed 12,000 monthly patient referrals with zero manual transcription errors, reducing patient waitlists.",
+      "focusAreas": [
+        "NHS Number Validation",
+        "Clinical Document Parsing",
+        "Automated EHR Ingestion"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Automated Accounts Payable Invoice Processing",
+      "desc": "Deploying unattended software robots to match supplier invoices against purchase orders and warehouse delivery receipts.",
+      "practicalValue": "Automated 82% of supplier invoices end-to-end with zero touch, capturing early-payment supplier discounts.",
+      "focusAreas": [
+        "3-Way Invoice Matching",
+        "ERP Accounts Payable Sync",
+        "Discrepancy Exception Alerts"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Automated Customs Clearance & Manifest Processing",
+      "desc": "Automating cross-border shipping document parsing, tariff code classification, and customs authority filing submissions.",
+      "practicalValue": "Cut container clearance processing times by 75%, avoiding costly port storage demurrage penalties.",
+      "focusAreas": [
+        "Tariff Classification Engine",
+        "Automated Customs API",
+        "Shipping Manifest Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Intelligent Process Automation & RPA Delivery Pipeline",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Channel Document & Event Ingest",
+        "node": "Email Inboxes, Web Portals, FTP Folders, Scanned PDF Ingest Queues"
+      },
+      {
+        "label": "Layer 02: Intelligent Document Processing & OCR Engine",
+        "node": "Computer Vision OCR, LayoutLM Extraction, Confidence Scoring"
+      },
+      {
+        "label": "Layer 03: Human-in-the-Loop Exception Portal",
+        "node": "Web Review Queue, Low-Confidence Highlighting, Operator Corrections"
+      },
+      {
+        "label": "Layer 04: RPA Robot & API Integration Mesh",
+        "node": "Power Automate / UiPath Robots, REST API Adapters, ERP Ingest"
+      },
+      {
+        "label": "Layer 05: Automation Governance & Telemetry Hub",
+        "node": "Bot Health Telemetry, Process Mining Dashboards, Cost Savings Audits"
+      }
+    ],
+    "editorialParagraph1": "Manual, repetitive business processes waste thousands of human hours, introduce costly human transcription errors, and create frustrating bottlenecks for customers and employees alike. We build intelligent process automation solutions that combine RPA with modern AI.",
+    "editorialParagraph2": "By deploying intelligent document parsing and resilient API-driven workflow automations, we free knowledge workers from tedious data entry. Human-in-the-loop exception queues ensure high-value governance while automated robots handle the heavy lifting 24/7 with perfect accuracy.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "80%+ Reduction in Manual Processing Time",
+      "desc": "Automated document parsing and robot execution handle high-volume operational tasks in seconds rather than days."
+    },
+    {
+      "id": "02",
+      "title": "Elimination of Human Transcription Errors",
+      "desc": "Algorithmic data extraction and automated 3-way reconciliation ensure financial and clinical records are processed with near-perfect accuracy."
+    },
+    {
+      "id": "03",
+      "title": "Employee Elevation & Strategic Reallocation",
+      "desc": "Freeing operational staff from monotonous data entry allows teams to focus on customer service, innovation, and strategic business growth."
+    }
+  ]
+},
+  "process-automation": {
+  "slug": "process-automation",
+  "serviceSlug": "digital-transformation",
+  "title": "Intelligent Process Automation & RPA Solutions",
+  "solutions": [
+    {
+      "title": "End-to-End Business Process Discovery & Mining",
+      "desc": "Utilizing process mining tools (Celonis, UiPath Discovery) to analyze digital event logs and identify high-friction bottlenecks and manual delays."
+    },
+    {
+      "title": "Robotic Process Automation (RPA) Architecture",
+      "desc": "Deploying resilient unattended software robots (UiPath, Power Automate, Robocorp) to automate repetitive data entry and system reconciliation."
+    },
+    {
+      "title": "Intelligent Document Processing (IDP)",
+      "desc": "Combining optical character recognition (OCR) with deep learning to extract, classify, and validate unstructured data from invoices, forms, and contracts."
+    },
+    {
+      "title": "Human-in-the-Loop (HITL) Exception Management",
+      "desc": "Building intuitive review queues for operational staff to review and approve low-confidence automated document extractions."
+    },
+    {
+      "title": "API-First Workflow Automation (iPaaS)",
+      "desc": "Replacing fragile screen-scraping bots with high-speed, direct API orchestrations connecting ERP, CRM, and financial accounting systems."
+    },
+    {
+      "title": "Automation Governance & Center of Excellence (CoE)",
+      "desc": "Establishing organizational automation frameworks, bot security credentials, and continuous ROI monitoring dashboards."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Commercial Loan Document Ingestion",
+      "desc": "Deploying intelligent document processing to ingest, parse, and verify complex balance sheets and tax returns for loan underwriting.",
+      "practicalValue": "Reduced loan application intake processing from 4 hours to 90 seconds with 99.4% extraction accuracy.",
+      "focusAreas": [
+        "IDP Table Extraction",
+        "OCR Financial Verification",
+        "Human-in-the-Loop Review"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Automated Patient Referral Intake",
+      "desc": "Automating the ingestion of incoming faxed and emailed clinical patient referrals into electronic patient record systems.",
+      "practicalValue": "Processed 12,000 monthly patient referrals with zero manual transcription errors, reducing patient waitlists.",
+      "focusAreas": [
+        "NHS Number Validation",
+        "Clinical Document Parsing",
+        "Automated EHR Ingestion"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Automated Accounts Payable Invoice Processing",
+      "desc": "Deploying unattended software robots to match supplier invoices against purchase orders and warehouse delivery receipts.",
+      "practicalValue": "Automated 82% of supplier invoices end-to-end with zero touch, capturing early-payment supplier discounts.",
+      "focusAreas": [
+        "3-Way Invoice Matching",
+        "ERP Accounts Payable Sync",
+        "Discrepancy Exception Alerts"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Automated Customs Clearance & Manifest Processing",
+      "desc": "Automating cross-border shipping document parsing, tariff code classification, and customs authority filing submissions.",
+      "practicalValue": "Cut container clearance processing times by 75%, avoiding costly port storage demurrage penalties.",
+      "focusAreas": [
+        "Tariff Classification Engine",
+        "Automated Customs API",
+        "Shipping Manifest Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Intelligent Process Automation & RPA Delivery Pipeline",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Channel Document & Event Ingest",
+        "node": "Email Inboxes, Web Portals, FTP Folders, Scanned PDF Ingest Queues"
+      },
+      {
+        "label": "Layer 02: Intelligent Document Processing & OCR Engine",
+        "node": "Computer Vision OCR, LayoutLM Extraction, Confidence Scoring"
+      },
+      {
+        "label": "Layer 03: Human-in-the-Loop Exception Portal",
+        "node": "Web Review Queue, Low-Confidence Highlighting, Operator Corrections"
+      },
+      {
+        "label": "Layer 04: RPA Robot & API Integration Mesh",
+        "node": "Power Automate / UiPath Robots, REST API Adapters, ERP Ingest"
+      },
+      {
+        "label": "Layer 05: Automation Governance & Telemetry Hub",
+        "node": "Bot Health Telemetry, Process Mining Dashboards, Cost Savings Audits"
+      }
+    ],
+    "editorialParagraph1": "Manual, repetitive business processes waste thousands of human hours, introduce costly human transcription errors, and create frustrating bottlenecks for customers and employees alike. We build intelligent process automation solutions that combine RPA with modern AI.",
+    "editorialParagraph2": "By deploying intelligent document parsing and resilient API-driven workflow automations, we free knowledge workers from tedious data entry. Human-in-the-loop exception queues ensure high-value governance while automated robots handle the heavy lifting 24/7 with perfect accuracy.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "80%+ Reduction in Manual Processing Time",
+      "desc": "Automated document parsing and robot execution handle high-volume operational tasks in seconds rather than days."
+    },
+    {
+      "id": "02",
+      "title": "Elimination of Human Transcription Errors",
+      "desc": "Algorithmic data extraction and automated 3-way reconciliation ensure financial and clinical records are processed with near-perfect accuracy."
+    },
+    {
+      "id": "03",
+      "title": "Employee Elevation & Strategic Reallocation",
+      "desc": "Freeing operational staff from monotonous data entry allows teams to focus on customer service, innovation, and strategic business growth."
+    }
+  ]
+},
+  "digital-transformation/intelligent-workflows": {
+  "slug": "intelligent-workflows",
+  "serviceSlug": "digital-transformation",
+  "title": "Intelligent Workflows & Orchestration Engines",
+  "solutions": [
+    {
+      "title": "Event-Driven Orchestration (Temporal & Camunda)",
+      "desc": "Architecting resilient, stateful workflow orchestration engines capable of coordinating complex long-running business processes across microservices."
+    },
+    {
+      "title": "AI-Augmented Decisioning & Routing Engines",
+      "desc": "Embedding machine learning inference into workflow steps to dynamically score risk, classify claims, and route requests to optimal agents."
+    },
+    {
+      "title": "Case Management & Enterprise Work Distribution",
+      "desc": "Building dynamic case management systems that automatically assign, track, and escalate complex multi-departmental business inquiries."
+    },
+    {
+      "title": "State Machine Durability & Failure Compensation",
+      "desc": "Designing resilient state machines with automatic retries, exponential backoffs, and compensating transactions that never lose workflow state."
+    },
+    {
+      "title": "Real-Time Operational Workflow Telemetry",
+      "desc": "Interactive dashboards visualizing live workflow throughput, task completion times, active bottlenecks, and SLA compliance metrics."
+    },
+    {
+      "title": "Low-Code Dynamic Form & Workflow Scaffolding",
+      "desc": "Empowering business analysts to configure new operational workflows and intake forms without waiting on full software development cycles."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Dispute & Chargeback Resolution",
+      "desc": "Orchestrating credit card dispute lifecycles from initial customer mobile intake through merchant evidence gathering to settlement.",
+      "practicalValue": "Shortened dispute resolution from 30 days to 48 hours; automated 45% of simple fraud claims with zero touch.",
+      "focusAreas": [
+        "Temporal Stateful Workflows",
+        "Automated Merchant Ingest",
+        "FCA Compliance Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Complex Prior Authorization Clinical Workflow",
+      "desc": "Orchestrating health insurance treatment prior-authorization requests, evaluating clinical guidelines against electronic health records.",
+      "practicalValue": "Reduced patient waiting times for critical medical procedures from 14 days to under 4 hours.",
+      "focusAreas": [
+        "Clinical Guideline Evaluation",
+        "FHIR Data Ingestion",
+        "Automated Insurer Gateways"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Automated Omnichannel Customer Returns Workflow",
+      "desc": "Coordinating return merchandise authorization (RMA), shipping label generation, warehouse inspection, and automated refund triggers.",
+      "practicalValue": "Processed 1.2M annual customer returns seamlessly, reducing customer service return inquiry tickets by 60%.",
+      "focusAreas": [
+        "State Machine Orchestration",
+        "Carrier Webhook Integration",
+        "Instant Stripe Refund Triggers"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Engineering Change Order (ECO) Workflow",
+      "desc": "Managing multi-departmental approvals for technical CAD blueprints across safety engineers, procurement, and factory plant managers.",
+      "practicalValue": "Cut engineering change order cycle times from 6 weeks to 5 business days with complete audit trail integrity.",
+      "focusAreas": [
+        "Multi-Party Digital Signoff",
+        "PLM Systems Integration",
+        "Automated Compliance Ledger"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Stateful Intelligent Workflow Orchestration Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Intake Triggers & Omnichannel Ingress",
+        "node": "Web Portals, Mobile Forms, Webhook Listeners, IoT Alert Triggers"
+      },
+      {
+        "label": "Layer 02: Temporal / Camunda Workflow Orchestrator",
+        "node": "State Machine Engine, Persistent History Ledger, Compensation Sagas"
+      },
+      {
+        "label": "Layer 03: AI Decision & Dynamic Routing Mesh",
+        "node": "ML Scoring Service, Business Rule Decision Tables, Sentiment Routers"
+      },
+      {
+        "label": "Layer 04: Downstream Microservices & Enterprise Workers",
+        "node": "Worker Pools, ERP Adapters, Payment Gateways, Notification Senders"
+      },
+      {
+        "label": "Layer 05: Operational Telemetry & Audit Dashboards",
+        "node": "Real-Time Bottleneck Monitors, SLA Timers, Immutable Execution Logs"
+      }
+    ],
+    "editorialParagraph1": "Enterprise business processes rarely happen in a single synchronous API call. They span days or weeks, require inputs from multiple departments, wait on external partner callbacks, and must survive server reboots and network outages without losing state.",
+    "editorialParagraph2": "We architect durable, stateful workflow engines using modern orchestrators like Temporal and Camunda. By decoupling workflow logic from underlying microservices and building in automated retry and compensation mechanisms, we guarantee that no customer order, claim, or transaction is ever dropped.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Execution Without Dropped Tasks",
+      "desc": "Durable stateful workflow orchestrators ensure processes survive hardware reboots, timeouts, and network outages with zero state loss."
+    },
+    {
+      "id": "02",
+      "title": "Intelligent AI-Driven Task Prioritization",
+      "desc": "Embedded machine learning models dynamically score incoming requests, escalating high-risk cases and auto-approving routine tasks."
+    },
+    {
+      "id": "03",
+      "title": "End-to-End Visibility Over Operational Bottlenecks",
+      "desc": "Live visual dashboards show exactly where requests accumulate, allowing management to optimize staffing and eliminate operational friction."
+    }
+  ]
+},
+  "intelligent-workflows": {
+  "slug": "intelligent-workflows",
+  "serviceSlug": "digital-transformation",
+  "title": "Intelligent Workflows & Orchestration Engines",
+  "solutions": [
+    {
+      "title": "Event-Driven Orchestration (Temporal & Camunda)",
+      "desc": "Architecting resilient, stateful workflow orchestration engines capable of coordinating complex long-running business processes across microservices."
+    },
+    {
+      "title": "AI-Augmented Decisioning & Routing Engines",
+      "desc": "Embedding machine learning inference into workflow steps to dynamically score risk, classify claims, and route requests to optimal agents."
+    },
+    {
+      "title": "Case Management & Enterprise Work Distribution",
+      "desc": "Building dynamic case management systems that automatically assign, track, and escalate complex multi-departmental business inquiries."
+    },
+    {
+      "title": "State Machine Durability & Failure Compensation",
+      "desc": "Designing resilient state machines with automatic retries, exponential backoffs, and compensating transactions that never lose workflow state."
+    },
+    {
+      "title": "Real-Time Operational Workflow Telemetry",
+      "desc": "Interactive dashboards visualizing live workflow throughput, task completion times, active bottlenecks, and SLA compliance metrics."
+    },
+    {
+      "title": "Low-Code Dynamic Form & Workflow Scaffolding",
+      "desc": "Empowering business analysts to configure new operational workflows and intake forms without waiting on full software development cycles."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Dispute & Chargeback Resolution",
+      "desc": "Orchestrating credit card dispute lifecycles from initial customer mobile intake through merchant evidence gathering to settlement.",
+      "practicalValue": "Shortened dispute resolution from 30 days to 48 hours; automated 45% of simple fraud claims with zero touch.",
+      "focusAreas": [
+        "Temporal Stateful Workflows",
+        "Automated Merchant Ingest",
+        "FCA Compliance Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Complex Prior Authorization Clinical Workflow",
+      "desc": "Orchestrating health insurance treatment prior-authorization requests, evaluating clinical guidelines against electronic health records.",
+      "practicalValue": "Reduced patient waiting times for critical medical procedures from 14 days to under 4 hours.",
+      "focusAreas": [
+        "Clinical Guideline Evaluation",
+        "FHIR Data Ingestion",
+        "Automated Insurer Gateways"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Automated Omnichannel Customer Returns Workflow",
+      "desc": "Coordinating return merchandise authorization (RMA), shipping label generation, warehouse inspection, and automated refund triggers.",
+      "practicalValue": "Processed 1.2M annual customer returns seamlessly, reducing customer service return inquiry tickets by 60%.",
+      "focusAreas": [
+        "State Machine Orchestration",
+        "Carrier Webhook Integration",
+        "Instant Stripe Refund Triggers"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Engineering Change Order (ECO) Workflow",
+      "desc": "Managing multi-departmental approvals for technical CAD blueprints across safety engineers, procurement, and factory plant managers.",
+      "practicalValue": "Cut engineering change order cycle times from 6 weeks to 5 business days with complete audit trail integrity.",
+      "focusAreas": [
+        "Multi-Party Digital Signoff",
+        "PLM Systems Integration",
+        "Automated Compliance Ledger"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Stateful Intelligent Workflow Orchestration Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Intake Triggers & Omnichannel Ingress",
+        "node": "Web Portals, Mobile Forms, Webhook Listeners, IoT Alert Triggers"
+      },
+      {
+        "label": "Layer 02: Temporal / Camunda Workflow Orchestrator",
+        "node": "State Machine Engine, Persistent History Ledger, Compensation Sagas"
+      },
+      {
+        "label": "Layer 03: AI Decision & Dynamic Routing Mesh",
+        "node": "ML Scoring Service, Business Rule Decision Tables, Sentiment Routers"
+      },
+      {
+        "label": "Layer 04: Downstream Microservices & Enterprise Workers",
+        "node": "Worker Pools, ERP Adapters, Payment Gateways, Notification Senders"
+      },
+      {
+        "label": "Layer 05: Operational Telemetry & Audit Dashboards",
+        "node": "Real-Time Bottleneck Monitors, SLA Timers, Immutable Execution Logs"
+      }
+    ],
+    "editorialParagraph1": "Enterprise business processes rarely happen in a single synchronous API call. They span days or weeks, require inputs from multiple departments, wait on external partner callbacks, and must survive server reboots and network outages without losing state.",
+    "editorialParagraph2": "We architect durable, stateful workflow engines using modern orchestrators like Temporal and Camunda. By decoupling workflow logic from underlying microservices and building in automated retry and compensation mechanisms, we guarantee that no customer order, claim, or transaction is ever dropped.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Execution Without Dropped Tasks",
+      "desc": "Durable stateful workflow orchestrators ensure processes survive hardware reboots, timeouts, and network outages with zero state loss."
+    },
+    {
+      "id": "02",
+      "title": "Intelligent AI-Driven Task Prioritization",
+      "desc": "Embedded machine learning models dynamically score incoming requests, escalating high-risk cases and auto-approving routine tasks."
+    },
+    {
+      "id": "03",
+      "title": "End-to-End Visibility Over Operational Bottlenecks",
+      "desc": "Live visual dashboards show exactly where requests accumulate, allowing management to optimize staffing and eliminate operational friction."
+    }
+  ]
+},
+  "digital-transformation/customer-experience-transformation": {
+  "slug": "customer-experience-transformation",
+  "serviceSlug": "digital-transformation",
+  "title": "Customer Experience (CX) & Omnichannel Design",
+  "solutions": [
+    {
+      "title": "End-to-End Customer Journey Mapping & Audits",
+      "desc": "Conducting user research, heuristic evaluations, and analytics audits to map friction points across cross-channel customer journeys."
+    },
+    {
+      "title": "Unified Customer 360 Data Architecture",
+      "desc": "Unifying fragmented customer records from CRM, e-commerce, mobile apps, and service desks into a synchronized Customer Data Platform (CDP)."
+    },
+    {
+      "title": "Omnichannel Personalization & Recommendation Engines",
+      "desc": "Deploying real-time recommendation and contextual messaging engines across web, mobile, email, and in-store customer touchpoints."
+    },
+    {
+      "title": "Self-Service Customer Portals & Native Mobile Apps",
+      "desc": "Designing frictionless, accessible customer self-service applications enabling clients to manage accounts and resolve issues instantly."
+    },
+    {
+      "title": "Conversational AI & Intelligent Virtual Agents",
+      "desc": "Deploying enterprise customer service AI assistants capable of resolving Tier-1 inquiries, answering policy questions, and routing complex cases."
+    },
+    {
+      "title": "Customer Sentiment Analytics & Feedback Loops",
+      "desc": "Capturing Net Promoter Scores (NPS), CSAT telemetry, and session replays to continuously guide iterative digital UX enhancements."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Frictionless Digital Customer Onboarding",
+      "desc": "Redesigning the retail bank account opening flow with automated mobile ID verification, instant KYC, and digital card issuance.",
+      "practicalValue": "Lowered new account drop-off rate from 44% to 11%; completed identity verification in under 90 seconds.",
+      "focusAreas": [
+        "eKYC Biometric Verification",
+        "Instant Virtual Card Issuance",
+        "Frictionless Mobile UX"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Personalized Patient Engagement App",
+      "desc": "Developing a digital patient companion providing medication reminders, recovery check-ins, and direct messaging with care coordinators.",
+      "practicalValue": "35% reduction in hospital readmissions for chronic cardiac patients through proactive digital monitoring.",
+      "focusAreas": [
+        "Patient Journey UX",
+        "Secure In-App Chat",
+        "Automated Recovery Check-ins"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Unified Omnichannel Customer Experience",
+      "desc": "Connecting digital online accounts with physical store loyalty cards, enabling click-and-collect, instant returns, and personalized app deals.",
+      "practicalValue": "Generated a 31% increase in repeat customer purchases and unified customer profiles across 250 store locations.",
+      "focusAreas": [
+        "Customer Data Platform (CDP)",
+        "Real-Time Personalization",
+        "In-Store Digital Integration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "B2B Customer Self-Service Ordering Portal",
+      "desc": "Replacing manual email and phone parts ordering with an intuitive B2B customer portal featuring live inventory, custom pricing, and order tracking.",
+      "practicalValue": "Shifted 70% of routine re-orders to the self-service web portal, increasing B2B customer satisfaction by 40%.",
+      "focusAreas": [
+        "B2B Contract Pricing Engine",
+        "Real-Time Stock Query",
+        "One-Click Reordering"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Omnichannel Customer Experience (CX) Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Channel Touchpoints & Ingress",
+        "node": "Next.js Web Storefronts, iOS/Android Mobile Apps, Email/SMS Dispatch"
+      },
+      {
+        "label": "Layer 02: Real-Time Customer Data Platform (CDP)",
+        "node": "Segment / RudderStack, Identity Resolution Engine, Unified Profile Graph"
+      },
+      {
+        "label": "Layer 03: Personalization & Conversational AI Mesh",
+        "node": "Vector Recommendation Engine, Generative Virtual Assistants, Dynamic Content"
+      },
+      {
+        "label": "Layer 04: Omnichannel Integration & Service Bus",
+        "node": "CRM Connectors (Salesforce, HubSpot), Order Management APIs, Helpdesk Sync"
+      },
+      {
+        "label": "Layer 05: Customer Telemetry & Sentiment Analytics",
+        "node": "CSAT / NPS Ingest, PostHog Session Replay, Journey Funnel Analytics"
+      }
+    ],
+    "editorialParagraph1": "In modern competitive markets, customer experience is the single greatest competitive differentiator. Customers expect frictionless onboarding, instantaneous answers, and personalized interactions across every digital and physical touchpoint.",
+    "editorialParagraph2": "We transform customer experiences by breaking down isolated channel silos. By unifying customer records into real-time Customer Data Platforms and deploying intuitive web, mobile, and conversational AI interfaces, we deliver cohesive journeys that drive customer loyalty and revenue growth.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Substantially Reduced Drop-Off & Cart Abandonment",
+      "desc": "Frictionless, human-centered UI design and automated verification streamline onboarding flows and accelerate conversions."
+    },
+    {
+      "id": "02",
+      "title": "Unified Single View of the Customer (Customer 360)",
+      "desc": "Real-time Customer Data Platforms synchronize cross-channel behavior, ensuring service teams and marketing speak with one voice."
+    },
+    {
+      "id": "03",
+      "title": "Higher Customer Retention & Lifetime Value (LTV)",
+      "desc": "Intelligent personalization and effortless self-service portals turn one-time shoppers into deeply loyal, long-term brand advocates."
+    }
+  ]
+},
+  "customer-experience-transformation": {
+  "slug": "customer-experience-transformation",
+  "serviceSlug": "digital-transformation",
+  "title": "Customer Experience (CX) & Omnichannel Design",
+  "solutions": [
+    {
+      "title": "End-to-End Customer Journey Mapping & Audits",
+      "desc": "Conducting user research, heuristic evaluations, and analytics audits to map friction points across cross-channel customer journeys."
+    },
+    {
+      "title": "Unified Customer 360 Data Architecture",
+      "desc": "Unifying fragmented customer records from CRM, e-commerce, mobile apps, and service desks into a synchronized Customer Data Platform (CDP)."
+    },
+    {
+      "title": "Omnichannel Personalization & Recommendation Engines",
+      "desc": "Deploying real-time recommendation and contextual messaging engines across web, mobile, email, and in-store customer touchpoints."
+    },
+    {
+      "title": "Self-Service Customer Portals & Native Mobile Apps",
+      "desc": "Designing frictionless, accessible customer self-service applications enabling clients to manage accounts and resolve issues instantly."
+    },
+    {
+      "title": "Conversational AI & Intelligent Virtual Agents",
+      "desc": "Deploying enterprise customer service AI assistants capable of resolving Tier-1 inquiries, answering policy questions, and routing complex cases."
+    },
+    {
+      "title": "Customer Sentiment Analytics & Feedback Loops",
+      "desc": "Capturing Net Promoter Scores (NPS), CSAT telemetry, and session replays to continuously guide iterative digital UX enhancements."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Frictionless Digital Customer Onboarding",
+      "desc": "Redesigning the retail bank account opening flow with automated mobile ID verification, instant KYC, and digital card issuance.",
+      "practicalValue": "Lowered new account drop-off rate from 44% to 11%; completed identity verification in under 90 seconds.",
+      "focusAreas": [
+        "eKYC Biometric Verification",
+        "Instant Virtual Card Issuance",
+        "Frictionless Mobile UX"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Personalized Patient Engagement App",
+      "desc": "Developing a digital patient companion providing medication reminders, recovery check-ins, and direct messaging with care coordinators.",
+      "practicalValue": "35% reduction in hospital readmissions for chronic cardiac patients through proactive digital monitoring.",
+      "focusAreas": [
+        "Patient Journey UX",
+        "Secure In-App Chat",
+        "Automated Recovery Check-ins"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Unified Omnichannel Customer Experience",
+      "desc": "Connecting digital online accounts with physical store loyalty cards, enabling click-and-collect, instant returns, and personalized app deals.",
+      "practicalValue": "Generated a 31% increase in repeat customer purchases and unified customer profiles across 250 store locations.",
+      "focusAreas": [
+        "Customer Data Platform (CDP)",
+        "Real-Time Personalization",
+        "In-Store Digital Integration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "B2B Customer Self-Service Ordering Portal",
+      "desc": "Replacing manual email and phone parts ordering with an intuitive B2B customer portal featuring live inventory, custom pricing, and order tracking.",
+      "practicalValue": "Shifted 70% of routine re-orders to the self-service web portal, increasing B2B customer satisfaction by 40%.",
+      "focusAreas": [
+        "B2B Contract Pricing Engine",
+        "Real-Time Stock Query",
+        "One-Click Reordering"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Omnichannel Customer Experience (CX) Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Channel Touchpoints & Ingress",
+        "node": "Next.js Web Storefronts, iOS/Android Mobile Apps, Email/SMS Dispatch"
+      },
+      {
+        "label": "Layer 02: Real-Time Customer Data Platform (CDP)",
+        "node": "Segment / RudderStack, Identity Resolution Engine, Unified Profile Graph"
+      },
+      {
+        "label": "Layer 03: Personalization & Conversational AI Mesh",
+        "node": "Vector Recommendation Engine, Generative Virtual Assistants, Dynamic Content"
+      },
+      {
+        "label": "Layer 04: Omnichannel Integration & Service Bus",
+        "node": "CRM Connectors (Salesforce, HubSpot), Order Management APIs, Helpdesk Sync"
+      },
+      {
+        "label": "Layer 05: Customer Telemetry & Sentiment Analytics",
+        "node": "CSAT / NPS Ingest, PostHog Session Replay, Journey Funnel Analytics"
+      }
+    ],
+    "editorialParagraph1": "In modern competitive markets, customer experience is the single greatest competitive differentiator. Customers expect frictionless onboarding, instantaneous answers, and personalized interactions across every digital and physical touchpoint.",
+    "editorialParagraph2": "We transform customer experiences by breaking down isolated channel silos. By unifying customer records into real-time Customer Data Platforms and deploying intuitive web, mobile, and conversational AI interfaces, we deliver cohesive journeys that drive customer loyalty and revenue growth.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Substantially Reduced Drop-Off & Cart Abandonment",
+      "desc": "Frictionless, human-centered UI design and automated verification streamline onboarding flows and accelerate conversions."
+    },
+    {
+      "id": "02",
+      "title": "Unified Single View of the Customer (Customer 360)",
+      "desc": "Real-time Customer Data Platforms synchronize cross-channel behavior, ensuring service teams and marketing speak with one voice."
+    },
+    {
+      "id": "03",
+      "title": "Higher Customer Retention & Lifetime Value (LTV)",
+      "desc": "Intelligent personalization and effortless self-service portals turn one-time shoppers into deeply loyal, long-term brand advocates."
+    }
+  ]
+},
+  "digital-transformation/legacy-system-modernization": {
+  "slug": "legacy-system-modernization",
+  "serviceSlug": "digital-transformation",
+  "title": "Legacy System Modernization & Core Migration",
+  "solutions": [
+    {
+      "title": "Legacy Architecture & Dependency Discovery",
+      "desc": "Comprehensive auditing of legacy mainframes, client-server architectures, and legacy databases to catalog architectural risks and seams."
+    },
+    {
+      "title": "Non-Breaking Strangler Fig Migration",
+      "desc": "Progressively migrating business capabilities into modular cloud services using smart API proxies with zero operational downtime."
+    },
+    {
+      "title": "Legacy Database Refactoring & Normalisation",
+      "desc": "Decoupling tangled relational schemas into domain-driven cloud databases with continuous change-data-capture synchronization."
+    },
+    {
+      "title": "Automated Parity Testing & Shadow Execution",
+      "desc": "Duplicating live production requests to both legacy and modern cloud systems to mathematically prove algorithmic calculation parity."
+    },
+    {
+      "title": "Cloud-Native Containerization & DevOps Enablement",
+      "desc": "Re-packaging monolithic legacy codebases into secure, automated multi-stage containers running on managed Kubernetes."
+    },
+    {
+      "title": "Decommissioning & Safe Asset Archival",
+      "desc": "Deterministic decommissioning procedures, data preservation runbooks, and software license termination planning."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Banking Ledger Mainframe Decoupling",
+      "desc": "Migrating high-value core transaction routines off an IBM mainframe into scalable Go microservices on AWS.",
+      "practicalValue": "Saved £4.2M in annual MIPS mainframe licensing costs while slashing transaction latency by 65%.",
+      "focusAreas": [
+        "MIPS Reduction",
+        "Shadow Transaction Validation",
+        "Strangler Fig Routing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Legacy Client-Server Clinical System Migration",
+      "desc": "Modernizing a 20-year-old on-premise Windows client-server pathology database into a modern web and cloud architecture.",
+      "practicalValue": "Eliminated workstation client software installations; pathologists can securely access lab records from any clinical device.",
+      "focusAreas": [
+        "Client-Server to Web",
+        "Secure Cloud Database",
+        "HIPAA Data Migration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Legacy Warehouse ERP Modernization",
+      "desc": "Strangling a fragile legacy AS400 warehouse management system into modular cloud microservices on Azure AKS.",
+      "practicalValue": "Zero warehouse shipment interruptions during a 12-month phased core system transition.",
+      "focusAreas": [
+        "AS400 Data Connectors",
+        "Kafka Event Bridge",
+        "Phased Feature Cutover"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Plant Floor SCADA Architecture Refactoring",
+      "desc": "Modernizing proprietary single-threaded factory control software into concurrent event-driven streaming workers.",
+      "practicalValue": "Eliminated factory packet loss and reduced compute server hardware costs by 55%.",
+      "focusAreas": [
+        "Proprietary Protocol Adapters",
+        "MQTT Streaming Mesh",
+        "Edge Kubernetes Deployment"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Legacy Modernization & Strangler Fig Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Smart API Ingress & Traffic Facade",
+        "node": "Kong Gateway Ingress, Path Routing Rules, Shadow Traffic Duplicator"
+      },
+      {
+        "label": "Layer 02: Parity Verification & Comparison Engine",
+        "node": "Response Comparison Verifier, Telemetry Logging, Discrepancy Alerts"
+      },
+      {
+        "label": "Layer 03: Modern Cloud-Native Microservices",
+        "node": "Go / .NET 8 / Java Quarkus, EKS/AKS Clusters, gRPC Endpoints"
+      },
+      {
+        "label": "Layer 04: Legacy Monolithic Core (Progressively Draining)",
+        "node": "Legacy Mainframe / AS400, Monolithic Databases, Legacy Runtimes"
+      },
+      {
+        "label": "Layer 05: Continuous CDC Synchronization & Storage",
+        "node": "Debezium Change Data Capture, Kafka Streaming, Modern Domain Postgres"
+      }
+    ],
+    "editorialParagraph1": "Legacy systems frequently run the most critical operations of an enterprise, yet they represent severe vulnerabilities: aging software runtimes, mounting technical debt, and a dwindling pool of developers who understand the original code. We eliminate this risk through modern refactoring.",
+    "editorialParagraph2": "Our modernization methodology avoids the catastrophic failure rates of 'big-bang' rewrites. By wrapping legacy cores in smart API facades and proving functional parity via automated shadow traffic duplication, we ensure zero operational downtime and measurable risk reduction.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Zero Operational Disruption",
+      "desc": "Incremental Strangler Fig migration ensures live production business operations remain 100% active throughout the modernization process."
+    },
+    {
+      "id": "02",
+      "title": "Verified Mathematical Parity via Shadow Testing",
+      "desc": "Automated regression engines duplicate live production requests to verify algorithmic parity before real customer traffic is shifted."
+    },
+    {
+      "id": "03",
+      "title": "Immediate Operational Cost Savings",
+      "desc": "Offloading compute from expensive mainframes and proprietary database licenses generates immediate recurring budgetary savings."
+    }
+  ]
+},
+  "legacy-system-modernization": {
+  "slug": "legacy-system-modernization",
+  "serviceSlug": "digital-transformation",
+  "title": "Legacy System Modernization & Core Migration",
+  "solutions": [
+    {
+      "title": "Legacy Architecture & Dependency Discovery",
+      "desc": "Comprehensive auditing of legacy mainframes, client-server architectures, and legacy databases to catalog architectural risks and seams."
+    },
+    {
+      "title": "Non-Breaking Strangler Fig Migration",
+      "desc": "Progressively migrating business capabilities into modular cloud services using smart API proxies with zero operational downtime."
+    },
+    {
+      "title": "Legacy Database Refactoring & Normalisation",
+      "desc": "Decoupling tangled relational schemas into domain-driven cloud databases with continuous change-data-capture synchronization."
+    },
+    {
+      "title": "Automated Parity Testing & Shadow Execution",
+      "desc": "Duplicating live production requests to both legacy and modern cloud systems to mathematically prove algorithmic calculation parity."
+    },
+    {
+      "title": "Cloud-Native Containerization & DevOps Enablement",
+      "desc": "Re-packaging monolithic legacy codebases into secure, automated multi-stage containers running on managed Kubernetes."
+    },
+    {
+      "title": "Decommissioning & Safe Asset Archival",
+      "desc": "Deterministic decommissioning procedures, data preservation runbooks, and software license termination planning."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Banking Ledger Mainframe Decoupling",
+      "desc": "Migrating high-value core transaction routines off an IBM mainframe into scalable Go microservices on AWS.",
+      "practicalValue": "Saved £4.2M in annual MIPS mainframe licensing costs while slashing transaction latency by 65%.",
+      "focusAreas": [
+        "MIPS Reduction",
+        "Shadow Transaction Validation",
+        "Strangler Fig Routing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Legacy Client-Server Clinical System Migration",
+      "desc": "Modernizing a 20-year-old on-premise Windows client-server pathology database into a modern web and cloud architecture.",
+      "practicalValue": "Eliminated workstation client software installations; pathologists can securely access lab records from any clinical device.",
+      "focusAreas": [
+        "Client-Server to Web",
+        "Secure Cloud Database",
+        "HIPAA Data Migration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Legacy Warehouse ERP Modernization",
+      "desc": "Strangling a fragile legacy AS400 warehouse management system into modular cloud microservices on Azure AKS.",
+      "practicalValue": "Zero warehouse shipment interruptions during a 12-month phased core system transition.",
+      "focusAreas": [
+        "AS400 Data Connectors",
+        "Kafka Event Bridge",
+        "Phased Feature Cutover"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Plant Floor SCADA Architecture Refactoring",
+      "desc": "Modernizing proprietary single-threaded factory control software into concurrent event-driven streaming workers.",
+      "practicalValue": "Eliminated factory packet loss and reduced compute server hardware costs by 55%.",
+      "focusAreas": [
+        "Proprietary Protocol Adapters",
+        "MQTT Streaming Mesh",
+        "Edge Kubernetes Deployment"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Legacy Modernization & Strangler Fig Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Smart API Ingress & Traffic Facade",
+        "node": "Kong Gateway Ingress, Path Routing Rules, Shadow Traffic Duplicator"
+      },
+      {
+        "label": "Layer 02: Parity Verification & Comparison Engine",
+        "node": "Response Comparison Verifier, Telemetry Logging, Discrepancy Alerts"
+      },
+      {
+        "label": "Layer 03: Modern Cloud-Native Microservices",
+        "node": "Go / .NET 8 / Java Quarkus, EKS/AKS Clusters, gRPC Endpoints"
+      },
+      {
+        "label": "Layer 04: Legacy Monolithic Core (Progressively Draining)",
+        "node": "Legacy Mainframe / AS400, Monolithic Databases, Legacy Runtimes"
+      },
+      {
+        "label": "Layer 05: Continuous CDC Synchronization & Storage",
+        "node": "Debezium Change Data Capture, Kafka Streaming, Modern Domain Postgres"
+      }
+    ],
+    "editorialParagraph1": "Legacy systems frequently run the most critical operations of an enterprise, yet they represent severe vulnerabilities: aging software runtimes, mounting technical debt, and a dwindling pool of developers who understand the original code. We eliminate this risk through modern refactoring.",
+    "editorialParagraph2": "Our modernization methodology avoids the catastrophic failure rates of 'big-bang' rewrites. By wrapping legacy cores in smart API facades and proving functional parity via automated shadow traffic duplication, we ensure zero operational downtime and measurable risk reduction.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Zero Operational Disruption",
+      "desc": "Incremental Strangler Fig migration ensures live production business operations remain 100% active throughout the modernization process."
+    },
+    {
+      "id": "02",
+      "title": "Verified Mathematical Parity via Shadow Testing",
+      "desc": "Automated regression engines duplicate live production requests to verify algorithmic parity before real customer traffic is shifted."
+    },
+    {
+      "id": "03",
+      "title": "Immediate Operational Cost Savings",
+      "desc": "Offloading compute from expensive mainframes and proprietary database licenses generates immediate recurring budgetary savings."
+    }
+  ]
+},
+  "digital-transformation/business-transformation": {
+  "slug": "business-transformation",
+  "serviceSlug": "digital-transformation",
+  "title": "Business Transformation & Operational Agility",
+  "solutions": [
+    {
+      "title": "Value Stream Mapping & Waste Elimination",
+      "desc": "Analyzing operational value streams from customer request to fulfillment, identifying handoff delays, rework cycles, and bureaucratic waste."
+    },
+    {
+      "title": "Digital Operating Model & Organization Design",
+      "desc": "Reorganizing legacy hierarchical departments into autonomous, product-aligned squads with end-to-end accountability."
+    },
+    {
+      "title": "Agile at Scale (SAFe, LeSS, Spotify Model)",
+      "desc": "Implementing enterprise agile frameworks that synchronize strategic leadership vision with daily engineering delivery cadences."
+    },
+    {
+      "title": "Data-Driven Decision Making & Executive OKRs",
+      "desc": "Establishing transparent Objectives and Key Results (OKRs) backed by automated telemetry dashboards and business intelligence feeds."
+    },
+    {
+      "title": "Customer-Centric Innovation Sprints",
+      "desc": "Embedding continuous user discovery, prototype testing, and rapid validation loops directly into core business units."
+    },
+    {
+      "title": "Continuous Governance & Capability Building",
+      "desc": "Upskilling internal leadership, product managers, and engineering talent to sustain long-term operational agility."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Agile Transformation in Commercial Banking",
+      "desc": "Restructuring a 1,400-person commercial banking IT division from traditional waterfall projects to 45 cross-functional product squads.",
+      "practicalValue": "Increased quarterly feature delivery velocity by 240% while slashing defect discovery in production by 60%.",
+      "focusAreas": [
+        "Squad Topology Design",
+        "Continuous Delivery Governance",
+        "Value Stream Optimization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Pharmaceutical Clinical Operations Transformation",
+      "desc": "Transforming manual paper-based clinical trial operations into an agile, data-driven trial coordination model.",
+      "practicalValue": "Accelerated phase-3 clinical trial patient recruitment by 4 months, bringing life-saving therapeutics to market faster.",
+      "focusAreas": [
+        "Clinical Value Stream Mapping",
+        "Agile Squad Enablement",
+        "Digital Regulatory Tracking"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Retail Merchandising Operational Agility",
+      "desc": "Transforming seasonal fashion merchandising from semi-annual prediction meetings to weekly data-driven digital inventory adjustments.",
+      "practicalValue": "Reduced unsold inventory markdown losses by £6.2M through dynamic weekly inventory adjustments.",
+      "focusAreas": [
+        "Data-Driven Decision Frameworks",
+        "Weekly Cadence Sprints",
+        "Cross-Functional Inventory Squads"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Lean Supply Chain Agile Transformation",
+      "desc": "Aligning procurement, factory scheduling, and logistics divisions into unified product teams operating on daily telemetry standups.",
+      "practicalValue": "Lowered average supply chain lead times by 38% and reduced inventory buffer holding costs by 24%.",
+      "focusAreas": [
+        "Cross-Department Value Streams",
+        "Kanban Pull Systems",
+        "Real-Time Telemetry Standups"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Business Transformation & Agile Operating Model",
+    "layers": [
+      {
+        "label": "Layer 01: Strategic Vision & Executive OKRs",
+        "node": "Strategic Objectives, Capital Allocation, Measurable Key Results"
+      },
+      {
+        "label": "Layer 02: Value Stream Mapping & Flow Optimization",
+        "node": "Customer Journey Flow, Bottleneck Analysis, Waste Elimination Metrics"
+      },
+      {
+        "label": "Layer 03: Cross-Functional Product Squads",
+        "node": "Autonomous Squad Topologies, End-to-End Ownership, Agile Cadence"
+      },
+      {
+        "label": "Layer 04: Modern Delivery Platform & Toolchain",
+        "node": "Automated CI/CD, Ephemeral Sandboxes, Self-Service Developer Tools"
+      },
+      {
+        "label": "Layer 05: Operational Telemetry & Business Dashboards",
+        "node": "DORA Engineering Metrics, Customer NPS, Financial Value Tracking"
+      }
+    ],
+    "editorialParagraph1": "True business transformation requires aligning organizational culture, operating models, and technology into a single, cohesive delivery engine. When business strategy is decoupled from software delivery, even the most ambitious initiatives fail to materialize.",
+    "editorialParagraph2": "We help enterprise organizations dismantle cumbersome bureaucracy and departmental silos. By organizing teams around customer value streams and establishing data-driven feedback loops, we cultivate a high-performance culture capable of rapidly adapting to market opportunities.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "2x to 3x Increase in Organizational Agility",
+      "desc": "Autonomous cross-functional product squads eliminate inter-departmental handoff delays, accelerating idea-to-market speed."
+    },
+    {
+      "id": "02",
+      "title": "Direct Alignment of Engineering to Business ROI",
+      "desc": "Transparent OKR frameworks tie daily software pull requests and deployments directly to strategic enterprise revenue metrics."
+    },
+    {
+      "id": "03",
+      "title": "Continuous Culture of Experimentation",
+      "desc": "Rapid validation loops and data-driven feedback empower teams to innovate boldly without fearing catastrophic operational failure."
+    }
+  ]
+},
+  "business-transformation": {
+  "slug": "business-transformation",
+  "serviceSlug": "digital-transformation",
+  "title": "Business Transformation & Operational Agility",
+  "solutions": [
+    {
+      "title": "Value Stream Mapping & Waste Elimination",
+      "desc": "Analyzing operational value streams from customer request to fulfillment, identifying handoff delays, rework cycles, and bureaucratic waste."
+    },
+    {
+      "title": "Digital Operating Model & Organization Design",
+      "desc": "Reorganizing legacy hierarchical departments into autonomous, product-aligned squads with end-to-end accountability."
+    },
+    {
+      "title": "Agile at Scale (SAFe, LeSS, Spotify Model)",
+      "desc": "Implementing enterprise agile frameworks that synchronize strategic leadership vision with daily engineering delivery cadences."
+    },
+    {
+      "title": "Data-Driven Decision Making & Executive OKRs",
+      "desc": "Establishing transparent Objectives and Key Results (OKRs) backed by automated telemetry dashboards and business intelligence feeds."
+    },
+    {
+      "title": "Customer-Centric Innovation Sprints",
+      "desc": "Embedding continuous user discovery, prototype testing, and rapid validation loops directly into core business units."
+    },
+    {
+      "title": "Continuous Governance & Capability Building",
+      "desc": "Upskilling internal leadership, product managers, and engineering talent to sustain long-term operational agility."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Agile Transformation in Commercial Banking",
+      "desc": "Restructuring a 1,400-person commercial banking IT division from traditional waterfall projects to 45 cross-functional product squads.",
+      "practicalValue": "Increased quarterly feature delivery velocity by 240% while slashing defect discovery in production by 60%.",
+      "focusAreas": [
+        "Squad Topology Design",
+        "Continuous Delivery Governance",
+        "Value Stream Optimization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Pharmaceutical Clinical Operations Transformation",
+      "desc": "Transforming manual paper-based clinical trial operations into an agile, data-driven trial coordination model.",
+      "practicalValue": "Accelerated phase-3 clinical trial patient recruitment by 4 months, bringing life-saving therapeutics to market faster.",
+      "focusAreas": [
+        "Clinical Value Stream Mapping",
+        "Agile Squad Enablement",
+        "Digital Regulatory Tracking"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Retail Merchandising Operational Agility",
+      "desc": "Transforming seasonal fashion merchandising from semi-annual prediction meetings to weekly data-driven digital inventory adjustments.",
+      "practicalValue": "Reduced unsold inventory markdown losses by £6.2M through dynamic weekly inventory adjustments.",
+      "focusAreas": [
+        "Data-Driven Decision Frameworks",
+        "Weekly Cadence Sprints",
+        "Cross-Functional Inventory Squads"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Lean Supply Chain Agile Transformation",
+      "desc": "Aligning procurement, factory scheduling, and logistics divisions into unified product teams operating on daily telemetry standups.",
+      "practicalValue": "Lowered average supply chain lead times by 38% and reduced inventory buffer holding costs by 24%.",
+      "focusAreas": [
+        "Cross-Department Value Streams",
+        "Kanban Pull Systems",
+        "Real-Time Telemetry Standups"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Business Transformation & Agile Operating Model",
+    "layers": [
+      {
+        "label": "Layer 01: Strategic Vision & Executive OKRs",
+        "node": "Strategic Objectives, Capital Allocation, Measurable Key Results"
+      },
+      {
+        "label": "Layer 02: Value Stream Mapping & Flow Optimization",
+        "node": "Customer Journey Flow, Bottleneck Analysis, Waste Elimination Metrics"
+      },
+      {
+        "label": "Layer 03: Cross-Functional Product Squads",
+        "node": "Autonomous Squad Topologies, End-to-End Ownership, Agile Cadence"
+      },
+      {
+        "label": "Layer 04: Modern Delivery Platform & Toolchain",
+        "node": "Automated CI/CD, Ephemeral Sandboxes, Self-Service Developer Tools"
+      },
+      {
+        "label": "Layer 05: Operational Telemetry & Business Dashboards",
+        "node": "DORA Engineering Metrics, Customer NPS, Financial Value Tracking"
+      }
+    ],
+    "editorialParagraph1": "True business transformation requires aligning organizational culture, operating models, and technology into a single, cohesive delivery engine. When business strategy is decoupled from software delivery, even the most ambitious initiatives fail to materialize.",
+    "editorialParagraph2": "We help enterprise organizations dismantle cumbersome bureaucracy and departmental silos. By organizing teams around customer value streams and establishing data-driven feedback loops, we cultivate a high-performance culture capable of rapidly adapting to market opportunities.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "2x to 3x Increase in Organizational Agility",
+      "desc": "Autonomous cross-functional product squads eliminate inter-departmental handoff delays, accelerating idea-to-market speed."
+    },
+    {
+      "id": "02",
+      "title": "Direct Alignment of Engineering to Business ROI",
+      "desc": "Transparent OKR frameworks tie daily software pull requests and deployments directly to strategic enterprise revenue metrics."
+    },
+    {
+      "id": "03",
+      "title": "Continuous Culture of Experimentation",
+      "desc": "Rapid validation loops and data-driven feedback empower teams to innovate boldly without fearing catastrophic operational failure."
+    }
+  ]
+},
+  "digital-transformation/change-management": {
+  "slug": "change-management",
+  "serviceSlug": "digital-transformation",
+  "title": "Change Management & Organizational Enablement",
+  "solutions": [
+    {
+      "title": "Change Readiness Assessment & Stakeholder Mapping",
+      "desc": "Evaluating cultural readiness, digital literacy, and organizational sentiment across departments to preempt adoption resistance."
+    },
+    {
+      "title": "Structured Change Frameworks (Prosci ADKAR)",
+      "desc": "Implementing proven change management frameworks (Awareness, Desire, Knowledge, Ability, Reinforcement) across transformation milestones."
+    },
+    {
+      "title": "Comprehensive Digital Upskilling & Bootcamps",
+      "desc": "Designing tailored hands-on training programs, internal technical certifications, and interactive workshops for staff and leadership."
+    },
+    {
+      "title": "Internal Communications & Change Champion Networks",
+      "desc": "Establishing grassroots champion networks, executive town halls, and transparent transformation progress newsletters."
+    },
+    {
+      "title": "User Adoption Telemetry & Analytics",
+      "desc": "Instrumenting software adoption tracking (Pendo, WalkMe) to measure real employee system usage, friction points, and drop-off rates."
+    },
+    {
+      "title": "Incentive Alignment & Reinforcement Strategies",
+      "desc": "Aligning team performance reviews, compensation incentives, and organizational recognition to reinforce new digital behaviors."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Banking Platform Migration Adoption",
+      "desc": "Leading change management for 3,500 bank branch and operations employees transitioning to a new digital core platform.",
+      "practicalValue": "Achieved 96% employee platform proficiency within 30 days of launch with zero customer service disruption.",
+      "focusAreas": [
+        "ADKAR Change Framework",
+        "Hands-on Branch Bootcamps",
+        "Champion Support Networks"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Hospital EHR Digital Enablement",
+      "desc": "Guiding 4,200 clinical doctors and nurses through the transition to a modern electronic patient record system.",
+      "practicalValue": "Reduced physician charting overtime by 45 minutes daily through personalized workflow coaching.",
+      "focusAreas": [
+        "Physician Peer Coaching",
+        "Role-Specific Clinical Modules",
+        "Real-Time Floor Support"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Retail Store Associate Digital Tooling Enablement",
+      "desc": "Training 8,000 retail store associates on new mobile point-of-sale tablets and digital clienteling tools.",
+      "practicalValue": "Achieved 99% mobile register adoption in the first week, eliminating paper checkout backups.",
+      "focusAreas": [
+        "Micro-Learning Mobile Videos",
+        "Store Gamification",
+        "Adoption Analytics Tracking"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Plant Floor Digital Work Order Adoption",
+      "desc": "Facilitating the cultural transition from paper clipboard inspection logs to digital tablet checklists across 12 plant sites.",
+      "practicalValue": "Overcame union skepticism through collaborative design workshops, achieving 100% voluntary digital reporting.",
+      "focusAreas": [
+        "Worker Co-Design Sprints",
+        "Union Leadership Engagement",
+        "Instant Feedback Channels"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Change Management & Organizational Enablement Model",
+    "layers": [
+      {
+        "label": "Layer 01: Cultural Readiness & Stakeholder Analysis",
+        "node": "Organizational Sentiment Surveys, Stakeholder Matrix, Resistance Risk Heatmap"
+      },
+      {
+        "label": "Layer 02: ADKAR Change Architecture & Communications",
+        "node": "Executive Vision Broadcasts, Transparent Milestones, Champion Networks"
+      },
+      {
+        "label": "Layer 03: Interactive Upskilling & Digital Bootcamps",
+        "node": "Hands-on Sandboxes, Role-Specific Microlearning, Certification Paths"
+      },
+      {
+        "label": "Layer 04: Real-Time Software Adoption Telemetry",
+        "node": "Digital Adoption Platforms (WalkMe/Pendo), Feature Usage Heatmaps"
+      },
+      {
+        "label": "Layer 05: Continuous Reinforcement & Culture Feedback",
+        "node": "Adoption Audits, User Sentiment Tracking, Ongoing Workflow Optimization"
+      }
+    ],
+    "editorialParagraph1": "The most brilliant software architecture and sophisticated digital platforms are completely worthless if human employees reject them, work around them with shadow spreadsheets, or fail to adopt new operational behaviors. True transformation succeeds through people.",
+    "editorialParagraph2": "We deploy proven, empathetic change management methodologies—grounded in Prosci ADKAR frameworks—that guide employees through every phase of transition. By establishing active change champion networks and instrumenting real-time digital adoption analytics, we ensure new digital tools become permanent cultural habits.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Rapid, Voluntary Software Adoption",
+      "desc": "Empathetic, user-centered training and change champion networks ensure staff enthusiastically adopt new systems on day one."
+    },
+    {
+      "id": "02",
+      "title": "Complete Elimination of Shadow IT & Workarounds",
+      "desc": "Addressing user friction points early prevents employees from reverting to unencrypted shadow spreadsheets and manual workarounds."
+    },
+    {
+      "id": "03",
+      "title": "Maximized Return on Software Investments",
+      "desc": "Ensuring 95%+ feature adoption across your workforce guarantees that multi-million-pound technology investments realize full enterprise value."
+    }
+  ]
+},
+  "change-management": {
+  "slug": "change-management",
+  "serviceSlug": "digital-transformation",
+  "title": "Change Management & Organizational Enablement",
+  "solutions": [
+    {
+      "title": "Change Readiness Assessment & Stakeholder Mapping",
+      "desc": "Evaluating cultural readiness, digital literacy, and organizational sentiment across departments to preempt adoption resistance."
+    },
+    {
+      "title": "Structured Change Frameworks (Prosci ADKAR)",
+      "desc": "Implementing proven change management frameworks (Awareness, Desire, Knowledge, Ability, Reinforcement) across transformation milestones."
+    },
+    {
+      "title": "Comprehensive Digital Upskilling & Bootcamps",
+      "desc": "Designing tailored hands-on training programs, internal technical certifications, and interactive workshops for staff and leadership."
+    },
+    {
+      "title": "Internal Communications & Change Champion Networks",
+      "desc": "Establishing grassroots champion networks, executive town halls, and transparent transformation progress newsletters."
+    },
+    {
+      "title": "User Adoption Telemetry & Analytics",
+      "desc": "Instrumenting software adoption tracking (Pendo, WalkMe) to measure real employee system usage, friction points, and drop-off rates."
+    },
+    {
+      "title": "Incentive Alignment & Reinforcement Strategies",
+      "desc": "Aligning team performance reviews, compensation incentives, and organizational recognition to reinforce new digital behaviors."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Banking Platform Migration Adoption",
+      "desc": "Leading change management for 3,500 bank branch and operations employees transitioning to a new digital core platform.",
+      "practicalValue": "Achieved 96% employee platform proficiency within 30 days of launch with zero customer service disruption.",
+      "focusAreas": [
+        "ADKAR Change Framework",
+        "Hands-on Branch Bootcamps",
+        "Champion Support Networks"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Hospital EHR Digital Enablement",
+      "desc": "Guiding 4,200 clinical doctors and nurses through the transition to a modern electronic patient record system.",
+      "practicalValue": "Reduced physician charting overtime by 45 minutes daily through personalized workflow coaching.",
+      "focusAreas": [
+        "Physician Peer Coaching",
+        "Role-Specific Clinical Modules",
+        "Real-Time Floor Support"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Retail Store Associate Digital Tooling Enablement",
+      "desc": "Training 8,000 retail store associates on new mobile point-of-sale tablets and digital clienteling tools.",
+      "practicalValue": "Achieved 99% mobile register adoption in the first week, eliminating paper checkout backups.",
+      "focusAreas": [
+        "Micro-Learning Mobile Videos",
+        "Store Gamification",
+        "Adoption Analytics Tracking"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Plant Floor Digital Work Order Adoption",
+      "desc": "Facilitating the cultural transition from paper clipboard inspection logs to digital tablet checklists across 12 plant sites.",
+      "practicalValue": "Overcame union skepticism through collaborative design workshops, achieving 100% voluntary digital reporting.",
+      "focusAreas": [
+        "Worker Co-Design Sprints",
+        "Union Leadership Engagement",
+        "Instant Feedback Channels"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Change Management & Organizational Enablement Model",
+    "layers": [
+      {
+        "label": "Layer 01: Cultural Readiness & Stakeholder Analysis",
+        "node": "Organizational Sentiment Surveys, Stakeholder Matrix, Resistance Risk Heatmap"
+      },
+      {
+        "label": "Layer 02: ADKAR Change Architecture & Communications",
+        "node": "Executive Vision Broadcasts, Transparent Milestones, Champion Networks"
+      },
+      {
+        "label": "Layer 03: Interactive Upskilling & Digital Bootcamps",
+        "node": "Hands-on Sandboxes, Role-Specific Microlearning, Certification Paths"
+      },
+      {
+        "label": "Layer 04: Real-Time Software Adoption Telemetry",
+        "node": "Digital Adoption Platforms (WalkMe/Pendo), Feature Usage Heatmaps"
+      },
+      {
+        "label": "Layer 05: Continuous Reinforcement & Culture Feedback",
+        "node": "Adoption Audits, User Sentiment Tracking, Ongoing Workflow Optimization"
+      }
+    ],
+    "editorialParagraph1": "The most brilliant software architecture and sophisticated digital platforms are completely worthless if human employees reject them, work around them with shadow spreadsheets, or fail to adopt new operational behaviors. True transformation succeeds through people.",
+    "editorialParagraph2": "We deploy proven, empathetic change management methodologies—grounded in Prosci ADKAR frameworks—that guide employees through every phase of transition. By establishing active change champion networks and instrumenting real-time digital adoption analytics, we ensure new digital tools become permanent cultural habits.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Rapid, Voluntary Software Adoption",
+      "desc": "Empathetic, user-centered training and change champion networks ensure staff enthusiastically adopt new systems on day one."
+    },
+    {
+      "id": "02",
+      "title": "Complete Elimination of Shadow IT & Workarounds",
+      "desc": "Addressing user friction points early prevents employees from reverting to unencrypted shadow spreadsheets and manual workarounds."
+    },
+    {
+      "id": "03",
+      "title": "Maximized Return on Software Investments",
+      "desc": "Ensuring 95%+ feature adoption across your workforce guarantees that multi-million-pound technology investments realize full enterprise value."
+    }
+  ]
+},
+  "data-engineering/data-platform-development": {
+  "slug": "data-platform-development",
+  "serviceSlug": "data-engineering",
+  "title": "Enterprise Data Platform Development",
+  "solutions": [
+    {
+      "title": "Modern Modular Data Platform Architecture",
+      "desc": "Designing scalable, decoupled data platforms separating compute from storage across Snowflake, Databricks, BigQuery, and AWS."
+    },
+    {
+      "title": "Data Mesh & Domain-Oriented Data Products",
+      "desc": "Implementing decentralized Data Mesh paradigms where business domains own, build, and publish certified data products as a service."
+    },
+    {
+      "title": "Automated Data Platform Infrastructure-as-Code",
+      "desc": "Automating cloud warehouse provisioning, IAM roles, KMS encryption, and network peering via parameterized Terraform and Pulumi modules."
+    },
+    {
+      "title": "Unified Metadata Catalog & Data Lineage",
+      "desc": "Deploying automated metadata scrapers (DataHub, Atlan) tracking complete end-to-end data lineage from source ingestion to BI dashboards."
+    },
+    {
+      "title": "Enterprise Data Access Governance & Masking",
+      "desc": "Enforcing role-based access control (RBAC), column-level encryption, dynamic data masking, and automated GDPR compliance."
+    },
+    {
+      "title": "Self-Service Analytics & SQL Sandboxes",
+      "desc": "Empowering business analysts and data scientists to spin up isolated compute warehouses with synthetic sandboxes on demand."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Unified Multi-Entity Banking Data Mesh",
+      "desc": "Deploying a decentralized Data Mesh platform enabling retail, commercial, and wealth divisions to publish verified financial data products.",
+      "practicalValue": "Cut cross-entity regulatory reporting times from 18 days to 4 hours with 100% auditable data lineage.",
+      "focusAreas": [
+        "Data Mesh Architecture",
+        "Column-Level Masking",
+        "Automated Lineage Tracking"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "HIPAA Compliant Clinical Analytics Platform",
+      "desc": "Building an enterprise clinical data platform aggregating hospital admission records, laboratory diagnostics, and medication telemetry.",
+      "practicalValue": "Reduced analytical research cohort extraction time from 6 weeks of ticketing to 10 minutes of self-service SQL.",
+      "focusAreas": [
+        "Automated PHI De-identification",
+        "Self-Service SQL Sandboxes",
+        "Secure Lakehouse Compute"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Omnichannel Customer Analytics Platform",
+      "desc": "Centralizing in-store POS transactions, mobile clicks, and online cart activity into a real-time Snowflake analytics platform.",
+      "practicalValue": "Provided merchandising and marketing teams with sub-second queries across 4 billion customer transaction records.",
+      "focusAreas": [
+        "Snowflake Auto-Scaling",
+        "Customer 360 Aggregation",
+        "Automated Cost Governance"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial IoT Multi-Plant Telemetry Platform",
+      "desc": "Architecting a unified Databricks data platform ingesting 80,000 sensor telemetry metrics/sec from 35 international factory plants.",
+      "practicalValue": "Unified enterprise-wide predictive quality analytics, saving £3.4M in scraped manufacturing defect waste.",
+      "focusAreas": [
+        "Databricks Unity Catalog",
+        "Time-Series Ingestion",
+        "Automated Tiered Storage"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Modern Data Platform & Data Mesh Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Source Operational Ingestion",
+        "node": "CDC Connectors (Debezium), Kafka Event Streams, REST APIs, Object Ingest"
+      },
+      {
+        "label": "Layer 02: Ingestion Buffer & Raw Data Vault",
+        "node": "Immutable S3/Blob Raw Zone, Cryptographic KMS Keys, File Integrity Check"
+      },
+      {
+        "label": "Layer 03: Data Processing & Transformation Engine",
+        "node": "dbt Core / dbt Cloud, Apache Spark, Snowflake / Databricks Compute"
+      },
+      {
+        "label": "Layer 04: Unity Catalog & Universal Governance",
+        "node": "DataHub / Atlan Lineage, Dynamic Column Masking, RBAC Policies"
+      },
+      {
+        "label": "Layer 05: Data Serving & Self-Service Consumption",
+        "node": "Certified Data Products, Power BI / Looker Dashboards, ML Feature Store"
+      }
+    ],
+    "editorialParagraph1": "Enterprise organizations are drowning in data yet starved for actionable insights. Legacy, monolithic data warehouses create crippling bottlenecks where business questions wait months in centralized data team ticket backlogs.",
+    "editorialParagraph2": "We design modern, modular enterprise data platforms built on Data Mesh principles. By decentralizing data ownership to business domain squads while centralizing security, automated lineage, and infrastructure governance, our platforms enable rapid self-service analytics at enterprise scale.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Self-Service Analytics at Business Speed",
+      "desc": "Data Mesh principles empower business teams to query certified, well-documented data products without waiting on central data engineering tickets."
+    },
+    {
+      "id": "02",
+      "title": "Automated End-to-End Data Lineage",
+      "desc": "Trace any metric or KPI back to its raw operational database source in seconds, satisfying compliance auditors and building executive trust."
+    },
+    {
+      "id": "03",
+      "title": "Decoupled Storage & Compute Economics",
+      "desc": "Modern cloud analytical engines dynamically scale compute up for intensive queries and scale to zero when idle, cutting cloud spend by 40%."
+    }
+  ]
+},
+  "data-platform-development": {
+  "slug": "data-platform-development",
+  "serviceSlug": "data-engineering",
+  "title": "Enterprise Data Platform Development",
+  "solutions": [
+    {
+      "title": "Modern Modular Data Platform Architecture",
+      "desc": "Designing scalable, decoupled data platforms separating compute from storage across Snowflake, Databricks, BigQuery, and AWS."
+    },
+    {
+      "title": "Data Mesh & Domain-Oriented Data Products",
+      "desc": "Implementing decentralized Data Mesh paradigms where business domains own, build, and publish certified data products as a service."
+    },
+    {
+      "title": "Automated Data Platform Infrastructure-as-Code",
+      "desc": "Automating cloud warehouse provisioning, IAM roles, KMS encryption, and network peering via parameterized Terraform and Pulumi modules."
+    },
+    {
+      "title": "Unified Metadata Catalog & Data Lineage",
+      "desc": "Deploying automated metadata scrapers (DataHub, Atlan) tracking complete end-to-end data lineage from source ingestion to BI dashboards."
+    },
+    {
+      "title": "Enterprise Data Access Governance & Masking",
+      "desc": "Enforcing role-based access control (RBAC), column-level encryption, dynamic data masking, and automated GDPR compliance."
+    },
+    {
+      "title": "Self-Service Analytics & SQL Sandboxes",
+      "desc": "Empowering business analysts and data scientists to spin up isolated compute warehouses with synthetic sandboxes on demand."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Unified Multi-Entity Banking Data Mesh",
+      "desc": "Deploying a decentralized Data Mesh platform enabling retail, commercial, and wealth divisions to publish verified financial data products.",
+      "practicalValue": "Cut cross-entity regulatory reporting times from 18 days to 4 hours with 100% auditable data lineage.",
+      "focusAreas": [
+        "Data Mesh Architecture",
+        "Column-Level Masking",
+        "Automated Lineage Tracking"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "HIPAA Compliant Clinical Analytics Platform",
+      "desc": "Building an enterprise clinical data platform aggregating hospital admission records, laboratory diagnostics, and medication telemetry.",
+      "practicalValue": "Reduced analytical research cohort extraction time from 6 weeks of ticketing to 10 minutes of self-service SQL.",
+      "focusAreas": [
+        "Automated PHI De-identification",
+        "Self-Service SQL Sandboxes",
+        "Secure Lakehouse Compute"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Omnichannel Customer Analytics Platform",
+      "desc": "Centralizing in-store POS transactions, mobile clicks, and online cart activity into a real-time Snowflake analytics platform.",
+      "practicalValue": "Provided merchandising and marketing teams with sub-second queries across 4 billion customer transaction records.",
+      "focusAreas": [
+        "Snowflake Auto-Scaling",
+        "Customer 360 Aggregation",
+        "Automated Cost Governance"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial IoT Multi-Plant Telemetry Platform",
+      "desc": "Architecting a unified Databricks data platform ingesting 80,000 sensor telemetry metrics/sec from 35 international factory plants.",
+      "practicalValue": "Unified enterprise-wide predictive quality analytics, saving £3.4M in scraped manufacturing defect waste.",
+      "focusAreas": [
+        "Databricks Unity Catalog",
+        "Time-Series Ingestion",
+        "Automated Tiered Storage"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Modern Data Platform & Data Mesh Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Source Operational Ingestion",
+        "node": "CDC Connectors (Debezium), Kafka Event Streams, REST APIs, Object Ingest"
+      },
+      {
+        "label": "Layer 02: Ingestion Buffer & Raw Data Vault",
+        "node": "Immutable S3/Blob Raw Zone, Cryptographic KMS Keys, File Integrity Check"
+      },
+      {
+        "label": "Layer 03: Data Processing & Transformation Engine",
+        "node": "dbt Core / dbt Cloud, Apache Spark, Snowflake / Databricks Compute"
+      },
+      {
+        "label": "Layer 04: Unity Catalog & Universal Governance",
+        "node": "DataHub / Atlan Lineage, Dynamic Column Masking, RBAC Policies"
+      },
+      {
+        "label": "Layer 05: Data Serving & Self-Service Consumption",
+        "node": "Certified Data Products, Power BI / Looker Dashboards, ML Feature Store"
+      }
+    ],
+    "editorialParagraph1": "Enterprise organizations are drowning in data yet starved for actionable insights. Legacy, monolithic data warehouses create crippling bottlenecks where business questions wait months in centralized data team ticket backlogs.",
+    "editorialParagraph2": "We design modern, modular enterprise data platforms built on Data Mesh principles. By decentralizing data ownership to business domain squads while centralizing security, automated lineage, and infrastructure governance, our platforms enable rapid self-service analytics at enterprise scale.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Self-Service Analytics at Business Speed",
+      "desc": "Data Mesh principles empower business teams to query certified, well-documented data products without waiting on central data engineering tickets."
+    },
+    {
+      "id": "02",
+      "title": "Automated End-to-End Data Lineage",
+      "desc": "Trace any metric or KPI back to its raw operational database source in seconds, satisfying compliance auditors and building executive trust."
+    },
+    {
+      "id": "03",
+      "title": "Decoupled Storage & Compute Economics",
+      "desc": "Modern cloud analytical engines dynamically scale compute up for intensive queries and scale to zero when idle, cutting cloud spend by 40%."
+    }
+  ]
+},
+  "data-engineering/data-warehousing": {
+  "slug": "data-warehousing",
+  "serviceSlug": "data-engineering",
+  "title": "Cloud Data Warehousing (Snowflake, BigQuery & Redshift)",
+  "solutions": [
+    {
+      "title": "Cloud Data Warehouse Architecture & Schema Design",
+      "desc": "Designing dimensional star and snowflake schemas, Data Vault 2.0 models, and wide analytics tables optimized for cloud analytical query engines."
+    },
+    {
+      "title": "Snowflake Enterprise Multi-Cluster Architecture",
+      "desc": "Deploying multi-cluster Snowflake virtual warehouses with auto-scaling, automated query acceleration, and cross-cloud data replication."
+    },
+    {
+      "title": "Google BigQuery Serverless Analytics Optimization",
+      "desc": "Optimizing petabyte-scale BigQuery estates with table partitioning, clustering keys, BI Engine in-memory acceleration, and slot management."
+    },
+    {
+      "title": "Amazon Redshift Serverless & RA3 Scaling",
+      "desc": "Configuring managed Amazon Redshift RA3 nodes with decoupled managed storage, concurrency scaling, and automated materialized views."
+    },
+    {
+      "title": "Data Warehouse Cost Optimization & FinOps",
+      "desc": "Implementing automated warehouse suspension, query timeout guardrails, and partition pruning to eliminate runaway analytical cloud bills."
+    },
+    {
+      "title": "Zero-Downtime Warehouse Migration & Cutover",
+      "desc": "Migrating legacy on-premise Netezza, Teradata, and Oracle data warehouses to cloud alternatives with automated SQL dialect transpilation."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Financial Regulatory Warehouse",
+      "desc": "Consolidating 10 legacy transactional databases into a centralized Snowflake cloud data warehouse for automated regulatory reporting.",
+      "practicalValue": "Automated end-of-quarter risk calculations that previously took 4 days on-prem into 15 minutes of serverless compute.",
+      "focusAreas": [
+        "Snowflake Multi-Cluster",
+        "Dynamic Column Masking",
+        "Time-Travel Audit Recovery"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Petabyte Clinical Data Warehouse on BigQuery",
+      "desc": "Architecting a partitioned BigQuery data warehouse analyzing 850 million anonymized patient encounters and pharmacy claims.",
+      "practicalValue": "Accelerated population health epidemiological queries by 20x while reducing analytical cloud spend by 55%.",
+      "focusAreas": [
+        "BigQuery Date Partitioning",
+        "Clustered Column Indices",
+        "BI Engine Acceleration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Real-Time Black Friday Executive Warehouse",
+      "desc": "Streaming live point-of-sale checkout telemetry directly into Snowflake to drive executive live trading dashboards.",
+      "practicalValue": "Zero query queuing during record traffic peaks with dynamic automated virtual warehouse scaling.",
+      "focusAreas": [
+        "Snowflake Snowpipe Ingest",
+        "Auto-Suspend Virtual Warehouses",
+        "Materialized Views"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Supply Chain Redshift Data Warehouse",
+      "desc": "Migrating an aging Teradata warehouse to Amazon Redshift Serverless across 12 international factory operations.",
+      "practicalValue": "Eliminated £1.8M in proprietary hardware maintenance while reducing nightly batch loading times by 70%.",
+      "focusAreas": [
+        "Redshift Serverless",
+        "Automated SQL Transpilation",
+        "Cross-Region Read Sharing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Cloud Data Warehouse Dimensional & Analytical Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Automated Data Ingestion & Staging",
+        "node": "Snowpipe / BigQuery Storage Write API, Raw Staging Tables, Parquet Landing"
+      },
+      {
+        "label": "Layer 02: Dimensional Transformation & Modeling",
+        "node": "dbt Core Models, Star Schema Generation, Slowly Changing Dimensions (SCD2)"
+      },
+      {
+        "label": "Layer 03: Virtual Compute & Multi-Cluster Warehouses",
+        "node": "Dedicated Department Warehouses, Auto-Scale Clusters, Auto-Suspend"
+      },
+      {
+        "label": "Layer 04: Performance & Optimization Mesh",
+        "node": "Partition Pruning, Clustering Keys, Materialized Views, Query Acceleration"
+      },
+      {
+        "label": "Layer 05: Analytical BI Serving & Governance Layer",
+        "node": "Looker / Tableau / Power BI, Column-Level Masking, RBAC Security"
+      }
+    ],
+    "editorialParagraph1": "Modern cloud data warehouses have redefined analytical speed and elasticity, but without disciplined dimensional modeling and cost controls, organizations face sluggish query performance and astronomical monthly cloud bills.",
+    "editorialParagraph2": "We design high-performance cloud data warehouses on Snowflake, BigQuery, and Redshift. By implementing clean dimensional schemas, optimized partition pruning, and automated compute right-sizing, we ensure analytical queries execute in seconds while cloud spend remains predictable and controlled.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-Second Business Intelligence Query Speeds",
+      "desc": "Optimized partitioning, clustering, and materialized views eliminate query queuing and accelerate dashboard rendering."
+    },
+    {
+      "id": "02",
+      "title": "Rigorous Cloud Cost Containment & FinOps",
+      "desc": "Automated warehouse auto-suspension and query timeout guardrails prevent runaway compute loops and optimize cloud expenditure."
+    },
+    {
+      "id": "03",
+      "title": "Zero Query Contention Between Teams",
+      "desc": "Decoupled compute warehouses allow finance, marketing, and data science teams to execute heavy queries simultaneously without slowdown."
+    }
+  ]
+},
+  "data-warehousing": {
+  "slug": "data-warehousing",
+  "serviceSlug": "data-engineering",
+  "title": "Cloud Data Warehousing (Snowflake, BigQuery & Redshift)",
+  "solutions": [
+    {
+      "title": "Cloud Data Warehouse Architecture & Schema Design",
+      "desc": "Designing dimensional star and snowflake schemas, Data Vault 2.0 models, and wide analytics tables optimized for cloud analytical query engines."
+    },
+    {
+      "title": "Snowflake Enterprise Multi-Cluster Architecture",
+      "desc": "Deploying multi-cluster Snowflake virtual warehouses with auto-scaling, automated query acceleration, and cross-cloud data replication."
+    },
+    {
+      "title": "Google BigQuery Serverless Analytics Optimization",
+      "desc": "Optimizing petabyte-scale BigQuery estates with table partitioning, clustering keys, BI Engine in-memory acceleration, and slot management."
+    },
+    {
+      "title": "Amazon Redshift Serverless & RA3 Scaling",
+      "desc": "Configuring managed Amazon Redshift RA3 nodes with decoupled managed storage, concurrency scaling, and automated materialized views."
+    },
+    {
+      "title": "Data Warehouse Cost Optimization & FinOps",
+      "desc": "Implementing automated warehouse suspension, query timeout guardrails, and partition pruning to eliminate runaway analytical cloud bills."
+    },
+    {
+      "title": "Zero-Downtime Warehouse Migration & Cutover",
+      "desc": "Migrating legacy on-premise Netezza, Teradata, and Oracle data warehouses to cloud alternatives with automated SQL dialect transpilation."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Financial Regulatory Warehouse",
+      "desc": "Consolidating 10 legacy transactional databases into a centralized Snowflake cloud data warehouse for automated regulatory reporting.",
+      "practicalValue": "Automated end-of-quarter risk calculations that previously took 4 days on-prem into 15 minutes of serverless compute.",
+      "focusAreas": [
+        "Snowflake Multi-Cluster",
+        "Dynamic Column Masking",
+        "Time-Travel Audit Recovery"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Petabyte Clinical Data Warehouse on BigQuery",
+      "desc": "Architecting a partitioned BigQuery data warehouse analyzing 850 million anonymized patient encounters and pharmacy claims.",
+      "practicalValue": "Accelerated population health epidemiological queries by 20x while reducing analytical cloud spend by 55%.",
+      "focusAreas": [
+        "BigQuery Date Partitioning",
+        "Clustered Column Indices",
+        "BI Engine Acceleration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Real-Time Black Friday Executive Warehouse",
+      "desc": "Streaming live point-of-sale checkout telemetry directly into Snowflake to drive executive live trading dashboards.",
+      "practicalValue": "Zero query queuing during record traffic peaks with dynamic automated virtual warehouse scaling.",
+      "focusAreas": [
+        "Snowflake Snowpipe Ingest",
+        "Auto-Suspend Virtual Warehouses",
+        "Materialized Views"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Supply Chain Redshift Data Warehouse",
+      "desc": "Migrating an aging Teradata warehouse to Amazon Redshift Serverless across 12 international factory operations.",
+      "practicalValue": "Eliminated £1.8M in proprietary hardware maintenance while reducing nightly batch loading times by 70%.",
+      "focusAreas": [
+        "Redshift Serverless",
+        "Automated SQL Transpilation",
+        "Cross-Region Read Sharing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Cloud Data Warehouse Dimensional & Analytical Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Automated Data Ingestion & Staging",
+        "node": "Snowpipe / BigQuery Storage Write API, Raw Staging Tables, Parquet Landing"
+      },
+      {
+        "label": "Layer 02: Dimensional Transformation & Modeling",
+        "node": "dbt Core Models, Star Schema Generation, Slowly Changing Dimensions (SCD2)"
+      },
+      {
+        "label": "Layer 03: Virtual Compute & Multi-Cluster Warehouses",
+        "node": "Dedicated Department Warehouses, Auto-Scale Clusters, Auto-Suspend"
+      },
+      {
+        "label": "Layer 04: Performance & Optimization Mesh",
+        "node": "Partition Pruning, Clustering Keys, Materialized Views, Query Acceleration"
+      },
+      {
+        "label": "Layer 05: Analytical BI Serving & Governance Layer",
+        "node": "Looker / Tableau / Power BI, Column-Level Masking, RBAC Security"
+      }
+    ],
+    "editorialParagraph1": "Modern cloud data warehouses have redefined analytical speed and elasticity, but without disciplined dimensional modeling and cost controls, organizations face sluggish query performance and astronomical monthly cloud bills.",
+    "editorialParagraph2": "We design high-performance cloud data warehouses on Snowflake, BigQuery, and Redshift. By implementing clean dimensional schemas, optimized partition pruning, and automated compute right-sizing, we ensure analytical queries execute in seconds while cloud spend remains predictable and controlled.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-Second Business Intelligence Query Speeds",
+      "desc": "Optimized partitioning, clustering, and materialized views eliminate query queuing and accelerate dashboard rendering."
+    },
+    {
+      "id": "02",
+      "title": "Rigorous Cloud Cost Containment & FinOps",
+      "desc": "Automated warehouse auto-suspension and query timeout guardrails prevent runaway compute loops and optimize cloud expenditure."
+    },
+    {
+      "id": "03",
+      "title": "Zero Query Contention Between Teams",
+      "desc": "Decoupled compute warehouses allow finance, marketing, and data science teams to execute heavy queries simultaneously without slowdown."
+    }
+  ]
+},
+  "data-engineering/data-lakes-lakehouse-architecture": {
+  "slug": "data-lakes-lakehouse-architecture",
+  "serviceSlug": "data-engineering",
+  "title": "Data Lake & Lakehouse Architecture (Delta Lake & Iceberg)",
+  "solutions": [
+    {
+      "title": "Modern Open Table Formats (Apache Iceberg & Delta Lake)",
+      "desc": "Implementing open table formats delivering ACID transactions, schema evolution, and time-travel querying over cloud object storage."
+    },
+    {
+      "title": "Medallion Architecture (Bronze, Silver & Gold Zones)",
+      "desc": "Structuring clean data progression: Bronze (raw immutable landing), Silver (cleansed & deduplicated), and Gold (curated business aggregates)."
+    },
+    {
+      "title": "Serverless Querying over Object Storage",
+      "desc": "Deploying high-speed distributed SQL engines (Trino, DuckDB, Amazon Athena) to query petabyte-scale Parquet datasets directly in S3/GCS."
+    },
+    {
+      "title": "Unified Analytical & Machine Learning Data Fabric",
+      "desc": "Eliminating duplicate ETL pipelines by serving structured BI dashboards and Python ML training workflows from the exact same Lakehouse tables."
+    },
+    {
+      "title": "Data Lake Partitioning & Compaction Automation",
+      "desc": "Automating small-file compaction, vacuuming, and Z-order indexing to maintain blazing read performance over billions of files."
+    },
+    {
+      "title": "Universal Metadata Governance (Unity Catalog)",
+      "desc": "Deploying centralized catalog governance (Databricks Unity Catalog, AWS Glue) enforcing unified security and row-level access policies."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Financial Auditing Time-Travel on Delta Lake",
+      "desc": "Deploying a Delta Lake lakehouse storing 10 years of immutable transaction data with mathematical time-travel audit verification.",
+      "practicalValue": "Satisfied regulatory PRA historical state audit inquiries in minutes using SQL time-travel queries.",
+      "focusAreas": [
+        "Delta Lake ACID Transactions",
+        "Point-in-Time Time Travel",
+        "Encrypted S3 Vaults"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Genomic Sequencing Lakehouse on Apache Iceberg",
+      "desc": "Building a multi-petabyte genomic research lakehouse querying whole-genome VCF and BAM sequencing files using Trino and Iceberg.",
+      "practicalValue": "Cut clinical genomic research storage costs by 72% while enabling instant SQL cohort filtering.",
+      "focusAreas": [
+        "Apache Iceberg Open Format",
+        "Trino Distributed SQL",
+        "Automated Compaction Jobs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Real-Time Clickstream Lakehouse",
+      "desc": "Streaming mobile and web clickstream data into a Medallion Delta Lake architecture, updating customer recommendations in sub-minute intervals.",
+      "practicalValue": "Replaced 6 disparate data stores with a single unified lakehouse, saving £320,000 in annual licensing fees.",
+      "focusAreas": [
+        "Medallion Bronze/Silver/Gold",
+        "Structured Streaming Ingest",
+        "Z-Order Clustering"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Plant Telemetry Lakehouse",
+      "desc": "Ingesting 120,000 raw industrial sensor metrics/sec into AWS S3 Bronze storage, refining into Gold predictive quality metrics.",
+      "practicalValue": "Processed 14TB of daily industrial telemetry with sub-second analytical reporting and zero storage lock-in.",
+      "focusAreas": [
+        "AWS S3 Object Lakehouse",
+        "Databricks Auto Loader",
+        "Unity Catalog Governance"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Medallion Data Lakehouse Architecture (Bronze / Silver / Gold)",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Protocol Raw Ingestion (Bronze)",
+        "node": "Kafka Connect, Databricks Auto Loader, Immutable S3/Blob Object Landing"
+      },
+      {
+        "label": "Layer 02: ACID Transactional Table Format Layer",
+        "node": "Apache Iceberg / Delta Lake, Parquet Format, Schema Enforcement"
+      },
+      {
+        "label": "Layer 03: Cleansing & Conformance Engine (Silver)",
+        "node": "Spark Structured Streaming, Deduplication, Data Quality Expectations"
+      },
+      {
+        "label": "Layer 04: Business Aggregation & Feature Store (Gold)",
+        "node": "dbt Core Transformations, Dimensional Marts, ML Feature Store"
+      },
+      {
+        "label": "Layer 05: Distributed Query Engines & Catalog Mesh",
+        "node": "Trino / Databricks SQL / DuckDB, Unity Catalog Governance, BI Dashboards"
+      }
+    ],
+    "editorialParagraph1": "For years, enterprises were forced into a painful trade-off: expensive, rigid data warehouses that couldn't handle unstructured data, or chaotic, un-indexed 'data swamps' where data went to die. Modern Data Lakehouse architectures unite the best of both worlds.",
+    "editorialParagraph2": "By layering open table formats like Apache Iceberg and Delta Lake directly on top of cost-effective cloud object storage, we deliver full ACID transaction guarantees, schema evolution, and blazing SQL query speeds without proprietary database lock-in.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Single Source of Truth for BI and Machine Learning",
+      "desc": "Eliminate duplicate ETL pipelines by running SQL analytics and machine learning model training on the exact same Lakehouse tables."
+    },
+    {
+      "id": "02",
+      "title": "ACID Guarantees over Inexpensive Cloud Storage",
+      "desc": "Apache Iceberg and Delta Lake provide database-grade ACID reliability, time-travel queries, and rollback capabilities on S3 and Azure Blob."
+    },
+    {
+      "id": "03",
+      "title": "Freedom from Proprietary Database Lock-In",
+      "desc": "Open Parquet file formats and standard metadata ensure you can query your data with any distributed engine (Trino, Spark, DuckDB) forever."
+    }
+  ]
+},
+  "data-lakes-lakehouse-architecture": {
+  "slug": "data-lakes-lakehouse-architecture",
+  "serviceSlug": "data-engineering",
+  "title": "Data Lake & Lakehouse Architecture (Delta Lake & Iceberg)",
+  "solutions": [
+    {
+      "title": "Modern Open Table Formats (Apache Iceberg & Delta Lake)",
+      "desc": "Implementing open table formats delivering ACID transactions, schema evolution, and time-travel querying over cloud object storage."
+    },
+    {
+      "title": "Medallion Architecture (Bronze, Silver & Gold Zones)",
+      "desc": "Structuring clean data progression: Bronze (raw immutable landing), Silver (cleansed & deduplicated), and Gold (curated business aggregates)."
+    },
+    {
+      "title": "Serverless Querying over Object Storage",
+      "desc": "Deploying high-speed distributed SQL engines (Trino, DuckDB, Amazon Athena) to query petabyte-scale Parquet datasets directly in S3/GCS."
+    },
+    {
+      "title": "Unified Analytical & Machine Learning Data Fabric",
+      "desc": "Eliminating duplicate ETL pipelines by serving structured BI dashboards and Python ML training workflows from the exact same Lakehouse tables."
+    },
+    {
+      "title": "Data Lake Partitioning & Compaction Automation",
+      "desc": "Automating small-file compaction, vacuuming, and Z-order indexing to maintain blazing read performance over billions of files."
+    },
+    {
+      "title": "Universal Metadata Governance (Unity Catalog)",
+      "desc": "Deploying centralized catalog governance (Databricks Unity Catalog, AWS Glue) enforcing unified security and row-level access policies."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Financial Auditing Time-Travel on Delta Lake",
+      "desc": "Deploying a Delta Lake lakehouse storing 10 years of immutable transaction data with mathematical time-travel audit verification.",
+      "practicalValue": "Satisfied regulatory PRA historical state audit inquiries in minutes using SQL time-travel queries.",
+      "focusAreas": [
+        "Delta Lake ACID Transactions",
+        "Point-in-Time Time Travel",
+        "Encrypted S3 Vaults"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Genomic Sequencing Lakehouse on Apache Iceberg",
+      "desc": "Building a multi-petabyte genomic research lakehouse querying whole-genome VCF and BAM sequencing files using Trino and Iceberg.",
+      "practicalValue": "Cut clinical genomic research storage costs by 72% while enabling instant SQL cohort filtering.",
+      "focusAreas": [
+        "Apache Iceberg Open Format",
+        "Trino Distributed SQL",
+        "Automated Compaction Jobs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Real-Time Clickstream Lakehouse",
+      "desc": "Streaming mobile and web clickstream data into a Medallion Delta Lake architecture, updating customer recommendations in sub-minute intervals.",
+      "practicalValue": "Replaced 6 disparate data stores with a single unified lakehouse, saving £320,000 in annual licensing fees.",
+      "focusAreas": [
+        "Medallion Bronze/Silver/Gold",
+        "Structured Streaming Ingest",
+        "Z-Order Clustering"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Plant Telemetry Lakehouse",
+      "desc": "Ingesting 120,000 raw industrial sensor metrics/sec into AWS S3 Bronze storage, refining into Gold predictive quality metrics.",
+      "practicalValue": "Processed 14TB of daily industrial telemetry with sub-second analytical reporting and zero storage lock-in.",
+      "focusAreas": [
+        "AWS S3 Object Lakehouse",
+        "Databricks Auto Loader",
+        "Unity Catalog Governance"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Medallion Data Lakehouse Architecture (Bronze / Silver / Gold)",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Protocol Raw Ingestion (Bronze)",
+        "node": "Kafka Connect, Databricks Auto Loader, Immutable S3/Blob Object Landing"
+      },
+      {
+        "label": "Layer 02: ACID Transactional Table Format Layer",
+        "node": "Apache Iceberg / Delta Lake, Parquet Format, Schema Enforcement"
+      },
+      {
+        "label": "Layer 03: Cleansing & Conformance Engine (Silver)",
+        "node": "Spark Structured Streaming, Deduplication, Data Quality Expectations"
+      },
+      {
+        "label": "Layer 04: Business Aggregation & Feature Store (Gold)",
+        "node": "dbt Core Transformations, Dimensional Marts, ML Feature Store"
+      },
+      {
+        "label": "Layer 05: Distributed Query Engines & Catalog Mesh",
+        "node": "Trino / Databricks SQL / DuckDB, Unity Catalog Governance, BI Dashboards"
+      }
+    ],
+    "editorialParagraph1": "For years, enterprises were forced into a painful trade-off: expensive, rigid data warehouses that couldn't handle unstructured data, or chaotic, un-indexed 'data swamps' where data went to die. Modern Data Lakehouse architectures unite the best of both worlds.",
+    "editorialParagraph2": "By layering open table formats like Apache Iceberg and Delta Lake directly on top of cost-effective cloud object storage, we deliver full ACID transaction guarantees, schema evolution, and blazing SQL query speeds without proprietary database lock-in.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Single Source of Truth for BI and Machine Learning",
+      "desc": "Eliminate duplicate ETL pipelines by running SQL analytics and machine learning model training on the exact same Lakehouse tables."
+    },
+    {
+      "id": "02",
+      "title": "ACID Guarantees over Inexpensive Cloud Storage",
+      "desc": "Apache Iceberg and Delta Lake provide database-grade ACID reliability, time-travel queries, and rollback capabilities on S3 and Azure Blob."
+    },
+    {
+      "id": "03",
+      "title": "Freedom from Proprietary Database Lock-In",
+      "desc": "Open Parquet file formats and standard metadata ensure you can query your data with any distributed engine (Trino, Spark, DuckDB) forever."
+    }
+  ]
+},
+  "data-engineering/etl-elt-pipelines": {
+  "slug": "etl-elt-pipelines",
+  "serviceSlug": "data-engineering",
+  "title": "Automated ETL/ELT Pipelines & Orchestration (dbt & Airflow)",
+  "solutions": [
+    {
+      "title": "Modular Transformation Modeling with dbt",
+      "desc": "Applying software engineering best practices (git versioning, modular macros, documentation, automated tests) to SQL transformations via dbt."
+    },
+    {
+      "title": "Enterprise Workflow Orchestration (Airflow, Dagster & Prefect)",
+      "desc": "Designing resilient Directed Acyclic Graphs (DAGs) with automated dependency management, dynamic task generation, and automated retries."
+    },
+    {
+      "title": "Change Data Capture (CDC) Pipeline Architecture",
+      "desc": "Streaming real-time row modifications from transactional databases (PostgreSQL, MySQL, Oracle) using Debezium and Kafka without database locking."
+    },
+    {
+      "title": "Automated Data Ingestion (Fivetran, Airbyte & Custom Connectors)",
+      "desc": "Deploying managed and custom API ingestion pipelines connecting SaaS applications (Salesforce, Stripe, HubSpot) into cloud warehouses."
+    },
+    {
+      "title": "Data Pipeline Testing & Regression Guardrails",
+      "desc": "Integrating schema assertions, not-null constraints, and referential integrity tests directly into CI/CD pipelines before merge."
+    },
+    {
+      "title": "Idempotent Pipeline Design & Self-Healing Backfills",
+      "desc": "Designing strictly idempotent pipelines that can safely replay and backfill historical data ranges without generating duplicate rows."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Multi-Source Financial Reconciliation",
+      "desc": "Building idempotent dbt and Airflow pipelines reconciling 12 payment settlement networks against core banking ledgers.",
+      "practicalValue": "Processed 8.5M daily settlement transactions with zero manual reconciliation spreadsheets and sub-minute error alerts.",
+      "focusAreas": [
+        "dbt Core Modular Models",
+        "Airflow DAG Orchestration",
+        "Idempotent Replay Gates"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Hospital Operational Telemetry Pipeline",
+      "desc": "Automating the continuous ingestion and harmonization of patient bed occupancy and emergency room triage records across 16 hospitals.",
+      "practicalValue": "Updated hospital executive capacity forecasting every 15 minutes instead of weekly manual reports.",
+      "focusAreas": [
+        "Debezium CDC Streaming",
+        "Airbyte Custom Connectors",
+        "Automated Schema Tests"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Global Multi-Currency Sales Aggregation",
+      "desc": "Orchestrating hourly ELT pipelines transforming e-commerce transactions across 24 international currencies into standardized sterling revenue.",
+      "practicalValue": "Eliminated currency conversion discrepancies and delivered automated daily executive revenue dashboards by 6 AM.",
+      "focusAreas": [
+        "dbt Financial Macros",
+        "Automated Currency FX Ingest",
+        "Great Expectations Gate"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Supplier Inventory Telemetry Ingestion",
+      "desc": "Building resilient Dagster data pipelines ingesting nightly inventory stock feeds from 400 global component suppliers.",
+      "practicalValue": "Automated pipeline handled unexpected supplier schema changes smoothly without crashing downstream production schedules.",
+      "focusAreas": [
+        "Dagster Software-Defined Assets",
+        "Automated Schema Evolution",
+        "Data Lineage Tracking"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise ELT Pipeline & Modern Transformation Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Raw Ingestion & Source Connectors",
+        "node": "Airbyte / Fivetran, Debezium CDC Streams, Custom Python Ingestion Workers"
+      },
+      {
+        "label": "Layer 02: Orchestration & Dependency Engine",
+        "node": "Apache Airflow / Dagster, Dynamic DAG Generation, SLA Alert Webhooks"
+      },
+      {
+        "label": "Layer 03: In-Warehouse Modular Transformation (ELT)",
+        "node": "dbt Core / dbt Cloud, SQL Dimensional Models, Jinja Macros"
+      },
+      {
+        "label": "Layer 04: Continuous Quality & Constraint Testing",
+        "node": "dbt Tests, Great Expectations Assertions, Referential Integrity Checks"
+      },
+      {
+        "label": "Layer 05: Serving Data Marts & Telemetry Handoff",
+        "node": "Certified Analytics Tables, Tableau / Power BI Sync, Lineage Catalog"
+      }
+    ],
+    "editorialParagraph1": "Fragile, undocumented ETL scripts written in procedural code create an operational nightmare: silent data corruption, failed overnight batch runs, and frantic manual firefighting when upstream database schemas change.",
+    "editorialParagraph2": "We build modern, modular ELT pipelines using dbt, Airflow, and Dagster. By treating data transformation as production software—with automated testing, version control, semantic macros, and idempotent backfill logic—we guarantee your data warehouses refresh reliably on schedule every single day.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Software Engineering Rigor for Data (dbt)",
+      "desc": "Version-controlled SQL, automated regression testing, and modular macros transform chaotic transformation scripts into reliable software assets."
+    },
+    {
+      "id": "02",
+      "title": "Zero Silent Data Failures in Production",
+      "desc": "Automated schema tests, null-value checks, and volume anomaly alerts catch pipeline flaws before corrupted numbers ever reach dashboards."
+    },
+    {
+      "id": "03",
+      "title": "Idempotent, Self-Healing Pipeline Execution",
+      "desc": "Pipelines can be re-run and backfilled across any historical date range without producing duplicated rows or inconsistent records."
+    }
+  ]
+},
+  "etl-elt-pipelines": {
+  "slug": "etl-elt-pipelines",
+  "serviceSlug": "data-engineering",
+  "title": "Automated ETL/ELT Pipelines & Orchestration (dbt & Airflow)",
+  "solutions": [
+    {
+      "title": "Modular Transformation Modeling with dbt",
+      "desc": "Applying software engineering best practices (git versioning, modular macros, documentation, automated tests) to SQL transformations via dbt."
+    },
+    {
+      "title": "Enterprise Workflow Orchestration (Airflow, Dagster & Prefect)",
+      "desc": "Designing resilient Directed Acyclic Graphs (DAGs) with automated dependency management, dynamic task generation, and automated retries."
+    },
+    {
+      "title": "Change Data Capture (CDC) Pipeline Architecture",
+      "desc": "Streaming real-time row modifications from transactional databases (PostgreSQL, MySQL, Oracle) using Debezium and Kafka without database locking."
+    },
+    {
+      "title": "Automated Data Ingestion (Fivetran, Airbyte & Custom Connectors)",
+      "desc": "Deploying managed and custom API ingestion pipelines connecting SaaS applications (Salesforce, Stripe, HubSpot) into cloud warehouses."
+    },
+    {
+      "title": "Data Pipeline Testing & Regression Guardrails",
+      "desc": "Integrating schema assertions, not-null constraints, and referential integrity tests directly into CI/CD pipelines before merge."
+    },
+    {
+      "title": "Idempotent Pipeline Design & Self-Healing Backfills",
+      "desc": "Designing strictly idempotent pipelines that can safely replay and backfill historical data ranges without generating duplicate rows."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Multi-Source Financial Reconciliation",
+      "desc": "Building idempotent dbt and Airflow pipelines reconciling 12 payment settlement networks against core banking ledgers.",
+      "practicalValue": "Processed 8.5M daily settlement transactions with zero manual reconciliation spreadsheets and sub-minute error alerts.",
+      "focusAreas": [
+        "dbt Core Modular Models",
+        "Airflow DAG Orchestration",
+        "Idempotent Replay Gates"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Hospital Operational Telemetry Pipeline",
+      "desc": "Automating the continuous ingestion and harmonization of patient bed occupancy and emergency room triage records across 16 hospitals.",
+      "practicalValue": "Updated hospital executive capacity forecasting every 15 minutes instead of weekly manual reports.",
+      "focusAreas": [
+        "Debezium CDC Streaming",
+        "Airbyte Custom Connectors",
+        "Automated Schema Tests"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Global Multi-Currency Sales Aggregation",
+      "desc": "Orchestrating hourly ELT pipelines transforming e-commerce transactions across 24 international currencies into standardized sterling revenue.",
+      "practicalValue": "Eliminated currency conversion discrepancies and delivered automated daily executive revenue dashboards by 6 AM.",
+      "focusAreas": [
+        "dbt Financial Macros",
+        "Automated Currency FX Ingest",
+        "Great Expectations Gate"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Supplier Inventory Telemetry Ingestion",
+      "desc": "Building resilient Dagster data pipelines ingesting nightly inventory stock feeds from 400 global component suppliers.",
+      "practicalValue": "Automated pipeline handled unexpected supplier schema changes smoothly without crashing downstream production schedules.",
+      "focusAreas": [
+        "Dagster Software-Defined Assets",
+        "Automated Schema Evolution",
+        "Data Lineage Tracking"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise ELT Pipeline & Modern Transformation Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Raw Ingestion & Source Connectors",
+        "node": "Airbyte / Fivetran, Debezium CDC Streams, Custom Python Ingestion Workers"
+      },
+      {
+        "label": "Layer 02: Orchestration & Dependency Engine",
+        "node": "Apache Airflow / Dagster, Dynamic DAG Generation, SLA Alert Webhooks"
+      },
+      {
+        "label": "Layer 03: In-Warehouse Modular Transformation (ELT)",
+        "node": "dbt Core / dbt Cloud, SQL Dimensional Models, Jinja Macros"
+      },
+      {
+        "label": "Layer 04: Continuous Quality & Constraint Testing",
+        "node": "dbt Tests, Great Expectations Assertions, Referential Integrity Checks"
+      },
+      {
+        "label": "Layer 05: Serving Data Marts & Telemetry Handoff",
+        "node": "Certified Analytics Tables, Tableau / Power BI Sync, Lineage Catalog"
+      }
+    ],
+    "editorialParagraph1": "Fragile, undocumented ETL scripts written in procedural code create an operational nightmare: silent data corruption, failed overnight batch runs, and frantic manual firefighting when upstream database schemas change.",
+    "editorialParagraph2": "We build modern, modular ELT pipelines using dbt, Airflow, and Dagster. By treating data transformation as production software—with automated testing, version control, semantic macros, and idempotent backfill logic—we guarantee your data warehouses refresh reliably on schedule every single day.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Software Engineering Rigor for Data (dbt)",
+      "desc": "Version-controlled SQL, automated regression testing, and modular macros transform chaotic transformation scripts into reliable software assets."
+    },
+    {
+      "id": "02",
+      "title": "Zero Silent Data Failures in Production",
+      "desc": "Automated schema tests, null-value checks, and volume anomaly alerts catch pipeline flaws before corrupted numbers ever reach dashboards."
+    },
+    {
+      "id": "03",
+      "title": "Idempotent, Self-Healing Pipeline Execution",
+      "desc": "Pipelines can be re-run and backfilled across any historical date range without producing duplicated rows or inconsistent records."
+    }
+  ]
+},
+  "data-engineering/real-time-data-processing": {
+  "slug": "real-time-data-processing",
+  "serviceSlug": "data-engineering",
+  "title": "Real-Time Streaming & Event-Driven Data Processing",
+  "solutions": [
+    {
+      "title": "Apache Kafka & Confluent Enterprise Mesh",
+      "desc": "Deploying multi-cluster Apache Kafka topologies with Schema Registry, tiered storage, and high-availability multi-AZ broker replication."
+    },
+    {
+      "title": "Stream Processing with Apache Flink & Spark Streaming",
+      "desc": "Building low-latency stateful stream processing applications computing complex event processing (CEP), sliding time windows, and aggregations."
+    },
+    {
+      "title": "Change Data Capture (CDC) Streaming",
+      "desc": "Streaming real-time transactional database events (Debezium) into Kafka topics to synchronize microservices and analytical caches in sub-second time."
+    },
+    {
+      "title": "Serverless Event Routing (AWS Kinesis & EventBridge)",
+      "desc": "Architecting cloud-native serverless streaming pipelines capable of processing millions of records/sec with zero infrastructure management."
+    },
+    {
+      "title": "Exactly-Once Processing Semantics (EOS)",
+      "desc": "Designing end-to-end streaming architectures enforcing strict transactional exactly-once semantics to prevent duplicated payments or events."
+    },
+    {
+      "title": "Real-Time Streaming Observability & Lag Monitoring",
+      "desc": "Continuous monitoring of consumer group lag, broker partition skew, and serialization failures with automated PagerDuty alerting."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Sub-Second Credit Card Fraud Scoring",
+      "desc": "Streaming financial transaction authorizations through Apache Flink to score real-time behavioral fraud models before payment approval.",
+      "practicalValue": "Evaluated 15,000 transactions/second with sub-25ms inference latency, intercepting £3.8M in fraudulent transfers.",
+      "focusAreas": [
+        "Apache Flink Complex Event Processing",
+        "Sliding Time Windows",
+        "Sub-Millisecond Kafka Topics"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Real-Time ICU Patient Vital Alarm Streaming",
+      "desc": "Processing continuous ECG and oxygen saturation sensor streams across hospital intensive care units using Apache Kafka.",
+      "practicalValue": "Delivered instantaneous physiological distress alerts to attending nurses with zero message drops.",
+      "focusAreas": [
+        "High-Throughput IoT Streams",
+        "Kafka Schema Registry",
+        "Zero-Loss Replication"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Live Flash Sale Dynamic Inventory Reservation",
+      "desc": "Streaming cart reservation events through Apache Kafka into distributed in-memory state stores during high-velocity ticket flash sales.",
+      "practicalValue": "Processed 80,000 concurrent inventory reservations per second with zero double-selling incidents.",
+      "focusAreas": [
+        "Exactly-Once Processing",
+        "Redis Distributed Locks",
+        "Real-Time Stock Streaming"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Factory Floor Predictive Vibration Streaming",
+      "desc": "Streaming high-frequency acoustic sensor telemetry from automated milling machinery to detect bearing wear in real time.",
+      "practicalValue": "Halted machinery within 1.5 seconds of detected structural hairline fractures, avoiding catastrophic plant shutdowns.",
+      "focusAreas": [
+        "Spark Structured Streaming",
+        "Edge Kafka Gateways",
+        "Time-Series Anomaly Detection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Real-Time Streaming & Stream Processing Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Event Sources & Transactional CDC",
+        "node": "Debezium CDC, Mobile SDKs, IoT Gateway Brokers, Microservice Event Emitters"
+      },
+      {
+        "label": "Layer 02: High-Throughput Event Broker Mesh",
+        "node": "Apache Kafka / Confluent, Multi-AZ Partitioning, Schema Registry"
+      },
+      {
+        "label": "Layer 03: Stateful Stream Processing Engine",
+        "node": "Apache Flink / Spark Streaming, Sliding Window Aggregates, CEP Rules"
+      },
+      {
+        "label": "Layer 04: Real-Time Sinks & Low-Latency Serving",
+        "node": "Redis / Pinot / ClickHouse Fast Serving, Elastic Event Ingest"
+      },
+      {
+        "label": "Layer 05: Stream Telemetry & Consumer Lag Monitoring",
+        "node": "Burrow Kafka Lag Monitor, Prometheus Metrics, PagerDuty Alerts"
+      }
+    ],
+    "editorialParagraph1": "In modern digital operations, waiting for overnight batch processing to understand what happened yesterday is no longer sufficient. From fraud detection to inventory reservation and telemetry monitoring, business decisions must happen in real time.",
+    "editorialParagraph2": "We design enterprise streaming architectures using Apache Kafka, Apache Flink, and Spark Streaming. By implementing strict schema governance and exactly-once processing semantics, our streaming pipelines process millions of events per second with sub-second latency and zero data loss.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-Second Real-Time Operational Action",
+      "desc": "Process and respond to critical business events in milliseconds instead of waiting for overnight batch processing schedules."
+    },
+    {
+      "id": "02",
+      "title": "Guaranteed Exactly-Once Processing Semantics",
+      "desc": "Strict transactional streaming ensures financial transactions, inventory tallies, and critical alerts are never duplicated or lost."
+    },
+    {
+      "id": "03",
+      "title": "Decoupled Scalability Across Microservices",
+      "desc": "High-throughput event streaming decouples producer systems from downstream consumers, preventing cascading system overloads."
+    }
+  ]
+},
+  "real-time-data-processing": {
+  "slug": "real-time-data-processing",
+  "serviceSlug": "data-engineering",
+  "title": "Real-Time Streaming & Event-Driven Data Processing",
+  "solutions": [
+    {
+      "title": "Apache Kafka & Confluent Enterprise Mesh",
+      "desc": "Deploying multi-cluster Apache Kafka topologies with Schema Registry, tiered storage, and high-availability multi-AZ broker replication."
+    },
+    {
+      "title": "Stream Processing with Apache Flink & Spark Streaming",
+      "desc": "Building low-latency stateful stream processing applications computing complex event processing (CEP), sliding time windows, and aggregations."
+    },
+    {
+      "title": "Change Data Capture (CDC) Streaming",
+      "desc": "Streaming real-time transactional database events (Debezium) into Kafka topics to synchronize microservices and analytical caches in sub-second time."
+    },
+    {
+      "title": "Serverless Event Routing (AWS Kinesis & EventBridge)",
+      "desc": "Architecting cloud-native serverless streaming pipelines capable of processing millions of records/sec with zero infrastructure management."
+    },
+    {
+      "title": "Exactly-Once Processing Semantics (EOS)",
+      "desc": "Designing end-to-end streaming architectures enforcing strict transactional exactly-once semantics to prevent duplicated payments or events."
+    },
+    {
+      "title": "Real-Time Streaming Observability & Lag Monitoring",
+      "desc": "Continuous monitoring of consumer group lag, broker partition skew, and serialization failures with automated PagerDuty alerting."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Sub-Second Credit Card Fraud Scoring",
+      "desc": "Streaming financial transaction authorizations through Apache Flink to score real-time behavioral fraud models before payment approval.",
+      "practicalValue": "Evaluated 15,000 transactions/second with sub-25ms inference latency, intercepting £3.8M in fraudulent transfers.",
+      "focusAreas": [
+        "Apache Flink Complex Event Processing",
+        "Sliding Time Windows",
+        "Sub-Millisecond Kafka Topics"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Real-Time ICU Patient Vital Alarm Streaming",
+      "desc": "Processing continuous ECG and oxygen saturation sensor streams across hospital intensive care units using Apache Kafka.",
+      "practicalValue": "Delivered instantaneous physiological distress alerts to attending nurses with zero message drops.",
+      "focusAreas": [
+        "High-Throughput IoT Streams",
+        "Kafka Schema Registry",
+        "Zero-Loss Replication"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Live Flash Sale Dynamic Inventory Reservation",
+      "desc": "Streaming cart reservation events through Apache Kafka into distributed in-memory state stores during high-velocity ticket flash sales.",
+      "practicalValue": "Processed 80,000 concurrent inventory reservations per second with zero double-selling incidents.",
+      "focusAreas": [
+        "Exactly-Once Processing",
+        "Redis Distributed Locks",
+        "Real-Time Stock Streaming"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Factory Floor Predictive Vibration Streaming",
+      "desc": "Streaming high-frequency acoustic sensor telemetry from automated milling machinery to detect bearing wear in real time.",
+      "practicalValue": "Halted machinery within 1.5 seconds of detected structural hairline fractures, avoiding catastrophic plant shutdowns.",
+      "focusAreas": [
+        "Spark Structured Streaming",
+        "Edge Kafka Gateways",
+        "Time-Series Anomaly Detection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Real-Time Streaming & Stream Processing Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Event Sources & Transactional CDC",
+        "node": "Debezium CDC, Mobile SDKs, IoT Gateway Brokers, Microservice Event Emitters"
+      },
+      {
+        "label": "Layer 02: High-Throughput Event Broker Mesh",
+        "node": "Apache Kafka / Confluent, Multi-AZ Partitioning, Schema Registry"
+      },
+      {
+        "label": "Layer 03: Stateful Stream Processing Engine",
+        "node": "Apache Flink / Spark Streaming, Sliding Window Aggregates, CEP Rules"
+      },
+      {
+        "label": "Layer 04: Real-Time Sinks & Low-Latency Serving",
+        "node": "Redis / Pinot / ClickHouse Fast Serving, Elastic Event Ingest"
+      },
+      {
+        "label": "Layer 05: Stream Telemetry & Consumer Lag Monitoring",
+        "node": "Burrow Kafka Lag Monitor, Prometheus Metrics, PagerDuty Alerts"
+      }
+    ],
+    "editorialParagraph1": "In modern digital operations, waiting for overnight batch processing to understand what happened yesterday is no longer sufficient. From fraud detection to inventory reservation and telemetry monitoring, business decisions must happen in real time.",
+    "editorialParagraph2": "We design enterprise streaming architectures using Apache Kafka, Apache Flink, and Spark Streaming. By implementing strict schema governance and exactly-once processing semantics, our streaming pipelines process millions of events per second with sub-second latency and zero data loss.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-Second Real-Time Operational Action",
+      "desc": "Process and respond to critical business events in milliseconds instead of waiting for overnight batch processing schedules."
+    },
+    {
+      "id": "02",
+      "title": "Guaranteed Exactly-Once Processing Semantics",
+      "desc": "Strict transactional streaming ensures financial transactions, inventory tallies, and critical alerts are never duplicated or lost."
+    },
+    {
+      "id": "03",
+      "title": "Decoupled Scalability Across Microservices",
+      "desc": "High-throughput event streaming decouples producer systems from downstream consumers, preventing cascading system overloads."
+    }
+  ]
+},
+  "data-engineering/data-quality-management": {
+  "slug": "data-quality-management",
+  "serviceSlug": "data-engineering",
+  "title": "Data Quality Management & Automated Observability",
+  "solutions": [
+    {
+      "title": "Automated Data Quality Testing (Great Expectations & Soda)",
+      "desc": "Embedding automated data assertions (null checks, range validation, regex matching, uniqueness) directly into data pipelines."
+    },
+    {
+      "title": "Data Observability & Anomaly Detection (Monte Carlo)",
+      "desc": "Continuous automated monitoring tracking data freshness, volume anomalies, schema changes, and distribution drift."
+    },
+    {
+      "title": "Automated Data Profiling & Drift Detection",
+      "desc": "Continuous profiling of raw and transformed tables detecting unexpected changes in statistical distributions and categorical cardinality."
+    },
+    {
+      "title": "Automated Data Quarantine & Circuit Breakers",
+      "desc": "Deploying automated circuit breakers that halt corrupted pipeline executions and isolate bad records before polluting production warehouses."
+    },
+    {
+      "title": "End-to-End Data Lineage & Root Cause Analysis",
+      "desc": "Interactive DAG lineage mapping showing the exact upstream transformation or ingestion failure causing downstream dashboard discrepancies."
+    },
+    {
+      "title": "Data Quality SLA Tracking & Executive Scorecards",
+      "desc": "Establishing Data Service Level Agreements (Data SLAs) and tracking data health scorecards across business domain products."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Financial Regulatory Quality Gates",
+      "desc": "Implementing automated data quality assertions across daily treasury cash reconciliation pipelines before FCA regulatory submission.",
+      "practicalValue": "Intercepted 18 upstream source formatting errors before report compilation, maintaining a 100% clean regulatory record.",
+      "focusAreas": [
+        "Great Expectations Assertions",
+        "Automated Quarantine Tables",
+        "FCA Compliance Signoff"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Diagnostic Data Validation",
+      "desc": "Validating clinical laboratory pathology results against medical reference ranges before syndicating data to physician diagnostic consoles.",
+      "practicalValue": "Prevented corrupted blood test metric units from reaching patient records, safeguarding clinical decision safety.",
+      "focusAreas": [
+        "Clinical Unit Range Checks",
+        "Automated Physician Alerts",
+        "HIPAA Lineage Audit"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "E-Commerce Pricing Anomaly Circuit Breaker",
+      "desc": "Monitoring product catalog price updates across 1.5M SKUs with automated anomaly alerts flagging accidental 90% discount errors.",
+      "practicalValue": "Blocked 3 accidental ERP pricing update bugs, preventing an estimated £420,000 in promotional margin losses.",
+      "focusAreas": [
+        "Distribution Drift Detection",
+        "Pricing Circuit Breakers",
+        "Automated Catalog Rollback"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Sensor Outlier Cleansing",
+      "desc": "Automatically detecting and filtering faulty thermocouple sensor spikes in continuous factory temperature monitoring pipelines.",
+      "practicalValue": "Eliminated false-positive machinery shutdown alarms while preserving true mechanical wear signals.",
+      "focusAreas": [
+        "Statistical Outlier Filtration",
+        "Time-Series Freshness Checks",
+        "Automated Sensor Health Tagging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Data Quality Management & Automated Observability Pipeline",
+    "layers": [
+      {
+        "label": "Layer 01: Pipeline Assertion & Verification Gates",
+        "node": "Great Expectations / Soda Core, Schema Integrity Checks, Null Assertions"
+      },
+      {
+        "label": "Layer 02: Automated Quarantine & Circuit Breaker",
+        "node": "Quarantine Staging Tables, Automated Pipeline Halt, Slack/PagerDuty Alerts"
+      },
+      {
+        "label": "Layer 03: Machine Learning Data Observability",
+        "node": "Monte Carlo / Acceldata Anomaly Detection, Volume & Freshness Monitors"
+      },
+      {
+        "label": "Layer 04: End-to-End Data Lineage & Impact Mapping",
+        "node": "Column-Level Lineage, Upstream Root-Cause Tracing, Downstream Impact Blast"
+      },
+      {
+        "label": "Layer 05: Data SLA Scorecards & Executive Governance",
+        "node": "Data Product Health Badging, SLA Compliance Dashboards, Quality Attestations"
+      }
+    ],
+    "editorialParagraph1": "Bad data is worse than no data. When executive leadership or automated algorithms make multi-million-pound decisions based on corrupted, incomplete, or out-of-date records, the business suffers catastrophic financial and reputational damage.",
+    "editorialParagraph2": "We build automated data quality and observability guardrails directly into your data pipelines. By combining automated assertion testing with continuous ML-driven anomaly detection and circuit breakers, we ensure bad data is quarantined before it ever reaches executive dashboards or customer systems.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "100% Executive Trust in Data Dashboards",
+      "desc": "Automated quality assertions and freshness verification eliminate embarrassing 'bad data' surprises during executive board presentations."
+    },
+    {
+      "id": "02",
+      "title": "Automated Interception Before Downstream Damage",
+      "desc": "Data circuit breakers automatically halt corrupted pipeline runs, isolating bad records in quarantine tables for swift remediation."
+    },
+    {
+      "id": "03",
+      "title": "Sub-Minute Upstream Root-Cause Pinpointing",
+      "desc": "Column-level data lineage visually highlights the exact upstream source table or broken SQL transformation causing a dashboard discrepancy."
+    }
+  ]
+},
+  "data-quality-management": {
+  "slug": "data-quality-management",
+  "serviceSlug": "data-engineering",
+  "title": "Data Quality Management & Automated Observability",
+  "solutions": [
+    {
+      "title": "Automated Data Quality Testing (Great Expectations & Soda)",
+      "desc": "Embedding automated data assertions (null checks, range validation, regex matching, uniqueness) directly into data pipelines."
+    },
+    {
+      "title": "Data Observability & Anomaly Detection (Monte Carlo)",
+      "desc": "Continuous automated monitoring tracking data freshness, volume anomalies, schema changes, and distribution drift."
+    },
+    {
+      "title": "Automated Data Profiling & Drift Detection",
+      "desc": "Continuous profiling of raw and transformed tables detecting unexpected changes in statistical distributions and categorical cardinality."
+    },
+    {
+      "title": "Automated Data Quarantine & Circuit Breakers",
+      "desc": "Deploying automated circuit breakers that halt corrupted pipeline executions and isolate bad records before polluting production warehouses."
+    },
+    {
+      "title": "End-to-End Data Lineage & Root Cause Analysis",
+      "desc": "Interactive DAG lineage mapping showing the exact upstream transformation or ingestion failure causing downstream dashboard discrepancies."
+    },
+    {
+      "title": "Data Quality SLA Tracking & Executive Scorecards",
+      "desc": "Establishing Data Service Level Agreements (Data SLAs) and tracking data health scorecards across business domain products."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Financial Regulatory Quality Gates",
+      "desc": "Implementing automated data quality assertions across daily treasury cash reconciliation pipelines before FCA regulatory submission.",
+      "practicalValue": "Intercepted 18 upstream source formatting errors before report compilation, maintaining a 100% clean regulatory record.",
+      "focusAreas": [
+        "Great Expectations Assertions",
+        "Automated Quarantine Tables",
+        "FCA Compliance Signoff"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Diagnostic Data Validation",
+      "desc": "Validating clinical laboratory pathology results against medical reference ranges before syndicating data to physician diagnostic consoles.",
+      "practicalValue": "Prevented corrupted blood test metric units from reaching patient records, safeguarding clinical decision safety.",
+      "focusAreas": [
+        "Clinical Unit Range Checks",
+        "Automated Physician Alerts",
+        "HIPAA Lineage Audit"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "E-Commerce Pricing Anomaly Circuit Breaker",
+      "desc": "Monitoring product catalog price updates across 1.5M SKUs with automated anomaly alerts flagging accidental 90% discount errors.",
+      "practicalValue": "Blocked 3 accidental ERP pricing update bugs, preventing an estimated £420,000 in promotional margin losses.",
+      "focusAreas": [
+        "Distribution Drift Detection",
+        "Pricing Circuit Breakers",
+        "Automated Catalog Rollback"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Sensor Outlier Cleansing",
+      "desc": "Automatically detecting and filtering faulty thermocouple sensor spikes in continuous factory temperature monitoring pipelines.",
+      "practicalValue": "Eliminated false-positive machinery shutdown alarms while preserving true mechanical wear signals.",
+      "focusAreas": [
+        "Statistical Outlier Filtration",
+        "Time-Series Freshness Checks",
+        "Automated Sensor Health Tagging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Data Quality Management & Automated Observability Pipeline",
+    "layers": [
+      {
+        "label": "Layer 01: Pipeline Assertion & Verification Gates",
+        "node": "Great Expectations / Soda Core, Schema Integrity Checks, Null Assertions"
+      },
+      {
+        "label": "Layer 02: Automated Quarantine & Circuit Breaker",
+        "node": "Quarantine Staging Tables, Automated Pipeline Halt, Slack/PagerDuty Alerts"
+      },
+      {
+        "label": "Layer 03: Machine Learning Data Observability",
+        "node": "Monte Carlo / Acceldata Anomaly Detection, Volume & Freshness Monitors"
+      },
+      {
+        "label": "Layer 04: End-to-End Data Lineage & Impact Mapping",
+        "node": "Column-Level Lineage, Upstream Root-Cause Tracing, Downstream Impact Blast"
+      },
+      {
+        "label": "Layer 05: Data SLA Scorecards & Executive Governance",
+        "node": "Data Product Health Badging, SLA Compliance Dashboards, Quality Attestations"
+      }
+    ],
+    "editorialParagraph1": "Bad data is worse than no data. When executive leadership or automated algorithms make multi-million-pound decisions based on corrupted, incomplete, or out-of-date records, the business suffers catastrophic financial and reputational damage.",
+    "editorialParagraph2": "We build automated data quality and observability guardrails directly into your data pipelines. By combining automated assertion testing with continuous ML-driven anomaly detection and circuit breakers, we ensure bad data is quarantined before it ever reaches executive dashboards or customer systems.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "100% Executive Trust in Data Dashboards",
+      "desc": "Automated quality assertions and freshness verification eliminate embarrassing 'bad data' surprises during executive board presentations."
+    },
+    {
+      "id": "02",
+      "title": "Automated Interception Before Downstream Damage",
+      "desc": "Data circuit breakers automatically halt corrupted pipeline runs, isolating bad records in quarantine tables for swift remediation."
+    },
+    {
+      "id": "03",
+      "title": "Sub-Minute Upstream Root-Cause Pinpointing",
+      "desc": "Column-level data lineage visually highlights the exact upstream source table or broken SQL transformation causing a dashboard discrepancy."
+    }
+  ]
+},
+  "data-engineering/master-data-management": {
+  "slug": "master-data-management",
+  "serviceSlug": "data-engineering",
+  "title": "Master Data Management (MDM) & Customer 360",
+  "solutions": [
+    {
+      "title": "Enterprise Master Data Architecture & Governance",
+      "desc": "Establishing authoritative, golden-record master data architectures across Customer, Product, Supplier, and Employee domains."
+    },
+    {
+      "title": "Entity Resolution & Probabilistic Matching",
+      "desc": "Deploying high-speed probabilistic deduplication and deterministic fuzzy-matching algorithms (Senzing, Zingg, Splink) to merge duplicate records."
+    },
+    {
+      "title": "Customer 360 Unified Golden Record Generation",
+      "desc": "Unifying fragmented customer records from CRM, billing, webapps, and support desks into an accurate, consolidated Single Customer View."
+    },
+    {
+      "title": "Product Information Management (PIM) Unification",
+      "desc": "Consolidating fragmented ERP, supplier, and catalog databases into a standardized, rich master product taxonomy."
+    },
+    {
+      "title": "Automated Data Stewardship & Merge Workflows",
+      "desc": "Building intuitive review interfaces for data stewards to resolve ambiguous entity matches, view survivorship rules, and split false merges."
+    },
+    {
+      "title": "Bidirectional Master Data Synchronization",
+      "desc": "Distributing verified golden records back to operational systems (Salesforce, SAP, Workday) in real time via event streaming APIs."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Single Customer View (SCV) for Financial Risk",
+      "desc": "Consolidating duplicate retail, credit card, and mortgage customer records into a unified golden customer profile.",
+      "practicalValue": "Resolved 420,000 duplicate accounts, enabling accurate credit risk assessment and compliance with PRA Single Customer View rules.",
+      "focusAreas": [
+        "Probabilistic Identity Resolution",
+        "PRA SCV Compliance",
+        "Real-Time CRM Synchronization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Enterprise Master Patient Index (EMPI)",
+      "desc": "Unifying patient identity records across 14 disparate hospital databases, diagnostic laboratories, and pharmacy registries.",
+      "practicalValue": "Eliminated duplicate patient medical files with 99.8% matching accuracy, preventing dangerous medication contraindications.",
+      "focusAreas": [
+        "Master Patient Index (EMPI)",
+        "Deterministic NHS Matching",
+        "Strict Patient Privacy"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Master Product Catalog Unification (PIM)",
+      "desc": "Merging 4 legacy e-commerce brand product databases into a standardized master product taxonomy across 3.2M SKUs.",
+      "practicalValue": "Eliminated duplicated product listings and accelerated new vendor catalog onboarding from 3 weeks to 24 hours.",
+      "focusAreas": [
+        "PIM Taxonomy Standardisation",
+        "Attribute Normalisation",
+        "Multi-Channel Catalog Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Supplier Master Data Consolidation",
+      "desc": "Deduplicating and unifying 45,000 global parts and raw material supplier records across 8 acquired manufacturing subsidiaries.",
+      "practicalValue": "Uncovered £7.8M in volume discount procurement renegotiations across duplicate supplier accounts.",
+      "focusAreas": [
+        "Supplier Entity Matching",
+        "DUNS Number Verification",
+        "ERP Master Data Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Master Data Management (MDM) Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-System Record Ingestion & Profiling",
+        "node": "CRM, ERP, Billing, Point-of-Sale Data Ingest, Data Cleansing Filters"
+      },
+      {
+        "label": "Layer 02: Probabilistic Entity Resolution Engine",
+        "node": "Splink / Zingg Matching Algorithms, Address Standardization, Fuzzy Match"
+      },
+      {
+        "label": "Layer 03: Survivorship Rules & Golden Record Vault",
+        "node": "Most-Recent / Trusted-Source Survivorship Logic, Master Golden Profile"
+      },
+      {
+        "label": "Layer 04: Data Steward Portal & Manual Exception Triage",
+        "node": "Web Review Console, Disputed Match Splitting, Match Confidence Tuning"
+      },
+      {
+        "label": "Layer 05: Bidirectional Synchronization & Event Bus",
+        "node": "Kafka Real-Time Golden Record Publishing, Salesforce / SAP Webhooks"
+      }
+    ],
+    "editorialParagraph1": "Enterprise acquisitions, siloed business units, and disconnected SaaS applications leave organizations with a fragmented, contradictory mess of customer and product records. Sales teams, marketing, and customer support all look at different versions of reality.",
+    "editorialParagraph2": "We design robust Master Data Management (MDM) architectures that resolve duplicates and generate authoritative golden records. By deploying advanced probabilistic matching algorithms and bidirectional synchronization pipelines, we provide the enterprise with a single, reliable source of operational truth.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "True Single Customer View (Customer 360)",
+      "desc": "Unify fragmented interactions across sales, support, and billing to give your teams a complete, accurate understanding of every customer."
+    },
+    {
+      "id": "02",
+      "title": "Significant Cost Savings in Procurement & Marketing",
+      "desc": "Deduplicating supplier records uncovers massive enterprise volume discounts, while clean customer records eliminate wasted marketing spend."
+    },
+    {
+      "id": "03",
+      "title": "Automated Entity Resolution at Scale",
+      "desc": "Machine learning and probabilistic entity resolution algorithms deduplicate millions of records in minutes without tedious manual reviews."
+    }
+  ]
+},
+  "master-data-management": {
+  "slug": "master-data-management",
+  "serviceSlug": "data-engineering",
+  "title": "Master Data Management (MDM) & Customer 360",
+  "solutions": [
+    {
+      "title": "Enterprise Master Data Architecture & Governance",
+      "desc": "Establishing authoritative, golden-record master data architectures across Customer, Product, Supplier, and Employee domains."
+    },
+    {
+      "title": "Entity Resolution & Probabilistic Matching",
+      "desc": "Deploying high-speed probabilistic deduplication and deterministic fuzzy-matching algorithms (Senzing, Zingg, Splink) to merge duplicate records."
+    },
+    {
+      "title": "Customer 360 Unified Golden Record Generation",
+      "desc": "Unifying fragmented customer records from CRM, billing, webapps, and support desks into an accurate, consolidated Single Customer View."
+    },
+    {
+      "title": "Product Information Management (PIM) Unification",
+      "desc": "Consolidating fragmented ERP, supplier, and catalog databases into a standardized, rich master product taxonomy."
+    },
+    {
+      "title": "Automated Data Stewardship & Merge Workflows",
+      "desc": "Building intuitive review interfaces for data stewards to resolve ambiguous entity matches, view survivorship rules, and split false merges."
+    },
+    {
+      "title": "Bidirectional Master Data Synchronization",
+      "desc": "Distributing verified golden records back to operational systems (Salesforce, SAP, Workday) in real time via event streaming APIs."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Single Customer View (SCV) for Financial Risk",
+      "desc": "Consolidating duplicate retail, credit card, and mortgage customer records into a unified golden customer profile.",
+      "practicalValue": "Resolved 420,000 duplicate accounts, enabling accurate credit risk assessment and compliance with PRA Single Customer View rules.",
+      "focusAreas": [
+        "Probabilistic Identity Resolution",
+        "PRA SCV Compliance",
+        "Real-Time CRM Synchronization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Enterprise Master Patient Index (EMPI)",
+      "desc": "Unifying patient identity records across 14 disparate hospital databases, diagnostic laboratories, and pharmacy registries.",
+      "practicalValue": "Eliminated duplicate patient medical files with 99.8% matching accuracy, preventing dangerous medication contraindications.",
+      "focusAreas": [
+        "Master Patient Index (EMPI)",
+        "Deterministic NHS Matching",
+        "Strict Patient Privacy"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Master Product Catalog Unification (PIM)",
+      "desc": "Merging 4 legacy e-commerce brand product databases into a standardized master product taxonomy across 3.2M SKUs.",
+      "practicalValue": "Eliminated duplicated product listings and accelerated new vendor catalog onboarding from 3 weeks to 24 hours.",
+      "focusAreas": [
+        "PIM Taxonomy Standardisation",
+        "Attribute Normalisation",
+        "Multi-Channel Catalog Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Global Supplier Master Data Consolidation",
+      "desc": "Deduplicating and unifying 45,000 global parts and raw material supplier records across 8 acquired manufacturing subsidiaries.",
+      "practicalValue": "Uncovered £7.8M in volume discount procurement renegotiations across duplicate supplier accounts.",
+      "focusAreas": [
+        "Supplier Entity Matching",
+        "DUNS Number Verification",
+        "ERP Master Data Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Master Data Management (MDM) Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-System Record Ingestion & Profiling",
+        "node": "CRM, ERP, Billing, Point-of-Sale Data Ingest, Data Cleansing Filters"
+      },
+      {
+        "label": "Layer 02: Probabilistic Entity Resolution Engine",
+        "node": "Splink / Zingg Matching Algorithms, Address Standardization, Fuzzy Match"
+      },
+      {
+        "label": "Layer 03: Survivorship Rules & Golden Record Vault",
+        "node": "Most-Recent / Trusted-Source Survivorship Logic, Master Golden Profile"
+      },
+      {
+        "label": "Layer 04: Data Steward Portal & Manual Exception Triage",
+        "node": "Web Review Console, Disputed Match Splitting, Match Confidence Tuning"
+      },
+      {
+        "label": "Layer 05: Bidirectional Synchronization & Event Bus",
+        "node": "Kafka Real-Time Golden Record Publishing, Salesforce / SAP Webhooks"
+      }
+    ],
+    "editorialParagraph1": "Enterprise acquisitions, siloed business units, and disconnected SaaS applications leave organizations with a fragmented, contradictory mess of customer and product records. Sales teams, marketing, and customer support all look at different versions of reality.",
+    "editorialParagraph2": "We design robust Master Data Management (MDM) architectures that resolve duplicates and generate authoritative golden records. By deploying advanced probabilistic matching algorithms and bidirectional synchronization pipelines, we provide the enterprise with a single, reliable source of operational truth.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "True Single Customer View (Customer 360)",
+      "desc": "Unify fragmented interactions across sales, support, and billing to give your teams a complete, accurate understanding of every customer."
+    },
+    {
+      "id": "02",
+      "title": "Significant Cost Savings in Procurement & Marketing",
+      "desc": "Deduplicating supplier records uncovers massive enterprise volume discounts, while clean customer records eliminate wasted marketing spend."
+    },
+    {
+      "id": "03",
+      "title": "Automated Entity Resolution at Scale",
+      "desc": "Machine learning and probabilistic entity resolution algorithms deduplicate millions of records in minutes without tedious manual reviews."
+    }
+  ]
+},
+  "data-engineering/big-data-engineering": {
+  "slug": "big-data-engineering",
+  "serviceSlug": "data-engineering",
+  "title": "Big Data Engineering & Distributed Compute",
+  "solutions": [
+    {
+      "title": "Petabyte-Scale Distributed Apache Spark Clusters",
+      "desc": "Architecting and tuning high-performance Apache Spark clusters on Kubernetes and AWS EMR with dynamic resource allocation."
+    },
+    {
+      "title": "Serverless Query Acceleration with Trino & Presto",
+      "desc": "Deploying distributed SQL query engines running sub-second analytical queries across heterogeneous data lakes and relational databases."
+    },
+    {
+      "title": "Columnar Storage Optimization (Parquet & ORC)",
+      "desc": "Optimizing file block sizes, compression codecs (ZSTD, Snappy), dictionary encodings, and partition pruning for massive read throughput."
+    },
+    {
+      "title": "Big Data Memory & Shuffle Optimization",
+      "desc": "Eliminating costly out-of-memory (OOM) errors and skew in Spark jobs through intelligent salting, broadcast joins, and off-heap memory tuning."
+    },
+    {
+      "title": "High-Throughput Vector Databases & Search Engines",
+      "desc": "Deploying distributed vector databases (Milvus, Qdrant, Pinecone) indexing hundreds of millions of embeddings for AI retrieval."
+    },
+    {
+      "title": "Big Data Governance & Security at Scale",
+      "desc": "Implementing Apache Ranger and Lake Formation to enforce fine-grained column, row, and tag-based access control across big data clusters."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Petabyte-Scale Algorithmic Trade Backtesting",
+      "desc": "Running distributed Spark compute clusters backtesting quantitative algorithmic trading strategies across 15 years of market tick data.",
+      "practicalValue": "Processed 85TB of financial tick data in 45 minutes, accelerating quant model development by 8x.",
+      "focusAreas": [
+        "Spark Memory Optimization",
+        "Broadcast Hash Joins",
+        "Parquet ZSTD Compression"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Population Health Genomic Cluster Compute",
+      "desc": "Deploying high-memory Spark clusters executing distributed variant analysis across 50,000 whole-genome patient files.",
+      "practicalValue": "Discovered critical bio-marker correlations in 6 hours that previously failed due to memory limitations on on-premise servers.",
+      "focusAreas": [
+        "Distributed Variant Analysis",
+        "Hail Genomic Library",
+        "Dynamic Cluster Autoscaling"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Real-Time Vector Similarity Search at Scale",
+      "desc": "Indexing 250M product embedding vectors across distributed Qdrant clusters to power multimodal visual and semantic product search.",
+      "practicalValue": "Sub-15ms visual search recall across 45 million mobile shoppers, increasing checkout conversions by 19%.",
+      "focusAreas": [
+        "Distributed Vector Search",
+        "HNSW Index Partitioning",
+        "Low-Latency GPU Inference"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Fleetwide Telematics Big Data Ingestion",
+      "desc": "Processing 50 billion monthly sensor data points from smart construction vehicles using Apache Spark and Trino.",
+      "practicalValue": "Enabled global fleet predictive maintenance queries across 5 years of historical telemetry in under 4 seconds.",
+      "focusAreas": [
+        "Trino Distributed Query",
+        "Parquet Partition Pruning",
+        "Apache Ranger Security"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Petabyte-Scale Big Data Engineering & Distributed Compute Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: High-Volume Stream & Batch Ingestion",
+        "node": "Multi-Partition Kafka Clusters, S3 Batch Ingest, Distributed Event Queues"
+      },
+      {
+        "label": "Layer 02: High-Performance Columnar Object Storage",
+        "node": "ZSTD-Compressed Parquet, Apache Iceberg Tables, Partition Pruning"
+      },
+      {
+        "label": "Layer 03: Distributed Compute & Spark Execution Fleet",
+        "node": "Apache Spark on K8s / EMR, Dynamic Memory Allocation, Adaptive Query Execution"
+      },
+      {
+        "label": "Layer 04: Interactive Distributed Query Mesh",
+        "node": "Trino / Presto Engine, In-Memory Caching, Vector Databases (Milvus/Qdrant)"
+      },
+      {
+        "label": "Layer 05: Big Data Governance & Access Shield",
+        "node": "Apache Ranger, AWS Lake Formation, Fine-Grained Column/Row Masking"
+      }
+    ],
+    "editorialParagraph1": "When data volumes expand into terabytes and petabytes, standard relational databases and single-server Python scripts grind to a halt. Distributed big data engineering is required to process, aggregate, and query massive data assets efficiently.",
+    "editorialParagraph2": "We architect and optimize petabyte-scale distributed compute platforms using Apache Spark, Trino, and modern columnar storage formats. By tuning memory allocation, eliminating shuffle skew, and implementing adaptive query execution, our platforms deliver sub-second analytical performance across immense datasets at predictable cloud cost.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-Second Querying over Petabyte Datasets",
+      "desc": "Distributed query engines and columnar Parquet optimization allow business analysts to query billions of rows in seconds."
+    },
+    {
+      "id": "02",
+      "title": "Elimination of Out-of-Memory (OOM) Job Failures",
+      "desc": "Deep Spark memory profiling and shuffle tuning ensure heavy data transformation jobs run reliably without crashing."
+    },
+    {
+      "id": "03",
+      "title": "Elastic Pay-for-What-You-Use Big Data Compute",
+      "desc": "Dynamic Kubernetes and cloud cluster scaling spins up hundreds of compute nodes for intensive workloads and tears down immediately upon completion."
+    }
+  ]
+},
+  "big-data-engineering": {
+  "slug": "big-data-engineering",
+  "serviceSlug": "data-engineering",
+  "title": "Big Data Engineering & Distributed Compute",
+  "solutions": [
+    {
+      "title": "Petabyte-Scale Distributed Apache Spark Clusters",
+      "desc": "Architecting and tuning high-performance Apache Spark clusters on Kubernetes and AWS EMR with dynamic resource allocation."
+    },
+    {
+      "title": "Serverless Query Acceleration with Trino & Presto",
+      "desc": "Deploying distributed SQL query engines running sub-second analytical queries across heterogeneous data lakes and relational databases."
+    },
+    {
+      "title": "Columnar Storage Optimization (Parquet & ORC)",
+      "desc": "Optimizing file block sizes, compression codecs (ZSTD, Snappy), dictionary encodings, and partition pruning for massive read throughput."
+    },
+    {
+      "title": "Big Data Memory & Shuffle Optimization",
+      "desc": "Eliminating costly out-of-memory (OOM) errors and skew in Spark jobs through intelligent salting, broadcast joins, and off-heap memory tuning."
+    },
+    {
+      "title": "High-Throughput Vector Databases & Search Engines",
+      "desc": "Deploying distributed vector databases (Milvus, Qdrant, Pinecone) indexing hundreds of millions of embeddings for AI retrieval."
+    },
+    {
+      "title": "Big Data Governance & Security at Scale",
+      "desc": "Implementing Apache Ranger and Lake Formation to enforce fine-grained column, row, and tag-based access control across big data clusters."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Petabyte-Scale Algorithmic Trade Backtesting",
+      "desc": "Running distributed Spark compute clusters backtesting quantitative algorithmic trading strategies across 15 years of market tick data.",
+      "practicalValue": "Processed 85TB of financial tick data in 45 minutes, accelerating quant model development by 8x.",
+      "focusAreas": [
+        "Spark Memory Optimization",
+        "Broadcast Hash Joins",
+        "Parquet ZSTD Compression"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Population Health Genomic Cluster Compute",
+      "desc": "Deploying high-memory Spark clusters executing distributed variant analysis across 50,000 whole-genome patient files.",
+      "practicalValue": "Discovered critical bio-marker correlations in 6 hours that previously failed due to memory limitations on on-premise servers.",
+      "focusAreas": [
+        "Distributed Variant Analysis",
+        "Hail Genomic Library",
+        "Dynamic Cluster Autoscaling"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Real-Time Vector Similarity Search at Scale",
+      "desc": "Indexing 250M product embedding vectors across distributed Qdrant clusters to power multimodal visual and semantic product search.",
+      "practicalValue": "Sub-15ms visual search recall across 45 million mobile shoppers, increasing checkout conversions by 19%.",
+      "focusAreas": [
+        "Distributed Vector Search",
+        "HNSW Index Partitioning",
+        "Low-Latency GPU Inference"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Fleetwide Telematics Big Data Ingestion",
+      "desc": "Processing 50 billion monthly sensor data points from smart construction vehicles using Apache Spark and Trino.",
+      "practicalValue": "Enabled global fleet predictive maintenance queries across 5 years of historical telemetry in under 4 seconds.",
+      "focusAreas": [
+        "Trino Distributed Query",
+        "Parquet Partition Pruning",
+        "Apache Ranger Security"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Petabyte-Scale Big Data Engineering & Distributed Compute Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: High-Volume Stream & Batch Ingestion",
+        "node": "Multi-Partition Kafka Clusters, S3 Batch Ingest, Distributed Event Queues"
+      },
+      {
+        "label": "Layer 02: High-Performance Columnar Object Storage",
+        "node": "ZSTD-Compressed Parquet, Apache Iceberg Tables, Partition Pruning"
+      },
+      {
+        "label": "Layer 03: Distributed Compute & Spark Execution Fleet",
+        "node": "Apache Spark on K8s / EMR, Dynamic Memory Allocation, Adaptive Query Execution"
+      },
+      {
+        "label": "Layer 04: Interactive Distributed Query Mesh",
+        "node": "Trino / Presto Engine, In-Memory Caching, Vector Databases (Milvus/Qdrant)"
+      },
+      {
+        "label": "Layer 05: Big Data Governance & Access Shield",
+        "node": "Apache Ranger, AWS Lake Formation, Fine-Grained Column/Row Masking"
+      }
+    ],
+    "editorialParagraph1": "When data volumes expand into terabytes and petabytes, standard relational databases and single-server Python scripts grind to a halt. Distributed big data engineering is required to process, aggregate, and query massive data assets efficiently.",
+    "editorialParagraph2": "We architect and optimize petabyte-scale distributed compute platforms using Apache Spark, Trino, and modern columnar storage formats. By tuning memory allocation, eliminating shuffle skew, and implementing adaptive query execution, our platforms deliver sub-second analytical performance across immense datasets at predictable cloud cost.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-Second Querying over Petabyte Datasets",
+      "desc": "Distributed query engines and columnar Parquet optimization allow business analysts to query billions of rows in seconds."
+    },
+    {
+      "id": "02",
+      "title": "Elimination of Out-of-Memory (OOM) Job Failures",
+      "desc": "Deep Spark memory profiling and shuffle tuning ensure heavy data transformation jobs run reliably without crashing."
+    },
+    {
+      "id": "03",
+      "title": "Elastic Pay-for-What-You-Use Big Data Compute",
+      "desc": "Dynamic Kubernetes and cloud cluster scaling spins up hundreds of compute nodes for intensive workloads and tears down immediately upon completion."
+    }
+  ]
+},
+  "qa-testing/test-automation": {
+  "slug": "test-automation",
+  "serviceSlug": "qa-testing",
+  "title": "End-to-End Test Automation (Playwright & Cypress)",
+  "solutions": [
+    {
+      "title": "Modern Playwright & Cypress E2E Frameworks",
+      "desc": "Designing resilient Page Object Model (POM) test automation suites with auto-waiting, shadow DOM support, and multi-tab testing."
+    },
+    {
+      "title": "Cross-Browser & Cross-Device Cloud Execution",
+      "desc": "Executing parallelized test suites across Chromium, Firefox, WebKit, and real mobile device clouds (BrowserStack, SauceLabs)."
+    },
+    {
+      "title": "Visual Regression & Layout Snapshot Testing",
+      "desc": "Pixel-perfect visual regression testing (Percy, Applitools) detecting unintended CSS layout shifts and typography discrepancies."
+    },
+    {
+      "title": "Self-Healing Test Automation & Flakiness Removal",
+      "desc": "Eliminating flaky test suites using intelligent auto-retries, deterministic test data seeding, and resilient locator strategies."
+    },
+    {
+      "title": "Synthetic User Journey Monitoring in Production",
+      "desc": "Deploying automated synthetic user probes running scheduled critical checkout and login flows 24/7 to catch production regressions."
+    },
+    {
+      "title": "CI/CD Pipeline Quality Gate Integration",
+      "desc": "Integrating test runners directly into GitHub Actions and GitLab CI with parallel shards and automated Slack/Allure reporting."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Core Banking Transaction Regression",
+      "desc": "Automating 850 end-to-end payment and account transfer test scenarios across modern online banking portals.",
+      "practicalValue": "Cut regression execution time from 4 days of manual testing to 18 minutes of parallelized Playwright execution.",
+      "focusAreas": [
+        "Playwright Multi-Tab Flows",
+        "Dynamic OTP Bypass Mocking",
+        "Allure Test Reporting"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Patient Management System E2E Suite",
+      "desc": "Building automated end-to-end regression suites for electronic health record portals verifying patient chart modifications.",
+      "practicalValue": "100% test coverage over critical patient drug prescription and appointment booking flows.",
+      "focusAreas": [
+        "HIPAA Test Data Generation",
+        "Role-Based Permission Tests",
+        "Visual Regression Scans"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Black Friday Checkout Flow Automation",
+      "desc": "Automating comprehensive cart, discount coupon, payment gateway, and order confirmation scenarios across mobile and desktop viewports.",
+      "practicalValue": "Zero broken checkout paths during peak holiday traffic with continuous automated hourly smoke tests.",
+      "focusAreas": [
+        "Matrix Browser Parallelization",
+        "Payment Gateway Sandboxing",
+        "Visual Checkout Snapshots"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Warehouse Dispatch Webapp Testing",
+      "desc": "Automating high-speed barcode scanning, inventory dispatch, and bill-of-lading generation test scenarios.",
+      "practicalValue": "Eliminated manual warehouse software testing, enabling weekly automated production releases.",
+      "focusAreas": [
+        "Hardware Input Emulation",
+        "Cypress Component Testing",
+        "Automated Seed Database Reset"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Test Automation & Continuous Execution Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Test Specification & BDD Authoring",
+        "node": "Cucumber / Gherkin Feature Specs, Page Object Model (POM), TypeScript"
+      },
+      {
+        "label": "Layer 02: Parallel Test Execution Engine",
+        "node": "Playwright / Cypress Test Runners, Dynamic K8s Test Pod Sharding"
+      },
+      {
+        "label": "Layer 03: Visual Regression & Cross-Browser Grid",
+        "node": "Percy Visual Diffs, BrowserStack Real Device Grid, WebKit/Chromium"
+      },
+      {
+        "label": "Layer 04: Test Data Management & Synthetic Seeding",
+        "node": "Isolated Database Seeds, API Mocking (MSW), Test Tenant Factories"
+      },
+      {
+        "label": "Layer 05: Quality Gate & Executive Allure Reporting",
+        "node": "CI/CD Pass/Fail Quality Gates, Allure HTML Dashboards, Slack Webhooks"
+      }
+    ],
+    "editorialParagraph1": "Manual software testing is slow, expensive, and incapable of keeping pace with modern continuous delivery cadences. Fragile, legacy test automation suites that break on every minor CSS change create endless maintenance frustration.",
+    "editorialParagraph2": "We architect modern, resilient test automation frameworks using Playwright and Cypress. By enforcing Page Object Models, deterministic test data seeding, and parallel containerized execution grids, our suites run in minutes and provide engineering teams with uncompromising release confidence.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "90% Reduction in Regression Cycle Times",
+      "desc": "Parallelized cloud container runners execute thousands of end-to-end browser scenarios in minutes rather than days of manual effort."
+    },
+    {
+      "id": "02",
+      "title": "Total Elimination of Flaky False Alarms",
+      "desc": "Playwright auto-waiting, deterministic test data seeding, and resilient locator strategies ensure tests fail only on real bugs."
+    },
+    {
+      "id": "03",
+      "title": "Pixel-Perfect Visual Regression Defense",
+      "desc": "Automated layout snapshot comparisons instantly catch unintended CSS styling regressions, responsive breaks, and visual defects."
+    }
+  ]
+},
+  "test-automation": {
+  "slug": "test-automation",
+  "serviceSlug": "qa-testing",
+  "title": "End-to-End Test Automation (Playwright & Cypress)",
+  "solutions": [
+    {
+      "title": "Modern Playwright & Cypress E2E Frameworks",
+      "desc": "Designing resilient Page Object Model (POM) test automation suites with auto-waiting, shadow DOM support, and multi-tab testing."
+    },
+    {
+      "title": "Cross-Browser & Cross-Device Cloud Execution",
+      "desc": "Executing parallelized test suites across Chromium, Firefox, WebKit, and real mobile device clouds (BrowserStack, SauceLabs)."
+    },
+    {
+      "title": "Visual Regression & Layout Snapshot Testing",
+      "desc": "Pixel-perfect visual regression testing (Percy, Applitools) detecting unintended CSS layout shifts and typography discrepancies."
+    },
+    {
+      "title": "Self-Healing Test Automation & Flakiness Removal",
+      "desc": "Eliminating flaky test suites using intelligent auto-retries, deterministic test data seeding, and resilient locator strategies."
+    },
+    {
+      "title": "Synthetic User Journey Monitoring in Production",
+      "desc": "Deploying automated synthetic user probes running scheduled critical checkout and login flows 24/7 to catch production regressions."
+    },
+    {
+      "title": "CI/CD Pipeline Quality Gate Integration",
+      "desc": "Integrating test runners directly into GitHub Actions and GitLab CI with parallel shards and automated Slack/Allure reporting."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Core Banking Transaction Regression",
+      "desc": "Automating 850 end-to-end payment and account transfer test scenarios across modern online banking portals.",
+      "practicalValue": "Cut regression execution time from 4 days of manual testing to 18 minutes of parallelized Playwright execution.",
+      "focusAreas": [
+        "Playwright Multi-Tab Flows",
+        "Dynamic OTP Bypass Mocking",
+        "Allure Test Reporting"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Patient Management System E2E Suite",
+      "desc": "Building automated end-to-end regression suites for electronic health record portals verifying patient chart modifications.",
+      "practicalValue": "100% test coverage over critical patient drug prescription and appointment booking flows.",
+      "focusAreas": [
+        "HIPAA Test Data Generation",
+        "Role-Based Permission Tests",
+        "Visual Regression Scans"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Black Friday Checkout Flow Automation",
+      "desc": "Automating comprehensive cart, discount coupon, payment gateway, and order confirmation scenarios across mobile and desktop viewports.",
+      "practicalValue": "Zero broken checkout paths during peak holiday traffic with continuous automated hourly smoke tests.",
+      "focusAreas": [
+        "Matrix Browser Parallelization",
+        "Payment Gateway Sandboxing",
+        "Visual Checkout Snapshots"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Warehouse Dispatch Webapp Testing",
+      "desc": "Automating high-speed barcode scanning, inventory dispatch, and bill-of-lading generation test scenarios.",
+      "practicalValue": "Eliminated manual warehouse software testing, enabling weekly automated production releases.",
+      "focusAreas": [
+        "Hardware Input Emulation",
+        "Cypress Component Testing",
+        "Automated Seed Database Reset"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Test Automation & Continuous Execution Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Test Specification & BDD Authoring",
+        "node": "Cucumber / Gherkin Feature Specs, Page Object Model (POM), TypeScript"
+      },
+      {
+        "label": "Layer 02: Parallel Test Execution Engine",
+        "node": "Playwright / Cypress Test Runners, Dynamic K8s Test Pod Sharding"
+      },
+      {
+        "label": "Layer 03: Visual Regression & Cross-Browser Grid",
+        "node": "Percy Visual Diffs, BrowserStack Real Device Grid, WebKit/Chromium"
+      },
+      {
+        "label": "Layer 04: Test Data Management & Synthetic Seeding",
+        "node": "Isolated Database Seeds, API Mocking (MSW), Test Tenant Factories"
+      },
+      {
+        "label": "Layer 05: Quality Gate & Executive Allure Reporting",
+        "node": "CI/CD Pass/Fail Quality Gates, Allure HTML Dashboards, Slack Webhooks"
+      }
+    ],
+    "editorialParagraph1": "Manual software testing is slow, expensive, and incapable of keeping pace with modern continuous delivery cadences. Fragile, legacy test automation suites that break on every minor CSS change create endless maintenance frustration.",
+    "editorialParagraph2": "We architect modern, resilient test automation frameworks using Playwright and Cypress. By enforcing Page Object Models, deterministic test data seeding, and parallel containerized execution grids, our suites run in minutes and provide engineering teams with uncompromising release confidence.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "90% Reduction in Regression Cycle Times",
+      "desc": "Parallelized cloud container runners execute thousands of end-to-end browser scenarios in minutes rather than days of manual effort."
+    },
+    {
+      "id": "02",
+      "title": "Total Elimination of Flaky False Alarms",
+      "desc": "Playwright auto-waiting, deterministic test data seeding, and resilient locator strategies ensure tests fail only on real bugs."
+    },
+    {
+      "id": "03",
+      "title": "Pixel-Perfect Visual Regression Defense",
+      "desc": "Automated layout snapshot comparisons instantly catch unintended CSS styling regressions, responsive breaks, and visual defects."
+    }
+  ]
+},
+  "qa-testing/performance-testing": {
+  "slug": "performance-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Performance, Load & Stress Engineering (k6 & JMeter)",
+  "solutions": [
+    {
+      "title": "Cloud-Scale Distributed Load Testing (k6 & Locust)",
+      "desc": "Authoring developer-friendly performance tests in TypeScript/Python and executing distributed multi-region load simulations."
+    },
+    {
+      "title": "Stress, Soak & Spike Testing Architectures",
+      "desc": "Pushing systems beyond normal operating capacity to identify memory leaks, connection pool exhaustion, and cascading failovers."
+    },
+    {
+      "title": "Database Query & Lock Contention Profiling",
+      "desc": "Pinpointing slow SQL queries, unindexed joins, deadlock contention, and database read/write bottlenecks under heavy concurrent load."
+    },
+    {
+      "title": "API Endpoint Latency & SLA Benchmarking",
+      "desc": "Measuring P90, P95, and P99 latency distributions across REST and gRPC endpoints to enforce strict response time SLAs."
+    },
+    {
+      "title": "Infrastructure Resource Saturation Auditing",
+      "desc": "Correlating high-concurrency synthetic load with real-time server CPU, memory, network bandwidth, and pod autoscaling telemetry."
+    },
+    {
+      "title": "Continuous Performance Testing in CI/CD",
+      "desc": "Automating pull-request performance regressions checks (k6-action) to block code that degrades response latency thresholds."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Banking High-Throughput Stress Test",
+      "desc": "Simulating 50,000 concurrent banking customers executing fund transfers, card authorizations, and balance lookups.",
+      "practicalValue": "Identified and resolved a database connection pool deadlock, ensuring stability during peak payroll days.",
+      "focusAreas": [
+        "Distributed k6 Cloud Execution",
+        "P99 Latency Benchmarks",
+        "Connection Pool Saturation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Telehealth Video Gateway Load Simulation",
+      "desc": "Testing WebRTC video signaling servers under 10,000 simultaneous doctor-patient video consultation initiations.",
+      "practicalValue": "Tuned Kubernetes WebSocket gateway autoscaling to maintain sub-100ms video call setup latency.",
+      "focusAreas": [
+        "WebSockets Protocol Load",
+        "Memory Leak Soak Testing",
+        "Pod Autoscaling Validation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Black Friday 50x Flash Sale Load Test",
+      "desc": "Simulating massive 50x traffic surges hitting product detail, search, and checkout payment endpoints simultaneously.",
+      "practicalValue": "Validated that horizontal container autoscalers and Redis caching handled 120,000 requests/sec with zero dropped carts.",
+      "focusAreas": [
+        "Traffic Surge Spike Testing",
+        "Cart Checkout Concurrency",
+        "Redis Cache Warmup"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Factory Telemetry Ingest Stress Test",
+      "desc": "Simulating 200,000 IoT sensor MQTT messages per second streaming into cloud ingestion brokers during shift changes.",
+      "practicalValue": "Optimized Kafka topic partition sizing to prevent broker memory saturation and message queuing lag.",
+      "focusAreas": [
+        "MQTT / Kafka Stress Testing",
+        "Partition Throughput Tuning",
+        "Broker Resource Saturation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Distributed Cloud Performance & Load Engineering Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Test Scenario & Virtual User Modeling",
+        "node": "k6 TypeScript Scenarios, Realistic Think Times, Dynamic User Payloads"
+      },
+      {
+        "label": "Layer 02: Multi-Region Distributed Load Generator",
+        "node": "Distributed k6 / Locust Fleet, Multi-Zone Cloud VM Workers"
+      },
+      {
+        "label": "Layer 03: Target System Under Test (SUT)",
+        "node": "API Gateways, Microservice Container Fleets, Database Read/Write Replicas"
+      },
+      {
+        "label": "Layer 04: Real-Time APM & Profiling Telemetry",
+        "node": "Datadog / Prometheus APM, P95/P99 Latency Metrics, JVM Thread Profiling"
+      },
+      {
+        "label": "Layer 05: Performance Trend & Regression Analytics",
+        "node": "Historical Trend Dashboards, CI/CD Latency Quality Gates, Bottleneck Reports"
+      }
+    ],
+    "editorialParagraph1": "Discovering system performance bottlenecks during a live marketing campaign, product launch, or Black Friday traffic surge is a catastrophic business failure. Real-world users do not behave like simple scripts; they exert complex, concurrent stress on microservices and databases.",
+    "editorialParagraph2": "We design distributed, cloud-scale load and performance simulations using modern tools like k6 and Locust. By measuring P95 and P99 latency percentiles and profiling system bottlenecks under extreme stress, we guarantee your applications remain blazing fast and stable under peak demand.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Stability During Peak Traffic",
+      "desc": "Proactive stress and spike testing proves your application and database architecture can survive extreme traffic surges without outages."
+    },
+    {
+      "id": "02",
+      "title": "Sub-Second Response Times Under Heavy Load",
+      "desc": "Identifying and resolving unindexed database queries and resource bottlenecks ensures P99 latency remains within strict enterprise SLAs."
+    },
+    {
+      "id": "03",
+      "title": "Prevent Costly Infrastructure Over-Provisioning",
+      "desc": "Accurate capacity benchmarking reveals exactly how much compute your workload needs, eliminating expensive over-provisioned cloud servers."
+    }
+  ]
+},
+  "performance-testing": {
+  "slug": "performance-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Performance, Load & Stress Engineering (k6 & JMeter)",
+  "solutions": [
+    {
+      "title": "Cloud-Scale Distributed Load Testing (k6 & Locust)",
+      "desc": "Authoring developer-friendly performance tests in TypeScript/Python and executing distributed multi-region load simulations."
+    },
+    {
+      "title": "Stress, Soak & Spike Testing Architectures",
+      "desc": "Pushing systems beyond normal operating capacity to identify memory leaks, connection pool exhaustion, and cascading failovers."
+    },
+    {
+      "title": "Database Query & Lock Contention Profiling",
+      "desc": "Pinpointing slow SQL queries, unindexed joins, deadlock contention, and database read/write bottlenecks under heavy concurrent load."
+    },
+    {
+      "title": "API Endpoint Latency & SLA Benchmarking",
+      "desc": "Measuring P90, P95, and P99 latency distributions across REST and gRPC endpoints to enforce strict response time SLAs."
+    },
+    {
+      "title": "Infrastructure Resource Saturation Auditing",
+      "desc": "Correlating high-concurrency synthetic load with real-time server CPU, memory, network bandwidth, and pod autoscaling telemetry."
+    },
+    {
+      "title": "Continuous Performance Testing in CI/CD",
+      "desc": "Automating pull-request performance regressions checks (k6-action) to block code that degrades response latency thresholds."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Core Banking High-Throughput Stress Test",
+      "desc": "Simulating 50,000 concurrent banking customers executing fund transfers, card authorizations, and balance lookups.",
+      "practicalValue": "Identified and resolved a database connection pool deadlock, ensuring stability during peak payroll days.",
+      "focusAreas": [
+        "Distributed k6 Cloud Execution",
+        "P99 Latency Benchmarks",
+        "Connection Pool Saturation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Telehealth Video Gateway Load Simulation",
+      "desc": "Testing WebRTC video signaling servers under 10,000 simultaneous doctor-patient video consultation initiations.",
+      "practicalValue": "Tuned Kubernetes WebSocket gateway autoscaling to maintain sub-100ms video call setup latency.",
+      "focusAreas": [
+        "WebSockets Protocol Load",
+        "Memory Leak Soak Testing",
+        "Pod Autoscaling Validation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Black Friday 50x Flash Sale Load Test",
+      "desc": "Simulating massive 50x traffic surges hitting product detail, search, and checkout payment endpoints simultaneously.",
+      "practicalValue": "Validated that horizontal container autoscalers and Redis caching handled 120,000 requests/sec with zero dropped carts.",
+      "focusAreas": [
+        "Traffic Surge Spike Testing",
+        "Cart Checkout Concurrency",
+        "Redis Cache Warmup"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Factory Telemetry Ingest Stress Test",
+      "desc": "Simulating 200,000 IoT sensor MQTT messages per second streaming into cloud ingestion brokers during shift changes.",
+      "practicalValue": "Optimized Kafka topic partition sizing to prevent broker memory saturation and message queuing lag.",
+      "focusAreas": [
+        "MQTT / Kafka Stress Testing",
+        "Partition Throughput Tuning",
+        "Broker Resource Saturation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Distributed Cloud Performance & Load Engineering Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Test Scenario & Virtual User Modeling",
+        "node": "k6 TypeScript Scenarios, Realistic Think Times, Dynamic User Payloads"
+      },
+      {
+        "label": "Layer 02: Multi-Region Distributed Load Generator",
+        "node": "Distributed k6 / Locust Fleet, Multi-Zone Cloud VM Workers"
+      },
+      {
+        "label": "Layer 03: Target System Under Test (SUT)",
+        "node": "API Gateways, Microservice Container Fleets, Database Read/Write Replicas"
+      },
+      {
+        "label": "Layer 04: Real-Time APM & Profiling Telemetry",
+        "node": "Datadog / Prometheus APM, P95/P99 Latency Metrics, JVM Thread Profiling"
+      },
+      {
+        "label": "Layer 05: Performance Trend & Regression Analytics",
+        "node": "Historical Trend Dashboards, CI/CD Latency Quality Gates, Bottleneck Reports"
+      }
+    ],
+    "editorialParagraph1": "Discovering system performance bottlenecks during a live marketing campaign, product launch, or Black Friday traffic surge is a catastrophic business failure. Real-world users do not behave like simple scripts; they exert complex, concurrent stress on microservices and databases.",
+    "editorialParagraph2": "We design distributed, cloud-scale load and performance simulations using modern tools like k6 and Locust. By measuring P95 and P99 latency percentiles and profiling system bottlenecks under extreme stress, we guarantee your applications remain blazing fast and stable under peak demand.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Stability During Peak Traffic",
+      "desc": "Proactive stress and spike testing proves your application and database architecture can survive extreme traffic surges without outages."
+    },
+    {
+      "id": "02",
+      "title": "Sub-Second Response Times Under Heavy Load",
+      "desc": "Identifying and resolving unindexed database queries and resource bottlenecks ensures P99 latency remains within strict enterprise SLAs."
+    },
+    {
+      "id": "03",
+      "title": "Prevent Costly Infrastructure Over-Provisioning",
+      "desc": "Accurate capacity benchmarking reveals exactly how much compute your workload needs, eliminating expensive over-provisioned cloud servers."
+    }
+  ]
+},
+  "qa-testing/security-testing": {
+  "slug": "security-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Dynamic Security & Vulnerability Testing (DAST & SAST)",
+  "solutions": [
+    {
+      "title": "Dynamic Application Security Testing (DAST)",
+      "desc": "Automating runtime penetration scans (OWASP ZAP, Burp Suite Enterprise, Nuclei) against staging environments to detect runtime flaws."
+    },
+    {
+      "title": "OWASP Top 10 Automated Vulnerability Verification",
+      "desc": "Systematic automated test suites verifying protection against SQL injection, Cross-Site Scripting (XSS), CSRF, and broken authorization."
+    },
+    {
+      "title": "API Security & Broken Object Authorization (BOLA)",
+      "desc": "Specialized automated testing targeting Broken Object Level Authorization (BOLA/IDOR), parameter tampering, and token manipulation."
+    },
+    {
+      "title": "Interactive Application Security Testing (IAST)",
+      "desc": "Embedding bytecode sensors inside running application servers to correlate input payloads with internal code execution paths."
+    },
+    {
+      "title": "Automated SSL/TLS & Header Hardening Checks",
+      "desc": "Automated regression checks verifying Content Security Policies (CSP), HSTS headers, secure cookie flags, and cipher suites."
+    },
+    {
+      "title": "Continuous Security Regression Gates in CI/CD",
+      "desc": "Failing pull request builds automatically if high-severity security vulnerabilities are introduced to prevent insecure code from shipping."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Open Banking API DAST Gate",
+      "desc": "Integrating automated daily dynamic vulnerability scans against staging payment APIs before promotion to production.",
+      "practicalValue": "Intercepted a critical parameter tampering vulnerability in a new loan endpoint prior to public release.",
+      "focusAreas": [
+        "OWASP API Top 10 Scans",
+        "BOLA / IDOR Assertions",
+        "Automated Token Invalidation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "HIPAA Clinical Patient Record Security Testing",
+      "desc": "Automating unauthorized access simulation tests verifying that clinical staff cannot access cross-department patient medical files.",
+      "practicalValue": "Validated strict patient confidentiality boundaries across 45 clinical role permutations.",
+      "focusAreas": [
+        "Authorization Matrix Testing",
+        "SQL Injection Verification",
+        "Audit Trail Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "E-Commerce Checkout Parameter Manipulation Test",
+      "desc": "Testing checkout APIs with automated price manipulation, coupon stacking, and negative quantity payload injections.",
+      "practicalValue": "Prevented coupon code abuse and unauthorized cart price recalculation exploits.",
+      "focusAreas": [
+        "Business Logic Flaw Fuzzing",
+        "Price Parameter Manipulation",
+        "CSRF Token Validation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Portal Authentication Hardening",
+      "desc": "Automating credential stuffing and brute-force protection verification against public vendor supply chain portals.",
+      "practicalValue": "Enforced automated IP rate limiting and account lockout thresholds against automated bot attacks.",
+      "focusAreas": [
+        "Brute-Force Fuzzing",
+        "Account Lockout Verification",
+        "TLS Cipher Suite Audit"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Automated Dynamic Security Testing (DAST) Pipeline Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Ephemeral Staging Deployment",
+        "node": "Isolated K8s Test Namespace, Sanitized Synthetic Data, OpenAPI Schema"
+      },
+      {
+        "label": "Layer 02: Dynamic Security Crawler & Fuzzer",
+        "node": "OWASP ZAP / Nuclei Engine, Authentication Token Proxy, Route Discovery"
+      },
+      {
+        "label": "Layer 03: Vulnerability Verification & Exploit Payloads",
+        "node": "BOLA/IDOR Tests, SQLi Payloads, XSS Reflected Payloads, Header Checks"
+      },
+      {
+        "label": "Layer 04: Interactive Telemetry & Code Correlation",
+        "node": "IAST Runtime Sensor, Server Stack Trace Interception, False-Positive Filter"
+      },
+      {
+        "label": "Layer 05: Security Quality Gate & Issue Tracking",
+        "node": "Jira Security Sync, CVSS Severity Scoring, CI/CD Build Blocker"
+      }
+    ],
+    "editorialParagraph1": "Security testing cannot be a sporadic annual event performed by third-party auditors days before launch. In fast-moving development environments, newly deployed API endpoints and frontend features can accidentally introduce critical authorization flaws overnight.",
+    "editorialParagraph2": "We build automated Dynamic Application Security Testing (DAST) pipelines that scan ephemeral staging environments on every pull request. By testing for OWASP vulnerabilities and business logic flaws before code reaches production, we ensure your applications are continuously hardened against adversaries.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Proactive Vulnerability Interception in CI/CD",
+      "desc": "Automated security test suites catch injection flaws, missing headers, and authorization bypasses before code merges."
+    },
+    {
+      "id": "02",
+      "title": "Thorough API Authorization & BOLA Protection",
+      "desc": "Specialized API test harnesses prove that users cannot access or modify unauthorized objects belonging to other tenants."
+    },
+    {
+      "id": "03",
+      "title": "Continuous Compliance & Audit Readiness",
+      "desc": "Automated vulnerability scan reports provide continuous evidence for SOC 2, ISO 27001, and PCI-DSS compliance audits."
+    }
+  ]
+},
+  "security-testing": {
+  "slug": "security-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Dynamic Security & Vulnerability Testing (DAST & SAST)",
+  "solutions": [
+    {
+      "title": "Dynamic Application Security Testing (DAST)",
+      "desc": "Automating runtime penetration scans (OWASP ZAP, Burp Suite Enterprise, Nuclei) against staging environments to detect runtime flaws."
+    },
+    {
+      "title": "OWASP Top 10 Automated Vulnerability Verification",
+      "desc": "Systematic automated test suites verifying protection against SQL injection, Cross-Site Scripting (XSS), CSRF, and broken authorization."
+    },
+    {
+      "title": "API Security & Broken Object Authorization (BOLA)",
+      "desc": "Specialized automated testing targeting Broken Object Level Authorization (BOLA/IDOR), parameter tampering, and token manipulation."
+    },
+    {
+      "title": "Interactive Application Security Testing (IAST)",
+      "desc": "Embedding bytecode sensors inside running application servers to correlate input payloads with internal code execution paths."
+    },
+    {
+      "title": "Automated SSL/TLS & Header Hardening Checks",
+      "desc": "Automated regression checks verifying Content Security Policies (CSP), HSTS headers, secure cookie flags, and cipher suites."
+    },
+    {
+      "title": "Continuous Security Regression Gates in CI/CD",
+      "desc": "Failing pull request builds automatically if high-severity security vulnerabilities are introduced to prevent insecure code from shipping."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Open Banking API DAST Gate",
+      "desc": "Integrating automated daily dynamic vulnerability scans against staging payment APIs before promotion to production.",
+      "practicalValue": "Intercepted a critical parameter tampering vulnerability in a new loan endpoint prior to public release.",
+      "focusAreas": [
+        "OWASP API Top 10 Scans",
+        "BOLA / IDOR Assertions",
+        "Automated Token Invalidation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "HIPAA Clinical Patient Record Security Testing",
+      "desc": "Automating unauthorized access simulation tests verifying that clinical staff cannot access cross-department patient medical files.",
+      "practicalValue": "Validated strict patient confidentiality boundaries across 45 clinical role permutations.",
+      "focusAreas": [
+        "Authorization Matrix Testing",
+        "SQL Injection Verification",
+        "Audit Trail Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "E-Commerce Checkout Parameter Manipulation Test",
+      "desc": "Testing checkout APIs with automated price manipulation, coupon stacking, and negative quantity payload injections.",
+      "practicalValue": "Prevented coupon code abuse and unauthorized cart price recalculation exploits.",
+      "focusAreas": [
+        "Business Logic Flaw Fuzzing",
+        "Price Parameter Manipulation",
+        "CSRF Token Validation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Portal Authentication Hardening",
+      "desc": "Automating credential stuffing and brute-force protection verification against public vendor supply chain portals.",
+      "practicalValue": "Enforced automated IP rate limiting and account lockout thresholds against automated bot attacks.",
+      "focusAreas": [
+        "Brute-Force Fuzzing",
+        "Account Lockout Verification",
+        "TLS Cipher Suite Audit"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Automated Dynamic Security Testing (DAST) Pipeline Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Ephemeral Staging Deployment",
+        "node": "Isolated K8s Test Namespace, Sanitized Synthetic Data, OpenAPI Schema"
+      },
+      {
+        "label": "Layer 02: Dynamic Security Crawler & Fuzzer",
+        "node": "OWASP ZAP / Nuclei Engine, Authentication Token Proxy, Route Discovery"
+      },
+      {
+        "label": "Layer 03: Vulnerability Verification & Exploit Payloads",
+        "node": "BOLA/IDOR Tests, SQLi Payloads, XSS Reflected Payloads, Header Checks"
+      },
+      {
+        "label": "Layer 04: Interactive Telemetry & Code Correlation",
+        "node": "IAST Runtime Sensor, Server Stack Trace Interception, False-Positive Filter"
+      },
+      {
+        "label": "Layer 05: Security Quality Gate & Issue Tracking",
+        "node": "Jira Security Sync, CVSS Severity Scoring, CI/CD Build Blocker"
+      }
+    ],
+    "editorialParagraph1": "Security testing cannot be a sporadic annual event performed by third-party auditors days before launch. In fast-moving development environments, newly deployed API endpoints and frontend features can accidentally introduce critical authorization flaws overnight.",
+    "editorialParagraph2": "We build automated Dynamic Application Security Testing (DAST) pipelines that scan ephemeral staging environments on every pull request. By testing for OWASP vulnerabilities and business logic flaws before code reaches production, we ensure your applications are continuously hardened against adversaries.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Proactive Vulnerability Interception in CI/CD",
+      "desc": "Automated security test suites catch injection flaws, missing headers, and authorization bypasses before code merges."
+    },
+    {
+      "id": "02",
+      "title": "Thorough API Authorization & BOLA Protection",
+      "desc": "Specialized API test harnesses prove that users cannot access or modify unauthorized objects belonging to other tenants."
+    },
+    {
+      "id": "03",
+      "title": "Continuous Compliance & Audit Readiness",
+      "desc": "Automated vulnerability scan reports provide continuous evidence for SOC 2, ISO 27001, and PCI-DSS compliance audits."
+    }
+  ]
+},
+  "qa-testing/api-testing": {
+  "slug": "api-testing",
+  "serviceSlug": "qa-testing",
+  "title": "API & Consumer-Driven Contract Testing (Pact & RestAssured)",
+  "solutions": [
+    {
+      "title": "Consumer-Driven Contract Testing with Pact",
+      "desc": "Implementing Pact contract testing between frontend micro-frontends and backend services to eliminate breaking API changes."
+    },
+    {
+      "title": "Automated REST & GraphQL Functional Testing",
+      "desc": "Building comprehensive API test suites using RestAssured, Supertest, and Playwright API verifying status codes, schemas, and headers."
+    },
+    {
+      "title": "gRPC & Protobuf Contract Verification",
+      "desc": "Automating binary protocol testing for high-performance gRPC microservices with schema validation and mock reflection."
+    },
+    {
+      "title": "Automated OpenAPI Spec & Schema Validation",
+      "desc": "Enforcing that live API responses conform strictly to published OpenAPI (Swagger) JSON schemas without unexpected payload drift."
+    },
+    {
+      "title": "Mocking & Virtualized API Dependency Services",
+      "desc": "Deploying API service virtualization (Mockoon, WireMock) to simulate unstable third-party payment gateways and external APIs."
+    },
+    {
+      "title": "API Performance & Latency Assertion Testing",
+      "desc": "Asserting endpoint response times, payload compression (gzip/brotli), and caching headers directly within continuous test runs."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Open Banking Regulatory Contract Testing",
+      "desc": "Verifying that core banking API endpoints strictly comply with UK Open Banking Read/Write specifications across all versions.",
+      "practicalValue": "100% compliance pass rate across external Open Banking compliance verification test harnesses.",
+      "focusAreas": [
+        "OpenAPI Schema Assertion",
+        "Consumer-Driven Contracts",
+        "Strict Payload Validation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "FHIR Healthcare Data Interchange Testing",
+      "desc": "Testing hospital FHIR REST APIs against international HL7 schemas to ensure seamless clinical interoperability.",
+      "practicalValue": "Eliminated patient record exchange format errors across 14 integrated medical laboratory networks.",
+      "focusAreas": [
+        "FHIR Schema Conformance",
+        "Mock Patient Records",
+        "WireMock Service Virtualization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Microservice Breaking Change Prevention",
+      "desc": "Enforcing Pact contract tests between checkout mobile apps, web storefronts, and 24 backend microservices in CI/CD.",
+      "practicalValue": "Completely eliminated production breaking API bugs across 1,800 annual microservice deployments.",
+      "focusAreas": [
+        "Pact Broker CI Verification",
+        "Can-I-Deploy Automation",
+        "Backward Compatibility"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Partner Logistics API Automated Regression",
+      "desc": "Automating end-to-end payload and status validation across carrier dispatch and freight tracking REST APIs.",
+      "practicalValue": "Prevented corrupted shipping manifest transmissions across 35 third-party logistics carriers.",
+      "focusAreas": [
+        "RestAssured Java Suites",
+        "JSON Schema Assertions",
+        "Webhook Event Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Consumer-Driven API Contract & Functional Testing Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: API Consumer Contract Definition",
+        "node": "Pact Consumer DSL, Expected Request/Response Schemas, Mock Verification"
+      },
+      {
+        "label": "Layer 02: Centralized Pact Broker & Matrix Verification",
+        "node": "Pact Broker Registry, 'Can-I-Deploy' Compatibility Matrix CLI"
+      },
+      {
+        "label": "Layer 03: Automated Provider Verification Suite",
+        "node": "RestAssured / Supertest Runners, Schema Assertion against OpenAPI Spec"
+      },
+      {
+        "label": "Layer 04: Service Virtualization & Mock Mesh",
+        "node": "WireMock Virtual Stubs, Simulated 3rd-Party Latency, Error Responses"
+      },
+      {
+        "label": "Layer 05: CI/CD Quality Gate & Deployment Authorization",
+        "node": "Automated Pull Request Blocking, Compatibility Reports, Version Tags"
+      }
+    ],
+    "editorialParagraph1": "In distributed microservices architectures, the biggest risk to production stability is an unintended breaking API change: a renamed JSON field, a missing query parameter, or an unexpected HTTP status code that crashes client applications.",
+    "editorialParagraph2": "We implement Consumer-Driven Contract Testing using Pact and OpenAPI schema validators. By defining explicit contracts between API consumers and providers and verifying them automatically in CI/CD before deployment, we guarantee that services integrate flawlessly with zero breaking changes.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Complete Elimination of Breaking API Changes",
+      "desc": "Consumer-driven contract testing mathematically verifies that backend modifications never break existing web or mobile clients."
+    },
+    {
+      "id": "02",
+      "title": "Independent Microservice Deployments",
+      "desc": "Teams can deploy microservices to production with complete confidence without requiring complex, coordinated end-to-end testing."
+    },
+    {
+      "id": "03",
+      "title": "Fast, Isolated Testing with Service Virtualization",
+      "desc": "Virtual stubs simulate slow or flaky third-party APIs, allowing automated test suites to execute in seconds without external dependencies."
+    }
+  ]
+},
+  "api-testing": {
+  "slug": "api-testing",
+  "serviceSlug": "qa-testing",
+  "title": "API & Consumer-Driven Contract Testing (Pact & RestAssured)",
+  "solutions": [
+    {
+      "title": "Consumer-Driven Contract Testing with Pact",
+      "desc": "Implementing Pact contract testing between frontend micro-frontends and backend services to eliminate breaking API changes."
+    },
+    {
+      "title": "Automated REST & GraphQL Functional Testing",
+      "desc": "Building comprehensive API test suites using RestAssured, Supertest, and Playwright API verifying status codes, schemas, and headers."
+    },
+    {
+      "title": "gRPC & Protobuf Contract Verification",
+      "desc": "Automating binary protocol testing for high-performance gRPC microservices with schema validation and mock reflection."
+    },
+    {
+      "title": "Automated OpenAPI Spec & Schema Validation",
+      "desc": "Enforcing that live API responses conform strictly to published OpenAPI (Swagger) JSON schemas without unexpected payload drift."
+    },
+    {
+      "title": "Mocking & Virtualized API Dependency Services",
+      "desc": "Deploying API service virtualization (Mockoon, WireMock) to simulate unstable third-party payment gateways and external APIs."
+    },
+    {
+      "title": "API Performance & Latency Assertion Testing",
+      "desc": "Asserting endpoint response times, payload compression (gzip/brotli), and caching headers directly within continuous test runs."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Open Banking Regulatory Contract Testing",
+      "desc": "Verifying that core banking API endpoints strictly comply with UK Open Banking Read/Write specifications across all versions.",
+      "practicalValue": "100% compliance pass rate across external Open Banking compliance verification test harnesses.",
+      "focusAreas": [
+        "OpenAPI Schema Assertion",
+        "Consumer-Driven Contracts",
+        "Strict Payload Validation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "FHIR Healthcare Data Interchange Testing",
+      "desc": "Testing hospital FHIR REST APIs against international HL7 schemas to ensure seamless clinical interoperability.",
+      "practicalValue": "Eliminated patient record exchange format errors across 14 integrated medical laboratory networks.",
+      "focusAreas": [
+        "FHIR Schema Conformance",
+        "Mock Patient Records",
+        "WireMock Service Virtualization"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Microservice Breaking Change Prevention",
+      "desc": "Enforcing Pact contract tests between checkout mobile apps, web storefronts, and 24 backend microservices in CI/CD.",
+      "practicalValue": "Completely eliminated production breaking API bugs across 1,800 annual microservice deployments.",
+      "focusAreas": [
+        "Pact Broker CI Verification",
+        "Can-I-Deploy Automation",
+        "Backward Compatibility"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Partner Logistics API Automated Regression",
+      "desc": "Automating end-to-end payload and status validation across carrier dispatch and freight tracking REST APIs.",
+      "practicalValue": "Prevented corrupted shipping manifest transmissions across 35 third-party logistics carriers.",
+      "focusAreas": [
+        "RestAssured Java Suites",
+        "JSON Schema Assertions",
+        "Webhook Event Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Consumer-Driven API Contract & Functional Testing Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: API Consumer Contract Definition",
+        "node": "Pact Consumer DSL, Expected Request/Response Schemas, Mock Verification"
+      },
+      {
+        "label": "Layer 02: Centralized Pact Broker & Matrix Verification",
+        "node": "Pact Broker Registry, 'Can-I-Deploy' Compatibility Matrix CLI"
+      },
+      {
+        "label": "Layer 03: Automated Provider Verification Suite",
+        "node": "RestAssured / Supertest Runners, Schema Assertion against OpenAPI Spec"
+      },
+      {
+        "label": "Layer 04: Service Virtualization & Mock Mesh",
+        "node": "WireMock Virtual Stubs, Simulated 3rd-Party Latency, Error Responses"
+      },
+      {
+        "label": "Layer 05: CI/CD Quality Gate & Deployment Authorization",
+        "node": "Automated Pull Request Blocking, Compatibility Reports, Version Tags"
+      }
+    ],
+    "editorialParagraph1": "In distributed microservices architectures, the biggest risk to production stability is an unintended breaking API change: a renamed JSON field, a missing query parameter, or an unexpected HTTP status code that crashes client applications.",
+    "editorialParagraph2": "We implement Consumer-Driven Contract Testing using Pact and OpenAPI schema validators. By defining explicit contracts between API consumers and providers and verifying them automatically in CI/CD before deployment, we guarantee that services integrate flawlessly with zero breaking changes.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Complete Elimination of Breaking API Changes",
+      "desc": "Consumer-driven contract testing mathematically verifies that backend modifications never break existing web or mobile clients."
+    },
+    {
+      "id": "02",
+      "title": "Independent Microservice Deployments",
+      "desc": "Teams can deploy microservices to production with complete confidence without requiring complex, coordinated end-to-end testing."
+    },
+    {
+      "id": "03",
+      "title": "Fast, Isolated Testing with Service Virtualization",
+      "desc": "Virtual stubs simulate slow or flaky third-party APIs, allowing automated test suites to execute in seconds without external dependencies."
+    }
+  ]
+},
+  "qa-testing/mobile-app-testing": {
+  "slug": "mobile-app-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Mobile Application Testing (Appium & Maestro)",
+  "solutions": [
+    {
+      "title": "Automated Mobile UI Testing (Maestro & Appium)",
+      "desc": "Writing fast, declarative automated test flows for iOS and Android apps with automatic flakiness handling and gesture support."
+    },
+    {
+      "title": "Real-Device Cloud Execution Grid",
+      "desc": "Running automated test suites across hundreds of real physical iOS and Android smartphones and tablets (BrowserStack, AWS Device Farm)."
+    },
+    {
+      "title": "Mobile App Performance & Battery Profiling",
+      "desc": "Continuous profiling of CPU usage, memory leaks, launch times, and battery consumption across older and newer mobile devices."
+    },
+    {
+      "title": "Network Latency & Offline Mode Emulation",
+      "desc": "Simulating 3G, spotty cellular, airplane mode, and offline transitions to verify data caching and background sync resilience."
+    },
+    {
+      "title": "Biometric & Hardware Interaction Testing",
+      "desc": "Automating FaceID, TouchID, fingerprint authentication, camera uploads, and GPS location spoofing within automated test runs."
+    },
+    {
+      "title": "Automated Mobile CI/CD Release Verification",
+      "desc": "Integrating Maestro tests directly into Fastlane pipelines to verify production APKs and IPAs before submitting to Apple and Google stores."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Mobile Banking Biometric Authentication Test",
+      "desc": "Automating FaceID and fingerprint authentication scenarios, funds transfers, and statement downloads across 50 real device models.",
+      "practicalValue": "Achieved a 4.8-star App Store rating with zero reported login crashes across iOS and Android releases.",
+      "focusAreas": [
+        "Biometric Hardware Mocking",
+        "Real Device Grid Testing",
+        "PIN Security Testing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Patient Health Tracker Device Compatibility",
+      "desc": "Testing medical companion apps across older Android OS versions and varying screen sizes to ensure universal patient accessibility.",
+      "practicalValue": "100% functional reliability verified across legacy devices used by elderly and vulnerable patients.",
+      "focusAreas": [
+        "Legacy Android OS Support",
+        "Font Scaling & Dynamic Type",
+        "Bluetooth Connection Testing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Mobile Shopping One-Tap Checkout Automation",
+      "desc": "Testing mobile checkout, Apple Pay integration, and barcode scanner camera inputs across high-density iOS and Android flagships.",
+      "practicalValue": "Reduced checkout funnel crash rate to 0.02%, preventing cart abandonment during peak mobile sales.",
+      "focusAreas": [
+        "Apple Pay / Google Pay Flow",
+        "Camera Barcode Recognition",
+        "App Cold-Start Benchmarks"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Rugged Industrial Warehouse Scanner Testing",
+      "desc": "Automating warehouse management app testing on rugged Zebra Android devices with physical laser barcode scanners.",
+      "practicalValue": "Guaranteed uninterrupted barcode scanning and inventory lookups across 1,400 rugged plant devices.",
+      "focusAreas": [
+        "Zebra Enterprise Device Testing",
+        "Physical Key Event Handling",
+        "Offline Storage Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Mobile Application Test Automation & Device Cloud Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Maestro / Appium Declarative Flow Definition",
+        "node": "YAML Test Flows, Gesture Actions, Biometric Mock Hooks, Deep Links"
+      },
+      {
+        "label": "Layer 02: Fastlane Build & Package Ingestion",
+        "node": "Release APK/AAB & IPA Compilation, Code Signing, Test Runner Packaging"
+      },
+      {
+        "label": "Layer 03: Real Device Cloud Execution Grid",
+        "node": "BrowserStack / AWS Device Farm, Parallel Real iOS & Android Hardware"
+      },
+      {
+        "label": "Layer 04: Performance & Network Profiling Engine",
+        "node": "CPU/RAM Profiling, Battery Draw Monitoring, Network Throttling Shaper"
+      },
+      {
+        "label": "Layer 05: Video Recording & Crash Telemetry Handoff",
+        "node": "Full Session Video Playbacks, Device Log Dumps, Slack/Jira Bug Sync"
+      }
+    ],
+    "editorialParagraph1": "Mobile testing presents unique engineering hurdles that desktop web testing never encounters: thousands of distinct device screen sizes, varying OEM Android skins, flaky cellular connectivity, and restrictive hardware security enclaves.",
+    "editorialParagraph2": "We design modern mobile test automation frameworks using Maestro and Appium running against real device cloud grids. By profiling battery consumption, memory leaks, and offline data sync alongside automated UI flows, we ensure your mobile apps maintain five-star app store reputations.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Flawless Real-Device Compatibility",
+      "desc": "Parallelized execution across real physical iPhones and Android devices eliminates device-specific layout and operating system bugs."
+    },
+    {
+      "id": "02",
+      "title": "Dramatically Faster Mobile Release Cycles",
+      "desc": "Automated Maestro testing integrated into Fastlane pipelines cuts pre-release testing from days to under 30 minutes."
+    },
+    {
+      "id": "03",
+      "title": "Five-Star Mobile App Store Ratings",
+      "desc": "Rigorous memory profiling, crash detection, and offline mode testing eliminate the frustrating bugs that drive negative app store reviews."
+    }
+  ]
+},
+  "mobile-app-testing": {
+  "slug": "mobile-app-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Mobile Application Testing (Appium & Maestro)",
+  "solutions": [
+    {
+      "title": "Automated Mobile UI Testing (Maestro & Appium)",
+      "desc": "Writing fast, declarative automated test flows for iOS and Android apps with automatic flakiness handling and gesture support."
+    },
+    {
+      "title": "Real-Device Cloud Execution Grid",
+      "desc": "Running automated test suites across hundreds of real physical iOS and Android smartphones and tablets (BrowserStack, AWS Device Farm)."
+    },
+    {
+      "title": "Mobile App Performance & Battery Profiling",
+      "desc": "Continuous profiling of CPU usage, memory leaks, launch times, and battery consumption across older and newer mobile devices."
+    },
+    {
+      "title": "Network Latency & Offline Mode Emulation",
+      "desc": "Simulating 3G, spotty cellular, airplane mode, and offline transitions to verify data caching and background sync resilience."
+    },
+    {
+      "title": "Biometric & Hardware Interaction Testing",
+      "desc": "Automating FaceID, TouchID, fingerprint authentication, camera uploads, and GPS location spoofing within automated test runs."
+    },
+    {
+      "title": "Automated Mobile CI/CD Release Verification",
+      "desc": "Integrating Maestro tests directly into Fastlane pipelines to verify production APKs and IPAs before submitting to Apple and Google stores."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Mobile Banking Biometric Authentication Test",
+      "desc": "Automating FaceID and fingerprint authentication scenarios, funds transfers, and statement downloads across 50 real device models.",
+      "practicalValue": "Achieved a 4.8-star App Store rating with zero reported login crashes across iOS and Android releases.",
+      "focusAreas": [
+        "Biometric Hardware Mocking",
+        "Real Device Grid Testing",
+        "PIN Security Testing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Patient Health Tracker Device Compatibility",
+      "desc": "Testing medical companion apps across older Android OS versions and varying screen sizes to ensure universal patient accessibility.",
+      "practicalValue": "100% functional reliability verified across legacy devices used by elderly and vulnerable patients.",
+      "focusAreas": [
+        "Legacy Android OS Support",
+        "Font Scaling & Dynamic Type",
+        "Bluetooth Connection Testing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Mobile Shopping One-Tap Checkout Automation",
+      "desc": "Testing mobile checkout, Apple Pay integration, and barcode scanner camera inputs across high-density iOS and Android flagships.",
+      "practicalValue": "Reduced checkout funnel crash rate to 0.02%, preventing cart abandonment during peak mobile sales.",
+      "focusAreas": [
+        "Apple Pay / Google Pay Flow",
+        "Camera Barcode Recognition",
+        "App Cold-Start Benchmarks"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Rugged Industrial Warehouse Scanner Testing",
+      "desc": "Automating warehouse management app testing on rugged Zebra Android devices with physical laser barcode scanners.",
+      "practicalValue": "Guaranteed uninterrupted barcode scanning and inventory lookups across 1,400 rugged plant devices.",
+      "focusAreas": [
+        "Zebra Enterprise Device Testing",
+        "Physical Key Event Handling",
+        "Offline Storage Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Mobile Application Test Automation & Device Cloud Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Maestro / Appium Declarative Flow Definition",
+        "node": "YAML Test Flows, Gesture Actions, Biometric Mock Hooks, Deep Links"
+      },
+      {
+        "label": "Layer 02: Fastlane Build & Package Ingestion",
+        "node": "Release APK/AAB & IPA Compilation, Code Signing, Test Runner Packaging"
+      },
+      {
+        "label": "Layer 03: Real Device Cloud Execution Grid",
+        "node": "BrowserStack / AWS Device Farm, Parallel Real iOS & Android Hardware"
+      },
+      {
+        "label": "Layer 04: Performance & Network Profiling Engine",
+        "node": "CPU/RAM Profiling, Battery Draw Monitoring, Network Throttling Shaper"
+      },
+      {
+        "label": "Layer 05: Video Recording & Crash Telemetry Handoff",
+        "node": "Full Session Video Playbacks, Device Log Dumps, Slack/Jira Bug Sync"
+      }
+    ],
+    "editorialParagraph1": "Mobile testing presents unique engineering hurdles that desktop web testing never encounters: thousands of distinct device screen sizes, varying OEM Android skins, flaky cellular connectivity, and restrictive hardware security enclaves.",
+    "editorialParagraph2": "We design modern mobile test automation frameworks using Maestro and Appium running against real device cloud grids. By profiling battery consumption, memory leaks, and offline data sync alongside automated UI flows, we ensure your mobile apps maintain five-star app store reputations.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Flawless Real-Device Compatibility",
+      "desc": "Parallelized execution across real physical iPhones and Android devices eliminates device-specific layout and operating system bugs."
+    },
+    {
+      "id": "02",
+      "title": "Dramatically Faster Mobile Release Cycles",
+      "desc": "Automated Maestro testing integrated into Fastlane pipelines cuts pre-release testing from days to under 30 minutes."
+    },
+    {
+      "id": "03",
+      "title": "Five-Star Mobile App Store Ratings",
+      "desc": "Rigorous memory profiling, crash detection, and offline mode testing eliminate the frustrating bugs that drive negative app store reviews."
+    }
+  ]
+},
+  "qa-testing/functional-testing": {
+  "slug": "functional-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Functional, Regression & Exploratory Testing",
+  "solutions": [
+    {
+      "title": "Structured Functional Test Case Design",
+      "desc": "Engineering comprehensive test scenarios, boundary value analyses, and equivalence partitioning mapped to business requirements."
+    },
+    {
+      "title": "Systematic Regression Testing Suites",
+      "desc": "Maintaining living regression test repositories ensuring existing core capabilities remain intact across rapid sprint iterations."
+    },
+    {
+      "title": "Charter-Driven Exploratory Testing",
+      "desc": "Experienced senior QA practitioners conducting time-boxed exploratory testing sessions hunting for edge-case business logic flaws."
+    },
+    {
+      "title": "User Acceptance Testing (UAT) Coordination",
+      "desc": "Structuring UAT test scripts, facilitating business stakeholder sign-offs, and tracking pre-release acceptance criteria."
+    },
+    {
+      "title": "Defect Lifecycle Management & Root Cause Tracking",
+      "desc": "Detailed defect reporting in Jira with step-by-step reproduction steps, console logs, network HAR files, and video recordings."
+    },
+    {
+      "title": "Accessibility & Usability Testing (WCAG 2.2)",
+      "desc": "Hands-on auditing using screen readers (NVDA, VoiceOver), high-contrast modes, and keyboard navigation to verify compliance."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Complex Commercial Lending Functional Audit",
+      "desc": "Validating complex multi-tier interest calculations, fee amortizations, and automated currency conversions across lending portals.",
+      "practicalValue": "Identified and corrected 8 critical loan interest calculation edge cases prior to commercial deployment.",
+      "focusAreas": [
+        "Financial Math Boundary Tests",
+        "Multi-Tier Approval Verification",
+        "FCA Regulatory Checks"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Workflow Functional Verification",
+      "desc": "Validating patient medication dosage calculations, allergy warning triggers, and clinician electronic signoff workflows.",
+      "practicalValue": "100% verified compliance with patient clinical safety standards prior to regional hospital rollout.",
+      "focusAreas": [
+        "Allergy Warning Triggers",
+        "Clinician Role Permutations",
+        "Audit Trail Logging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Promotional Pricing & Coupon Stacking Testing",
+      "desc": "Verifying complex multi-buy discounts, loyalty voucher redemptions, and tiered shipping threshold calculations.",
+      "practicalValue": "Prevented unintended discount stacking combinations that would have eroded holiday promotional gross margins.",
+      "focusAreas": [
+        "Coupon Stacking Combinations",
+        "Tax & Duty Calculations",
+        "Multi-Currency Cart Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Factory ERP Material Requirements Verification",
+      "desc": "Verifying complex multi-level bills of materials (BOM), production order scheduling, and inventory re-order point calculations.",
+      "practicalValue": "Eliminated raw material procurement miscalculations, preventing manufacturing assembly line halts.",
+      "focusAreas": [
+        "Multi-Level BOM Calculations",
+        "Inventory Threshold Verification",
+        "Production Scheduling Gates"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Comprehensive Functional Quality Assurance Framework",
+    "layers": [
+      {
+        "label": "Layer 01: Requirements Analysis & Traceability Matrix",
+        "node": "User Story Acceptance Criteria, Jira Requirement Linking, Test Charter"
+      },
+      {
+        "label": "Layer 02: Equivalence Partitioning & Boundary Testing",
+        "node": "Edge-Case Value Synthesis, Invalid Input Scenarios, State Transition Models"
+      },
+      {
+        "label": "Layer 03: Systematic Regression & Smoke Execution",
+        "node": "High-Priority Functional Suites, Automated Smoke Gates, Sanity Validation"
+      },
+      {
+        "label": "Layer 04: Charter-Based Exploratory Testing",
+        "node": "Adversarial Edge-Case Discovery, Persona-Based Testing, Usability Audits"
+      },
+      {
+        "label": "Layer 05: Defect Intelligence & Release Sign-Off",
+        "node": "Jira Defect Tracking, Root-Cause Tagging, Executive Go/No-Go Release Gate"
+      }
+    ],
+    "editorialParagraph1": "While automated testing handles repetitive checks, human intuition, exploratory curiosity, and deep domain knowledge are essential to uncover nuanced usability flaws, edge-case race conditions, and business logic discrepancies.",
+    "editorialParagraph2": "Our functional quality engineering practice combines structured test case design with time-boxed exploratory testing charters. By mapping requirements to comprehensive traceability matrices and providing detailed defect evidence, we ensure releases meet the highest enterprise standards.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Uncompromising Software Reliability",
+      "desc": "Thorough functional and boundary value testing catches obscure edge-case defects before real customers ever encounter them."
+    },
+    {
+      "id": "02",
+      "title": "Defensible Release Go/No-Go Governance",
+      "desc": "Clear requirement traceability matrices and defect metrics provide executive stakeholders with objective release confidence."
+    },
+    {
+      "id": "03",
+      "title": "Actionable, High-Quality Defect Reports",
+      "desc": "Detailed bug reports with step-by-step reproduction steps, network logs, and video captures allow developers to fix bugs rapidly."
+    }
+  ]
+},
+  "functional-testing": {
+  "slug": "functional-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Functional, Regression & Exploratory Testing",
+  "solutions": [
+    {
+      "title": "Structured Functional Test Case Design",
+      "desc": "Engineering comprehensive test scenarios, boundary value analyses, and equivalence partitioning mapped to business requirements."
+    },
+    {
+      "title": "Systematic Regression Testing Suites",
+      "desc": "Maintaining living regression test repositories ensuring existing core capabilities remain intact across rapid sprint iterations."
+    },
+    {
+      "title": "Charter-Driven Exploratory Testing",
+      "desc": "Experienced senior QA practitioners conducting time-boxed exploratory testing sessions hunting for edge-case business logic flaws."
+    },
+    {
+      "title": "User Acceptance Testing (UAT) Coordination",
+      "desc": "Structuring UAT test scripts, facilitating business stakeholder sign-offs, and tracking pre-release acceptance criteria."
+    },
+    {
+      "title": "Defect Lifecycle Management & Root Cause Tracking",
+      "desc": "Detailed defect reporting in Jira with step-by-step reproduction steps, console logs, network HAR files, and video recordings."
+    },
+    {
+      "title": "Accessibility & Usability Testing (WCAG 2.2)",
+      "desc": "Hands-on auditing using screen readers (NVDA, VoiceOver), high-contrast modes, and keyboard navigation to verify compliance."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Complex Commercial Lending Functional Audit",
+      "desc": "Validating complex multi-tier interest calculations, fee amortizations, and automated currency conversions across lending portals.",
+      "practicalValue": "Identified and corrected 8 critical loan interest calculation edge cases prior to commercial deployment.",
+      "focusAreas": [
+        "Financial Math Boundary Tests",
+        "Multi-Tier Approval Verification",
+        "FCA Regulatory Checks"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Workflow Functional Verification",
+      "desc": "Validating patient medication dosage calculations, allergy warning triggers, and clinician electronic signoff workflows.",
+      "practicalValue": "100% verified compliance with patient clinical safety standards prior to regional hospital rollout.",
+      "focusAreas": [
+        "Allergy Warning Triggers",
+        "Clinician Role Permutations",
+        "Audit Trail Logging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Promotional Pricing & Coupon Stacking Testing",
+      "desc": "Verifying complex multi-buy discounts, loyalty voucher redemptions, and tiered shipping threshold calculations.",
+      "practicalValue": "Prevented unintended discount stacking combinations that would have eroded holiday promotional gross margins.",
+      "focusAreas": [
+        "Coupon Stacking Combinations",
+        "Tax & Duty Calculations",
+        "Multi-Currency Cart Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Factory ERP Material Requirements Verification",
+      "desc": "Verifying complex multi-level bills of materials (BOM), production order scheduling, and inventory re-order point calculations.",
+      "practicalValue": "Eliminated raw material procurement miscalculations, preventing manufacturing assembly line halts.",
+      "focusAreas": [
+        "Multi-Level BOM Calculations",
+        "Inventory Threshold Verification",
+        "Production Scheduling Gates"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Comprehensive Functional Quality Assurance Framework",
+    "layers": [
+      {
+        "label": "Layer 01: Requirements Analysis & Traceability Matrix",
+        "node": "User Story Acceptance Criteria, Jira Requirement Linking, Test Charter"
+      },
+      {
+        "label": "Layer 02: Equivalence Partitioning & Boundary Testing",
+        "node": "Edge-Case Value Synthesis, Invalid Input Scenarios, State Transition Models"
+      },
+      {
+        "label": "Layer 03: Systematic Regression & Smoke Execution",
+        "node": "High-Priority Functional Suites, Automated Smoke Gates, Sanity Validation"
+      },
+      {
+        "label": "Layer 04: Charter-Based Exploratory Testing",
+        "node": "Adversarial Edge-Case Discovery, Persona-Based Testing, Usability Audits"
+      },
+      {
+        "label": "Layer 05: Defect Intelligence & Release Sign-Off",
+        "node": "Jira Defect Tracking, Root-Cause Tagging, Executive Go/No-Go Release Gate"
+      }
+    ],
+    "editorialParagraph1": "While automated testing handles repetitive checks, human intuition, exploratory curiosity, and deep domain knowledge are essential to uncover nuanced usability flaws, edge-case race conditions, and business logic discrepancies.",
+    "editorialParagraph2": "Our functional quality engineering practice combines structured test case design with time-boxed exploratory testing charters. By mapping requirements to comprehensive traceability matrices and providing detailed defect evidence, we ensure releases meet the highest enterprise standards.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Uncompromising Software Reliability",
+      "desc": "Thorough functional and boundary value testing catches obscure edge-case defects before real customers ever encounter them."
+    },
+    {
+      "id": "02",
+      "title": "Defensible Release Go/No-Go Governance",
+      "desc": "Clear requirement traceability matrices and defect metrics provide executive stakeholders with objective release confidence."
+    },
+    {
+      "id": "03",
+      "title": "Actionable, High-Quality Defect Reports",
+      "desc": "Detailed bug reports with step-by-step reproduction steps, network logs, and video captures allow developers to fix bugs rapidly."
+    }
+  ]
+},
+  "qa-testing/continuous-testing": {
+  "slug": "continuous-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Continuous Testing & CI/CD Quality Gates",
+  "solutions": [
+    {
+      "title": "Automated Pipeline Quality Gates",
+      "desc": "Deploying automated pass/fail quality gates in CI/CD pipelines enforcing test coverage thresholds, zero critical bugs, and performance budgets."
+    },
+    {
+      "title": "Parallelized Test Sharding & Fast Feedback",
+      "desc": "Splitting extensive automated test suites across dynamic parallel cloud runner pods to deliver pull request test feedback in under 10 minutes."
+    },
+    {
+      "title": "Ephemeral Test Environment Orchestration",
+      "desc": "Automating the spinning up and tearing down of isolated Kubernetes test environments for every pull request, seeded with clean test data."
+    },
+    {
+      "title": "Test Impact Analysis (TIA)",
+      "desc": "Intelligently running only the specific test suites affected by the modified code in a pull request to optimize pipeline execution speed."
+    },
+    {
+      "title": "Flaky Test Quarantine & Auto-Healing",
+      "desc": "Automatically detecting and quarantining intermittent flaky tests to prevent pipeline blockages while alerting engineers to resolve them."
+    },
+    {
+      "title": "Unified Quality Telemetry & Release Readiness",
+      "desc": "Consolidating test execution metrics, code coverage, and defect trends into centralized executive release readiness dashboards."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Regulatory Compliance Gate in CI/CD",
+      "desc": "Enforcing mandatory unit, integration, and security test gates before any code commit can merge into banking release branches.",
+      "practicalValue": "100% auditable quality gate verification ensuring no untested code ever enters core financial environments.",
+      "focusAreas": [
+        "Automated SonarQube Gates",
+        "Parallelized Regression Runners",
+        "Audited Approval Logs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Software Continuous Validation",
+      "desc": "Running automated GxP validation test suites against ephemeral cloud test environments on every software build.",
+      "practicalValue": "Accelerated regulatory software documentation compilation from 3 weeks to instant automated PDF generation.",
+      "focusAreas": [
+        "GxP Continuous Validation",
+        "Ephemeral Test Environments",
+        "Automated Compliance Badging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Sub-10-Minute Pull Request Test Pipeline",
+      "desc": "Sharding 2,500 end-to-end tests across 20 parallel GitHub Actions runner containers for rapid developer pull request verification.",
+      "practicalValue": "Reduced developer wait time from 75 minutes to 7 minutes, tripling daily feature deployment velocity.",
+      "focusAreas": [
+        "Test Sharding Matrices",
+        "Test Impact Analysis",
+        "Flaky Test Auto-Quarantine"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Edge Software Build Quality Gates",
+      "desc": "Automating unit, integration, and simulated hardware loop tests for factory firmware builds prior to deployment packaging.",
+      "practicalValue": "Pre-empted factory communication protocol regressions before firmware was flashed to plant controllers.",
+      "focusAreas": [
+        "Simulated Hardware Mocks",
+        "CI/CD Firmware Gates",
+        "Automated Release Candidate Tagging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Continuous Testing Pipeline & Quality Gate Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Code Commit & Test Impact Analysis",
+        "node": "Git Push Trigger, Modified File Graph, Selective Test Execution (TIA)"
+      },
+      {
+        "label": "Layer 02: Dynamic Test Environment Provisioning",
+        "node": "Ephemeral K8s Namespace, Seeded Mock DB, WireMock API Stubs"
+      },
+      {
+        "label": "Layer 03: Distributed Parallel Test Execution",
+        "node": "Parallel Runner Shards (Unit, Integration, E2E), Flaky Test Quarantine"
+      },
+      {
+        "label": "Layer 04: Quality Gate Threshold Enforcement",
+        "node": "SonarQube Quality Gate, Code Coverage (85%+), Performance Budget Check"
+      },
+      {
+        "label": "Layer 05: Release Readiness Telemetry & Teardown",
+        "node": "Allure Report Generation, Ephemeral Teardown, Slack/PR Notification"
+      }
+    ],
+    "editorialParagraph1": "Testing can no longer be an isolated phase that happens weeks after code is written. In modern continuous deployment models, testing must be an automated, continuous capability deeply embedded within every single commit and pull request.",
+    "editorialParagraph2": "We design continuous testing architectures that provide rapid, reliable feedback to engineers in under 10 minutes. By deploying dynamic test sharding, intelligent test impact analysis, and automated quality gates, we ensure code is thoroughly verified before it ever reaches staging or production.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-10-Minute Developer Feedback Loops",
+      "desc": "Parallelized runner grids and selective test impact analysis ensure developers receive instant test results on pull requests."
+    },
+    {
+      "id": "02",
+      "title": "Automated Protection Against Regressions",
+      "desc": "Strict automated quality gates block broken code, security vulnerabilities, or performance drops from merging into main branches."
+    },
+    {
+      "id": "03",
+      "title": "Clean Ephemeral Test Sandboxes",
+      "desc": "Automatically provisioned and destroyed test environments prevent configuration drift and shared-state test contamination."
+    }
+  ]
+},
+  "continuous-testing": {
+  "slug": "continuous-testing",
+  "serviceSlug": "qa-testing",
+  "title": "Continuous Testing & CI/CD Quality Gates",
+  "solutions": [
+    {
+      "title": "Automated Pipeline Quality Gates",
+      "desc": "Deploying automated pass/fail quality gates in CI/CD pipelines enforcing test coverage thresholds, zero critical bugs, and performance budgets."
+    },
+    {
+      "title": "Parallelized Test Sharding & Fast Feedback",
+      "desc": "Splitting extensive automated test suites across dynamic parallel cloud runner pods to deliver pull request test feedback in under 10 minutes."
+    },
+    {
+      "title": "Ephemeral Test Environment Orchestration",
+      "desc": "Automating the spinning up and tearing down of isolated Kubernetes test environments for every pull request, seeded with clean test data."
+    },
+    {
+      "title": "Test Impact Analysis (TIA)",
+      "desc": "Intelligently running only the specific test suites affected by the modified code in a pull request to optimize pipeline execution speed."
+    },
+    {
+      "title": "Flaky Test Quarantine & Auto-Healing",
+      "desc": "Automatically detecting and quarantining intermittent flaky tests to prevent pipeline blockages while alerting engineers to resolve them."
+    },
+    {
+      "title": "Unified Quality Telemetry & Release Readiness",
+      "desc": "Consolidating test execution metrics, code coverage, and defect trends into centralized executive release readiness dashboards."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Automated Regulatory Compliance Gate in CI/CD",
+      "desc": "Enforcing mandatory unit, integration, and security test gates before any code commit can merge into banking release branches.",
+      "practicalValue": "100% auditable quality gate verification ensuring no untested code ever enters core financial environments.",
+      "focusAreas": [
+        "Automated SonarQube Gates",
+        "Parallelized Regression Runners",
+        "Audited Approval Logs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Clinical Software Continuous Validation",
+      "desc": "Running automated GxP validation test suites against ephemeral cloud test environments on every software build.",
+      "practicalValue": "Accelerated regulatory software documentation compilation from 3 weeks to instant automated PDF generation.",
+      "focusAreas": [
+        "GxP Continuous Validation",
+        "Ephemeral Test Environments",
+        "Automated Compliance Badging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Sub-10-Minute Pull Request Test Pipeline",
+      "desc": "Sharding 2,500 end-to-end tests across 20 parallel GitHub Actions runner containers for rapid developer pull request verification.",
+      "practicalValue": "Reduced developer wait time from 75 minutes to 7 minutes, tripling daily feature deployment velocity.",
+      "focusAreas": [
+        "Test Sharding Matrices",
+        "Test Impact Analysis",
+        "Flaky Test Auto-Quarantine"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial Edge Software Build Quality Gates",
+      "desc": "Automating unit, integration, and simulated hardware loop tests for factory firmware builds prior to deployment packaging.",
+      "practicalValue": "Pre-empted factory communication protocol regressions before firmware was flashed to plant controllers.",
+      "focusAreas": [
+        "Simulated Hardware Mocks",
+        "CI/CD Firmware Gates",
+        "Automated Release Candidate Tagging"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Continuous Testing Pipeline & Quality Gate Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Code Commit & Test Impact Analysis",
+        "node": "Git Push Trigger, Modified File Graph, Selective Test Execution (TIA)"
+      },
+      {
+        "label": "Layer 02: Dynamic Test Environment Provisioning",
+        "node": "Ephemeral K8s Namespace, Seeded Mock DB, WireMock API Stubs"
+      },
+      {
+        "label": "Layer 03: Distributed Parallel Test Execution",
+        "node": "Parallel Runner Shards (Unit, Integration, E2E), Flaky Test Quarantine"
+      },
+      {
+        "label": "Layer 04: Quality Gate Threshold Enforcement",
+        "node": "SonarQube Quality Gate, Code Coverage (85%+), Performance Budget Check"
+      },
+      {
+        "label": "Layer 05: Release Readiness Telemetry & Teardown",
+        "node": "Allure Report Generation, Ephemeral Teardown, Slack/PR Notification"
+      }
+    ],
+    "editorialParagraph1": "Testing can no longer be an isolated phase that happens weeks after code is written. In modern continuous deployment models, testing must be an automated, continuous capability deeply embedded within every single commit and pull request.",
+    "editorialParagraph2": "We design continuous testing architectures that provide rapid, reliable feedback to engineers in under 10 minutes. By deploying dynamic test sharding, intelligent test impact analysis, and automated quality gates, we ensure code is thoroughly verified before it ever reaches staging or production.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-10-Minute Developer Feedback Loops",
+      "desc": "Parallelized runner grids and selective test impact analysis ensure developers receive instant test results on pull requests."
+    },
+    {
+      "id": "02",
+      "title": "Automated Protection Against Regressions",
+      "desc": "Strict automated quality gates block broken code, security vulnerabilities, or performance drops from merging into main branches."
+    },
+    {
+      "id": "03",
+      "title": "Clean Ephemeral Test Sandboxes",
+      "desc": "Automatically provisioned and destroyed test environments prevent configuration drift and shared-state test contamination."
+    }
+  ]
+},
+  "qa-testing/quality-engineering": {
+  "slug": "quality-engineering",
+  "serviceSlug": "qa-testing",
+  "title": "Quality Engineering & Shift-Left QA Transformation",
+  "solutions": [
+    {
+      "title": "Shift-Left Quality Transformation Advisory",
+      "desc": "Transitioning traditional manual QA teams into high-impact Software Development Engineers in Test (SDETs) embedded in squads."
+    },
+    {
+      "title": "Behavior-Driven Development (BDD) Enablement",
+      "desc": "Aligning product managers, developers, and QA around executable Gherkin feature specifications before code is written."
+    },
+    {
+      "title": "Test Data Management (TDM) Automation",
+      "desc": "Deploying automated synthetic test data generation engines with realistic referential integrity and automated PII masking."
+    },
+    {
+      "title": "Testing Pyramid Optimization & Debt Reduction",
+      "desc": "Restructuring inverted 'ice cream cone' test suites into fast, cost-effective pyramids heavy on unit and integration tests."
+    },
+    {
+      "title": "Enterprise Quality Metrics & DORA Telemetry",
+      "desc": "Tracking actionable quality metrics (Change Failure Rate, Defect Escape Rate, Test Execution Time) across engineering teams."
+    },
+    {
+      "title": "SDET Upskilling & Quality Coaching",
+      "desc": "Hands-on technical upskilling in modern test automation frameworks, containerization, and continuous delivery practices."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Commercial Banking Shift-Left QA Transformation",
+      "desc": "Transforming a 180-person manual bank testing department into embedded SDETs writing automated tests within agile squads.",
+      "practicalValue": "Shifted 80% of defect discovery to pre-merge pull requests, saving £2.4M in post-release hotfix firefighting.",
+      "focusAreas": [
+        "SDET Enablement",
+        "BDD Gherkin Implementation",
+        "Automated Synthetic Banking Data"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Digital Therapeutics Quality Engineering",
+      "desc": "Establishing a continuous quality engineering culture adhering strictly to medical software engineering standards (IEC 62304).",
+      "practicalValue": "Accelerated FDA and CE mark regulatory submission approval by 4 months through automated traceability.",
+      "focusAreas": [
+        "IEC 62304 Medical Standards",
+        "Requirements Traceability",
+        "Automated Test Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Testing Pyramid Re-Engineering for E-Commerce",
+      "desc": "Refactoring a sluggish, brittle 4-hour E2E test suite into a lightweight testing pyramid dominated by fast component and API tests.",
+      "practicalValue": "Cut total test suite runtime from 4 hours to 8 minutes while increasing effective branch test coverage from 45% to 88%.",
+      "focusAreas": [
+        "Test Pyramid Inversion",
+        "Component Mocking",
+        "Fast Unit Assertions"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial IoT Synthetic Test Data Architecture",
+      "desc": "Deploying an automated synthetic data generator producing realistic factory telemetry sensor streams for pre-production testing.",
+      "practicalValue": "Eliminated the need for expensive physical factory hardware test benches during software development sprints.",
+      "focusAreas": [
+        "Synthetic Sensor Generation",
+        "Telemetry Load Emulation",
+        "PII-Free Test Environments"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Quality Engineering & Shift-Left Operating Model",
+    "layers": [
+      {
+        "label": "Layer 01: Product Discovery & BDD Collaboration",
+        "node": "Three Amigos Sessions, Gherkin Feature Specs, Executable Requirements"
+      },
+      {
+        "label": "Layer 02: Balanced Testing Pyramid Foundation",
+        "node": "High Unit Test Density, Fast Component Tests, Targeted E2E Scenarios"
+      },
+      {
+        "label": "Layer 03: Synthetic Test Data & Environment Management",
+        "node": "Automated Data Masking, Synthetic Factory Generators, Ephemeral Sandboxes"
+      },
+      {
+        "label": "Layer 04: Embedded SDET Engineering Culture",
+        "node": "Quality Assistance Model, CI/CD Pipeline Maintenance, Automated Quality Gates"
+      },
+      {
+        "label": "Layer 05: Quality Telemetry & Executive DORA Metrics",
+        "node": "Change Failure Rate Tracking, Defect Escape Analysis, Quality Scorecards"
+      }
+    ],
+    "editorialParagraph1": "Quality cannot be inspected into software at the end of delivery; it must be engineered into the architecture from the very first line of code. Traditional testing teams acting as downstream gatekeepers inevitably become frustrated organizational bottlenecks.",
+    "editorialParagraph2": "We help enterprises transform traditional QA departments into modern Quality Engineering organizations. By adopting Behavior-Driven Development, re-engineering inverted testing pyramids, and embedding Software Development Engineers in Test (SDETs) into product squads, we make quality an automated shared discipline.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Dramatically Lower Defect Escape Rates",
+      "desc": "Shifting quality left into design and pull request reviews catches defects when they are fastest, easiest, and cheapest to fix."
+    },
+    {
+      "id": "02",
+      "title": "Re-Balanced, High-Speed Testing Pyramid",
+      "desc": "Replacing fragile, slow UI tests with lightning-fast unit, component, and contract tests reduces suite runtimes by up to 85%."
+    },
+    {
+      "id": "03",
+      "title": "Embedded Quality Culture (Quality Assistance)",
+      "desc": "Empowering developers to write and own tests while SDETs build tools and automation transforms engineering velocity and morale."
+    }
+  ]
+},
+  "quality-engineering": {
+  "slug": "quality-engineering",
+  "serviceSlug": "qa-testing",
+  "title": "Quality Engineering & Shift-Left QA Transformation",
+  "solutions": [
+    {
+      "title": "Shift-Left Quality Transformation Advisory",
+      "desc": "Transitioning traditional manual QA teams into high-impact Software Development Engineers in Test (SDETs) embedded in squads."
+    },
+    {
+      "title": "Behavior-Driven Development (BDD) Enablement",
+      "desc": "Aligning product managers, developers, and QA around executable Gherkin feature specifications before code is written."
+    },
+    {
+      "title": "Test Data Management (TDM) Automation",
+      "desc": "Deploying automated synthetic test data generation engines with realistic referential integrity and automated PII masking."
+    },
+    {
+      "title": "Testing Pyramid Optimization & Debt Reduction",
+      "desc": "Restructuring inverted 'ice cream cone' test suites into fast, cost-effective pyramids heavy on unit and integration tests."
+    },
+    {
+      "title": "Enterprise Quality Metrics & DORA Telemetry",
+      "desc": "Tracking actionable quality metrics (Change Failure Rate, Defect Escape Rate, Test Execution Time) across engineering teams."
+    },
+    {
+      "title": "SDET Upskilling & Quality Coaching",
+      "desc": "Hands-on technical upskilling in modern test automation frameworks, containerization, and continuous delivery practices."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking & Financial Services",
+      "scenario": "Commercial Banking Shift-Left QA Transformation",
+      "desc": "Transforming a 180-person manual bank testing department into embedded SDETs writing automated tests within agile squads.",
+      "practicalValue": "Shifted 80% of defect discovery to pre-merge pull requests, saving £2.4M in post-release hotfix firefighting.",
+      "focusAreas": [
+        "SDET Enablement",
+        "BDD Gherkin Implementation",
+        "Automated Synthetic Banking Data"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare & Life Sciences",
+      "scenario": "Digital Therapeutics Quality Engineering",
+      "desc": "Establishing a continuous quality engineering culture adhering strictly to medical software engineering standards (IEC 62304).",
+      "practicalValue": "Accelerated FDA and CE mark regulatory submission approval by 4 months through automated traceability.",
+      "focusAreas": [
+        "IEC 62304 Medical Standards",
+        "Requirements Traceability",
+        "Automated Test Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail & E-Commerce",
+      "scenario": "Testing Pyramid Re-Engineering for E-Commerce",
+      "desc": "Refactoring a sluggish, brittle 4-hour E2E test suite into a lightweight testing pyramid dominated by fast component and API tests.",
+      "practicalValue": "Cut total test suite runtime from 4 hours to 8 minutes while increasing effective branch test coverage from 45% to 88%.",
+      "focusAreas": [
+        "Test Pyramid Inversion",
+        "Component Mocking",
+        "Fast Unit Assertions"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing & Supply Chain",
+      "scenario": "Industrial IoT Synthetic Test Data Architecture",
+      "desc": "Deploying an automated synthetic data generator producing realistic factory telemetry sensor streams for pre-production testing.",
+      "practicalValue": "Eliminated the need for expensive physical factory hardware test benches during software development sprints.",
+      "focusAreas": [
+        "Synthetic Sensor Generation",
+        "Telemetry Load Emulation",
+        "PII-Free Test Environments"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Quality Engineering & Shift-Left Operating Model",
+    "layers": [
+      {
+        "label": "Layer 01: Product Discovery & BDD Collaboration",
+        "node": "Three Amigos Sessions, Gherkin Feature Specs, Executable Requirements"
+      },
+      {
+        "label": "Layer 02: Balanced Testing Pyramid Foundation",
+        "node": "High Unit Test Density, Fast Component Tests, Targeted E2E Scenarios"
+      },
+      {
+        "label": "Layer 03: Synthetic Test Data & Environment Management",
+        "node": "Automated Data Masking, Synthetic Factory Generators, Ephemeral Sandboxes"
+      },
+      {
+        "label": "Layer 04: Embedded SDET Engineering Culture",
+        "node": "Quality Assistance Model, CI/CD Pipeline Maintenance, Automated Quality Gates"
+      },
+      {
+        "label": "Layer 05: Quality Telemetry & Executive DORA Metrics",
+        "node": "Change Failure Rate Tracking, Defect Escape Analysis, Quality Scorecards"
+      }
+    ],
+    "editorialParagraph1": "Quality cannot be inspected into software at the end of delivery; it must be engineered into the architecture from the very first line of code. Traditional testing teams acting as downstream gatekeepers inevitably become frustrated organizational bottlenecks.",
+    "editorialParagraph2": "We help enterprises transform traditional QA departments into modern Quality Engineering organizations. By adopting Behavior-Driven Development, re-engineering inverted testing pyramids, and embedding Software Development Engineers in Test (SDETs) into product squads, we make quality an automated shared discipline.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Dramatically Lower Defect Escape Rates",
+      "desc": "Shifting quality left into design and pull request reviews catches defects when they are fastest, easiest, and cheapest to fix."
+    },
+    {
+      "id": "02",
+      "title": "Re-Balanced, High-Speed Testing Pyramid",
+      "desc": "Replacing fragile, slow UI tests with lightning-fast unit, component, and contract tests reduces suite runtimes by up to 85%."
+    },
+    {
+      "id": "03",
+      "title": "Embedded Quality Culture (Quality Assistance)",
+      "desc": "Empowering developers to write and own tests while SDETs build tools and automation transforms engineering velocity and morale."
+    }
+  ]
+},
+  "it-consulting/technology-consulting": {
+  "slug": "technology-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Technology Consulting & Strategic Advisory",
+  "solutions": [
+    {
+      "title": "Technology Stack Rationalisation",
+      "desc": "Holistic evaluation of enterprise application suites, consolidating overlapping software licences and standardising modern engineering runtimes."
+    },
+    {
+      "title": "Vendor Selection & Technical Diligence",
+      "desc": "Independent, vendor-neutral RFP scoring, commercial benchmarking, and contract audits for mission-critical enterprise software procurements."
+    },
+    {
+      "title": "Engineering Operating Model Design",
+      "desc": "Structuring cross-functional product squads, agile governance frameworks, and elite engineering metrics (DORA) to accelerate throughput."
+    },
+    {
+      "title": "Legacy Modernisation Assessment",
+      "desc": "Detailed technical health checks quantifying code cyclomatic complexity, framework obsolescence, and security exposure across core systems."
+    },
+    {
+      "title": "Technology Governance & Policy Blueprint",
+      "desc": "Architecting compliance guardrails, architecture review boards (ARB), and standard operating procedures across distributed engineering units."
+    },
+    {
+      "title": "Emerging Tech Pilot & PoC Delivery",
+      "desc": "Rapid prototyping and feasibility evaluations for high-impact frontier technologies (LLMs, edge compute, zero-trust microsegmentation)."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Core Banking Platform Selection & Stack Consolidation",
+      "desc": "Assisted a tier-1 financial institution in rationalising 42 legacy banking applications down to a unified, API-first composable core.",
+      "practicalValue": "£3.8M annual software licence savings and 60% faster customer onboarding.",
+      "focusAreas": [
+        "FinTech Evaluation",
+        "Compliance Guardrails",
+        "TCO Reduction"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Clinical Data Platform Architecture & Interoperability",
+      "desc": "Designed an NHS-compliant FHIR interoperability advisory blueprint enabling secure health records exchange across 14 hospital trusts.",
+      "practicalValue": "100% Caldicott & DSP Toolkit compliance with sub-second patient lookup.",
+      "focusAreas": [
+        "FHIR Standards",
+        "Information Governance",
+        "Zero-Trust Data"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Composable Commerce & Headless Architecture Advisory",
+      "desc": "Guided an omnichannel luxury retailer from a monolithic Magento stack to modern MACH architecture (commercelayer + Algolia).",
+      "practicalValue": "55% lower black-friday cloud infrastructure cost with 99.99% peak availability.",
+      "focusAreas": [
+        "MACH Alliance",
+        "Cart Performance",
+        "CDN Edge Delivery"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Smart Factory IT/OT Convergence Framework",
+      "desc": "Formulated the industrial IoT and telemetry advisory roadmap connecting legacy SCADA controllers to central Azure cloud analytics.",
+      "practicalValue": "34% reduction in unscheduled assembly line downtime via predictive maintenance.",
+      "focusAreas": [
+        "SCADA/MES Integration",
+        "Edge Gateways",
+        "Predictive Telemetry"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Strategic Technology Advisory & Decision Governance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Enterprise Discovery & Asset Telemetry",
+        "node": "Automated CMDB Scanners, Software Asset Management (SAM), Code Complexity Analyzers"
+      },
+      {
+        "label": "Layer 02: Strategic Capability & TCO Benchmarking",
+        "node": "Gartner/Forrester Peer Indexes, Vendor Contract Matrices, FinOps Run-Rate Models"
+      },
+      {
+        "label": "Layer 03: Future-State Architecture Blueprinting",
+        "node": "Domain-Driven Design (DDD), Event-Driven Meshes, TOGAF 10 Enterprise Frameworks"
+      },
+      {
+        "label": "Layer 04: Governance, Risk & Architecture Boards",
+        "node": "Technical Architecture Review Boards (ARB), Security Compliance Gates, DORA Metrics"
+      },
+      {
+        "label": "Layer 05: Execution Phasing & Transition Roadmaps",
+        "node": "Value-Stream Mapping, Multi-Year Wave Migration Plans, Change Management OKRs"
+      }
+    ],
+    "editorialParagraph1": "Enterprise technology portfolios easily suffer from fragmentation, redundant SaaS spend, and technical debt accumulation that quietly throttles business agility. Without objective, expert advisory, decisions default to reactive band-aids.",
+    "editorialParagraph2": "Devopstrio technology consulting provides boardrooms and engineering leaders with clear, evidence-based direction. We align technical roadmaps directly with commercial growth targets, transforming legacy IT cost centres into high-velocity engines of digital differentiation.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "35%+ Optimised Technology Spend",
+      "desc": "Aggressive rationalisation of duplicated software licences, cloud runtimes, and dormant legacy vendors to immediately recover operating capital."
+    },
+    {
+      "id": "02",
+      "title": "De-Risked Enterprise Procurements",
+      "desc": "Unbiased technical validation and contractual diligence ensuring software vendor commitments translate directly to production reality."
+    },
+    {
+      "id": "03",
+      "title": "Accelerated Delivery Cadence",
+      "desc": "Optimised engineering operating models and DORA-driven delivery benchmarks eliminating systemic bottlenecks and cross-team dependencies."
+    }
+  ]
+},
+  "technology-consulting": {
+  "slug": "technology-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Technology Consulting & Strategic Advisory",
+  "solutions": [
+    {
+      "title": "Technology Stack Rationalisation",
+      "desc": "Holistic evaluation of enterprise application suites, consolidating overlapping software licences and standardising modern engineering runtimes."
+    },
+    {
+      "title": "Vendor Selection & Technical Diligence",
+      "desc": "Independent, vendor-neutral RFP scoring, commercial benchmarking, and contract audits for mission-critical enterprise software procurements."
+    },
+    {
+      "title": "Engineering Operating Model Design",
+      "desc": "Structuring cross-functional product squads, agile governance frameworks, and elite engineering metrics (DORA) to accelerate throughput."
+    },
+    {
+      "title": "Legacy Modernisation Assessment",
+      "desc": "Detailed technical health checks quantifying code cyclomatic complexity, framework obsolescence, and security exposure across core systems."
+    },
+    {
+      "title": "Technology Governance & Policy Blueprint",
+      "desc": "Architecting compliance guardrails, architecture review boards (ARB), and standard operating procedures across distributed engineering units."
+    },
+    {
+      "title": "Emerging Tech Pilot & PoC Delivery",
+      "desc": "Rapid prototyping and feasibility evaluations for high-impact frontier technologies (LLMs, edge compute, zero-trust microsegmentation)."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Core Banking Platform Selection & Stack Consolidation",
+      "desc": "Assisted a tier-1 financial institution in rationalising 42 legacy banking applications down to a unified, API-first composable core.",
+      "practicalValue": "£3.8M annual software licence savings and 60% faster customer onboarding.",
+      "focusAreas": [
+        "FinTech Evaluation",
+        "Compliance Guardrails",
+        "TCO Reduction"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Clinical Data Platform Architecture & Interoperability",
+      "desc": "Designed an NHS-compliant FHIR interoperability advisory blueprint enabling secure health records exchange across 14 hospital trusts.",
+      "practicalValue": "100% Caldicott & DSP Toolkit compliance with sub-second patient lookup.",
+      "focusAreas": [
+        "FHIR Standards",
+        "Information Governance",
+        "Zero-Trust Data"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Composable Commerce & Headless Architecture Advisory",
+      "desc": "Guided an omnichannel luxury retailer from a monolithic Magento stack to modern MACH architecture (commercelayer + Algolia).",
+      "practicalValue": "55% lower black-friday cloud infrastructure cost with 99.99% peak availability.",
+      "focusAreas": [
+        "MACH Alliance",
+        "Cart Performance",
+        "CDN Edge Delivery"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Smart Factory IT/OT Convergence Framework",
+      "desc": "Formulated the industrial IoT and telemetry advisory roadmap connecting legacy SCADA controllers to central Azure cloud analytics.",
+      "practicalValue": "34% reduction in unscheduled assembly line downtime via predictive maintenance.",
+      "focusAreas": [
+        "SCADA/MES Integration",
+        "Edge Gateways",
+        "Predictive Telemetry"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Strategic Technology Advisory & Decision Governance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Enterprise Discovery & Asset Telemetry",
+        "node": "Automated CMDB Scanners, Software Asset Management (SAM), Code Complexity Analyzers"
+      },
+      {
+        "label": "Layer 02: Strategic Capability & TCO Benchmarking",
+        "node": "Gartner/Forrester Peer Indexes, Vendor Contract Matrices, FinOps Run-Rate Models"
+      },
+      {
+        "label": "Layer 03: Future-State Architecture Blueprinting",
+        "node": "Domain-Driven Design (DDD), Event-Driven Meshes, TOGAF 10 Enterprise Frameworks"
+      },
+      {
+        "label": "Layer 04: Governance, Risk & Architecture Boards",
+        "node": "Technical Architecture Review Boards (ARB), Security Compliance Gates, DORA Metrics"
+      },
+      {
+        "label": "Layer 05: Execution Phasing & Transition Roadmaps",
+        "node": "Value-Stream Mapping, Multi-Year Wave Migration Plans, Change Management OKRs"
+      }
+    ],
+    "editorialParagraph1": "Enterprise technology portfolios easily suffer from fragmentation, redundant SaaS spend, and technical debt accumulation that quietly throttles business agility. Without objective, expert advisory, decisions default to reactive band-aids.",
+    "editorialParagraph2": "Devopstrio technology consulting provides boardrooms and engineering leaders with clear, evidence-based direction. We align technical roadmaps directly with commercial growth targets, transforming legacy IT cost centres into high-velocity engines of digital differentiation.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "35%+ Optimised Technology Spend",
+      "desc": "Aggressive rationalisation of duplicated software licences, cloud runtimes, and dormant legacy vendors to immediately recover operating capital."
+    },
+    {
+      "id": "02",
+      "title": "De-Risked Enterprise Procurements",
+      "desc": "Unbiased technical validation and contractual diligence ensuring software vendor commitments translate directly to production reality."
+    },
+    {
+      "id": "03",
+      "title": "Accelerated Delivery Cadence",
+      "desc": "Optimised engineering operating models and DORA-driven delivery benchmarks eliminating systemic bottlenecks and cross-team dependencies."
+    }
+  ]
+},
+  "it-consulting/enterprise-architecture": {
+  "slug": "enterprise-architecture",
+  "serviceSlug": "it-consulting",
+  "title": "Enterprise Cloud Architecture & Governance",
+  "solutions": [
+    {
+      "title": "TOGAF-Aligned Architecture Blueprinting",
+      "desc": "Systematic multi-tier enterprise architecture models capturing business, application, data, and infrastructure domains under modern standards."
+    },
+    {
+      "title": "Domain-Driven Design & Microservice Modeling",
+      "desc": "Deconstructing sprawling monolithic databases into bounded contexts, decoupled service domains, and resilient event streaming topologies."
+    },
+    {
+      "title": "Enterprise Integration & Event Mesh Design",
+      "desc": "Designing resilient asynchronous messaging patterns using Kafka, AWS EventBridge, and Azure Service Bus for fault-tolerant data exchange."
+    },
+    {
+      "title": "High-Availability Multi-Region Topology",
+      "desc": "Architecting active-active cloud topologies with automated DNS failover, zero-data-loss database replication, and geo-distributed caching."
+    },
+    {
+      "title": "Architecture Governance & Review Board",
+      "desc": "Establishing structured Architecture Review Boards (ARB) to enforce enterprise standards, API guidelines, and security baseline controls."
+    },
+    {
+      "title": "Legacy-to-Cloud Migration Blueprints",
+      "desc": "Developing 6R application migration roadmaps (Rehost, Replatform, Refactor) with clear wave phasing and zero-downtime cutover plans."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Multi-Region Core Ledger Cloud Architecture",
+      "desc": "Designed an active-active AWS enterprise architecture across London and Frankfurt for a regulated fintech payments ledger.",
+      "practicalValue": "RPO = 0, RTO < 30 seconds with automated cross-region Aurora cluster failover.",
+      "focusAreas": [
+        "Active-Active Topology",
+        "Resilient Ledger",
+        "PRA Compliance"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "National Healthcare Event Mesh & Record Sync",
+      "desc": "Architected an event-driven integration mesh connecting 80+ clinical laboratories to central diagnostic reporting systems via Kafka.",
+      "practicalValue": "Guaranteed exactly-once event delivery handling 15M real-time test events daily.",
+      "focusAreas": [
+        "Kafka Event Mesh",
+        "FHIR Schema Registry",
+        "Zero-Loss Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Global Inventory & Cart Microservices Decomposition",
+      "desc": "Decoupled a mission-critical inventory management system into serverless microservices with distributed DynamoDB tables.",
+      "practicalValue": "Sustained 45,000 requests/sec during Cyber Week with 12ms p99 response times.",
+      "focusAreas": [
+        "Serverless Architecture",
+        "Distributed Data",
+        "Sub-15ms Latency"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Hybrid Industrial IoT Cloud Architecture",
+      "desc": "Designed a hybrid edge-to-cloud architecture bridging on-premise industrial gateways with scalable Azure IoT Hub clusters.",
+      "practicalValue": "Unified real-time machine telemetry across 18 factories into a central data lakehouse.",
+      "focusAreas": [
+        "Hybrid Edge Compute",
+        "Azure IoT Hub",
+        "Industrial Telemetry"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Multi-Domain Cloud Architecture Framework",
+    "layers": [
+      {
+        "label": "Layer 01: Edge & Ingress Delivery Mesh",
+        "node": "Cloudflare Magic Transit, Global Anycast CDN, WAF v3, Mutual TLS Ingress"
+      },
+      {
+        "label": "Layer 02: API Gateway & Service Mesh",
+        "node": "Kong Enterprise / Envoy Proxy, Istio Service Mesh, OAuth2 / OIDC JWT Tokens"
+      },
+      {
+        "label": "Layer 03: Composable Microservices & Domain Logic",
+        "node": "Domain-Driven Bounded Contexts, Containerized Go/Java Spring Microservices, K8s Pods"
+      },
+      {
+        "label": "Layer 04: Asynchronous Enterprise Event Backbone",
+        "node": "Apache Kafka Enterprise Clusters, Schema Registry, RabbitMQ Event Queues"
+      },
+      {
+        "label": "Layer 05: Distributed Multi-Region Persistence",
+        "node": "CockroachDB Multi-Region SQL, AWS Aurora Global DB, S3 Intelligent-Tiering"
+      }
+    ],
+    "editorialParagraph1": "Monolithic, tightly coupled legacy architectures prevent large enterprises from adopting modern deployment cadences and cloud efficiencies. Technical debt quietly escalates until minor software releases require complex multi-team coordination.",
+    "editorialParagraph2": "Our enterprise architects construct modular, high-resilience systems built on domain-driven principles and modern event-driven meshes. We design scalable blueprints that empower independent engineering teams while guaranteeing strict enterprise governance and continuous uptime.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "99.999% High Availability Topology",
+      "desc": "Fault-tolerant, geo-replicated cloud foundations designed to absorb single-region infrastructure failures without service degradation."
+    },
+    {
+      "id": "02",
+      "title": "Autonomous Team Scalability",
+      "desc": "Domain-driven decomposition and bounded contexts allowing 20+ engineering squads to deploy independently without release locks."
+    },
+    {
+      "id": "03",
+      "title": "Future-Proof Composability",
+      "desc": "API-first, event-driven integration layers that seamlessly ingest new SaaS tools and partner platforms with zero core rewrites."
+    }
+  ]
+},
+  "enterprise-architecture": {
+  "slug": "enterprise-architecture",
+  "serviceSlug": "it-consulting",
+  "title": "Enterprise Cloud Architecture & Governance",
+  "solutions": [
+    {
+      "title": "TOGAF-Aligned Architecture Blueprinting",
+      "desc": "Systematic multi-tier enterprise architecture models capturing business, application, data, and infrastructure domains under modern standards."
+    },
+    {
+      "title": "Domain-Driven Design & Microservice Modeling",
+      "desc": "Deconstructing sprawling monolithic databases into bounded contexts, decoupled service domains, and resilient event streaming topologies."
+    },
+    {
+      "title": "Enterprise Integration & Event Mesh Design",
+      "desc": "Designing resilient asynchronous messaging patterns using Kafka, AWS EventBridge, and Azure Service Bus for fault-tolerant data exchange."
+    },
+    {
+      "title": "High-Availability Multi-Region Topology",
+      "desc": "Architecting active-active cloud topologies with automated DNS failover, zero-data-loss database replication, and geo-distributed caching."
+    },
+    {
+      "title": "Architecture Governance & Review Board",
+      "desc": "Establishing structured Architecture Review Boards (ARB) to enforce enterprise standards, API guidelines, and security baseline controls."
+    },
+    {
+      "title": "Legacy-to-Cloud Migration Blueprints",
+      "desc": "Developing 6R application migration roadmaps (Rehost, Replatform, Refactor) with clear wave phasing and zero-downtime cutover plans."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Multi-Region Core Ledger Cloud Architecture",
+      "desc": "Designed an active-active AWS enterprise architecture across London and Frankfurt for a regulated fintech payments ledger.",
+      "practicalValue": "RPO = 0, RTO < 30 seconds with automated cross-region Aurora cluster failover.",
+      "focusAreas": [
+        "Active-Active Topology",
+        "Resilient Ledger",
+        "PRA Compliance"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "National Healthcare Event Mesh & Record Sync",
+      "desc": "Architected an event-driven integration mesh connecting 80+ clinical laboratories to central diagnostic reporting systems via Kafka.",
+      "practicalValue": "Guaranteed exactly-once event delivery handling 15M real-time test events daily.",
+      "focusAreas": [
+        "Kafka Event Mesh",
+        "FHIR Schema Registry",
+        "Zero-Loss Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Global Inventory & Cart Microservices Decomposition",
+      "desc": "Decoupled a mission-critical inventory management system into serverless microservices with distributed DynamoDB tables.",
+      "practicalValue": "Sustained 45,000 requests/sec during Cyber Week with 12ms p99 response times.",
+      "focusAreas": [
+        "Serverless Architecture",
+        "Distributed Data",
+        "Sub-15ms Latency"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Hybrid Industrial IoT Cloud Architecture",
+      "desc": "Designed a hybrid edge-to-cloud architecture bridging on-premise industrial gateways with scalable Azure IoT Hub clusters.",
+      "practicalValue": "Unified real-time machine telemetry across 18 factories into a central data lakehouse.",
+      "focusAreas": [
+        "Hybrid Edge Compute",
+        "Azure IoT Hub",
+        "Industrial Telemetry"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Multi-Domain Cloud Architecture Framework",
+    "layers": [
+      {
+        "label": "Layer 01: Edge & Ingress Delivery Mesh",
+        "node": "Cloudflare Magic Transit, Global Anycast CDN, WAF v3, Mutual TLS Ingress"
+      },
+      {
+        "label": "Layer 02: API Gateway & Service Mesh",
+        "node": "Kong Enterprise / Envoy Proxy, Istio Service Mesh, OAuth2 / OIDC JWT Tokens"
+      },
+      {
+        "label": "Layer 03: Composable Microservices & Domain Logic",
+        "node": "Domain-Driven Bounded Contexts, Containerized Go/Java Spring Microservices, K8s Pods"
+      },
+      {
+        "label": "Layer 04: Asynchronous Enterprise Event Backbone",
+        "node": "Apache Kafka Enterprise Clusters, Schema Registry, RabbitMQ Event Queues"
+      },
+      {
+        "label": "Layer 05: Distributed Multi-Region Persistence",
+        "node": "CockroachDB Multi-Region SQL, AWS Aurora Global DB, S3 Intelligent-Tiering"
+      }
+    ],
+    "editorialParagraph1": "Monolithic, tightly coupled legacy architectures prevent large enterprises from adopting modern deployment cadences and cloud efficiencies. Technical debt quietly escalates until minor software releases require complex multi-team coordination.",
+    "editorialParagraph2": "Our enterprise architects construct modular, high-resilience systems built on domain-driven principles and modern event-driven meshes. We design scalable blueprints that empower independent engineering teams while guaranteeing strict enterprise governance and continuous uptime.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "99.999% High Availability Topology",
+      "desc": "Fault-tolerant, geo-replicated cloud foundations designed to absorb single-region infrastructure failures without service degradation."
+    },
+    {
+      "id": "02",
+      "title": "Autonomous Team Scalability",
+      "desc": "Domain-driven decomposition and bounded contexts allowing 20+ engineering squads to deploy independently without release locks."
+    },
+    {
+      "id": "03",
+      "title": "Future-Proof Composability",
+      "desc": "API-first, event-driven integration layers that seamlessly ingest new SaaS tools and partner platforms with zero core rewrites."
+    }
+  ]
+},
+  "it-consulting/cloud-consulting": {
+  "slug": "cloud-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Cloud Strategy, Migration & FinOps Advisory",
+  "solutions": [
+    {
+      "title": "Cloud Readiness & TCO Assessment",
+      "desc": "Comprehensive portfolio discovery mapping application dependencies, licensing costs, and 3-year cloud migration TCO projections."
+    },
+    {
+      "title": "Multi-Cloud & Hybrid Cloud Strategy",
+      "desc": "Tailored architectural roadmaps balancing AWS, Azure, GCP, and private cloud assets to prevent vendor lock-in and meet data residency laws."
+    },
+    {
+      "title": "FinOps Cloud Cost Governance",
+      "desc": "Unit-cost telemetry, automated rightsizing, reserved instance commitment planning, and waste elimination frameworks reducing spend by 30%+."
+    },
+    {
+      "title": "Landing Zone 2.0 Infrastructure Blueprints",
+      "desc": "Production-grade, automated Terraform Landing Zones incorporating multi-account hierarchies, IAM least-privilege, and network segmentation."
+    },
+    {
+      "title": "Application Containerisation Roadmaps",
+      "desc": "Phased modernization playbooks converting legacy VMs into Kubernetes-managed container workloads with automated CI/CD deployment pipelines."
+    },
+    {
+      "title": "Cloud Disaster Recovery & Business Continuity",
+      "desc": "Architecting cloud pilot-light and warm-standby disaster recovery strategies guaranteeing rapid RTO/RPO restoration under regulatory audits."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Regulated Financial Cloud Migration & Landing Zone",
+      "desc": "Executed an FCA-compliant AWS multi-account migration for an investment management firm with automated KMS encryption and audit logging.",
+      "practicalValue": "Migrated 240+ servers in 14 weeks with zero unplanned trading interruptions.",
+      "focusAreas": [
+        "FCA Compliance",
+        "AWS Control Tower",
+        "KMS Encryption"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Genomics Research Hybrid Cloud Compute Burst",
+      "desc": "Designed an Azure HPC burst cluster enabling bio-informatics researchers to scale from on-premise compute to 10,000 cloud cores on demand.",
+      "practicalValue": "Reduced DNA sequence alignment processing from 72 hours down to 4.5 hours.",
+      "focusAreas": [
+        "Azure HPC",
+        "Hybrid Burst",
+        "Cost-Cap Automation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "FinOps Cost Optimization & Waste Elimination",
+      "desc": "Audited multi-cloud spend across AWS and GCP for a pan-European e-commerce marketplace, identifying over-provisioned instances.",
+      "practicalValue": "Delivered £1.2M in annual recurring cloud spend reduction within the first 60 days.",
+      "focusAreas": [
+        "FinOps Framework",
+        "Spot Instance Arbitrage",
+        "Idle Waste Pruning"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "ERP Cloud Migration & Disaster Recovery",
+      "desc": "Migrated an enterprise SAP HANA deployment from legacy co-location datacentres to Azure Enterprise Large Instances.",
+      "practicalValue": "Achieved 99.99% ERP SLA and cut monthly disaster recovery failover testing time by 80%.",
+      "focusAreas": [
+        "SAP on Azure",
+        "ExpressRoute Connectivity",
+        "Automated DR"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Multi-Account Cloud Migration & FinOps Blueprint",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Cloud Discovery & Telemetry Ingestion",
+        "node": "Cloudamize / CAST Software, AWS Application Discovery Service, CMDB Feed"
+      },
+      {
+        "label": "Layer 02: Enterprise Landing Zone & Account Hierarchy",
+        "node": "AWS Organizations / Azure Management Groups, SCPs, Transit Gateway Core"
+      },
+      {
+        "label": "Layer 03: Infrastructure as Code & Automated Provisioning",
+        "node": "Modular Terraform Enterprise, Terragrunt, GitOps Pipelines via GitHub Actions"
+      },
+      {
+        "label": "Layer 04: Workload Modernization & Container Runtime",
+        "node": "Amazon EKS / Azure AKS, Fargate Serverless Containers, Karpenter Autoscalers"
+      },
+      {
+        "label": "Layer 05: FinOps Cost Governance & Observability Mesh",
+        "node": "CloudZero / Vantage, Datadog Cloud Cost, AWS Cost Explorer Anomaly Alarms"
+      }
+    ],
+    "editorialParagraph1": "Cloud migrations that simply 'lift and shift' virtual machines inevitably result in spiralling monthly bills, security blind spots, and disappointing performance. Without a structured cloud strategy, teams fail to realise the true benefits of elasticity.",
+    "editorialParagraph2": "Devopstrio cloud consulting provides full-lifecycle advisory: from financial feasibility modelling and landing zone engineering to hands-on migration and ongoing FinOps governance. We ensure your cloud estate is secure, automated, and relentlessly cost-optimised from day one.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "30% - 45% Sustained FinOps Savings",
+      "desc": "Automated rightsizing, commitment discount matching, and architectural refactoring that eliminates cloud resource waste permanently."
+    },
+    {
+      "id": "02",
+      "title": "Bulletproof Multi-Account Security",
+      "desc": "Hardened Landing Zones featuring centralized IAM boundary policies, network transit isolation, and automated configuration compliance."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Downtime Migration Execution",
+      "desc": "Proven wave migration playbooks with continuous data replication ensuring seamless production cutovers without user disruption."
+    }
+  ]
+},
+  "cloud-consulting": {
+  "slug": "cloud-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Cloud Strategy, Migration & FinOps Advisory",
+  "solutions": [
+    {
+      "title": "Cloud Readiness & TCO Assessment",
+      "desc": "Comprehensive portfolio discovery mapping application dependencies, licensing costs, and 3-year cloud migration TCO projections."
+    },
+    {
+      "title": "Multi-Cloud & Hybrid Cloud Strategy",
+      "desc": "Tailored architectural roadmaps balancing AWS, Azure, GCP, and private cloud assets to prevent vendor lock-in and meet data residency laws."
+    },
+    {
+      "title": "FinOps Cloud Cost Governance",
+      "desc": "Unit-cost telemetry, automated rightsizing, reserved instance commitment planning, and waste elimination frameworks reducing spend by 30%+."
+    },
+    {
+      "title": "Landing Zone 2.0 Infrastructure Blueprints",
+      "desc": "Production-grade, automated Terraform Landing Zones incorporating multi-account hierarchies, IAM least-privilege, and network segmentation."
+    },
+    {
+      "title": "Application Containerisation Roadmaps",
+      "desc": "Phased modernization playbooks converting legacy VMs into Kubernetes-managed container workloads with automated CI/CD deployment pipelines."
+    },
+    {
+      "title": "Cloud Disaster Recovery & Business Continuity",
+      "desc": "Architecting cloud pilot-light and warm-standby disaster recovery strategies guaranteeing rapid RTO/RPO restoration under regulatory audits."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Regulated Financial Cloud Migration & Landing Zone",
+      "desc": "Executed an FCA-compliant AWS multi-account migration for an investment management firm with automated KMS encryption and audit logging.",
+      "practicalValue": "Migrated 240+ servers in 14 weeks with zero unplanned trading interruptions.",
+      "focusAreas": [
+        "FCA Compliance",
+        "AWS Control Tower",
+        "KMS Encryption"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Genomics Research Hybrid Cloud Compute Burst",
+      "desc": "Designed an Azure HPC burst cluster enabling bio-informatics researchers to scale from on-premise compute to 10,000 cloud cores on demand.",
+      "practicalValue": "Reduced DNA sequence alignment processing from 72 hours down to 4.5 hours.",
+      "focusAreas": [
+        "Azure HPC",
+        "Hybrid Burst",
+        "Cost-Cap Automation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "FinOps Cost Optimization & Waste Elimination",
+      "desc": "Audited multi-cloud spend across AWS and GCP for a pan-European e-commerce marketplace, identifying over-provisioned instances.",
+      "practicalValue": "Delivered £1.2M in annual recurring cloud spend reduction within the first 60 days.",
+      "focusAreas": [
+        "FinOps Framework",
+        "Spot Instance Arbitrage",
+        "Idle Waste Pruning"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "ERP Cloud Migration & Disaster Recovery",
+      "desc": "Migrated an enterprise SAP HANA deployment from legacy co-location datacentres to Azure Enterprise Large Instances.",
+      "practicalValue": "Achieved 99.99% ERP SLA and cut monthly disaster recovery failover testing time by 80%.",
+      "focusAreas": [
+        "SAP on Azure",
+        "ExpressRoute Connectivity",
+        "Automated DR"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Multi-Account Cloud Migration & FinOps Blueprint",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Cloud Discovery & Telemetry Ingestion",
+        "node": "Cloudamize / CAST Software, AWS Application Discovery Service, CMDB Feed"
+      },
+      {
+        "label": "Layer 02: Enterprise Landing Zone & Account Hierarchy",
+        "node": "AWS Organizations / Azure Management Groups, SCPs, Transit Gateway Core"
+      },
+      {
+        "label": "Layer 03: Infrastructure as Code & Automated Provisioning",
+        "node": "Modular Terraform Enterprise, Terragrunt, GitOps Pipelines via GitHub Actions"
+      },
+      {
+        "label": "Layer 04: Workload Modernization & Container Runtime",
+        "node": "Amazon EKS / Azure AKS, Fargate Serverless Containers, Karpenter Autoscalers"
+      },
+      {
+        "label": "Layer 05: FinOps Cost Governance & Observability Mesh",
+        "node": "CloudZero / Vantage, Datadog Cloud Cost, AWS Cost Explorer Anomaly Alarms"
+      }
+    ],
+    "editorialParagraph1": "Cloud migrations that simply 'lift and shift' virtual machines inevitably result in spiralling monthly bills, security blind spots, and disappointing performance. Without a structured cloud strategy, teams fail to realise the true benefits of elasticity.",
+    "editorialParagraph2": "Devopstrio cloud consulting provides full-lifecycle advisory: from financial feasibility modelling and landing zone engineering to hands-on migration and ongoing FinOps governance. We ensure your cloud estate is secure, automated, and relentlessly cost-optimised from day one.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "30% - 45% Sustained FinOps Savings",
+      "desc": "Automated rightsizing, commitment discount matching, and architectural refactoring that eliminates cloud resource waste permanently."
+    },
+    {
+      "id": "02",
+      "title": "Bulletproof Multi-Account Security",
+      "desc": "Hardened Landing Zones featuring centralized IAM boundary policies, network transit isolation, and automated configuration compliance."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Downtime Migration Execution",
+      "desc": "Proven wave migration playbooks with continuous data replication ensuring seamless production cutovers without user disruption."
+    }
+  ]
+},
+  "it-consulting/ai-consulting": {
+  "slug": "ai-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Enterprise AI Strategy, Governance & Advisory",
+  "solutions": [
+    {
+      "title": "Executive AI Readiness & ROI Valuation",
+      "desc": "Structured business workshops evaluating potential AI use cases against data maturity, technical feasibility, and commercial payback."
+    },
+    {
+      "title": "AI Governance & Regulatory Compliance",
+      "desc": "Implementing rigorous governance frameworks aligning AI models with the EU AI Act, NIST AI RMF, and strict data privacy regulations."
+    },
+    {
+      "title": "Enterprise LLM & Agentic Architecture",
+      "desc": "Designing secure, production-grade architectures for Retrieval-Augmented Generation (RAG), vector databases, and multi-agent workflows."
+    },
+    {
+      "title": "Proprietary Data Moat & Vector Strategy",
+      "desc": "Auditing enterprise data repositories to construct clean, indexed embedding spaces that unlock generative AI without IP leakage."
+    },
+    {
+      "title": "Model Selection & Hybrid Hosting Advisory",
+      "desc": "Evaluating commercial frontier models (Claude, GPT-4) versus open-source self-hosted LLMs (Llama 3, Mistral) based on latency and cost."
+    },
+    {
+      "title": "MLOps Platform & Continuous Evaluation",
+      "desc": "Designing automated model monitoring, hallucination detection gates, and prompt management pipelines for production AI systems."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Regulated Wealth Management Advisory Copilot",
+      "desc": "Designed an enterprise RAG advisory copilot indexing 20 years of research papers with strict audit logs and zero data retention guarantees.",
+      "practicalValue": "Saved 12 hours weekly per investment analyst while maintaining complete FCA compliance.",
+      "focusAreas": [
+        "Private RAG",
+        "Data Sovereignty",
+        "Explainable AI"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Clinical Trial Protocol Extraction & Summarization",
+      "desc": "Implemented an on-premise LLM pipeline parsing unstructured clinical research documentation for pharma protocol matching.",
+      "practicalValue": "Reduced patient matching cycle time by 75% with zero external API data transmission.",
+      "focusAreas": [
+        "HIPAA-Compliant LLM",
+        "Semantic Chunking",
+        "Doctor-in-the-Loop"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Hyper-Personalised Conversational Shopping Agent",
+      "desc": "Architected a real-time conversational shopping assistant integrated with inventory feeds and customer purchase graphs.",
+      "practicalValue": "28% higher basket conversion rate with 99.4% intent accuracy across 4 languages.",
+      "focusAreas": [
+        "Vector Search",
+        "Customer Graph",
+        "Real-Time Inventory"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Plant Maintenance Assistant & Defect Triage",
+      "desc": "Built a multimodal maintenance assistant combining visual defect recognition with equipment repair manual search.",
+      "practicalValue": "42% faster machine repair times and automated spare parts procurement triggers.",
+      "focusAreas": [
+        "Multimodal AI",
+        "Edge Inference",
+        "ERP Integration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Generative AI & Governance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Ingestion & Document Pipeline",
+        "node": "Unstructured Data Parsers, OCR Pre-processors, Chunking & Tokenizers"
+      },
+      {
+        "label": "Layer 02: Vector Indexing & Semantic Storage",
+        "node": "Qdrant / Pinecone Vector DB, pgvector, Dense & Sparse Hybrid Embeddings"
+      },
+      {
+        "label": "Layer 03: Guardrails, Privacy & Data Loss Prevention",
+        "node": "NeMo Guardrails, Presidio PII Masking, Prompt Injection Filters, DLP Rules"
+      },
+      {
+        "label": "Layer 04: Orchestration & Agentic Execution",
+        "node": "LangGraph / LlamaIndex, Tool-Calling Orchestrators, Multi-Model Router"
+      },
+      {
+        "label": "Layer 05: Enterprise Observability & Evaluation",
+        "node": "LangSmith / Phoenix Tracing, Hallucination Scorer, Token Budget Anomaly Alarms"
+      }
+    ],
+    "editorialParagraph1": "Most enterprise AI initiatives fail to transition beyond proof-of-concept due to security concerns, unmitigated hallucination risks, and undefined return on investment. Deploying AI requires far more than wrapping consumer chat APIs.",
+    "editorialParagraph2": "Our AI consulting team helps enterprise organisations architect secure, compliant, and commercially viable AI platforms. From proprietary data preparation to private RAG infrastructure and robust MLOps governance, we turn AI ambitions into operational reality.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Intellectual Property Protection",
+      "desc": "Private hosting topologies, strict zero-retention policies, and automated DLP filters ensuring sensitive enterprise data never trains external models."
+    },
+    {
+      "id": "02",
+      "title": "Commercial-Grade Accuracy & Guardrails",
+      "desc": "Production-tested RAG retrieval architectures, semantic chunking, and hallucination scoring mechanisms delivering verified responses."
+    },
+    {
+      "id": "03",
+      "title": "Rapid Time-to-Value Delivery",
+      "desc": "Pre-built enterprise integration accelerators allowing organisations to move from conceptual business case to production deployment in weeks."
+    }
+  ]
+},
+  "ai-consulting": {
+  "slug": "ai-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Enterprise AI Strategy, Governance & Advisory",
+  "solutions": [
+    {
+      "title": "Executive AI Readiness & ROI Valuation",
+      "desc": "Structured business workshops evaluating potential AI use cases against data maturity, technical feasibility, and commercial payback."
+    },
+    {
+      "title": "AI Governance & Regulatory Compliance",
+      "desc": "Implementing rigorous governance frameworks aligning AI models with the EU AI Act, NIST AI RMF, and strict data privacy regulations."
+    },
+    {
+      "title": "Enterprise LLM & Agentic Architecture",
+      "desc": "Designing secure, production-grade architectures for Retrieval-Augmented Generation (RAG), vector databases, and multi-agent workflows."
+    },
+    {
+      "title": "Proprietary Data Moat & Vector Strategy",
+      "desc": "Auditing enterprise data repositories to construct clean, indexed embedding spaces that unlock generative AI without IP leakage."
+    },
+    {
+      "title": "Model Selection & Hybrid Hosting Advisory",
+      "desc": "Evaluating commercial frontier models (Claude, GPT-4) versus open-source self-hosted LLMs (Llama 3, Mistral) based on latency and cost."
+    },
+    {
+      "title": "MLOps Platform & Continuous Evaluation",
+      "desc": "Designing automated model monitoring, hallucination detection gates, and prompt management pipelines for production AI systems."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Regulated Wealth Management Advisory Copilot",
+      "desc": "Designed an enterprise RAG advisory copilot indexing 20 years of research papers with strict audit logs and zero data retention guarantees.",
+      "practicalValue": "Saved 12 hours weekly per investment analyst while maintaining complete FCA compliance.",
+      "focusAreas": [
+        "Private RAG",
+        "Data Sovereignty",
+        "Explainable AI"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Clinical Trial Protocol Extraction & Summarization",
+      "desc": "Implemented an on-premise LLM pipeline parsing unstructured clinical research documentation for pharma protocol matching.",
+      "practicalValue": "Reduced patient matching cycle time by 75% with zero external API data transmission.",
+      "focusAreas": [
+        "HIPAA-Compliant LLM",
+        "Semantic Chunking",
+        "Doctor-in-the-Loop"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Hyper-Personalised Conversational Shopping Agent",
+      "desc": "Architected a real-time conversational shopping assistant integrated with inventory feeds and customer purchase graphs.",
+      "practicalValue": "28% higher basket conversion rate with 99.4% intent accuracy across 4 languages.",
+      "focusAreas": [
+        "Vector Search",
+        "Customer Graph",
+        "Real-Time Inventory"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Plant Maintenance Assistant & Defect Triage",
+      "desc": "Built a multimodal maintenance assistant combining visual defect recognition with equipment repair manual search.",
+      "practicalValue": "42% faster machine repair times and automated spare parts procurement triggers.",
+      "focusAreas": [
+        "Multimodal AI",
+        "Edge Inference",
+        "ERP Integration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Generative AI & Governance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Ingestion & Document Pipeline",
+        "node": "Unstructured Data Parsers, OCR Pre-processors, Chunking & Tokenizers"
+      },
+      {
+        "label": "Layer 02: Vector Indexing & Semantic Storage",
+        "node": "Qdrant / Pinecone Vector DB, pgvector, Dense & Sparse Hybrid Embeddings"
+      },
+      {
+        "label": "Layer 03: Guardrails, Privacy & Data Loss Prevention",
+        "node": "NeMo Guardrails, Presidio PII Masking, Prompt Injection Filters, DLP Rules"
+      },
+      {
+        "label": "Layer 04: Orchestration & Agentic Execution",
+        "node": "LangGraph / LlamaIndex, Tool-Calling Orchestrators, Multi-Model Router"
+      },
+      {
+        "label": "Layer 05: Enterprise Observability & Evaluation",
+        "node": "LangSmith / Phoenix Tracing, Hallucination Scorer, Token Budget Anomaly Alarms"
+      }
+    ],
+    "editorialParagraph1": "Most enterprise AI initiatives fail to transition beyond proof-of-concept due to security concerns, unmitigated hallucination risks, and undefined return on investment. Deploying AI requires far more than wrapping consumer chat APIs.",
+    "editorialParagraph2": "Our AI consulting team helps enterprise organisations architect secure, compliant, and commercially viable AI platforms. From proprietary data preparation to private RAG infrastructure and robust MLOps governance, we turn AI ambitions into operational reality.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Intellectual Property Protection",
+      "desc": "Private hosting topologies, strict zero-retention policies, and automated DLP filters ensuring sensitive enterprise data never trains external models."
+    },
+    {
+      "id": "02",
+      "title": "Commercial-Grade Accuracy & Guardrails",
+      "desc": "Production-tested RAG retrieval architectures, semantic chunking, and hallucination scoring mechanisms delivering verified responses."
+    },
+    {
+      "id": "03",
+      "title": "Rapid Time-to-Value Delivery",
+      "desc": "Pre-built enterprise integration accelerators allowing organisations to move from conceptual business case to production deployment in weeks."
+    }
+  ]
+},
+  "it-consulting/cybersecurity-consulting": {
+  "slug": "cybersecurity-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Cybersecurity Consulting, Governance & Virtual CISO",
+  "solutions": [
+    {
+      "title": "Virtual CISO (vCISO) Advisory",
+      "desc": "Executive-level security leadership guiding enterprise cyber strategy, boardroom risk presentations, and regulatory audit readiness."
+    },
+    {
+      "title": "SOC 2, ISO 27001 & Cyber Essentials Audits",
+      "desc": "End-to-end certification readiness assessments, gap analyses, and automated policy mapping to achieve rapid audit compliance."
+    },
+    {
+      "title": "Zero-Trust Architecture Blueprinting",
+      "desc": "Designing comprehensive zero-trust network access (ZTNA), microsegmentation, and context-aware conditional access frameworks."
+    },
+    {
+      "title": "Cloud Security Posture Management (CSPM)",
+      "desc": "Automated scanning and continuous posture remediation identifying cloud misconfigurations across AWS, Azure, and Google Cloud."
+    },
+    {
+      "title": "Threat Modeling & Penetration Testing",
+      "desc": "Proactive red-team attack simulations and STRIDE threat modeling uncovering vulnerabilities before malicious actors exploit them."
+    },
+    {
+      "title": "Incident Response & Cyber Crisis Playbooks",
+      "desc": "Formulating tabletop simulation exercises, ransomware containment workflows, and forensic response runbooks to minimise business downtime."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "ISO 27001 Certification & DORA Compliance",
+      "desc": "Guided an FCA-regulated open banking platform through complete ISO 27001:2022 implementation and DORA resilience compliance.",
+      "practicalValue": "Passed stage 1 and stage 2 audits with zero major non-conformances in 5 months.",
+      "focusAreas": [
+        "ISO 27001:2022",
+        "DORA Digital Resilience",
+        "Cryptographic HSMs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Zero-Trust Remote Clinical Access & DSP Toolkit",
+      "desc": "Architected a zero-trust network access (ZTNA) solution for 3,500 remote medical practitioners accessing electronic health records.",
+      "practicalValue": "100% NHS DSP Toolkit compliance and complete elimination of legacy VPN attack surfaces.",
+      "focusAreas": [
+        "ZTNA Architecture",
+        "DSP Toolkit",
+        "Conditional Access"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "PCI-DSS 4.0 Scope Reduction & Tokenisation",
+      "desc": "Redesigned cardholder data environment (CDE) for an international retail group, offloading payment ingestion to tokenised edge gateways.",
+      "practicalValue": "Reduced PCI-DSS compliance scope by 85%, cutting annual audit costs by £220k.",
+      "focusAreas": [
+        "PCI-DSS 4.0",
+        "Tokenisation",
+        "Cardholder Isolation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industrial OT/ICS Network Microsegmentation",
+      "desc": "Implemented Purdue Model network microsegmentation separating critical PLC factory networks from corporate office IT systems.",
+      "practicalValue": "Contained lateral movement risks with real-time anomaly detection across industrial switches.",
+      "focusAreas": [
+        "Purdue Model",
+        "OT Microsegmentation",
+        "Anomaly Detection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Zero-Trust & Continuous Compliance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Identity, MFA & Context Verification",
+        "node": "Microsoft Entra ID / Okta, FIDO2 WebAuthn Keys, Device Health Posture Engine"
+      },
+      {
+        "label": "Layer 02: Secure Access Service Edge (SASE)",
+        "node": "Cloudflare One / Zscaler ZTNA, CASB File Inspection, DNS Filtering"
+      },
+      {
+        "label": "Layer 03: Workload Isolation & Microsegmentation",
+        "node": "Calico Kubernetes NetworkPolicies, AWS Security Groups, VPC Peering Firewalls"
+      },
+      {
+        "label": "Layer 04: Unified Threat Detection & SIEM/XDR",
+        "node": "Microsoft Sentinel / CrowdStrike Falcon XDR, Falco Runtime Security, GuardDuty"
+      },
+      {
+        "label": "Layer 05: Continuous GRC & Compliance Automation",
+        "node": "Vanta / Drata GRC Sync, AWS Security Hub, Automated Evidence Collection"
+      }
+    ],
+    "editorialParagraph1": "Modern cyber threats have outgrown traditional perimeter-based defences. In today's remote and cloud-first landscape, relying on single firewalls and legacy VPNs exposes enterprises to ransomware and catastrophic data breaches.",
+    "editorialParagraph2": "Our cybersecurity consulting practice delivers battle-tested, pragmatic security guidance. We partner with executive boards to implement zero-trust architectures, automate regulatory compliance certifications, and build resilient cyber defence capabilities.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Audit Certification Success",
+      "desc": "Streamlined gap assessments and automated evidence gathering ensuring 100% on-time pass rates for SOC 2, ISO 27001, and PCI-DSS."
+    },
+    {
+      "id": "02",
+      "title": "Total Elimination of VPN Attack Surfaces",
+      "desc": "Modern zero-trust access controls authenticating every device, user, and API call dynamically to completely prevent lateral breach movement."
+    },
+    {
+      "id": "03",
+      "title": "Executive Peace of Mind",
+      "desc": "Dedicated vCISO advisory providing boardroom-ready risk visualisations, clear ROI justifications, and 24/7 emergency incident escalation."
+    }
+  ]
+},
+  "cybersecurity-consulting": {
+  "slug": "cybersecurity-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Cybersecurity Consulting, Governance & Virtual CISO",
+  "solutions": [
+    {
+      "title": "Virtual CISO (vCISO) Advisory",
+      "desc": "Executive-level security leadership guiding enterprise cyber strategy, boardroom risk presentations, and regulatory audit readiness."
+    },
+    {
+      "title": "SOC 2, ISO 27001 & Cyber Essentials Audits",
+      "desc": "End-to-end certification readiness assessments, gap analyses, and automated policy mapping to achieve rapid audit compliance."
+    },
+    {
+      "title": "Zero-Trust Architecture Blueprinting",
+      "desc": "Designing comprehensive zero-trust network access (ZTNA), microsegmentation, and context-aware conditional access frameworks."
+    },
+    {
+      "title": "Cloud Security Posture Management (CSPM)",
+      "desc": "Automated scanning and continuous posture remediation identifying cloud misconfigurations across AWS, Azure, and Google Cloud."
+    },
+    {
+      "title": "Threat Modeling & Penetration Testing",
+      "desc": "Proactive red-team attack simulations and STRIDE threat modeling uncovering vulnerabilities before malicious actors exploit them."
+    },
+    {
+      "title": "Incident Response & Cyber Crisis Playbooks",
+      "desc": "Formulating tabletop simulation exercises, ransomware containment workflows, and forensic response runbooks to minimise business downtime."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "ISO 27001 Certification & DORA Compliance",
+      "desc": "Guided an FCA-regulated open banking platform through complete ISO 27001:2022 implementation and DORA resilience compliance.",
+      "practicalValue": "Passed stage 1 and stage 2 audits with zero major non-conformances in 5 months.",
+      "focusAreas": [
+        "ISO 27001:2022",
+        "DORA Digital Resilience",
+        "Cryptographic HSMs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Zero-Trust Remote Clinical Access & DSP Toolkit",
+      "desc": "Architected a zero-trust network access (ZTNA) solution for 3,500 remote medical practitioners accessing electronic health records.",
+      "practicalValue": "100% NHS DSP Toolkit compliance and complete elimination of legacy VPN attack surfaces.",
+      "focusAreas": [
+        "ZTNA Architecture",
+        "DSP Toolkit",
+        "Conditional Access"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "PCI-DSS 4.0 Scope Reduction & Tokenisation",
+      "desc": "Redesigned cardholder data environment (CDE) for an international retail group, offloading payment ingestion to tokenised edge gateways.",
+      "practicalValue": "Reduced PCI-DSS compliance scope by 85%, cutting annual audit costs by £220k.",
+      "focusAreas": [
+        "PCI-DSS 4.0",
+        "Tokenisation",
+        "Cardholder Isolation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industrial OT/ICS Network Microsegmentation",
+      "desc": "Implemented Purdue Model network microsegmentation separating critical PLC factory networks from corporate office IT systems.",
+      "practicalValue": "Contained lateral movement risks with real-time anomaly detection across industrial switches.",
+      "focusAreas": [
+        "Purdue Model",
+        "OT Microsegmentation",
+        "Anomaly Detection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Zero-Trust & Continuous Compliance Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Identity, MFA & Context Verification",
+        "node": "Microsoft Entra ID / Okta, FIDO2 WebAuthn Keys, Device Health Posture Engine"
+      },
+      {
+        "label": "Layer 02: Secure Access Service Edge (SASE)",
+        "node": "Cloudflare One / Zscaler ZTNA, CASB File Inspection, DNS Filtering"
+      },
+      {
+        "label": "Layer 03: Workload Isolation & Microsegmentation",
+        "node": "Calico Kubernetes NetworkPolicies, AWS Security Groups, VPC Peering Firewalls"
+      },
+      {
+        "label": "Layer 04: Unified Threat Detection & SIEM/XDR",
+        "node": "Microsoft Sentinel / CrowdStrike Falcon XDR, Falco Runtime Security, GuardDuty"
+      },
+      {
+        "label": "Layer 05: Continuous GRC & Compliance Automation",
+        "node": "Vanta / Drata GRC Sync, AWS Security Hub, Automated Evidence Collection"
+      }
+    ],
+    "editorialParagraph1": "Modern cyber threats have outgrown traditional perimeter-based defences. In today's remote and cloud-first landscape, relying on single firewalls and legacy VPNs exposes enterprises to ransomware and catastrophic data breaches.",
+    "editorialParagraph2": "Our cybersecurity consulting practice delivers battle-tested, pragmatic security guidance. We partner with executive boards to implement zero-trust architectures, automate regulatory compliance certifications, and build resilient cyber defence capabilities.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Audit Certification Success",
+      "desc": "Streamlined gap assessments and automated evidence gathering ensuring 100% on-time pass rates for SOC 2, ISO 27001, and PCI-DSS."
+    },
+    {
+      "id": "02",
+      "title": "Total Elimination of VPN Attack Surfaces",
+      "desc": "Modern zero-trust access controls authenticating every device, user, and API call dynamically to completely prevent lateral breach movement."
+    },
+    {
+      "id": "03",
+      "title": "Executive Peace of Mind",
+      "desc": "Dedicated vCISO advisory providing boardroom-ready risk visualisations, clear ROI justifications, and 24/7 emergency incident escalation."
+    }
+  ]
+},
+  "it-consulting/digital-transformation-consulting": {
+  "slug": "digital-transformation-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Digital Transformation & Business Model Modernisation",
+  "solutions": [
+    {
+      "title": "Digital Maturity & Capability Benchmarking",
+      "desc": "Holistic evaluation of organisational processes, legacy friction points, and digital capability gaps against top-performing industry peers."
+    },
+    {
+      "title": "Customer Journey & Omnichannel Experience Redesign",
+      "desc": "Mapping high-impact digital touchpoints to eliminate manual friction, reduce churn, and deliver seamless web and mobile experiences."
+    },
+    {
+      "title": "Core Business Process Automation",
+      "desc": "Automating paper-heavy, manual intake workflows using modern cloud microservices, workflow orchestrators, and intelligent document processing."
+    },
+    {
+      "title": "Composable Digital Experience Platform (DXP)",
+      "desc": "Transitioning monolithic content management systems into modular, API-first composable DXP architectures for lightning-fast marketing execution."
+    },
+    {
+      "title": "Agile Operating Model & Cultural Transformation",
+      "desc": "Coaching product management, engineering, and business leaders to transition from slow waterfall release cycles into autonomous squads."
+    },
+    {
+      "title": "Data Monetisation & Digital Revenue Strategy",
+      "desc": "Identifying untapped enterprise data assets to design new subscription-based API services and high-margin digital product lines."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Commercial Lending Digital Onboarding Overhaul",
+      "desc": "Re-engineered a 28-day paper loan origination process into an automated, digital self-service intake and verification portal.",
+      "practicalValue": "Shortened business loan approval from 28 days down to 4 hours with 300% application volume growth.",
+      "focusAreas": [
+        "Digital Onboarding",
+        "Open Banking APIs",
+        "Automated Underwriting"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Patient Portal & Telemedicine Orchestration",
+      "desc": "Designed and rolled out a unified digital patient portal for a private hospital network integrating booking, video consults, and EHR records.",
+      "practicalValue": "Saved 40,000 administrative call hours annually and achieved 92% patient satisfaction rating.",
+      "focusAreas": [
+        "Patient Portal",
+        "Telehealth Video",
+        "EHR Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Unified Commerce & Click-and-Collect Transformation",
+      "desc": "Connected in-store point-of-sale systems with digital e-commerce channels to enable real-time store inventory reservation and rapid dispatch.",
+      "practicalValue": "42% increase in online-driven physical foot traffic and 25% lift in average order value.",
+      "focusAreas": [
+        "Unified Commerce",
+        "Real-Time Inventory",
+        "Click-and-Collect"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "B2B Self-Service Customer & Distributor Portal",
+      "desc": "Modernised legacy phone/fax order entry into an intuitive B2B customer portal with custom negotiated pricing and shipment tracking.",
+      "practicalValue": "Automated 70% of inbound order processing and reduced order turnaround time by 3 days.",
+      "focusAreas": [
+        "B2B Portal",
+        "ERP Connector",
+        "Dynamic Pricing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Modern Composable Digital Transformation Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Omnichannel Digital Touchpoints",
+        "node": "Next.js Web Experience, Flutter Mobile App, B2B Portal, Smart Kiosks"
+      },
+      {
+        "label": "Layer 02: API Experience & Orchestration Layer",
+        "node": "GraphQL Federation (Apollo), Edge Reverse Proxies, Client State Caching"
+      },
+      {
+        "label": "Layer 03: Automated Business Workflow Engine",
+        "node": "Temporal.io Workflow Engine, Camunda BPMN, Event Webhooks"
+      },
+      {
+        "label": "Layer 04: Composable SaaS & Core Application Connectors",
+        "node": "Salesforce CRM API, Stripe Billing, Headless Contentful CMS, Algolia Search"
+      },
+      {
+        "label": "Layer 05: Enterprise System of Record & ERP Bridge",
+        "node": "SAP / Oracle NetSuite Adapters, CDC Pipelines (Debezium), Central Data Hub"
+      }
+    ],
+    "editorialParagraph1": "Digital transformation often stalls when organisations treat it as a pure technology purchase rather than an end-to-end operational evolution. Investing in new software without redesigning underlying workflows merely digitises existing bottlenecks.",
+    "editorialParagraph2": "Devopstrio digital transformation consulting bridges the gap between commercial strategy and engineering execution. We design composable, customer-centric digital platforms that empower teams, delight users, and generate measurable top-line revenue growth.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "60%+ Reduction in Process Latency",
+      "desc": "Automated digital intake, electronic document verification, and cloud workflow orchestration replacing manual administrative bottlenecks."
+    },
+    {
+      "id": "02",
+      "title": "Superior Customer Retention & Conversion",
+      "desc": "Modern, responsive omnichannel web and mobile experiences designed for frictionless interaction, increasing customer lifetime value."
+    },
+    {
+      "id": "03",
+      "title": "Rapid Market Adaptability",
+      "desc": "Composable, modular API architectures allowing marketing and product teams to launch new campaigns and services in days rather than quarters."
+    }
+  ]
+},
+  "digital-transformation-consulting": {
+  "slug": "digital-transformation-consulting",
+  "serviceSlug": "it-consulting",
+  "title": "Digital Transformation & Business Model Modernisation",
+  "solutions": [
+    {
+      "title": "Digital Maturity & Capability Benchmarking",
+      "desc": "Holistic evaluation of organisational processes, legacy friction points, and digital capability gaps against top-performing industry peers."
+    },
+    {
+      "title": "Customer Journey & Omnichannel Experience Redesign",
+      "desc": "Mapping high-impact digital touchpoints to eliminate manual friction, reduce churn, and deliver seamless web and mobile experiences."
+    },
+    {
+      "title": "Core Business Process Automation",
+      "desc": "Automating paper-heavy, manual intake workflows using modern cloud microservices, workflow orchestrators, and intelligent document processing."
+    },
+    {
+      "title": "Composable Digital Experience Platform (DXP)",
+      "desc": "Transitioning monolithic content management systems into modular, API-first composable DXP architectures for lightning-fast marketing execution."
+    },
+    {
+      "title": "Agile Operating Model & Cultural Transformation",
+      "desc": "Coaching product management, engineering, and business leaders to transition from slow waterfall release cycles into autonomous squads."
+    },
+    {
+      "title": "Data Monetisation & Digital Revenue Strategy",
+      "desc": "Identifying untapped enterprise data assets to design new subscription-based API services and high-margin digital product lines."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Commercial Lending Digital Onboarding Overhaul",
+      "desc": "Re-engineered a 28-day paper loan origination process into an automated, digital self-service intake and verification portal.",
+      "practicalValue": "Shortened business loan approval from 28 days down to 4 hours with 300% application volume growth.",
+      "focusAreas": [
+        "Digital Onboarding",
+        "Open Banking APIs",
+        "Automated Underwriting"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Patient Portal & Telemedicine Orchestration",
+      "desc": "Designed and rolled out a unified digital patient portal for a private hospital network integrating booking, video consults, and EHR records.",
+      "practicalValue": "Saved 40,000 administrative call hours annually and achieved 92% patient satisfaction rating.",
+      "focusAreas": [
+        "Patient Portal",
+        "Telehealth Video",
+        "EHR Sync"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Unified Commerce & Click-and-Collect Transformation",
+      "desc": "Connected in-store point-of-sale systems with digital e-commerce channels to enable real-time store inventory reservation and rapid dispatch.",
+      "practicalValue": "42% increase in online-driven physical foot traffic and 25% lift in average order value.",
+      "focusAreas": [
+        "Unified Commerce",
+        "Real-Time Inventory",
+        "Click-and-Collect"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "B2B Self-Service Customer & Distributor Portal",
+      "desc": "Modernised legacy phone/fax order entry into an intuitive B2B customer portal with custom negotiated pricing and shipment tracking.",
+      "practicalValue": "Automated 70% of inbound order processing and reduced order turnaround time by 3 days.",
+      "focusAreas": [
+        "B2B Portal",
+        "ERP Connector",
+        "Dynamic Pricing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Modern Composable Digital Transformation Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Omnichannel Digital Touchpoints",
+        "node": "Next.js Web Experience, Flutter Mobile App, B2B Portal, Smart Kiosks"
+      },
+      {
+        "label": "Layer 02: API Experience & Orchestration Layer",
+        "node": "GraphQL Federation (Apollo), Edge Reverse Proxies, Client State Caching"
+      },
+      {
+        "label": "Layer 03: Automated Business Workflow Engine",
+        "node": "Temporal.io Workflow Engine, Camunda BPMN, Event Webhooks"
+      },
+      {
+        "label": "Layer 04: Composable SaaS & Core Application Connectors",
+        "node": "Salesforce CRM API, Stripe Billing, Headless Contentful CMS, Algolia Search"
+      },
+      {
+        "label": "Layer 05: Enterprise System of Record & ERP Bridge",
+        "node": "SAP / Oracle NetSuite Adapters, CDC Pipelines (Debezium), Central Data Hub"
+      }
+    ],
+    "editorialParagraph1": "Digital transformation often stalls when organisations treat it as a pure technology purchase rather than an end-to-end operational evolution. Investing in new software without redesigning underlying workflows merely digitises existing bottlenecks.",
+    "editorialParagraph2": "Devopstrio digital transformation consulting bridges the gap between commercial strategy and engineering execution. We design composable, customer-centric digital platforms that empower teams, delight users, and generate measurable top-line revenue growth.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "60%+ Reduction in Process Latency",
+      "desc": "Automated digital intake, electronic document verification, and cloud workflow orchestration replacing manual administrative bottlenecks."
+    },
+    {
+      "id": "02",
+      "title": "Superior Customer Retention & Conversion",
+      "desc": "Modern, responsive omnichannel web and mobile experiences designed for frictionless interaction, increasing customer lifetime value."
+    },
+    {
+      "id": "03",
+      "title": "Rapid Market Adaptability",
+      "desc": "Composable, modular API architectures allowing marketing and product teams to launch new campaigns and services in days rather than quarters."
+    }
+  ]
+},
+  "it-consulting/it-strategy-roadmap": {
+  "slug": "it-strategy-roadmap",
+  "serviceSlug": "it-consulting",
+  "title": "IT Strategy, Capital Allocation & Technology Roadmaps",
+  "solutions": [
+    {
+      "title": "3-Year Strategic Technology Roadmapping",
+      "desc": "Formulating multi-year, board-approved technology investment horizons balancing core modernisation, stability, and digital innovation."
+    },
+    {
+      "title": "IT Capital Allocation & Budget Optimization",
+      "desc": "Structuring OpEx vs CapEx allocation models to maximise engineering ROI and eliminate wasteful non-strategic vendor commitments."
+    },
+    {
+      "title": "Technical Debt Valuation & Remediation",
+      "desc": "Systematic auditing and financial quantification of enterprise technical debt, establishing prioritised refactoring roadmaps."
+    },
+    {
+      "title": "Mergers & Acquisitions (M&A) Tech Due Diligence",
+      "desc": "Rigorous pre-acquisition code quality, architectural scalability, cybersecurity, and open-source licensing due diligence audits."
+    },
+    {
+      "title": "Engineering KPIs & DORA Metrics Alignment",
+      "desc": "Establishing objective engineering telemetry (Deployment Frequency, Lead Time for Changes, MTTR) linked directly to executive incentives."
+    },
+    {
+      "title": "Enterprise Disaster Recovery & Resilience Planning",
+      "desc": "Formulating comprehensive business continuity planning (BCP) ensuring mission-critical services withstand extreme operational disruption."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "M&A Technical Due Diligence for FinTech Acquisition",
+      "desc": "Executed comprehensive technical diligence on a £120M target payment processing platform evaluating code maintainability and debt.",
+      "practicalValue": "Identified critical scalability bottlenecks and negotiated a £14M valuation adjustment.",
+      "focusAreas": [
+        "M&A Tech Audit",
+        "Code Due Diligence",
+        "Scalability Modeling"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "5-Year Healthcare Informatics Strategic Roadmap",
+      "desc": "Authored the board-level IT strategy for a 20,000-employee healthcare trust covering cloud migration, AI diagnostics, and EHR modernization.",
+      "practicalValue": "Secured £45M treasury funding approval with clear milestone-based accountability.",
+      "focusAreas": [
+        "Board Roadmapping",
+        "Treasury Business Case",
+        "Digital Health"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Global Supply Chain IT Investment Planning",
+      "desc": "Formulated the 3-year technology investment blueprint aligning global logistics, warehouse automation, and store POS systems.",
+      "practicalValue": "Reallocated £8M in wasteful legacy IT maintenance spend into modern cloud fulfillment systems.",
+      "focusAreas": [
+        "Capex/Opex Optimization",
+        "Logistics IT",
+        "Vendor Consolidation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industry 4.0 Digital Factory Strategic Horizon",
+      "desc": "Developed a phased 4-stage digital modernization roadmap for an international aerospace parts manufacturer.",
+      "practicalValue": "Delivered 22% improvement in overall equipment effectiveness (OEE) across 6 manufacturing sites.",
+      "focusAreas": [
+        "Industry 4.0",
+        "OEE Benchmarking",
+        "CapEx Phasing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Strategic IT Portfolio Planning & Capability Horizon Framework",
+    "layers": [
+      {
+        "label": "Layer 01: Business Strategy & Executive Goals Ingestion",
+        "node": "Corporate Strategic Goals, Growth OKRs, Board Budget Allocations"
+      },
+      {
+        "label": "Layer 02: Capability Mapping & Technical Debt Scoring",
+        "node": "Business Capability Maps, Application Portfolio Management (APM), Debt Indices"
+      },
+      {
+        "label": "Layer 03: Multi-Year Horizon Planning (H1 / H2 / H3)",
+        "node": "Horizon 1: Core Modernization | Horizon 2: Scalable Cloud | Horizon 3: Disruptive AI"
+      },
+      {
+        "label": "Layer 04: Capital Allocation & Financial Governance",
+        "node": "CapEx/OpEx Modeling, TCO Calculators, ROI Sensitivity Analyses"
+      },
+      {
+        "label": "Layer 05: Execution Governance & Value Realisation",
+        "node": "Executive Scorecards, DORA Engineering Metrics, Value-Stream Audit Reviews"
+      }
+    ],
+    "editorialParagraph1": "Without a cohesive, board-aligned IT strategy, technology investments inevitably devolve into fragmented, reactive departmental projects. Budgets become consumed by maintaining obsolete legacy software rather than driving competitive differentiation.",
+    "editorialParagraph2": "Devopstrio IT strategy consulting aligns engineering investments directly with executive business outcomes. We deliver pragmatic, phased technology roadmaps, clear capital allocation models, and objective engineering metrics that ensure every pound spent delivers maximum business value.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Direct Boardroom-to-Code Alignment",
+      "desc": "Clear strategic alignment ensuring every software initiative, cloud migration, and tooling choice directly supports corporate growth OKRs."
+    },
+    {
+      "id": "02",
+      "title": "Optimal Capital Efficiency",
+      "desc": "Rigorous CapEx/OpEx modelling and vendor consolidation redirecting wasted maintenance funds into high-impact digital initiatives."
+    },
+    {
+      "id": "03",
+      "title": "Predictable, De-Risked Delivery",
+      "desc": "Phased milestone horizons and objective value-realisation metrics eliminating surprise budget blowouts and chronic release delays."
+    }
+  ]
+},
+  "it-strategy-roadmap": {
+  "slug": "it-strategy-roadmap",
+  "serviceSlug": "it-consulting",
+  "title": "IT Strategy, Capital Allocation & Technology Roadmaps",
+  "solutions": [
+    {
+      "title": "3-Year Strategic Technology Roadmapping",
+      "desc": "Formulating multi-year, board-approved technology investment horizons balancing core modernisation, stability, and digital innovation."
+    },
+    {
+      "title": "IT Capital Allocation & Budget Optimization",
+      "desc": "Structuring OpEx vs CapEx allocation models to maximise engineering ROI and eliminate wasteful non-strategic vendor commitments."
+    },
+    {
+      "title": "Technical Debt Valuation & Remediation",
+      "desc": "Systematic auditing and financial quantification of enterprise technical debt, establishing prioritised refactoring roadmaps."
+    },
+    {
+      "title": "Mergers & Acquisitions (M&A) Tech Due Diligence",
+      "desc": "Rigorous pre-acquisition code quality, architectural scalability, cybersecurity, and open-source licensing due diligence audits."
+    },
+    {
+      "title": "Engineering KPIs & DORA Metrics Alignment",
+      "desc": "Establishing objective engineering telemetry (Deployment Frequency, Lead Time for Changes, MTTR) linked directly to executive incentives."
+    },
+    {
+      "title": "Enterprise Disaster Recovery & Resilience Planning",
+      "desc": "Formulating comprehensive business continuity planning (BCP) ensuring mission-critical services withstand extreme operational disruption."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "M&A Technical Due Diligence for FinTech Acquisition",
+      "desc": "Executed comprehensive technical diligence on a £120M target payment processing platform evaluating code maintainability and debt.",
+      "practicalValue": "Identified critical scalability bottlenecks and negotiated a £14M valuation adjustment.",
+      "focusAreas": [
+        "M&A Tech Audit",
+        "Code Due Diligence",
+        "Scalability Modeling"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "5-Year Healthcare Informatics Strategic Roadmap",
+      "desc": "Authored the board-level IT strategy for a 20,000-employee healthcare trust covering cloud migration, AI diagnostics, and EHR modernization.",
+      "practicalValue": "Secured £45M treasury funding approval with clear milestone-based accountability.",
+      "focusAreas": [
+        "Board Roadmapping",
+        "Treasury Business Case",
+        "Digital Health"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Global Supply Chain IT Investment Planning",
+      "desc": "Formulated the 3-year technology investment blueprint aligning global logistics, warehouse automation, and store POS systems.",
+      "practicalValue": "Reallocated £8M in wasteful legacy IT maintenance spend into modern cloud fulfillment systems.",
+      "focusAreas": [
+        "Capex/Opex Optimization",
+        "Logistics IT",
+        "Vendor Consolidation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industry 4.0 Digital Factory Strategic Horizon",
+      "desc": "Developed a phased 4-stage digital modernization roadmap for an international aerospace parts manufacturer.",
+      "practicalValue": "Delivered 22% improvement in overall equipment effectiveness (OEE) across 6 manufacturing sites.",
+      "focusAreas": [
+        "Industry 4.0",
+        "OEE Benchmarking",
+        "CapEx Phasing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Strategic IT Portfolio Planning & Capability Horizon Framework",
+    "layers": [
+      {
+        "label": "Layer 01: Business Strategy & Executive Goals Ingestion",
+        "node": "Corporate Strategic Goals, Growth OKRs, Board Budget Allocations"
+      },
+      {
+        "label": "Layer 02: Capability Mapping & Technical Debt Scoring",
+        "node": "Business Capability Maps, Application Portfolio Management (APM), Debt Indices"
+      },
+      {
+        "label": "Layer 03: Multi-Year Horizon Planning (H1 / H2 / H3)",
+        "node": "Horizon 1: Core Modernization | Horizon 2: Scalable Cloud | Horizon 3: Disruptive AI"
+      },
+      {
+        "label": "Layer 04: Capital Allocation & Financial Governance",
+        "node": "CapEx/OpEx Modeling, TCO Calculators, ROI Sensitivity Analyses"
+      },
+      {
+        "label": "Layer 05: Execution Governance & Value Realisation",
+        "node": "Executive Scorecards, DORA Engineering Metrics, Value-Stream Audit Reviews"
+      }
+    ],
+    "editorialParagraph1": "Without a cohesive, board-aligned IT strategy, technology investments inevitably devolve into fragmented, reactive departmental projects. Budgets become consumed by maintaining obsolete legacy software rather than driving competitive differentiation.",
+    "editorialParagraph2": "Devopstrio IT strategy consulting aligns engineering investments directly with executive business outcomes. We deliver pragmatic, phased technology roadmaps, clear capital allocation models, and objective engineering metrics that ensure every pound spent delivers maximum business value.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Direct Boardroom-to-Code Alignment",
+      "desc": "Clear strategic alignment ensuring every software initiative, cloud migration, and tooling choice directly supports corporate growth OKRs."
+    },
+    {
+      "id": "02",
+      "title": "Optimal Capital Efficiency",
+      "desc": "Rigorous CapEx/OpEx modelling and vendor consolidation redirecting wasted maintenance funds into high-impact digital initiatives."
+    },
+    {
+      "id": "03",
+      "title": "Predictable, De-Risked Delivery",
+      "desc": "Phased milestone horizons and objective value-realisation metrics eliminating surprise budget blowouts and chronic release delays."
+    }
+  ]
+},
+  "it-consulting/technology-assessment": {
+  "slug": "technology-assessment",
+  "serviceSlug": "it-consulting",
+  "title": "Technology Assessment, Code Quality Audits & Architecture Reviews",
+  "solutions": [
+    {
+      "title": "Deep-Dive Source Code Quality Audits",
+      "desc": "Automated static analysis, cyclomatic complexity profiling, and modularity auditing across enterprise repositories to reveal hidden rot."
+    },
+    {
+      "title": "Architecture Resilience & Scalability Review",
+      "desc": "Simulating peak transaction loads, concurrency bottlenecks, and single points of failure (SPOF) across multi-tier application architectures."
+    },
+    {
+      "title": "Third-Party & Open-Source License Audits",
+      "desc": "Software Bill of Materials (SBOM) generation identifying high-risk copyleft licences (GPL, AGPL) and deprecated open-source libraries."
+    },
+    {
+      "title": "Application Security & Vulnerability Scanning",
+      "desc": "Comprehensive SAST and DAST vulnerability assessments uncovering OWASP Top 10 vulnerabilities, hardcoded secrets, and SQLi risks."
+    },
+    {
+      "title": "Database Performance & Query Optimization",
+      "desc": "Profiling slow query logs, missing indexes, unoptimised connection pools, and database lock contention to restore sub-second throughput."
+    },
+    {
+      "title": "Technical Remediation & Refactoring Blueprint",
+      "desc": "Actionable, prioritised engineering punchlists categorized by impact and effort, providing developers with clear, actionable fix instructions."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "High-Frequency FX Trading Platform Code Audit",
+      "desc": "Conducted an in-depth source code and concurrency audit on a C++ / Java FX trading matching engine experiencing micro-stalls.",
+      "practicalValue": "Identified memory allocation stalls and reduced p99 execution latency by 68%.",
+      "focusAreas": [
+        "Latency Optimization",
+        "Memory Profiling",
+        "Zero-Lock Concurrency"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Software as a Medical Device (SaMD) Quality Audit",
+      "desc": "Audited diagnostic image processing algorithms for IEC 62304 regulatory compliance and software safety class adherence.",
+      "practicalValue": "Achieved full FDA 510(k) and CE Mark software documentation compliance readiness.",
+      "focusAreas": [
+        "IEC 62304",
+        "SaMD Compliance",
+        "Static Code Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Black Friday Scalability & Stress Bottleneck Audit",
+      "desc": "Performed an architectural scalability audit on a high-volume shopping cart backend before annual peak retail sales.",
+      "practicalValue": "Uncovered a critical database deadlocking flaw, preventing an estimated £4.2M outage.",
+      "focusAreas": [
+        "Cart Scalability",
+        "Database Lock Contention",
+        "Cache Warmup"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Legacy ERP Codebase Health & Refactoring Audit",
+      "desc": "Audited a 1.2M-line legacy monolithic ERP codebase, mapping circular class dependencies and dead code paths.",
+      "practicalValue": "Eliminated 320,000 lines of dead code and reduced nightly automated build times by 75%.",
+      "focusAreas": [
+        "Monolith Decomposition",
+        "Dead Code Removal",
+        "Build Acceleration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Comprehensive Automated Technology Assessment Pipeline",
+    "layers": [
+      {
+        "label": "Layer 01: Repository Ingestion & Code Parsing",
+        "node": "Abstract Syntax Tree (AST) Parsers, Clang/SonarQube Engine, Git Commit Telemetry"
+      },
+      {
+        "label": "Layer 02: Static Code Quality & Debt Indexing",
+        "node": "SonarQube Enterprise, CodeClimate, Cyclomatic & Halstead Complexity Metrics"
+      },
+      {
+        "label": "Layer 03: Security & Software Supply Chain (SBOM)",
+        "node": "Snyk / Checkmarx SAST, Trivy Container Scanner, FOSSA Open Source License Auditor"
+      },
+      {
+        "label": "Layer 04: Dynamic Architecture & Load Emulation",
+        "node": "k6 Distributed Load Engine, OpenTelemetry Distributed Traces, Chaos Mesh Injections"
+      },
+      {
+        "label": "Layer 05: Executive Scorecard & Actionable Punchlist",
+        "node": "Risk Heatmaps, Effort vs Impact Matrix, Developer Refactoring Guides (Jira/GitHub)"
+      }
+    ],
+    "editorialParagraph1": "Accumulated technical debt and unmonitored code quality rot silently undermine software reliability, dragging down engineering velocity and increasing vulnerability exposure. Without deep technical audits, management remains blind to impending platform failures.",
+    "editorialParagraph2": "Devopstrio technology assessments combine automated static analysis with pedantic peer reviews by principal architects. We deliver rigorous, unbiased health checks with crystal-clear remediation roadmaps that empower teams to rebuild platform resilience with confidence.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-9.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Immediate Risk Transparency",
+      "desc": "Uncompromising clarity on hidden vulnerabilities, architectural bottlenecks, and licence compliance liabilities before they impact operations."
+    },
+    {
+      "id": "02",
+      "title": "Measurable Velocity Acceleration",
+      "desc": "Eliminating cyclomatic complexity, circular dependencies, and dead execution paths, slashing regression cycle times by 40%+."
+    },
+    {
+      "id": "03",
+      "title": "Actionable Remediation Punchlists",
+      "desc": "Clear, prioritised developer guides detailing exact files, line numbers, and refactoring patterns required to resolve defects."
+    }
+  ]
+},
+  "technology-assessment": {
+  "slug": "technology-assessment",
+  "serviceSlug": "it-consulting",
+  "title": "Technology Assessment, Code Quality Audits & Architecture Reviews",
+  "solutions": [
+    {
+      "title": "Deep-Dive Source Code Quality Audits",
+      "desc": "Automated static analysis, cyclomatic complexity profiling, and modularity auditing across enterprise repositories to reveal hidden rot."
+    },
+    {
+      "title": "Architecture Resilience & Scalability Review",
+      "desc": "Simulating peak transaction loads, concurrency bottlenecks, and single points of failure (SPOF) across multi-tier application architectures."
+    },
+    {
+      "title": "Third-Party & Open-Source License Audits",
+      "desc": "Software Bill of Materials (SBOM) generation identifying high-risk copyleft licences (GPL, AGPL) and deprecated open-source libraries."
+    },
+    {
+      "title": "Application Security & Vulnerability Scanning",
+      "desc": "Comprehensive SAST and DAST vulnerability assessments uncovering OWASP Top 10 vulnerabilities, hardcoded secrets, and SQLi risks."
+    },
+    {
+      "title": "Database Performance & Query Optimization",
+      "desc": "Profiling slow query logs, missing indexes, unoptimised connection pools, and database lock contention to restore sub-second throughput."
+    },
+    {
+      "title": "Technical Remediation & Refactoring Blueprint",
+      "desc": "Actionable, prioritised engineering punchlists categorized by impact and effort, providing developers with clear, actionable fix instructions."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "High-Frequency FX Trading Platform Code Audit",
+      "desc": "Conducted an in-depth source code and concurrency audit on a C++ / Java FX trading matching engine experiencing micro-stalls.",
+      "practicalValue": "Identified memory allocation stalls and reduced p99 execution latency by 68%.",
+      "focusAreas": [
+        "Latency Optimization",
+        "Memory Profiling",
+        "Zero-Lock Concurrency"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Software as a Medical Device (SaMD) Quality Audit",
+      "desc": "Audited diagnostic image processing algorithms for IEC 62304 regulatory compliance and software safety class adherence.",
+      "practicalValue": "Achieved full FDA 510(k) and CE Mark software documentation compliance readiness.",
+      "focusAreas": [
+        "IEC 62304",
+        "SaMD Compliance",
+        "Static Code Verification"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Black Friday Scalability & Stress Bottleneck Audit",
+      "desc": "Performed an architectural scalability audit on a high-volume shopping cart backend before annual peak retail sales.",
+      "practicalValue": "Uncovered a critical database deadlocking flaw, preventing an estimated £4.2M outage.",
+      "focusAreas": [
+        "Cart Scalability",
+        "Database Lock Contention",
+        "Cache Warmup"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Legacy ERP Codebase Health & Refactoring Audit",
+      "desc": "Audited a 1.2M-line legacy monolithic ERP codebase, mapping circular class dependencies and dead code paths.",
+      "practicalValue": "Eliminated 320,000 lines of dead code and reduced nightly automated build times by 75%.",
+      "focusAreas": [
+        "Monolith Decomposition",
+        "Dead Code Removal",
+        "Build Acceleration"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Comprehensive Automated Technology Assessment Pipeline",
+    "layers": [
+      {
+        "label": "Layer 01: Repository Ingestion & Code Parsing",
+        "node": "Abstract Syntax Tree (AST) Parsers, Clang/SonarQube Engine, Git Commit Telemetry"
+      },
+      {
+        "label": "Layer 02: Static Code Quality & Debt Indexing",
+        "node": "SonarQube Enterprise, CodeClimate, Cyclomatic & Halstead Complexity Metrics"
+      },
+      {
+        "label": "Layer 03: Security & Software Supply Chain (SBOM)",
+        "node": "Snyk / Checkmarx SAST, Trivy Container Scanner, FOSSA Open Source License Auditor"
+      },
+      {
+        "label": "Layer 04: Dynamic Architecture & Load Emulation",
+        "node": "k6 Distributed Load Engine, OpenTelemetry Distributed Traces, Chaos Mesh Injections"
+      },
+      {
+        "label": "Layer 05: Executive Scorecard & Actionable Punchlist",
+        "node": "Risk Heatmaps, Effort vs Impact Matrix, Developer Refactoring Guides (Jira/GitHub)"
+      }
+    ],
+    "editorialParagraph1": "Accumulated technical debt and unmonitored code quality rot silently undermine software reliability, dragging down engineering velocity and increasing vulnerability exposure. Without deep technical audits, management remains blind to impending platform failures.",
+    "editorialParagraph2": "Devopstrio technology assessments combine automated static analysis with pedantic peer reviews by principal architects. We deliver rigorous, unbiased health checks with crystal-clear remediation roadmaps that empower teams to rebuild platform resilience with confidence.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-9.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Immediate Risk Transparency",
+      "desc": "Uncompromising clarity on hidden vulnerabilities, architectural bottlenecks, and licence compliance liabilities before they impact operations."
+    },
+    {
+      "id": "02",
+      "title": "Measurable Velocity Acceleration",
+      "desc": "Eliminating cyclomatic complexity, circular dependencies, and dead execution paths, slashing regression cycle times by 40%+."
+    },
+    {
+      "id": "03",
+      "title": "Actionable Remediation Punchlists",
+      "desc": "Clear, prioritised developer guides detailing exact files, line numbers, and refactoring patterns required to resolve defects."
+    }
+  ]
+},
+  "managed-services/msp-uk": {
+  "slug": "msp-uk",
+  "serviceSlug": "managed-services",
+  "title": "Managed Service Provider UK (Enterprise MSP Services)",
+  "solutions": [
+    {
+      "title": "Comprehensive UK IT Estate Management",
+      "desc": "Proactive, full-lifecycle administration of enterprise endpoints, hybrid networks, Microsoft 365, and on-premise compute infrastructure."
+    },
+    {
+      "title": "24/7 UK-Based Service Desk & On-Call Engineering",
+      "desc": "Direct access to certified Level 2 & Level 3 UK-based systems engineers with guaranteed sub-15-minute response times for critical incidents."
+    },
+    {
+      "title": "Cyber Essentials Plus & Security Hardening",
+      "desc": "Continuous vulnerability patching, endpoint detection and response (EDR), and compliance alignment with UK Cyber Essentials Plus standards."
+    },
+    {
+      "title": "Microsoft 365 & Modern Workplace Governance",
+      "desc": "Identity lifecycle automation, Intune mobile device management (MDM), Conditional Access policies, and DLP data loss prevention rules."
+    },
+    {
+      "title": "Cloud Backup & Fast Ransomware Disaster Recovery",
+      "desc": "Immutable cloud backups, air-gapped snapshots, and regularly tested failover runbooks to ensure rapid business continuity after failures."
+    },
+    {
+      "title": "Strategic vCIO & IT Budget Roadmapping",
+      "desc": "Quarterly business reviews (QBR), vendor management, hardware lifecycle planning, and predictable per-seat monthly operational billing."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "FCA-Compliant MSP Estate for London Boutique Wealth Manager",
+      "desc": "Delivered complete outsourced MSP management including encrypted endpoints, secure communications archiving, and audit logging.",
+      "practicalValue": "Achieved 99.99% workplace uptime and zero compliance breaches across 220 staff.",
+      "focusAreas": [
+        "FCA Compliance",
+        "Encrypted Laptops",
+        "Sub-15m SLA"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "24/7 NHS DSP-Compliant Practice IT Management",
+      "desc": "Managed end-to-end IT services for a network of 12 private clinics with automated patching and medical device network segmentation.",
+      "practicalValue": "100% NHS DSP Toolkit pass rate with zero patient appointment disruptions.",
+      "focusAreas": [
+        "DSP Toolkit",
+        "Medical Isolation",
+        "24/7 Helpdesk"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Omnichannel Store POS & HQ Office Infrastructure Support",
+      "desc": "Managed networked point-of-sale hardware, back-office workstations, and cloud telephony across 45 UK retail stores.",
+      "practicalValue": "Cut retail register ticket resolution time by 62% during high-traffic weekend sales.",
+      "focusAreas": [
+        "Retail POS Support",
+        "Store Network SLA",
+        "Rapid Replacement"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industrial Plant Office & Shop-Floor IT Management",
+      "desc": "Delivered ruggedized shop-floor terminal management, wireless warehouse connectivity, and office domain controller administration.",
+      "practicalValue": "Eliminated network dead zones across 120,000 sq ft production and warehouse facilities.",
+      "focusAreas": [
+        "Industrial Wireless",
+        "Active Directory",
+        "Zero-Downtime Patching"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise UK Managed Service Provider (MSP) Operating Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Endpoint & Identity Control Plane",
+        "node": "Microsoft Intune, Entra ID (Azure AD), SentinelOne Singularity EDR, FIDO2 MFA"
+      },
+      {
+        "label": "Layer 02: Network & Secure Perimeter Gateways",
+        "node": "Cisco Meraki SD-WAN, Fortinet Next-Gen Firewalls, Cloudflare Access Zero Trust"
+      },
+      {
+        "label": "Layer 03: Automated RMM & Telemetry Ingestion",
+        "node": "NinjaRMM / Datto RMM Agent, Real-Time SNMP Scanners, Health Heartbeat Daemons"
+      },
+      {
+        "label": "Layer 04: UK-Based 24/7 Service Desk & Incident Hub",
+        "node": "ITIL 4 Service Desk, HaloITSM Ticketing, PagerDuty Critical Escalation, Slack Connect"
+      },
+      {
+        "label": "Layer 05: Cloud Backup, DR & Disaster Recovery",
+        "node": "Veeam Cloud Connect, Immutable S3 Object Storage, Air-Gapped Disaster Recovery"
+      }
+    ],
+    "editorialParagraph1": "Managing disparate endpoints, remote workers, fragmented cloud licences, and evolving cybersecurity threats internally strains engineering budgets and pulls strategic teams away from revenue-generating work.",
+    "editorialParagraph2": "As an enterprise UK Managed Service Provider (MSP), Devopstrio delivers 24/7 certified technical support, proactive infrastructure monitoring, and rigorous cyber compliance. We become your dedicated technology partner, ensuring seamless day-to-day operations with predictable operational costs.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-15 Minute Incident Response SLA",
+      "desc": "Direct access to UK-based certified engineers who triage, troubleshoot, and resolve infrastructure issues rapidly without tier-1 runarounds."
+    },
+    {
+      "id": "02",
+      "title": "Complete Cyber Essentials Plus Compliance",
+      "desc": "Rigorous endpoint hardening, continuous security patch validation, and threat monitoring delivering effortless accreditation."
+    },
+    {
+      "id": "03",
+      "title": "Predictable, Fixed Monthly Investment",
+      "desc": "Transparent per-user and per-device subscription pricing bundling enterprise licences, security tooling, and unlimited service desk support."
+    }
+  ]
+},
+  "msp-uk": {
+  "slug": "msp-uk",
+  "serviceSlug": "managed-services",
+  "title": "Managed Service Provider UK (Enterprise MSP Services)",
+  "solutions": [
+    {
+      "title": "Comprehensive UK IT Estate Management",
+      "desc": "Proactive, full-lifecycle administration of enterprise endpoints, hybrid networks, Microsoft 365, and on-premise compute infrastructure."
+    },
+    {
+      "title": "24/7 UK-Based Service Desk & On-Call Engineering",
+      "desc": "Direct access to certified Level 2 & Level 3 UK-based systems engineers with guaranteed sub-15-minute response times for critical incidents."
+    },
+    {
+      "title": "Cyber Essentials Plus & Security Hardening",
+      "desc": "Continuous vulnerability patching, endpoint detection and response (EDR), and compliance alignment with UK Cyber Essentials Plus standards."
+    },
+    {
+      "title": "Microsoft 365 & Modern Workplace Governance",
+      "desc": "Identity lifecycle automation, Intune mobile device management (MDM), Conditional Access policies, and DLP data loss prevention rules."
+    },
+    {
+      "title": "Cloud Backup & Fast Ransomware Disaster Recovery",
+      "desc": "Immutable cloud backups, air-gapped snapshots, and regularly tested failover runbooks to ensure rapid business continuity after failures."
+    },
+    {
+      "title": "Strategic vCIO & IT Budget Roadmapping",
+      "desc": "Quarterly business reviews (QBR), vendor management, hardware lifecycle planning, and predictable per-seat monthly operational billing."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "FCA-Compliant MSP Estate for London Boutique Wealth Manager",
+      "desc": "Delivered complete outsourced MSP management including encrypted endpoints, secure communications archiving, and audit logging.",
+      "practicalValue": "Achieved 99.99% workplace uptime and zero compliance breaches across 220 staff.",
+      "focusAreas": [
+        "FCA Compliance",
+        "Encrypted Laptops",
+        "Sub-15m SLA"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "24/7 NHS DSP-Compliant Practice IT Management",
+      "desc": "Managed end-to-end IT services for a network of 12 private clinics with automated patching and medical device network segmentation.",
+      "practicalValue": "100% NHS DSP Toolkit pass rate with zero patient appointment disruptions.",
+      "focusAreas": [
+        "DSP Toolkit",
+        "Medical Isolation",
+        "24/7 Helpdesk"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Omnichannel Store POS & HQ Office Infrastructure Support",
+      "desc": "Managed networked point-of-sale hardware, back-office workstations, and cloud telephony across 45 UK retail stores.",
+      "practicalValue": "Cut retail register ticket resolution time by 62% during high-traffic weekend sales.",
+      "focusAreas": [
+        "Retail POS Support",
+        "Store Network SLA",
+        "Rapid Replacement"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industrial Plant Office & Shop-Floor IT Management",
+      "desc": "Delivered ruggedized shop-floor terminal management, wireless warehouse connectivity, and office domain controller administration.",
+      "practicalValue": "Eliminated network dead zones across 120,000 sq ft production and warehouse facilities.",
+      "focusAreas": [
+        "Industrial Wireless",
+        "Active Directory",
+        "Zero-Downtime Patching"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise UK Managed Service Provider (MSP) Operating Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Endpoint & Identity Control Plane",
+        "node": "Microsoft Intune, Entra ID (Azure AD), SentinelOne Singularity EDR, FIDO2 MFA"
+      },
+      {
+        "label": "Layer 02: Network & Secure Perimeter Gateways",
+        "node": "Cisco Meraki SD-WAN, Fortinet Next-Gen Firewalls, Cloudflare Access Zero Trust"
+      },
+      {
+        "label": "Layer 03: Automated RMM & Telemetry Ingestion",
+        "node": "NinjaRMM / Datto RMM Agent, Real-Time SNMP Scanners, Health Heartbeat Daemons"
+      },
+      {
+        "label": "Layer 04: UK-Based 24/7 Service Desk & Incident Hub",
+        "node": "ITIL 4 Service Desk, HaloITSM Ticketing, PagerDuty Critical Escalation, Slack Connect"
+      },
+      {
+        "label": "Layer 05: Cloud Backup, DR & Disaster Recovery",
+        "node": "Veeam Cloud Connect, Immutable S3 Object Storage, Air-Gapped Disaster Recovery"
+      }
+    ],
+    "editorialParagraph1": "Managing disparate endpoints, remote workers, fragmented cloud licences, and evolving cybersecurity threats internally strains engineering budgets and pulls strategic teams away from revenue-generating work.",
+    "editorialParagraph2": "As an enterprise UK Managed Service Provider (MSP), Devopstrio delivers 24/7 certified technical support, proactive infrastructure monitoring, and rigorous cyber compliance. We become your dedicated technology partner, ensuring seamless day-to-day operations with predictable operational costs.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-1.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-15 Minute Incident Response SLA",
+      "desc": "Direct access to UK-based certified engineers who triage, troubleshoot, and resolve infrastructure issues rapidly without tier-1 runarounds."
+    },
+    {
+      "id": "02",
+      "title": "Complete Cyber Essentials Plus Compliance",
+      "desc": "Rigorous endpoint hardening, continuous security patch validation, and threat monitoring delivering effortless accreditation."
+    },
+    {
+      "id": "03",
+      "title": "Predictable, Fixed Monthly Investment",
+      "desc": "Transparent per-user and per-device subscription pricing bundling enterprise licences, security tooling, and unlimited service desk support."
+    }
+  ]
+},
+  "managed-services/infrastructure-management": {
+  "slug": "infrastructure-management",
+  "serviceSlug": "managed-services",
+  "title": "Enterprise Infrastructure Management Services UK",
+  "solutions": [
+    {
+      "title": "Hybrid Data Centre & Server Administration",
+      "desc": "Comprehensive remote management, OS hardening, hypervisor clustering (VMware, Hyper-V, Proxmox), and firmware lifecycle governance."
+    },
+    {
+      "title": "Software-Defined Network & SD-WAN Management",
+      "desc": "Proactive configuration and monitoring of enterprise firewalls, BGP routing, MPLS/SD-WAN meshes, and high-density office Wi-Fi."
+    },
+    {
+      "title": "Enterprise Storage & SAN Fabric Governance",
+      "desc": "Capacity forecasting, tiering optimization, snapshot scheduling, and latency tuning across Pure Storage, NetApp, and cloud block storage."
+    },
+    {
+      "title": "Automated Patch Management & OS Hardening",
+      "desc": "Scheduled, vulnerability-tested patch cycles across Linux (RHEL, Ubuntu) and Windows Server estates with automated rollback safeguards."
+    },
+    {
+      "title": "Infrastructure as Code (IaC) Standardization",
+      "desc": "Eliminating configuration drift by managing server baselines, security policies, and network routes using Terraform and Ansible."
+    },
+    {
+      "title": "Capacity Forecasting & Modernization Planning",
+      "desc": "Predictive resource analytics identifying hardware bottlenecks before performance degrades, guiding strategic migration horizons."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Private Cloud Infrastructure Management for City Brokerage",
+      "desc": "Managed ultra-low-latency hypervisor clusters and high-speed SAN fabrics for high-frequency trading market data servers in Equinix LD4.",
+      "practicalValue": "Achieved 99.999% server availability with microsecond network latency tracking.",
+      "focusAreas": [
+        "Equinix Colocation",
+        "Low-Latency SAN",
+        "Microsecond Telemetry"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "PACS Medical Imaging Storage & Compute Management",
+      "desc": "Administered high-throughput storage arrays and GPU render nodes processing 30TB of diagnostic imaging daily across hospital sites.",
+      "practicalValue": "Zero storage exhaustion incidents and 35% faster radiologist image retrieval.",
+      "focusAreas": [
+        "PACS Storage",
+        "SAN Tiering",
+        "HIPAA/Caldicott Hardening"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Global Distribution Centre Network & Server Management",
+      "desc": "Maintained local server clusters, automated pick-to-light warehouse networks, and barcode scanning access points across 6 fulfillment hubs.",
+      "practicalValue": "Eliminated warehouse connectivity blackouts and reduced maintenance overhead by 40%.",
+      "focusAreas": [
+        "Fulfillment Networks",
+        "Redundant Switching",
+        "Fast Recovery"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Automated Assembly Line Edge Server Infrastructure",
+      "desc": "Managed on-premise industrial edge servers and ruggedized compute gateways running manufacturing execution systems (MES).",
+      "practicalValue": "Maintained continuous 24/7 factory production with zero server-induced line stoppages.",
+      "focusAreas": [
+        "Edge Compute",
+        "MES Availability",
+        "Industrial Patching"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Hybrid Infrastructure & Network Management Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Physical & Hypervisor Compute Tier",
+        "node": "Dell PowerEdge / HPE ProLiant, VMware vSphere 8 / Nutanix AHV, Proxmox VE"
+      },
+      {
+        "label": "Layer 02: High-Speed Fabric & Network Mesh",
+        "node": "Cisco Nexus 100GbE Core, Arista Low-Latency Leaf-Spine, Fortinet SD-WAN"
+      },
+      {
+        "label": "Layer 03: Tiered SAN & Block Storage Fabric",
+        "node": "Pure Storage FlashArray, NetApp ONTAP, NVMe-oF Low-Latency Fabrics"
+      },
+      {
+        "label": "Layer 04: Automated Configuration & Patch Engine",
+        "node": "Ansible Automation Platform, Red Hat Satellite, Windows Server WSUS/SCCM"
+      },
+      {
+        "label": "Layer 05: Telemetry, Hardware SNMP & Out-of-Band IPMI",
+        "node": "Prometheus Node Exporter, Zabbix SNMP, Dell iDRAC / HPE iLO Remote Console"
+      }
+    ],
+    "editorialParagraph1": "Enterprise data centres and hybrid infrastructure require constant operational vigilance. Unpatched hypervisors, failing disk arrays, and unmonitored switch ports inevitably lead to severe downtime that halts critical business operations.",
+    "editorialParagraph2": "Devopstrio infrastructure management services provide proactive, 24/7 administration across physical, virtualized, and hybrid estates. We handle compute, storage, networking, and automated patch cycles, ensuring your foundational systems run with peak efficiency and unwavering reliability.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "99.999% Infrastructure Uptime",
+      "desc": "Proactive out-of-band hardware telemetry, disk predictive failure warnings, and redundant hypervisor clustering preventing unplanned downtime."
+    },
+    {
+      "id": "02",
+      "title": "Elimination of Configuration Drift",
+      "desc": "Automated Ansible playbooks enforcing standardized OS configurations, firewall rules, and security baselines across hundreds of servers."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Vulnerability Patch Cadence",
+      "desc": "Automated, non-disruptive rolling operating system updates and hypervisor firmware patching verified through strict staging runbooks."
+    }
+  ]
+},
+  "infrastructure-management": {
+  "slug": "infrastructure-management",
+  "serviceSlug": "managed-services",
+  "title": "Enterprise Infrastructure Management Services UK",
+  "solutions": [
+    {
+      "title": "Hybrid Data Centre & Server Administration",
+      "desc": "Comprehensive remote management, OS hardening, hypervisor clustering (VMware, Hyper-V, Proxmox), and firmware lifecycle governance."
+    },
+    {
+      "title": "Software-Defined Network & SD-WAN Management",
+      "desc": "Proactive configuration and monitoring of enterprise firewalls, BGP routing, MPLS/SD-WAN meshes, and high-density office Wi-Fi."
+    },
+    {
+      "title": "Enterprise Storage & SAN Fabric Governance",
+      "desc": "Capacity forecasting, tiering optimization, snapshot scheduling, and latency tuning across Pure Storage, NetApp, and cloud block storage."
+    },
+    {
+      "title": "Automated Patch Management & OS Hardening",
+      "desc": "Scheduled, vulnerability-tested patch cycles across Linux (RHEL, Ubuntu) and Windows Server estates with automated rollback safeguards."
+    },
+    {
+      "title": "Infrastructure as Code (IaC) Standardization",
+      "desc": "Eliminating configuration drift by managing server baselines, security policies, and network routes using Terraform and Ansible."
+    },
+    {
+      "title": "Capacity Forecasting & Modernization Planning",
+      "desc": "Predictive resource analytics identifying hardware bottlenecks before performance degrades, guiding strategic migration horizons."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Private Cloud Infrastructure Management for City Brokerage",
+      "desc": "Managed ultra-low-latency hypervisor clusters and high-speed SAN fabrics for high-frequency trading market data servers in Equinix LD4.",
+      "practicalValue": "Achieved 99.999% server availability with microsecond network latency tracking.",
+      "focusAreas": [
+        "Equinix Colocation",
+        "Low-Latency SAN",
+        "Microsecond Telemetry"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "PACS Medical Imaging Storage & Compute Management",
+      "desc": "Administered high-throughput storage arrays and GPU render nodes processing 30TB of diagnostic imaging daily across hospital sites.",
+      "practicalValue": "Zero storage exhaustion incidents and 35% faster radiologist image retrieval.",
+      "focusAreas": [
+        "PACS Storage",
+        "SAN Tiering",
+        "HIPAA/Caldicott Hardening"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Global Distribution Centre Network & Server Management",
+      "desc": "Maintained local server clusters, automated pick-to-light warehouse networks, and barcode scanning access points across 6 fulfillment hubs.",
+      "practicalValue": "Eliminated warehouse connectivity blackouts and reduced maintenance overhead by 40%.",
+      "focusAreas": [
+        "Fulfillment Networks",
+        "Redundant Switching",
+        "Fast Recovery"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Automated Assembly Line Edge Server Infrastructure",
+      "desc": "Managed on-premise industrial edge servers and ruggedized compute gateways running manufacturing execution systems (MES).",
+      "practicalValue": "Maintained continuous 24/7 factory production with zero server-induced line stoppages.",
+      "focusAreas": [
+        "Edge Compute",
+        "MES Availability",
+        "Industrial Patching"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Hybrid Infrastructure & Network Management Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Physical & Hypervisor Compute Tier",
+        "node": "Dell PowerEdge / HPE ProLiant, VMware vSphere 8 / Nutanix AHV, Proxmox VE"
+      },
+      {
+        "label": "Layer 02: High-Speed Fabric & Network Mesh",
+        "node": "Cisco Nexus 100GbE Core, Arista Low-Latency Leaf-Spine, Fortinet SD-WAN"
+      },
+      {
+        "label": "Layer 03: Tiered SAN & Block Storage Fabric",
+        "node": "Pure Storage FlashArray, NetApp ONTAP, NVMe-oF Low-Latency Fabrics"
+      },
+      {
+        "label": "Layer 04: Automated Configuration & Patch Engine",
+        "node": "Ansible Automation Platform, Red Hat Satellite, Windows Server WSUS/SCCM"
+      },
+      {
+        "label": "Layer 05: Telemetry, Hardware SNMP & Out-of-Band IPMI",
+        "node": "Prometheus Node Exporter, Zabbix SNMP, Dell iDRAC / HPE iLO Remote Console"
+      }
+    ],
+    "editorialParagraph1": "Enterprise data centres and hybrid infrastructure require constant operational vigilance. Unpatched hypervisors, failing disk arrays, and unmonitored switch ports inevitably lead to severe downtime that halts critical business operations.",
+    "editorialParagraph2": "Devopstrio infrastructure management services provide proactive, 24/7 administration across physical, virtualized, and hybrid estates. We handle compute, storage, networking, and automated patch cycles, ensuring your foundational systems run with peak efficiency and unwavering reliability.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-2.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "99.999% Infrastructure Uptime",
+      "desc": "Proactive out-of-band hardware telemetry, disk predictive failure warnings, and redundant hypervisor clustering preventing unplanned downtime."
+    },
+    {
+      "id": "02",
+      "title": "Elimination of Configuration Drift",
+      "desc": "Automated Ansible playbooks enforcing standardized OS configurations, firewall rules, and security baselines across hundreds of servers."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Vulnerability Patch Cadence",
+      "desc": "Automated, non-disruptive rolling operating system updates and hypervisor firmware patching verified through strict staging runbooks."
+    }
+  ]
+},
+  "managed-services/managed-cloud-services": {
+  "slug": "managed-cloud-services",
+  "serviceSlug": "managed-services",
+  "title": "Managed Cloud Services UK (AWS, Azure & Google Cloud)",
+  "solutions": [
+    {
+      "title": "24/7 Multi-Cloud SRE & Operations",
+      "desc": "Round-the-clock monitoring, automated remediation, and proactive scaling across AWS, Microsoft Azure, and Google Cloud estates."
+    },
+    {
+      "title": "Continuous FinOps Cloud Spend Optimization",
+      "desc": "Weekly cost anomaly inspections, rightsizing recommendations, commitment management (Savings Plans), and automated idle resource shutdown."
+    },
+    {
+      "title": "Cloud Infrastructure as Code (IaC) Maintenance",
+      "desc": "Maintaining and upgrading production Terraform and Bicep codebases to eliminate drift and ensure reproducible environments."
+    },
+    {
+      "title": "Cloud Security Posture & Patching (CSPM)",
+      "desc": "Real-time misconfiguration remediation, IAM least-privilege enforcement, and automated container image patching via cloud-native tools."
+    },
+    {
+      "title": "Disaster Recovery Testing & Backup Governance",
+      "desc": "Automated cross-region database snapshot validation, recovery drills, and RPO/RTO verification to satisfy strict regulatory compliance."
+    },
+    {
+      "title": "Cloud Performance & Latency Optimization",
+      "desc": "Database query tuning, CDN edge caching optimization, and microservice traffic profiling ensuring lightning-fast user response times."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "FCA-Regulated Managed AWS Cloud for Payments Fintech",
+      "desc": "Provided 24/7 managed cloud operations for an AWS multi-account serverless payments platform handling 5M transactions daily.",
+      "practicalValue": "Achieved 100% SLA uptime and passed annual FCA digital operational resilience audits.",
+      "focusAreas": [
+        "Serverless AWS",
+        "FCA Resilience",
+        "Zero Downtime"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Managed Azure Healthcare Cloud & HIPAA/DSP Compliance",
+      "desc": "Managed Azure Kubernetes Service (AKS) and Azure SQL databases hosting encrypted electronic health records with continuous audit logs.",
+      "practicalValue": "Reduced monthly cloud spend by 34% while maintaining complete NHS DSP compliance.",
+      "focusAreas": [
+        "Azure AKS",
+        "Continuous FinOps",
+        "Audit-Ready Logs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Managed Google Cloud Estate for Peak Seasonal Retail",
+      "desc": "Operated an autoscaling Google Kubernetes Engine (GKE) and BigQuery analytics estate during massive Black Friday traffic spikes.",
+      "practicalValue": "Scaled seamlessly to 80,000 concurrent sessions with zero slowdown and £85k FinOps savings.",
+      "focusAreas": [
+        "GKE Autoscaling",
+        "BigQuery Telemetry",
+        "Peak Traffic Defense"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Managed Hybrid Industrial IoT Cloud on AWS",
+      "desc": "Managed AWS IoT Core, Kinesis data streams, and Timestream databases aggregating sensor telemetry from 24 global plants.",
+      "practicalValue": "Zero data ingestion loss and automated node health recovery within 45 seconds.",
+      "focusAreas": [
+        "AWS IoT Core",
+        "Kinesis Streams",
+        "Automated Node Healing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise 24/7 Managed Multi-Cloud Operations Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Cloud Ingress & Security Edge",
+        "node": "Cloudflare Magic Transit, AWS CloudFront / Azure Front Door, WAF Managed Rules"
+      },
+      {
+        "label": "Layer 02: Enterprise Container Orchestration Tier",
+        "node": "Amazon EKS / Azure AKS / Google GKE, Karpenter Autoscaling, Istio Service Mesh"
+      },
+      {
+        "label": "Layer 03: Infrastructure as Code & Continuous Deployment",
+        "node": "Terraform Cloud, Atlantis Pull Request Automations, ArgoCD GitOps Controller"
+      },
+      {
+        "label": "Layer 04: Continuous FinOps & Cost Governance Engine",
+        "node": "CloudZero, AWS Cost Anomaly Detection, Azure Cost Management, Rightsizer Daemons"
+      },
+      {
+        "label": "Layer 05: 24/7 Multi-Cloud SRE Telemetry & Alerting Hub",
+        "node": "Datadog Multi-Account Dashboards, Grafana Cloud, PagerDuty L3 On-Call Escalation"
+      }
+    ],
+    "editorialParagraph1": "Modern public clouds offer immense flexibility, but operating them without dedicated cloud specialists leads to soaring bills, security configuration errors, and unexpected downtime during peak traffic events.",
+    "editorialParagraph2": "Devopstrio managed cloud services relieve your in-house teams of complex 24/7 operational maintenance. We combine certified SRE engineers with automated FinOps governance to ensure your AWS, Azure, or GCP workloads remain resilient, secure, and commercially lean.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed 99.99% Multi-Cloud Availability",
+      "desc": "24/7 proactive monitoring, automated Kubernetes pod self-healing, and rapid incident triage keeping production systems continuously online."
+    },
+    {
+      "id": "02",
+      "title": "Aggressive & Continuous FinOps Savings",
+      "desc": "Ongoing rightsizing, orphaned volume cleanup, and smart commitment management trimming cloud spend by 25% to 40% every quarter."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Burden Cloud Management",
+      "desc": "Offload patching, IAM rotation, disaster recovery drills, and Terraform maintenance to our certified team so your developers can focus on product."
+    }
+  ]
+},
+  "managed-cloud-services": {
+  "slug": "managed-cloud-services",
+  "serviceSlug": "managed-services",
+  "title": "Managed Cloud Services UK (AWS, Azure & Google Cloud)",
+  "solutions": [
+    {
+      "title": "24/7 Multi-Cloud SRE & Operations",
+      "desc": "Round-the-clock monitoring, automated remediation, and proactive scaling across AWS, Microsoft Azure, and Google Cloud estates."
+    },
+    {
+      "title": "Continuous FinOps Cloud Spend Optimization",
+      "desc": "Weekly cost anomaly inspections, rightsizing recommendations, commitment management (Savings Plans), and automated idle resource shutdown."
+    },
+    {
+      "title": "Cloud Infrastructure as Code (IaC) Maintenance",
+      "desc": "Maintaining and upgrading production Terraform and Bicep codebases to eliminate drift and ensure reproducible environments."
+    },
+    {
+      "title": "Cloud Security Posture & Patching (CSPM)",
+      "desc": "Real-time misconfiguration remediation, IAM least-privilege enforcement, and automated container image patching via cloud-native tools."
+    },
+    {
+      "title": "Disaster Recovery Testing & Backup Governance",
+      "desc": "Automated cross-region database snapshot validation, recovery drills, and RPO/RTO verification to satisfy strict regulatory compliance."
+    },
+    {
+      "title": "Cloud Performance & Latency Optimization",
+      "desc": "Database query tuning, CDN edge caching optimization, and microservice traffic profiling ensuring lightning-fast user response times."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "FCA-Regulated Managed AWS Cloud for Payments Fintech",
+      "desc": "Provided 24/7 managed cloud operations for an AWS multi-account serverless payments platform handling 5M transactions daily.",
+      "practicalValue": "Achieved 100% SLA uptime and passed annual FCA digital operational resilience audits.",
+      "focusAreas": [
+        "Serverless AWS",
+        "FCA Resilience",
+        "Zero Downtime"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Managed Azure Healthcare Cloud & HIPAA/DSP Compliance",
+      "desc": "Managed Azure Kubernetes Service (AKS) and Azure SQL databases hosting encrypted electronic health records with continuous audit logs.",
+      "practicalValue": "Reduced monthly cloud spend by 34% while maintaining complete NHS DSP compliance.",
+      "focusAreas": [
+        "Azure AKS",
+        "Continuous FinOps",
+        "Audit-Ready Logs"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Managed Google Cloud Estate for Peak Seasonal Retail",
+      "desc": "Operated an autoscaling Google Kubernetes Engine (GKE) and BigQuery analytics estate during massive Black Friday traffic spikes.",
+      "practicalValue": "Scaled seamlessly to 80,000 concurrent sessions with zero slowdown and £85k FinOps savings.",
+      "focusAreas": [
+        "GKE Autoscaling",
+        "BigQuery Telemetry",
+        "Peak Traffic Defense"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Managed Hybrid Industrial IoT Cloud on AWS",
+      "desc": "Managed AWS IoT Core, Kinesis data streams, and Timestream databases aggregating sensor telemetry from 24 global plants.",
+      "practicalValue": "Zero data ingestion loss and automated node health recovery within 45 seconds.",
+      "focusAreas": [
+        "AWS IoT Core",
+        "Kinesis Streams",
+        "Automated Node Healing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise 24/7 Managed Multi-Cloud Operations Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Cloud Ingress & Security Edge",
+        "node": "Cloudflare Magic Transit, AWS CloudFront / Azure Front Door, WAF Managed Rules"
+      },
+      {
+        "label": "Layer 02: Enterprise Container Orchestration Tier",
+        "node": "Amazon EKS / Azure AKS / Google GKE, Karpenter Autoscaling, Istio Service Mesh"
+      },
+      {
+        "label": "Layer 03: Infrastructure as Code & Continuous Deployment",
+        "node": "Terraform Cloud, Atlantis Pull Request Automations, ArgoCD GitOps Controller"
+      },
+      {
+        "label": "Layer 04: Continuous FinOps & Cost Governance Engine",
+        "node": "CloudZero, AWS Cost Anomaly Detection, Azure Cost Management, Rightsizer Daemons"
+      },
+      {
+        "label": "Layer 05: 24/7 Multi-Cloud SRE Telemetry & Alerting Hub",
+        "node": "Datadog Multi-Account Dashboards, Grafana Cloud, PagerDuty L3 On-Call Escalation"
+      }
+    ],
+    "editorialParagraph1": "Modern public clouds offer immense flexibility, but operating them without dedicated cloud specialists leads to soaring bills, security configuration errors, and unexpected downtime during peak traffic events.",
+    "editorialParagraph2": "Devopstrio managed cloud services relieve your in-house teams of complex 24/7 operational maintenance. We combine certified SRE engineers with automated FinOps governance to ensure your AWS, Azure, or GCP workloads remain resilient, secure, and commercially lean.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-3.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed 99.99% Multi-Cloud Availability",
+      "desc": "24/7 proactive monitoring, automated Kubernetes pod self-healing, and rapid incident triage keeping production systems continuously online."
+    },
+    {
+      "id": "02",
+      "title": "Aggressive & Continuous FinOps Savings",
+      "desc": "Ongoing rightsizing, orphaned volume cleanup, and smart commitment management trimming cloud spend by 25% to 40% every quarter."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Burden Cloud Management",
+      "desc": "Offload patching, IAM rotation, disaster recovery drills, and Terraform maintenance to our certified team so your developers can focus on product."
+    }
+  ]
+},
+  "managed-services/managed-devops-services": {
+  "slug": "managed-devops-services",
+  "serviceSlug": "managed-services",
+  "title": "Managed DevOps & Kubernetes Platform Engineering",
+  "solutions": [
+    {
+      "title": "Managed CI/CD Pipeline Administration",
+      "desc": "Continuous maintenance, optimization, and security scanning of GitHub Actions, GitLab CI, and Jenkins build pipelines."
+    },
+    {
+      "title": "Managed Kubernetes (EKS / AKS / GKE) Operations",
+      "desc": "Zero-downtime cluster version upgrades, worker node autoscaling (Karpenter), ingress management, and namespace resource quota tuning."
+    },
+    {
+      "title": "GitOps Infrastructure Modernization",
+      "desc": "Implementing and managing ArgoCD and FluxCD to synchronize declarative Git configurations with live cluster states automatically."
+    },
+    {
+      "title": "Internal Developer Platform (IDP) Management",
+      "desc": "Operating Backstage-based developer portals enabling self-service database provisioning and ephemeral staging environments."
+    },
+    {
+      "title": "DevSecOps & Supply Chain Security Hardening",
+      "desc": "Automated container vulnerability scanning (Trivy), secret leak detection (GitGuardian), and SBOM generation in every pull request."
+    },
+    {
+      "title": "24/7 DevOps Incident Escalation & SRE Support",
+      "desc": "Expert Kubernetes troubleshooting, crashloop triage, and post-mortem root-cause analysis ensuring smooth developer releases."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Automated Release Gates for Regulated Financial Platform",
+      "desc": "Managed GitOps ArgoCD deployments with automated security approval gates for a multi-tenant payment gateway application.",
+      "practicalValue": "Increased release frequency from once a month to 18 times daily with zero failed deployments.",
+      "focusAreas": [
+        "ArgoCD GitOps",
+        "Release Gates",
+        "Audit-Ready CI/CD"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Ephemeral HIPAA-Compliant Staging Environments",
+      "desc": "Engineered automated pull-request preview environments with synthetic medical data mocking for 65 healthcare developers.",
+      "practicalValue": "Shortened pull-request validation cycles by 65% and eliminated pre-production environment contention.",
+      "focusAreas": [
+        "Ephemeral Preview",
+        "Synthetic Mocking",
+        "HIPAA Guardrails"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "High-Traffic Kubernetes Autoscaling Platform",
+      "desc": "Managed production AWS EKS clusters with Karpenter JIT node provisioning handling unpredictable flash sales for a high-volume retailer.",
+      "practicalValue": "Achieved instant pod spin-up in <20 seconds with 50% lower compute idle spend.",
+      "focusAreas": [
+        "EKS Karpenter",
+        "Just-In-Time Compute",
+        "Flash Sale Resiliency"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Managed Edge & Cloud CI/CD Deployment Pipeline",
+      "desc": "Operated cross-compilation build pipelines delivering updated firmware and container workloads to 450 industrial edge gateways.",
+      "practicalValue": "Automated firmware rollouts with zero-touch OTA updates and instant rollback triggers.",
+      "focusAreas": [
+        "Edge OTA Pipelines",
+        "Cross-Compilation",
+        "Canary Rollouts"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Managed GitOps Platform & Kubernetes CI/CD Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Code Repository & Pull Request Automation",
+        "node": "GitHub Enterprise / GitLab, Pre-Commit Hooks, Dependabot, GitGuardian Secret Scanning"
+      },
+      {
+        "label": "Layer 02: Distributed Build & Security Scan Runners",
+        "node": "GitHub Actions Ephemeral Runners, SonarQube SAST, Trivy Container Vulnerability Scan"
+      },
+      {
+        "label": "Layer 03: Container Registry & Artifact Cache",
+        "node": "AWS ECR / Harbor Private Registry, Cosign Cryptographic Signatures, SLSA Level 3"
+      },
+      {
+        "label": "Layer 04: GitOps Declarative Delivery Engine",
+        "node": "ArgoCD / FluxCD Controller, Helm Chart Repositories, Kustomize Overlays"
+      },
+      {
+        "label": "Layer 05: Production Kubernetes Runtime & Mesh",
+        "node": "Amazon EKS / Azure AKS, Cilium eBPF Network Policies, Karpenter JIT Autoscalers"
+      }
+    ],
+    "editorialParagraph1": "Maintaining continuous integration pipelines, complex Kubernetes clusters, and security scanning tools internally pulls senior software engineers away from building core product features, resulting in slow releases and fragile delivery.",
+    "editorialParagraph2": "Our managed DevOps service provides a dedicated platform engineering team to operate your CI/CD pipelines, Kubernetes runtimes, and developer tooling. We deliver frictionless developer workflows, rapid automated deployments, and rock-solid platform stability.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "10x Faster Deployment Cadence",
+      "desc": "Streamlined build pipelines and GitOps automated delivery allowing development squads to ship code safely multiple times a day."
+    },
+    {
+      "id": "02",
+      "title": "Zero-Downtime Cluster Lifecycle Upgrades",
+      "desc": "Seamless, fully managed Kubernetes minor and major version upgrades with automated pre-flight API compatibility testing."
+    },
+    {
+      "id": "03",
+      "title": "Built-In DevSecOps Compliance",
+      "desc": "Automated vulnerability scanning, secret leakage prevention, and signed container images embedded directly in everyday developer workflows."
+    }
+  ]
+},
+  "managed-devops-services": {
+  "slug": "managed-devops-services",
+  "serviceSlug": "managed-services",
+  "title": "Managed DevOps & Kubernetes Platform Engineering",
+  "solutions": [
+    {
+      "title": "Managed CI/CD Pipeline Administration",
+      "desc": "Continuous maintenance, optimization, and security scanning of GitHub Actions, GitLab CI, and Jenkins build pipelines."
+    },
+    {
+      "title": "Managed Kubernetes (EKS / AKS / GKE) Operations",
+      "desc": "Zero-downtime cluster version upgrades, worker node autoscaling (Karpenter), ingress management, and namespace resource quota tuning."
+    },
+    {
+      "title": "GitOps Infrastructure Modernization",
+      "desc": "Implementing and managing ArgoCD and FluxCD to synchronize declarative Git configurations with live cluster states automatically."
+    },
+    {
+      "title": "Internal Developer Platform (IDP) Management",
+      "desc": "Operating Backstage-based developer portals enabling self-service database provisioning and ephemeral staging environments."
+    },
+    {
+      "title": "DevSecOps & Supply Chain Security Hardening",
+      "desc": "Automated container vulnerability scanning (Trivy), secret leak detection (GitGuardian), and SBOM generation in every pull request."
+    },
+    {
+      "title": "24/7 DevOps Incident Escalation & SRE Support",
+      "desc": "Expert Kubernetes troubleshooting, crashloop triage, and post-mortem root-cause analysis ensuring smooth developer releases."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Automated Release Gates for Regulated Financial Platform",
+      "desc": "Managed GitOps ArgoCD deployments with automated security approval gates for a multi-tenant payment gateway application.",
+      "practicalValue": "Increased release frequency from once a month to 18 times daily with zero failed deployments.",
+      "focusAreas": [
+        "ArgoCD GitOps",
+        "Release Gates",
+        "Audit-Ready CI/CD"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Ephemeral HIPAA-Compliant Staging Environments",
+      "desc": "Engineered automated pull-request preview environments with synthetic medical data mocking for 65 healthcare developers.",
+      "practicalValue": "Shortened pull-request validation cycles by 65% and eliminated pre-production environment contention.",
+      "focusAreas": [
+        "Ephemeral Preview",
+        "Synthetic Mocking",
+        "HIPAA Guardrails"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "High-Traffic Kubernetes Autoscaling Platform",
+      "desc": "Managed production AWS EKS clusters with Karpenter JIT node provisioning handling unpredictable flash sales for a high-volume retailer.",
+      "practicalValue": "Achieved instant pod spin-up in <20 seconds with 50% lower compute idle spend.",
+      "focusAreas": [
+        "EKS Karpenter",
+        "Just-In-Time Compute",
+        "Flash Sale Resiliency"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Managed Edge & Cloud CI/CD Deployment Pipeline",
+      "desc": "Operated cross-compilation build pipelines delivering updated firmware and container workloads to 450 industrial edge gateways.",
+      "practicalValue": "Automated firmware rollouts with zero-touch OTA updates and instant rollback triggers.",
+      "focusAreas": [
+        "Edge OTA Pipelines",
+        "Cross-Compilation",
+        "Canary Rollouts"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Managed GitOps Platform & Kubernetes CI/CD Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Code Repository & Pull Request Automation",
+        "node": "GitHub Enterprise / GitLab, Pre-Commit Hooks, Dependabot, GitGuardian Secret Scanning"
+      },
+      {
+        "label": "Layer 02: Distributed Build & Security Scan Runners",
+        "node": "GitHub Actions Ephemeral Runners, SonarQube SAST, Trivy Container Vulnerability Scan"
+      },
+      {
+        "label": "Layer 03: Container Registry & Artifact Cache",
+        "node": "AWS ECR / Harbor Private Registry, Cosign Cryptographic Signatures, SLSA Level 3"
+      },
+      {
+        "label": "Layer 04: GitOps Declarative Delivery Engine",
+        "node": "ArgoCD / FluxCD Controller, Helm Chart Repositories, Kustomize Overlays"
+      },
+      {
+        "label": "Layer 05: Production Kubernetes Runtime & Mesh",
+        "node": "Amazon EKS / Azure AKS, Cilium eBPF Network Policies, Karpenter JIT Autoscalers"
+      }
+    ],
+    "editorialParagraph1": "Maintaining continuous integration pipelines, complex Kubernetes clusters, and security scanning tools internally pulls senior software engineers away from building core product features, resulting in slow releases and fragile delivery.",
+    "editorialParagraph2": "Our managed DevOps service provides a dedicated platform engineering team to operate your CI/CD pipelines, Kubernetes runtimes, and developer tooling. We deliver frictionless developer workflows, rapid automated deployments, and rock-solid platform stability.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-4.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "10x Faster Deployment Cadence",
+      "desc": "Streamlined build pipelines and GitOps automated delivery allowing development squads to ship code safely multiple times a day."
+    },
+    {
+      "id": "02",
+      "title": "Zero-Downtime Cluster Lifecycle Upgrades",
+      "desc": "Seamless, fully managed Kubernetes minor and major version upgrades with automated pre-flight API compatibility testing."
+    },
+    {
+      "id": "03",
+      "title": "Built-In DevSecOps Compliance",
+      "desc": "Automated vulnerability scanning, secret leakage prevention, and signed container images embedded directly in everyday developer workflows."
+    }
+  ]
+},
+  "managed-services/managed-security-services": {
+  "slug": "managed-security-services",
+  "serviceSlug": "managed-services",
+  "title": "Managed Security Services (24/7 SOC, SIEM & MDR)",
+  "solutions": [
+    {
+      "title": "24/7 Managed SOC & Threat Monitoring",
+      "desc": "Continuous round-the-clock security log ingestion, automated anomaly correlation, and certified analyst triage across hybrid environments."
+    },
+    {
+      "title": "Managed SIEM & Cloud Threat Intelligence",
+      "desc": "Configuring and maintaining Microsoft Sentinel, Splunk, or Elastic SIEM with custom threat detection rules and MITRE ATT&CK mapping."
+    },
+    {
+      "title": "Managed Endpoint Detection & Response (MDR)",
+      "desc": "Deploying and managing CrowdStrike Falcon or SentinelOne across corporate endpoints with automated host isolation upon breach detection."
+    },
+    {
+      "title": "Vulnerability Management & Pen-Test Remediation",
+      "desc": "Continuous external attack surface scanning, automated vulnerability triage, and practical remediation guidance for software teams."
+    },
+    {
+      "title": "Automated SOAR Playbooks & Rapid Incident Triage",
+      "desc": "Developing security orchestration playbooks that automatically block malicious IPs, revoke compromised tokens, and isolate infected nodes."
+    },
+    {
+      "title": "Continuous Audit Readiness & Compliance Reports",
+      "desc": "Generating real-time compliance posture reports mapped to ISO 27001, SOC 2, Cyber Essentials Plus, and GDPR standards."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "24/7 SOC & Threat Containment for Regulated FinTech",
+      "desc": "Provided 24/7 SOC monitoring ingesting 45 million security events daily with sub-5-minute analyst incident triage and containment.",
+      "practicalValue": "Detected and neutralized credential stuffing attacks within 90 seconds with zero customer impact.",
+      "focusAreas": [
+        "24/7 Managed SOC",
+        "Credential Defense",
+        "Sub-5m Triage"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Managed Medical Endpoint EDR & Ransomware Defense",
+      "desc": "Protected 4,200 clinical hospital workstations and diagnostic imaging servers with managed SentinelOne EDR and threat hunting.",
+      "practicalValue": "Prevented a sophisticated ransomware lateral spread attempt with automated host isolation.",
+      "focusAreas": [
+        "SentinelOne MDR",
+        "Ransomware Defense",
+        "Hospital Workstations"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Magecart & Web Application Threat Neutralization",
+      "desc": "Monitored e-commerce checkout flows and API endpoints using real-time WAF telemetry and behavioral anomaly detection.",
+      "practicalValue": "Blocked 1.8M malicious bot checkout scrapers and prevented customer card skimming attempts.",
+      "focusAreas": [
+        "Magecart Defense",
+        "WAF Rules Engine",
+        "Checkout Security"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industrial OT/IT Converged Threat Detection",
+      "desc": "Integrated industrial network sensors with central Microsoft Sentinel SIEM to monitor suspicious communications across factory networks.",
+      "practicalValue": "Uncovered rogue remote access tools on shop-floor PCs before any industrial operational disruption occurred.",
+      "focusAreas": [
+        "OT Sensor Telemetry",
+        "Sentinel SIEM",
+        "Rogue Tool Detection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "24/7 Managed Security Operations (SOC) & SIEM Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Universal Security Telemetry Ingestion",
+        "node": "Syslog-ng, Windows Event Forwarder, AWS CloudTrail, Microsoft Entra Sign-In Logs"
+      },
+      {
+        "label": "Layer 02: Cloud SIEM Correlation & Detection Engine",
+        "node": "Microsoft Sentinel / Splunk Enterprise, MITRE ATT&CK Matrix Rules, ML Behavioral Models"
+      },
+      {
+        "label": "Layer 03: Managed Endpoint EDR & Identity Protection",
+        "node": "CrowdStrike Falcon / SentinelOne Singularity, Automated Host Isolation, Memory Inspection"
+      },
+      {
+        "label": "Layer 04: Automated SOAR Incident Response Playbooks",
+        "node": "Logic Apps / Torq SOAR, Automated Firewall IP Block, User Token Revocation, Slack Alarms"
+      },
+      {
+        "label": "Layer 05: 24/7 Certified UK Security Analyst Desk",
+        "node": "CREST-Accredited Security Analysts, Forensic Evidence Preservation, Tabletop War Rooms"
+      }
+    ],
+    "editorialParagraph1": "Building an internal 24/7 Security Operations Centre (SOC) requires millions in specialised tooling, SIEM infrastructure, and a rotating roster of highly paid cyber analysts. Most organisations simply cannot maintain this capability in-house.",
+    "editorialParagraph2": "Devopstrio Managed Security Services deliver enterprise-grade 24/7 SOC monitoring, managed detection and response (MDR), and rapid incident containment as a seamless service. We continuously defend your hybrid estate, neutralizing threats before they impact your brand.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-15 Minute Threat Containment SLA",
+      "desc": "Rapid real-time detection, automated host isolation, and expert analyst intervention stopping cyber attacks in their earliest stages."
+    },
+    {
+      "id": "02",
+      "title": "Fraction of the Cost of an In-House SOC",
+      "desc": "Gain enterprise-calibre 24/7 security monitoring and certified analysts without hiring, training, and retaining a full internal cyber team."
+    },
+    {
+      "id": "03",
+      "title": "Continuous Audit & Regulatory Peace of Mind",
+      "desc": "Automated SIEM compliance dashboards and audit-ready reporting satisfying strict ISO 27001, SOC 2, and GDPR security mandates."
+    }
+  ]
+},
+  "managed-security-services": {
+  "slug": "managed-security-services",
+  "serviceSlug": "managed-services",
+  "title": "Managed Security Services (24/7 SOC, SIEM & MDR)",
+  "solutions": [
+    {
+      "title": "24/7 Managed SOC & Threat Monitoring",
+      "desc": "Continuous round-the-clock security log ingestion, automated anomaly correlation, and certified analyst triage across hybrid environments."
+    },
+    {
+      "title": "Managed SIEM & Cloud Threat Intelligence",
+      "desc": "Configuring and maintaining Microsoft Sentinel, Splunk, or Elastic SIEM with custom threat detection rules and MITRE ATT&CK mapping."
+    },
+    {
+      "title": "Managed Endpoint Detection & Response (MDR)",
+      "desc": "Deploying and managing CrowdStrike Falcon or SentinelOne across corporate endpoints with automated host isolation upon breach detection."
+    },
+    {
+      "title": "Vulnerability Management & Pen-Test Remediation",
+      "desc": "Continuous external attack surface scanning, automated vulnerability triage, and practical remediation guidance for software teams."
+    },
+    {
+      "title": "Automated SOAR Playbooks & Rapid Incident Triage",
+      "desc": "Developing security orchestration playbooks that automatically block malicious IPs, revoke compromised tokens, and isolate infected nodes."
+    },
+    {
+      "title": "Continuous Audit Readiness & Compliance Reports",
+      "desc": "Generating real-time compliance posture reports mapped to ISO 27001, SOC 2, Cyber Essentials Plus, and GDPR standards."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "24/7 SOC & Threat Containment for Regulated FinTech",
+      "desc": "Provided 24/7 SOC monitoring ingesting 45 million security events daily with sub-5-minute analyst incident triage and containment.",
+      "practicalValue": "Detected and neutralized credential stuffing attacks within 90 seconds with zero customer impact.",
+      "focusAreas": [
+        "24/7 Managed SOC",
+        "Credential Defense",
+        "Sub-5m Triage"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Managed Medical Endpoint EDR & Ransomware Defense",
+      "desc": "Protected 4,200 clinical hospital workstations and diagnostic imaging servers with managed SentinelOne EDR and threat hunting.",
+      "practicalValue": "Prevented a sophisticated ransomware lateral spread attempt with automated host isolation.",
+      "focusAreas": [
+        "SentinelOne MDR",
+        "Ransomware Defense",
+        "Hospital Workstations"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Magecart & Web Application Threat Neutralization",
+      "desc": "Monitored e-commerce checkout flows and API endpoints using real-time WAF telemetry and behavioral anomaly detection.",
+      "practicalValue": "Blocked 1.8M malicious bot checkout scrapers and prevented customer card skimming attempts.",
+      "focusAreas": [
+        "Magecart Defense",
+        "WAF Rules Engine",
+        "Checkout Security"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industrial OT/IT Converged Threat Detection",
+      "desc": "Integrated industrial network sensors with central Microsoft Sentinel SIEM to monitor suspicious communications across factory networks.",
+      "practicalValue": "Uncovered rogue remote access tools on shop-floor PCs before any industrial operational disruption occurred.",
+      "focusAreas": [
+        "OT Sensor Telemetry",
+        "Sentinel SIEM",
+        "Rogue Tool Detection"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "24/7 Managed Security Operations (SOC) & SIEM Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Universal Security Telemetry Ingestion",
+        "node": "Syslog-ng, Windows Event Forwarder, AWS CloudTrail, Microsoft Entra Sign-In Logs"
+      },
+      {
+        "label": "Layer 02: Cloud SIEM Correlation & Detection Engine",
+        "node": "Microsoft Sentinel / Splunk Enterprise, MITRE ATT&CK Matrix Rules, ML Behavioral Models"
+      },
+      {
+        "label": "Layer 03: Managed Endpoint EDR & Identity Protection",
+        "node": "CrowdStrike Falcon / SentinelOne Singularity, Automated Host Isolation, Memory Inspection"
+      },
+      {
+        "label": "Layer 04: Automated SOAR Incident Response Playbooks",
+        "node": "Logic Apps / Torq SOAR, Automated Firewall IP Block, User Token Revocation, Slack Alarms"
+      },
+      {
+        "label": "Layer 05: 24/7 Certified UK Security Analyst Desk",
+        "node": "CREST-Accredited Security Analysts, Forensic Evidence Preservation, Tabletop War Rooms"
+      }
+    ],
+    "editorialParagraph1": "Building an internal 24/7 Security Operations Centre (SOC) requires millions in specialised tooling, SIEM infrastructure, and a rotating roster of highly paid cyber analysts. Most organisations simply cannot maintain this capability in-house.",
+    "editorialParagraph2": "Devopstrio Managed Security Services deliver enterprise-grade 24/7 SOC monitoring, managed detection and response (MDR), and rapid incident containment as a seamless service. We continuously defend your hybrid estate, neutralizing threats before they impact your brand.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-5.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-15 Minute Threat Containment SLA",
+      "desc": "Rapid real-time detection, automated host isolation, and expert analyst intervention stopping cyber attacks in their earliest stages."
+    },
+    {
+      "id": "02",
+      "title": "Fraction of the Cost of an In-House SOC",
+      "desc": "Gain enterprise-calibre 24/7 security monitoring and certified analysts without hiring, training, and retaining a full internal cyber team."
+    },
+    {
+      "id": "03",
+      "title": "Continuous Audit & Regulatory Peace of Mind",
+      "desc": "Automated SIEM compliance dashboards and audit-ready reporting satisfying strict ISO 27001, SOC 2, and GDPR security mandates."
+    }
+  ]
+},
+  "managed-services/application-support": {
+  "slug": "application-support",
+  "serviceSlug": "managed-services",
+  "title": "Application Support, Maintenance & SLA Governance",
+  "solutions": [
+    {
+      "title": "24/7 Production Application Support & Triage",
+      "desc": "Dedicated Level 2 & Level 3 engineering support monitoring, triaging, and resolving critical application defects around the clock."
+    },
+    {
+      "title": "Rigorous SLA & MTTR Guarantees",
+      "desc": "Contractually committed 15-minute response times and rapid Mean Time to Resolution (MTTR) for high-severity production incidents."
+    },
+    {
+      "title": "Legacy Codebase Maintenance & Bug Fixing",
+      "desc": "Active refactoring, dependency upgrades, bug remediation, and performance tuning across custom legacy web and enterprise applications."
+    },
+    {
+      "title": "Application Performance Monitoring (APM)",
+      "desc": "Deep transaction profiling, memory leak detection, and slow query identification using Datadog, New Relic, or Dynatrace."
+    },
+    {
+      "title": "Release Deployment & Change Management",
+      "desc": "Managing scheduled application releases, database schema migrations, and canary rollouts following ITIL change management guidelines."
+    },
+    {
+      "title": "Root Cause Analysis (RCA) & Post-Mortems",
+      "desc": "Blameless post-mortem investigations delivering comprehensive executive root cause reports and preventative engineering remediations."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Mission-Critical FX Payments Portal SLA Support",
+      "desc": "Provided 24/7 Level 3 application engineering support for an international foreign exchange portal processing £400M monthly.",
+      "practicalValue": "Achieved 99.98% application availability with average MTTR under 24 minutes.",
+      "focusAreas": [
+        "Payments Portal SLA",
+        "Sub-15m L3 Response",
+        "Transaction Profiling"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Telehealth Video Consultation Platform Maintenance",
+      "desc": "Maintained a high-concurrency WebRTC video consultation app, resolving call dropouts and optimizing video stream caching.",
+      "practicalValue": "Reduced patient call disruption tickets by 78% during peak morning clinic hours.",
+      "focusAreas": [
+        "WebRTC Optimization",
+        "High Concurrency",
+        "24/7 Health Desk"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Headless E-Commerce Cart & Checkout Support",
+      "desc": "Provided rapid-response application support for a multi-currency checkout engine integrated with Stripe and custom ERP feeds.",
+      "practicalValue": "Resolved cart abandonment bugs in minutes, protecting an estimated £320k in sales.",
+      "focusAreas": [
+        "Checkout Support",
+        "Stripe Integration",
+        "Fast Bug Remediation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Shop-Floor Inventory Tracking Application Support",
+      "desc": "Maintained a custom warehouse stock management app interfacing with barcode scanners and automated automated storage systems.",
+      "practicalValue": "Maintained 100% operational uptime across three production shifts with zero lost shipments.",
+      "focusAreas": [
+        "Stock App Maintenance",
+        "Warehouse Zero-Downtime",
+        "Scanner Integrations"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Application Support & SLA Monitoring Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Channel Incident Intake",
+        "node": "Jira Service Management, PagerDuty Webhooks, Slack Enterprise Grid Connect"
+      },
+      {
+        "label": "Layer 02: Application Performance Monitoring (APM)",
+        "node": "Datadog APM, New Relic One, OpenTelemetry Distributed Spans, Sentry Error Tracking"
+      },
+      {
+        "label": "Layer 03: Automated Diagnostics & Log Inspection",
+        "node": "Elasticsearch Log Cluster, Vector Log Aggregators, Kubernetes Container Log Streaming"
+      },
+      {
+        "label": "Layer 04: Rapid Engineering Hotfix & Release Pipeline",
+        "node": "Git Branching Workflows, Automated Regression Testing, Ephemeral Staging Environments"
+      },
+      {
+        "label": "Layer 05: SLA Governance & Executive Reporting Hub",
+        "node": "ITIL 4 Change Management, Real-Time SLA Dashboards, Blameless RCA Generator"
+      }
+    ],
+    "editorialParagraph1": "Software applications deteriorate without proactive maintenance. Unresolved edge-case bugs, outdated dependencies, and sluggish database queries quietly erode customer satisfaction and create unexpected production emergencies.",
+    "editorialParagraph2": "Devopstrio application support services guarantee your critical software platforms remain responsive, stable, and continuously upgraded. With contracted SLA response times and dedicated senior engineers, we handle routine maintenance and urgent defect remediation seamlessly.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Sub-15 Minute Incident Response",
+      "desc": "Direct access to senior Level 3 developers ready to triage, hotfix, and deploy emergency remediations during production outages."
+    },
+    {
+      "id": "02",
+      "title": "Continuous Codebase Health Upgrades",
+      "desc": "Proactive dependency upgrades, framework patching, and technical debt burn-down preventing software rot and security obsolescence."
+    },
+    {
+      "id": "03",
+      "title": "Transparent SLA & Uptime Reporting",
+      "desc": "Comprehensive monthly reporting detailing incident resolution times, root cause analyses, and proactive recommendations for stability."
+    }
+  ]
+},
+  "application-support": {
+  "slug": "application-support",
+  "serviceSlug": "managed-services",
+  "title": "Application Support, Maintenance & SLA Governance",
+  "solutions": [
+    {
+      "title": "24/7 Production Application Support & Triage",
+      "desc": "Dedicated Level 2 & Level 3 engineering support monitoring, triaging, and resolving critical application defects around the clock."
+    },
+    {
+      "title": "Rigorous SLA & MTTR Guarantees",
+      "desc": "Contractually committed 15-minute response times and rapid Mean Time to Resolution (MTTR) for high-severity production incidents."
+    },
+    {
+      "title": "Legacy Codebase Maintenance & Bug Fixing",
+      "desc": "Active refactoring, dependency upgrades, bug remediation, and performance tuning across custom legacy web and enterprise applications."
+    },
+    {
+      "title": "Application Performance Monitoring (APM)",
+      "desc": "Deep transaction profiling, memory leak detection, and slow query identification using Datadog, New Relic, or Dynatrace."
+    },
+    {
+      "title": "Release Deployment & Change Management",
+      "desc": "Managing scheduled application releases, database schema migrations, and canary rollouts following ITIL change management guidelines."
+    },
+    {
+      "title": "Root Cause Analysis (RCA) & Post-Mortems",
+      "desc": "Blameless post-mortem investigations delivering comprehensive executive root cause reports and preventative engineering remediations."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Mission-Critical FX Payments Portal SLA Support",
+      "desc": "Provided 24/7 Level 3 application engineering support for an international foreign exchange portal processing £400M monthly.",
+      "practicalValue": "Achieved 99.98% application availability with average MTTR under 24 minutes.",
+      "focusAreas": [
+        "Payments Portal SLA",
+        "Sub-15m L3 Response",
+        "Transaction Profiling"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Telehealth Video Consultation Platform Maintenance",
+      "desc": "Maintained a high-concurrency WebRTC video consultation app, resolving call dropouts and optimizing video stream caching.",
+      "practicalValue": "Reduced patient call disruption tickets by 78% during peak morning clinic hours.",
+      "focusAreas": [
+        "WebRTC Optimization",
+        "High Concurrency",
+        "24/7 Health Desk"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Headless E-Commerce Cart & Checkout Support",
+      "desc": "Provided rapid-response application support for a multi-currency checkout engine integrated with Stripe and custom ERP feeds.",
+      "practicalValue": "Resolved cart abandonment bugs in minutes, protecting an estimated £320k in sales.",
+      "focusAreas": [
+        "Checkout Support",
+        "Stripe Integration",
+        "Fast Bug Remediation"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Shop-Floor Inventory Tracking Application Support",
+      "desc": "Maintained a custom warehouse stock management app interfacing with barcode scanners and automated automated storage systems.",
+      "practicalValue": "Maintained 100% operational uptime across three production shifts with zero lost shipments.",
+      "focusAreas": [
+        "Stock App Maintenance",
+        "Warehouse Zero-Downtime",
+        "Scanner Integrations"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Application Support & SLA Monitoring Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Channel Incident Intake",
+        "node": "Jira Service Management, PagerDuty Webhooks, Slack Enterprise Grid Connect"
+      },
+      {
+        "label": "Layer 02: Application Performance Monitoring (APM)",
+        "node": "Datadog APM, New Relic One, OpenTelemetry Distributed Spans, Sentry Error Tracking"
+      },
+      {
+        "label": "Layer 03: Automated Diagnostics & Log Inspection",
+        "node": "Elasticsearch Log Cluster, Vector Log Aggregators, Kubernetes Container Log Streaming"
+      },
+      {
+        "label": "Layer 04: Rapid Engineering Hotfix & Release Pipeline",
+        "node": "Git Branching Workflows, Automated Regression Testing, Ephemeral Staging Environments"
+      },
+      {
+        "label": "Layer 05: SLA Governance & Executive Reporting Hub",
+        "node": "ITIL 4 Change Management, Real-Time SLA Dashboards, Blameless RCA Generator"
+      }
+    ],
+    "editorialParagraph1": "Software applications deteriorate without proactive maintenance. Unresolved edge-case bugs, outdated dependencies, and sluggish database queries quietly erode customer satisfaction and create unexpected production emergencies.",
+    "editorialParagraph2": "Devopstrio application support services guarantee your critical software platforms remain responsive, stable, and continuously upgraded. With contracted SLA response times and dedicated senior engineers, we handle routine maintenance and urgent defect remediation seamlessly.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed Sub-15 Minute Incident Response",
+      "desc": "Direct access to senior Level 3 developers ready to triage, hotfix, and deploy emergency remediations during production outages."
+    },
+    {
+      "id": "02",
+      "title": "Continuous Codebase Health Upgrades",
+      "desc": "Proactive dependency upgrades, framework patching, and technical debt burn-down preventing software rot and security obsolescence."
+    },
+    {
+      "id": "03",
+      "title": "Transparent SLA & Uptime Reporting",
+      "desc": "Comprehensive monthly reporting detailing incident resolution times, root cause analyses, and proactive recommendations for stability."
+    }
+  ]
+},
+  "managed-services/database-administration": {
+  "slug": "database-administration",
+  "serviceSlug": "managed-services",
+  "title": "Database Administration, Performance Tuning & Governance (DBA)",
+  "solutions": [
+    {
+      "title": "24/7 Managed DBA & Performance Tuning",
+      "desc": "Continuous proactive administration, index optimization, query execution plan tuning, and connection pooling for PostgreSQL, MySQL, and SQL Server."
+    },
+    {
+      "title": "High-Availability Clustering & Replication",
+      "desc": "Architecting and maintaining active-passive and active-active replication, automatic failover clusters, and read-replica distribution."
+    },
+    {
+      "title": "Automated Backup & Point-in-Time Recovery (PITR)",
+      "desc": "Implementing immutable backup retention policies, write-ahead log (WAL) archiving, and regular disaster recovery restoration tests."
+    },
+    {
+      "title": "Zero-Downtime Database Migration & Upgrades",
+      "desc": "Executing major version database engine upgrades and cloud migrations with zero data loss using logical replication tools."
+    },
+    {
+      "title": "Database Security, Encryption & Masking",
+      "desc": "Enforcing encryption-at-rest (TDE), transit encryption, dynamic data masking, and strict database role-based access controls (RBAC)."
+    },
+    {
+      "title": "NoSQL & Distributed Database Governance",
+      "desc": "Managing high-scale MongoDB, Redis, Cassandra, and DynamoDB clusters with partition key optimization and compaction management."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "PostgreSQL High-Availability Cluster for Trading Ledger",
+      "desc": "Administered a multi-region PostgreSQL cluster using Patroni and Raft consensus for an institutional trade settlement engine.",
+      "practicalValue": "Achieved sub-5-second automatic failover with zero transaction loss across 180M rows.",
+      "focusAreas": [
+        "Patroni Clustering",
+        "Zero-Data Loss",
+        "Point-in-Time Recovery"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Encrypted Patient Data Warehouse Optimization",
+      "desc": "Tuned clinical data repository indexing on Microsoft SQL Server, optimizing complex analytical queries over 40TB of records.",
+      "practicalValue": "Reduced clinical search query execution time from 42 seconds down to 850 milliseconds.",
+      "focusAreas": [
+        "Query Tuning",
+        "TDE Encryption",
+        "Caldicott Data Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Redis Caching & Aurora MySQL Flash Sale Optimization",
+      "desc": "Architected Redis cluster caching and read-replica distribution for an e-commerce catalog handling 120,000 queries/sec.",
+      "practicalValue": "Sustained peak Black Friday database loads with 99.999% uptime and sub-4ms response times.",
+      "focusAreas": [
+        "Redis Caching",
+        "Aurora MySQL Replicas",
+        "Peak Concurrency"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Time-Series Telemetry Database Administration",
+      "desc": "Managed TimescaleDB and MongoDB clusters storing high-frequency sensor readings from 5,000 shop-floor IoT machines.",
+      "practicalValue": "Implemented automated data tiering, cutting database storage costs by 58%.",
+      "focusAreas": [
+        "TimescaleDB",
+        "Automated Compression",
+        "High-Throughput Ingestion"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise High-Availability Database Topology & Tuning",
+    "layers": [
+      {
+        "label": "Layer 01: Connection Pooling & Traffic Proxy",
+        "node": "PgBouncer / ProxySQL, Client Connection Multiplexing, Read/Write Traffic Splitting"
+      },
+      {
+        "label": "Layer 02: Primary High-Availability Engine",
+        "node": "PostgreSQL Primary / AWS Aurora Global DB / MS SQL Always On Availability Groups"
+      },
+      {
+        "label": "Layer 03: Consensus & Automatic Failover Management",
+        "node": "Patroni Clustering / etcd Consensus Daemon, Health Heartbeat Checkers"
+      },
+      {
+        "label": "Layer 04: Write-Ahead Log (WAL) & PITR Backup Engine",
+        "node": "pgBackRest / AWS S3 Continuous WAL Archival, Immutable Snapshot Storage"
+      },
+      {
+        "label": "Layer 05: Telemetry, Query Profiling & Index Optimization",
+        "node": "pg_stat_statements, Percona PMM, Slow Query Logger, Automated Vacuuming Daemons"
+      }
+    ],
+    "editorialParagraph1": "Databases are the most vulnerable component of any enterprise architecture. Unmonitored connection spikes, missing indexes, unvacuumed dead tuples, and unverified backup scripts inevitably lead to catastrophic data loss and prolonged system outages.",
+    "editorialParagraph2": "Our dedicated Database Administration (DBA) team manages, tunes, and protects your relational and NoSQL databases 24/7. We guarantee bulletproof high availability, optimal query throughput, and rigorously tested point-in-time recovery capabilities.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-Second Query Throughput",
+      "desc": "Deep indexing optimization, execution plan tuning, and smart connection pooling restoring lightning-fast database responsiveness."
+    },
+    {
+      "id": "02",
+      "title": "Bulletproof Point-in-Time Recovery (PITR)",
+      "desc": "Continuous WAL archiving and automated daily restoration testing ensuring zero data loss even in worst-case disaster scenarios."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Downtime Engine Upgrades",
+      "desc": "Seamless major version database upgrades and cloud migrations executed with logical replication to avoid business interruptions."
+    }
+  ]
+},
+  "database-administration": {
+  "slug": "database-administration",
+  "serviceSlug": "managed-services",
+  "title": "Database Administration, Performance Tuning & Governance (DBA)",
+  "solutions": [
+    {
+      "title": "24/7 Managed DBA & Performance Tuning",
+      "desc": "Continuous proactive administration, index optimization, query execution plan tuning, and connection pooling for PostgreSQL, MySQL, and SQL Server."
+    },
+    {
+      "title": "High-Availability Clustering & Replication",
+      "desc": "Architecting and maintaining active-passive and active-active replication, automatic failover clusters, and read-replica distribution."
+    },
+    {
+      "title": "Automated Backup & Point-in-Time Recovery (PITR)",
+      "desc": "Implementing immutable backup retention policies, write-ahead log (WAL) archiving, and regular disaster recovery restoration tests."
+    },
+    {
+      "title": "Zero-Downtime Database Migration & Upgrades",
+      "desc": "Executing major version database engine upgrades and cloud migrations with zero data loss using logical replication tools."
+    },
+    {
+      "title": "Database Security, Encryption & Masking",
+      "desc": "Enforcing encryption-at-rest (TDE), transit encryption, dynamic data masking, and strict database role-based access controls (RBAC)."
+    },
+    {
+      "title": "NoSQL & Distributed Database Governance",
+      "desc": "Managing high-scale MongoDB, Redis, Cassandra, and DynamoDB clusters with partition key optimization and compaction management."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "PostgreSQL High-Availability Cluster for Trading Ledger",
+      "desc": "Administered a multi-region PostgreSQL cluster using Patroni and Raft consensus for an institutional trade settlement engine.",
+      "practicalValue": "Achieved sub-5-second automatic failover with zero transaction loss across 180M rows.",
+      "focusAreas": [
+        "Patroni Clustering",
+        "Zero-Data Loss",
+        "Point-in-Time Recovery"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Encrypted Patient Data Warehouse Optimization",
+      "desc": "Tuned clinical data repository indexing on Microsoft SQL Server, optimizing complex analytical queries over 40TB of records.",
+      "practicalValue": "Reduced clinical search query execution time from 42 seconds down to 850 milliseconds.",
+      "focusAreas": [
+        "Query Tuning",
+        "TDE Encryption",
+        "Caldicott Data Auditing"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "Redis Caching & Aurora MySQL Flash Sale Optimization",
+      "desc": "Architected Redis cluster caching and read-replica distribution for an e-commerce catalog handling 120,000 queries/sec.",
+      "practicalValue": "Sustained peak Black Friday database loads with 99.999% uptime and sub-4ms response times.",
+      "focusAreas": [
+        "Redis Caching",
+        "Aurora MySQL Replicas",
+        "Peak Concurrency"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Time-Series Telemetry Database Administration",
+      "desc": "Managed TimescaleDB and MongoDB clusters storing high-frequency sensor readings from 5,000 shop-floor IoT machines.",
+      "practicalValue": "Implemented automated data tiering, cutting database storage costs by 58%.",
+      "focusAreas": [
+        "TimescaleDB",
+        "Automated Compression",
+        "High-Throughput Ingestion"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise High-Availability Database Topology & Tuning",
+    "layers": [
+      {
+        "label": "Layer 01: Connection Pooling & Traffic Proxy",
+        "node": "PgBouncer / ProxySQL, Client Connection Multiplexing, Read/Write Traffic Splitting"
+      },
+      {
+        "label": "Layer 02: Primary High-Availability Engine",
+        "node": "PostgreSQL Primary / AWS Aurora Global DB / MS SQL Always On Availability Groups"
+      },
+      {
+        "label": "Layer 03: Consensus & Automatic Failover Management",
+        "node": "Patroni Clustering / etcd Consensus Daemon, Health Heartbeat Checkers"
+      },
+      {
+        "label": "Layer 04: Write-Ahead Log (WAL) & PITR Backup Engine",
+        "node": "pgBackRest / AWS S3 Continuous WAL Archival, Immutable Snapshot Storage"
+      },
+      {
+        "label": "Layer 05: Telemetry, Query Profiling & Index Optimization",
+        "node": "pg_stat_statements, Percona PMM, Slow Query Logger, Automated Vacuuming Daemons"
+      }
+    ],
+    "editorialParagraph1": "Databases are the most vulnerable component of any enterprise architecture. Unmonitored connection spikes, missing indexes, unvacuumed dead tuples, and unverified backup scripts inevitably lead to catastrophic data loss and prolonged system outages.",
+    "editorialParagraph2": "Our dedicated Database Administration (DBA) team manages, tunes, and protects your relational and NoSQL databases 24/7. We guarantee bulletproof high availability, optimal query throughput, and rigorously tested point-in-time recovery capabilities.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-7.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-Second Query Throughput",
+      "desc": "Deep indexing optimization, execution plan tuning, and smart connection pooling restoring lightning-fast database responsiveness."
+    },
+    {
+      "id": "02",
+      "title": "Bulletproof Point-in-Time Recovery (PITR)",
+      "desc": "Continuous WAL archiving and automated daily restoration testing ensuring zero data loss even in worst-case disaster scenarios."
+    },
+    {
+      "id": "03",
+      "title": "Zero-Downtime Engine Upgrades",
+      "desc": "Seamless major version database upgrades and cloud migrations executed with logical replication to avoid business interruptions."
+    }
+  ]
+},
+  "managed-services/monitoring-incident-management": {
+  "slug": "monitoring-incident-management",
+  "serviceSlug": "managed-services",
+  "title": "Enterprise Monitoring, Observability & Incident Management",
+  "solutions": [
+    {
+      "title": "Full-Stack Observability Architecture (Metrics, Logs, Traces)",
+      "desc": "Consolidating fragmented telemetry into a unified Datadog, Grafana Cloud, or OpenTelemetry observability stack across all tiers."
+    },
+    {
+      "title": "24/7 Incident Escalation & On-Call Engineering",
+      "desc": "Rapid automated alerting routing critical issues to Level 2 and Level 3 on-call engineers with guaranteed sub-15-minute response times."
+    },
+    {
+      "title": "Synthetic Monitoring & Real-User Monitoring (RUM)",
+      "desc": "Continuous automated browser user journey emulation verifying critical login and checkout flows from global geographic locations."
+    },
+    {
+      "title": "Intelligent Alert Noise Reduction & AIOps",
+      "desc": "Applying anomaly detection and alert grouping to eliminate alert fatigue and ensure on-call teams focus strictly on genuine incidents."
+    },
+    {
+      "title": "Automated Incident Runbooks & Self-Healing",
+      "desc": "Developing self-healing scripts that automatically restart unresponsive pods, cycle hung connections, and clear temp storage."
+    },
+    {
+      "title": "Executive Post-Mortems & SLA/SLO Dashboards",
+      "desc": "Real-time Service Level Objective (SLO) error budget tracking, blameless post-mortem documentation, and executive incident reports."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Real-Time Payment Latency Observability & SLO Tracking",
+      "desc": "Implemented OpenTelemetry distributed tracing across 35 microservices processing real-time card authorisations.",
+      "practicalValue": "Identified an elusive 200ms latency spike across partner APIs, preventing a critical breach of customer SLAs.",
+      "focusAreas": [
+        "OpenTelemetry Spans",
+        "Payment Latency",
+        "Error Budgets"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Synthetic Health System Monitoring & Uptime Alerts",
+      "desc": "Configured automated synthetic user journey checks testing patient portal appointment scheduling every 60 seconds.",
+      "practicalValue": "Caught an unannounced third-party SMS gateway outage 45 minutes before user complaints started.",
+      "focusAreas": [
+        "Synthetic Monitoring",
+        "SMS Gateway Alerts",
+        "Patient Portal"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "E-Commerce Black Friday Real-Time War Room Dashboard",
+      "desc": "Unified order intake metrics, CDN cache hit ratios, and payment success rates into a central real-time Grafana executive dashboard.",
+      "practicalValue": "Provided engineering leadership with instant visibility, maintaining 100% checkout uptime across peak retail sales.",
+      "focusAreas": [
+        "Real-Time War Room",
+        "Grafana Cloud",
+        "Checkout Funnel"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industrial IoT Device Fleet Telemetry & Anomaly Alerts",
+      "desc": "Monitored telemetry heartbeats from 12,000 industrial sensors across 8 manufacturing plants using Datadog IoT agent.",
+      "practicalValue": "Reduced sensor hardware failure detection from 6 hours down to 90 seconds.",
+      "focusAreas": [
+        "IoT Telemetry",
+        "Anomaly Detection",
+        "Fleet Heartbeats"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Observability & 24/7 Incident Management Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Universal Telemetry Ingestion Mesh",
+        "node": "OpenTelemetry Collector (OTel), Fluentbit DaemonSets, Prometheus Exporters"
+      },
+      {
+        "label": "Layer 02: Real-User & Synthetic Emulation",
+        "node": "Datadog Synthetic Tests, Playwright Global Probes, RUM User Journey Telemetry"
+      },
+      {
+        "label": "Layer 03: Telemetry Store & AIOps Noise Filter",
+        "node": "Grafana Mimir / Datadog Metrics, Loki Log Aggregation, Alertmanager De-Duplication"
+      },
+      {
+        "label": "Layer 04: Intelligent On-Call Escalation & War Rooms",
+        "node": "PagerDuty Dynamic Schedules, Slack Incident Channels, Automated Zoom War Rooms"
+      },
+      {
+        "label": "Layer 05: SRE Governance & Executive SLO Tracking",
+        "node": "Service Level Objectives (SLOs), Error Budget Burn Alarms, ITIL Blameless RCAs"
+      }
+    ],
+    "editorialParagraph1": "Fragmented monitoring tools, uncurated alerts, and noisy notifications leave operations teams suffering from alert fatigue. When real production outages occur, critical warnings are easily lost in a flood of irrelevant notifications.",
+    "editorialParagraph2": "Devopstrio transforms enterprise monitoring into actionable, intelligent observability. We design unified metrics, logs, and distributed tracing architectures backed by 24/7 incident response, ensuring issues are caught and resolved before your customers notice.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-15 Minute Incident Triage SLA",
+      "desc": "Automated alert correlation and 24/7 on-call engineers ensuring critical production issues are triaged immediately upon occurrence."
+    },
+    {
+      "id": "02",
+      "title": "85% Reduction in Alert Fatigue",
+      "desc": "Intelligent noise filtering and deduplication ensuring engineering teams are alerted exclusively for genuine actionable incidents."
+    },
+    {
+      "id": "03",
+      "title": "Complete System Transparency",
+      "desc": "End-to-end distributed tracing correlating frontend user clicks with backend database queries for instant root-cause diagnosis."
+    }
+  ]
+},
+  "monitoring-incident-management": {
+  "slug": "monitoring-incident-management",
+  "serviceSlug": "managed-services",
+  "title": "Enterprise Monitoring, Observability & Incident Management",
+  "solutions": [
+    {
+      "title": "Full-Stack Observability Architecture (Metrics, Logs, Traces)",
+      "desc": "Consolidating fragmented telemetry into a unified Datadog, Grafana Cloud, or OpenTelemetry observability stack across all tiers."
+    },
+    {
+      "title": "24/7 Incident Escalation & On-Call Engineering",
+      "desc": "Rapid automated alerting routing critical issues to Level 2 and Level 3 on-call engineers with guaranteed sub-15-minute response times."
+    },
+    {
+      "title": "Synthetic Monitoring & Real-User Monitoring (RUM)",
+      "desc": "Continuous automated browser user journey emulation verifying critical login and checkout flows from global geographic locations."
+    },
+    {
+      "title": "Intelligent Alert Noise Reduction & AIOps",
+      "desc": "Applying anomaly detection and alert grouping to eliminate alert fatigue and ensure on-call teams focus strictly on genuine incidents."
+    },
+    {
+      "title": "Automated Incident Runbooks & Self-Healing",
+      "desc": "Developing self-healing scripts that automatically restart unresponsive pods, cycle hung connections, and clear temp storage."
+    },
+    {
+      "title": "Executive Post-Mortems & SLA/SLO Dashboards",
+      "desc": "Real-time Service Level Objective (SLO) error budget tracking, blameless post-mortem documentation, and executive incident reports."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "Real-Time Payment Latency Observability & SLO Tracking",
+      "desc": "Implemented OpenTelemetry distributed tracing across 35 microservices processing real-time card authorisations.",
+      "practicalValue": "Identified an elusive 200ms latency spike across partner APIs, preventing a critical breach of customer SLAs.",
+      "focusAreas": [
+        "OpenTelemetry Spans",
+        "Payment Latency",
+        "Error Budgets"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "Synthetic Health System Monitoring & Uptime Alerts",
+      "desc": "Configured automated synthetic user journey checks testing patient portal appointment scheduling every 60 seconds.",
+      "practicalValue": "Caught an unannounced third-party SMS gateway outage 45 minutes before user complaints started.",
+      "focusAreas": [
+        "Synthetic Monitoring",
+        "SMS Gateway Alerts",
+        "Patient Portal"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "E-Commerce Black Friday Real-Time War Room Dashboard",
+      "desc": "Unified order intake metrics, CDN cache hit ratios, and payment success rates into a central real-time Grafana executive dashboard.",
+      "practicalValue": "Provided engineering leadership with instant visibility, maintaining 100% checkout uptime across peak retail sales.",
+      "focusAreas": [
+        "Real-Time War Room",
+        "Grafana Cloud",
+        "Checkout Funnel"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Industrial IoT Device Fleet Telemetry & Anomaly Alerts",
+      "desc": "Monitored telemetry heartbeats from 12,000 industrial sensors across 8 manufacturing plants using Datadog IoT agent.",
+      "practicalValue": "Reduced sensor hardware failure detection from 6 hours down to 90 seconds.",
+      "focusAreas": [
+        "IoT Telemetry",
+        "Anomaly Detection",
+        "Fleet Heartbeats"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise Observability & 24/7 Incident Management Topology",
+    "layers": [
+      {
+        "label": "Layer 01: Universal Telemetry Ingestion Mesh",
+        "node": "OpenTelemetry Collector (OTel), Fluentbit DaemonSets, Prometheus Exporters"
+      },
+      {
+        "label": "Layer 02: Real-User & Synthetic Emulation",
+        "node": "Datadog Synthetic Tests, Playwright Global Probes, RUM User Journey Telemetry"
+      },
+      {
+        "label": "Layer 03: Telemetry Store & AIOps Noise Filter",
+        "node": "Grafana Mimir / Datadog Metrics, Loki Log Aggregation, Alertmanager De-Duplication"
+      },
+      {
+        "label": "Layer 04: Intelligent On-Call Escalation & War Rooms",
+        "node": "PagerDuty Dynamic Schedules, Slack Incident Channels, Automated Zoom War Rooms"
+      },
+      {
+        "label": "Layer 05: SRE Governance & Executive SLO Tracking",
+        "node": "Service Level Objectives (SLOs), Error Budget Burn Alarms, ITIL Blameless RCAs"
+      }
+    ],
+    "editorialParagraph1": "Fragmented monitoring tools, uncurated alerts, and noisy notifications leave operations teams suffering from alert fatigue. When real production outages occur, critical warnings are easily lost in a flood of irrelevant notifications.",
+    "editorialParagraph2": "Devopstrio transforms enterprise monitoring into actionable, intelligent observability. We design unified metrics, logs, and distributed tracing architectures backed by 24/7 incident response, ensuring issues are caught and resolved before your customers notice.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-8.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Sub-15 Minute Incident Triage SLA",
+      "desc": "Automated alert correlation and 24/7 on-call engineers ensuring critical production issues are triaged immediately upon occurrence."
+    },
+    {
+      "id": "02",
+      "title": "85% Reduction in Alert Fatigue",
+      "desc": "Intelligent noise filtering and deduplication ensuring engineering teams are alerted exclusively for genuine actionable incidents."
+    },
+    {
+      "id": "03",
+      "title": "Complete System Transparency",
+      "desc": "End-to-end distributed tracing correlating frontend user clicks with backend database queries for instant root-cause diagnosis."
+    }
+  ]
+},
+  "managed-services/24-7-support-services": {
+  "slug": "24-7-support-services",
+  "serviceSlug": "managed-services",
+  "title": "24/7 IT Support, Managed Operations & Escalation Services",
+  "solutions": [
+    {
+      "title": "Round-the-Clock L1, L2 & L3 Engineering Support",
+      "desc": "24/7/365 continuous technical coverage providing instant telephone, email, and chat support for enterprise users and systems."
+    },
+    {
+      "title": "Rapid Emergency Incident Response SLA",
+      "desc": "Guaranteed 15-minute response times for critical severity-1 system outages backed by stringent contractual uptime commitments."
+    },
+    {
+      "title": "Proactive Infrastructure Health Heartbeats",
+      "desc": "Continuous automated synthetic health checks actively verifying service availability every 60 seconds across all cloud and on-premise nodes."
+    },
+    {
+      "title": "Automated User Provisioning & Access Governance",
+      "desc": "Seamless, secure onboarding and offboarding workflows across Microsoft 365, Google Workspace, AWS, and enterprise SaaS tools."
+    },
+    {
+      "title": "Scheduled Maintenance & Disaster Recovery Testing",
+      "desc": "Executing non-disruptive out-of-hours maintenance windows, security patch deployments, and routine disaster recovery drills."
+    },
+    {
+      "title": "Executive Service Level Reporting & QBR Reviews",
+      "desc": "Transparent monthly service reports, ticket analytics, resolution metrics, and quarterly business reviews to drive ongoing improvements."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "24/7 Global Trading Desk Systems Support",
+      "desc": "Provided 24/7 follow-the-sun technical support for an international trading firm operating across London, New York, and Singapore.",
+      "practicalValue": "Achieved average initial response time of under 3 minutes with zero trading floor downtime.",
+      "focusAreas": [
+        "Follow-the-Sun Support",
+        "Sub-5m Response",
+        "Trading Systems"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "24/7 Critical Hospital Systems Operations Desk",
+      "desc": "Delivered round-the-clock technical support for electronic patient record systems across 8 acute NHS hospital trusts.",
+      "practicalValue": "Zero clinical workflow stoppages and 99.99% critical clinical software uptime.",
+      "focusAreas": [
+        "Clinical 24/7 Desk",
+        "Patient Care Priority",
+        "Zero System Stoppage"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "24/7 Peak Holiday Retail Support & Incident Desk",
+      "desc": "Provided continuous 24/7 technical coverage for an online retailer handling 500,000 orders weekly during peak Q4 sales.",
+      "practicalValue": "Triaged and resolved 18 high-priority checkout bugs instantly, securing £1.8M in revenue.",
+      "focusAreas": [
+        "Q4 Peak Coverage",
+        "Checkout Triage",
+        "Instant Resolution"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Continuous 24/7 Shift Factory IT Support",
+      "desc": "Supported 3-shift 24/7 automated manufacturing facilities with rapid hardware replacement and plant network troubleshooting.",
+      "practicalValue": "Reduced production line technical delay incidents by 82% across all shift rotations.",
+      "focusAreas": [
+        "24/7 Shift Coverage",
+        "Factory Plant Network",
+        "Rapid Hardware Replacement"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise 24/7 Managed Operations & Support Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Channel Omni-Intake Desk",
+        "node": "Dedicated Emergency Hotline, Enterprise Web Portal, Slack Connect / Teams Gateway"
+      },
+      {
+        "label": "Layer 02: Automated Severity Triage & Ticket Routing",
+        "node": "HaloITSM / ServiceNow Engine, Automated Priority Classification, ITIL Incident Matrix"
+      },
+      {
+        "label": "Layer 03: Distributed 24/7 On-Call Escalation Engine",
+        "node": "PagerDuty Dynamic Rotations, SMS / Phone Multi-Hop Escalation, Geo-Redundant On-Call"
+      },
+      {
+        "label": "Layer 04: Secure Remote Administration & Diagnostic Tools",
+        "node": "BeyondTrust Remote Support, Tailscale Zero Trust Mesh, Session Recording & Audit Logs"
+      },
+      {
+        "label": "Layer 05: Executive SLA Telemetry & Quality Assurance",
+        "node": "Live SLA Countdown Dashboards, First-Contact-Resolution (FCR) Analytics, CSAT Tracking"
+      }
+    ],
+    "editorialParagraph1": "System failures, user lockouts, and security anomalies do not respect standard business hours. Without reliable 24/7 technical support, overnight server issues become catastrophic morning outages that bring business operations to a halt.",
+    "editorialParagraph2": "Devopstrio 24/7 support services provide peace of mind with continuous, round-the-clock technical coverage. Our certified engineers monitor your estate, resolve user tickets, and remediate infrastructure emergencies instantly, ensuring uninterrupted business operations.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-9.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed 24/7/365 Peace of Mind",
+      "desc": "Certified engineers actively monitoring and supporting your systems every second of the day, night, weekends, and bank holidays."
+    },
+    {
+      "id": "02",
+      "title": "Sub-15 Minute Severity-1 SLA",
+      "desc": "Immediate intervention by experienced Level 2 and Level 3 engineers who rapidly diagnose and resolve critical production emergencies."
+    },
+    {
+      "id": "03",
+      "title": "95%+ First-Contact Resolution Rate",
+      "desc": "Empowered technical engineers resolving user requests and system issues on the very first interaction without frustrating delays."
+    }
+  ]
+},
+  "24-7-support-services": {
+  "slug": "24-7-support-services",
+  "serviceSlug": "managed-services",
+  "title": "24/7 IT Support, Managed Operations & Escalation Services",
+  "solutions": [
+    {
+      "title": "Round-the-Clock L1, L2 & L3 Engineering Support",
+      "desc": "24/7/365 continuous technical coverage providing instant telephone, email, and chat support for enterprise users and systems."
+    },
+    {
+      "title": "Rapid Emergency Incident Response SLA",
+      "desc": "Guaranteed 15-minute response times for critical severity-1 system outages backed by stringent contractual uptime commitments."
+    },
+    {
+      "title": "Proactive Infrastructure Health Heartbeats",
+      "desc": "Continuous automated synthetic health checks actively verifying service availability every 60 seconds across all cloud and on-premise nodes."
+    },
+    {
+      "title": "Automated User Provisioning & Access Governance",
+      "desc": "Seamless, secure onboarding and offboarding workflows across Microsoft 365, Google Workspace, AWS, and enterprise SaaS tools."
+    },
+    {
+      "title": "Scheduled Maintenance & Disaster Recovery Testing",
+      "desc": "Executing non-disruptive out-of-hours maintenance windows, security patch deployments, and routine disaster recovery drills."
+    },
+    {
+      "title": "Executive Service Level Reporting & QBR Reviews",
+      "desc": "Transparent monthly service reports, ticket analytics, resolution metrics, and quarterly business reviews to drive ongoing improvements."
+    }
+  ],
+  "useCases": [
+    {
+      "industry": "Banking and Finance",
+      "scenario": "24/7 Global Trading Desk Systems Support",
+      "desc": "Provided 24/7 follow-the-sun technical support for an international trading firm operating across London, New York, and Singapore.",
+      "practicalValue": "Achieved average initial response time of under 3 minutes with zero trading floor downtime.",
+      "focusAreas": [
+        "Follow-the-Sun Support",
+        "Sub-5m Response",
+        "Trading Systems"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Banking-and-Finance.webp"
+    },
+    {
+      "industry": "Healthcare and Life Sciences",
+      "scenario": "24/7 Critical Hospital Systems Operations Desk",
+      "desc": "Delivered round-the-clock technical support for electronic patient record systems across 8 acute NHS hospital trusts.",
+      "practicalValue": "Zero clinical workflow stoppages and 99.99% critical clinical software uptime.",
+      "focusAreas": [
+        "Clinical 24/7 Desk",
+        "Patient Care Priority",
+        "Zero System Stoppage"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Healthcare-and-Life-Sciences.webp"
+    },
+    {
+      "industry": "Retail and E-Commerce",
+      "scenario": "24/7 Peak Holiday Retail Support & Incident Desk",
+      "desc": "Provided continuous 24/7 technical coverage for an online retailer handling 500,000 orders weekly during peak Q4 sales.",
+      "practicalValue": "Triaged and resolved 18 high-priority checkout bugs instantly, securing £1.8M in revenue.",
+      "focusAreas": [
+        "Q4 Peak Coverage",
+        "Checkout Triage",
+        "Instant Resolution"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Retail-and-E-Commerce.webp"
+    },
+    {
+      "industry": "Manufacturing",
+      "scenario": "Continuous 24/7 Shift Factory IT Support",
+      "desc": "Supported 3-shift 24/7 automated manufacturing facilities with rapid hardware replacement and plant network troubleshooting.",
+      "practicalValue": "Reduced production line technical delay incidents by 82% across all shift rotations.",
+      "focusAreas": [
+        "24/7 Shift Coverage",
+        "Factory Plant Network",
+        "Rapid Hardware Replacement"
+      ],
+      "image": "/webp/assets/Industries-page/industries/Manufacturing.webp"
+    }
+  ],
+  "architecture": {
+    "title": "Enterprise 24/7 Managed Operations & Support Architecture",
+    "layers": [
+      {
+        "label": "Layer 01: Multi-Channel Omni-Intake Desk",
+        "node": "Dedicated Emergency Hotline, Enterprise Web Portal, Slack Connect / Teams Gateway"
+      },
+      {
+        "label": "Layer 02: Automated Severity Triage & Ticket Routing",
+        "node": "HaloITSM / ServiceNow Engine, Automated Priority Classification, ITIL Incident Matrix"
+      },
+      {
+        "label": "Layer 03: Distributed 24/7 On-Call Escalation Engine",
+        "node": "PagerDuty Dynamic Rotations, SMS / Phone Multi-Hop Escalation, Geo-Redundant On-Call"
+      },
+      {
+        "label": "Layer 04: Secure Remote Administration & Diagnostic Tools",
+        "node": "BeyondTrust Remote Support, Tailscale Zero Trust Mesh, Session Recording & Audit Logs"
+      },
+      {
+        "label": "Layer 05: Executive SLA Telemetry & Quality Assurance",
+        "node": "Live SLA Countdown Dashboards, First-Contact-Resolution (FCR) Analytics, CSAT Tracking"
+      }
+    ],
+    "editorialParagraph1": "System failures, user lockouts, and security anomalies do not respect standard business hours. Without reliable 24/7 technical support, overnight server issues become catastrophic morning outages that bring business operations to a halt.",
+    "editorialParagraph2": "Devopstrio 24/7 support services provide peace of mind with continuous, round-the-clock technical coverage. Our certified engineers monitor your estate, resolve user tickets, and remediate infrastructure emergencies instantly, ensuring uninterrupted business operations.",
+    "imageSrc": "/webp/assets/architecture/arch-visual-9.jpg"
+  },
+  "benefits": [
+    {
+      "id": "01",
+      "title": "Guaranteed 24/7/365 Peace of Mind",
+      "desc": "Certified engineers actively monitoring and supporting your systems every second of the day, night, weekends, and bank holidays."
+    },
+    {
+      "id": "02",
+      "title": "Sub-15 Minute Severity-1 SLA",
+      "desc": "Immediate intervention by experienced Level 2 and Level 3 engineers who rapidly diagnose and resolve critical production emergencies."
+    },
+    {
+      "id": "03",
+      "title": "95%+ First-Contact Resolution Rate",
+      "desc": "Empowered technical engineers resolving user requests and system issues on the very first interaction without frustrating delays."
+    }
+  ]
+},
+"cybersecurity/cloud-security": {
   "slug": "cloud-security",
   "serviceSlug": "cybersecurity",
   "title": "Cloud Workload Protection & CSPM Defense",
@@ -8740,8 +22097,8 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "Automated Drift Remediation, Compliance Dashboards, Multi-Cloud SIEM"
       }
     ],
-    "editorialParagraph1": "Cloud infrastructure operates at high velocity, with ephemeral containers, microservices, and serverless functions spinning up and down continuously. Traditional perimeter firewalls cannot see container runtime anomalies or detect IAM privilege escalation.",
-    "editorialParagraph2": "Our cloud security practice delivers comprehensive defense across the entire cloud lifecycle. From shifting security left into Terraform and container build pipelines to deploying eBPF runtime detection and automated drift remediation, we ensure your multi-cloud estate remains continuously secure and auditable.",
+    "editorialParagraph1": "Cloud environments change rapidly as containers, microservices and serverless workloads scale. Traditional perimeter controls can miss runtime threats, exposed settings and excessive access permissions, leaving resources open to attack.",
+    "editorialParagraph2": "Our Cloud Security Services in the UK protect workloads across the cloud lifecycle. We embed checks into infrastructure code and deployment pipelines, monitor runtime activity, review identities and detect configuration drift. Assessments and remediation help keep multi-cloud environments secure, compliant and reliable for operations.",
     "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
   },
   "benefits": [
@@ -8866,8 +22223,8 @@ export const subpageContentRegistry: Record<string, SubpageContent> = {
         "node": "Automated Drift Remediation, Compliance Dashboards, Multi-Cloud SIEM"
       }
     ],
-    "editorialParagraph1": "Cloud infrastructure operates at high velocity, with ephemeral containers, microservices, and serverless functions spinning up and down continuously. Traditional perimeter firewalls cannot see container runtime anomalies or detect IAM privilege escalation.",
-    "editorialParagraph2": "Our cloud security practice delivers comprehensive defense across the entire cloud lifecycle. From shifting security left into Terraform and container build pipelines to deploying eBPF runtime detection and automated drift remediation, we ensure your multi-cloud estate remains continuously secure and auditable.",
+    "editorialParagraph1": "Cloud environments change rapidly as containers, microservices and serverless workloads scale. Traditional perimeter controls can miss runtime threats, exposed settings and excessive access permissions, leaving resources open to attack.",
+    "editorialParagraph2": "Our Cloud Security Services in the UK protect workloads across the cloud lifecycle. We embed checks into infrastructure code and deployment pipelines, monitor runtime activity, review identities and detect configuration drift. Assessments and remediation help keep multi-cloud environments secure, compliant and reliable for operations.",
     "imageSrc": "/webp/assets/architecture/arch-visual-6.jpg"
   },
   "benefits": [
