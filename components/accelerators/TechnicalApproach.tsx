@@ -1,5 +1,6 @@
 import React from "react";
 import { EngagementType } from "@/data/accelerators/accelerators-registry";
+import { getTechnicalApproachData } from "@/data/accelerators/technical-approach-data";
 import { ImplementationVariant } from "./variants/ImplementationVariant";
 import { AssessmentVariant } from "./variants/AssessmentVariant";
 import { AdoptionVariant } from "./variants/AdoptionVariant";
@@ -41,21 +42,38 @@ const DIAGRAM_MAP: Record<string, { src: string; title: string }> = {
 
 export function TechnicalApproach({ offeringCode, engagementType }: TechnicalApproachProps) {
   const diagram = DIAGRAM_MAP[offeringCode];
+  const offeringData = getTechnicalApproachData(offeringCode);
 
   const renderVariantDetails = () => {
     switch (engagementType) {
       case "Implementation":
-        return <ImplementationVariant />;
+        return (
+          <ImplementationVariant
+            data={offeringData?.kind === "Implementation" ? offeringData : undefined}
+          />
+        );
       case "Assessment":
-        return <AssessmentVariant />;
+        return (
+          <AssessmentVariant
+            data={offeringData?.kind === "Assessment" ? offeringData : undefined}
+          />
+        );
       case "Adoption":
-        return <AdoptionVariant />;
+        return (
+          <AdoptionVariant
+            data={offeringData?.kind === "Adoption" ? offeringData : undefined}
+          />
+        );
       case "Workshop":
         return <WorkshopVariant />;
       case "Advisory":
         return <AdvisoryVariant />;
       case "Accelerator":
-        return <AcceleratorVariant />;
+        return (
+          <AcceleratorVariant
+            data={offeringData?.kind === "Accelerator" ? offeringData : undefined}
+          />
+        );
       default:
         return <ImplementationVariant />;
     }

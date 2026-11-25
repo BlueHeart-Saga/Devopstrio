@@ -423,21 +423,6 @@ export default async function AcceleratorDetailPage({ params }: PageProps) {
               ))}
             </div>
 
-            {/* Subtle bottom continuation anchor indicator (Matching Reference) */}
-            <div className="mt-12 pt-6 flex justify-center">
-              <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow-md">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-              </div>
-            </div>
-
           </div>
 
           {/* Customer Prerequisites & Technical Assumptions Panel */}

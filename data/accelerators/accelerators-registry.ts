@@ -343,29 +343,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Control plane",
-          "deliverables": "Registry and policy",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Agent 365 Control Plane & Registry",
+          "deliverables": "Configuration of Microsoft Agent 365 as the single agent inventory with mandatory ownership, purpose, platform, data classification, risk tier, and review date metadata, restricting publishing rights to approved makers.",
+          "notIncluded": "Building individual custom or Copilot Studio agents."
         },
         {
-          "title": "Identity",
-          "deliverables": "Agent identities",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Entra ID Agent Identity & Access Governance",
+          "deliverables": "Provisioning pattern for dedicated Entra agent or managed identities per agent, Conditional Access policies limiting resources and locations, and quarterly owner-attested access reviews with automatic removal on non-response.",
+          "notIncluded": "Changes to the underlying platform landing zone identity subscription."
         },
         {
-          "title": "Reporting",
-          "deliverables": "Agent risk dashboard",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Tiered Approval & Lifecycle Workflow",
+          "deliverables": "Implementation of risk-tiered approval routing (self-approval for low risk, AI CoE for medium risk, AI governance board for high risk) and lifecycle state transitions from request and publication through suspension and retirement.",
+          "notIncluded": "Authoring of organisational AI policy, DPIA, or equality impact assessment documents."
         },
         {
-          "title": "Policies",
-          "deliverables": "Tiered policies.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Reporting",
-          "deliverables": "Monthly agent risk report.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Purview Audit & Leadership Risk Reporting",
+          "deliverables": "Configuration of Microsoft Purview data security and audit logging for agent interactions, alongside a Power BI agent risk dashboard and monthly reporting covering agent count, usage, and risk posture.",
+          "notIncluded": "Data cleansing, source content migration, or ongoing managed service operations post-hypercare."
         }
       ],
       "applications": [
@@ -462,29 +457,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Interviews",
-          "deliverables": "Business view",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Stakeholder Discovery & Use-Case Alignment",
+          "deliverables": "Facilitated interviews and workshops with business, IT, and data leaders to establish strategic priorities, candidate AI use cases, and organisational skills baseline.",
+          "notIncluded": "Design or build of production AI workloads."
         },
         {
-          "title": "Technical review",
-          "deliverables": "Evidence",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "CAF-Aligned Technical & Data Readiness Review",
+          "deliverables": "Read-only technical review of the existing Azure Landing Zone against AI Landing Zone requirements, alongside quality and access assessment of data sources for priority use cases.",
+          "notIncluded": "Changes to platform landing zone subscriptions, data cleansing, or source content migration."
         },
         {
-          "title": "Report",
-          "deliverables": "Gaps and plan",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Evidence-Based Maturity Scoring & Gap Register",
+          "deliverables": "Objective maturity evaluation across strategy, platform, data, security, skills, and governance, producing a findings register with supporting evidence and ranked risks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Scoring",
-          "deliverables": "Evidence-based scores.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Plan",
-          "deliverables": "Two-track plan.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Prioritised Roadmap & Executive Business Case",
+          "deliverables": "Two-track 90-day and 12-month remediation roadmap, top-three first-wave use-case plan, and executive presentation ready for funding review.",
+          "notIncluded": "Post-assessment implementation or ongoing managed services."
         }
       ],
       "applications": [
@@ -576,24 +566,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Usage",
-          "deliverables": "Adoption data",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "SharePoint Oversharing & Access Remediation Setup",
+          "deliverables": "Configuration of weekly SharePoint Data Access Governance reports, site access review workflows, and Restricted Content Discovery on high-risk sites prior to wider rollout.",
+          "notIncluded": "Tenant-wide manual content cleansing or migration of legacy file shares."
         },
         {
-          "title": "Reporting",
-          "deliverables": "Value by department",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Purview Sensitivity Labelling & Copilot DLP",
+          "deliverables": "Configuration of Microsoft Purview sensitivity label taxonomy, simulation-first auto-labelling, DSPM for AI coaching policies, and DLP rules excluding Highly Confidential content from Copilot processing.",
+          "notIncluded": "Authoring of organisational data classification policies or formal DPIA documents."
         },
         {
-          "title": "Measures",
-          "deliverables": "Agreed value measures.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Copilot Usage Telemetry & Power BI ROI Reporting",
+          "deliverables": "Configuration of the Microsoft 365 Copilot Dashboard and Viva Insights alongside custom Power BI reports combining adoption telemetry with agreed departmental value measures.",
+          "notIncluded": "Building Azure AI workloads or custom Copilot extensions and agents."
         },
         {
-          "title": "Licence Optimisation",
-          "deliverables": "Monthly licence review.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Entra Conditional Access & Licence Reallocation Model",
+          "deliverables": "Group-based Copilot licensing, Conditional Access policies enforcing MFA and compliant devices, and a monthly inactive-licence identification and reallocation process.",
+          "notIncluded": "Procurement of Microsoft 365 licences or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -690,29 +680,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Capacity",
-          "deliverables": "Compute and storage",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Fabric Landing Zone & Private Network Foundation",
+          "deliverables": "Infrastructure-as-code deployment (Terraform or Bicep) of a spoke VNet peered to the hub, private endpoints, private Storage Account with shared keys disabled, Key Vault, and Log Analytics monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone connectivity, identity, or management subscriptions."
         },
         {
-          "title": "Storage",
-          "deliverables": "Lakehouses",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Domain Workspaces & Medallion OneLake Lakehouses",
+          "deliverables": "Provisioning of Microsoft Fabric capacity and domain-aligned workspaces with workspace identities enabled, structuring OneLake lakehouses across bronze, silver, and gold layers.",
+          "notIncluded": "Migration of all legacy data warehouses outside agreed priority AI use cases."
         },
         {
-          "title": "Governance",
-          "deliverables": "Ownership and catalogue",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Purview Data Catalogue, Lineage & Access Governance",
+          "deliverables": "Integration of Microsoft Purview to catalogue data products, assign business domain owners, track end-to-end lineage, and enforce Entra ID role-based access controls.",
+          "notIncluded": "Source system data cleansing or authoring of organisational data governance policies."
         },
         {
-          "title": "Domains",
-          "deliverables": "Domain-based workspaces.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Security",
-          "deliverables": "Secure by default.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Policy Guardrails & Operational Handover",
+          "deliverables": "Assignment of the Devopstrio AI Landing Zone policy initiative (Audit in non-production, Deny in production), budget alerts, and handover of operational runbooks.",
+          "notIncluded": "Ongoing managed service operations or 24/7 support after the hypercare period."
         }
       ],
       "applications": [
@@ -927,29 +912,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Conversation",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private AI Landing Zone & Gateway Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of a spoke VNet (with private endpoint, internal APIM, and Container Apps subnets), Key Vault, Microsoft Foundry, Azure AI Search, Azure AI Content Safety, and central monitoring.",
+          "notIncluded": "Modifications to the existing platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Channels",
-          "deliverables": "Customer access",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Single-Brain Omnichannel Assistant",
+          "deliverables": "Configuration of a unified assistant in Copilot Studio and Microsoft Foundry published across web chat, WhatsApp, and SMS with channel-specific formatting and consistent grounded responses.",
+          "notIncluded": "Replacement of the existing telephony platform or contact centre infrastructure."
         },
         {
-          "title": "CRM",
-          "deliverables": "History",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "CRM Integration & Context-Preserving Handover",
+          "deliverables": "Secure API integration with Dynamics 365 or existing CRM/telephony platforms to log conversations and transfer full interaction context to human agents on escalation.",
+          "notIncluded": "Data cleansing or migration of legacy CRM records."
         },
         {
-          "title": "Single Brain",
-          "deliverables": "Build once, publish everywhere.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Handover",
-          "deliverables": "Context-preserving handover.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Transcript Redaction, Guardrails & Handover",
+          "deliverables": "Automated personal and payment data redaction from call transcripts, Prompt Shields content filtering, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -1154,29 +1134,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Copilot",
-          "deliverables": "AI coding assistance",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "GitHub Copilot Organisation & Policy Setup",
+          "deliverables": "Configuration of GitHub Copilot Business or Enterprise settings including public-code suggestion blocking, repository content exclusions for secrets and regulated code, approved model restrictions, and Entra ID group seat sync.",
+          "notIncluded": "Procurement of GitHub Copilot or GitHub Advanced Security licences."
         },
         {
-          "title": "Security",
-          "deliverables": "Code and secret scanning",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Repository Security & Code Guardrails",
+          "deliverables": "Enablement of GitHub Advanced Security controls across target repositories: CodeQL code scanning, secret scanning with push protection, Dependabot security updates, and branch protection rules.",
+          "notIncluded": "Remediation of pre-existing application vulnerabilities across legacy codebases."
         },
         {
-          "title": "Metrics",
-          "deliverables": "Adoption and impact",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Champions Network & Engineering Enablement",
+          "deliverables": "Structured four-week adoption programme comprising pilot cohort onboarding, engineering champions coaching, secure AI coding guidance, and team-specific prompting guides.",
+          "notIncluded": "Custom IDE plugin development or mandatory training for non-engineering staff."
         },
         {
-          "title": "Policy Setup",
-          "deliverables": "Central policy configuration.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Measuring Impact",
-          "deliverables": "Baseline and impact report.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Productivity Telemetry & Impact Reporting",
+          "deliverables": "Configuration of Copilot Metrics API and GitHub Insights reporting in Power BI to track active users, suggestion acceptance rate, pull request cycle time, and security alert trends.",
+          "notIncluded": "Deployment of Azure AI Foundry workloads or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -1273,29 +1248,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Sources",
-          "deliverables": "Policy documents",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private RAG Infrastructure & AI Gateway",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet, internal API Management AI gateway, Microsoft Foundry, Azure AI Search, Container Apps, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Index",
-          "deliverables": "Searchable policy content",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Version-Controlled HR Policy Ingestion Pipeline",
+          "deliverables": "Document ingestion pipeline connecting to the SharePoint HR site using Azure AI Document Intelligence, indexing approved policies with version dates while automatically excluding superseded documents and restricted labels.",
+          "notIncluded": "Cleansing, rewriting, or migration of legacy HR policy documents."
         },
         {
-          "title": "Interface",
-          "deliverables": "Staff questions",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Security-Trimmed Retrieval & Citation Engine",
+          "deliverables": "Configuration of Azure AI Search with semantic ranking, document access-control list (ACL) storage, incremental permission sync, and mandatory source document citations.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Content Control",
-          "deliverables": "Approved-only indexing.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Escalation",
-          "deliverables": "Clear handover to HR.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Teams Staff Interface & HR Escalation Routing",
+          "deliverables": "Deployment of the staff-facing Microsoft Teams interface with automated routing of personal, sensitive, or case-specific employee queries directly to HR channels, plus operational handover.",
+          "notIncluded": "Post-hypercare managed support or generative applications without retrieval."
         }
       ],
       "applications": [
@@ -1392,24 +1362,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Copilots",
-          "deliverables": "Role experiences",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "SharePoint Oversharing & Purview Data Readiness",
+          "deliverables": "Assessment and remediation of SharePoint oversharing using SharePoint Advanced Management and Purview reports, alongside sensitivity label and Copilot DLP configuration.",
+          "notIncluded": "Tenant-wide manual file migration or legacy data cleansing."
         },
         {
-          "title": "Data",
-          "deliverables": "Business data",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Role-Based Copilot Setup (Sales, Service, Finance)",
+          "deliverables": "Deployment and configuration of Microsoft 365 Copilot role experiences and role-specific prompts tailored to Sales, Customer Service, and Finance workflows.",
+          "notIncluded": "Custom Azure AI Foundry applications or bespoke autonomous agents."
         },
         {
-          "title": "Role Scenarios",
-          "deliverables": "Scenario-led setup.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Permission-Aware CRM & ERP Integration",
+          "deliverables": "Connection of role-based Copilots to live Dynamics 365, Salesforce, and ERP data sources via supported connectors while strictly preserving existing CRM and ERP user permissions.",
+          "notIncluded": "Rebuilding core CRM/ERP schemas or custom third-party connector engineering."
         },
         {
-          "title": "Integration",
-          "deliverables": "Permission-aware integration.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Staged Role Rollout & Per-Role Adoption Tracking",
+          "deliverables": "Conditional Access enforcement for Copilot users, staged pilot and wave rollout, per-role usage measurement, and operational handover.",
+          "notIncluded": "Procurement of M365/Dynamics licences or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -1506,29 +1476,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Workspaces",
-          "deliverables": "Experimentation and training",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private MLOps Landing Zone Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment (Terraform or Bicep) of spoke VNet, private Azure Machine Learning workspaces per environment with managed outbound networking, dedicated ML storage, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Registry",
-          "deliverables": "Shared models",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Shared Model, Prompt & Environment Registry",
+          "deliverables": "Configuration of a shared Azure Machine Learning registry to version, approve, and promote models, prompts, environments, and evaluation datasets across dev, test, and production.",
+          "notIncluded": "Training foundation models from scratch."
         },
         {
-          "title": "Pipelines",
-          "deliverables": "Automation",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Automated CI/CD Training & Release Pipelines",
+          "deliverables": "Implementation of Azure DevOps or GitHub Actions pipelines automating model training, evaluation gates, security checks, and reversible deployment, paired with templated project structures.",
+          "notIncluded": "Building domain-specific ML models or cleansing upstream feature datasets."
         },
         {
-          "title": "Project Template",
-          "deliverables": "Templated projects.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Promotion",
-          "deliverables": "Registry-based promotion.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "GPU Quotas, Drift Monitoring & Handover",
+          "deliverables": "Configuration of scale-to-zero compute clusters with team quotas, data and prediction drift monitors with owner alerts, Deny-mode Azure Policies, and operational runbooks.",
+          "notIncluded": "GPU capacity procurement or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -1625,24 +1590,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Discovery",
-          "deliverables": "Use cases",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Cross-Business Use-Case Discovery",
+          "deliverables": "Facilitated discovery workshops across business areas and review of process data to build a structured inventory of candidate AI use cases.",
+          "notIncluded": "Design or build of production AI solutions."
         },
         {
-          "title": "Sizing",
-          "deliverables": "Business case",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Four-Factor Feasibility & Readiness Scoring",
+          "deliverables": "Objective scoring of candidate use cases against business value, technical feasibility, data readiness (quality and access), and regulatory/DPIA risk.",
+          "notIncluded": "Source data cleansing, migration, or changes to platform landing zone infrastructure."
         },
         {
-          "title": "Scoring",
-          "deliverables": "Four-factor scoring.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Value & Cost Sizing Model",
+          "deliverables": "Collaborative estimation of implementation effort, Azure consumption drivers, and conservative benefit assumptions reviewed alongside finance and business owners.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or binding commercial procurement."
         },
         {
-          "title": "Business Case",
-          "deliverables": "Funded first wave.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "First-Wave Plan & Fundable Business Case",
+          "deliverables": "Selection of the top three use cases for the first 90-day wave, a 90-day and 12-month delivery roadmap, and an executive business case presentation.",
+          "notIncluded": "Post-assessment implementation or ongoing managed services."
         }
       ],
       "applications": [
@@ -1852,29 +1817,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Capture",
-          "deliverables": "Shelf images",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Vision & MLOps Cloud Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet, Azure AI Vision, Azure Machine Learning workspace, Event Hubs namespace, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Purchase, physical installation, or cabling of store cameras and edge hardware."
         },
         {
-          "title": "Edge",
-          "deliverables": "Local inference",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Edge Inference & Privacy-by-Design Pipeline",
+          "deliverables": "Configuration of Azure IoT Edge / Arc local inference patterns for store cameras with automated people-blurring, exclusion rules, and limited image retention aligned to DPIA controls.",
+          "notIncluded": "Authoring of organisational privacy policies, store signage, or formal DPIA documents."
         },
         {
-          "title": "Models",
-          "deliverables": "Gap detection",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Shelf-Gap & Pricing Error Detection Models",
+          "deliverables": "Training, evaluation, and deployment of custom computer vision models in Azure Machine Learning to detect empty shelves, misplaced items, and pricing discrepancies.",
+          "notIncluded": "Changes to the platform landing zone hub or legacy ERP/POS system replacement."
         },
         {
-          "title": "Privacy",
-          "deliverables": "Privacy by design.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Alerts",
-          "deliverables": "Actionable tasks.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Store Alerting Integration & Handover",
+          "deliverables": "Integration of actionable restocking and pricing alerts to store staff devices via Event Hubs, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -1971,29 +1931,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Monitoring and proposals",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Agentic Landing Zone Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Cosmos DB serverless, Fabric capacity, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Data",
-          "deliverables": "Stock and sales",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Inventory & Demand Forecasting Integration",
+          "deliverables": "Integration of the agent runtime with ERP inventory and sales data, supplier lead-time feeds, Microsoft Fabric, and demand forecasting model outputs through allow-listed API Management tools.",
+          "notIncluded": "Cleansing or migration of legacy ERP databases."
         },
         {
-          "title": "Approval",
-          "deliverables": "Planner approval",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Replenishment Proposal & Planner Approval Workflow",
+          "deliverables": "Build of the Supply Chain and Inventory Agent on Foundry Agent Service to detect stock-out risks and raise explained replenishment proposals in ERP workflows or Microsoft Teams for mandatory human planner approval.",
+          "notIncluded": "Unattended autonomous purchase order execution without human sign-off."
         },
         {
-          "title": "Exception Focus",
-          "deliverables": "Exception-based planning.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Proposals",
-          "deliverables": "Explained proposals.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Agent Identity, Guardrails & Handover",
+          "deliverables": "Dedicated Entra agent identity with least-privilege RBAC, Prompt Shields and tool allow-listing, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -2090,29 +2045,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Web app",
-          "deliverables": "Chat interface",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Chat Landing Zone Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Content Safety, Cosmos DB serverless, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "History",
-          "deliverables": "Conversation storage",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Enterprise Chat Web & Teams Interface",
+          "deliverables": "Deployment of a private chat web application (and Teams front-end option) on Container Apps with Microsoft Entra ID single sign-on, file upload support, and clear AI-generated content notices.",
+          "notIncluded": "Retrieval-augmented generation over internal SharePoint or enterprise document repositories."
         },
         {
-          "title": "Models",
-          "deliverables": "Chat models",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "AI Gateway Rate Limits & Conversation History",
+          "deliverables": "Configuration of an internal API Management AI gateway enforcing per-user usage and token quotas, alongside private Cosmos DB conversation history storage with configurable short retention limits.",
+          "notIncluded": "Model fine-tuning or autonomous agent actions against back-office systems."
         },
         {
-          "title": "User Experience",
-          "deliverables": "Web and Teams front ends.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Data Handling",
-          "deliverables": "Short, configurable retention.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Content Safety, Audit Logging & Handover",
+          "deliverables": "Enablement of Azure AI Content Safety with Prompt Shields, restricted-access audit logging in Log Analytics, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -2209,29 +2159,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Understand and respond",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Email Agent Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Search, Cosmos DB serverless, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Tools",
-          "deliverables": "Customer and order data",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Shared Mailbox & CRM Email Channel Integration",
+          "deliverables": "Integration of the agent with shared customer service mailboxes and CRM queues to ingest inbound emails, classify intent, and draft or send responses.",
+          "notIncluded": "Data cleansing or migration of historical email archives or CRM records."
         },
         {
-          "title": "Channel",
-          "deliverables": "Email handling",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Read-Only Back-Office Lookups & Automation Boundaries",
+          "deliverables": "Configuration of Foundry Agent Service with allow-listed read-only CRM and order-system API tools via internal API Management to ground responses and resolve agreed simple requests automatically.",
+          "notIncluded": "Copilot Studio low-code agents or unrestricted write actions in back-office systems."
         },
         {
-          "title": "Automation Limits",
-          "deliverables": "Agreed automation boundary.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Vulnerability",
-          "deliverables": "Protective handover.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Complaint & Vulnerable-Customer Routing + Handover",
+          "deliverables": "Detection rules routing complaints, vulnerable customers, and out-of-bounds cases directly to human staff, alongside dedicated Entra agent identity, Prompt Shields, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -2328,24 +2273,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Visibility",
-          "deliverables": "AI data use",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Purview DSPM for AI Discovery & Monitoring",
+          "deliverables": "Enablement of Microsoft Purview Data Security Posture Management (DSPM) for AI with recommended policies to monitor sensitive data exposure across Copilot and third-party AI interactions.",
+          "notIncluded": "Security remediation for Microsoft 365 Copilot SharePoint content permissions."
         },
         {
-          "title": "Controls",
-          "deliverables": "Block risky sharing",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Endpoint & Browser DLP for Third-Party AI",
+          "deliverables": "Configuration of Purview endpoint and browser Data Loss Prevention (DLP) policies covering third-party generative AI websites with coach-then-block enforcement.",
+          "notIncluded": "Deployment of Azure PaaS infrastructure or changes to the platform landing zone."
         },
         {
-          "title": "Policies",
-          "deliverables": "Tailored recommended policies.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Insider Risk & Defender for Cloud AI Signals",
+          "deliverables": "Integration of AI activity signals into Microsoft Purview Insider Risk Management alongside Defender for Cloud AI posture discovery and threat protection enablement.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Response",
-          "deliverables": "Coach, then block.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "SOC Playbooks & Operational Handover",
+          "deliverables": "Delivery of AI security incident triage guidance for SOC analysts, configuration acceptance log, and knowledge transfer.",
+          "notIncluded": "Ongoing 24/7 managed SOC operations post-hypercare."
         }
       ],
       "applications": [
@@ -2442,24 +2387,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Research and briefing",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Agentic Infrastructure & Gateway",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Cosmos DB serverless, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Tools",
-          "deliverables": "Data sources",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Permission-Aware CRM & Web Research Tools",
+          "deliverables": "Integration of Dynamics 365 or Salesforce APIs respecting the signing-in user's CRM permissions, paired with allow-listed approved web search tools via internal API Management.",
+          "notIncluded": "Unrestricted internet scraping or cleansing of legacy CRM account records."
         },
         {
-          "title": "Brief Template",
-          "deliverables": "Standard brief format.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Sales Account Research Agent & Brief Publishing",
+          "deliverables": "Build of the Foundry Agent Service workflow generating standardised account briefs with cited external facts and saving approved briefs back to the CRM record.",
+          "notIncluded": "Copilot Studio low-code agents or autonomous customer outreach."
         },
         {
-          "title": "Sources",
-          "deliverables": "Cited external facts.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Agent Identity, Guardrails & Handover",
+          "deliverables": "Dedicated Entra agent identity, Prompt Shields content filtering, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -2556,24 +2501,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Identity",
-          "deliverables": "Agent identities",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Supporting Security Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet, Private Endpoints, Microsoft Foundry, Premium Key Vault, and Log Analytics monitoring for governed agent identity patterns.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Controls",
-          "deliverables": "Access governance",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Dedicated Entra Agent Identity Model",
+          "deliverables": "Implementation of a one-identity-per-agent architecture using Microsoft Entra Agent ID or managed identities, eliminating shared service accounts and embedded secrets.",
+          "notIncluded": "Building individual custom or Copilot Studio agents."
         },
         {
-          "title": "Identity Model",
-          "deliverables": "One identity per agent.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Conditional Access & Quarterly Access Reviews",
+          "deliverables": "Configuration of Conditional Access policies for agent sign-ins where supported alongside automated quarterly owner-attested access reviews for agent permissions.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Reviews",
-          "deliverables": "Quarterly access reviews.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Agent 365 & Purview Audit Alignment",
+          "deliverables": "Integration with Microsoft Agent 365 inventory ownership and Purview audit logging, plus handover of identity lifecycle runbooks.",
+          "notIncluded": "Post-hypercare managed identity operations."
         }
       ],
       "applications": [
@@ -2670,29 +2615,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Guidance and tasks",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Agentic Infrastructure & Gateway",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Cosmos DB serverless, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Tools",
-          "deliverables": "Tasks and requests",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "HR System & ITSM Tool Integration",
+          "deliverables": "Allow-listed API Management integrations connecting the agent to HR onboarding task records and ITSM workflows for equipment and account requests.",
+          "notIncluded": "Rebuilding core HRIS or ITSM platforms or migrating historical employee records."
         },
         {
-          "title": "Channel",
-          "deliverables": "New starter access",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Teams New-Starter Journey & Manager Progress View",
+          "deliverables": "Configuration of the HR Onboarding Agent delivering scheduled new-starter guidance in Microsoft Teams alongside a manager visibility view of onboarding task completion.",
+          "notIncluded": "Autonomous provisioning of privileged access without human approval."
         },
         {
-          "title": "Onboarding Journey",
-          "deliverables": "Scheduled journey.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Manager View",
-          "deliverables": "Progress dashboard.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Agent Identity, Guardrails & Handover",
+          "deliverables": "Dedicated Entra agent identity, Prompt Shields content filtering, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational HR policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -2789,24 +2729,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Discovery",
-          "deliverables": "Find existing agents",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Cross-Platform Agent Discovery",
+          "deliverables": "Read-only discovery across Power Platform admin centre, Microsoft 365 admin centre, Agent 365, Microsoft Foundry, Defender, and Microsoft Graph to compile a complete inventory of existing and shadow agents.",
+          "notIncluded": "Building or remediating individual custom or Copilot Studio agents."
         },
         {
-          "title": "Assessment",
-          "deliverables": "Readiness score",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Five-Area Governance Readiness Evaluation",
+          "deliverables": "Structured technical and workshop review across Inventory, Identity, Data, Threat Protection, and Process domains mapped to Microsoft Agent 365 capabilities.",
+          "notIncluded": "Changes to platform landing zone subscriptions or Azure network infrastructure."
         },
         {
-          "title": "Discovery",
-          "deliverables": "Complete agent inventory.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Identity, Purview & Defender Configuration Review",
+          "deliverables": "Read-only inspection of Entra ID sign-in and app registration reports, Purview audit logs, and Defender posture settings for agent identities and data access.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Readiness Score",
-          "deliverables": "Five-area score and plan.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Costed Governance Roadmap & Handover",
+          "deliverables": "Findings register with supporting evidence, ranked risks, and a costed implementation plan (quick wins, 90 days, 12 months) presented to leadership.",
+          "notIncluded": "Post-assessment implementation or ongoing managed services."
         }
       ],
       "applications": [
@@ -2898,29 +2838,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Connectors",
-          "deliverables": "External content",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Power Platform Managed Environments & API Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Key Vault, and Log Analytics alongside separate dev, test, and production Power Platform Managed Environments with DLP policies.",
+          "notIncluded": "Power Apps or Power Automate solutions that do not include agents."
         },
         {
-          "title": "Agents",
-          "deliverables": "Role-specific experiences",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "ACL-Trimmed Microsoft 365 Copilot Connectors",
+          "deliverables": "Configuration of Microsoft 365 Copilot connectors indexing external business content with access-control lists (ACLs) so answers respect source system permissions.",
+          "notIncluded": "Pro-code autonomous agents built on Azure Foundry Agent Service."
         },
         {
-          "title": "APIs",
-          "deliverables": "Actions",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Role-Specific Declarative Agents & APIM Plugins",
+          "deliverables": "Build of declarative Copilot agents for priority roles consuming internal API Management-hosted API plugins over private VNet connectivity where supported.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Connector Design",
-          "deliverables": "Permission-aware connectors.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Role Agents",
-          "deliverables": "Role-based agents.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Maker Governance & Operational Handover",
+          "deliverables": "Support model defining maker guardrails, Deny-mode Azure Policies, operational runbooks, and knowledge transfer.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -3017,29 +2952,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Generator",
-          "deliverables": "Draft content",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Content Generation Landing Zone",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Content Safety, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Product data",
-          "deliverables": "Facts for grounding",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Brand-Grounded Draft Generator",
+          "deliverables": "Configuration of an Azure OpenAI content generator on Microsoft Foundry grounded in approved brand guidelines and product facts from your PIM or product catalogue.",
+          "notIncluded": "Enterprise-wide document RAG or autonomous action agents."
         },
         {
-          "title": "Workflow",
-          "deliverables": "Review and approval",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Safety, Brand Checks & Human Approval Workflow",
+          "deliverables": "Implementation of automated content-safety and brand-guideline checks paired with a Power Automate or app review workflow ensuring zero content is published to CMS or PIM without human approval.",
+          "notIncluded": "Model fine-tuning unless separately agreed, or cleansing of legacy PIM catalogues."
         },
         {
-          "title": "Grounding",
-          "deliverables": "Fact-grounded drafts.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Approval Workflow",
-          "deliverables": "Human approval before publishing.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Audit Logging, Guardrails & Handover",
+          "deliverables": "Restricted-access prompt/response audit logging, AI-generated content labelling, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -3136,29 +3066,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Product data",
-          "deliverables": "Attributes and images",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Vision-Capable Generation Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Generator",
-          "deliverables": "Titles and descriptions",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "PIM Attribute & Product Image Ingestion",
+          "deliverables": "Integration with your Product Information Management (PIM) system to ingest verified product attributes and product images for multimodal grounding.",
+          "notIncluded": "Cleansing or photography of legacy product catalogue assets."
         },
         {
-          "title": "Publishing",
-          "deliverables": "Write back approved text",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Channel-Templated & Batch Description Generator",
+          "deliverables": "Configuration of vision-capable Azure OpenAI generation using channel-specific templates controlling tone and length, with event-driven batch generation triggered when new products are added.",
+          "notIncluded": "Enterprise document RAG, autonomous agents, or model fine-tuning."
         },
         {
-          "title": "Batch Generation",
-          "deliverables": "Event-driven batches.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Quality Checks",
-          "deliverables": "Automated checks then review.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Approval Write-Back, Guardrails & Handover",
+          "deliverables": "Controlled write-back of approved titles and descriptions to PIM or e-commerce APIs, restricted audit logging, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -3255,29 +3180,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Sources",
-          "deliverables": "Regulations and guidance",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Regulatory RAG Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Search, Container Apps, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Index",
-          "deliverables": "Section-level index",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Section-Level Regulatory & Interpretation Indexing",
+          "deliverables": "Structure-aware ingestion using Azure AI Document Intelligence to index regulator websites and legal libraries at section level, indexing internal compliance-approved interpretations separately with clear labels.",
+          "notIncluded": "Cleansing or migration of legacy legal archives."
         },
         {
-          "title": "Interface",
-          "deliverables": "Research and Q&A",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Security-Trimmed Research & Citation Interface",
+          "deliverables": "Web-based Q&A interface with Azure AI Search semantic ranking, document ACL security trimming, change monitoring, and answers distinguishing exact regulation citations from approved internal interpretations.",
+          "notIncluded": "Generative applications without retrieval or legal advice sign-off."
         },
         {
-          "title": "Section-Level Indexing",
-          "deliverables": "Structure-aware chunking.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Change Monitoring",
-          "deliverables": "Automatic change detection.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Guardrails, Evaluation & Handover",
+          "deliverables": "Prompt Shields content filtering, retrieval citation verification, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -3374,24 +3294,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Repository",
-          "deliverables": "Approved content",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Search & Embedding Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), Microsoft Foundry embedding deployments, Azure AI Search, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Search",
-          "deliverables": "Semantic search",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Metadata-Governed SharePoint Content Repository",
+          "deliverables": "Structuring of the SharePoint tender and RFP repository with mandatory owner, topic, and review-date metadata so content governance is enforced at source.",
+          "notIncluded": "Rewriting or cleansing historical tender responses."
         },
         {
-          "title": "Content Governance",
-          "deliverables": "Owned, dated content.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Semantic Search & Expiry Filtering",
+          "deliverables": "Configuration of Azure AI Search with semantic ranking, Document Intelligence extraction, document ACL security trimming, and automatic hiding of expired or unreviewed content.",
+          "notIncluded": "Generative applications without retrieval or full CRM bid-management replacement."
         },
         {
-          "title": "Reuse",
-          "deliverables": "Shared with bid tools.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Guardrails, Evaluation & Handover",
+          "deliverables": "Source-citation verification, Deny-mode Azure Policy enforcement, operational runbooks, and knowledge transfer.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -3488,29 +3408,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Matching and explanation",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Financial Agent Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Cosmos DB serverless, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Data",
-          "deliverables": "Transactions",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Read-Only ERP & Bank Feed Integration",
+          "deliverables": "Integration of the agent with ERP ledgers and bank statement feeds strictly through allow-listed read-only tools published on internal API Management.",
+          "notIncluded": "Cleansing of legacy general ledger records or ERP platform upgrades."
         },
         {
-          "title": "Approval",
-          "deliverables": "Approve adjustments",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Rules-First Matching & Exception Explanation",
+          "deliverables": "Build of the Finance Reconciliation Agent on Foundry Agent Service combining deterministic matching rules with AI exception analysis and full reasoning audit trails.",
+          "notIncluded": "Autonomous posting of journal adjustments without human finance approval."
         },
         {
-          "title": "Matching",
-          "deliverables": "Rules first, agent for exceptions.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Audit Trail",
-          "deliverables": "Complete audit trail.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Finance Approval Workflow & Handover",
+          "deliverables": "Power Automate or ERP approval workflow routing proposed adjustments to finance controllers, dedicated Entra agent identity, Deny-mode policies, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -3607,29 +3522,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Source control",
-          "deliverables": "Prompts and test sets",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Evaluation Landing Zone Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), Microsoft Foundry account and project, private Storage Account, Premium Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Evaluation",
-          "deliverables": "Quality and safety",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Versioned Prompts & Golden Test Sets",
+          "deliverables": "Structuring of Git source control for prompt templates, model configurations, and curated evaluation datasets so every change is repeatable, reviewed, and reversible.",
+          "notIncluded": "Training foundation models from scratch or authoring domain-specific test datasets."
         },
         {
-          "title": "Pipelines",
-          "deliverables": "Release gates",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Automated Foundry Evaluation & Regression Gates",
+          "deliverables": "Configuration of Microsoft Foundry evaluation pipelines measuring groundedness, relevance, safety, and regression thresholds on every pull request.",
+          "notIncluded": "Building end-user generative applications or custom UI front ends."
         },
         {
-          "title": "Regression Testing",
-          "deliverables": "Regression gate.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Feedback Loop",
-          "deliverables": "Growing test sets.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "CI/CD Release Pipelines & Drift Monitoring",
+          "deliverables": "GitHub Actions or Azure DevOps release pipelines enforcing evaluation gates prior to promotion, continuous quality/cost telemetry, Deny-mode policies, and operational runbooks.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -3726,29 +3636,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Compute",
-          "deliverables": "GPU capacity",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private GPU Compute & AKS/AML Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint and AKS subnets), private AKS cluster with scale-to-zero GPU node pools, private Azure Machine Learning workspace, dedicated ML storage, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Scheduling",
-          "deliverables": "Fair sharing",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Fair-Share Scheduling & Team Quotas",
+          "deliverables": "Configuration of Kueue job queueing, priority classes, and AML workspace compute quotas to share GPU capacity fairly across data science and AI teams.",
+          "notIncluded": "Azure GPU quota procurement or training foundation models from scratch."
         },
         {
-          "title": "Serving",
-          "deliverables": "Self-hosted models",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Self-Hosted Model Serving (KAITO / vLLM)",
+          "deliverables": "Deployment of KAITO or vLLM inference serving patterns on AKS GPU pools with gateway integration, scale-to-zero idle controls, and private network isolation.",
+          "notIncluded": "Building domain-specific ML models or end-user applications."
         },
         {
-          "title": "Sharing",
-          "deliverables": "Quota with burst.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Self-Hosted Models",
-          "deliverables": "Gateway for all models.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Team Chargeback, Guardrails & Handover",
+          "deliverables": "Per-team usage and cost attribution telemetry, Deny-mode Azure Policy enforcement, operational runbooks, and knowledge transfer.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -3845,29 +3750,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Edge",
-          "deliverables": "Line inference",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Cloud Vision & MLOps Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), Azure AI Vision, Azure Machine Learning workspace, Event Hubs namespace, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Purchase or physical installation of factory cameras, lighting, or edge GPU appliances."
         },
         {
-          "title": "Training",
-          "deliverables": "Model improvement",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Edge-First Line Inference Pipeline",
+          "deliverables": "Configuration of Azure IoT Edge local inference on line-side GPU devices so defect detection runs at production line speed without cloud latency.",
+          "notIncluded": "Changes to the platform landing zone hub or PLC/line hardware modification."
         },
         {
-          "title": "Integration",
-          "deliverables": "Quality records",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Cloud Retraining Loop & Operator Feedback",
+          "deliverables": "Streaming of defect images and telemetry via private Event Hubs into Azure Machine Learning for continuous model retraining and operator-feedback-driven improvement.",
+          "notIncluded": "Replacing core Manufacturing Execution Systems (MES)."
         },
         {
-          "title": "Edge First",
-          "deliverables": "Edge inference.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Learning Loop",
-          "deliverables": "Operator feedback loop.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "MES Integration, Guardrails & Handover",
+          "deliverables": "Integration of inspection quality records with the MES API, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -3964,29 +3864,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Sources",
-          "deliverables": "Articles and tickets",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private IT Knowledge RAG Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Search, Container Apps, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Index",
-          "deliverables": "Knowledge index",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "ITSM Article & Resolved Ticket Ingestion",
+          "deliverables": "Document Intelligence extraction and ingestion pipeline indexing ServiceNow or Jira Service Management knowledge articles and summarised resolved tickets with source citation metadata.",
+          "notIncluded": "Cleansing or migration of legacy ITSM ticket histories."
         },
         {
-          "title": "Interface",
-          "deliverables": "Agent and user access",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Security-Trimmed Search & Teams/ITSM Interface",
+          "deliverables": "Private Azure AI Search with semantic ranking and document ACL security trimming, surfacing cited IT answers in Microsoft Teams and the ITSM portal alongside knowledge-gap reporting to knowledge managers.",
+          "notIncluded": "Generative applications without retrieval or autonomous ticket execution."
         },
         {
-          "title": "Ticket Mining",
-          "deliverables": "Summarised ticket knowledge.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Knowledge Gaps",
-          "deliverables": "Gap reporting.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Guardrails, Evaluation & Handover",
+          "deliverables": "Prompt Shields content filtering, retrieval quality testing, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -4083,29 +3978,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Intake",
-          "deliverables": "Claim documents",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Claims Agent Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Document Intelligence, Cosmos DB serverless, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Agent",
-          "deliverables": "Checks and recommendation",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Claim Document Intake & Evidence Extraction",
+          "deliverables": "Automated intake pipeline using private Azure AI Document Intelligence to extract structured facts and supporting evidence from claim submissions.",
+          "notIncluded": "Cleansing or migration of legacy claims archives."
         },
         {
-          "title": "Tools",
-          "deliverables": "Cover and history",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Policy-Check Agent & Fraud Signal Flagging",
+          "deliverables": "Foundry Agent Service workflow checking policy cover and claims history via allow-listed internal APIM tools, compiling evidence-backed recommendations and flagging fraud indicators for human claims handlers.",
+          "notIncluded": "Autonomous claim settlement or irreversible payout decisions without handler approval."
         },
         {
-          "title": "Recommendation",
-          "deliverables": "Handler decides.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Fraud Signals",
-          "deliverables": "Flag, don't decide.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Agent Identity, Guardrails & Handover",
+          "deliverables": "Dedicated Entra agent identity, Prompt Shields content filtering, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -4202,29 +4092,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Labels",
-          "deliverables": "Classify content",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Sensitivity Label Taxonomy & Default Labelling",
+          "deliverables": "Configuration of a clear Microsoft Purview Information Protection sensitivity label taxonomy (Public, General, Confidential, Highly Confidential) with default labelling and encryption settings.",
+          "notIncluded": "Deployment of Azure AI PaaS workloads or custom Copilot extensions."
         },
         {
-          "title": "DLP",
-          "deliverables": "Restrict processing",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Purview DLP for Microsoft 365 Copilot",
+          "deliverables": "Implementation of Purview Data Loss Prevention policies excluding Highly Confidential labelled content from Microsoft 365 Copilot processing, paired with simulation-first auto-labelling.",
+          "notIncluded": "Tenant-wide manual content migration or legacy file share cleansing."
         },
         {
-          "title": "Insight",
-          "deliverables": "Monitor AI data use",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "DSPM for AI & SharePoint Oversharing Checks",
+          "deliverables": "Enablement of Purview DSPM for AI reporting, SharePoint Data Access Governance oversharing reports, and Entra Conditional Access baselines for Copilot cohorts.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Taxonomy",
-          "deliverables": "Simple taxonomy with defaults.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Copilot DLP",
-          "deliverables": "Label-based exclusion.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Wave Rollout Governance & Handover",
+          "deliverables": "Staged rollout entry criteria, Copilot Dashboard usage/value tracking alignment, configuration acceptance log, and handover runbooks.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -4321,29 +4206,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Extraction",
-          "deliverables": "Clauses, parties, dates",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Contract Intelligence Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Search, Azure AI Document Intelligence, Cosmos DB serverless, Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Analysis",
-          "deliverables": "Compare with playbook",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Clause, Party & Obligation Extraction",
+          "deliverables": "Processing of contracts via private Azure AI Document Intelligence and a clause extraction model to capture parties, key dates, clauses, and post-signature obligations.",
+          "notIncluded": "Cleansing or migration of legacy physical contract archives."
         },
         {
-          "title": "Register",
-          "deliverables": "Contract data and obligations",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Playbook Comparison & Risk Flagging",
+          "deliverables": "Azure OpenAI analysis on Microsoft Foundry comparing extracted clauses against your legal playbook of standard positions and flagging deviations for legal review with source citations.",
+          "notIncluded": "Automated contract execution or replacement of qualified legal sign-off."
         },
         {
-          "title": "Playbook",
-          "deliverables": "Playbook-based scoring.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Obligation Tracking",
-          "deliverables": "Automated reminders.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Contract Register, Obligation Alerts & Handover",
+          "deliverables": "Structured contract register storing extracted data with automated obligation reminders, ACL-trimmed search, Deny-mode Azure Policies, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -4440,29 +4320,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Tracing",
-          "deliverables": "Run history",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Telemetry & Foundry Foundation",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), Log Analytics workspace, workspace-based Application Insights, Microsoft Foundry, Premium Key Vault, and policy guardrails across up to two environments.",
+          "notIncluded": "Building individual custom or Copilot Studio agents."
         },
         {
-          "title": "Audit",
-          "deliverables": "Data access logs",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "OpenTelemetry Agent Run Tracing",
+          "deliverables": "Standardised OpenTelemetry tracing pattern capturing end-to-end agent runs, tool invocations, token consumption, and latency into Application Insights and Microsoft Foundry tracing.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Dashboards",
-          "deliverables": "Operational view",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Purview Agent Data Access Audit",
+          "deliverables": "Configuration of Microsoft Purview audit logging to capture data access by registered agents and link telemetry to Agent 365 ownership records.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Trace Standard",
-          "deliverables": "Common trace standard.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Investigations",
-          "deliverables": "Searchable audit trail.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Operational & Anomaly Dashboards",
+          "deliverables": "Azure Monitor workbooks visualising agent quality, cost, latency, and behavioural anomalies to support security investigations, plus operational runbooks.",
+          "notIncluded": "Post-hypercare managed SOC operations."
         }
       ],
       "applications": [
@@ -4559,29 +4434,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Ingestion",
-          "deliverables": "Sensor data",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private IoT & MLOps Cloud Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), Azure Machine Learning workspace, Event Hubs namespace, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Purchase or physical installation of industrial sensors, gateways, or PLCs."
         },
         {
-          "title": "Models",
-          "deliverables": "Health scores",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Time-Series Sensor Ingestion Pipeline",
+          "deliverables": "Configuration of private IoT Hub / Event Hubs and Eventstreams ingestion to stream and persist equipment telemetry as structured time-series data.",
+          "notIncluded": "Changes to the platform landing zone hub or historical OT database migration."
         },
         {
-          "title": "Action",
-          "deliverables": "Work orders",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Anomaly & Failure Scoring Models",
+          "deliverables": "Development and deployment of explainable anomaly detection and failure prediction models in Azure Machine Learning covering scheduled batch and real-time managed endpoints.",
+          "notIncluded": "Training foundation models or modifying physical plant control loops directly."
         },
         {
-          "title": "Health Score",
-          "deliverables": "Explained health scores.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Work Orders",
-          "deliverables": "Draft work orders.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Maintenance Work-Order Integration & Handover",
+          "deliverables": "Alert integration generating actionable work orders in your maintenance management system (CMMS/EAM), Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -4678,29 +4548,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Voice",
-          "deliverables": "Speech in and out",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Voice AI Landing Zone Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Speech, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Replacement of the existing telephony platform or changes to the platform landing zone hub."
         },
         {
-          "title": "Agent",
-          "deliverables": "Conversation",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Azure AI Speech & Voice Live Conversation",
+          "deliverables": "Configuration of private Azure AI Speech and Voice Live natural-language conversation flows integrated with your existing telephony or Azure Communication Services.",
+          "notIncluded": "Procurement of SIP trunks or telecom carrier contracts."
         },
         {
-          "title": "Telephony",
-          "deliverables": "Call handling",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Shared Back-Office Tools & Context-Preserving Transfer",
+          "deliverables": "Connection of the voice agent to shared digital-channel back-office APIs via internal API Management with verified caller identity checks and context-preserving handover to human agents.",
+          "notIncluded": "Cleansing of legacy CRM records or bespoke contact-centre hardware upgrades."
         },
         {
-          "title": "Containment",
-          "deliverables": "Resolve or route with context.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Identity",
-          "deliverables": "Verified actions only.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Transcript Redaction, AI Disclosure & Handover",
+          "deliverables": "Automated caller AI disclosure, personal and payment data redaction from call recordings and transcripts, Prompt Shields, Deny-mode policies, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -4797,34 +4662,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Capture",
-          "deliverables": "Document intake",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Document Processing Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint and Container Apps subnets), Azure AI Document Intelligence, Microsoft Foundry, Container Apps, private Storage Account, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Extraction",
-          "deliverables": "Field extraction",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Multi-Channel Document Intake & Field Extraction",
+          "deliverables": "Automated intake from email, upload portals, or scanners using prebuilt and custom Azure AI Document Intelligence models alongside GPT-4o to extract structured invoice and form fields.",
+          "notIncluded": "Procurement of physical scanning hardware or cleansing of legacy ERP master data."
         },
         {
-          "title": "Validation",
-          "deliverables": "Checks against master data",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Business-Rule Validation & Confidence Routing",
+          "deliverables": "Validation of extracted fields against business rules and ERP master data, enabling straight-through API integration above confidence thresholds and routing low-confidence fields to a human review queue.",
+          "notIncluded": "Autonomous posting of unvalidated financial exceptions."
         },
         {
-          "title": "Review",
-          "deliverables": "Exception handling",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Confidence Thresholds",
-          "deliverables": "Straight-through with exceptions.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
-        },
-        {
-          "title": "Integration",
-          "deliverables": "API integration.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Auditability, Guardrails & Handover",
+          "deliverables": "Private network isolation, Entra-only authentication, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -4921,29 +4776,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Conversation and actions",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Service Desk Agent Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Cosmos DB serverless, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Tools",
-          "deliverables": "Fulfil requests",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Top-Ten Request Catalogue & Teams Channel",
+          "deliverables": "Configuration of the IT Service Desk Agent on Foundry Agent Service accessible via Microsoft Teams to handle the top ten routine IT requests end to end.",
+          "notIncluded": "Copilot Studio low-code agents or replacement of the underlying ITSM platform."
         },
         {
-          "title": "Channel",
-          "deliverables": "User access",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Allow-Listed ITSM, Graph & Intune Actions",
+          "deliverables": "Publication of allow-listed ITSM, Microsoft Graph, and Intune API tools behind internal API Management, logging every conversation as an ITSM ticket and enforcing manager approval for access changes.",
+          "notIncluded": "Unattended privileged role assignments or unrestricted administrative actions."
         },
         {
-          "title": "Request Catalogue",
-          "deliverables": "Start with top ten requests.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Approvals",
-          "deliverables": "Manager approval for access.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Agent Identity, Guardrails & Handover",
+          "deliverables": "Dedicated Entra agent identity, Prompt Shields content filtering, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -5040,29 +4890,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Source control",
-          "deliverables": "Solution versions",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Source Control & Solution Packaging Pattern",
+          "deliverables": "Configuration of Azure DevOps or GitHub repositories per business area with a standardised one-managed-solution-per-agent packaging model for Copilot Studio agents.",
+          "notIncluded": "Deployment of Azure AI Foundry pro-code workloads or non-agent Power Apps."
         },
         {
-          "title": "Pipelines",
-          "deliverables": "Promotion",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Power Platform Managed Environments & DLP",
+          "deliverables": "Structuring of separate development, test, and production Power Platform Managed Environments with environment-level Data Loss Prevention policies and private VNet connectivity where available.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Testing",
-          "deliverables": "Conversation tests",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Automated Promotion Pipelines & Deployment Settings",
+          "deliverables": "Implementation of Power Platform pipelines promoting solutions from dev through test to production with environment-specific deployment settings files for connection references and two-party release approvals.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Solution Packaging",
-          "deliverables": "Solution per agent.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Release Approval",
-          "deliverables": "Two-party approval.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Automated Conversation Testing & Handover",
+          "deliverables": "Configuration of the Copilot Studio test framework to run automated conversation regression tests prior to release, plus handover runbooks.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -5154,24 +4999,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Conversation",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Power Platform Environment & Governance Setup",
+          "deliverables": "Configuration of separate development, test, and production Power Platform Managed Environments with DLP policies and Git solution packaging for Copilot Studio agents.",
+          "notIncluded": "Pro-code Azure Foundry agents or Power Apps without agents."
         },
         {
-          "title": "Data",
-          "deliverables": "Business records",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Dataverse & Dynamics 365 Conversational Agent",
+          "deliverables": "Build of a Copilot Studio agent grounded in Dataverse and Dynamics 365 business records with user-context access enforcement.",
+          "notIncluded": "Changes to the platform landing zone or cleansing of legacy Dynamics 365 records."
         },
         {
-          "title": "Security",
-          "deliverables": "User-context access.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Security-Role Enforcement & Business Process Actions",
+          "deliverables": "Configuration of Dataverse security roles ensuring users only access entitled records, alongside actions invoking existing approved business processes.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Actions",
-          "deliverables": "Reuse business processes.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Dataverse Audit Logging & Handover",
+          "deliverables": "Enablement of Dataverse audit logging for all agent interactions and data access, Power Platform release pipeline setup, and operational handover.",
+          "notIncluded": "Post-hypercare managed support."
         }
       ],
       "applications": [
@@ -5268,29 +5113,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Workspaces",
-          "deliverables": "Engineering and ML",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "VNet-Injected Databricks Landing Zone",
+          "deliverables": "Infrastructure-as-code deployment (Terraform or Bicep) of spoke VNet (private endpoint and Databricks host/container subnets), Premium Azure Databricks workspaces per environment with VNet injection and no public IP, ADLS Gen2 storage, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Governance",
-          "deliverables": "Access and lineage",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Unity Catalog Governance & Medallion Lakehouse",
+          "deliverables": "Configuration of Unity Catalog metastore and per-environment catalogues governing all Delta tables and ML models across bronze, silver, and gold medallion layers.",
+          "notIncluded": "Migration of all legacy data warehouses outside agreed priority AI use cases."
         },
         {
-          "title": "Storage",
-          "deliverables": "Delta tables",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Cluster Cost Policies & Private Connectivity",
+          "deliverables": "Implementation of Databricks cluster policies controlling compute sizing and auto-termination, NoAzureDatabricksRules NSGs, Private Link access, and Entra-only storage authentication.",
+          "notIncluded": "Source system data cleansing or authoring of organisational data policies."
         },
         {
-          "title": "Network",
-          "deliverables": "Private Databricks.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Unity Catalog",
-          "deliverables": "Central governance.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Policy Guardrails & Operational Handover",
+          "deliverables": "Assignment of the Devopstrio AI Landing Zone policy initiative (Audit in dev/test, Deny in prod), monthly budget alerts, and operational runbooks.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -5387,24 +5227,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Assessment tooling",
-          "deliverables": "Configuration evidence",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Read-Only AI Landing Zone Telemetry Discovery",
+          "deliverables": "Non-intrusive read-only inspection across your Azure AI subscriptions using Azure Resource Graph queries, Azure Advisor, Defender for Cloud secure score, and Azure Policy compliance exports.",
+          "notIncluded": "Modifications to live landing zone subscriptions, networking, or workloads."
         },
         {
-          "title": "Report",
-          "deliverables": "Prioritised results",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Five-Area CAF & Well-Architected Review",
+          "deliverables": "Structured technical evaluation across Strategy, Platform, Security, Operations, and Governance against Microsoft Cloud Adoption Framework (CAF) AI scenario and Well-Architected guidance.",
+          "notIncluded": "Microsoft 365 Copilot assessments or custom foundation model training."
         },
         {
-          "title": "Assessment Scope",
-          "deliverables": "Seven-area review.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Risk-Prioritised Findings Register & Power BI View",
+          "deliverables": "Consolidated findings register backed by configuration evidence, ranked operational risks, and an interactive Power BI health-check summary.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Remediation",
-          "deliverables": "Prioritised backlog.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Actionable Remediation Backlog & IaC Guidance",
+          "deliverables": "Prioritised remediation roadmap (quick wins, 90 days, 12 months) structured as ready-to-execute backlog items and recommended IaC pattern changes.",
+          "notIncluded": "Hands-on implementation of remediation changes or ongoing managed support."
         }
       ],
       "applications": [
@@ -5496,29 +5336,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Mail access",
-          "deliverables": "Read and draft emails",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Email Triage Landing Zone",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Premium Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Classifier",
-          "deliverables": "Category, urgency, draft",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Microsoft Graph Shared Mailbox Integration",
+          "deliverables": "Integration with shared mailboxes via Microsoft Graph to ingest inbound emails, route classified messages to designated team folders via Logic Apps, and save draft replies back to the mailbox.",
+          "notIncluded": "Autonomous email sending without human review or legacy mailbox migration."
         },
         {
-          "title": "Routing",
-          "deliverables": "Move to team folders",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Confidence-Based Classification & Draft-Only Replies",
+          "deliverables": "Azure OpenAI classification of category and urgency with confidence-based routing thresholds and draft-only reply generation clearly marked for staff review.",
+          "notIncluded": "Enterprise document RAG, autonomous agents, or model fine-tuning."
         },
         {
-          "title": "Classification",
-          "deliverables": "Confidence-based routing.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Drafts",
-          "deliverables": "Draft only, never auto-send.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Audit Logging, Guardrails & Handover",
+          "deliverables": "Prompt Shields content filtering, restricted-access prompt/response audit logs, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -5615,24 +5450,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Workflow",
-          "deliverables": "Request and approval",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Agent Request & Risk-Tiered Approval Workflow",
+          "deliverables": "Configuration of a structured intake and approval workflow (Power Automate or ServiceNow) capturing agent purpose, platform, data classification, risk tier, and named owner before publishing.",
+          "notIncluded": "Building individual custom or Copilot Studio agents."
         },
         {
-          "title": "Registry",
-          "deliverables": "Agent records",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Central Agent Registry (Agent 365 / Dataverse)",
+          "deliverables": "Setup of Microsoft Agent 365 and Dataverse as the single agent inventory with mandatory ownership and review-date metadata, restricting publishing rights to approved makers.",
+          "notIncluded": "Deployment of Azure PaaS infrastructure or changes to the platform landing zone."
         },
         {
-          "title": "Lifecycle Stages",
-          "deliverables": "Six-stage lifecycle.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Six-Stage Lifecycle & Automated Suspension",
+          "deliverables": "Implementation of the six-stage lifecycle (Requested, Approved, Published, Under Review, Suspended, Retired) with quarterly owner attestations and automatic suspension when unowned or unused for 90 days.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Retirement",
-          "deliverables": "Automatic suspension.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Entra Identity Governance & Handover",
+          "deliverables": "Integration with per-agent Entra identities, Conditional Access, Purview audit logging, and handover of lifecycle operational runbooks.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -5729,29 +5564,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Conversation",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Power Platform Managed Environments & ALM",
+          "deliverables": "Configuration of separate development, test, and production Power Platform Managed Environments with DLP policies, Git solution packaging, and Power Platform release pipelines.",
+          "notIncluded": "Pro-code Azure Foundry agents or Power Apps without agents."
         },
         {
-          "title": "Knowledge",
-          "deliverables": "Policies",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "HR Policy Knowledge & Data-Driven Topics",
+          "deliverables": "Build of a Copilot Studio HR self-service agent in Microsoft Teams grounded in approved SharePoint HR policy libraries across a data-driven topic list.",
+          "notIncluded": "Cleansing or rewriting of legacy SharePoint HR policy documents."
         },
         {
-          "title": "Actions",
-          "deliverables": "Transactions",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Authenticated HR Transactions & Case Escalation",
+          "deliverables": "Integration with HR system connectors enabling simple self-service transactions with mandatory user authentication for personal requests and automatic HR case creation for unresolved questions.",
+          "notIncluded": "Changes to the platform landing zone or replacement of core HRIS platforms."
         },
         {
-          "title": "Topics",
-          "deliverables": "Data-driven topic list.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Transactions",
-          "deliverables": "Simple transactions first.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Conversation Testing & Operational Handover",
+          "deliverables": "Automated Copilot Studio conversation testing, environment deployment settings files, and handover runbooks.",
+          "notIncluded": "Authoring of organisational HR policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -5848,24 +5678,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Discovery",
-          "deliverables": "AI inventory",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Defender for Cloud AI-SPM Discovery",
+          "deliverables": "Read-only discovery of AI subscriptions, model endpoints, and workloads using Defender for Cloud AI Security Posture Management (AI-SPM), Sentinel/Defender alerts, and PyRIT / AI red-teaming results.",
+          "notIncluded": "Modifications to live Azure AI workloads or platform landing zone subscriptions."
         },
         {
-          "title": "Assessment",
-          "deliverables": "Findings",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Six-Domain AI Security Baseline Review",
+          "deliverables": "Structured technical evaluation across Identity, Network, Data, Models, Applications, and Monitoring against Zero Trust and Devopstrio AI security baselines.",
+          "notIncluded": "Microsoft 365 Copilot content permission remediation."
         },
         {
-          "title": "Coverage",
-          "deliverables": "Six-area review.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Priority AI Workload Threat Modelling",
+          "deliverables": "Facilitated threat modelling over priority AI applications and agent workflows covering prompt injection, tool misuse, data leakage, and credential exposure.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Prioritisation",
-          "deliverables": "Risk-ranked plan.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Risk-Ranked Findings & Remediation Roadmap",
+          "deliverables": "Consolidated findings register with supporting evidence, ranked security risks, and a prioritised remediation roadmap presented to security and engineering leadership.",
+          "notIncluded": "Hands-on implementation of security fixes or ongoing managed SOC support."
         }
       ],
       "applications": [
@@ -5957,29 +5787,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Gateway",
-          "deliverables": "Policy enforcement",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Secure AI Gateway Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint and internal APIM subnets), internal API Management AI gateway, Microsoft Foundry, Azure AI Content Safety, Azure AI Language, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Safety",
-          "deliverables": "Prompt Shields, filters",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Prompt Shields & Input/Document Screening",
+          "deliverables": "Configuration of Azure AI Content Safety with Prompt Shields screening both user prompts and retrieved document inputs against jailbreak and indirect prompt-injection attacks.",
+          "notIncluded": "Security remediation for Microsoft 365 Copilot SharePoint permissions."
         },
         {
-          "title": "PII",
-          "deliverables": "Detection and masking",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Automated PII Detection & Default Masking",
+          "deliverables": "Integration of private Azure AI Language (TextAnalytics) at the gateway to detect and mask personal data by default before prompts reach foundation models.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Layered Controls",
-          "deliverables": "Defence in depth.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Masking",
-          "deliverables": "Mask by default.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Security Logging, Defender Alignment & Handover",
+          "deliverables": "Logging and alerting of blocked requests to Log Analytics and Application Insights, Defender for Cloud AI posture alignment, Deny-mode policies, and operational runbooks.",
+          "notIncluded": "Post-hypercare managed SOC operations."
         }
       ],
       "applications": [
@@ -6076,29 +5901,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Data",
-          "deliverables": "Inputs",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Recommendations & MLOps Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint and Container Apps subnets), Azure Machine Learning workspace, Azure AI Search, Container Apps, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Model",
-          "deliverables": "Recommendations",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Consent-Aware Behaviour & Catalogue Pipeline",
+          "deliverables": "Ingestion and feature pipeline combining customer behaviour and product catalogue data while enforcing customer consent flags before model scoring.",
+          "notIncluded": "Purchase or installation of in-store sensors or cleansing of legacy CRM databases."
         },
         {
-          "title": "Serving",
-          "deliverables": "Low-latency API",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Recommendation Models & Low-Latency Serving API",
+          "deliverables": "Training and deployment of explainable recommendation models in Azure Machine Learning and Azure AI Search served via low-latency Container Apps APIs behind Private Endpoints.",
+          "notIncluded": "Rebuilding customer-facing e-commerce or mobile front ends."
         },
         {
-          "title": "Consent",
-          "deliverables": "Consent-aware serving.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Testing",
-          "deliverables": "A/B tested releases.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "A/B Experimentation, Guardrails & Handover",
+          "deliverables": "A/B testing framework measuring engagement and conversion impact, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -6195,29 +6015,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Orchestrator",
-          "deliverables": "Coordinates agents",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Multi-Agent Platform Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Search, Azure AI Content Safety, Cosmos DB serverless, Container Apps, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Runtime",
-          "deliverables": "Hosts agents",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Agent Orchestration & Reusable Patterns",
+          "deliverables": "Implementation of multi-agent orchestration using Microsoft Agent Framework or Foundry workflows with template patterns enabling teams to compose and reuse agent capabilities.",
+          "notIncluded": "Copilot Studio low-code agents or enterprise-wide Agent 365 governance processes."
         },
         {
-          "title": "Shared services",
-          "deliverables": "Memory and tools",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Shared Memory, Search & Tool Gateway",
+          "deliverables": "Provisioning of shared platform services—private Cosmos DB for shared agent memory/state, private Azure AI Search for shared retrieval, and internal API Management for allow-listed tools and MCP servers.",
+          "notIncluded": "Building domain-specific line-of-business back-end APIs."
         },
         {
-          "title": "Orchestration Patterns",
-          "deliverables": "Template patterns.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Shared Services",
-          "deliverables": "Platform services for agents.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "End-to-End Tracing, Identities & Handover",
+          "deliverables": "Linked end-to-end tracing across all orchestrated agent steps, per-agent Entra identities, Prompt Shields, Deny-mode Azure Policies, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -6314,29 +6129,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Evaluation",
-          "deliverables": "Quality and safety",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Evaluation & Evidence Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), Microsoft Foundry account and project, private Storage Account, Premium Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Fairness",
-          "deliverables": "Group outcomes",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Quality, Safety & Fairness Evaluation Suites",
+          "deliverables": "Configuration of Microsoft Foundry quality/safety evaluations alongside Fairlearn and custom group-outcome fairness tests tailored to use-case metrics.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or legal interpretation of regulations."
         },
         {
-          "title": "Evidence",
-          "deliverables": "Results history",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Release-Gating Pipelines & Versioned Evidence",
+          "deliverables": "Automated evaluation and red-teaming pipelines storing versioned results history in private Storage and surfacing compliance evidence in Power BI to gate production releases.",
+          "notIncluded": "Building end-user generative applications or custom UI front ends."
         },
         {
-          "title": "Metrics",
-          "deliverables": "Use-case-specific metrics.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Thresholds",
-          "deliverables": "Evaluation gate.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "AI Register Alignment & Operational Handover",
+          "deliverables": "Alignment with the AI use-case and model register (purpose, owner, risk tier), UK residency Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -6433,24 +6243,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Catalogue",
-          "deliverables": "Data products and glossary",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Purview Unified Catalog & Governance Domains",
+          "deliverables": "Configuration of Microsoft Purview Unified Catalog structured into business governance domains with glossary terms and published AI data products.",
+          "notIncluded": "Deployment of new Azure data lakehouse infrastructure or legacy warehouse migration."
         },
         {
-          "title": "Classification",
-          "deliverables": "Sensitive data",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Automated Source Scanning & UK Classification",
+          "deliverables": "Setup of weekly Microsoft Purview scans across AI data sources applying system classifications and custom UK sensitive-data identifiers.",
+          "notIncluded": "Source-system data cleansing or authoring of organisational data policies."
         },
         {
-          "title": "Data Products",
-          "deliverables": "Product-based governance.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Lineage, Quality Rules & Governed Access",
+          "deliverables": "Configuration of end-to-end lineage showing which AI workloads consume which data products, per-product data quality rules, and owner-approved access requests in Unified Catalog.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Access Requests",
-          "deliverables": "Governed access.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Operational Runbooks & Handover",
+          "deliverables": "Configuration acceptance log, domain-owner onboarding guide, and knowledge transfer to data governance and engineering teams.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -6547,29 +6357,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Data",
-          "deliverables": "Sales and drivers",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Forecasting & MLOps Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), Azure Machine Learning workspace, private Storage Account, Premium Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Models",
-          "deliverables": "Forecasting",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Multi-Driver Feature & Demand Pipeline",
+          "deliverables": "Integration of historical sales, promotions, seasonality, and external demand drivers from Fabric or Databricks into private Azure Machine Learning pipelines.",
+          "notIncluded": "Cleansing of legacy ERP/POS transaction histories."
         },
         {
-          "title": "Output",
-          "deliverables": "Forecasts",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Weekly Retrained & Explainable Forecasting Models",
+          "deliverables": "Development of demand forecasting models in Azure Machine Learning with automated weekly retraining schedules and driver-level explainability for planners.",
+          "notIncluded": "Training foundation models from scratch or replacing core ERP planning systems."
         },
         {
-          "title": "Granularity",
-          "deliverables": "Store-week forecasts.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Accuracy Tracking",
-          "deliverables": "Continuous accuracy reporting.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Planning Tool Publishing, Guardrails & Handover",
+          "deliverables": "Scheduled batch publishing of forecasts to planning tools and Power BI, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -6666,29 +6471,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Stream",
-          "deliverables": "Transactions",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Streaming & MLOps Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), private Event Hubs namespace, Azure Machine Learning workspace, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Scoring",
-          "deliverables": "Fraud scores",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Near-Real-Time Transaction Scoring Pipeline",
+          "deliverables": "Streaming ingestion of transactions via private Event Hubs scored in near real time by explainable fraud and anomaly models deployed on AML managed endpoints.",
+          "notIncluded": "Replacing core payment gateways or card-processing infrastructure."
         },
         {
-          "title": "Cases",
-          "deliverables": "Investigation",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Investigator Case Creation & Feedback Retraining",
+          "deliverables": "Routing of high-risk transactions with reason codes into your case management system for human investigation, feeding investigator outcomes back into AML retraining loops.",
+          "notIncluded": "Autonomous account freezing without investigator or rule-engine controls."
         },
         {
-          "title": "Scoring",
-          "deliverables": "Rules plus ML.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Investigation",
-          "deliverables": "Explained cases.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Guardrails, Monitoring & Handover",
+          "deliverables": "False-positive/precision monitoring, Deny-mode Azure Policy enforcement, operational runbooks, and knowledge transfer.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -6785,29 +6585,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Budgets",
-          "deliverables": "Alerts",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private AI Gateway & Telemetry Foundation",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint and internal APIM subnets), internal API Management AI gateway, Microsoft Foundry, Premium Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or negotiation of Microsoft commercial agreements."
         },
         {
-          "title": "Quotas",
-          "deliverables": "Token limits",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Subscription & Application Budgets with Three-Level Alerts",
+          "deliverables": "Configuration of Azure Cost Management budgets per AI subscription and application with automated alerts at 50%, 80%, and 100% spend thresholds and mandatory CAF cost-attribution tagging.",
+          "notIncluded": "Building end-user AI applications or modifying enterprise billing agreements."
         },
         {
-          "title": "Policy",
-          "deliverables": "SKU restrictions",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Gateway Token Quotas & Chargeback Metrics",
+          "deliverables": "Enforcement of per-application token limits at the internal API Management AI gateway (hard limits in non-production, agreed limits in production) with token-usage headers and team chargeback telemetry.",
+          "notIncluded": "Authoring of organisational FinOps policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Thresholds",
-          "deliverables": "Three alert levels.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Hard Limits",
-          "deliverables": "Hard limits in non-production.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "SKU Guardrails & Operational Handover",
+          "deliverables": "Azure Policy rules restricting unapproved high-cost model/compute SKUs, Deny-mode enforcement in production, monthly optimisation review playbook, and operational handover.",
+          "notIncluded": "Post-hypercare managed FinOps operations."
         }
       ],
       "applications": [
@@ -6904,29 +6699,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "People",
-          "deliverables": "Expertise",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "AI CoE Operating Model, Roles & Funding Charter",
+          "deliverables": "Definition of AI Centre of Excellence roles, decision rights, demand-intake governance, and funding/chargeback model tailored to your organisation.",
+          "notIncluded": "Build of individual AI solutions or changes to platform landing zone subscriptions."
         },
         {
-          "title": "Process",
-          "deliverables": "Consistent delivery",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Standardised Delivery Patterns & Shared Platform Blueprint",
+          "deliverables": "Establishment of reusable architecture patterns, security/DPIA checklists, and shared AI Landing Zone onboarding standards for product teams.",
+          "notIncluded": "Authoring of legal policies, formal DPIAs, or equality impact assessments."
         },
         {
-          "title": "Platform",
-          "deliverables": "Shared services",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Internal Champions Network & Skills Programme",
+          "deliverables": "Design and launch of an internal AI training curriculum, departmental champions network, and community-of-practice cadence to build lasting internal capability.",
+          "notIncluded": "Mandatory organisation-wide HR compliance training."
         },
         {
-          "title": "Operating Model",
-          "deliverables": "Hub-and-spoke CoE.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Enablement",
-          "deliverables": "Enablement programme.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Readiness Alignment & CoE Handover",
+          "deliverables": "Alignment of CoE backlog intake with CAF readiness checks and handover of CoE governance artefacts and operating playbooks.",
+          "notIncluded": "Ongoing managed CoE staffing post-hypercare."
         }
       ],
       "applications": [
@@ -7023,29 +6813,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Policy",
-          "deliverables": "Residency and control enforcement",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Sovereign & Private AI Landing Zone Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint and internal APIM subnets), Microsoft Foundry, Azure AI Content Safety, internal API Management AI gateway, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Keys",
-          "deliverables": "Customer-managed keys",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "UK-Only Residency & Deny-by-Default Guardrails",
+          "deliverables": "Configuration of strict Azure Policy regulatory initiatives restricting all deployments and model endpoints exclusively to UK South and UK West regions (Audit in dev/test, Deny in prod).",
+          "notIncluded": "Design and build of individual AI use-case applications or M365 Copilot."
         },
         {
-          "title": "Evidence",
-          "deliverables": "Audit reporting",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Customer-Managed Keys (CMK) & Zero Trust Controls",
+          "deliverables": "Implementation of customer-managed key (CMK) encryption patterns using Key Vault / Managed HSM alongside disabled local authentication, Private Endpoints, and Prompt Shields.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or formal regulatory certifications."
         },
         {
-          "title": "Residency Controls",
-          "deliverables": "Deny-by-default outside the UK.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Key Management",
-          "deliverables": "Customer-managed keys throughout.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Regulatory Compliance Mapping & Handover",
+          "deliverables": "Defender for Cloud regulatory compliance dashboards mapping technical controls to target UK frameworks, plus operational runbooks.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -7142,24 +6927,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Guidance and request creation",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Procurement Agent Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Cosmos DB serverless, Key Vault, and central monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Tools",
-          "deliverables": "Requests and supplier checks",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Policy-as-Data & Preferred Supplier Checks",
+          "deliverables": "Configuration of the Procurement and Purchase Request Agent on Foundry Agent Service to validate purchase intent against codified procurement policy thresholds and preferred supplier catalogues.",
+          "notIncluded": "Cleansing of legacy supplier master data or ERP procurement module upgrades."
         },
         {
-          "title": "Policy Engine",
-          "deliverables": "Rules as data.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Procurement API Request Creation & Delegation Routing",
+          "deliverables": "Allow-listed procurement and ERP API tools behind internal API Management creating draft purchase requests with mandatory user confirmation before submission and routing approvals per existing delegation rules.",
+          "notIncluded": "Unattended purchase order approval or Copilot Studio low-code agents."
         },
         {
-          "title": "Request Creation",
-          "deliverables": "User confirms before submit.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Agent Identity, Guardrails & Handover",
+          "deliverables": "Dedicated Entra agent identity, Prompt Shields content filtering, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational procurement policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -7256,29 +7041,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Conversation",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Power Platform Managed Environments & ALM",
+          "deliverables": "Configuration of separate development, test, and production Power Platform Managed Environments with DLP policies, Git solution packaging, and Power Platform release pipelines.",
+          "notIncluded": "Pro-code Azure Foundry agents or Power Apps without agents."
         },
         {
-          "title": "Knowledge",
-          "deliverables": "Answers",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Teams Helpdesk Agent & Guided Self-Help",
+          "deliverables": "Build of a Copilot Studio employee IT helpdesk agent in Microsoft Teams grounded in approved IT knowledge bases to deliver guided self-help fixes.",
+          "notIncluded": "Cleansing or rewriting of legacy IT knowledge articles."
         },
         {
-          "title": "Actions",
-          "deliverables": "Tickets",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "ServiceNow / Jira Ticket Automation & Live Escalation",
+          "deliverables": "Integration with ServiceNow or Jira Service Management connectors for automated ticket creation and status checks, with context-rich escalation to live IT analysts in Teams.",
+          "notIncluded": "Changes to the platform landing zone or replacement of the core ITSM platform."
         },
         {
-          "title": "Self-Help",
-          "deliverables": "Guided fixes.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Escalation",
-          "deliverables": "Context-rich handover.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Conversation Testing & Operational Handover",
+          "deliverables": "Automated Copilot Studio conversation testing, environment deployment settings files, and handover runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -7375,24 +7155,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "SIEM",
-          "deliverables": "Detection and response",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Central AI Telemetry & Log Ingestion Foundation",
+          "deliverables": "Infrastructure-as-code deployment of Log Analytics workspace, Application Insights, spoke VNet, and ingestion of AI workload diagnostic logs and Defender for Cloud AI alerts into Microsoft Sentinel across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Playbooks",
-          "deliverables": "Automated containment",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "AI Misuse & Threat Analytics Rules",
+          "deliverables": "Configuration of Microsoft Sentinel analytics rules detecting AI-specific misuse patterns, prompt-injection spikes, anomalous token consumption, and suspicious model/data access.",
+          "notIncluded": "Security remediation for Microsoft 365 Copilot SharePoint permissions."
         },
         {
-          "title": "Detections",
-          "deliverables": "AI detection pack.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Automated Logic Apps Containment Playbooks",
+          "deliverables": "Implementation of Microsoft Sentinel SOAR playbooks on Logic Apps to automate initial containment actions (alert enrichment, key/access revocation, or team notification) for common AI incidents.",
+          "notIncluded": "Authoring of organisational security policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Response",
-          "deliverables": "Automated containment.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "SOC Runbooks & Operational Handover",
+          "deliverables": "Alignment with Defender for Cloud AI threat protection and Purview DSPM for AI signals, Deny-mode Azure Policies, SOC triage runbooks, and knowledge transfer.",
+          "notIncluded": "24/7 managed SOC monitoring post-hypercare."
         }
       ],
       "applications": [
@@ -7489,29 +7269,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Ingestion",
-          "deliverables": "Live events",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Streaming & Fabric Capacity Foundation",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), private Event Hubs namespace, Microsoft Fabric capacity, and Log Analytics monitoring across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Store",
-          "deliverables": "Time-series data",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Eventstreams & Common Event Schema Ingestion",
+          "deliverables": "Configuration of Eventstreams and private Event Hubs to ingest live operational and telemetry events into a common event schema with Entra-only authentication.",
+          "notIncluded": "Migration of all legacy data warehouses outside agreed real-time use cases."
         },
         {
-          "title": "Actions",
-          "deliverables": "Automated responses",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Eventhouse (KQL) Time-Series Store",
+          "deliverables": "Provisioning of Microsoft Fabric Eventhouse (KQL) databases and domain-aligned workspaces storing and querying high-frequency time-series event data.",
+          "notIncluded": "Source-system data cleansing or authoring of organisational data policies."
         },
         {
-          "title": "Event Model",
-          "deliverables": "Common event schema.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Actions",
-          "deliverables": "Event-driven actions.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Fabric Activator Rules & Operational Handover",
+          "deliverables": "Configuration of Fabric Activator rules triggering automated alerts, workflows, and downstream AI agents as events occur, plus Deny-mode policies and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -7608,24 +7383,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Catalog",
-          "deliverables": "Data and AI assets",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "VNet-Injected Databricks & Storage Foundation",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint and Databricks host/container subnets), Premium Azure Databricks workspace with VNet injection and no public IP, private Storage Account, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Vector search",
-          "deliverables": "Retrieval indexes",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Unity Catalog Governance for Models & AI Assets",
+          "deliverables": "Extension of Unity Catalog metastore and per-environment catalogues to register and govern ML models, feature tables, prompts, and AI functions alongside medallion Delta tables.",
+          "notIncluded": "Migration of all legacy data warehouses outside agreed AI use cases."
         },
         {
-          "title": "Asset Types",
-          "deliverables": "One catalogue for AI assets.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Permission-Aware Databricks Vector Search",
+          "deliverables": "Configuration of Databricks Vector Search retrieval indexes governed directly by Unity Catalog access permissions and end-to-end lineage linking data, features, and models.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Grants",
-          "deliverables": "Group-based access.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Policy Guardrails & Operational Handover",
+          "deliverables": "NoAzureDatabricksRules Private Link NSG isolation, Deny-mode Azure Policy enforcement, monthly budget alerts, and operational runbooks.",
+          "notIncluded": "Post-hypercare managed service operations."
         }
       ],
       "applications": [
@@ -7722,29 +7497,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Platform",
-          "deliverables": "Channels and routing",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Dynamics 365 Contact Centre Channel & Routing Setup",
+          "deliverables": "Configuration of voice and digital channels in Dynamics 365 contact centre with intelligent intent-based routing and transparent AI disclosure with human handover.",
+          "notIncluded": "Replacement of existing telephony carriers or changes to the platform landing zone."
         },
         {
-          "title": "AI",
-          "deliverables": "Assist and summaries",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Copilot in Dynamics 365 Agent Assist & Summaries",
+          "deliverables": "Enablement of Copilot in Dynamics 365 to provide real-time agent assistance, knowledge suggestions, and structured contact summaries.",
+          "notIncluded": "Bespoke Azure AI Foundry custom agent development."
         },
         {
-          "title": "Reporting",
-          "deliverables": "Service metrics",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Transcript Redaction & Retention Alignment",
+          "deliverables": "Configuration of call recording and transcript retention settings with automated personal and payment data redaction aligned to UK GDPR and DPIA controls.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Routing",
-          "deliverables": "Intent-based routing.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Agent Assist",
-          "deliverables": "Copilot assist.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Power BI Service & AI Impact Reporting",
+          "deliverables": "Delivery of Power BI dashboards tracking contact-centre service levels, wait-time reductions, and Copilot adoption impact, plus operational handover.",
+          "notIncluded": "Post-hypercare managed contact-centre operations."
         }
       ],
       "applications": [
@@ -7954,29 +7724,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Inventory",
-          "deliverables": "Apps, flows, agents",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Power Platform CoE Starter Kit Deployment",
+          "deliverables": "Deployment and configuration of the Power Platform CoE Starter Kit providing central IT visibility of all apps, flows, and Copilot Studio agents across the tenant.",
+          "notIncluded": "Pro-code Azure Foundry agents or building individual business use-case agents."
         },
         {
-          "title": "Controls",
-          "deliverables": "Governance",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Three-Tier Managed Environments & DLP Strategy",
+          "deliverables": "Implementation of a three-tier environment strategy (development, test, production) using Managed Environments and tiered Data Loss Prevention policies.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Community",
-          "deliverables": "Maker support",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "ALM & Maker Onboarding Community",
+          "deliverables": "Setup of maker onboarding workflows, Teams/SharePoint maker support hub, and Power Platform ALM pipelines with deployment settings and approvals.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Environment Strategy",
-          "deliverables": "Three-tier environments.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Maker Support",
-          "deliverables": "Maker enablement programme.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Governance Runbooks & Handover",
+          "deliverables": "Configuration acceptance log, maker enablement guide, and knowledge transfer to platform administrators.",
+          "notIncluded": "Post-hypercare managed CoE administration."
         }
       ],
       "applications": [
@@ -8073,24 +7838,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Chat",
-          "deliverables": "Staff AI chat",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Copilot Chat Enterprise Data Protection Setup",
+          "deliverables": "Enablement of Microsoft 365 Copilot Chat with enterprise data protection across the workforce, configuring web grounding and approved-agent policies.",
+          "notIncluded": "Deployment of Azure AI workloads or custom Copilot extensions."
         },
         {
-          "title": "Controls",
-          "deliverables": "Shadow AI control",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Shadow AI Monitoring & Blocking (Defender for Cloud Apps)",
+          "deliverables": "Configuration of Defender for Cloud Apps policies to discover, monitor, and block unsanctioned public generative AI sites, guiding staff onto sanctioned Copilot Chat.",
+          "notIncluded": "Procurement of M365/Defender licences or legacy file share migrations."
         },
         {
-          "title": "Configuration",
-          "deliverables": "Policy-aligned settings.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Purview DLP, Labels & Conditional Access Alignment",
+          "deliverables": "Verification of Purview sensitivity labels, Copilot DLP exclusions for Highly Confidential content, SharePoint oversharing reports, and Entra Conditional Access baselines.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Shadow AI",
-          "deliverables": "Sanctioned tools only.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Staged Rollout Waves & Handover",
+          "deliverables": "Three-wave rollout plan (champions, low-risk teams, organisation-wide), usage and sentiment tracking setup, and operational handover.",
+          "notIncluded": "Post-hypercare managed IT support."
         }
       ],
       "applications": [
@@ -8187,24 +7952,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Records",
-          "deliverables": "Published records",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Algorithmic Transparency Template & Standard Setup",
+          "deliverables": "Configuration of structured public-sector algorithmic transparency templates aligned to plain-language public explanation standards and UK GDPR accountability.",
+          "notIncluded": "Deployment of Azure AI PaaS workloads or changes to the platform landing zone."
         },
         {
-          "title": "Source",
-          "deliverables": "Technical details",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "AI Register Integration & Technical Sourcing",
+          "deliverables": "Mapping of technical metadata (purpose, owner, risk tier, data sources, evaluation evidence) directly from the central AI use-case and model register into transparency records.",
+          "notIncluded": "Legal interpretation of statutory regulations or authoring of formal DPIAs."
         },
         {
-          "title": "Drafting",
-          "deliverables": "Plain-language records.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Drafting of In-Scope Transparency Records",
+          "deliverables": "Collaborative drafting of plain-language algorithmic transparency records for agreed in-scope public-sector AI tools and automated decision aids.",
+          "notIncluded": "Building or modifying the underlying AI models or applications."
         },
         {
-          "title": "Maintenance",
-          "deliverables": "Change-triggered updates.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Change-Triggered Review Process & Handover",
+          "deliverables": "Definition of change-triggered review workflows ensuring records stay current whenever models, prompts, or data sources change, plus operational handover.",
+          "notIncluded": "Post-hypercare managed publishing operations."
         }
       ],
       "applications": [
@@ -8301,24 +8066,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Monitoring",
-          "deliverables": "Quality and drift",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Model Monitoring Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), private Azure Machine Learning workspace with managed network, dedicated ML storage, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Alerts",
-          "deliverables": "Notifications",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Six-Signal Drift & Generative Quality Monitoring",
+          "deliverables": "Configuration of AML model monitoring and Foundry quality monitoring tracking data drift, prediction drift, feature attribution drift, data quality, generative quality sampling, and cost/latency signals.",
+          "notIncluded": "Training foundation models from scratch or building end-user applications."
         },
         {
-          "title": "Signals",
-          "deliverables": "Six signal types.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Owner-Routed Azure Monitor Alerting",
+          "deliverables": "Automated Azure Monitor alert rules routing degradation and drift notifications directly to named model owners with defined response playbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Response",
-          "deliverables": "Defined response.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Guardrails & Operational Handover",
+          "deliverables": "Deny-mode Azure Policy enforcement, monthly budget alerts, operational runbooks, and knowledge transfer.",
+          "notIncluded": "Post-hypercare managed MLOps support."
         }
       ],
       "applications": [
@@ -8415,29 +8180,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Data",
-          "deliverables": "Inputs",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Pricing & MLOps Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), Azure Machine Learning workspace, private Storage Account, Premium Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Model",
-          "deliverables": "Elasticity and optimisation",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Sales, Stock & Competitor Data Pipeline",
+          "deliverables": "Ingestion and feature-engineering pipeline combining historical sales, inventory positions, and competitor price feeds inside private Storage (Entra ID only).",
+          "notIncluded": "Procurement of third-party competitor pricing feeds or legacy ERP cleansing."
         },
         {
-          "title": "Approval",
-          "deliverables": "Manager sign-off",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Elasticity & Rule-Bound Markdown Models",
+          "deliverables": "Development of explainable price-elasticity and markdown optimisation models in Azure Machine Learning enforcing commercial pricing guardrails (margin floors, brand rules).",
+          "notIncluded": "Autonomous live price updates without pricing-manager approval."
         },
         {
-          "title": "Guardrails",
-          "deliverables": "Rule-bound recommendations.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Approval",
-          "deliverables": "Human approval.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Pricing Tool Approval Integration & Handover",
+          "deliverables": "Integration publishing recommended prices to your pricing tool for mandatory manager sign-off before POS/e-commerce update, Deny-mode policies, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -8534,29 +8294,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Transcription",
-          "deliverables": "Live transcript",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Real-Time Speech & RAG Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Speech, Azure AI Search, Container Apps, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Replacement of the existing telephony platform or changes to the platform landing zone hub."
         },
         {
-          "title": "Assist",
-          "deliverables": "Suggestions and summaries",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Live Call Transcription & Real-Time Knowledge Assist",
+          "deliverables": "Integration of private Azure AI Speech live transcription driving real-time knowledge suggestions from private Azure AI Search during active customer calls.",
+          "notIncluded": "Cleansing or rewriting of legacy knowledge articles."
         },
         {
-          "title": "CRM",
-          "deliverables": "Saved notes",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Structured Call Summaries & CRM Save-Back",
+          "deliverables": "Generation of fixed-format post-call summaries via Microsoft Foundry for mandatory human agent review prior to saving to CRM via secure APIs.",
+          "notIncluded": "Autonomous CRM record updates without agent confirmation."
         },
         {
-          "title": "Suggestions",
-          "deliverables": "Real-time suggestions.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Summaries",
-          "deliverables": "Approved summaries.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Transcript Redaction, Guardrails & Handover",
+          "deliverables": "Automated personal and payment data redaction from transcripts, Prompt Shields, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -8653,29 +8408,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Transcription",
-          "deliverables": "Call transcripts",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Call Analytics Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint subnet), private Azure AI Speech, Azure AI Language, Microsoft Foundry, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Replacement of existing telephony platforms or changes to the platform landing zone hub."
         },
         {
-          "title": "Scoring",
-          "deliverables": "QA and compliance",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Batch Call Transcription & PII/PCI Redaction",
+          "deliverables": "Automated batch transcription of recorded calls via private Azure AI Speech paired with private Azure AI Language redaction of personal and payment data.",
+          "notIncluded": "Procurement of call-recording storage hardware or legacy archive migration."
         },
         {
-          "title": "Reporting",
-          "deliverables": "Coaching insight",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Automated QA & Compliance Scorecard Evaluation",
+          "deliverables": "Azure OpenAI evaluation on Microsoft Foundry scoring 100% of calls against your existing quality assurance and compliance scorecards to detect breaches rapidly.",
+          "notIncluded": "Authoring of organisational QA policies, DPIAs, or HR disciplinary workflows."
         },
         {
-          "title": "Scorecards",
-          "deliverables": "Existing scorecards.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Coaching",
-          "deliverables": "Coaching-focused output.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Coaching Power BI Dashboards & Handover",
+          "deliverables": "Coaching-focused Power BI reporting surfacing compliance flags and agent coaching insights, Deny-mode Azure Policies, and operational runbooks.",
+          "notIncluded": "Post-hypercare managed QA operations."
         }
       ],
       "applications": [
@@ -8772,29 +8522,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Metering",
-          "deliverables": "Token usage",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private AI Gateway & Telemetry Foundation",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint and internal APIM subnets), internal API Management AI gateway, Microsoft Foundry, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub or negotiation of Microsoft commercial agreements."
         },
         {
-          "title": "Costs",
-          "deliverables": "Billing data",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Per-Application Gateway Token Metering",
+          "deliverables": "Configuration of the internal API Management AI gateway to meter token consumption per calling application, team, and model deployment.",
+          "notIncluded": "Building end-user generative AI applications."
         },
         {
-          "title": "Reporting",
-          "deliverables": "Chargeback reports",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Cost Export Integration & Shared-Cost Allocation",
+          "deliverables": "Automated combination of Azure Cost Management billing exports with APIM token metrics in private Storage, allocating shared AI infrastructure costs proportionally by usage.",
+          "notIncluded": "Replacing core enterprise ERP general ledger or billing systems."
         },
         {
-          "title": "Allocation Rules",
-          "deliverables": "Usage-based allocation.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Reports",
-          "deliverables": "Monthly chargeback.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Power BI Chargeback Reporting & Handover",
+          "deliverables": "Monthly FinOps chargeback and showback Power BI dashboards attributing every AI cost to a team, application, and business case, plus Deny-mode policies and operational runbooks.",
+          "notIncluded": "Authoring of organisational FinOps policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -8891,29 +8636,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Data",
-          "deliverables": "Usage",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Read-Only AI Usage & Billing Evidence Gathering",
+          "deliverables": "Non-intrusive read-only collection of Azure Cost Management exports, API Management token metrics, Provisioned Throughput Unit (PTU) utilisation telemetry, and recent invoices.",
+          "notIncluded": "Modifications to live production deployments or negotiation of Microsoft commercial agreements."
         },
         {
-          "title": "Capacity",
-          "deliverables": "Reserved throughput",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Pay-As-You-Go vs. Provisioned Throughput Modelling",
+          "deliverables": "Technical and commercial analysis of token demand profiles per model and application, comparing pay-as-you-go against baseline-plus-spillover PTU pricing scenarios.",
+          "notIncluded": "Changes to platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Routing",
-          "deliverables": "Spillover",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Gateway Spillover Routing & Sizing Design",
+          "deliverables": "Specification of API Management spillover routing patterns pairing right-sized provisioned throughput for steady baseline traffic with pay-as-you-go overflow.",
+          "notIncluded": "Hands-on production deployment of new Azure resources (available as follow-on implementation)."
         },
         {
-          "title": "Sizing",
-          "deliverables": "Baseline plus spillover.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Review",
-          "deliverables": "Monthly review.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Optimisation Roadmap & Monthly Review Cadence",
+          "deliverables": "Findings register, five-area FinOps readiness evaluation, executive presentation, and a repeatable monthly capacity-review playbook.",
+          "notIncluded": "Authoring of organisational FinOps policies, DPIAs, or ongoing managed FinOps operations."
         }
       ],
       "applications": [
@@ -9005,29 +8745,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "AI gateway",
-          "deliverables": "Single entry point for models",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Internal AI Gateway & Foundry Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment (Terraform or Bicep) of spoke VNet (private endpoint and internal APIM subnets), internal API Management AI gateway, Microsoft Foundry, Premium Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Backends",
-          "deliverables": "Load-balanced model pool",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Entra Token Authentication & Reusable Policy Fragments",
+          "deliverables": "Configuration of Entra ID token authentication for callers, managed-identity model access (eliminating shared API keys), and reusable APIM policy fragments for token rate limits and metrics.",
+          "notIncluded": "Design or build of individual downstream AI use-case applications."
         },
         {
-          "title": "Metrics",
-          "deliverables": "Token use per application",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Multi-Deployment Load Balancing & Failover",
+          "deliverables": "Configuration of load-balanced Microsoft Foundry model backend pools with automated failover, Prompt Shields, and content filtering across UK South regional deployments.",
+          "notIncluded": "Training custom foundation models or Microsoft 365 Copilot."
         },
         {
-          "title": "Gateway Policies",
-          "deliverables": "Reusable policy fragments.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Onboarding Applications",
-          "deliverables": "One API product per application.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Self-Service App Onboarding & Handover",
+          "deliverables": "One-API-product-per-application onboarding template, Deny-mode Azure Policy enforcement, monthly budget alerts, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -9119,24 +8854,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Ingestion",
-          "deliverables": "Extract text and layout",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Document Summarisation Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Document Intelligence, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Summariser",
-          "deliverables": "Section and final summaries",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Layout-Aware Ingestion & Sectioned Summarisation",
+          "deliverables": "Ingestion pipeline using private Blob Storage and Azure AI Document Intelligence to extract text and layout, summarising long documents in sections before combining them into a unified summary.",
+          "notIncluded": "Enterprise-wide document RAG search or autonomous action agents."
         },
         {
-          "title": "Summary Templates",
-          "deliverables": "Configurable templates per document type.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Configurable Templates & Page-Number Citations",
+          "deliverables": "Support for customer-specific summary templates and side-by-side review views linking every summary statement back to exact source page numbers with AI-generated disclosures.",
+          "notIncluded": "Model fine-tuning unless separately agreed."
         },
         {
-          "title": "Review",
-          "deliverables": "Side-by-side review.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Gateway Controls, Audit & Handover",
+          "deliverables": "Internal API Management AI gateway routing, Prompt Shields content filtering, restricted-access audit logs, Deny-mode policies, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -9233,29 +8968,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Answer library",
-          "deliverables": "Past answers and content",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Bid Assistant Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Azure AI Search, Container Apps, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Drafting",
-          "deliverables": "Question-by-question drafts",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Curated Past-Response Answer Library",
+          "deliverables": "Indexing of approved historical proposals and boilerplate responses into private Azure AI Search with metadata tags so drafts reuse only vetted content.",
+          "notIncluded": "Cleansing or rewriting legacy unapproved proposal archives."
         },
         {
-          "title": "Output",
-          "deliverables": "Formatted proposal",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Question-by-Question Drafting & Word Export",
+          "deliverables": "Assistant workflow generating per-question proposal drafts with source citations, explicit flagging of information gaps, and formatted export to customer Word templates under bid-manager control.",
+          "notIncluded": "Autonomous bid submission without human bid-manager review."
         },
         {
-          "title": "Answer Library",
-          "deliverables": "Curated answer library.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Drafting Flow",
-          "deliverables": "Draft with sources and gaps flagged.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Guardrails, Evaluation & Handover",
+          "deliverables": "Internal API Management AI gateway, Prompt Shields content filtering, restricted audit logs, Deny-mode Azure Policies, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -9352,29 +9082,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Semantic layer",
-          "deliverables": "Business definitions",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Semantic & Query Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Microsoft Fabric capacity, Container Apps, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Query agent",
-          "deliverables": "Question to query",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Governed Semantic Model & Row-Level Security",
+          "deliverables": "Structuring of a governed Fabric / Power BI semantic model with business metric definitions and strict Row-Level Security (RLS) enforced on every generated query.",
+          "notIncluded": "Migration of all legacy data warehouses outside agreed reporting domains."
         },
         {
-          "title": "Interface",
-          "deliverables": "Chat with results",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Natural-Language Query Agent & Transparent SQL/DAX",
+          "deliverables": "Configuration of a query agent on Fabric data agent / Foundry translating natural-language questions into governed queries and displaying the generated query alongside results in Teams or web chat.",
+          "notIncluded": "Autonomous write-back to transactional ERP/CRM databases."
         },
         {
-          "title": "Semantic Model",
-          "deliverables": "Governed semantic layer.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Transparency",
-          "deliverables": "Explainable answers.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Guardrails, Audit & Handover",
+          "deliverables": "Internal API Management AI gateway, Prompt Shields content filtering, restricted audit logs, Deny-mode Azure Policies, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -9471,29 +9196,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Triage and diagnosis",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private SRE Agent Landing Zone Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Microsoft Foundry, Cosmos DB serverless, Container Apps, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Tools",
-          "deliverables": "Diagnostics and fixes",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Observability & Runbook Diagnostic Tools",
+          "deliverables": "Allow-listed API Management integrations enabling the SRE agent to query Azure Monitor metrics, Log Analytics logs, and operational runbooks to produce automated incident diagnoses.",
+          "notIncluded": "Rebuilding core ITSM platforms or replacing existing monitoring agents."
         },
         {
-          "title": "Channel",
-          "deliverables": "On-call collaboration",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Approved-Runbook Remediation & ITSM Timelines",
+          "deliverables": "Build of the SRE and Incident Response Agent on Foundry Agent Service / Azure SRE Agent supporting Teams/ITSM collaboration, writing incident timelines to ITSM records, and requiring on-call engineer approval for any remediation.",
+          "notIncluded": "Unattended production changes without explicit on-call human approval."
         },
         {
-          "title": "Diagnosis",
-          "deliverables": "Automated incident summary.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Remediation",
-          "deliverables": "Approved runbooks only.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Agent Identity, Guardrails & Handover",
+          "deliverables": "Dedicated Entra agent identity, Prompt Shields content filtering, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -9590,29 +9310,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Coding agent",
-          "deliverables": "Automated changes",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "GitHub Copilot Coding Agent & PR-Only Guardrails",
+          "deliverables": "Configuration of the GitHub Copilot coding agent operating strictly through pull requests, paired with branch protection, required human reviews, and no direct main-branch commits.",
+          "notIncluded": "Procurement of GitHub Copilot or GitHub Advanced Security licences."
         },
         {
-          "title": "Pipelines",
-          "deliverables": "Build, test, scan",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "GitHub Advanced Security & CI Gate Automation",
+          "deliverables": "Enablement of CodeQL code scanning, secret scanning with push protection, Dependabot updates, and GitHub Actions CI checks running automatically on every AI-generated pull request.",
+          "notIncluded": "Remediation of pre-existing vulnerabilities across legacy applications."
         },
         {
-          "title": "Security",
-          "deliverables": "Scanning",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Supporting Governance Infrastructure & Engineering Enablement",
+          "deliverables": "Provisioning of supporting Log Analytics/App Insights telemetry and structured adoption workshops, engineering champions coaching, and review playbooks across pilot squads.",
+          "notIncluded": "Changes to the platform landing zone hub or mandatory training for non-engineering staff."
         },
         {
-          "title": "Work Types",
-          "deliverables": "Low-risk work first.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Guardrails",
-          "deliverables": "Same controls as people.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Throughput Telemetry & Operational Handover",
+          "deliverables": "Measurement of pull request cycle time, acceptance rates, and security alert trends via Copilot Metrics API and GitHub Insights, plus handover runbooks.",
+          "notIncluded": "Post-hypercare managed DevOps operations."
         }
       ],
       "applications": [
@@ -9709,29 +9424,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Reports",
-          "deliverables": "Oversharing insight",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "SharePoint Oversharing Discovery & Governance Reports",
+          "deliverables": "Configuration of SharePoint Advanced Management Data Access Governance reports identifying broad sharing links, 'Everyone except external users' permissions, and overshared sites.",
+          "notIncluded": "Deployment of Azure AI PaaS workloads or custom Copilot extensions."
         },
         {
-          "title": "Reviews",
-          "deliverables": "Owner attestation",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Site Owner Access Reviews & Restricted Discovery",
+          "deliverables": "Activation of automated site access reviews sent to site owners and Restricted Content Discovery (RCD) hiding high-risk sites from Microsoft 365 Copilot until remediated.",
+          "notIncluded": "Tenant-wide manual file migration or legacy file share cleansing."
         },
         {
-          "title": "Controls",
-          "deliverables": "Hide from Copilot",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Purview Labels, Copilot DLP & Conditional Access",
+          "deliverables": "Alignment of Microsoft Purview sensitivity labels, Copilot DLP exclusion for Highly Confidential content, DSPM for AI, and Entra Conditional Access baselines.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Prioritisation",
-          "deliverables": "Risk-ranked remediation.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Ongoing Hygiene",
-          "deliverables": "Continuous hygiene.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Continuous Hygiene Cadence & Handover",
+          "deliverables": "Risk-ranked remediation playbook, staged rollout wave entry criteria, configuration acceptance log, and operational handover.",
+          "notIncluded": "Post-hypercare managed M365 administration."
         }
       ],
       "applications": [
@@ -9828,29 +9538,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Protection",
-          "deliverables": "Threat detection",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "AI Subscription Telemetry Foundation",
+          "deliverables": "Infrastructure-as-code deployment of Log Analytics workspace, Application Insights, spoke VNet, and policy-driven enablement across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Posture",
-          "deliverables": "Misconfigurations",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Defender for AI Services Threat Protection",
+          "deliverables": "Policy-driven enablement of Microsoft Defender for Cloud threat protection for AI workloads across target AI subscriptions to detect prompt injection, credential abuse, and anomalous model activity.",
+          "notIncluded": "Security remediation for Microsoft 365 Copilot SharePoint permissions."
         },
         {
-          "title": "SIEM",
-          "deliverables": "Alert handling",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Defender CSPM AI Security Posture Management",
+          "deliverables": "Configuration of Defender CSPM AI-SPM to continuously discover AI resources, surface misconfigurations, and align posture with Purview DSPM for AI.",
+          "notIncluded": "Authoring of organisational security policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Rollout",
-          "deliverables": "Policy-driven enablement.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Tuning",
-          "deliverables": "Tuned before go-live.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Sentinel Alert Integration, Tuning & Handover",
+          "deliverables": "Connection of Defender AI alerts into Microsoft Sentinel, pre-go-live alert tuning to reduce noise, Deny-mode Azure Policies, and SOC runbooks.",
+          "notIncluded": "24/7 managed SOC operations post-hypercare."
         }
       ],
       "applications": [
@@ -9947,24 +9652,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Inventory",
-          "deliverables": "Systems and use cases",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "AI System Inventory & Use-Case Discovery",
+          "deliverables": "Read-only review of existing AI registers, policies, evaluation results, and owner interviews to build a complete inventory of AI systems potentially in scope of the EU AI Act.",
+          "notIncluded": "Design or build of production AI workloads or changes to platform landing zones."
         },
         {
-          "title": "Assessment",
-          "deliverables": "Risk categories",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "EU AI Act Risk-Category Classification",
+          "deliverables": "Facilitated classification workshops mapping each inventoried AI system against EU AI Act risk tiers (prohibited, high-risk, limited-risk, minimal-risk) and GPAI obligations.",
+          "notIncluded": "Formal legal interpretation or statutory legal opinions (which remain with Customer legal counsel)."
         },
         {
-          "title": "Classification",
-          "deliverables": "Act-aligned classification.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Obligation Gap Register & Compliance Timeline",
+          "deliverables": "Structured gap assessment against EU AI Act obligations (risk management, data governance, transparency, human oversight, logging) mapped to statutory enforcement deadlines.",
+          "notIncluded": "Authoring of organisational legal policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Obligations",
-          "deliverables": "Obligation plan per system.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Technical Documentation Templates & Roadmap",
+          "deliverables": "Prepared Annex-aligned technical documentation templates, five-area readiness evaluation, and a prioritised compliance roadmap presented to leadership.",
+          "notIncluded": "Post-assessment engineering implementation or ongoing managed compliance."
         }
       ],
       "applications": [
@@ -10056,29 +9761,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Rules",
-          "deliverables": "Checks",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Purview Data Quality & Critical-Element Rules",
+          "deliverables": "Configuration of Microsoft Purview data quality rules (and Great Expectations where applicable) targeting completeness, accuracy, validity, and freshness on critical AI data elements.",
+          "notIncluded": "Migration of all legacy data warehouses outside agreed priority AI use cases."
         },
         {
-          "title": "Pipelines",
-          "deliverables": "Enforcement",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Pipeline Enforcement & Circuit-Breaker Controls",
+          "deliverables": "Integration of automated quality checks into Microsoft Fabric or Data Factory pipelines with circuit-breaker logic that alerts data owners and pauses downstream AI loads on rule failure.",
+          "notIncluded": "Source-system manual data cleansing or changes to platform landing zone subscriptions."
         },
         {
-          "title": "Reporting",
-          "deliverables": "Quality scores",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Data Product Quality Scores in Unified Catalog",
+          "deliverables": "Publication of automated quality scores per data product inside Microsoft Purview Unified Catalog alongside domain ownership and weekly source scans.",
+          "notIncluded": "Authoring of organisational data governance policies, DPIAs, or equality impact assessments."
         },
         {
-          "title": "Critical Elements",
-          "deliverables": "Critical data first.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Circuit Breaker",
-          "deliverables": "Stop bad data early.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Power BI Quality Reporting & Handover",
+          "deliverables": "Power BI quality scorecards tracking trends and rule failures across critical data products, plus operational runbooks and handover.",
+          "notIncluded": "Post-hypercare managed data operations."
         }
       ],
       "applications": [
@@ -10175,24 +9875,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Translation",
-          "deliverables": "Document and text translation",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Translation Landing Zone Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Azure AI Translator, Microsoft Foundry, Container Apps, private Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Glossary",
-          "deliverables": "Approved terminology",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Custom Glossary & Terminology Enforcement",
+          "deliverables": "Configuration of Azure AI Translator with Custom Translator glossaries so translations strictly adhere to approved organisational and sector terminology.",
+          "notIncluded": "Authoring or linguistic verification of source glossaries."
         },
         {
-          "title": "Terminology",
-          "deliverables": "Managed glossaries.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Layout-Preserving Translation & Optional Post-Editing",
+          "deliverables": "Document and text translation pipeline preserving original document formatting alongside optional, risk-based Microsoft Foundry language-model post-editing and review workflows.",
+          "notIncluded": "Enterprise document RAG or autonomous action agents."
         },
         {
-          "title": "Workflow",
-          "deliverables": "Risk-based review.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Gateway Controls, Audit & Handover",
+          "deliverables": "Internal API Management AI gateway routing, Prompt Shields, restricted audit logs, Deny-mode Azure Policies, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -10289,29 +9989,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Crawler",
-          "deliverables": "Public content",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Web RAG & WAF Infrastructure",
+          "deliverables": "Infrastructure-as-code deployment of spoke VNet (private endpoint, internal APIM, and Container Apps subnets), Azure Front Door with WAF, Microsoft Foundry, Azure AI Search, Container Apps, Storage Account, Key Vault, and Log Analytics across up to two environments.",
+          "notIncluded": "Changes to the platform landing zone hub, identity, or management subscriptions."
         },
         {
-          "title": "Assistant",
-          "deliverables": "Answers",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Public Web Page & Help Article Crawler",
+          "deliverables": "Automated Azure Functions / AI Search indexer pipeline crawling and indexing only approved public website pages and help articles with source-page citations.",
+          "notIncluded": "Indexing of internal/authenticated intranets or cleansing of outdated public web copy."
         },
         {
-          "title": "Front end",
-          "deliverables": "Public access",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "WAF-Protected FAQ Assistant & Human Handover",
+          "deliverables": "Website-embedded FAQ assistant protected by Azure Front Door WAF, routing unanswered or complex visitor enquiries seamlessly to live chat or a contact form.",
+          "notIncluded": "Authenticated customer account transactions or backend CRM order writes."
         },
         {
-          "title": "Public Grounding",
-          "deliverables": "Public content only.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Handover",
-          "deliverables": "Seamless human handover.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Guardrails, Evaluation & Handover",
+          "deliverables": "Internal API Management AI gateway, Prompt Shields content filtering, Deny-mode Azure Policy enforcement, and operational runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -10408,29 +10103,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Customer conversation",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Power Platform Managed Environments & ALM",
+          "deliverables": "Configuration of separate development, test, and production Power Platform Managed Environments with DLP policies, Git solution packaging, and Power Platform release pipelines.",
+          "notIncluded": "Pro-code Azure Foundry agents or Power Apps without agents."
         },
         {
-          "title": "Channels",
-          "deliverables": "Public access",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Public Website & Omnichannel Copilot Studio Agent",
+          "deliverables": "Build of a Copilot Studio customer-facing agent embedded on your public website and omnichannel chat, grounded in approved public web content with live-chat handover during opening hours.",
+          "notIncluded": "Changes to the platform landing zone or cleansing of legacy website copy."
         },
         {
-          "title": "Actions",
-          "deliverables": "Transactions",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Authenticated Booking & Order Connectors",
+          "deliverables": "Integration with booking or order APIs requiring mandatory customer authentication before disclosing personal or account-specific information.",
+          "notIncluded": "Rebuilding core e-commerce or booking back-end platforms."
         },
         {
-          "title": "Authentication",
-          "deliverables": "Sign-in for personal data.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Handover",
-          "deliverables": "Seamless handover.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Conversation Testing & Operational Handover",
+          "deliverables": "Automated Copilot Studio conversation testing, environment deployment settings files, and handover runbooks.",
+          "notIncluded": "Authoring of organisational AI policies, DPIAs, or post-hypercare managed support."
         }
       ],
       "applications": [
@@ -10527,24 +10217,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Data",
-          "deliverables": "Usage evidence",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Read-Only M365 Usage & Licence Telemetry Capture",
+          "deliverables": "Non-intrusive read-only collection of Microsoft 365 usage reports, Copilot Dashboard telemetry, licence assignment reports, SharePoint Data Access Governance reports, and Purview label/DLP summaries.",
+          "notIncluded": "Procurement of Microsoft 365 licences or negotiation of Microsoft commercial agreements."
         },
         {
-          "title": "Model",
-          "deliverables": "Licence scenarios",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Role & Department Usage Segmentation",
+          "deliverables": "Analysis of actual Copilot usage patterns by role and department, identifying inactive seats, high-value personas, and candidates for Copilot Chat or pay-as-you-go agents.",
+          "notIncluded": "Changes to platform landing zone subscriptions or Azure AI workloads."
         },
         {
-          "title": "Segmentation",
-          "deliverables": "Usage-based segments.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Five-Area Readiness & Licence Scenario Modelling",
+          "deliverables": "Excel and Power BI scenario modelling comparing full M365 Copilot licences, Copilot Chat, and pay-as-you-go agents alongside five-area readiness checks (Content access, Data protection, Identity, Licensing, Adoption readiness).",
+          "notIncluded": "Hands-on tenant remediation or authoring of organisational AI policies and DPIAs."
         },
         {
-          "title": "Recommendation",
-          "deliverables": "Costed licence plan.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Costed Reallocation Plan & Executive Handover",
+          "deliverables": "Actionable seat reallocation and phased purchasing timeline presented to IT and Finance leadership.",
+          "notIncluded": "Ongoing managed licence administration post-assessment."
         }
       ],
       "applications": [
@@ -10636,29 +10326,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Automated",
-          "deliverables": "Attack simulation",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Threat Model & Red Team Scope",
+          "deliverables": "Target AI application threat modelling, abuse-case definition with security and business stakeholders, and an OWASP LLM Top 10 plus custom test library.",
+          "notIncluded": "Unauthorised testing against third-party external APIs or out-of-scope corporate systems."
         },
         {
-          "title": "Manual",
-          "deliverables": "Business abuse cases",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Automated & Manual Adversarial Testing",
+          "deliverables": "Automated adversarial probing via Microsoft AI Red Teaming Agent and PyRIT alongside manual specialist testing for business-logic and multi-turn abuse.",
+          "notIncluded": "Full-time continuous red team staffing after engagement handover."
         },
         {
-          "title": "Evidence",
-          "deliverables": "Stored results",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Release Evidence & Remediation Retest",
+          "deliverables": "Microsoft Foundry evaluation evidence packs stored for release gating, prioritised remediation guidance, and targeted verification retesting after fixes.",
+          "notIncluded": "Direct code refactoring of application source repositories by the testing team."
         },
         {
-          "title": "Test Library",
-          "deliverables": "OWASP plus custom tests.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Retest",
-          "deliverables": "Fix and retest.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Posture & Telemetry Correlation",
+          "deliverables": "Cross-referencing findings against Defender for Cloud AI-SPM inventory and Sentinel or Defender alert streams to verify detection coverage.",
+          "notIncluded": "24/7 SOC alert triage or ongoing incident response retainer."
         }
       ],
       "applications": [
@@ -10750,24 +10435,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Source",
-          "deliverables": "Current estate",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Estate Assessment & Wave Plan",
+          "deliverables": "Discovery of existing Synapse, SQL, and Power BI workloads, dependency mapping, and a domain-wave migration schedule to Microsoft Fabric.",
+          "notIncluded": "Rewriting upstream ERP or operational source systems."
         },
         {
-          "title": "Target",
-          "deliverables": "Unified platform",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Private Fabric & Storage Foundation",
+          "deliverables": "Provisioning of scalable Microsoft Fabric capacity (F2 baseline), spoke VNet private endpoints, ZRS private storage with Entra ID-only access, and Log Analytics.",
+          "notIncluded": "Procurement of non-Microsoft third-party data warehouse licences."
         },
         {
-          "title": "Wave Planning",
-          "deliverables": "Wave-based migration.",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Pipeline & Semantic Model Migration",
+          "deliverables": "Wave-based migration of data pipelines, lakehouse tables, and semantic models into Fabric with parallel reconciliation checks.",
+          "notIncluded": "Net-new BI report design beyond repointing and validating existing reports."
         },
         {
-          "title": "Validation",
-          "deliverables": "Reconciled cut-over.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Report Cutover & Decommission",
+          "deliverables": "Repointing Power BI reports, automated data parity validation, and controlled decommissioning of legacy Synapse or SQL services after sign-off.",
+          "notIncluded": "Long-term business data stewardship or ongoing report authoring."
         }
       ],
       "applications": [
@@ -10864,29 +10549,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Transcription",
-          "deliverables": "Speech to text",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Private Speech & LLM Platform",
+          "deliverables": "Deployment of spoke VNet subnets, private Azure AI Speech, private Microsoft Foundry (gpt-4o), internal APIM AI gateway, Container Apps, Key Vault, and private Storage.",
+          "notIncluded": "Custom acoustic model training for proprietary hardware microphones."
         },
         {
-          "title": "Notes",
-          "deliverables": "Structured notes and actions",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Consent & Fixed-Structure Drafting",
+          "deliverables": "Explicit participant recording consent workflow and structured transcription-to-summary pipelines producing consistent case notes and action items.",
+          "notIncluded": "Unattended autonomous recording without participant consent verification."
         },
         {
-          "title": "Integration",
-          "deliverables": "Write to case system",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Human-in-the-Loop Case Integration",
+          "deliverables": "Review UI allowing practitioners to edit and approve drafted notes before API write-back to the target case management system.",
+          "notIncluded": "Core schema redesign of the customer's underlying CRM or case database."
         },
         {
-          "title": "Note Structure",
-          "deliverables": "Fixed structure per service.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Review and Save",
-          "deliverables": "Human approval before saving.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Audit Logging & Operational Readiness",
+          "deliverables": "Centralised call logging, consent audit trails, Key Vault secret rotation patterns, and operational handover runbooks.",
+          "notIncluded": "Ongoing 24/7 Level-1 helpdesk support for end users."
         }
       ],
       "applications": [
@@ -10983,29 +10663,24 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Sources",
-          "deliverables": "Technical content",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Multimodal Manual Ingestion",
+          "deliverables": "Document ingestion pipeline using Azure AI Document Intelligence and Azure AI Search with multimodal text and diagram indexing, semantic ranker, and ACL security trimming.",
+          "notIncluded": "Digitisation of illegible handwritten paper archives or physical scanning."
         },
         {
-          "title": "Index",
-          "deliverables": "Text and diagram search",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Safety-Critical Verbatim Grounding",
+          "deliverables": "Private Microsoft Foundry (gpt-4o) and internal APIM AI gateway configured so safety warnings and procedures are quoted verbatim and never paraphrased.",
+          "notIncluded": "Replacing certified regulatory safety sign-off processes."
         },
         {
-          "title": "App",
-          "deliverables": "Field access",
-          "notIncluded": "Data cleansing or migration of source content"
+          "title": "Field App & Offline Cache",
+          "deliverables": "Container Apps backend paired with a Power Apps or mobile field interface featuring local offline caching for low-connectivity engineering sites.",
+          "notIncluded": "Procurement or MDM provisioning of ruggedised field tablets."
         },
         {
-          "title": "Safety Content",
-          "deliverables": "Verbatim safety content.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Offline Use",
-          "deliverables": "Offline cache.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Security & Handover",
+          "deliverables": "Spoke VNet isolation, Key Vault secret management, private Storage Account, and citation-accuracy verification packs.",
+          "notIncluded": "Ongoing authoring or engineering revision of OEM technical manuals."
         }
       ],
       "applications": [
@@ -11102,29 +10777,19 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Tool gateway",
-          "deliverables": "Expose and secure MCP tools",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Internal MCP Gateway & Registry",
+          "deliverables": "Deployment of an internal APIM Tool/MCP Gateway (Developer_1 or Premium_1) with managed identity, token metrics, and Azure API Center as the central tool catalogue.",
+          "notIncluded": "Exposing unauthenticated MCP endpoints directly to the public internet."
         },
         {
-          "title": "MCP servers",
-          "deliverables": "Tool implementations",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Least-Privilege MCP Server Hosting",
+          "deliverables": "Spoke VNet isolation (snet-pe, snet-apim, snet-apps) and Container Apps or Azure Functions hosting narrow, least-privilege MCP servers backed by Key Vault.",
+          "notIncluded": "Rewriting legacy backend enterprise systems that lack APIs."
         },
         {
-          "title": "Registry",
-          "deliverables": "Tool catalogue",
-          "notIncluded": "Data cleansing or migration of source content"
-        },
-        {
-          "title": "Tool Design",
-          "deliverables": "Narrow, least-privilege tools.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Catalogue",
-          "deliverables": "Central tool catalogue.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Per-Agent Allow-Listing & Audit",
+          "deliverables": "Per-agent tool allow-list enforcement and structured call logging capturing both agent identity and end-user identity on every tool invocation.",
+          "notIncluded": "Building custom end-user agent chat interfaces unrelated to tool governance."
         }
       ],
       "applications": [
@@ -11216,24 +10881,19 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Discovery",
-          "deliverables": "SaaS AI usage",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "SaaS AI Discovery & Classification",
+          "deliverables": "Configuration of Microsoft Defender for Cloud Apps to discover shadow SaaS AI usage from network and endpoint telemetry and establish a three-tier status model (sanction, monitor, block with alternatives).",
+          "notIncluded": "Procurement or licensing of third-party CASB or secure web gateway appliances."
         },
         {
-          "title": "Azure",
-          "deliverables": "Unapproved AI resources",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Subscription & Resource Guardrails",
+          "deliverables": "Azure Policy assignments blocking provisioning of AI services outside approved landing-zone subscriptions alongside Defender for Cloud AI-SPM and threat protection.",
+          "notIncluded": "Manual remediation of unmanaged personal devices outside corporate MDM."
         },
         {
-          "title": "App Governance",
-          "deliverables": "Three-tier app status.",
-          "notIncluded": "Data cleansing or migration of source content"
-        },
-        {
-          "title": "Alternatives",
-          "deliverables": "Block with alternatives.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Telemetry & Governance Handover",
+          "deliverables": "Log Analytics and Application Insights foundation for shadow AI dashboards, blocked-app coaching messages, and operational governance playbooks.",
+          "notIncluded": "Ongoing legal or HR disciplinary policy enforcement."
         }
       ],
       "applications": [
@@ -11330,24 +10990,19 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Register",
-          "deliverables": "Use-case records",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Use-Case Register & Intake Form",
+          "deliverables": "Deployment of a SharePoint and Power Apps register capturing AI use-case purpose, business owner, data classification, and lifecycle status.",
+          "notIncluded": "Custom full-stack web application development outside Microsoft 365 / Power Platform."
         },
         {
-          "title": "Reporting",
-          "deliverables": "Portfolio view",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Weighted Risk Classification Engine",
+          "deliverables": "Structured classification questionnaire with weighted scoring rules that automatically calculates each use case's risk tier.",
+          "notIncluded": "External legal counsel sign-off on statutory regulatory interpretations."
         },
         {
-          "title": "Data Model",
-          "deliverables": "Standard record.",
-          "notIncluded": "Data cleansing or migration of source content"
-        },
-        {
-          "title": "Gatekeeping",
-          "deliverables": "Register before build.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Build Gatekeeping & Portfolio View",
+          "deliverables": "Pre-build governance gate linking high-risk tiers to required assessments and evaluations, plus a Power BI portfolio dashboard.",
+          "notIncluded": "Automated provisioning of underlying Azure AI infrastructure from the register."
         }
       ],
       "applications": [
@@ -11444,24 +11099,19 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Agent",
-          "deliverables": "Question answering",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Curated Fabric Data Foundation",
+          "deliverables": "Provisioning of spoke VNet private endpoints (snet-pe), scalable Microsoft Fabric capacity (F2 baseline), private Microsoft Foundry (gpt-4o), Key Vault, and Log Analytics.",
+          "notIncluded": "Upstream enterprise ERP or CRM data-warehouse schema re-engineering."
         },
         {
-          "title": "Data",
-          "deliverables": "Governed data",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Data Agent Configuration & Tuning",
+          "deliverables": "Configuration of Fabric Data Agents over curated semantic models and warehouses with domain instructions and verified example queries.",
+          "notIncluded": "Autonomous write-back or transactional mutations to source databases."
         },
         {
-          "title": "Curation",
-          "deliverables": "Curated sources only.",
-          "notIncluded": "Data cleansing or migration of source content"
-        },
-        {
-          "title": "Testing",
-          "deliverables": "Accuracy test set.",
-          "notIncluded": "Organisational policy and DPIA authoring"
+          "title": "Accuracy Evaluation & Channel Rollout",
+          "deliverables": "Curated accuracy test set validation and multi-channel publishing across Fabric, Microsoft Teams, and Copilot while preserving row-level data security.",
+          "notIncluded": "End-user Microsoft 365 Copilot seat licensing."
         }
       ],
       "applications": [
@@ -11558,29 +11208,19 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Training",
-          "deliverables": "Custom models",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Fine-Tuning Justification Gate",
+          "deliverables": "Structured decision gate enforcing the 'fine-tune as last resort' rule by benchmarking prompt engineering and RAG baselines before committing compute.",
+          "notIncluded": "Unvalidated model training without baseline comparison evidence."
         },
         {
-          "title": "Data",
-          "deliverables": "Training sets",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Training Data Preparation & Labelling",
+          "deliverables": "Data curation workflow with owner sign-off, labelling tooling setup, and private ZRS Storage Account (Entra ID-only, no shared keys) inside a spoke VNet (snet-pe).",
+          "notIncluded": "Manual data-entry annotation labour for large unlabelled corpora."
         },
         {
-          "title": "Evaluation",
-          "deliverables": "Comparison",
-          "notIncluded": "Data cleansing or migration of source content"
-        },
-        {
-          "title": "Decision Gate",
-          "deliverables": "Fine-tune as last resort.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Comparison",
-          "deliverables": "Evidence-based choice.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "Foundry Fine-Tuning & Release Gate",
+          "deliverables": "Fine-tuning execution on Microsoft Foundry (gpt-4o), side-by-side evaluation comparing fine-tuned vs base models, Key Vault, Log Analytics, and standard release gating.",
+          "notIncluded": "Pre-training foundation models from scratch."
         }
       ],
       "applications": [
@@ -11677,29 +11317,19 @@ export const acceleratorOfferings: AcceleratorOffering[] =
       },
       "scope": [
         {
-          "title": "Data",
-          "deliverables": "Customer data",
-          "notIncluded": "Changes to the platform landing zone (hub, identity, management)"
+          "title": "Feature Engineering & ML Workspace",
+          "deliverables": "Deployment of spoke VNet (snet-pe), Azure Machine Learning workspace (AllowOnlyApprovedOutbound, scale-to-zero compute, dedicated ML storage), private Storage, and Key Vault.",
+          "notIncluded": "Replacing upstream Fabric or Databricks data-warehouse platforms."
         },
         {
-          "title": "Model",
-          "deliverables": "Churn scores",
-          "notIncluded": "Licences and Azure consumption costs"
+          "title": "Explainable Churn Model Pipeline",
+          "deliverables": "Training and scoring pipelines consuming transaction, engagement, and service data from Fabric/Databricks to generate churn scores with top explanatory drivers.",
+          "notIncluded": "Autonomous customer contract cancellation or pricing changes without CRM workflows."
         },
         {
-          "title": "Action",
-          "deliverables": "Retention tasks",
-          "notIncluded": "Data cleansing or migration of source content"
-        },
-        {
-          "title": "Explainability",
-          "deliverables": "Explained scores.",
-          "notIncluded": "Organisational policy and DPIA authoring"
-        },
-        {
-          "title": "Feedback",
-          "deliverables": "Closed loop.",
-          "notIncluded": "Support after the hypercare period (available as a managed service)"
+          "title": "CRM Publishing & Retention Tracking",
+          "deliverables": "Integration publishing churn scores and top reasons into CRM alongside retention-action effectiveness tracking and Log Analytics/App Insights monitoring.",
+          "notIncluded": "Execution of outbound marketing campaigns or call-centre staffing."
         }
       ],
       "applications": [

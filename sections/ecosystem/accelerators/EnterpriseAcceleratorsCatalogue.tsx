@@ -196,7 +196,7 @@ function CatalogueContent() {
   return (
     <section
       id="catalogue"
-      className="w-full py-20 lg:py-24 bg-[#030303] text-white border-b border-zinc-900/80 relative overflow-hidden scroll-mt-20"
+      className="w-full py-20 lg:py-24 bg-[#030303] text-white border-b border-zinc-900/80 relative scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
@@ -219,8 +219,8 @@ function CatalogueContent() {
         <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-10">
           
           {/* Category Navigation Sidebar */}
-          <aside className="w-full lg:w-64 xl:w-72 shrink-0">
-            <div className="lg:sticky lg:top-24 space-y-6">
+          <aside className="w-full lg:w-64 xl:w-72 shrink-0 lg:sticky lg:top-[105px] lg:self-start lg:max-h-[calc(100vh-120px)] lg:overflow-y-auto lg:pr-1">
+            <div className="space-y-6">
               
               {/* Strategic Domain Filter */}
               <div>
