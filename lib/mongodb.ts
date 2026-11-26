@@ -36,25 +36,22 @@ function createClientPromise(): Promise<MongoClient> | null {
   }
 }
 
-if (process.env.NODE_ENV === "development") {
-  // In development, reuse the global promise across HMR reloads
-  if (!global._mongoClientPromise && MONGO_URI) {
-    global._mongoClientPromise = createClientPromise() || undefined;
-  }
-  clientPromise = global._mongoClientPromise || null;
-} else if (MONGO_URI) {
-  // In production (serverless), create a new connection per instance.
-  clientPromise = createClientPromise();
+// Reuse the global promise across requests to maintain a shared connection pool
+if (!global._mongoClientPromise && MONGO_URI) {
+  global._mongoClientPromise = createClientPromise() || undefined;
 }
+clientPromise = global._mongoClientPromise || null;
 
 export async function connectToDatabase() {
   if (!MONGO_URI) {
     throw new Error("MONGO_URI not configured");
   }
   if (!clientPromise) {
-    const p = createClientPromise();
-    if (!p) throw new Error("MONGO_URI not configured");
-    clientPromise = p;
+    if (!global._mongoClientPromise) {
+      global._mongoClientPromise = createClientPromise() || undefined;
+    }
+    clientPromise = global._mongoClientPromise || null;
+    if (!clientPromise) throw new Error("MONGO_URI not configured");
   }
   const client = await clientPromise;
   const db = client.db(DB_NAME);

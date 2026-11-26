@@ -198,7 +198,7 @@ export function CapabilityUseCases({
         <div className="relative w-full">
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x snap-mandatory scroll-smooth"
+            className="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x snap-mandatory scroll-smooth items-stretch"
             style={{
               WebkitOverflowScrolling: "touch",
               msOverflowStyle: "none",
@@ -212,13 +212,12 @@ export function CapabilityUseCases({
               const desc = item.desc;
               const bullets = isCustom ? item.focusAreas : (item.bulletsMap[serviceSlug] || defaultBullets);
               const image = item.image;
-              const practicalVal = isCustom ? item.practicalValue : undefined;
               const href = isCustom ? `/industries/${item.industry.toLowerCase().replace(/[^a-z0-9]+/g, '-')}` : `/industries/${item.slug}`;
 
               return (
                 <div
                   key={idx}
-                  className="snap-start flex-shrink-0 w-[300px] sm:w-[340px] bg-[#0b0b0c] border border-white/10 rounded-[24px] overflow-hidden flex flex-col justify-between hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.12)] transition-all duration-300 relative group self-start"
+                  className="snap-start flex-shrink-0 w-[300px] sm:w-[340px] bg-[#0b0b0c] border border-white/10 rounded-[24px] overflow-hidden flex flex-col justify-between hover:border-rose-500/35 hover:shadow-[0_8px_32px_rgba(244,63,94,0.12)] transition-all duration-300 relative group"
                 >
                   {/* Padded image layout */}
                   <div className="p-3 pb-0">
@@ -242,16 +241,10 @@ export function CapabilityUseCases({
                       {scenarioTitle}
                     </h3>
 
-                    {/* <p className="text-xs text-white leading-relaxed font-semibold mb-6">
-                      {desc}
-                    </p> */}
-
-                    {/* Bullet Focus Areas - Reveal on Hover Only */}
-                    {/* Full-sized Card - Content Always Visible (No hover hide) */}
                     <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal mb-4">
                       {desc}
                     </p>
-                    <div className="space-y-2.5 pt-3 border-t border-white/5">
+                    <div className="space-y-2.5 pt-3 border-t border-white/5 mt-auto">
                       <span className="text-xs sm:text-sm font-mono tracking-widest text-rose-500 uppercase font-semibold block mb-2">
                         Focus Areas
                       </span>
@@ -266,12 +259,7 @@ export function CapabilityUseCases({
                     </div>
                   </div>
 
-                  {practicalVal && (
-                      <div className="mt-4 pt-3 border-t border-white/5 text-xs text-zinc-400">
-                        <strong className="text-zinc-200">Value:</strong> {practicalVal}
-                      </div>
-                    )}
-                    {/* Card Actions Footer */}
+                  {/* Card Actions Footer */}
                   <div className="px-6 pb-6 pt-3 mt-auto border-t border-white/5 flex items-center justify-between">
                     <Link
                       href={href}
